@@ -34,7 +34,6 @@ html, body, [class*="css"] {
     color: #999999 !important;
 }
 
-/* 실제 게임 UI 스타일을 모방한 소환 버튼 디자인 */
 .stButton>button[kind="primary"] {
     height: 55px;
     font-size: 1.4rem;
@@ -82,8 +81,6 @@ def init_session():
         st.session_state.extra_chance = 0.0
         st.session_state.all_pulls = []
         st.session_state.batches = []
-        st.session_state.total_base = 0
-        st.session_state.total_bonus = 0
         st.session_state.is_initialized = False
 
 init_session()
@@ -121,8 +118,6 @@ with left_col:
             
             st.session_state.all_pulls = []
             st.session_state.batches = []
-            st.session_state.total_base = 0
-            st.session_state.total_bonus = 0
             st.session_state.is_initialized = True
             st.session_state.current_mode = selected_mode
         except ValueError:
@@ -152,7 +147,6 @@ with right_col:
 
     st.markdown("---")
 
-    # --- 소환 버튼 구조 (좌측 배수, 우측 게임풍 버튼) ---
     btn_col1, btn_col2 = st.columns([1, 5])
     with btn_col1:
         summon_multiplier = st.selectbox("배수", [1, 15, 50], label_visibility="collapsed")
@@ -176,8 +170,8 @@ with right_col:
         total_target = batch_size
         batch_items = []
         
-        st.session_state.total_base += batch_size
-        start_total = st.session_state.total_base + st.session_state.total_bonus
+        # 순번 계산 버그 수정 (기존 전체 리스트의 길이를 기준으로 시작)
+        start_total = len(st.session_state.all_pulls)
 
         while current_idx < total_target:
             pcg = MetaplayPCG(st.session_state.current_seed)
@@ -191,7 +185,6 @@ with right_col:
                     chance_raw = int(round((st.session_state.extra_chance / 100.0) * 4294967296))
                     if bonus_roll < chance_raw:
                         total_target += 1
-                        st.session_state.total_bonus += 1
 
             rarity_roll = pcg._next_pcg32()
             lvl_idx = min(st.session_state.current_level, len(levels_config) - 1)
@@ -268,9 +261,10 @@ with right_col:
             st.session_state.current_seed += 1
             current_idx += 1
             
-        st.session_state.all_pulls.extend(batch_items)
-        end_total = st.session_state.total_base + st.session_state.total_bonus
+        # 순번 범위 기록
+        end_total = start_total + len(batch_items)
         
+        st.session_state.all_pulls.extend(batch_items)
         st.session_state.batches.append({
             "size": batch_size,
             "acquired": len(batch_items),
@@ -282,7 +276,6 @@ with right_col:
     if trigger_summon:
         run_summon(summon_multiplier)
 
-    # --- 누적 요약 (Summary) ---
     if st.session_state.all_pulls:
         with st.expander("누적 소환 요약", expanded=True):
             scol1, scol2 = st.columns(2)
@@ -315,7 +308,6 @@ with right_col:
                     
                     st.markdown(f"#### 최고 등급({max_r_kor}) 유효 스탯 상위 9개 개체")
                     
-                    # 🔥 [필터 기능 1] 원하는 유효 스탯 다중 선택 필터
                     valid_stats = st.multiselect(
                         "유효 스탯 필터 선택 (미선택 시 전체 스탯 기준)", 
                         options=sorted(SUBSTATS_POOL),
@@ -326,17 +318,13 @@ with right_col:
                     for p in st.session_state.all_pulls:
                         if p['_r_score'] == max_score:
                             if valid_stats:
-                                # 유저가 선택한 유효 스탯이 해당 개체에 하나라도 포함되어 있는지 확인
                                 match_stats = {k: v for k, v in p['_stat_values'].items() if k in valid_stats}
                                 if match_stats:
-                                    # 유효 스탯 수치들의 합을 기준으로 재정렬하기 위해 임시 점수 계산
                                     p_score = sum(match_stats.values())
                                     filtered_pulls.append((p_score, p))
                             else:
-                                # 필터 미선택 시 기존 완성도 기준
                                 filtered_pulls.append((p['_perf'], p))
                     
-                    # 정렬 후 상위 9개 추출
                     filtered_pulls.sort(key=lambda x: x[0], reverse=True)
                     top_9_pulls = filtered_pulls[:9]
                     
@@ -347,7 +335,6 @@ with right_col:
                     else:
                         st.caption("필터 조건에 부합하는 개체가 없습니다.")
 
-    # --- 표 스타일링 함수 ---
     def color_rarity(val):
         eng_key = [k for k, v in RARITY_KOR.items() if v == val]
         if eng_key:
@@ -355,11 +342,9 @@ with right_col:
             return f'color: {color}; font-weight: bold;'
         return ''
 
-    # --- 스택형 결과 노출 및 등급 필터 ---
     if st.session_state.batches:
         st.markdown("<br>---", unsafe_allow_html=True)
         
-        # 🔥 [필터 기능 2] 표 결과창 출력 등급 필터
         st.markdown("#### 소환 결과 필터")
         filter_rarities = st.multiselect(
             "결과창에 표시할 등급을 선택하세요 (미선택 시 전체 표시)",
@@ -370,7 +355,6 @@ with right_col:
         for i, batch in enumerate(reversed(st.session_state.batches)):
             is_expanded = (i == 0) 
             
-            # 등급 필터 적용
             df_filtered = batch['df'].copy()
             if filter_rarities:
                 df_filtered = df_filtered[df_filtered['등급'].isin(filter_rarities)]
