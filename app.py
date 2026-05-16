@@ -122,6 +122,25 @@ with left_col:
             st.session_state.current_mode = selected_mode
         except ValueError:
             st.error("입력값이 올바르지 않습니다.")
+            
+    # ====== [다운로드 버튼 추가 영역] ======
+    st.markdown("---")
+    st.markdown("#### 🛠️ 보조 도구")
+    
+    try:
+        with open("fm_seedfinder.lua", "r", encoding="utf-8") as f:
+            lua_code = f.read()
+            
+        st.download_button(
+            label="📥 시드 추적 스크립트 다운로드",
+            data=lua_code,
+            file_name="fm_seedfinder.lua",
+            mime="text/plain",
+            use_container_width=True
+        )
+        st.caption("GameGuardian용 시드 자동 추출 스크립트 (.lua)")
+    except FileNotFoundError:
+        st.caption("스크립트 파일을 찾을 수 없습니다. (fm_seedfinder.lua)")
 
 with right_col:
     st.title(f"시뮬레이터: {selected_mode}")
@@ -261,7 +280,6 @@ with right_col:
             st.session_state.current_seed += 1
             current_idx += 1
             
-        # 순번 범위 기록
         end_total = start_total + len(batch_items)
         
         st.session_state.all_pulls.extend(batch_items)
