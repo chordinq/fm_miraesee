@@ -13,24 +13,34 @@ function main()
         return
     end
     
-    if count > 1 then
+    local attempt = 0
+    local max_attempts = 5
+    
+    while count > 1 and attempt < max_attempts do
+        attempt = attempt + 1
+        
         gg.setVisible(false)
         for i = 10, 1, -1 do
-            gg.toast(string.format("[남은 시간: %d초]\n서둘러 망치를 소모하거나 오프보상을 수령하세요.\n망치의 개수가 바뀌어야합니다.", i))
+            gg.toast(string.format("[시도 %d/%d] 남은 시간: %d초\n현재 검색된 주소: %d개\n서둘러 망치를 소모하여 개수를 바꾸세요.", attempt, max_attempts, i, count))
             gg.sleep(1000)
         end
         gg.setVisible(true)
         
-        local refine_prompt = gg.prompt({'10초가 지났습니다.\n현재 망치의 개수를 입력하세요.'}, {''}, {'number'})
+        local refine_prompt = gg.prompt({string.format('[%d/%d번째 시도] 현재 남은 주소: %d개\n바뀐 망치의 개수를 입력하세요.', attempt, max_attempts, count)}, {''}, {'number'})
         if not refine_prompt then return end
         local new_count = tonumber(refine_prompt[1])
         
         gg.refineNumber(new_count, gg.TYPE_DWORD)
         count = gg.getResultCount()
+        
+        if count == 0 then
+            gg.alert("망치 값 정제 실패 (모든 결과가 사라짐).\n처음부터 다시 시도해주세요.")
+            return
+        end
     end
     
-    if count == 0 then
-        gg.alert("망치 값 정제 실패.\n처음부터 다시 시도해주세요.")
+    if count > 1 then
+        gg.alert(string.format("망치 값 정제 실패.\n%d번 시도했지만 가짜 주소를 걸러내지 못했습니다 (남은 주소: %d개).\n처음부터 다시 시도해주세요.", max_attempts, count))
         return
     end
     
@@ -47,7 +57,6 @@ function main()
         return
     end
     
-    -- [ 대장간 (Forge) ]
     local PlayerForgeModel = read_qword(PlayerModel_Base_Addr + 0x218)
     local Forge_Seed_Addr = PlayerForgeModel + 0x18
     local Forge_Level_Addr = PlayerForgeModel + 0x20
@@ -57,7 +66,6 @@ function main()
     local Forge_Ascension = 0
     if Forge_Asc_Ptr ~= 0 then Forge_Ascension = read_dword(Forge_Asc_Ptr + 0x14) end
 
-    -- [ 스킬 (Skill) ]
     local SkillCollection = read_qword(PlayerModel_Base_Addr + 0x240)
     local Skill_SummonModel = read_qword(SkillCollection + 0x20)
     local Skill_Seed_Addr = Skill_SummonModel + 0x18
@@ -68,7 +76,6 @@ function main()
     local Skill_Ascension = 0
     if Skill_Asc_Ptr ~= 0 then Skill_Ascension = read_dword(Skill_Asc_Ptr + 0x14) end
     
-    -- [ 펫 (Pet) ]
     local PetCollection = read_qword(PlayerModel_Base_Addr + 0x258)
     local Pet_SummonModel = read_qword(PetCollection + 0x28)
     local Pet_Seed_Addr = Pet_SummonModel + 0x18
@@ -79,7 +86,6 @@ function main()
     local Pet_Ascension = 0
     if Pet_Asc_Ptr ~= 0 then Pet_Ascension = read_dword(Pet_Asc_Ptr + 0x14) end
     
-    -- [ 탈것 (Mount) ]
     local MountCollection = read_qword(PlayerModel_Base_Addr + 0x278)
     local Mount_SummonModel = read_qword(MountCollection + 0x18)
     local Mount_Seed_Addr = Mount_SummonModel + 0x18
@@ -90,7 +96,6 @@ function main()
     local Mount_Ascension = 0
     if Mount_Asc_Ptr ~= 0 then Mount_Ascension = read_dword(Mount_Asc_Ptr + 0x14) end
     
-    -- 12줄로 포맷팅 (시드, 상태, 승천)
     local copy_text = string.format(
         "%016X\n%016X\n%016X\n" ..
         "%016X\n%016X\n%016X\n" ..
@@ -107,7 +112,6 @@ function main()
     local msg = "클립보드 복사 완료! (12줄)\n\n" .. copy_text
     gg.alert(msg)
     
-    -- GG 리스트에도 승천 레벨 주소를 추가
     gg.clearResults()
     local list_items = {
         {address = Forge_Seed_Addr, flags = gg.TYPE_QWORD, name = "Seed_Forge"},
@@ -128,7 +132,6 @@ function main()
     gg.addListItems(list_items)
 end
 
--- [1] Entries 전용 포인터 검색 ( -0x10 위치가 무조건 0이어야 함 )
 function get_entries_pointers(target_addr)
     gg.clearResults()
     gg.searchNumber(string.format("%X", target_addr) .. "h", gg.TYPE_QWORD)
@@ -154,7 +157,6 @@ function get_entries_pointers(target_addr)
     return sorted_ptrs
 end
 
--- [2] Dict 전용 포인터 검색 ( -0x8 위치가 무조건 0이어야 함 )
 function get_dict_pointers(target_addr)
     gg.clearResults()
     gg.searchNumber(string.format("%X", target_addr) .. "h", gg.TYPE_QWORD)
@@ -180,7 +182,6 @@ function get_dict_pointers(target_addr)
     return sorted_ptrs
 end
 
--- [3] 일반 포인터 검색 (가짜 주소 밀집 영역 필터링 포함)
 function get_pointers(target_addr)
     gg.clearResults()
     gg.searchNumber(string.format("%X", target_addr) .. "h", gg.TYPE_QWORD)
@@ -192,7 +193,6 @@ function get_pointers(target_addr)
     local good_ptrs, bad_ptrs = {}, {}
     
     for i, v in ipairs(results) do
-        -- 가짜 주소 방지: 위아래(-0x8, +0x8)에 빈틈없이 값이 꽉 차있다면 가짜일 확률 높음
         local m8 = read_qword(v.address - 0x8)
         local p8 = read_qword(v.address + 0x8)
         
@@ -210,25 +210,19 @@ function get_pointers(target_addr)
 end
 
 function trace_player_model(entries_base)
-    -- 1단계: Entries 추적 ( -0x10이 0인 것 우선 )
     local entries_ptrs = get_entries_pointers(entries_base)
     
     for _, e_ptr in ipairs(entries_ptrs) do
         local dict_base = e_ptr - 0x18
-        
-        -- 2단계: Dict 추적 ( -0x8이 0인 것 우선 )
         local dict_ptrs = get_dict_pointers(dict_base)
         
         for _, d_ptr in ipairs(dict_ptrs) do
             local currency_base = d_ptr - 0x10
-            
-            -- 3단계: Currency 및 PlayerModel 추적 (빼곡한 가짜주소 필터링 적용)
             local currency_ptrs = get_pointers(currency_base)
             
             for _, c_ptr in ipairs(currency_ptrs) do
                 local player_base = c_ptr - 0x210
                 
-                -- 최종 검증 로직 (안정성을 위해 변경하지 않음)
                 local check_val = read_dword(player_base + 0x20C)
                 if check_val == 0 or check_val == 1 then
                     local skill_col = read_qword(player_base + 0x240)
