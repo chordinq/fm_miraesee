@@ -128,21 +128,20 @@ function main()
     gg.addListItems(list_items)
 end
 
-function get_pointers(target_addr)
+-- [1] Entries 전용 포인터 검색 ( -0x10 위치가 무조건 0이어야 함 )
+function get_entries_pointers(target_addr)
     gg.clearResults()
     gg.searchNumber(string.format("%X", target_addr) .. "h", gg.TYPE_QWORD)
-    
     local count = gg.getResultCount()
     if count == 0 then return {} end
-    if count > 50 then count = 50 end
+    if count > 200 then count = 200 end 
     
     local results = gg.getResults(count)
-    local good_ptrs = {}
-    local bad_ptrs = {}
+    local good_ptrs, bad_ptrs = {}, {}
     
     for i, v in ipairs(results) do
-        local upper_val = read_qword(v.address - 0x8)
-        if upper_val == 0 then
+        local val_10 = read_qword(v.address - 0x10)
+        if val_10 == 0 then
             table.insert(good_ptrs, v.address)
         else
             table.insert(bad_ptrs, v.address)
@@ -152,24 +151,84 @@ function get_pointers(target_addr)
     local sorted_ptrs = {}
     for _, v in ipairs(good_ptrs) do table.insert(sorted_ptrs, v) end
     for _, v in ipairs(bad_ptrs) do table.insert(sorted_ptrs, v) end
+    return sorted_ptrs
+end
+
+-- [2] Dict 전용 포인터 검색 ( -0x8 위치가 무조건 0이어야 함 )
+function get_dict_pointers(target_addr)
+    gg.clearResults()
+    gg.searchNumber(string.format("%X", target_addr) .. "h", gg.TYPE_QWORD)
+    local count = gg.getResultCount()
+    if count == 0 then return {} end
+    if count > 200 then count = 200 end 
     
+    local results = gg.getResults(count)
+    local good_ptrs, bad_ptrs = {}, {}
+    
+    for i, v in ipairs(results) do
+        local val_8 = read_qword(v.address - 0x8)
+        if val_8 == 0 then
+            table.insert(good_ptrs, v.address)
+        else
+            table.insert(bad_ptrs, v.address)
+        end
+    end
+    
+    local sorted_ptrs = {}
+    for _, v in ipairs(good_ptrs) do table.insert(sorted_ptrs, v) end
+    for _, v in ipairs(bad_ptrs) do table.insert(sorted_ptrs, v) end
+    return sorted_ptrs
+end
+
+-- [3] 일반 포인터 검색 (가짜 주소 밀집 영역 필터링 포함)
+function get_pointers(target_addr)
+    gg.clearResults()
+    gg.searchNumber(string.format("%X", target_addr) .. "h", gg.TYPE_QWORD)
+    local count = gg.getResultCount()
+    if count == 0 then return {} end
+    if count > 200 then count = 200 end
+    
+    local results = gg.getResults(count)
+    local good_ptrs, bad_ptrs = {}, {}
+    
+    for i, v in ipairs(results) do
+        -- 가짜 주소 방지: 위아래(-0x8, +0x8)에 빈틈없이 값이 꽉 차있다면 가짜일 확률 높음
+        local m8 = read_qword(v.address - 0x8)
+        local p8 = read_qword(v.address + 0x8)
+        
+        if m8 == 0 or p8 == 0 then
+            table.insert(good_ptrs, v.address)
+        else
+            table.insert(bad_ptrs, v.address)
+        end
+    end
+    
+    local sorted_ptrs = {}
+    for _, v in ipairs(good_ptrs) do table.insert(sorted_ptrs, v) end
+    for _, v in ipairs(bad_ptrs) do table.insert(sorted_ptrs, v) end
     return sorted_ptrs
 end
 
 function trace_player_model(entries_base)
-    local entries_ptrs = get_pointers(entries_base)
+    -- 1단계: Entries 추적 ( -0x10이 0인 것 우선 )
+    local entries_ptrs = get_entries_pointers(entries_base)
     
     for _, e_ptr in ipairs(entries_ptrs) do
         local dict_base = e_ptr - 0x18
-        local dict_ptrs = get_pointers(dict_base)
+        
+        -- 2단계: Dict 추적 ( -0x8이 0인 것 우선 )
+        local dict_ptrs = get_dict_pointers(dict_base)
         
         for _, d_ptr in ipairs(dict_ptrs) do
             local currency_base = d_ptr - 0x10
+            
+            -- 3단계: Currency 및 PlayerModel 추적 (빼곡한 가짜주소 필터링 적용)
             local currency_ptrs = get_pointers(currency_base)
             
             for _, c_ptr in ipairs(currency_ptrs) do
                 local player_base = c_ptr - 0x210
                 
+                -- 최종 검증 로직 (안정성을 위해 변경하지 않음)
                 local check_val = read_dword(player_base + 0x20C)
                 if check_val == 0 or check_val == 1 then
                     local skill_col = read_qword(player_base + 0x240)
