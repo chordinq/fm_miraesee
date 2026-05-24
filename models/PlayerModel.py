@@ -2,10 +2,11 @@
 from configs.enums import *
 from models.CurrencyModel import CurrencyModel
 from models.TechTreeModel import TechTreeModel
+from models.ForgeModel import ForgeModel
+from models.EquipmentModel import EquipmentModel
 from models.SkillCollectionModel import SkillCollectionModel
 from models.PetCollectionModel import PetCollectionModel
 from models.MountCollectionModel import MountCollectionModel
-# (Equipment, Mount, Forge 등도 동일하게 추가)
 
 class PlayerModel:
 	def __init__(self):
