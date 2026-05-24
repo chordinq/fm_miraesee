@@ -1,1 +1,0 @@
-pyinstaller --noconfirm --onedir --console --add-data "configs;configs" miraesee.py
