@@ -1,0 +1,110 @@
+{
+	"0_0": {
+		"Rarity": 0,
+		"Idx": 0,
+		"Enum": 0,
+		"Name": "Meat"
+	},
+	"0_1": {
+		"Rarity": 0,
+		"Idx": 1,
+		"Enum": 2,
+		"Name": "Arrows"
+	},
+	"0_2": {
+		"Rarity": 0,
+		"Idx": 2,
+		"Enum": 4,
+		"Name": "Shout"
+	},
+	"1_0": {
+		"Rarity": 1,
+		"Idx": 0,
+		"Enum": 6,
+		"Name": "Berserk"
+	},
+	"1_1": {
+		"Rarity": 1,
+		"Idx": 1,
+		"Enum": 3,
+		"Name": "Shuriken"
+	},
+	"1_2": {
+		"Rarity": 1,
+		"Idx": 2,
+		"Enum": 16,
+		"Name": "Cannon Barrage"
+	},
+	"2_0": {
+		"Rarity": 2,
+		"Idx": 0,
+		"Enum": 12,
+		"Name": "Buff"
+	},
+	"2_1": {
+		"Rarity": 2,
+		"Idx": 1,
+		"Enum": 14,
+		"Name": "Rain of Arrows"
+	},
+	"2_2": {
+		"Rarity": 2,
+		"Idx": 2,
+		"Enum": 8,
+		"Name": "Thorns"
+	},
+	"3_0": {
+		"Rarity": 3,
+		"Idx": 0,
+		"Enum": 1,
+		"Name": "Morale"
+	},
+	"3_1": {
+		"Rarity": 3,
+		"Idx": 1,
+		"Enum": 9,
+		"Name": "Bomb"
+	},
+	"3_2": {
+		"Rarity": 3,
+		"Idx": 2,
+		"Enum": 5,
+		"Name": "Meteorite"
+	},
+	"4_0": {
+		"Rarity": 4,
+		"Idx": 0,
+		"Enum": 7,
+		"Name": "Stampede"
+	},
+	"4_1": {
+		"Rarity": 4,
+		"Idx": 1,
+		"Enum": 10,
+		"Name": "Worm"
+	},
+	"4_2": {
+		"Rarity": 4,
+		"Idx": 2,
+		"Enum": 11,
+		"Name": "Lightning"
+	},
+	"5_0": {
+		"Rarity": 5,
+		"Idx": 0,
+		"Enum": 13,
+		"Name": "Higher Morale"
+	},
+	"5_1": {
+		"Rarity": 5,
+		"Idx": 1,
+		"Enum": 15,
+		"Name": "Strafe Run"
+	},
+	"5_2": {
+		"Rarity": 5,
+		"Idx": 2,
+		"Enum": 17,
+		"Name": "Drone"
+	}
+}

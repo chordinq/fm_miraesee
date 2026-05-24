@@ -1,0 +1,250 @@
+{
+  "PlatformLogin": {
+    "FeatureId": "PlatformLogin",
+    "DifficultyIdx": 0,
+    "AgeIdx": 0,
+    "BattleIdx": 0,
+    "RequireCompliance": true,
+    "FeatureToggle": false
+  },
+  "PlayerNameChange": {
+    "FeatureId": "PlayerNameChange",
+    "DifficultyIdx": 0,
+    "AgeIdx": 0,
+    "BattleIdx": 0,
+    "RequireCompliance": true,
+    "FeatureToggle": false
+  },
+  "IdleCash": {
+    "FeatureId": "IdleCash",
+    "DifficultyIdx": 0,
+    "AgeIdx": 0,
+    "BattleIdx": 8,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Shop": {
+    "FeatureId": "Shop",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "StarterPackage": {
+    "FeatureId": "StarterPackage",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "RateUs_1": {
+    "FeatureId": "RateUs_1",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 2,
+    "RequireCompliance": true,
+    "FeatureToggle": false
+  },
+  "Dungeons": {
+    "FeatureId": "Dungeons",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 9,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Dungeon_Hammer": {
+    "FeatureId": "Dungeon_Hammer",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 9,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "AutoForge": {
+    "FeatureId": "AutoForge",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 9,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "SkillCollection": {
+    "FeatureId": "SkillCollection",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 14,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "SkillSlot0": {
+    "FeatureId": "SkillSlot0",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 14,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Dungeon_Skill": {
+    "FeatureId": "Dungeon_Skill",
+    "DifficultyIdx": 0,
+    "AgeIdx": 1,
+    "BattleIdx": 14,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Pets": {
+    "FeatureId": "Pets",
+    "DifficultyIdx": 0,
+    "AgeIdx": 2,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "PetSlot0": {
+    "FeatureId": "PetSlot0",
+    "DifficultyIdx": 0,
+    "AgeIdx": 2,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Dungeon_Pet": {
+    "FeatureId": "Dungeon_Pet",
+    "DifficultyIdx": 0,
+    "AgeIdx": 2,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Chat": {
+    "FeatureId": "Chat",
+    "DifficultyIdx": 0,
+    "AgeIdx": 2,
+    "BattleIdx": 9,
+    "RequireCompliance": true,
+    "FeatureToggle": false
+  },
+  "Arena": {
+    "FeatureId": "Arena",
+    "DifficultyIdx": 0,
+    "AgeIdx": 2,
+    "BattleIdx": 9,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "SkillSlot1": {
+    "FeatureId": "SkillSlot1",
+    "DifficultyIdx": 0,
+    "AgeIdx": 3,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "TechTree": {
+    "FeatureId": "TechTree",
+    "DifficultyIdx": 0,
+    "AgeIdx": 3,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Dungeon_Potion": {
+    "FeatureId": "Dungeon_Potion",
+    "DifficultyIdx": 0,
+    "AgeIdx": 3,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "RateUs_2": {
+    "FeatureId": "RateUs_2",
+    "DifficultyIdx": 0,
+    "AgeIdx": 3,
+    "BattleIdx": 2,
+    "RequireCompliance": true,
+    "FeatureToggle": false
+  },
+  "PetSlot1": {
+    "FeatureId": "PetSlot1",
+    "DifficultyIdx": 0,
+    "AgeIdx": 3,
+    "BattleIdx": 9,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Guilds": {
+    "FeatureId": "Guilds",
+    "DifficultyIdx": 0,
+    "AgeIdx": 3,
+    "BattleIdx": 14,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Missions": {
+    "FeatureId": "Missions",
+    "DifficultyIdx": 0,
+    "AgeIdx": 0,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "SkillSlot2": {
+    "FeatureId": "SkillSlot2",
+    "DifficultyIdx": 0,
+    "AgeIdx": 4,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Hammer_1": {
+    "FeatureId": "Hammer_1",
+    "DifficultyIdx": 0,
+    "AgeIdx": 4,
+    "BattleIdx": 14,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "PetSlot2": {
+    "FeatureId": "PetSlot2",
+    "DifficultyIdx": 0,
+    "AgeIdx": 5,
+    "BattleIdx": 0,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "Hammer_2": {
+    "FeatureId": "Hammer_2",
+    "DifficultyIdx": 0,
+    "AgeIdx": 6,
+    "BattleIdx": 14,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "SwitchWorlds": {
+    "FeatureId": "SwitchWorlds",
+    "DifficultyIdx": 0,
+    "AgeIdx": 0,
+    "BattleIdx": 10,
+    "RequireCompliance": false,
+    "FeatureToggle": false
+  },
+  "PrivacySettings": {
+    "FeatureId": "PrivacySettings",
+    "DifficultyIdx": 0,
+    "AgeIdx": 0,
+    "BattleIdx": 0,
+    "RequireCompliance": true,
+    "FeatureToggle": false
+  },
+  "GuildAnnouncement": {
+    "FeatureId": "GuildAnnouncement",
+    "DifficultyIdx": 0,
+    "AgeIdx": 0,
+    "BattleIdx": 0,
+    "RequireCompliance": true,
+    "FeatureToggle": false
+  }
+}

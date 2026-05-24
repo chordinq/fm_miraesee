@@ -1,0 +1,33 @@
+{
+  "SwitchWorlds": {
+    "SegmentId": "SwitchWorlds",
+    "Description": "The player is allowed to change his current server",
+    "DisplayName": "Switch Worlds",
+    "PlayerCondition": {
+      "PropertyRequirements": [
+        {
+          "Id": {},
+          "Min": null,
+          "field_7": 1,
+          "field_8": null,
+          "Max": null
+        },
+        {
+          "field_100": "GuildMissions",
+          "field_101": "Players can participate and start missions within their clan",
+          "field_102": "Guild missions are available",
+          "field_103": {
+            "field_1": [
+              {
+                "field_1": {},
+                "field_2": null,
+                "field_3": null
+              }
+            ]
+          }
+        }
+      ],
+      "$type": "PlayerSegmentBasicCondition"
+    }
+  }
+}
