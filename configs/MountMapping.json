@@ -1,77 +1,77 @@
 {
 	"0_0": {
 		"Rarity": 0,
-		"Id": 0,
+		"idx": 0,
 		"Name": "Lily Pad"
 	},
 	"0_1": {
 		"Rarity": 0,
-		"Id": 1,
+		"idx": 1,
 		"Name": "Lily Leaf"
 	},
 	"0_2": {
 		"Rarity": 0,
-		"Id": 2,
+		"idx": 2,
 		"Name": "Brown Leaf"
 	},
 	"1_0": {
 		"Rarity": 1,
-		"Id": 0,
+		"idx": 0,
 		"Name": "Brown Horse"
 	},
 	"1_1": {
 		"Rarity": 1,
-		"Id": 1,
+		"idx": 1,
 		"Name": "Dino"
 	},
 	"1_2": {
 		"Rarity": 1,
-		"Id": 2,
+		"idx": 2,
 		"Name": "Crab"
 	},
 	"1_3": {
 		"Rarity": 1,
-		"Id": 3,
+		"idx": 3,
 		"Name": "Turtle"
 	},
 	"2_0": {
 		"Rarity": 2,
-		"Id": 0,
+		"idx": 0,
 		"Name": "Pig"
 	},
 	"2_1": {
 		"Rarity": 2,
-		"Id": 1,
+		"idx": 1,
 		"Name": "Goat"
 	},
 	"3_0": {
 		"Rarity": 3,
-		"Id": 0,
+		"idx": 0,
 		"Name": "Bike"
 	},
 	"3_1": {
 		"Rarity": 3,
-		"Id": 1,
+		"idx": 1,
 		"Name": "Giant Bee"
 	},
 	"4_0": {
 		"Rarity": 4,
-		"Id": 0,
-		"Name": "One Wheel Droid"
+		"idx": 0,
+		"Name": "One Wheel Droidx"
 	},
 	"4_1": {
 		"Rarity": 4,
-		"Id": 1,
+		"idx": 1,
 		"Name": "Mini Dragon"
 	},
 	"5_0": {
 		"Rarity": 5,
-		"Id": 0,
+		"idx": 0,
 		"Name": "Hover Disk"
 	},
 	"5_1": {
 		"Rarity": 5,
-		"Id": 1,
+		"idx": 1,
 		"Name": "Hover Board"
 	}
 }

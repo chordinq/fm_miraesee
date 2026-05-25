@@ -1,151 +1,151 @@
 {
 	"0_0": {
 		"Rarity": 0,
-		"Id": 0,
+		"idx": 0,
 		"Type": 0,
 		"Name": "Chicken"
 	},
 	"0_1": {
 		"Rarity": 0,
-		"Id": 1,
+		"idx": 1,
 		"Type": 1,
 		"Name": "Dog"
 	},
 	"0_2": {
 		"Rarity": 0,
-		"Id": 2,
+		"idx": 2,
 		"Type": 0,
 		"Name": "Cat"
 	},
 	"0_3": {
 		"Rarity": 0,
-		"Id": 3,
+		"idx": 3,
 		"Type": 2,
 		"Name": "Snail"
 	},
 	"0_4": {
 		"Rarity": 0,
-		"Id": 4,
+		"idx": 4,
 		"Type": 0,
 		"Name": "Mouse"
 	},
 	"0_5": {
 		"Rarity": 0,
-		"Id": 5,
+		"idx": 5,
 		"Type": 2,
 		"Name": "Turtle"
 	},
 	"1_0": {
 		"Rarity": 1,
-		"Id": 0,
+		"idx": 0,
 		"Type": 2,
 		"Name": "Hedgehog"
 	},
 	"1_1": {
 		"Rarity": 1,
-		"Id": 1,
+		"idx": 1,
 		"Type": 2,
 		"Name": "Bear"
 	},
 	"1_2": {
 		"Rarity": 1,
-		"Id": 2,
+		"idx": 2,
 		"Type": 0,
 		"Name": "Ostrich"
 	},
 	"1_3": {
 		"Rarity": 1,
-		"Id": 3,
+		"idx": 3,
 		"Type": 1,
-		"Name": "Spider"
+		"Name": "Spidxer"
 	},
 	"1_4": {
 		"Rarity": 1,
-		"Id": 4,
+		"idx": 4,
 		"Type": 1,
 		"Name": "Scorpion"
 	},
 	"2_0": {
 		"Rarity": 2,
-		"Id": 0,
+		"idx": 0,
 		"Type": 2,
 		"Name": "Griffin"
 	},
 	"2_1": {
 		"Rarity": 2,
-		"Id": 1,
+		"idx": 1,
 		"Type": 1,
 		"Name": "Saber Tooth"
 	},
 	"2_2": {
 		"Rarity": 2,
-		"Id": 2,
+		"idx": 2,
 		"Type": 0,
 		"Name": "Unicorn"
 	},
 	"2_3": {
 		"Rarity": 2,
-		"Id": 3,
+		"idx": 3,
 		"Type": 1,
 		"Name": "Tiger"
 	},
 	"2_4": {
 		"Rarity": 2,
-		"Id": 4,
+		"idx": 4,
 		"Type": 2,
 		"Name": "Panda"
 	},
 	"3_0": {
 		"Rarity": 3,
-		"Id": 0,
+		"idx": 0,
 		"Type": 1,
 		"Name": "Serpent"
 	},
 	"3_1": {
 		"Rarity": 3,
-		"Id": 1,
+		"idx": 1,
 		"Type": 0,
 		"Name": "Cerberus"
 	},
 	"3_2": {
 		"Rarity": 3,
-		"Id": 2,
+		"idx": 2,
 		"Type": 1,
 		"Name": "Kitsune"
 	},
 	"4_0": {
 		"Rarity": 4,
-		"Id": 0,
+		"idx": 0,
 		"Type": 1,
 		"Name": "Electry"
 	},
 	"4_1": {
 		"Rarity": 4,
-		"Id": 1,
+		"idx": 1,
 		"Type": 2,
 		"Name": "Treant"
 	},
 	"4_2": {
 		"Rarity": 4,
-		"Id": 2,
+		"idx": 2,
 		"Type": 0,
 		"Name": "Enchanted Elk"
 	},
 	"5_0": {
 		"Rarity": 5,
-		"Id": 0,
+		"idx": 0,
 		"Type": 0,
 		"Name": "Baby Dragon"
 	},
 	"5_1": {
 		"Rarity": 5,
-		"Id": 1,
+		"idx": 1,
 		"Type": 2,
 		"Name": "Genie"
 	},
 	"5_2": {
 		"Rarity": 5,
-		"Id": 2,
+		"idx": 2,
 		"Type": 1,
 		"Name": "Spectral Tiger"
 	}
