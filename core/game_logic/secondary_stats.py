@@ -2,14 +2,14 @@
 """
 SecondaryStatHelper$$GenerateSecondaryStats
 
-C# algorithm:
+C# algorithm (SecondaryStatHelper$$GenerateSecondaryStats):
   1. Build available = list(SecondaryStatType)
   2. Remove any types already present (excluded_types param -- usually None)
   3. For i in range(stat_count):
-       stat_type  = RandomPCG$$Choice(pcg, available)   -> len(available) PCG calls
-       perfection = RandomPCG$$NextF64(pcg)              -> 1 PCG call
+       stat_type  = available[rng.NextInt(available.Count)]  -> 1 PCG call
+       perfection = rng.NextF64()                             -> 1 PCG call
        result.add(stat_type, perfection)
-       available.remove(stat_type)                       -> no duplicates
+       available.RemoveAt(idx)                                -> no duplicates
   4. Return SecondaryStats
 """
 
@@ -48,9 +48,9 @@ def generate_secondary_stats(
 	for _ in range(stat_count):
 		if not available:
 			break
-		stat_type: SecondaryStatType = rng.choice(available)
+		idx = rng.next_int(len(available))
+		stat_type: SecondaryStatType = available.pop(idx)
 		perfection: float = rng.next_f64()
 		result.add_stat(StatModel(stat_type, perfection))
-		available.remove(stat_type)
 
 	return result

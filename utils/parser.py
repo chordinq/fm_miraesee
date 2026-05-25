@@ -61,8 +61,12 @@ TECH_LINE       = re.compile(r"^[0-9A-Fa-f]+$")
 # [SKILL_COLLECTION]: "1{s_enum:02X}0{lvl:02X}{shard:02X}{is_eq:02X}{slot:02X}" + 20-char tail = 32 chars
 SKILL_COLL_LINE = re.compile(r"^1([0-9A-Fa-f]{2})0([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})[0-9A-Fa-f]{20}$")
 
-# [PET_EGG_COLLECTION] / [MOUNT_COLLECTION]: 1+1+2+40 = 44 chars
-COLLECTION_LINE = re.compile(r"^([0-9A-Fa-f])([0-9A-Fa-f])([0-9A-Fa-f]{2})([0-9A-Fa-f]{40})$")
+# [PET_EGG_COLLECTION] / [MOUNT_COLLECTION]: 1+1+2+28 = 32 chars per line
+# Lua format:
+#   pets:   "2{rarity:X}{id:02X}" + "{lvl:02X}{exp:02X}{eq:02X}{slot:02X}" + stats_20char
+#   eggs:   "3{rarity:X}00"       + "0000{eq:02X}{slot:02X}"               + "0000{seed:016X}"
+#   mounts: "4{rarity:X}{id:02X}" + "{lvl:02X}{exp:02X}{eq:02X}00"         + stats_20char
+COLLECTION_LINE = re.compile(r"^([0-9A-Fa-f])([0-9A-Fa-f])([0-9A-Fa-f]{2})([0-9A-Fa-f]{28})$")
 
 
 def parse_dump(text: str) -> PlayerModel:
@@ -264,10 +268,10 @@ class DumpParser:
 				player.pets.add_pet(pet)
 			elif kind == "3":
 				rarity = Rarity(int(m.group(2), 16))
-				seed = int(prog[8:24], 16)
-				egg = EggModel(rarity, seed)
-				egg.is_equipped = int(prog[12:14], 16) != 0
-				egg.equip_slot = int(prog[14:16], 16)
+				# prog layout (28 chars): 0000{eq:02X}{slot:02X} + 0000{seed:016X}
+				egg = EggModel(rarity, int(prog[12:28], 16))
+				egg.is_equipped = int(prog[4:6], 16) != 0
+				egg.equip_slot  = int(prog[6:8], 16)
 				player.pets.add_egg(egg)
 
 	def _parse_mount_collection(self, player: PlayerModel, lines: list[str]) -> None:

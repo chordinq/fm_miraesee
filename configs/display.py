@@ -5,13 +5,17 @@ Keys match SecondaryStatType member names exactly.
 """
 
 STAT_DISPLAY_NAMES: dict[str, str] = {
-	"SkillCooldownMulti":  "Skill Cooldown",
+	"CriticalChance":      "Critical Chance",
 	"CriticalMulti":       "Critical Damage",
+	"BlockChance":         "Block Chance",
+	"HealthRegen":         "Health Regen",
+	"LifeSteal":           "Life Steal",
 	"DoubleDamageChance":  "Double Chance",
+	"DamageMulti":         "Damage",
 	"MeleeDamageMulti":    "Melee Damage",
 	"RangedDamageMulti":   "Ranged Damage",
-	"HealthMulti":         "Health",
-	"DamageMulti":         "Damage",
+	"AttackSpeed":         "Attack Speed",
 	"SkillDamageMulti":    "Skill Damage",
-	"HealthRegen":         "Health Regen",
+	"SkillCooldownMulti":  "Skill Cooldown",
+	"HealthMulti":         "Health",
 }

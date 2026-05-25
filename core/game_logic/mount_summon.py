@@ -6,7 +6,7 @@ Per pull (C# MountSummonFinalizedAction$$Execute + MountExtensions$$CreateMount)
   rng  = RandomPCG(seed)               CreateFromSeed(seed)
   StatHelper$$RollStat bonus check     NextFixedD6 (1 PCG call)
   rarity = SummonLevelConfig$$RollRarity(rng)
-  mount_key = rng.choice(pool)         RandomPCG$$Choice -> len(pool) PCG calls
+  mount_key = pool[rng.next_int(N)]    RandomPCG$$Choice -> list[NextInt(N)]  (1 PCG call)
   rng.next_guid()                      RandomPCGExtensions$$NextGuid -> 4 PCG calls
   stats = generate_secondary_stats(    SecondaryStatHelper$$GenerateSecondaryStats
       stat_count, rng)                   -> len(available_types) + 1 PCG calls per stat
@@ -74,11 +74,11 @@ class MountSummonSimulator:
 			level_cfg = config.get_level_config(summon_model.level)
 			rarity    = level_cfg.roll_rarity(rng)
 
-			# PCG calls #3..(2+N): RandomPCG$$Choice from pool of N mounts
+			# PCG call #3: RandomPCG$$Choice -> list[NextInt(count)]  (1 PCG call)
 			pool      = _MOUNTS_BY_RARITY[rarity.name]
-			mount_key = rng.choice(pool)
+			mount_key = pool[rng.next_int(len(pool))]
 
-			# PCG calls (3+N)..(6+N): RandomPCGExtensions$$NextGuid (2 x NextULong)
+			# PCG calls #4..#7: RandomPCGExtensions$$NextGuid (2 x NextULong)
 			rng.next_guid()
 
 			# PCG calls (7+N)..: SecondaryStatHelper$$GenerateSecondaryStats
