@@ -53,8 +53,6 @@ class MountSummonSimulator:
 
 		if count not in config.possible_summon_count:
 			return SummonResult(SummonKind.Mounts, count, 0, success=False, error="invalid_summon_count")
-		if not config.can_afford(self.player, count):
-			return SummonResult(SummonKind.Mounts, count, 0, success=False, error="insufficient_currency")
 
 		config.spend(self.player, count)
 		pulls: list[SummonPullResult] = []

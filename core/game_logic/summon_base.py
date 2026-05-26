@@ -22,6 +22,8 @@ class SummonPullResult:
 	detail:          str
 	is_bonus:        bool                         = False
 	secondary_stats: Optional[SecondaryStatsModel] = None
+	egg_seed:        Optional[int]                = None
+	pet_idx:         Optional[int]                = None
 
 
 @dataclass

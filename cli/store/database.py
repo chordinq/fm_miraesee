@@ -1,0 +1,128 @@
+# cli/store/database.py
+"""SQLite-backed storage for summon results."""
+
+from __future__ import annotations
+
+import hashlib
+import sqlite3
+from datetime import datetime, timezone
+from pathlib import Path
+
+_DB_PATH = Path(__file__).parent.parent.parent / "data" / "miraesee.db"
+
+_DDL = """
+CREATE TABLE IF NOT EXISTS summon_records (
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id        TEXT    NOT NULL,
+    dump_hash         TEXT    NOT NULL,
+    kind              TEXT    NOT NULL,
+    batch_ts          TEXT    NOT NULL,
+    pull_global_idx   INTEGER NOT NULL DEFAULT 0,
+    pull_batch_idx    INTEGER NOT NULL,
+    rarity            TEXT    NOT NULL,
+    name              TEXT    NOT NULL,
+    is_bonus          INTEGER NOT NULL DEFAULT 0,
+    stat1_type        TEXT,
+    stat1_perf        REAL,
+    stat1_val         REAL,
+    stat2_type        TEXT,
+    stat2_perf        REAL,
+    stat2_val         REAL,
+    egg_seed          INTEGER,
+    pet_idx           INTEGER,
+    pet_type          TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_sr_kind    ON summon_records(kind);
+CREATE INDEX IF NOT EXISTS idx_sr_session ON summon_records(session_id);
+CREATE INDEX IF NOT EXISTS idx_sr_rarity  ON summon_records(rarity);
+CREATE INDEX IF NOT EXISTS idx_sr_s1type  ON summon_records(stat1_type);
+CREATE INDEX IF NOT EXISTS idx_sr_s2type  ON summon_records(stat2_type);
+"""
+
+
+def open_db() -> sqlite3.Connection:
+    _DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(str(_DB_PATH), check_same_thread=False)
+    conn.row_factory = sqlite3.Row
+    conn.executescript(_DDL)
+    conn.commit()
+    return conn
+
+
+def dump_hash(dump_text: str) -> str:
+    return hashlib.sha256(dump_text.encode()).hexdigest()[:16]
+
+
+def save_batch(
+    conn: sqlite3.Connection,
+    *,
+    session_id: str,
+    dump_hash_: str,
+    kind: str,
+    pulls: list,
+) -> None:
+    """Persist one summon batch (list of SummonPullResult) to the DB."""
+    from cli.domain.stats import stat_value
+    from cli.domain.display_names import display_name
+
+    ts = datetime.now(timezone.utc).isoformat()
+
+    cur = conn.execute(
+        "SELECT COALESCE(MAX(pull_global_idx)+1, 0) FROM summon_records WHERE session_id=?",
+        (session_id,),
+    )
+    base_idx: int = cur.fetchone()[0]
+
+    rows: list[tuple] = []
+    for i, pull in enumerate(pulls):
+        stats = pull.secondary_stats.stats if pull.secondary_stats else []
+        s1 = stats[0] if len(stats) > 0 else None
+        s2 = stats[1] if len(stats) > 1 else None
+
+        pet_type: str | None = None
+        if kind == "egg" and getattr(pull, "pet_idx", None) is not None:
+            try:
+                from configs import PET_MAPPING
+                from core.enums import PetBalancingType
+
+                key = f"{pull.rarity.value}_{pull.pet_idx}"
+                raw = PET_MAPPING.get(key, {}).get("Type", 0)
+                pet_type = PetBalancingType(raw).name
+            except Exception:
+                pass
+
+        rows.append((
+            session_id,
+            dump_hash_,
+            kind,
+            ts,
+            base_idx + i,
+            i,
+            pull.rarity.name,
+            display_name(pull.detail),
+            1 if pull.is_bonus else 0,
+            s1.stat_type.name if s1 else None,
+            round(s1.perfection * 100.0, 4) if s1 else None,
+            round(stat_value(s1.stat_type.name, s1.perfection), 4) if s1 else None,
+            s2.stat_type.name if s2 else None,
+            round(s2.perfection * 100.0, 4) if s2 else None,
+            round(stat_value(s2.stat_type.name, s2.perfection), 4) if s2 else None,
+            getattr(pull, "egg_seed", None),
+            getattr(pull, "pet_idx", None),
+            pet_type,
+        ))
+
+    conn.executemany("""
+        INSERT INTO summon_records (
+            session_id, dump_hash, kind, batch_ts,
+            pull_global_idx, pull_batch_idx, rarity, name, is_bonus,
+            stat1_type, stat1_perf, stat1_val,
+            stat2_type, stat2_perf, stat2_val,
+            egg_seed, pet_idx, pet_type
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+    """, rows)
+    conn.commit()
+
+
+def total_records(conn: sqlite3.Connection) -> int:
+    return conn.execute("SELECT COUNT(*) FROM summon_records").fetchone()[0]

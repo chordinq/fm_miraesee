@@ -15,4 +15,4 @@ class CurrencyModel:
 		self.currencies[currency_type] += amount
 
 	def sub_currency(self, currency_type: CurrencyType, amount: int):
-		self.currencies[currency_type] = max(0, self.currencies[currency_type] - amount)
+		self.currencies[currency_type] -= amount

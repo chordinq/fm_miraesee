@@ -44,8 +44,6 @@ class SkillSummonSimulator:
 
 		if count not in config.possible_summon_count:
 			return SummonResult(SummonKind.Skills, count, 0, success=False, error="invalid_summon_count")
-		if not config.can_afford(self.player, count):
-			return SummonResult(SummonKind.Skills, count, 0, success=False, error="insufficient_currency")
 
 		config.spend(self.player, count)
 		pulls: list[SummonPullResult] = []
@@ -70,19 +68,25 @@ class SkillSummonSimulator:
 
 		return SummonResult(SummonKind.Skills, count, len(pulls), pulls=pulls)
 
-	def _apply_pull(self, rarity, skill_name: str) -> SummonPullResult:
-		data        = SKILL_LIBRARY[skill_name]
+	def _resolve_skill(self, skill_name: str) -> tuple:
+		from core.enums import Rarity
+
+		data = SKILL_LIBRARY[skill_name]
 		combat_skill = CombatSkill[data["Type"]]
-		collection  = self.player.skills
+		for mapping in SKILL_MAPPING.values():
+			if mapping.get("Enum") == combat_skill.value:
+				return combat_skill, Rarity(mapping["Rarity"]), int(mapping["Idx"])
+		lib_rarity = data.get("Rarity", "Common")
+		return combat_skill, Rarity[lib_rarity], 0
+
+	def _apply_pull(self, rarity, skill_name: str) -> SummonPullResult:
+		combat_skill, skill_rarity, idx = self._resolve_skill(skill_name)
+		collection = self.player.skills
+		detail = skill_name.replace(" ", "")
 
 		if combat_skill in collection.skills:
 			collection.skills[combat_skill].add_shards(1)
-			return SummonPullResult(rarity, False, skill_name.replace(" ", ""))
+			return SummonPullResult(rarity, False, detail)
 
-		idx = data.get("Idx", 0)
-		for key, mapping in SKILL_MAPPING.items():
-			if mapping.get("Enum") == combat_skill.value:
-				idx = int(key.split("_")[1])
-				break
-		collection.skills[combat_skill] = SkillModel(rarity, idx)
-		return SummonPullResult(rarity, True, skill_name.replace(" ", ""))
+		collection.skills[combat_skill] = SkillModel(skill_rarity, idx)
+		return SummonPullResult(rarity, True, detail)

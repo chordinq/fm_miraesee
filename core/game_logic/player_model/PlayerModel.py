@@ -24,11 +24,9 @@ class PlayerModel:
 	def add_currency(self, currency_type: CurrencyType, amount: int):
 		self.currency.add_currency(currency_type, amount)
 
-	def sub_currency(self, currency_type: CurrencyType, amount: int) -> bool:
-		if self.currency.get_currency(currency_type) >= amount:
-			self.currency.sub_currency(currency_type, amount)
-			return True
-		return False
+	def sub_currency(self, currency_type: CurrencyType, amount: int) -> None:
+		"""Deduct currency; balance may go negative (simulator shows how much more is needed)."""
+		self.currency.sub_currency(currency_type, amount)
 
 	def get_tech_level(self, node_type: TechTreeNodeType) -> int:
 		return self.techtree.type_totals.get(node_type, 0)

@@ -26,8 +26,23 @@ class SkillModel:
 		mapping_data = SKILL_MAPPING.get(mapping_key)
 		return mapping_data.get("Kor") or mapping_data.get("Name", "Unknown")
 
-	def add_shards(self, amount: int):
+	def add_shards(self, amount: int) -> None:
 		self.shard_count += amount
+		self._apply_level_ups()
+
+	def _apply_level_ups(self) -> None:
+		from configs import SKILL_UPGRADE_LIBRARY
+
+		while True:
+			nxt = self.level + 1
+			entry = SKILL_UPGRADE_LIBRARY.get(str(nxt))
+			if not entry:
+				return
+			cost = int(entry["Shards"])
+			if self.shard_count < cost:
+				return
+			self.shard_count -= cost
+			self.level += 1
 
 	def __repr__(self):
 		return f"<Skill {self.name}({self.combat_skill.name}) | Lv.{self.level} | Shards:{self.shard_count}>"

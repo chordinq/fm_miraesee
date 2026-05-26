@@ -24,6 +24,7 @@ def _stat_ranges() -> dict:
 STAT_RANGES = _stat_ranges()
 
 SKILL_LIBRARY           = load_json("configs/parsed_configs/SkillLibrary.json")
+SKILL_UPGRADE_LIBRARY   = load_json("configs/parsed_configs/SkillUpgradeLibrary.json")
 PET_LIBRARY             = load_json("configs/parsed_configs/PetLibrary.json")
 MOUNT_LIBRARY           = load_json("configs/parsed_configs/MountLibrary.json")
 ITEM_BALANCING_LIBRARY  = load_json("configs/parsed_configs/ItemBalancingLibrary.json")

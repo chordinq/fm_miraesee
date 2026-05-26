@@ -16,9 +16,9 @@ seed, and the pet is created with stats when the egg is hatched.
 
 from __future__ import annotations
 
-from configs import PET_MAPPING
 from core.enums import SummonKind
 from core.random_pcg import RandomPCG
+from core.game_logic.pet_egg_hatch import predict_hatch
 from core.game_logic.player_model.EggModel import EggModel
 from core.game_logic.player_model.PlayerModel import PlayerModel
 from core.game_logic.summon_config import SummonConfig
@@ -37,8 +37,6 @@ class EggSummonSimulator:
 
 		if count not in config.possible_summon_count:
 			return SummonResult(SummonKind.Pets, count, 0, success=False, error="invalid_summon_count")
-		if not config.can_afford(self.player, count):
-			return SummonResult(SummonKind.Pets, count, 0, success=False, error="insufficient_currency")
 
 		config.spend(self.player, count)
 		pulls: list[SummonPullResult] = []
@@ -62,11 +60,16 @@ class EggSummonSimulator:
 			egg = EggModel(rarity, seed)
 			self.player.pets.add_egg(egg)
 
-			pet_name = next(
-				(d["Name"] for d in PET_MAPPING.values() if d.get("Rarity") == rarity.value),
-				f"Egg({rarity.name})",
-			)
-			pulls.append(SummonPullResult(rarity, True, pet_name.replace(" ", ""), is_bonus=is_bonus))
+			pred = predict_hatch(egg)
+			pulls.append(SummonPullResult(
+				rarity,
+				True,
+				pred.pet_name,
+				is_bonus=is_bonus,
+				secondary_stats=pred.secondary_stats,
+				egg_seed=seed,
+				pet_idx=pred.pet_idx,
+			))
 
 			config.advance_progress(summon_model)
 			config.advance_seed(summon_model)

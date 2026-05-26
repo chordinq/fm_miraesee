@@ -409,7 +409,6 @@ function main()
     
     local function append_data(data_table)
         for _, line in ipairs(data_table) do table.insert(final_output, line) end
-        table.insert(final_output, "")
     end
 
     local equip_model = read_qword(PlayerModel_Base_Addr + 0x220)
@@ -429,8 +428,9 @@ function main()
     append_data(extract_skills_collection(PlayerModel_Base_Addr))
     append_data(extract_pets_eggs_collection(PlayerModel_Base_Addr))
     append_data(extract_mounts_collection(PlayerModel_Base_Addr))
-
-    if final_output[#final_output] == "" then table.remove(final_output) end
+    table.insert(final_output, "[END]")
+    table.insert(final_output, "")
+    table.insert(final_output, "")
 
     local final_str = table.concat(final_output, "\n")
     gg.copyText(final_str)
