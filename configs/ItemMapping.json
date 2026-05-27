@@ -45,7 +45,7 @@
 		"Age": 0,
 		"Type": 2,
 		"Idx": 1,
-		"Name": "BearPaw"
+		"Name": "Bearpaw"
 	},
 	"0_3_0": {
 		"Age": 0,
@@ -1167,7 +1167,7 @@
 		"Age": 8,
 		"Type": 2,
 		"Idx": 0,
-		"Name": "Gripof Torment"
+		"Name": "Grip of Torment"
 	},
 	"8_2_1": {
 		"Age": 8,
@@ -1245,7 +1245,7 @@
 		"Age": 8,
 		"Type": 7,
 		"Idx": 0,
-		"Name": "Circleof Pain"
+		"Name": "Circle of Pain"
 	},
 	"8_7_1": {
 		"Age": 8,
@@ -1281,7 +1281,7 @@
 		"Age": 9,
 		"Type": 0,
 		"Idx": 4,
-		"Name": "Wizard Hat"
+		"Name": "Wizard's Hat"
 	},
 	"9_1_0": {
 		"Age": 9,
@@ -1353,7 +1353,7 @@
 		"Age": 9,
 		"Type": 5,
 		"Idx": 3,
-		"Name": "Siren Song"
+		"Name": "Siren's Song"
 	},
 	"9_5_4": {
 		"Age": 9,

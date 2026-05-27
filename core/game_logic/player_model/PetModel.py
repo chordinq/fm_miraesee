@@ -13,3 +13,7 @@ class PetModel:
 		self.equip_slot = 0
 		
 		self.secondary_stats = SecondaryStatsModel()
+
+	@property
+	def perfection(self) -> float:
+		return self.secondary_stats.perfection

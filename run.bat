@@ -1,5 +1,4 @@
-@echo off
-cd /d "%~dp0"
-chcp 65001 > nul
-set PYTHONUTF8=1
-python main.py %*
+@echo off
+cd /d "%~dp0"
+set PYTHONUTF8=1
+start "" pythonw "%~dp0main.py" %*

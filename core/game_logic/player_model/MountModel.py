@@ -12,3 +12,7 @@ class MountModel:
 		self.is_equipped = False
 		
 		self.secondary_stats = SecondaryStatsModel()
+
+	@property
+	def perfection(self) -> float:
+		return self.secondary_stats.perfection

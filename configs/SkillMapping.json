@@ -27,7 +27,7 @@
 		"Rarity": 1,
 		"Idx": 1,
 		"Enum": 3,
-		"Name": "Shuriken"
+		"Name": "Shurikens"
 	},
 	"1_2": {
 		"Rarity": 1,
@@ -45,7 +45,7 @@
 		"Rarity": 2,
 		"Idx": 1,
 		"Enum": 14,
-		"Name": "Rain of Arrows"
+		"Name": "Arrow Rain"
 	},
 	"2_2": {
 		"Rarity": 2,

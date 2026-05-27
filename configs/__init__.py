@@ -3,6 +3,7 @@ from .config import (
 	load_json,
 	STAT_RANGES,
 	ENG_KOR_MAPPING,
+	UI_KOR_MAPPING,
 	ITEM_MAPPING,
 	MOUNT_MAPPING,
 	PET_MAPPING,

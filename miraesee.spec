@@ -13,7 +13,9 @@ a = Analysis(
     datas=[
         # JSON config files must travel with the exe
         ("configs/parsed_configs",  "configs/parsed_configs"),
+        ("configs/localization",    "configs/localization"),
         ("configs/*.json",          "configs"),
+        ("assets/Textures",         "assets/Textures"),
     ],
     hiddenimports=[
         "prompt_toolkit",
@@ -45,5 +47,5 @@ exe = EXE(
     upx_exclude=[],
     runtime_tmpdir=None,
     console=True,           # CLI app — keep the console window
-    icon="icon/sunglass_inq.ico",
+    icon="assets/icon/sunglass_inq.ico",
 )

@@ -16,32 +16,9 @@ if _ROOT not in sys.path:
 
 
 def main() -> None:
-    if sys.platform == "win32":
-        import ctypes
-        k = ctypes.windll.kernel32
-        k.SetConsoleMode(k.GetStdHandle(-11), 7)
+    from ui.app import run
 
-    from cli.core.terminal import set_theme, drain_stdin
-    from cli.data.dump_input import read_dump_paste
-    from cli.data.dump_welcome import show_dump_screen
-    from cli.services.build_session import rebuild_session
-    from cli.ui.app import run
-    from cli.theme import dim
-
-    set_theme()
-    show_dump_screen()
-    dump = read_dump_paste()
-    drain_stdin()
-
-    if not dump.strip():
-        print(dim("\n  No dump. Exiting.\n"))
-        return
-
-    session = rebuild_session(dump)
-    if session is None:
-        return
-
-    run(session)
+    run()
 
 
 if __name__ == "__main__":

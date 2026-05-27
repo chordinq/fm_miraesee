@@ -9,11 +9,21 @@ def load_json(filepath: str) -> dict:
 		return json.load(f)
 
 
-ENG_KOR_MAPPING  = load_json("configs/EngKorMapping.json")
+def _load_json_optional(filepath: str) -> dict:
+	try:
+		return load_json(filepath)
+	except FileNotFoundError:
+		return {}
+
+
+ENG_KOR_MAPPING  = _load_json_optional("configs/EngKorMapping.json")
+UI_KOR_MAPPING   = _load_json_optional("configs/UiKorMapping.json")
 ITEM_MAPPING     = load_json("configs/ItemMapping.json")
+AUTO_ITEM_MAPPING = load_json("configs/AutoItemMapping.json")
 MOUNT_MAPPING    = load_json("configs/MountMapping.json")
 PET_MAPPING      = load_json("configs/PetMapping.json")
 SKILL_MAPPING    = load_json("configs/SkillMapping.json")
+MANUAL_SPRITE_MAPPING = load_json("configs/ManualSpriteMapping.json")
 
 
 def _stat_ranges() -> dict:
