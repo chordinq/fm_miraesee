@@ -10,26 +10,33 @@ function read_dword(addr)
     return t[1].value and tonumber(t[1].value) or 0
 end
 
-function extract_stats_20char(stats_ptr)
-    local stat1, stat2 = "0000000000", "0000000000"
+function extract_stats_blob(stats_ptr, num_chunks)
+    num_chunks = num_chunks or 2
+    local chunks = {}
+    for i = 1, num_chunks do
+        chunks[i] = "0000000000"
+    end
     if stats_ptr ~= 0 then
         local dict_ptr = read_qword(stats_ptr + 0x10)
         if dict_ptr ~= 0 then
             local count = read_dword(dict_ptr + 0x20)
             local entries = read_qword(dict_ptr + 0x18)
             if entries ~= 0 and count > 0 then
-                local k1 = read_dword(entries + 0x30)
-                local v1 = read_qword(entries + 0x40)
-                stat1 = string.format("1%X%08X", k1 % 16, v1 % 4294967296)
-                if count > 1 then
-                    local k2 = read_dword(entries + 0x30 + 0x28)
-                    local v2 = read_qword(entries + 0x40 + 0x28)
-                    stat2 = string.format("1%X%08X", k2 % 16, v2 % 4294967296)
+                local limit = math.min(count, num_chunks)
+                for i = 0, limit - 1 do
+                    local off = i * 0x28
+                    local k = read_dword(entries + 0x30 + off)
+                    local v = read_qword(entries + 0x40 + off)
+                    chunks[i + 1] = string.format("1%X%08X", k % 16, v % 4294967296)
                 end
             end
         end
     end
-    return stat1 .. stat2
+    return table.concat(chunks)
+end
+
+function extract_stats_20char(stats_ptr)
+    return extract_stats_blob(stats_ptr, 2)
 end
 
 function extract_summon_meta(summon_ptr, asc_ptr, is_forge)
@@ -272,7 +279,7 @@ function extract_equipment(equip_model)
             local header = string.format("0%X%X%X", read_dword(id_ptr + 0x10) % 16, read_dword(id_ptr + 0x14) % 16, read_dword(id_ptr + 0x18) % 16)
             local flags = 1 + ((read_dword(item_ptr + 0x2C) & 0xFF) * 2) + ((read_dword(item_ptr + 0x2D) & 0xFF) * 4)
             local prog = string.format("%02X00%04X", read_dword(item_ptr + 0x28) % 256, flags)
-            table.insert(out, header .. prog .. extract_stats_20char(read_qword(item_ptr + 0x30)))
+            table.insert(out, header .. prog .. extract_stats_blob(read_qword(item_ptr + 0x30), 4))
         end
     end
     return out

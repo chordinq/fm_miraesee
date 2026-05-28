@@ -7,6 +7,8 @@ from pathlib import Path
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap
 
+from ui.services.pixmap_util import scale_pixmap_smooth
+
 from configs.config import AUTO_ITEM_MAPPING
 from core.game_logic.player_model.ItemModel import ItemModel
 from ui.services.item_display import item_mapping_key
@@ -67,16 +69,20 @@ def _load_sprite_pixmap(sprite_name: str) -> QPixmap | None:
     return pix if not pix.isNull() else None
 
 
-def item_icon_pixmap(item: ItemModel, size: int) -> QPixmap | None:
+def item_icon_pixmap(
+    item: ItemModel,
+    logical_size: int,
+    *,
+    device_pixel_ratio: float = 1.0,
+) -> QPixmap | None:
     sprite = sprite_name_for_item(item)
     if not sprite:
         return None
     base = _load_sprite_pixmap(sprite)
     if base is None or base.isNull():
         return None
-    return base.scaled(
-        size,
-        size,
-        Qt.AspectRatioMode.KeepAspectRatio,
-        Qt.TransformationMode.SmoothTransformation,
+    return scale_pixmap_smooth(
+        base,
+        logical_size,
+        device_pixel_ratio=device_pixel_ratio,
     )

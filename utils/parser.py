@@ -18,9 +18,14 @@ from core.game_logic.player_model.MountModel import MountModel
 from core.game_logic.player_model.PetModel import PetModel
 from core.game_logic.player_model.PlayerModel import PlayerModel
 from core.game_logic.player_model.SkillModel import SkillModel
+from core.game_logic.player_model.SecondaryStatsModel import SecondaryStatsModel
 from core.game_logic.player_model.StatModel import StatModel
 
 _U32_DENOM = 4294967296
+_STATS_CHUNK_LEN = 10
+_MAX_COLLECTION_STATS = 2
+_MAX_EQUIPMENT_STATS = 4
+_EQUIPMENT_STATS_BLOB_LEN = _STATS_CHUNK_LEN * _MAX_EQUIPMENT_STATS
 
 
 def _build_techtree_lookup() -> dict[tuple[int, int], tuple[TechTreeNodeType, int]]:
@@ -52,6 +57,27 @@ def _build_techtree_lookup() -> dict[tuple[int, int], tuple[TechTreeNodeType, in
 
 
 _TECHTREE_LOOKUP: dict[tuple[int, int], tuple[TechTreeNodeType, int]] = _build_techtree_lookup()
+
+
+def _parse_secondary_stats_blob(
+	stats_blob: str,
+	target: SecondaryStatsModel,
+	*,
+	max_stats: int = _MAX_COLLECTION_STATS,
+) -> None:
+	"""Parse 20-char tail (2 × 10-char chunks) from collection / equipment lines."""
+	for s_idx in range(max_stats):
+		start = s_idx * _STATS_CHUNK_LEN
+		chunk = stats_blob[start : start + _STATS_CHUNK_LEN]
+		if chunk == "0000000000" or len(chunk) < _STATS_CHUNK_LEN:
+			continue
+		try:
+			stat_type = SecondaryStatType(int(chunk[1], 16))
+			raw_val = int(chunk[2:_STATS_CHUNK_LEN], 16)
+		except (ValueError, KeyError):
+			continue
+		perfection = raw_val / _U32_DENOM if raw_val else 0.0
+		target.add_stat(StatModel(stat_type, perfection))
 
 BLOCK_HEADER    = re.compile(r"^\[([A-Z_]+)\]$")
 SUMMON_META     = re.compile(r"^([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{16})")
@@ -265,6 +291,7 @@ class DumpParser:
 				pet.experience = int(prog[2:4], 16)
 				pet.is_equipped = int(prog[4:6], 16) != 0
 				pet.equip_slot = int(prog[6:8], 16)
+				_parse_secondary_stats_blob(prog[8:28], pet.secondary_stats)
 				player.pets.add_pet(pet)
 			elif kind == "3":
 				rarity = Rarity(int(m.group(2), 16))
@@ -286,6 +313,7 @@ class DumpParser:
 			mount.level = int(prog[0:2], 16)
 			mount.experience = int(prog[2:4], 16)
 			mount.is_equipped = int(prog[4:6], 16) != 0
+			_parse_secondary_stats_blob(prog[8:28], mount.secondary_stats)
 			player.mounts.add_mount(mount)
 
 	def _parse_hidden_levels(self, player: PlayerModel, lines: list[str]) -> None:
@@ -332,14 +360,17 @@ class DumpParser:
 			level = int(line[4:6], 16)
 			item = ItemModel(ItemAge(age), item_type, idx)
 			item.level = level
-			stats_blob = line[12:32]
-			for s_idx in range(2):
-				chunk = stats_blob[s_idx * 10 : (s_idx + 1) * 10]
-				if chunk == "0000000000":
-					continue
-				stat_type = SecondaryStatType(int(chunk[1], 16))
-				raw_val = int(chunk[2:10], 16)
-				perfection = raw_val / _U32_DENOM if raw_val else 0.0
-				item.secondary_stats.add_stat(StatModel(stat_type, perfection))
+			stats_end = 12 + _EQUIPMENT_STATS_BLOB_LEN
+			if len(line) >= stats_end:
+				stats_blob = line[12:stats_end]
+				max_stats = _MAX_EQUIPMENT_STATS
+			else:
+				stats_blob = line[12:32]
+				max_stats = _MAX_COLLECTION_STATS
+			_parse_secondary_stats_blob(
+				stats_blob,
+				item.secondary_stats,
+				max_stats=max_stats,
+			)
 			if slot_idx < len(slot_order):
 				player.equipment.equip_item(item)

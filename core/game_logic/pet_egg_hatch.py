@@ -3,29 +3,34 @@
 Pet egg hatch prediction.
 
 C# PetEggHatchFinalizedAction$$Execute flow:
-  1. Filter PetConfig (PetLibrary) entries where PetId.Rarity == egg.rarity
-  2. Select PetId keys -> ToList  (sorted by PetId.Id via GameConfig ordering)
-  3. rng = RandomPCG.CreateFromSeed(egg.seed)
-  4. pet = PetExtensions.CreatePet(player, pet_id_list, rng)
-        -> rng.NextInt(count)                : select pet type  (1 PCG call)
-        -> rng.NextGuid()                    : pet unique ID     (4 PCG calls)
-        -> generate_secondary_stats(n, rng)  : secondary stats
-             -> rng.NextInt(available)       : stat type        (1 PCG call each)
-             -> rng.NextF64()               : perfection        (1 PCG call each)
+  1. Filter PetConfig where PetId.Rarity == egg.rarity -> ToList<PetId> (config order)
+  2. rng = RandomPCG.CreateFromSeed(egg.seed)   // PlayerEggModel+0x38
+  3. PetExtensions.CreatePet(player, pet_id_list, rng):
+        Choice<PetId>(list)  -> IList: NextInt(count) + indexer  (1 PCG call)
+        CreatePet(player, petId, rng):
+          NextGuid()  (4 PCG calls)
+          stat_count from SecondaryStatPetUnlockLibrary (see _secondary_stat_count)
+          SecondaryStatHelper.GenerateSecondaryStats:
+            Choice<SecondaryStatType> per stat  (1 PCG + NextF64 each)
 
-Pet type/stat prediction is fully deterministic from the stored egg seed.
+CreateEggModel also calls NextGuid from the same seed at summon time, but hatch
+re-initializes PCG from the stored seed, so that does not shift the hatch stream.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import TYPE_CHECKING
 
 from configs import PET_LIBRARY, PET_MAPPING, SECONDARY_STAT_PET_UNLOCK
-from core.enums import Rarity, RARITY_NAMES
+from core.enums import AscensionLevel, Rarity, RARITY_NAMES
 from core.random_pcg import RandomPCG
 from core.game_logic.player_model.EggModel import EggModel
 from core.game_logic.player_model.SecondaryStatsModel import SecondaryStatsModel
 from core.game_logic.secondary_stats import generate_secondary_stats
+
+if TYPE_CHECKING:
+	from core.game_logic.player_model.PlayerModel import PlayerModel
 
 
 @dataclass
@@ -39,11 +44,11 @@ class HatchPrediction:
 
 def _build_pets_by_rarity() -> dict[str, list[dict]]:
 	"""
-	Build pools of pet library entries grouped by rarity, sorted by PetId.Id.
-	Mirrors C# GameConfig<PetId, PetConfig> iteration order.
+	Build per-rarity pools in PetLibrary JSON / GameConfig registration order.
+	LINQ Where+Select+ToList preserves dictionary enumeration order (no OrderBy).
 	"""
 	pools: dict[str, list[dict]] = {name: [] for name in RARITY_NAMES}
-	for data in sorted(PET_LIBRARY.values(), key=lambda v: v["PetId"]["Id"]):
+	for data in PET_LIBRARY.values():
 		rarity_name = data["PetId"]["Rarity"]
 		if rarity_name in pools:
 			pools[rarity_name].append(data)
@@ -56,29 +61,44 @@ _PET_STAT_COUNT: dict[str, int] = {
 	k: v["NumberOfSecondStats"] for k, v in SECONDARY_STAT_PET_UNLOCK.items()
 }
 
+_UNLOCK_BY_RARITY_ORDER: list[dict] = list(SECONDARY_STAT_PET_UNLOCK.values())
 
-def predict_hatch(egg: EggModel) -> HatchPrediction:
+
+def _secondary_stat_count(player: "PlayerModel | None", pet_rarity: Rarity) -> int:
+	"""
+	Matches PetExtensions$$CreatePet stat-count branch:
+	  PetsAscensionLevel < 1  -> get_Item(chosen PetId.Rarity)
+	  else                    -> Enumerable.Last(SecondaryStatPetUnlockLibrary)
+	"""
+	if player is not None and player.pets.ascension_model.current_level >= AscensionLevel.Mega:
+		if _UNLOCK_BY_RARITY_ORDER:
+			return _UNLOCK_BY_RARITY_ORDER[-1]["NumberOfSecondStats"]
+		return 1
+	return _PET_STAT_COUNT.get(pet_rarity.name, 1)
+
+
+def predict_hatch(egg: EggModel, player: "PlayerModel | None" = None) -> HatchPrediction:
 	"""
 	Predict the pet type and secondary stats that will result from hatching this egg.
 
 	Uses the seed stored in the EggModel (written at summon time, read at hatch time).
+	Pass ``player`` so ascended accounts use the same stat-count rule as the game.
 	"""
 	rng  = RandomPCG(egg.seed)
 	pool = _PETS_BY_RARITY[egg.rarity.name]
 	if not pool:
 		raise ValueError(f"No pets found for rarity {egg.rarity.name}")
 
-	# PetExtensions$$CreatePet overload 1: rng.Choice(petIdList)
-	# C# uses list[NextInt(count)] -- 1 PCG call
+	# PetExtensions$$CreatePet(list): RandomPCG.Choice on IList -> NextInt + indexer
 	chosen = pool[rng.next_int(len(pool))]
 	pet_id = chosen["PetId"]["Id"]
 
-	# PlayerPetModel constructor generates a MetaplayUUID via rng.NextGuid() -- 4 PCG calls
+	# PetExtensions$$CreatePet(petId): RandomPCGExtensions.NextGuid before stats
 	rng.next_guid()
 
-	stat_count = _PET_STAT_COUNT.get(egg.rarity.name, 1)
+	stat_count = _secondary_stat_count(player, egg.rarity)
 
-	# SecondaryStatHelper$$GenerateSecondaryStats (uses next_int(N) for type, next_f64 for perfection)
+	# SecondaryStatHelper$$GenerateSecondaryStats: Choice on IList per stat
 	secondary = generate_secondary_stats(stat_count, rng)
 
 	# Resolve display name from PetMapping

@@ -60,7 +60,7 @@ class EggSummonSimulator:
 			egg = EggModel(rarity, seed)
 			self.player.pets.add_egg(egg)
 
-			pred = predict_hatch(egg)
+			pred = predict_hatch(egg, self.player)
 			pulls.append(SummonPullResult(
 				rarity,
 				True,

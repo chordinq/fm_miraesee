@@ -3,21 +3,21 @@ from __future__ import annotations
 
 import sys
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QStackedWidget, QVBoxLayout, QWidget
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QMainWindow
 
-from ui.constants.colors import BG
-from ui.constants.layout import (
+from ui.views.game_root_view import GameRootView
+from ui.services.locale import locale_service
+from ui.theme.colors import BG
+from ui.theme.fonts import apply_app_font, register_app_fonts
+from ui.theme.metrics import (
     START_FULLSCREEN,
     WINDOW_DEFAULT_H,
     WINDOW_DEFAULT_W,
     WINDOW_MIN_H,
     WINDOW_MIN_W,
 )
-from ui.constants.styles import global_stylesheet
-from ui.services.locale import locale_service
-from ui.services.session import session_from_dump
-from ui.views.dump_view import DumpView
-from ui.views.hub_view import HubView
+from ui.theme.stylesheet import global_stylesheet
 
 
 class MainWindow(QMainWindow):
@@ -27,46 +27,24 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(WINDOW_MIN_W, WINDOW_MIN_H)
         self.resize(WINDOW_DEFAULT_W, WINDOW_DEFAULT_H)
 
-        root = QWidget()
-        root.setObjectName("GameRoot")
-        self.setCentralWidget(root)
-        layout = QVBoxLayout(root)
-        layout.setContentsMargins(0, 0, 0, 0)
-        layout.setSpacing(0)
-
-        self._stack = QStackedWidget()
-        layout.addWidget(self._stack)
-
-        self._dump = DumpView()
-        self._dump.start_requested.connect(self._on_start)
-        self._dump.quit_requested.connect(self.close)
-        self._stack.addWidget(self._dump)
-        self._stack.setCurrentWidget(self._dump)
-
-    def _on_start(self) -> None:
-        self._dump.set_status("Loading dump…")
-        QApplication.processEvents()
-        try:
-            clip = QApplication.clipboard().text()
-            if not clip.strip():
-                self._dump.set_status("Clipboard is empty — copy the dump first.")
-                return
-            session = session_from_dump(clip)
-            if session is None:
-                self._dump.set_status("Failed to parse dump.")
-                return
-            hub = HubView(session)
-            self._stack.addWidget(hub)
-            self._stack.setCurrentWidget(hub)
-        except Exception as exc:
-            self._dump.set_status(f"Error: {exc}")
+        self._root = GameRootView()
+        self._root.set_quit_handler(self.close)
+        self.setCentralWidget(self._root)
 
 
 def run() -> None:
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough,
+    )
     app = QApplication(sys.argv)
-    _ = locale_service.language  # load persisted language before first paint
+    register_app_fonts()
+    _ = locale_service.language
+    apply_app_font(app)
     app.setStyle("Fusion")
     app.setStyleSheet(global_stylesheet())
+    locale_service.changed.connect(
+        lambda: (apply_app_font(app), app.setStyleSheet(global_stylesheet()))
+    )
 
     win = MainWindow()
     win.setStyleSheet(f"QMainWindow {{ background-color: {BG}; }}")

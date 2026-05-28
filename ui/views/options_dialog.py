@@ -11,7 +11,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
 )
 
-from ui.constants.styles import muted_button_style, primary_button_style
+from ui.theme.builders import muted_button_style, primary_button_style
 from ui.services.locale import Language, locale_service
 from ui.services.localization import LANGUAGE_NATIVE_LABELS, ui_text
 

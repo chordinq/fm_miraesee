@@ -16,12 +16,13 @@ Per pull (C# MountSummonFinalizedAction$$Execute + MountExtensions$$CreateMount)
 from __future__ import annotations
 
 from configs import MOUNT_LIBRARY, MOUNT_MAPPING, SECONDARY_STAT_PET_UNLOCK
-from core.enums import Rarity, SummonKind
+from core.enums import Rarity, SummonKind, TechTreeNodeType
 from core.enums import RARITY_NAMES
 from core.random_pcg import RandomPCG
 from core.game_logic.player_model.MountModel import MountModel
 from core.game_logic.player_model.PlayerModel import PlayerModel
 from core.game_logic.summon_config import SummonConfig
+from core.game_logic.summon_cost import can_afford_summon_batch, spend_summon_batch
 from core.game_logic.stat_helper import StatHelper
 from core.game_logic.secondary_stats import generate_secondary_stats
 from core.game_logic.summon_base import SummonPullResult, SummonResult
@@ -54,7 +55,12 @@ class MountSummonSimulator:
 		if count not in config.possible_summon_count:
 			return SummonResult(SummonKind.Mounts, count, 0, success=False, error="invalid_summon_count")
 
-		config.spend(self.player, count)
+		if not can_afford_summon_batch(
+			self.player, config, TechTreeNodeType.MountSummonCost, count
+		):
+			return SummonResult(SummonKind.Mounts, count, 0, success=False, error="insufficient_currency")
+
+		spend_summon_batch(self.player, config, TechTreeNodeType.MountSummonCost, count)
 		pulls: list[SummonPullResult] = []
 		total_target = count
 		pull_idx     = 0

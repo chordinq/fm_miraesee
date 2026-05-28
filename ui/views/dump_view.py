@@ -4,8 +4,8 @@ from __future__ import annotations
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import QLabel, QPushButton, QVBoxLayout, QWidget
 
-from ui.constants.layout import DUMP_BTN_SPACING, DUMP_BTN_WIDTH, DUMP_CENTER_SPACING
-from ui.constants.styles import (
+from ui.theme.metrics import DUMP_BTN_SPACING, DUMP_BTN_WIDTH, DUMP_CENTER_SPACING
+from ui.theme.builders import (
     dump_quit_button_style,
     dump_start_button_style,
     muted_label_style,

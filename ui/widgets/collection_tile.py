@@ -1,77 +1,65 @@
-# ui/widgets/collection_tile.py — icon tile for skill / egg grids
+# ui/widgets/collection_tile.py — egg tile (icon + 알 / Egg / 卵 caption)
 from __future__ import annotations
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QLabel, QVBoxLayout, QWidget
 
-from ui.constants.layout import COLLECTION_ICON_SIZE, COLLECTION_TILE_H, COLLECTION_TILE_W
-from ui.constants.styles import collection_tile_style
+from ui.widgets.selectable_widget import SelectableWidget
+
+from ui.theme.metrics import (
+    EGG_ICON_SIZE,
+    EGG_ICON_TOP_MARGIN,
+    EGG_TILE_W,
+    TILE_CAPTION_OVERLAP,
+)
+from ui.theme.builders import collection_tile_style
 from ui.services.collection_entries import CollectionTileData
+from ui.widgets.icon_with_level import IconWithLevel
+from ui.widgets.outlined_label import tile_caption_label
 
 
-class CollectionTile(QWidget):
+class CollectionTile(SelectableWidget):
     def __init__(self, parent: QWidget | None = None) -> None:
         super().__init__(parent)
         self.setObjectName("CollectionTile")
-        self._tile_w = COLLECTION_TILE_W
-        self._tile_h = COLLECTION_TILE_H
-        self._icon_size = COLLECTION_ICON_SIZE
-        self._icon_area_h = COLLECTION_ICON_SIZE
-        self._icon_top_margin = 3
-        self.setFixedSize(self._tile_w, self._tile_h)
+        self._tile_w = EGG_TILE_W
+        self._tile_h = 80
+        self._icon_size = EGG_ICON_SIZE
+        self._icon_top_margin = EGG_ICON_TOP_MARGIN
 
-        self._layout = QVBoxLayout(self)
-        self._layout.setContentsMargins(3, self._icon_top_margin, 3, 2)
-        self._layout.setSpacing(1)
-
-        self._icon_host = QWidget()
-        self._icon_host.setStyleSheet("background: transparent;")
-        host_layout = QVBoxLayout(self._icon_host)
-        host_layout.setContentsMargins(0, 0, 0, 0)
-        host_layout.setSpacing(0)
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(0, self._icon_top_margin, 0, 0)
+        layout.setSpacing(0)
+        layout.setAlignment(Qt.AlignmentFlag.AlignHCenter)
 
         self._icon = QLabel()
         self._icon.setObjectName("CollectionIcon")
         self._icon.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        host_layout.addWidget(self._icon, 0, Qt.AlignmentFlag.AlignCenter)
-        self._layout.addWidget(self._icon_host, 0, Qt.AlignmentFlag.AlignHCenter)
-
-        self._name = QLabel("—")
-        self._name.setObjectName("CollectionName")
-        self._name.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self._name.setWordWrap(True)
-        self._layout.addWidget(self._name)
-
-        self._meta = QLabel("")
-        self._meta.setObjectName("CollectionMeta")
-        self._meta.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self._layout.addWidget(self._meta)
-
-        self._apply_geometry()
-
-    def _apply_geometry(self) -> None:
-        self.setFixedSize(self._tile_w, self._tile_h)
-        self._layout.setContentsMargins(0, self._icon_top_margin, 0, 2)
-        self._icon_host.setFixedSize(self._icon_size, self._icon_area_h)
         self._icon.setFixedSize(self._icon_size, self._icon_size)
+
+        self._caption = tile_caption_label()
+        self._caption.setObjectName("EggCaption")
+
+        self._icon_stack = IconWithLevel(
+            self._icon,
+            self._caption,
+            tile_w=self._tile_w,
+            icon_size=self._icon_size,
+            overlap=TILE_CAPTION_OVERLAP,
+        )
+        layout.addWidget(self._icon_stack, 0, Qt.AlignmentFlag.AlignHCenter)
 
     def set_data(self, data: CollectionTileData) -> None:
         if data.tile_w is not None:
             self._tile_w = data.tile_w
-        if data.tile_h is not None:
-            self._tile_h = data.tile_h
         if data.icon_size is not None:
             self._icon_size = data.icon_size
-        if data.icon_area_h is not None:
-            self._icon_area_h = data.icon_area_h
-        else:
-            self._icon_area_h = self._icon_size
         if data.icon_top_margin is not None:
-            self._icon_top_margin = data.icon_top_margin
-        self._apply_geometry()
+            self._icon_top_margin = EGG_ICON_TOP_MARGIN
 
         filled = data.pixmap is not None
         self.setStyleSheet(collection_tile_style(border_color=data.border_color, filled=filled))
+
         if data.pixmap is not None:
             self._icon.setStyleSheet("")
             self._icon.setPixmap(data.pixmap)
@@ -79,19 +67,17 @@ class CollectionTile(QWidget):
         else:
             self._icon.clear()
             self._icon.setText("·")
-            self._icon.setStyleSheet(f"color: {data.border_color}; font-size: 16px; background: transparent;")
-        if data.name:
-            self._name.setText(data.name)
-            self._name.show()
-        else:
-            self._name.hide()
-        self._meta.setText(data.meta)
-        self._meta.setVisible(bool(data.meta))
-        if data.meta and not data.name:
-            self._meta.setStyleSheet(
-                "color: #ffffff; font-size: 11px; font-weight: bold; background: transparent;"
+            self._icon.setStyleSheet(
+                f"color: {data.border_color}; font-size: 16px; background: transparent;"
             )
-        else:
-            self._meta.setStyleSheet(
-                "color: #8a8a8a; font-size: 8px; background: transparent;"
-            )
+
+        self._caption.setText(data.meta)
+        self._caption.setVisible(bool(data.meta))
+
+        cap_w = self._caption.caption_width()
+        stack_w = max(self._tile_w, cap_w)
+        self._icon_stack.set_tile_width(stack_w)
+
+        self._tile_w = stack_w
+        self._tile_h = self._icon_top_margin + self._icon_stack.height() + 2
+        self.setFixedSize(self._tile_w, self._tile_h)

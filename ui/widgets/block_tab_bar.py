@@ -4,11 +4,20 @@ from __future__ import annotations
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import QHBoxLayout, QPushButton, QWidget
 
-from ui.constants.colors import DOMAIN_COLORS
-from ui.constants.domains import DOMAIN_TAB_LOC_IDS, DOMAINS
-from ui.constants.layout import GEAR_TAB_WIDTH, TAB_BAR_HEIGHT
-from ui.constants.styles import tab_button_style
-from ui.services.localization import translate_id
+from ui.theme.colors import DOMAIN_COLORS
+from ui.theme.config.domains import DOMAIN_SUMMON_KIND, DOMAIN_TAB_LOC_IDS, DOMAINS
+from ui.theme.fonts import TEXT_STYLE_TAB
+from ui.theme.metrics import GEAR_TAB_WIDTH, TAB_BAR_HEIGHT
+from ui.theme.builders import tab_button_style
+from ui.services.localization import summon_kind_display_name, translate_id
+
+
+def _tab_label(domain: str) -> str:
+    kind = DOMAIN_SUMMON_KIND.get(domain)
+    if kind is not None:
+        return summon_kind_display_name(kind)
+    loc_id = DOMAIN_TAB_LOC_IDS.get(domain)
+    return translate_id(loc_id) if loc_id is not None else domain
 
 
 class BlockTabBar(QWidget):
@@ -26,13 +35,14 @@ class BlockTabBar(QWidget):
         row.setContentsMargins(0, 0, 0, 0)
         row.setSpacing(0)
 
+        self._tab_font = TEXT_STYLE_TAB.font()
+
         self._buttons: dict[str, QPushButton] = {}
         for key in DOMAINS:
-            loc_id = DOMAIN_TAB_LOC_IDS[key]
-            btn = QPushButton(translate_id(loc_id))
+            btn = QPushButton(_tab_label(key))
+            self._apply_tab_font(btn)
             btn.setCheckable(True)
             btn.setProperty("domain", key)
-            btn.setProperty("loc_id", loc_id)
             btn.setCursor(Qt.CursorShape.PointingHandCursor)
             btn.clicked.connect(self._on_tab_click)
             btn.setFixedHeight(TAB_BAR_HEIGHT)
@@ -43,6 +53,7 @@ class BlockTabBar(QWidget):
             self._buttons[key] = btn
 
         gear = QPushButton("⚙")
+        self._apply_tab_font(gear)
         gear.setFixedSize(GEAR_TAB_WIDTH, TAB_BAR_HEIGHT)
         gear.setCursor(Qt.CursorShape.PointingHandCursor)
         gear.clicked.connect(self.options_pressed.emit)
@@ -50,6 +61,10 @@ class BlockTabBar(QWidget):
         row.addWidget(gear)
 
         self.set_active("profile")
+
+    def _apply_tab_font(self, btn: QPushButton) -> None:
+        """Re-apply bold after QSS — global * font can override setFont on Windows."""
+        btn.setFont(self._tab_font)
 
     def _on_tab_click(self) -> None:
         btn = self.sender()
@@ -69,11 +84,11 @@ class BlockTabBar(QWidget):
                     domain_color=DOMAIN_COLORS.get(key),
                 )
             )
+            self._apply_tab_font(btn)
 
     def refresh_locale(self) -> None:
         active = next((k for k, b in self._buttons.items() if b.isChecked()), "profile")
         for key, btn in self._buttons.items():
-            loc_id = DOMAIN_TAB_LOC_IDS.get(key)
-            if loc_id is not None:
-                btn.setText(translate_id(loc_id))
+            btn.setText(_tab_label(key))
+            self._apply_tab_font(btn)
         self.set_active(active)

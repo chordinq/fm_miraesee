@@ -20,7 +20,7 @@ HATCH_SLOT_COUNT = 4
 
 
 def _in_hatch_slot(egg: EggModel) -> bool:
-	"""In-game hatch incubator: is_equipped + slot index 0..3."""
+	"""In-game hatch incubator: equipped flag + slot index 0..3."""
 	return egg.is_equipped and 0 <= egg.equip_slot < HATCH_SLOT_COUNT
 
 

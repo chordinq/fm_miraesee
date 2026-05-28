@@ -4,8 +4,9 @@ from __future__ import annotations
 from PySide6.QtCore import Signal
 from PySide6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QWidget
 
-from ui.constants.layout import FOOTER_HEIGHT, FOOTER_MARGIN_H, FOOTER_MARGIN_V
-from ui.constants.styles import muted_button_style, muted_label_style, primary_button_style
+from ui.services.localization import ui_text
+from ui.theme.builders import muted_button_style, muted_label_style, primary_button_style
+from ui.theme.metrics import FOOTER_HEIGHT, FOOTER_MARGIN_H, FOOTER_MARGIN_V
 
 
 class SummonFooter(QWidget):
@@ -25,12 +26,12 @@ class SummonFooter(QWidget):
 
         row.addStretch(1)
 
-        hist = QPushButton("History")
+        hist = QPushButton(ui_text("history"))
         hist.clicked.connect(self.history_pressed.emit)
         hist.setStyleSheet(muted_button_style())
         row.addWidget(hist)
 
-        summon = QPushButton("Summon")
+        summon = QPushButton(ui_text("summon"))
         summon.clicked.connect(self.summon_pressed.emit)
         summon.setStyleSheet(primary_button_style())
         row.addWidget(summon)

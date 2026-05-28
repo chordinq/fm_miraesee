@@ -1,61 +1,20 @@
-# ui/views/hub_view.py — tab bar + domain stack
+# ui/views/shell/hub_div.py — tab bar + domain pages
 from __future__ import annotations
 
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import (
-    QGridLayout,
-    QLabel,
-    QScrollArea,
-    QSizePolicy,
-    QStackedWidget,
-    QVBoxLayout,
-    QWidget,
-)
+from PySide6.QtWidgets import QApplication, QStackedWidget, QSizePolicy, QVBoxLayout, QWidget
 
-from ui.constants.domains import DOMAINS
-from ui.constants.layout import GRID_COLS, GRID_GAP, GRID_MARGIN, TILE_SIZE
-from ui.constants.styles import tile_placeholder_style
+from ui.theme.config.domains import DOMAINS
+from ui.views.collection.mount_collection_view import MountCollectionView
+from ui.views.collection.pet_collection_view import PetCollectionView
+from ui.views.collection.skill_collection_view import SkillCollectionView
 from ui.services.locale import locale_service
-from ui.services.session import Session
+from features.session import Session
+from ui.theme.fonts import apply_app_font
+from ui.theme.stylesheet import global_stylesheet
+from ui.views.coming_soon_view import ComingSoonView
 from ui.views.forge_view import ForgeView
 from ui.views.options_dialog import OptionsDialog
-from ui.views.mount_view import MountView
-from ui.views.pet_view import PetView
-from ui.views.skill_view import SkillView
 from ui.widgets.block_tab_bar import BlockTabBar
-
-
-class _SectionPlaceholder(QWidget):
-    def __init__(self, domain: str, parent: QWidget | None = None) -> None:
-        super().__init__(parent)
-        outer = QVBoxLayout(self)
-        outer.setContentsMargins(0, 0, 0, 0)
-        outer.setSpacing(0)
-
-        scroll = QScrollArea()
-        scroll.setWidgetResizable(True)
-        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        scroll.setFrameShape(QScrollArea.Shape.NoFrame)
-
-        body = QWidget()
-        body_layout = QVBoxLayout(body)
-        body_layout.setContentsMargins(0, 0, 0, 0)
-        body_layout.setSpacing(0)
-
-        grid_host = QWidget()
-        grid = QGridLayout(grid_host)
-        grid.setContentsMargins(GRID_MARGIN, GRID_MARGIN, GRID_MARGIN, GRID_MARGIN)
-        grid.setSpacing(GRID_GAP)
-        for i in range(12):
-            tile = QLabel("·")
-            tile.setFixedSize(TILE_SIZE, TILE_SIZE)
-            tile.setAlignment(Qt.AlignmentFlag.AlignCenter)
-            tile.setStyleSheet(tile_placeholder_style())
-            grid.addWidget(tile, i // GRID_COLS, i % GRID_COLS)
-        body_layout.addWidget(grid_host, 1)
-
-        scroll.setWidget(body)
-        outer.addWidget(scroll, 1)
 
 
 class HubView(QWidget):
@@ -73,17 +32,16 @@ class HubView(QWidget):
         self._stack = QStackedWidget()
         self._sections: dict[str, QWidget] = {}
         _domain_views = {
+            "profile": ComingSoonView,
             "forge": ForgeView,
-            "skill": SkillView,
-            "pet": PetView,
-            "mount": MountView,
+            "skill": SkillCollectionView,
+            "pet": PetCollectionView,
+            "mount": MountCollectionView,
+            "techtree": ComingSoonView,
         }
         for key in DOMAINS:
-            factory = _domain_views.get(key)
-            if factory is not None:
-                page = factory(session)
-            else:
-                page = _SectionPlaceholder(key)
+            factory = _domain_views[key]
+            page = factory(session)
             page.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
             self._sections[key] = page
             self._stack.addWidget(page)
@@ -103,6 +61,10 @@ class HubView(QWidget):
         dlg.exec()
 
     def _refresh_locale(self) -> None:
+        app = QApplication.instance()
+        if app is not None:
+            apply_app_font(app)
+            app.setStyleSheet(global_stylesheet())
         if hasattr(self._tabs, "refresh_locale"):
             self._tabs.refresh_locale()
         for page in self._sections.values():

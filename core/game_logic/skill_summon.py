@@ -18,7 +18,9 @@ from core.enums import RARITY_NAMES
 from core.random_pcg import RandomPCG
 from core.game_logic.player_model.PlayerModel import PlayerModel
 from core.game_logic.player_model.SkillModel import SkillModel
+from core.enums import TechTreeNodeType
 from core.game_logic.summon_config import SummonConfig
+from core.game_logic.summon_cost import can_afford_summon_batch, spend_summon_batch
 from core.game_logic.stat_helper import StatHelper
 from core.game_logic.summon_base import SummonPullResult, SummonResult
 
@@ -45,7 +47,12 @@ class SkillSummonSimulator:
 		if count not in config.possible_summon_count:
 			return SummonResult(SummonKind.Skills, count, 0, success=False, error="invalid_summon_count")
 
-		config.spend(self.player, count)
+		if not can_afford_summon_batch(
+			self.player, config, TechTreeNodeType.SkillSummonCost, count
+		):
+			return SummonResult(SummonKind.Skills, count, 0, success=False, error="insufficient_currency")
+
+		spend_summon_batch(self.player, config, TechTreeNodeType.SkillSummonCost, count)
 		pulls: list[SummonPullResult] = []
 
 		for _ in range(count):

@@ -24,6 +24,7 @@ MOUNT_MAPPING    = load_json("configs/MountMapping.json")
 PET_MAPPING      = load_json("configs/PetMapping.json")
 SKILL_MAPPING    = load_json("configs/SkillMapping.json")
 MANUAL_SPRITE_MAPPING = load_json("configs/ManualSpriteMapping.json")
+ICONS_MAP = load_json("configs/IconsMap.json")
 
 
 def _stat_ranges() -> dict:
@@ -36,6 +37,8 @@ STAT_RANGES = _stat_ranges()
 SKILL_LIBRARY           = load_json("configs/parsed_configs/SkillLibrary.json")
 SKILL_UPGRADE_LIBRARY   = load_json("configs/parsed_configs/SkillUpgradeLibrary.json")
 PET_LIBRARY             = load_json("configs/parsed_configs/PetLibrary.json")
+PET_BALANCING_LIBRARY   = load_json("configs/parsed_configs/PetBalancingLibrary.json")
+PET_UPGRADE_LIBRARY     = load_json("configs/parsed_configs/PetUpgradeLibrary.json")
 MOUNT_LIBRARY           = load_json("configs/parsed_configs/MountLibrary.json")
 ITEM_BALANCING_LIBRARY  = load_json("configs/parsed_configs/ItemBalancingLibrary.json")
 ITEM_AGE_DROP_CHANCES   = load_json("configs/parsed_configs/ItemAgeDropChancesLibrary.json")
@@ -45,6 +48,7 @@ ITEM_LEVEL_BRACKETS     = load_json("configs/parsed_configs/ItemLevelBracketsLib
 FORGE_CONFIG            = load_json("configs/parsed_configs/ForgeConfig.json")
 WEAPON_LIBRARY          = load_json("configs/parsed_configs/WeaponLibrary.json")
 TECH_TREE_POSITION_LIBRARY = load_json("configs/parsed_configs/TechTreePositionLibrary.json")
+TECH_TREE_LIBRARY          = load_json("configs/parsed_configs/TechTreeLibrary.json")
 
 SKILL_SUMMON_CONFIG  = SummonConfig(load_json("configs/parsed_configs/SkillSummonConfig.json"))
 EGG_SUMMON_CONFIG    = SummonConfig(load_json("configs/parsed_configs/EggSummonConfig.json"))
