@@ -1,0 +1,1131 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Guilds_it",
+  "m_LocaleId": {
+    "m_Code": "it"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -8331198245221904091
+  },
+  "m_Metadata": {
+    "m_Items": [
+      {
+        "rid": 963795083077615770
+      }
+    ]
+  },
+  "m_TableData": [
+    {
+      "m_Id": 164289830912,
+      "m_Localized": "Unione rapida",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1787028299776,
+      "m_Localized": "Crea un clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8305240956928,
+      "m_Localized": "Unisciti a un clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9750841384960,
+      "m_Localized": "Cerca un clan...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 43440120258560,
+      "m_Localized": "Richiedi di unirti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 43788159410176,
+      "m_Localized": "Unisciti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44561178025984,
+      "m_Localized": "Pieno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 46393233235968,
+      "m_Localized": "Nessun clan corrispondente trovato :(",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108401508999168,
+      "m_Localized": "Bandiera:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110802668347392,
+      "m_Localized": "Nome",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111147750514688,
+      "m_Localized": "Tag",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111518849949696,
+      "m_Localized": "Impostazione di unione",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113398871220224,
+      "m_Localized": "Crea clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114685960511488,
+      "m_Localized": "Nome del clan già in uso!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1921325498540032,
+      "m_Localized": "Personalizza emblema",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2018521346646016,
+      "m_Localized": "Sfondo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2018697561939968,
+      "m_Localized": "Icona",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2191723909783552,
+      "m_Localized": "Scegli una bandiera",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2195898320199680,
+      "m_Localized": "Come possono unirsi i giocatori?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2203246031970304,
+      "m_Localized": "Aperto (chiunque può unirsi)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2203557232549888,
+      "m_Localized": "Solo su approvazione (i nuovi membri devono fare domanda per unirsi)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2672568359182336,
+      "m_Localized": "Membri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2673971966238720,
+      "m_Localized": "Missioni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2674153848037376,
+      "m_Localized": "Titani",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2683258901880832,
+      "m_Localized": "Guerra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2741213772898304,
+      "m_Localized": "Annuncio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2887213657350144,
+      "m_Localized": "Potenza totale: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2887439923273728,
+      "m_Localized": "Membri: {0}/{1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990437265563648,
+      "m_Localized": "Leader",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990840757608448,
+      "m_Localized": "Comandante",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990912127885312,
+      "m_Localized": "Capitano",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990963533275136,
+      "m_Localized": "R1",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991018264748032,
+      "m_Localized": "R2",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991053652090880,
+      "m_Localized": "R3",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991110405218304,
+      "m_Localized": "R4",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991146010664960,
+      "m_Localized": "R5",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991700380213248,
+      "m_Localized": "Promuovi/declassa fino a Comandante. Fare annunci. Approvare richieste. Cambiare impostazioni di ingresso. Rimuovere giocatori.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991983734808576,
+      "m_Localized": "Promuovi/declassa fino a Capitano. Fare annunci. Approvare richieste. Cambiare impostazioni di ingresso. Rimuovere giocatori.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992061497204736,
+      "m_Localized": "Promuovi/declassa fino a R1. Fare annunci. Approvare richieste.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992120037105664,
+      "m_Localized": "Promuovi/declassa fino a R2.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992183740194816,
+      "m_Localized": "Membro fidato e di lunga data del clan.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992236173189120,
+      "m_Localized": "Membro dimostrato degno del clan.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992272856571904,
+      "m_Localized": "Non più un novellino.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992331396472832,
+      "m_Localized": "Novellino.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992411356684288,
+      "m_Localized": "Online",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3079969885380608,
+      "m_Localized": "Permessi di ruolo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3282046154694656,
+      "m_Localized": "Trasferisci leadership",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3282496966877184,
+      "m_Localized": "Conferma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4530868835049472,
+      "m_Localized": "Sei sicuro di voler rimuovere questo giocatore dal clan?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4531611302354944,
+      "m_Localized": "Sì, rimuovi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532707466928128,
+      "m_Localized": "Sei sicuro di voler lasciare questa gilda?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532892901302272,
+      "m_Localized": "Sì, lascia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4533569346068480,
+      "m_Localized": "Sei sicuro di voler trasferire la leadership a questo giocatore? Non puoi annullare questa azione!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4534157022584832,
+      "m_Localized": "Sì, trasferisci",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4547171457163264,
+      "m_Localized": "Promuovere / Degradare",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4547743275016192,
+      "m_Localized": "Rimuovi giocatore",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4548011723055104,
+      "m_Localized": "Lascia la gilda",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4548662943277056,
+      "m_Localized": "Devi trasferire la leadership della gilda prima di poter lasciare!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701955971604480,
+      "m_Localized": "Impostazioni del clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4720734575255552,
+      "m_Localized": "Nome del clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4727083027652608,
+      "m_Localized": "Aperto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4728355130695680,
+      "m_Localized": "Approvazione",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9039444463050752,
+      "m_Localized": "Richieste",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9069529651994624,
+      "m_Localized": "Richieste di adesione al clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9073199571525632,
+      "m_Localized": "Approva",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9141308802195456,
+      "m_Localized": "Rifiuta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9171111450238976,
+      "m_Localized": "Non sei più membro di questo clan e non puoi approvare richieste!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9171624921128960,
+      "m_Localized": "Non hai le autorizzazioni necessarie!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172155123097600,
+      "m_Localized": "Il giocatore è già nel clan!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172292146814976,
+      "m_Localized": "Il giocatore è già in un altro clan!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172441757638656,
+      "m_Localized": "Il tuo clan è al completo!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172648964644864,
+      "m_Localized": "Questa richiesta non esiste più!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816857337913344,
+      "m_Localized": "{0} g fa",
+      "m_Metadata": {
+        "m_Items": [
+          {
+            "rid": 963795083077615770
+          }
+        ]
+      }
+    },
+    {
+      "m_Id": 9816556459515904,
+      "m_Localized": "{0} min fa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816734847459328,
+      "m_Localized": "{0} h fa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14867313500086272,
+      "m_Localized": "Scrivi un annuncio ai tuoi membri del clan...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17031808318169088,
+      "m_Localized": "Il tag del clan è già preso!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17032169531629568,
+      "m_Localized": "Nome del clan non consentito!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17032692984963072,
+      "m_Localized": "Si è verificato un errore interno, riprova più tardi!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17141006318166016,
+      "m_Localized": "Per favore, scegli un altro nome, questo non rispetta le regole.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17141607118659584,
+      "m_Localized": "Per favore, scegli un altro tag di clan. Questo non rispetta le regole.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17770654513225728,
+      "m_Localized": "Richiesta inviata",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20120750559059968,
+      "m_Localized": "Tag del clan non consentito!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29374167438258176,
+      "m_Localized": "Progresso della guerra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29374544795594752,
+      "m_Localized": "Giorni e Risultati",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204544,
+      "m_Localized": "{0} ha lasciato il clan!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204545,
+      "m_Localized": "{0} è stato espulso dal clan!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204546,
+      "m_Localized": "{0} si è unito al clan!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204547,
+      "m_Localized": "{0} è stato promosso a Leader!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204548,
+      "m_Localized": "{0} è stato {1} a {2}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204549,
+      "m_Localized": "promosso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204550,
+      "m_Localized": "retrocesso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 37825289286311936,
+      "m_Localized": "Hai lasciato un clan di recente. Aspetta {0} prima di unirti a un altro!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39541792190472192,
+      "m_Localized": "Finalizzazione...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915179372544,
+      "m_Localized": "Vittoria!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149760,
+      "m_Localized": "Sconfitta!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149761,
+      "m_Localized": "Rissa totale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149762,
+      "m_Localized": "in corso...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149763,
+      "m_Localized": "Inizia in:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245696,
+      "m_Localized": "Punti totali guadagnati:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245697,
+      "m_Localized": "Livello",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245698,
+      "m_Localized": "vinto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245699,
+      "m_Localized": "perso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245700,
+      "m_Localized": "Il tuo clan ha {0} la guerra di questa settimana! Raccogli le seguenti ricompense {1}:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245701,
+      "m_Localized": "Il tuo clan sta {0}. Raccogli le seguenti ricompense {1} alla fine della guerra:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245703,
+      "m_Localized": "perdendo!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245704,
+      "m_Localized": "vincendo!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364647813120,
+      "m_Localized": "Ricompense di guerra {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978944,
+      "m_Localized": "Risultati di guerra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978945,
+      "m_Localized": "Punti guadagnati questa settimana",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609515733917696,
+      "m_Localized": "Giorno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978947,
+      "m_Localized": "Punti vittoria",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978948,
+      "m_Localized": "Vincitore",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978949,
+      "m_Localized": "MVP",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864256,
+      "m_Localized": "Ricompense {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864257,
+      "m_Localized": "Vittoria",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864258,
+      "m_Localized": "Sconfitta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511680,
+      "m_Localized": "Livelli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511681,
+      "m_Localized": "Punti attuali del livello del clan: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511682,
+      "m_Localized": "{0} Punti di livello",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511683,
+      "m_Localized": "Vinci le Guerre di Clan per guadagnare Punti Livello e avanzare nei livelli. Più alto è il tuo livello, migliori saranno le ricompense!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261568,
+      "m_Localized": "Giorno {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261569,
+      "m_Localized": "Azioni del giorno {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261570,
+      "m_Localized": "Sconfiggi i membri del clan rivale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261571,
+      "m_Localized": "Vinci la rissa totale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135833505792,
+      "m_Localized": "Registro di battaglia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283008,
+      "m_Localized": "{0} è stato reimpostato!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283009,
+      "m_Localized": "{0} ha sconfitto {1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283010,
+      "m_Localized": "{0} non è riuscito a sconfiggere {1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39618987466399744,
+      "m_Localized": "Sconfiggendo {0} membri del clan rivale, l'intero clan verrà resettato!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39656479710502912,
+      "m_Localized": "La prossima guerra inizia tra:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39656479718891520,
+      "m_Localized": "La guerra è finita!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983426318336,
+      "m_Localized": "Inizia l'aggiornamento della forgia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901248,
+      "m_Localized": "Completa l'aggiornamento della forgia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901249,
+      "m_Localized": "Spendi un {0} alla Forgia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901250,
+      "m_Localized": "Forgia {0} equipaggiamento",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901251,
+      "m_Localized": "Usa {0} chiave del dungeon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901252,
+      "m_Localized": "Evoca {0} abilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901253,
+      "m_Localized": "Aggiorna {0} abilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901254,
+      "m_Localized": "Cova {0} uovo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901255,
+      "m_Localized": "Unisci {0} animale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901256,
+      "m_Localized": "Completa l'aggiornamento dell'albero tecnologico {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901257,
+      "m_Localized": "Evoca {0} cavalcatura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901258,
+      "m_Localized": "Unisci {0} cavalcatura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39931445744693248,
+      "m_Localized": "VITTORIA!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39961057296052224,
+      "m_Localized": "Assicurati di raccogliere tutte le tue ricompense!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103770579654402048,
+      "m_Localized": "Questo annuncio non è consentito!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108816660394139648,
+      "m_Localized": "Completa una missione di livello {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930755662635008,
+      "m_Localized": "Spendi {0} {1} alla Forgia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111663885956669440,
+      "m_Localized": "Una volta lasciato il clan, potrai unirti a un altro clan solo dopo aver atteso 24 ore.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111663885973446656,
+      "m_Localized": "Hai contribuito con più di 50k punti in questa stagione di guerra. Lasciando il clan, non potrai partecipare alla guerra fino all'inizio della prossima stagione.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108816777775931392,
+      "m_Localized": "Completa una missione leggendaria",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124387185199669248,
+      "m_Localized": "{0} è stato espulso dal clan da {1}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124428308832051200,
+      "m_Localized": "{0} è stato approvato per unirsi al clan da {1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124445730247008256,
+      "m_Localized": "{0} è stato {1} a {2} da {3}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 963795083077615770,
+        "type": {
+          "class": "SmartFormatTag",
+          "ns": "UnityEngine.Localization.Metadata",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Forge_ko",
+  "m_LocaleId": {
+    "m_Code": "ko"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -1109569138593657648
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 795088711680,
+      "m_Localized": "자동 단조",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 936298344448,
+      "m_Localized": "단조 확률",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1082071379968,
+      "m_Localized": "유지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1589087236096,
+      "m_Localized": "한 번에 사용된 망치 수",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1985914531840,
+      "m_Localized": "확률 정보",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3116539506688,
+      "m_Localized": "무료 건너뛰기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4278676287488,
+      "m_Localized": "원시적",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4307390492672,
+      "m_Localized": "중세의",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4347643228160,
+      "m_Localized": "근대 초기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4418057203712,
+      "m_Localized": "현대의",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4441834713088,
+      "m_Localized": "우주",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4465301843968,
+      "m_Localized": "항성간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4489779802112,
+      "m_Localized": "다중 우주",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4513184018432,
+      "m_Localized": "양자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532624617472,
+      "m_Localized": "신성한",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5039128768512,
+      "m_Localized": "더 높은 문명의 장비를 단조하기 위해 단조 레벨을 업그레이드하세요",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12856879411200,
+      "m_Localized": "대장간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13479431565312,
+      "m_Localized": "자동",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7565893205745664,
+      "m_Localized": "대장간 업그레이드가 완료되었습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9738126318301184,
+      "m_Localized": "필터",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28987765965185024,
+      "m_Localized": "지하 세계",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105988059136,
+      "m_Localized": "목표 장비를 찾으면 단조 계속하기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105996447744,
+      "m_Localized": "모두 판매",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105996447745,
+      "m_Localized": "단조한 장비 전체를 정말로 판매하시겠습니까?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

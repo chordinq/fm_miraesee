@@ -1,0 +1,749 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "TechTree_it",
+  "m_LocaleId": {
+    "m_Code": "it"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 3510350058130572738
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 55555327238144,
+      "m_Localized": "Maestria delle armi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555335626752,
+      "m_Localized": "Maestria degli elmi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821056,
+      "m_Localized": "Maestria delle armature",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821057,
+      "m_Localized": "Maestria delle scarpe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821058,
+      "m_Localized": "Maestria dei guanti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821059,
+      "m_Localized": "Maestria delle cinture",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821060,
+      "m_Localized": "Maestria delle collane",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821061,
+      "m_Localized": "Maestria degli anelli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821062,
+      "m_Localized": "Livello Arma Aumentato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821063,
+      "m_Localized": "Livello Elmo Aumentato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821064,
+      "m_Localized": "Livello Armatura Aumentato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821065,
+      "m_Localized": "Livello Scarpe Aumentato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821066,
+      "m_Localized": "Livello Guanti Aumentato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821067,
+      "m_Localized": "Livello Cintura Aumentato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821068,
+      "m_Localized": "Livello Collana Aumentato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821069,
+      "m_Localized": "Livello Anello Aumentato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664321523712,
+      "m_Localized": "Maestria Danni Cavalcatura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718016,
+      "m_Localized": "Maestria Salute Cavalcatura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718017,
+      "m_Localized": "Occasione di Cavalcatura Extra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718018,
+      "m_Localized": "Costo Evocazione Cavalcatura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821073,
+      "m_Localized": "Timer Forgiatura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821074,
+      "m_Localized": "Costo Upgrade Forgiatura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821075,
+      "m_Localized": "Prezzo Vendita Equipaggiamento",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821076,
+      "m_Localized": "Forgiatura Automatica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821077,
+      "m_Localized": "Ricompensa Offline Martello",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821078,
+      "m_Localized": "Ricompensa Offline Monete",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821079,
+      "m_Localized": "Tempo Offline Massimo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821080,
+      "m_Localized": "Occasione Forgiatura Gratuita",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821081,
+      "m_Localized": "Bonus Martello Ladro di Martelli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821082,
+      "m_Localized": "Bonus Monete Ladro di Martelli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821083,
+      "m_Localized": "Maestria Danni Abilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821084,
+      "m_Localized": "Danni Passivi Abilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821085,
+      "m_Localized": "Salute Passiva Abilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821086,
+      "m_Localized": "Bonus Biglietto Abilità Città Fantasma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821087,
+      "m_Localized": "Costo Evocazione Abilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821088,
+      "m_Localized": "Maestria Danni Animale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821089,
+      "m_Localized": "Maestria Salute Animale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821090,
+      "m_Localized": "Chance Extra Uovo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821091,
+      "m_Localized": "Timer Uovo Comune",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821092,
+      "m_Localized": "Timer Uovo Raro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821093,
+      "m_Localized": "Timer Uovo Epico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821094,
+      "m_Localized": "Timer Uovo Leggendario",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821095,
+      "m_Localized": "Timer Uovo Supremo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821096,
+      "m_Localized": "Timer Uovo Mitico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821097,
+      "m_Localized": "Bonus Pozione Tecnologica Assalto Zombie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821098,
+      "m_Localized": "Costo Upgrade Nodo Tecnologico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821099,
+      "m_Localized": "Timer Ricerca Tecnologica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821100,
+      "m_Localized": "Danno Bonus Arma {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821101,
+      "m_Localized": "Salute Bonus Elmo {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821102,
+      "m_Localized": "Salute Bonus Armatura {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821103,
+      "m_Localized": "Bonus Salute Scarpe {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821104,
+      "m_Localized": "Bonus Danno Guanti {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821105,
+      "m_Localized": "Bonus Salute Cintura {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821106,
+      "m_Localized": "Bonus Danno Collana {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821107,
+      "m_Localized": "Bonus Danno Anello {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821108,
+      "m_Localized": "Livello Max Arma {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821109,
+      "m_Localized": "Livello Max Elmetto {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821110,
+      "m_Localized": "Livello Max Corpo {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821111,
+      "m_Localized": "Livello Max Scarpe {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821112,
+      "m_Localized": "Livello Max Guanti {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821113,
+      "m_Localized": "Livello Max Cintura {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821114,
+      "m_Localized": "Livello Max Collana {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821115,
+      "m_Localized": "Livello Max Anello {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821116,
+      "m_Localized": "Bonus Danno Cavalcatura {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821117,
+      "m_Localized": "Bonus Salute Cavalcatura {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821118,
+      "m_Localized": "Bonus XP quando aggiorni le cavalcature {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718019,
+      "m_Localized": "Costo Evocazione Cavalcatura {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821119,
+      "m_Localized": "Velocità Timer Aggiornamento Forgia {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821120,
+      "m_Localized": "Costo Aggiornamento Forgia {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821121,
+      "m_Localized": "Prezzo Vendita Equipaggiamento {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821122,
+      "m_Localized": "Numero di martelli usati contemporaneamente {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821123,
+      "m_Localized": "Bonus Ricompensa Offline Martello {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821124,
+      "m_Localized": "Bonus Ricompensa Offline Moneta {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821125,
+      "m_Localized": "Tempo Max Ricompensa Offline {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821126,
+      "m_Localized": "Possibilità di forgiare equipaggiamento gratuitamente {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821127,
+      "m_Localized": "Il Dungeon del Ladro di Martelli lascia cadere {0} martelli in più",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821128,
+      "m_Localized": "Il Dungeon del Ladro di Martelli lascia cadere {0} monete in più",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821129,
+      "m_Localized": "Danno Abilità {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821130,
+      "m_Localized": "Danno Base Passivo Abilità {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821131,
+      "m_Localized": "Salute Base Passiva Abilità {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821132,
+      "m_Localized": "Il Dungeon della Città Fantasma lascia cadere {0} biglietti abilità in più",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821133,
+      "m_Localized": "Costo Evocazione Abilità {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821134,
+      "m_Localized": "Bonus Danno Animale {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821135,
+      "m_Localized": "Bonus Salute Animale {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821136,
+      "m_Localized": "Bonus XP quando aggiorni gli animali {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821137,
+      "m_Localized": "Velocità Timer Schiusa Uovo Comune {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821138,
+      "m_Localized": "Velocità Timer Schiusa Uovo Raro {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821139,
+      "m_Localized": "Velocità Timer Schiusa Uovo Epico {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821140,
+      "m_Localized": "Velocità Timer Schiusa Uovo Leggendario {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821141,
+      "m_Localized": "Velocità Timer Schiusa Uovo Definitivo {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821142,
+      "m_Localized": "Velocità Timer Schiusa Uovo Mitico {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821143,
+      "m_Localized": "Il Dungeon di Assalto Zombie lascia cadere {0} pozioni tecnologiche in più",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821144,
+      "m_Localized": "Costo Aggiornamento Nodo Tecnologico {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821145,
+      "m_Localized": "Velocità Timer Ricerca Tecnologica {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280318681088,
+      "m_Localized": "Albero Tecnologico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846912,
+      "m_Localized": "Forgia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846913,
+      "m_Localized": "Potenza",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846914,
+      "m_Localized": "Abilità, Animali & Tecnologia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17687817399296000,
+      "m_Localized": "Un'altra tecnologia è già in fase di ricerca!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17688556561489920,
+      "m_Localized": "MAX",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17690949319647232,
+      "m_Localized": "Ricerca in corso...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 21246931924672512,
+      "m_Localized": "Il tuo aggiornamento dell'albero tecnologico è completo!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103966219382546432,
+      "m_Localized": "Clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

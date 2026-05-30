@@ -1,0 +1,238 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Arena_ko",
+  "m_LocaleId": {
+    "m_Code": "ko"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 551601825646573866
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 312139771904,
+      "m_Localized": "도전",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 703946485760,
+      "m_Localized": "상대 선택",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 784816861184,
+      "m_Localized": "도전 티켓은 매일 {0}에 보충됩니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1048948961280,
+      "m_Localized": "결과",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1248786575360,
+      "m_Localized": "승리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1385223090176,
+      "m_Localized": "무승부",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1625233747968,
+      "m_Localized": "보상 수집 완료!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797120,
+      "m_Localized": "축하합니다! 지난 시즌에서 {0}위를 기록하고 {1}로 승급했습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797121,
+      "m_Localized": "다음 번엔 더 좋은 운을! 지난 시즌에서 {0}위를 기록하고 {1}로 강등되었습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797122,
+      "m_Localized": "현재 순위 ({0})를 유지하여 시즌 종료 시 다음 보상을 받으세요:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797123,
+      "m_Localized": "시즌이 종료되었습니다! {0}위에 도달하여 다음 보상을 받았습니다:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797124,
+      "m_Localized": "보상을 받으려면 랭크를 올려야 합니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797125,
+      "m_Localized": "아레나 참여 보상은 여기에 표시됩니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797126,
+      "m_Localized": "보상",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797127,
+      "m_Localized": "수집까지: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797128,
+      "m_Localized": "새 시즌 시작: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797129,
+      "m_Localized": "시즌 종료: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797130,
+      "m_Localized": "곧 새 시즌!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404032,
+      "m_Localized": "승진",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404033,
+      "m_Localized": "강등",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472960,
+      "m_Localized": "언랭크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472961,
+      "m_Localized": "브론즈 리그",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472962,
+      "m_Localized": "실버 리그",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472963,
+      "m_Localized": "골드 리그",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472964,
+      "m_Localized": "플래티넘 리그",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472965,
+      "m_Localized": "다이아몬드 리그",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701382651904,
+      "m_Localized": "승급 구역",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701386846208,
+      "m_Localized": "강등 구역",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6855896432570368,
+      "m_Localized": "패배",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 32343429450031104,
+      "m_Localized": "시즌이 종료되었습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

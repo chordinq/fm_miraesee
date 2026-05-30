@@ -1,0 +1,140 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Shop_de",
+  "m_LocaleId": {
+    "m_Code": "de"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 4340967918322402021
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 207412195328,
+      "m_Localized": "Shop",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 302685810688,
+      "m_Localized": "Tagesangebote",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 522211487744,
+      "m_Localized": "Ressourcen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 698598748160,
+      "m_Localized": "Schau morgen für mehr Angebote vorbei!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1065419993088,
+      "m_Localized": "Hämmer auffüllen!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1163478626304,
+      "m_Localized": "Auffüllen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3485185273856,
+      "m_Localized": "Deal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3485185273857,
+      "m_Localized": "Angebot",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701478907904,
+      "m_Localized": "Dungeon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701483102208,
+      "m_Localized": "Ressource",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701483102209,
+      "m_Localized": "Haustier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701483102210,
+      "m_Localized": "Fähigkeit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701483102211,
+      "m_Localized": "Technik",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 22473983646490624,
+      "m_Localized": "Reittier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27127988465164288,
+      "m_Localized": "Kauf alle drei Tagesangebote, um drei neue zu bekommen!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 53302178176032768,
+      "m_Localized": "Trittstein-Token",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

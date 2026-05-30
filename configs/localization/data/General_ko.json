@@ -1,0 +1,1418 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "General_ko",
+  "m_LocaleId": {
+    "m_Code": "ko"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -7974773596385334045
+  },
+  "m_Metadata": {
+    "m_Items": [
+      {
+        "rid": 2566708103035748769
+      }
+    ]
+  },
+  "m_TableData": [
+    {
+      "m_Id": 1830775273078784,
+      "m_Localized": "계정",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830808110284800,
+      "m_Localized": "계정 연결",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830852523769856,
+      "m_Localized": "로그인",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830880994705408,
+      "m_Localized": "로그아웃",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830906689011712,
+      "m_Localized": "설정",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1831050188734464,
+      "m_Localized": "게임 데이터를 안전하게 보호하려면 계정을 연결하세요",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1837060659920896,
+      "m_Localized": "로그인 방법 선택",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1839334803161088,
+      "m_Localized": "{0}로 로그인",
+      "m_Metadata": {
+        "m_Items": [
+          {
+            "rid": 2566708103035748769
+          }
+        ]
+      }
+    },
+    {
+      "m_Id": 1858491783364608,
+      "m_Localized": "연결 끊기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2248123788345344,
+      "m_Localized": "계정 연결 실패!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312336348209152,
+      "m_Localized": "Forge Master",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312462114414592,
+      "m_Localized": "포지 마스터",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312567328530432,
+      "m_Localized": "추적 수락은 더 나은 게임 경험을 제공합니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532132964720640,
+      "m_Localized": "취소",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6731203815194624,
+      "m_Localized": "무료",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6731538138972160,
+      "m_Localized": "프리미엄",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7329341366124544,
+      "m_Localized": "전투",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502015217664,
+      "m_Localized": "어려움",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189184,
+      "m_Localized": "극한",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189185,
+      "m_Localized": "지옥",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189186,
+      "m_Localized": "악몽",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189187,
+      "m_Localized": "혼돈",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189188,
+      "m_Localized": "공허",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189189,
+      "m_Localized": "심연",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189190,
+      "m_Localized": "영원한",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189191,
+      "m_Localized": "지옥불",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7719387525070848,
+      "m_Localized": "난이도",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7719887569993728,
+      "m_Localized": "소환 확률",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10619610219986944,
+      "m_Localized": "탈것",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11670393447301120,
+      "m_Localized": "소환",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11670393472466944,
+      "m_Localized": "레벨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11677876031111168,
+      "m_Localized": "탈것을 소환하여 레벨을 올리고 소환 확률을 높이세요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15414414065844224,
+      "m_Localized": "보너스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25442363505307659,
+      "m_Localized": "서버 시간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25466346099372032,
+      "m_Localized": "언어",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25736002664067072,
+      "m_Localized": "프로필",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25736392600121344,
+      "m_Localized": "이름:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737088519041024,
+      "m_Localized": "성별:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737252952535040,
+      "m_Localized": "파워 랭킹",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737513393647616,
+      "m_Localized": "클랜 랭킹",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25738558836502528,
+      "m_Localized": "진동",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25738683373776896,
+      "m_Localized": "사운드 효과",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739437660631040,
+      "m_Localized": "개인정보 보호",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739510138204160,
+      "m_Localized": "차단 목록",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739620972687360,
+      "m_Localized": "문의하기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25749971952922624,
+      "m_Localized": "당신은 죽었습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25750022188101632,
+      "m_Localized": "로 돌아가기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751598017474560,
+      "m_Localized": "연결이 끊어졌습니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751687679111168,
+      "m_Localized": "인터넷 연결을 확인하세요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751817480237056,
+      "m_Localized": "다시 연결하려면 탭하세요",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25753177110016000,
+      "m_Localized": "연결 중",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25780206593306624,
+      "m_Localized": "오프라인 보상",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781074621296640,
+      "m_Localized": "수집 시간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781236299132928,
+      "m_Localized": "최대",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781574997569536,
+      "m_Localized": "수집",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25782489326481408,
+      "m_Localized": "많은 진전을 이루신 것 같네요! 문제가 생기거나 휴대폰을 바꾸고 싶을 때를 대비해 데이터를 백업하세요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783697135038464,
+      "m_Localized": "공지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783712830124032,
+      "m_Localized": "로그아웃되었습니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783797269852160,
+      "m_Localized": "확인",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25786994701037568,
+      "m_Localized": "시작",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788122108981248,
+      "m_Localized": "업그레이드 진행 중....",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788256913911808,
+      "m_Localized": "최대",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788540620828672,
+      "m_Localized": "업그레이드",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25799296414314496,
+      "m_Localized": "Lv.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26811981503328256,
+      "m_Localized": "일반",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812088114147328,
+      "m_Localized": "희귀한",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812108808843264,
+      "m_Localized": "서사시",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812123002368000,
+      "m_Localized": "전설",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812135207792640,
+      "m_Localized": "궁극의",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812150785437696,
+      "m_Localized": "신화",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26903988305326080,
+      "m_Localized": "코인",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904079866982400,
+      "m_Localized": "보석",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904091808165888,
+      "m_Localized": "망치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904103917121536,
+      "m_Localized": "스킬 티켓",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904137874206720,
+      "m_Localized": "기술 포션",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904198951661568,
+      "m_Localized": "PvP 티켓",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904212474097664,
+      "m_Localized": "시계 태엽",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27923188553543680,
+      "m_Localized": "지원",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27927471772594176,
+      "m_Localized": "제거",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27927471772594177,
+      "m_Localized": "장착됨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27933087392002048,
+      "m_Localized": "장착",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27937469076533248,
+      "m_Localized": "완료",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27999994002468864,
+      "m_Localized": "건너뛰기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28003344441864192,
+      "m_Localized": "경험치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28006207175979008,
+      "m_Localized": "{0}에서 잠금 해제",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28307134017630208,
+      "m_Localized": "분",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28307134051184640,
+      "m_Localized": "초",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28308895591755776,
+      "m_Localized": "일",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28308895591755777,
+      "m_Localized": "시",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341082164752384,
+      "m_Localized": "패배",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341082185723904,
+      "m_Localized": "오케이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341671737094144,
+      "m_Localized": "입장",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28342484547072000,
+      "m_Localized": "나가기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28348250729410560,
+      "m_Localized": "열기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29369553787744256,
+      "m_Localized": "이용 약관",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29369768682909696,
+      "m_Localized": "계속하면 \n<color=#4CBEFF>이용 약관</color>에 동의하는 것입니다.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29370014829834240,
+      "m_Localized": "계속",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29372916365455360,
+      "m_Localized": "곧 출시",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375658140037120,
+      "m_Localized": "개인정보 설정을 수정하시겠습니까?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375798267539456,
+      "m_Localized": "변경 후 앱을 다시 시작해야 합니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375989867540480,
+      "m_Localized": "편집",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29741794152407040,
+      "m_Localized": "서버 {0} (목록은 매시간 업데이트됨)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29746067175104512,
+      "m_Localized": "클랜 파워 랭킹",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29747952145653760,
+      "m_Localized": "서버 {0} 순위",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29748466790948864,
+      "m_Localized": "아바타를 선택하세요",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29748886850494464,
+      "m_Localized": "플레이어 이름 입력",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29750633891356672,
+      "m_Localized": "새로운!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29758280640225280,
+      "m_Localized": "이 아이템은 장착 중인 아이템보다 강력합니다.\n\n정말로 판매하시겠습니까?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29759899083726848,
+      "m_Localized": "원거리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29760435187081216,
+      "m_Localized": "판매",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29790294030409728,
+      "m_Localized": "최대",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29815644231819264,
+      "m_Localized": "제출",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816091566923776,
+      "m_Localized": "게임을 어떻게 개선할 수 있을까요?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816781940973568,
+      "m_Localized": "당신의 피드백",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816958047215616,
+      "m_Localized": "여기에 피드백을 입력하세요...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818466696421376,
+      "m_Localized": "게임 재미있어?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818654978727936,
+      "m_Localized": "평가 부탁드려요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818784373006336,
+      "m_Localized": "1-4 별",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818942720565248,
+      "m_Localized": "5 별",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29820062658453504,
+      "m_Localized": "아니요",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29820196972650496,
+      "m_Localized": "네!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30155911439511552,
+      "m_Localized": "언어 선택",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30182856113975296,
+      "m_Localized": "등급 상승",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30209797294583808,
+      "m_Localized": "업그레이드 시작",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31931272254910464,
+      "m_Localized": "서버",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 188474387181068288,
+      "m_Localized": "일반",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 188474423793147904,
+      "m_Localized": "일반, 게임 플레이 관련 알림",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148529360896,
+      "m_Localized": "최종 결과",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469760,
+      "m_Localized": "포인트 순위",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469761,
+      "m_Localized": "주간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469762,
+      "m_Localized": "일일",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659439110742016,
+      "m_Localized": "비활성화됨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 40634894802477056,
+      "m_Localized": "공격",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092802191360,
+      "m_Localized": "서버 점검 중입니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162880,
+      "m_Localized": "나중에 다시 오세요.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162881,
+      "m_Localized": "업데이트 필요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162882,
+      "m_Localized": "게임을 계속하려면 업데이트하세요.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162883,
+      "m_Localized": "업데이트가 보이지 않나요?\n앱 스토어를 다시 시작하고 다시 확인해보세요.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162884,
+      "m_Localized": "업데이트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42396247389102080,
+      "m_Localized": "일시적으로 금지되었습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42396247397490688,
+      "m_Localized": "영구적으로 금지되었습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42398661798256640,
+      "m_Localized": "금지 해제까지 {0} 남았습니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007670284288,
+      "m_Localized": "로그아웃",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007682867201,
+      "m_Localized": "계정을 삭제하면 영구적으로 모든 사용자 데이터가 제거됩니다. 다른 기기에서 계정을 복원할 수 없습니다.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007682867202,
+      "m_Localized": "삭제",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946917205106688,
+      "m_Localized": "계정 삭제",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946917205106689,
+      "m_Localized": "계정 삭제?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55090011081531392,
+      "m_Localized": "필요",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468096,
+      "m_Localized": "행동 강령",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468097,
+      "m_Localized": "계속하면, 귀하는 우리의",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468098,
+      "m_Localized": "그리고",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68537888493248512,
+      "m_Localized": "나이가 어떻게 되시나요?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68537888514220032,
+      "m_Localized": "슬라이더를 사용하여 나이를 설정하세요.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78900637817888768,
+      "m_Localized": "또는",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 95743441482280960,
+      "m_Localized": "변경",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 95748098749362176,
+      "m_Localized": "서버 선택",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96056509286313984,
+      "m_Localized": "서버를 변경하시겠습니까? 이 작업은 한 번만 가능합니다.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96056782641688576,
+      "m_Localized": "네, 변경",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96071128903774208,
+      "m_Localized": "서버 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96215312229199872,
+      "m_Localized": "오류!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649757990912,
+      "m_Localized": "{0}을(를) 소환하여 레벨 업하고 소환 확률을 높이세요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573824,
+      "m_Localized": "승천",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573825,
+      "m_Localized": "정말로 승천하시겠습니까? 승천하면 모든 {0}이(가) 제거되고 {1} 레벨이 1로 초기화됩니다.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573826,
+      "m_Localized": "미래의 {0}이(가) 훨씬 강해질 것입니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573827,
+      "m_Localized": "더 강력한 {0}을(를) 잠금 해제하려면 승천하세요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573828,
+      "m_Localized": "먼저 모든 {0}을(를) 최대화하세요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 100505843009576960,
+      "m_Localized": "마지막",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103879382550962176,
+      "m_Localized": "제거된 항목",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103881630010040320,
+      "m_Localized": "구매 환불됨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 105585154724978688,
+      "m_Localized": "개인정보 처리방침",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 107036963603734528,
+      "m_Localized": "음악",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108442575155748864,
+      "m_Localized": "달걀 껍데기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108442575164137472,
+      "m_Localized": "무작위",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 109490579467919360,
+      "m_Localized": "소환 레벨이 이미 최대입니다. 소환 레벨 진행을 재개하려면 다시 소환하기 전에 승급하세요.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720124297216,
+      "m_Localized": "코인",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268736,
+      "m_Localized": "보석",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268737,
+      "m_Localized": "망치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268738,
+      "m_Localized": "스킬소환티켓",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463040,
+      "m_Localized": "기술물약",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463041,
+      "m_Localized": "PvP티켓",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463042,
+      "m_Localized": "시계 태엽감기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113959603035693056,
+      "m_Localized": "진화하다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186816,
+      "m_Localized": "메가",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186817,
+      "m_Localized": "울트라",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186818,
+      "m_Localized": "정점",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 115723395822247936,
+      "m_Localized": "임무 에너지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 115723434254655488,
+      "m_Localized": "클랜 물약",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116428612633092096,
+      "m_Localized": "{0}를 사용하시겠습니까?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116428748906029056,
+      "m_Localized": "다시 묻지 않기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119351836584960000,
+      "m_Localized": "잠김",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119351836593348608,
+      "m_Localized": "모든 {0}의 목록",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119425594028974080,
+      "m_Localized": "{0}은(는) 아래 목록에서 {1}개의 고유한 하위 스탯을 굴립니다:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 123984074035421184,
+      "m_Localized": "정보 새로고침",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 125819198494466048,
+      "m_Localized": "채팅 표시",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 125854061930995712,
+      "m_Localized": "클랜 채팅 미리보기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 128326236642467840,
+      "m_Localized": "글로벌 목록 (매시간 업데이트)\n\n서버에서 현재 1위인 플레이어만\n여기에 표시됩니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 2566708103035748769,
+        "type": {
+          "class": "SmartFormatTag",
+          "ns": "UnityEngine.Localization.Metadata",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

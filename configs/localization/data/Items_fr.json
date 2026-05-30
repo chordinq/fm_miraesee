@@ -1,0 +1,1652 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Items_fr",
+  "m_LocaleId": {
+    "m_Code": "fr"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 8394530462835593926
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 5028479430656,
+      "m_Localized": "Crâne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624960,
+      "m_Localized": "Barbe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624961,
+      "m_Localized": "Masque de guerre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624962,
+      "m_Localized": "Peinture faciale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624963,
+      "m_Localized": "Hache",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624964,
+      "m_Localized": "Sarbacane",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624965,
+      "m_Localized": "Branche",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624966,
+      "m_Localized": "Massue",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624967,
+      "m_Localized": "Roche",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624968,
+      "m_Localized": "Frondeur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624969,
+      "m_Localized": "Os",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624970,
+      "m_Localized": "Peau",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624971,
+      "m_Localized": "Peau d'ours",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624972,
+      "m_Localized": "Jupe en os",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624973,
+      "m_Localized": "Ceinture",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624974,
+      "m_Localized": "Écorce",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624975,
+      "m_Localized": "Patte d'ours",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624976,
+      "m_Localized": "Talisman",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624977,
+      "m_Localized": "Collier de dents",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624978,
+      "m_Localized": "Anneau d'éclat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624979,
+      "m_Localized": "Anneau de crâne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624980,
+      "m_Localized": "Bandes de pieds",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624981,
+      "m_Localized": "Tibia d'ivoire",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624982,
+      "m_Localized": "Chapeau de la mort",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624983,
+      "m_Localized": "Casque romain",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624984,
+      "m_Localized": "Casque grec",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624985,
+      "m_Localized": "Casque de samouraï",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624986,
+      "m_Localized": "Casque de chevalier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624987,
+      "m_Localized": "Cuirasse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624988,
+      "m_Localized": "Plaques de fer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624989,
+      "m_Localized": "Ceinture de Baltazar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624990,
+      "m_Localized": "Pochette",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624991,
+      "m_Localized": "Gantelet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624992,
+      "m_Localized": "Poing de fer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624993,
+      "m_Localized": "Porte-bonheur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624994,
+      "m_Localized": "Valeur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624995,
+      "m_Localized": "Gemme bénie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624996,
+      "m_Localized": "Anneau de fer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624997,
+      "m_Localized": "Sandales",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624998,
+      "m_Localized": "Piétineurs",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624999,
+      "m_Localized": "Épée & Bouclier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625000,
+      "m_Localized": "Lance & Bouclier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625001,
+      "m_Localized": "Faux",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625002,
+      "m_Localized": "Marteau de guerre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625003,
+      "m_Localized": "Arc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625004,
+      "m_Localized": "Katana",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625005,
+      "m_Localized": "Tomahawk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625006,
+      "m_Localized": "Casque de bataille",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625007,
+      "m_Localized": "Chapeau de capitaine",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625008,
+      "m_Localized": "Chapeau à plumes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625009,
+      "m_Localized": "Chapeau slave",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625010,
+      "m_Localized": "Haut-de-forme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625011,
+      "m_Localized": "Jupe d'armure",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625012,
+      "m_Localized": "Cardigan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625013,
+      "m_Localized": "Harnais",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625014,
+      "m_Localized": "Ceinture en cuir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625015,
+      "m_Localized": "Gants en cuir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625016,
+      "m_Localized": "Moufles",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625017,
+      "m_Localized": "Horloge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625018,
+      "m_Localized": "Clé au trésor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625019,
+      "m_Localized": "Émeraude",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625020,
+      "m_Localized": "Trinité",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625021,
+      "m_Localized": "Bottes en cuir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625022,
+      "m_Localized": "Bottes d'équitation",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625023,
+      "m_Localized": "Arbalète",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625024,
+      "m_Localized": "Mousquet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625025,
+      "m_Localized": "Bourreau",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625026,
+      "m_Localized": "Pistolets doubles",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625027,
+      "m_Localized": "Épée de pirate",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625028,
+      "m_Localized": "Rapière",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625029,
+      "m_Localized": "Chapeau fedora",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625030,
+      "m_Localized": "Casque en kevlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625031,
+      "m_Localized": "Chapeau d'officier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625032,
+      "m_Localized": "Casque anti-émeute",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625033,
+      "m_Localized": "Chapeau de sergent",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625034,
+      "m_Localized": "Casque en acier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625035,
+      "m_Localized": "Chapeau d'hiver",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625036,
+      "m_Localized": "Camouflage",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625037,
+      "m_Localized": "Kevlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625038,
+      "m_Localized": "Pochette à munitions",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625039,
+      "m_Localized": "Ceinture tactique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625040,
+      "m_Localized": "Gants de combat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625041,
+      "m_Localized": "Demi-doigts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625042,
+      "m_Localized": "Plaques d'identité",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625043,
+      "m_Localized": "Collier de fortune",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625044,
+      "m_Localized": "Boulon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625045,
+      "m_Localized": "Anneau de la fraternité",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625046,
+      "m_Localized": "Bottes de combat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625047,
+      "m_Localized": "Bottes de vétéran",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625048,
+      "m_Localized": "AK",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625049,
+      "m_Localized": "Bâton",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625050,
+      "m_Localized": "Poings américains",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625051,
+      "m_Localized": "M4",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625052,
+      "m_Localized": "Bouclier anti-émeute",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625053,
+      "m_Localized": "Sniper",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625054,
+      "m_Localized": "Uzi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625055,
+      "m_Localized": "Clé à molette",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625056,
+      "m_Localized": "Casque bio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625057,
+      "m_Localized": "Masque à gaz",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625058,
+      "m_Localized": "Mecha de fer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625059,
+      "m_Localized": "Casque spatial",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625060,
+      "m_Localized": "Exosquelette",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625061,
+      "m_Localized": "Combinaison spatiale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625062,
+      "m_Localized": "Corset",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625063,
+      "m_Localized": "Sangles",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625064,
+      "m_Localized": "Télécommande",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625065,
+      "m_Localized": "Gants spatiaux",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625066,
+      "m_Localized": "Collier Kuiper",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625067,
+      "m_Localized": "Pendentif",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625068,
+      "m_Localized": "Anneau d'Icare",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625069,
+      "m_Localized": "Anneau Solarius",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625070,
+      "m_Localized": "Propulseurs de pieds",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625071,
+      "m_Localized": "Bottes spatiales",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625072,
+      "m_Localized": "Blaster",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625073,
+      "m_Localized": "Épée robot",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625074,
+      "m_Localized": "Sabre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625075,
+      "m_Localized": "Pistolet spatial",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625076,
+      "m_Localized": "Pistolet spatial",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625077,
+      "m_Localized": "Mecha avancé",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625078,
+      "m_Localized": "Tête d'alien",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625079,
+      "m_Localized": "Masque du destructeur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625080,
+      "m_Localized": "Robuste",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625081,
+      "m_Localized": "Casque robot",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625082,
+      "m_Localized": "Stellarium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625083,
+      "m_Localized": "Adamantium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625084,
+      "m_Localized": "Combinaison plasma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625085,
+      "m_Localized": "Synchroniseur pelvien",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625086,
+      "m_Localized": "Stabilisateur spinal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625087,
+      "m_Localized": "Impacteurs",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625088,
+      "m_Localized": "Implants",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625089,
+      "m_Localized": "Collier Gamma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625090,
+      "m_Localized": "Choker Psi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625091,
+      "m_Localized": "Anneau d'éclipse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625092,
+      "m_Localized": "Anneau Rarium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625093,
+      "m_Localized": "Pieds hydrauliques",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625094,
+      "m_Localized": "Pieds robot",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625095,
+      "m_Localized": "Double sabre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625096,
+      "m_Localized": "Blaster ionique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625097,
+      "m_Localized": "Coupeur isobarique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625098,
+      "m_Localized": "Lumière & Bouclier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625099,
+      "m_Localized": "Fusil à plasma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625100,
+      "m_Localized": "Pistolet à rayons",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625101,
+      "m_Localized": "Casquette",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625102,
+      "m_Localized": "Holo de fer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625103,
+      "m_Localized": "Masque",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625104,
+      "m_Localized": "Casque virtuel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625105,
+      "m_Localized": "HoloArmure",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625106,
+      "m_Localized": "Plaques spectrales",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625107,
+      "m_Localized": "Ceinture orbitale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625108,
+      "m_Localized": "Ceinture de réalité",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625109,
+      "m_Localized": "Impulsion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625110,
+      "m_Localized": "Gants Arc-en-ciel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625111,
+      "m_Localized": "Amulette de Cristal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625112,
+      "m_Localized": "Collier Glitch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625113,
+      "m_Localized": "Anneau de Connexion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625114,
+      "m_Localized": "Anneau de Möbius",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625115,
+      "m_Localized": "Chaussettes Éthérées",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625116,
+      "m_Localized": "Voyageurs Rapides",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625117,
+      "m_Localized": "Sabre Projété",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625118,
+      "m_Localized": "Lanceur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625119,
+      "m_Localized": "Trident",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625120,
+      "m_Localized": "Arc Virtuel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625121,
+      "m_Localized": "Pistolet Virtuel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625122,
+      "m_Localized": "Épée Virtuelle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625123,
+      "m_Localized": "Casque Énergétique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625124,
+      "m_Localized": "Bandana Cheveux",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625125,
+      "m_Localized": "Cheveux Attachés",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625126,
+      "m_Localized": "Casque Quantique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625127,
+      "m_Localized": "Masque Sub",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625128,
+      "m_Localized": "Armure Delta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625129,
+      "m_Localized": "Combinaison Orbitale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625130,
+      "m_Localized": "Ceinture Noire",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625131,
+      "m_Localized": "Ceinture de Neutrinos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625132,
+      "m_Localized": "Gants de Gravité",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625133,
+      "m_Localized": "Empreintes de Neutron",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625134,
+      "m_Localized": "Collier de Higgs",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625135,
+      "m_Localized": "Collier du Vide",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625136,
+      "m_Localized": "Anneau d'Aura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625137,
+      "m_Localized": "Anneau de Probabilité",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625138,
+      "m_Localized": "Bottes Antigravité",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625139,
+      "m_Localized": "Pieds d'Antimatière",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625140,
+      "m_Localized": "Arc Noir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625141,
+      "m_Localized": "Pistolet Noir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625142,
+      "m_Localized": "Marteau Noir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625143,
+      "m_Localized": "Lance Noire",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625144,
+      "m_Localized": "Bâton Noir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625145,
+      "m_Localized": "Épée & Bouclier Noirs",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625146,
+      "m_Localized": "Surplomb Celtique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625147,
+      "m_Localized": "Halo Protecteur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625148,
+      "m_Localized": "Couronne de Serpent",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625149,
+      "m_Localized": "Cheveux Blancs",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625150,
+      "m_Localized": "Chapeau de Sorcier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625151,
+      "m_Localized": "Robe Sainte",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625152,
+      "m_Localized": "Armure de Paladin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625153,
+      "m_Localized": "Ceinture de Sainteté",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625154,
+      "m_Localized": "Ceinture de Sorcier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625155,
+      "m_Localized": "Gants d'Enchanteur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625156,
+      "m_Localized": "Gants de Croyant",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625157,
+      "m_Localized": "Collier Griffe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625158,
+      "m_Localized": "Amulette de Thor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625159,
+      "m_Localized": "Anneau de Divinité",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625160,
+      "m_Localized": "Anneau Nazar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625161,
+      "m_Localized": "Bottes Célestes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625162,
+      "m_Localized": "Sandales de Mercure",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625163,
+      "m_Localized": "Fourche Angélique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625164,
+      "m_Localized": "Dague du Dragon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625165,
+      "m_Localized": "Épée Serpent",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625166,
+      "m_Localized": "Chant de la Sirène",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625167,
+      "m_Localized": "Bâton",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625168,
+      "m_Localized": "Bâton de Sagesse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036190056448,
+      "m_Localized": "Trident Infernal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445056,
+      "m_Localized": "Fourche Abyssale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445057,
+      "m_Localized": "Perce-âme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445058,
+      "m_Localized": "Masse du Destin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445059,
+      "m_Localized": "Cimeterre de l'Ombre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445060,
+      "m_Localized": "Couronne de Dépit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445061,
+      "m_Localized": "Visière de Croc Pourri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445062,
+      "m_Localized": "Heaume Forgé en Enfer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445063,
+      "m_Localized": "Crête de Venin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445064,
+      "m_Localized": "Plastron du Destin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445065,
+      "m_Localized": "Emprise du Tourment",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445066,
+      "m_Localized": "Griffe du Vide",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445067,
+      "m_Localized": "Pas d'Épouvante",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445068,
+      "m_Localized": "Grèves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445069,
+      "m_Localized": "Cercle de Douleur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445070,
+      "m_Localized": "Ceinture Cramoisie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445071,
+      "m_Localized": "Collier d'Épines",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445072,
+      "m_Localized": "Collier de Dépit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445073,
+      "m_Localized": "Lieur de Crâne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445074,
+      "m_Localized": "Anneau Prismatique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350273392640,
+      "m_Localized": "Cape",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350285975552,
+      "m_Localized": "Plaques en fusion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

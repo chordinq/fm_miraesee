@@ -1,0 +1,441 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Missions_fr",
+  "m_LocaleId": {
+    "m_Code": "fr"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5371603394758010093
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 251863429120,
+      "m_Localized": "Missions",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16036715491328,
+      "m_Localized": "L'énergie est rechargée chaque jour à {0}. L'énergie n'est consommée que si vous réussissez une mission !",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28244723822592,
+      "m_Localized": "Rassemblement",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44740485246976,
+      "m_Localized": "Succès !",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 45374441713664,
+      "m_Localized": "Échec !",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 48422304018432,
+      "m_Localized": "Collecter les récompenses",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 52887002214400,
+      "m_Localized": "Rassemblements",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623317729280,
+      "m_Localized": "Puissance suggérée :",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312192,
+      "m_Localized": "Puissance totale :",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312193,
+      "m_Localized": "Rassemblement... {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312194,
+      "m_Localized": "{0} a terminé une <color=#{2}>Mission Niveau {1}</color>",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6251320826327040,
+      "m_Localized": "Rafraîchir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6882146555457536,
+      "m_Localized": "Combattre...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10232987525308416,
+      "m_Localized": "Soutien :",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14155878936276992,
+      "m_Localized": "Tout collecter",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25460050683224064,
+      "m_Localized": "Temps de ralliement",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695739834368,
+      "m_Localized": "Hurlement du Premier Âge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417280,
+      "m_Localized": "Une tribu oubliée a émergé des terres sauvages, pillant les caravanes avec pierre et os. Si elle n'est pas repoussée, ses terrains de chasse incluront bientôt votre clan.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417281,
+      "m_Localized": "Le Deuxième Âge de Pierre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417282,
+      "m_Localized": "Ce qui était autrefois un simple groupe est devenu quelque chose de pire. Si votre clan n'agit pas, ils régneront bientôt sur ces terres.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417283,
+      "m_Localized": "Les Samouraïs Jumeaux",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417284,
+      "m_Localized": "Deux maîtres épéistes parcourent vos terres, abattant tous ceux qui les défient. Vainquez les jumeaux avant que leur légende ne plonge votre clan dans la peur.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417285,
+      "m_Localized": "La Légion du Casque",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417286,
+      "m_Localized": "Ces combattants se cachent derrière le fer et les armes lourdes, se croyant intouchables. Montrez-leur que même l'acier se plie devant votre clan.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417287,
+      "m_Localized": "Les Voiles Noires",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417288,
+      "m_Localized": "Des navires sans drapeaux ont jeté l'ancre près de vos terres. Les pirates prévoient de piller tout ce qui n'est pas cloué.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417289,
+      "m_Localized": "Les Trois Mousquetaires",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417290,
+      "m_Localized": "Ces maîtres cherchent à prouver qu'eux seuls méritent respect et pouvoir. Montrez-leur que votre clan ne s'incline devant aucune lame.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417291,
+      "m_Localized": "Attaque de voyous",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417292,
+      "m_Localized": "Une bande de voyous est venue collecter une « taxe » sur les revenus durement gagnés de votre clan. Vous avez refusé de payer - et maintenant ils sont à vos portes. Tenez bon et montrez-leur que votre clan ne cède pas aux menaces.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417293,
+      "m_Localized": "La Loi frappe à la porte",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417294,
+      "m_Localized": "Vous avez refusé le partenariat du dictateur, choisissant la liberté plutôt que les chaînes. Maintenant, ses unités blindées marchent pour donner l'exemple à votre peuple.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417295,
+      "m_Localized": "Avant-garde Toxique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417297,
+      "m_Localized": "Les Lames Étoilées",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417298,
+      "m_Localized": "Une escouade de guerriers aux épées lumineuses a atterri, déclarant votre clan inapte à gouverner ces terres. Chassez-les avant qu'ils ne décident de votre sort pour de bon.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417299,
+      "m_Localized": "Invasion Alien",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417300,
+      "m_Localized": "Des êtres venus d'une autre étoile ont commencé à récolter votre peuple comme du bétail. Ripostez avant que votre maison ne devienne leur colonie.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417301,
+      "m_Localized": "La Lame Colossale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417302,
+      "m_Localized": "Le guerrier combat avec une lame plus grande qu'une maison. Si votre clan ne peut pas l'arrêter, rien ne le pourra.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417303,
+      "m_Localized": "Brèche Numérique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417304,
+      "m_Localized": "Une déchirure dans le royaume des données a libéré d'étranges guerriers de lumière et de chiffres. Fermez la brèche avant qu'ils ne réécrivent vos terres.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417305,
+      "m_Localized": "La tech ne suffit pas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417306,
+      "m_Localized": "Des combattants ordinaires se sont armés de lames technologiques lumineuses, croyant qu'elles les rendent invincibles. Montrez que la vraie force compte encore.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417307,
+      "m_Localized": "Rebelles Quantiques",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417308,
+      "m_Localized": "Un groupe de guerriers flamboyants est apparu, armé d'armes quantiques instables. Leur pouvoir est sauvage et dangereux, et votre clan doit les arrêter avant que les dégâts ne se propagent.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417309,
+      "m_Localized": "Ordre du Trône",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417310,
+      "m_Localized": "Le souverain a envoyé ses gardes d'élite pour soumettre votre clan à la couronne. Montrez que votre clan ne répond à aucun trône.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417311,
+      "m_Localized": "Les Deux Sorciers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417312,
+      "m_Localized": "Les mages prétendent venir \"restructurer\" votre territoire à leur guise. Votre clan doit répondre à l'acier avec courage et briser leurs enchantements.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417313,
+      "m_Localized": "Descendre d'en haut",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417314,
+      "m_Localized": "Une armée d'anges est descendue, affirmant que votre clan est devenu trop fier. Prouvez votre valeur, ou soyez effacé au nom de la pureté.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417315,
+      "m_Localized": "Sorcier·ères de la nuit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417316,
+      "m_Localized": "Où qu'ils passent, les récoltes échouent et les gens disparaissent. Chassez-les avant que votre maison ne devienne un autre lieu mort.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417317,
+      "m_Localized": "Depuis l'Outre-monde",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417318,
+      "m_Localized": "Des guerriers ont émergé des profondeurs où les vivants n'ont pas leur place. Si votre clan ne les arrête pas, la surface deviendra leur nouveau royaume.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78356377112666112,
+      "m_Localized": "Une unité masquée équipée de technologie interdite a pénétré votre territoire, laissant derrière elle un air brûlé. Arrêtez leur avancée avant qu'ils ne causent plus de dégâts.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88072866833096704,
+      "m_Localized": "Niveaux de mission {0}-{1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312195,
+      "m_Localized": "Mission {0} !",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 90987145798344704,
+      "m_Localized": "Tu es déjà en mission ailleurs !",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

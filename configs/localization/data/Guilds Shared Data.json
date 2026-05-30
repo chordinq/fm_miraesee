@@ -1,0 +1,1121 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": 7442561414784416887
+  },
+  "m_Name": "Guilds Shared Data",
+  "m_TableCollectionName": "Guilds",
+  "m_TableCollectionNameGuidString": "adbfaa4e7c3e2e9498fcd7f441ad04f4",
+  "m_Entries": [
+    {
+      "m_Id": 164289830912,
+      "m_Key": "QuickJoin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1787028299776,
+      "m_Key": "CreateAClan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8305240956928,
+      "m_Key": "JoinAClan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9750841384960,
+      "m_Key": "SearchForAClan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 43440120258560,
+      "m_Key": "RequestToJoin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 43788159410176,
+      "m_Key": "Join",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44561178025984,
+      "m_Key": "Full",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 46393233235968,
+      "m_Key": "NoMatchingClanFound",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108401508999168,
+      "m_Key": "FlagLabel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110802668347392,
+      "m_Key": "NameLabel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111147750514688,
+      "m_Key": "TagLabel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111518849949696,
+      "m_Key": "JoinSettingLabel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113398871220224,
+      "m_Key": "CreateClan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114685960511488,
+      "m_Key": "ClanNameAlreadyTaken",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1921325498540032,
+      "m_Key": "CustomizeEmblem",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2018521346646016,
+      "m_Key": "Background",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2018697561939968,
+      "m_Key": "Icon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2191723909783552,
+      "m_Key": "ChooseAFlag",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2195898320199680,
+      "m_Key": "JoinSettings",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2203246031970304,
+      "m_Key": "OpenJoinDescription",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2203557232549888,
+      "m_Key": "ApprovalJoinDescription",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2672568359182336,
+      "m_Key": "Members",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2673971966238720,
+      "m_Key": "Missions",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2674153848037376,
+      "m_Key": "Titans",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2683258901880832,
+      "m_Key": "War",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2741213772898304,
+      "m_Key": "Announcement",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2887213657350144,
+      "m_Key": "TotalPowerX",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2887439923273728,
+      "m_Key": "MemberCountXofY",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990437265563648,
+      "m_Key": "RoleLeaderName",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990840757608448,
+      "m_Key": "RoleCommanderName",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990912127885312,
+      "m_Key": "RoleCaptainName",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990963533275136,
+      "m_Key": "RoleR1Name",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991018264748032,
+      "m_Key": "RoleR2Name",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991053652090880,
+      "m_Key": "RoleR3Name",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991110405218304,
+      "m_Key": "RoleR4Name",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991146010664960,
+      "m_Key": "RoleR5Name",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991700380213248,
+      "m_Key": "RoleLeaderDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991983734808576,
+      "m_Key": "RoleCommanderDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992061497204736,
+      "m_Key": "RoleCaptainDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992120037105664,
+      "m_Key": "RoleR1Desc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992183740194816,
+      "m_Key": "RoleR2Desc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992236173189120,
+      "m_Key": "RoleR3Desc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992272856571904,
+      "m_Key": "RoleR4Desc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992331396472832,
+      "m_Key": "RoleR5Desc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992411356684288,
+      "m_Key": "Online",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3079969885380608,
+      "m_Key": "Role permissions",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3282046154694656,
+      "m_Key": "TransferLeadership",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3282496966877184,
+      "m_Key": "Confirm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4530868835049472,
+      "m_Key": "KickPlayerConfirmText",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4531611302354944,
+      "m_Key": "YesRemove",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532707466928128,
+      "m_Key": "LeaveConfirmText",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532892901302272,
+      "m_Key": "YesLeave",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4533569346068480,
+      "m_Key": "TransferLeadershipConfirmText",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4534157022584832,
+      "m_Key": "YesTransfer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4547171457163264,
+      "m_Key": "EditRole",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4547743275016192,
+      "m_Key": "KickPlayer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4548011723055104,
+      "m_Key": "LeaveGuild",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4548662943277056,
+      "m_Key": "TransferLeadBeforeLeaving",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701955971604480,
+      "m_Key": "GuildSettings",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4720734575255552,
+      "m_Key": "GuildName",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4727083027652608,
+      "m_Key": "OpenJoin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4728355130695680,
+      "m_Key": "ApprovalJoin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9039444463050752,
+      "m_Key": "Requests",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9069529651994624,
+      "m_Key": "RequestsToJoinClan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9073199571525632,
+      "m_Key": "Approve",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9141308802195456,
+      "m_Key": "Dismiss",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9171111450238976,
+      "m_Key": "ToastTextJoinResponseNotAMember",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9171624921128960,
+      "m_Key": "ToastTextJoinResponseNoPermission",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172155123097600,
+      "m_Key": "ToastTextJoinResponseAlreadyInThisGuild",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172292146814976,
+      "m_Key": "ToastTextJoinResponseAlreadyInAnotherGuild",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172441757638656,
+      "m_Key": "ToastTextJoinResponseGuildIsFull",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172648964644864,
+      "m_Key": "ToastTextJoinResponseJoinRequestNotFound",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816556459515904,
+      "m_Key": "XMinutesAgo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816734847459328,
+      "m_Key": "XHoursAgo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816857337913344,
+      "m_Key": "XDaysAgo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14867313500086272,
+      "m_Key": "AnnouncementDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17031808318169088,
+      "m_Key": "ClanTagAlreadyTaken",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17032169531629568,
+      "m_Key": "BadWordInName",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17032692984963072,
+      "m_Key": "AnInternalErrorHasOccured",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17141006318166016,
+      "m_Key": "GuildNameRuleViolation",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17141607118659584,
+      "m_Key": "GuildTagRuleViolation",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17770654513225728,
+      "m_Key": "RequestSent",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20120750559059968,
+      "m_Key": "BadWordInTag",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29374167438258176,
+      "m_Key": "WarProgress",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29374544795594752,
+      "m_Key": "DaysAndResults",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204544,
+      "m_Key": "GuildMessageCodesUserLeft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204545,
+      "m_Key": "GuildMessageCodesUserKicked",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204546,
+      "m_Key": "GuildMessageCodesUserJoined",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204547,
+      "m_Key": "GuildMessageCodesUserPromotedToLeader",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204548,
+      "m_Key": "GuildMessageCodesUserRankChange",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204549,
+      "m_Key": "promoted",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204550,
+      "m_Key": "demoted",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 37825289286311936,
+      "m_Key": "PleaseWaitXBeforeJoiningAgain",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39541792190472192,
+      "m_Key": "Finalizing...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915179372544,
+      "m_Key": "Victory!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149760,
+      "m_Key": "Defeat!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149761,
+      "m_Key": "AllOutBrawl",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149762,
+      "m_Key": "Ongoing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149763,
+      "m_Key": "StartsIn",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245696,
+      "m_Key": "TotalPointsEarned",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245697,
+      "m_Key": "Tier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245698,
+      "m_Key": "won",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245699,
+      "m_Key": "lost",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245700,
+      "m_Key": "ClanWonLost",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245701,
+      "m_Key": "ClanWinningLosing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245703,
+      "m_Key": "losing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245704,
+      "m_Key": "winning",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364647813120,
+      "m_Key": "WarRewards",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978944,
+      "m_Key": "WarResults",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978945,
+      "m_Key": "PointsEarnedWeek",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978947,
+      "m_Key": "WinningPoints",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978948,
+      "m_Key": "Winner",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978949,
+      "m_Key": "MVP",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864256,
+      "m_Key": "Rewards",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864257,
+      "m_Key": "Win",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864258,
+      "m_Key": "Lose",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511680,
+      "m_Key": "Tiers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511681,
+      "m_Key": "CurrentTierPoints",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511682,
+      "m_Key": "TierPoints",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511683,
+      "m_Key": "WinToEarnTierPoints",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261568,
+      "m_Key": "DayX",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261569,
+      "m_Key": "DayXActions",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261570,
+      "m_Key": "DefeatRivalClanMembers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261571,
+      "m_Key": "WinBrawl",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609515733917696,
+      "m_Key": "Day",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135833505792,
+      "m_Key": "BattleLog",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283008,
+      "m_Key": "XGuildReset",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283009,
+      "m_Key": "XDefeatedY",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283010,
+      "m_Key": "XFailedDefeatY",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39618987466399744,
+      "m_Key": "RequiredForReset",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39656479710502912,
+      "m_Key": "NextWarBeginsIn",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39656479718891520,
+      "m_Key": "WarHasEnded",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983426318336,
+      "m_Key": "StartForgeUpgrade",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901248,
+      "m_Key": "CompleteForgeUpgrade",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930755662635008,
+      "m_Key": "SpendXCurrencyOnForge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901249,
+      "m_Key": "SpendaCurrencyOnForge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901250,
+      "m_Key": "ForgeXEquipment",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901251,
+      "m_Key": "UseXDungeonKey",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901252,
+      "m_Key": "SummonXSkill",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901253,
+      "m_Key": "UpgradeXSkill",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901254,
+      "m_Key": "HatchXEgg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901255,
+      "m_Key": "MergeXPet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901256,
+      "m_Key": "FinishXTechTreeUpgrade",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901257,
+      "m_Key": "SummonXMount",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901258,
+      "m_Key": "MergeXMount",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39931445744693248,
+      "m_Key": "WIN!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39961057296052224,
+      "m_Key": "MakeSureToCollect",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103770579654402048,
+      "m_Key": "BadWordInAnnouncement",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108816660394139648,
+      "m_Key": "CompleteXLevelMission",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108816777775931392,
+      "m_Key": "CompleteLegendaryMission",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111663885956669440,
+      "m_Key": "CooldownWarning",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111663885973446656,
+      "m_Key": "WarBanWarning",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124387185199669248,
+      "m_Key": "GuildMessageCodesUserKickedBy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124428308832051200,
+      "m_Key": "GuildMessageCodesUserJoinApprovedBy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124445730247008256,
+      "m_Key": "UserRankChangedBy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_KeyGenerator": {
+    "rid": 5824396312820318482
+  },
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 5824396312820318482,
+        "type": {
+          "class": "DistributedUIDGenerator",
+          "ns": "UnityEngine.Localization.Tables",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Missions_de",
+  "m_LocaleId": {
+    "m_Code": "de"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5371603394758010093
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 251863429120,
+      "m_Localized": "Missionen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16036715491328,
+      "m_Localized": "Energie wird jeden Tag um {0} aufgefüllt. Energie wird nur verbraucht, wenn du eine Mission erfolgreich abschließt!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28244723822592,
+      "m_Localized": "Rallye",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44740485246976,
+      "m_Localized": "Erfolg!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 45374441713664,
+      "m_Localized": "Fehlschlag!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 48422304018432,
+      "m_Localized": "Belohnungen einsammeln",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 52887002214400,
+      "m_Localized": "Rallyes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623317729280,
+      "m_Localized": "Empfohlene Stärke:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312192,
+      "m_Localized": "Teamstärke:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312193,
+      "m_Localized": "Sammeln... {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312194,
+      "m_Localized": "{0} hat eine <color=#{2}>Stufe {1} Mission</color> abgeschlossen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6251320826327040,
+      "m_Localized": "Aktualisieren",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6882146555457536,
+      "m_Localized": "Kämpfen...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10232987525308416,
+      "m_Localized": "Unterstützung:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14155878936276992,
+      "m_Localized": "Alles einsammeln",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25460050683224064,
+      "m_Localized": "Versammlungszeit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695739834368,
+      "m_Localized": "Heulen des ersten Zeitalters",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417280,
+      "m_Localized": "Ein vergessener Stamm ist aus der Wildnis gekrochen und überfällt Karawanen mit Steinen und Knochen. Wenn sie nicht zurückgedrängt werden, wird ihr Jagdgebiet bald deinen Clan einschließen.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417281,
+      "m_Localized": "Das zweite Steinzeitalter",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417282,
+      "m_Localized": "Was einst eine einfache Bande war, ist zu etwas Schlimmerem geworden. Wenn dein Clan nicht handelt, werden sie bald über diese Ländereien herrschen.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417283,
+      "m_Localized": "Die Zwillings-Samurai",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417284,
+      "m_Localized": "Zwei Schwertmeister durchstreifen dein Land und schneiden jeden nieder, der sie herausfordert. Besiege die Zwillinge, bevor ihre Legende deinen Clan in Angst versetzt.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417285,
+      "m_Localized": "Die Helm-Legion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417286,
+      "m_Localized": "Diese Kämpfer verstecken sich hinter Eisen und schweren Waffen und halten sich für unantastbar. Zeig ihnen, dass selbst Stahl vor deinem Clan nachgibt.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417287,
+      "m_Localized": "Die Schwarzen Segel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417288,
+      "m_Localized": "Schiffe ohne Flaggen haben in der Nähe deiner Ländereien geankert. Die Piraten planen, alles zu plündern, was nicht niet- und nagelfest ist.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417289,
+      "m_Localized": "Die Drei Musketiere",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417290,
+      "m_Localized": "Diese Meister wollen beweisen, dass nur sie Respekt und Herrschaft verdienen. Zeig ihnen, dass dein Clan sich vor keiner Klinge verbeugt.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417291,
+      "m_Localized": "Schläger-Angriff",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417292,
+      "m_Localized": "Eine Bande von Schlägern ist gekommen, um eine „Steuer“ auf das hart verdiente Einkommen deines Clans zu erheben. Du hast dich geweigert zu zahlen – und jetzt stehen sie vor deinen Toren. Zeig ihnen, dass dein Clan sich keinen Drohungen beugt.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417293,
+      "m_Localized": "Das Gesetz klopft an",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417294,
+      "m_Localized": "Du hast die Partnerschaft mit dem Diktator abgelehnt und Freiheit über Ketten gewählt. Jetzt marschieren seine gepanzerten Einheiten ein, um ein Exempel an deinem Volk zu statuieren.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417295,
+      "m_Localized": "Toxische Vorhut",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417297,
+      "m_Localized": "Die Sternklingen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417298,
+      "m_Localized": "Ein Trupp von Kriegern mit leuchtenden Schwertern ist gelandet und erklärt deinen Clan für ungeeignet, diese Ländereien zu regieren. Vertreibe sie, bevor sie dein Schicksal endgültig entscheiden.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417299,
+      "m_Localized": "Alien-Invasion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417300,
+      "m_Localized": "Wesen von einem anderen Stern haben begonnen, dein Volk wie Vieh zu ernten. Wehre dich, bevor dein Zuhause zu ihrer Kolonie wird.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417301,
+      "m_Localized": "Die Kolossalklinge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417302,
+      "m_Localized": "Der Krieger kämpft mit einer Klinge größer als jedes Haus. Wenn dein Clan ihn nicht aufhalten kann, wird es niemand können.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417303,
+      "m_Localized": "Digitaler Einbruch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417304,
+      "m_Localized": "Ein Riss im Datenreich hat seltsame Krieger aus Licht und Zahlen entfesselt. Schließe den Riss, bevor sie dein Land umschreiben.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417305,
+      "m_Localized": "Technik ist nicht alles",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417306,
+      "m_Localized": "Normale Kämpfer haben sich mit leuchtenden Tech-Klingen bewaffnet und glauben, das macht sie unbesiegbar. Beweise, dass echte Stärke immer noch zählt.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417307,
+      "m_Localized": "Quantenrebellen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417308,
+      "m_Localized": "Eine Truppe auffälliger Krieger ist aufgetaucht, bewaffnet mit instabilen Quantenwaffen. Ihre Macht ist wild und gefährlich, und dein Clan muss sie stoppen, bevor der Schaden sich ausbreitet.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417309,
+      "m_Localized": "Orden des Thrones",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417310,
+      "m_Localized": "Der Herrscher hat seine Elitewachen geschickt, um deinen Clan unter die Krone zu bringen. Zeige, dass dein Clan keinem Thron gehorcht.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417311,
+      "m_Localized": "Die zwei Zauberer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417312,
+      "m_Localized": "Die Magier behaupten, sie kämen, um dein Gebiet nach ihrem Geschmack „umzugestalten“. Dein Clan muss Stahl mit Mut beantworten und ihre Verzauberungen brechen.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417313,
+      "m_Localized": "Von oben herabsteigen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417314,
+      "m_Localized": "Eine Schar Engel ist herabgestiegen und behauptet, dein Clan sei zu stolz geworden. Beweise deinen Wert oder werde im Namen der Reinheit ausgelöscht.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417315,
+      "m_Localized": "Nachthexen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417316,
+      "m_Localized": "Wo immer diese Zauberer wandeln, verdorren die Felder und Menschen verschwinden. Vertreibe sie, bevor dein Zuhause ein toter Ort wird.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417317,
+      "m_Localized": "Aus der Unterwelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417318,
+      "m_Localized": "Krieger sind aus den Tiefen aufgestiegen, wo die Lebenden nicht hingehören. Wenn dein Clan sie nicht aufhält, wird die Oberfläche ihr neues Königreich.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78356377112666112,
+      "m_Localized": "Eine maskierte Einheit mit verbotener Technologie hat dein Gebiet betreten und hinterlässt verbrannte Luft. Stoppe ihren Vormarsch, bevor sie mehr Schaden anrichten.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88072866833096704,
+      "m_Localized": "Missionslevel {0}-{1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312195,
+      "m_Localized": "{0} Mission!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 90987145798344704,
+      "m_Localized": "Du bist schon in einer anderen Mission!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

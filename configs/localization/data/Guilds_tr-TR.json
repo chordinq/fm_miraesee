@@ -1,0 +1,1131 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Guilds_tr-TR",
+  "m_LocaleId": {
+    "m_Code": "tr-TR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -8331198245221904091
+  },
+  "m_Metadata": {
+    "m_Items": [
+      {
+        "rid": 963795083077615764
+      }
+    ]
+  },
+  "m_TableData": [
+    {
+      "m_Id": 164289830912,
+      "m_Localized": "Hızlı Katıl",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1787028299776,
+      "m_Localized": "Klan Oluştur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8305240956928,
+      "m_Localized": "Bir Klana Katıl",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9750841384960,
+      "m_Localized": "Klan ara...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 43440120258560,
+      "m_Localized": "Katılma isteği",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 43788159410176,
+      "m_Localized": "Katıl",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44561178025984,
+      "m_Localized": "Dolu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 46393233235968,
+      "m_Localized": "Eşleşen klan bulunamadı :(",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108401508999168,
+      "m_Localized": "Bayrak:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110802668347392,
+      "m_Localized": "İsim",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111147750514688,
+      "m_Localized": "Etiket",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111518849949696,
+      "m_Localized": "Katılım Ayarı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113398871220224,
+      "m_Localized": "Klan Oluştur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114685960511488,
+      "m_Localized": "Klan ismi zaten alınmış!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1921325498540032,
+      "m_Localized": "Amblemi Özelleştir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2018521346646016,
+      "m_Localized": "Arka Plan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2018697561939968,
+      "m_Localized": "Simge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2191723909783552,
+      "m_Localized": "Bir Bayrak Seç",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2195898320199680,
+      "m_Localized": "Oyuncular nasıl katılabilir?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2203246031970304,
+      "m_Localized": "Açık (herkes katılabilir)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2203557232549888,
+      "m_Localized": "Sadece Onaylı (yeni üyeler katılmak için başvurmalı)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2672568359182336,
+      "m_Localized": "Üyeler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2673971966238720,
+      "m_Localized": "Görevler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2674153848037376,
+      "m_Localized": "Titanlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2683258901880832,
+      "m_Localized": "Savaş",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2741213772898304,
+      "m_Localized": "Duyuru",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2887213657350144,
+      "m_Localized": "Toplam Güç: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2887439923273728,
+      "m_Localized": "Üyeler: {0}/{1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990437265563648,
+      "m_Localized": "Lider",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990840757608448,
+      "m_Localized": "Komutan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990912127885312,
+      "m_Localized": "Kaptan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990963533275136,
+      "m_Localized": "R1",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991018264748032,
+      "m_Localized": "R2",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991053652090880,
+      "m_Localized": "R3",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991110405218304,
+      "m_Localized": "R4",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991146010664960,
+      "m_Localized": "R5",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991700380213248,
+      "m_Localized": "Komutana kadar terfi/düşür. Duyuru yap. Talepleri onayla. Katılım ayarlarını değiştir. Oyuncuları çıkar.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991983734808576,
+      "m_Localized": "Kaptana kadar terfi/düşür. Duyuru yap. Talepleri onayla. Katılım ayarlarını değiştir. Oyuncuları çıkar.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992061497204736,
+      "m_Localized": "R1'e kadar terfi/düşür. Duyuru yap. Talepleri onayla.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992120037105664,
+      "m_Localized": "R2'ye kadar terfi/düşür.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992183740194816,
+      "m_Localized": "Klanın güvenilir ve uzun süreli üyesi.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992236173189120,
+      "m_Localized": "Klanın değerli bir üyesi.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992272856571904,
+      "m_Localized": "Artık çaylak değil.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992331396472832,
+      "m_Localized": "Çaylak.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992411356684288,
+      "m_Localized": "Çevrimiçi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3079969885380608,
+      "m_Localized": "Rol izinleri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3282046154694656,
+      "m_Localized": "Liderliği devret",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3282496966877184,
+      "m_Localized": "Onayla",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4530868835049472,
+      "m_Localized": "Bu oyuncuyu klandan çıkarmak istediğinizden emin misiniz?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4531611302354944,
+      "m_Localized": "Evet, çıkar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532707466928128,
+      "m_Localized": "Bu guild'den ayrılmak istediğinizden emin misiniz?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532892901302272,
+      "m_Localized": "Evet, ayrıl",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4533569346068480,
+      "m_Localized": "Liderliği bu oyuncuya devretmek istediğinizden emin misiniz? Bu geri alınamaz!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4534157022584832,
+      "m_Localized": "Evet, devret",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4547171457163264,
+      "m_Localized": "Terfi / Düşür",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4547743275016192,
+      "m_Localized": "Oyuncuyu Çıkar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4548011723055104,
+      "m_Localized": "Guild'den Ayrıl",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4548662943277056,
+      "m_Localized": "Ayrılmadan önce guild'in liderliğini devretmelisiniz!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701955971604480,
+      "m_Localized": "Klan Ayarları",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4720734575255552,
+      "m_Localized": "Klan Adı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4727083027652608,
+      "m_Localized": "Açık",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4728355130695680,
+      "m_Localized": "Onay",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9039444463050752,
+      "m_Localized": "İstekler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9069529651994624,
+      "m_Localized": "Klan katılım istekleri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9073199571525632,
+      "m_Localized": "Onayla",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9141308802195456,
+      "m_Localized": "Reddet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9171111450238976,
+      "m_Localized": "Bu klanın üyesi değilsin ve istekleri onaylayamazsın!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9171624921128960,
+      "m_Localized": "Gerekli izinlere sahip değilsiniz!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172155123097600,
+      "m_Localized": "Oyuncu zaten klanın üyesi!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172292146814976,
+      "m_Localized": "Oyuncu zaten başka bir klanın üyesi!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172441757638656,
+      "m_Localized": "Klanınız dolu!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172648964644864,
+      "m_Localized": "Bu istek artık mevcut değil!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816857337913344,
+      "m_Localized": "{0} gün önce",
+      "m_Metadata": {
+        "m_Items": [
+          {
+            "rid": 963795083077615764
+          }
+        ]
+      }
+    },
+    {
+      "m_Id": 9816556459515904,
+      "m_Localized": "{0} dk önce",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816734847459328,
+      "m_Localized": "{0} sa önce",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14867313500086272,
+      "m_Localized": "Klan üyelerine bir duyuru yaz...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17031808318169088,
+      "m_Localized": "Klan etiketi zaten alınmış!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17032169531629568,
+      "m_Localized": "Klan adı yasak!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17032692984963072,
+      "m_Localized": "Bir iç hata oluştu, daha sonra tekrar deneyin!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17141006318166016,
+      "m_Localized": "Lütfen başka bir isim seçin, bu isim kurallara uymuyor.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17141607118659584,
+      "m_Localized": "Lütfen başka bir klan etiketi seçin. Bu etiket kurallara uymuyor.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17770654513225728,
+      "m_Localized": "İstek gönderildi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20120750559059968,
+      "m_Localized": "Klan etiketi yasak!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29374167438258176,
+      "m_Localized": "Savaş İlerlemesi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29374544795594752,
+      "m_Localized": "Günler ve Sonuçlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204544,
+      "m_Localized": "{0} klanı terk etti!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204545,
+      "m_Localized": "{0} klandan atıldı!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204546,
+      "m_Localized": "{0} klana katıldı!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204547,
+      "m_Localized": "{0} liderliğe terfi etti!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204548,
+      "m_Localized": "{0}, {1} olarak {2} yapıldı!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204549,
+      "m_Localized": "terfi etti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204550,
+      "m_Localized": "rütbesi düşürüldü",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 37825289286311936,
+      "m_Localized": "Yakın zamanda bir klanı terk ettiniz. Başka bir klana katılmadan önce {0} bekleyin!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39541792190472192,
+      "m_Localized": "Tamamlanıyor...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915179372544,
+      "m_Localized": "Zafer!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149760,
+      "m_Localized": "Yenilgi!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149761,
+      "m_Localized": "Topyekün Kavga",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149762,
+      "m_Localized": "devam ediyor...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149763,
+      "m_Localized": "Başlıyor:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245696,
+      "m_Localized": "Toplam kazanılan puan:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245697,
+      "m_Localized": "Seviye",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245698,
+      "m_Localized": "kazandı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245699,
+      "m_Localized": "kaybetti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245700,
+      "m_Localized": "Klanınız bu haftaki savaşı {0}! Aşağıdaki {1} ödülleri toplayın:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245701,
+      "m_Localized": "Klanınız şu anda {0}. Savaş bittiğinde aşağıdaki {1} ödülleri toplayın:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245703,
+      "m_Localized": "kaybediyoruz!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245704,
+      "m_Localized": "kazanıyoruz!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364647813120,
+      "m_Localized": "{0} Savaş Ödülleri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978944,
+      "m_Localized": "Savaş Sonuçları",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978945,
+      "m_Localized": "Bu hafta kazanılan puanlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609515733917696,
+      "m_Localized": "Gün",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978947,
+      "m_Localized": "Kazanan Puanlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978948,
+      "m_Localized": "Kazanan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978949,
+      "m_Localized": "MVP",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864256,
+      "m_Localized": "{0} Ödüller",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864257,
+      "m_Localized": "Zafer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864258,
+      "m_Localized": "Yenilgi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511680,
+      "m_Localized": "Kademeler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511681,
+      "m_Localized": "Mevcut Klan Seviye Puanları: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511682,
+      "m_Localized": "{0} Seviye Puanı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511683,
+      "m_Localized": "Seviye Puanı kazanmak ve seviyelerde ilerlemek için Klan Savaşlarını kazanın. Seviyeniz ne kadar yüksekse, ödüller o kadar iyi!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261568,
+      "m_Localized": "Gün {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261569,
+      "m_Localized": "Gün {0} Hareketleri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261570,
+      "m_Localized": "Rakip klan üyelerini yen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261571,
+      "m_Localized": "Büyük kavgayı kazan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135833505792,
+      "m_Localized": "Savaş Günlüğü",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283008,
+      "m_Localized": "{0} sıfırlandı!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283009,
+      "m_Localized": "{0}, {1}'i yendi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283010,
+      "m_Localized": "{0}, {1}'i yenemedi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39618987466399744,
+      "m_Localized": "{0} rakip klan üyesini yenmek tüm klanı yeniden başlatır!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39656479710502912,
+      "m_Localized": "Sonraki Savaş başlıyor:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39656479718891520,
+      "m_Localized": "Savaş bitti!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983426318336,
+      "m_Localized": "Demirhane Yükseltmesini Başlat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901248,
+      "m_Localized": "Demirhane Yükseltmesini Tamamla",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901249,
+      "m_Localized": "Demirciye {0} harca",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901250,
+      "m_Localized": "{0} Ekipman Üret",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901251,
+      "m_Localized": "{0} Zindan Anahtarı Kullan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901252,
+      "m_Localized": "{0} Beceri Çağır",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901253,
+      "m_Localized": "{0} Beceri Yükselt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901254,
+      "m_Localized": "{0} Yumurta Çıkar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901255,
+      "m_Localized": "{0} Evcil Hayvan Birleştir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901256,
+      "m_Localized": "Teknoloji Ağacı {0} Yükseltmesini Bitir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901257,
+      "m_Localized": "{0} Binek Çağır",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901258,
+      "m_Localized": "{0} Binek Birleştir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39931445744693248,
+      "m_Localized": "ZAFER!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39961057296052224,
+      "m_Localized": "Tüm ödüllerini topladığından emin ol!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103770579654402048,
+      "m_Localized": "Bu duyuruya izin verilmiyor!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108816660394139648,
+      "m_Localized": "Seviye {0} görevini tamamla",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930755662635008,
+      "m_Localized": "Demirciye {0} {1} harca",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111663885956669440,
+      "m_Localized": "Bir klandan ayrıldıktan sonra, başka bir klana katılmak için yalnızca 24 saat bekledikten sonra katılabilirsiniz.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111663885973446656,
+      "m_Localized": "Bu savaş sezonunda 50k’dan fazla puan katkıda bulundun. Ayrıldıktan sonra bir sonraki sezon başlayana kadar savaşa katılamayacaksın.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108816777775931392,
+      "m_Localized": "Efsanevi bir görevi tamamla",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124387185199669248,
+      "m_Localized": "{0}, {1} tarafından klanından atıldı!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124428308832051200,
+      "m_Localized": "{0}, {1} tarafından klana katılmak için onaylandı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124445730247008256,
+      "m_Localized": "{0}, {3} tarafından {2} olarak {1}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 963795083077615764,
+        "type": {
+          "class": "SmartFormatTag",
+          "ns": "UnityEngine.Localization.Metadata",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

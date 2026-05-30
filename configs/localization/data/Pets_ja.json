@@ -1,0 +1,378 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Pets_ja",
+  "m_LocaleId": {
+    "m_Code": "ja"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5940147478223713777
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 153364393984,
+      "m_Localized": "ランダムな{1}ペットを孵化するには{0}！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393985,
+      "m_Localized": "空",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393986,
+      "m_Localized": "準備完了",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544512,
+      "m_Localized": "孵化スロットが満杯！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544513,
+      "m_Localized": "孵化中...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7431547187200,
+      "m_Localized": "スロット +1",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8513174302720,
+      "m_Localized": "合体するペットを選んで",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328656904192,
+      "m_Localized": "ニワトリ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652928,
+      "m_Localized": "犬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652929,
+      "m_Localized": "猫",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652930,
+      "m_Localized": "カタツムリ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652931,
+      "m_Localized": "ネズミ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652932,
+      "m_Localized": "カメ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652933,
+      "m_Localized": "ハリネズミ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652934,
+      "m_Localized": "クマ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652935,
+      "m_Localized": "ダチョウ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652936,
+      "m_Localized": "クモ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652937,
+      "m_Localized": "サソリ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652938,
+      "m_Localized": "グリフィン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652939,
+      "m_Localized": "サーベルタイガー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652940,
+      "m_Localized": "ユニコーン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652941,
+      "m_Localized": "トラ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652942,
+      "m_Localized": "パンダ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652943,
+      "m_Localized": "ヘビ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652944,
+      "m_Localized": "ケルベロス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652945,
+      "m_Localized": "キツネ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652946,
+      "m_Localized": "エレクトリ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652947,
+      "m_Localized": "トレント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652948,
+      "m_Localized": "魔法のエルク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652949,
+      "m_Localized": "ベビードラゴン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652950,
+      "m_Localized": "ジーニー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652951,
+      "m_Localized": "スペクトラルタイガー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435264,
+      "m_Localized": "{0}選択済み",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435265,
+      "m_Localized": "合体するペットを選択",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601476976640,
+      "m_Localized": "スイレンの葉",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919680,
+      "m_Localized": "ユリの葉",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919681,
+      "m_Localized": "茶色の葉",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919682,
+      "m_Localized": "茶色の馬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919683,
+      "m_Localized": "恐竜",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919684,
+      "m_Localized": "カニ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919685,
+      "m_Localized": "豚",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919686,
+      "m_Localized": "ヤギ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919687,
+      "m_Localized": "自転車",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919688,
+      "m_Localized": "巨大なハチ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919689,
+      "m_Localized": "ドロイド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113984,
+      "m_Localized": "ミニドラゴン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113985,
+      "m_Localized": "ホバーディスク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113986,
+      "m_Localized": "ホバーボード",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 364392176349184,
+      "m_Localized": "合体するマウントを選択",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5414995050356736,
+      "m_Localized": "卵が孵化する準備ができたよ！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

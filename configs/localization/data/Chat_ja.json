@@ -1,0 +1,322 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Chat_ja",
+  "m_LocaleId": {
+    "m_Code": "ja"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -3267501124420665462
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 115976368128,
+      "m_Localized": "ワールド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116009922560,
+      "m_Localized": "クラン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116009922561,
+      "m_Localized": "メッセージを送る...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773824,
+      "m_Localized": "昨日",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773825,
+      "m_Localized": "{0}日前",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773826,
+      "m_Localized": "{0}が戦いを共有しました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4447354417152,
+      "m_Localized": "ブロックリスト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5039376232448,
+      "m_Localized": "何歳ですか？",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5176358006784,
+      "m_Localized": "確認をタップしてチャットに参加すると、<color=#4CBEFF>利用規約</color>と<color=#4CBEFF>プライバシーポリシー</color>に同意したことになります。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5456508153856,
+      "m_Localized": "報告",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5553342050304,
+      "m_Localized": "嫌がらせ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5685189996544,
+      "m_Localized": "不適切な言葉",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5764445564928,
+      "m_Localized": "攻撃的なプレイヤー名",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5850772729856,
+      "m_Localized": "不正行為",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 403255837319168,
+      "m_Localized": "総ダメージ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 403255854096384,
+      "m_Localized": "総体力",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404752809582592,
+      "m_Localized": "戦い",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404868249411584,
+      "m_Localized": "ブロック",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404956870860800,
+      "m_Localized": "ユーザー報告",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 407420491784192,
+      "m_Localized": "ミュート解除",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460145283817472,
+      "m_Localized": "チャットに共有しました",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460375794376704,
+      "m_Localized": "共有",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14149557431558144,
+      "m_Localized": "スパム/ジャンク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290084843520,
+      "m_Localized": "他のプレイヤーを嫌がらせ、侮辱、または脅迫しないでください。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009344,
+      "m_Localized": "ヘイトスピーチ、中傷、差別的な言葉を使わないでください。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009345,
+      "m_Localized": "薬物、宗教、政治、または性的な話題を話さないでください。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009346,
+      "m_Localized": "チャットをスパムしたり、フラッドしたりしないでください。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009347,
+      "m_Localized": "他のプレイヤー、モデレーター、またはスタッフになりすまさないでください。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009348,
+      "m_Localized": "プライベートまたは個人情報を共有しないでください。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009349,
+      "m_Localized": "報告システムを悪用しないでください。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009350,
+      "m_Localized": "詳細は、私たちの",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009351,
+      "m_Localized": "チャットルール",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 35993381137014784,
+      "m_Localized": "あなたはミュートされました",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 71558567759437824,
+      "m_Localized": "チャットダークモード",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683019230076928,
+      "m_Localized": "ヘイトスピーチ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683200906354688,
+      "m_Localized": "脅迫/暴力",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683325225525248,
+      "m_Localized": "違法行為",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683413213634560,
+      "m_Localized": "詐欺",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683591861624832,
+      "m_Localized": "なりすまし",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683883986509824,
+      "m_Localized": "知的財産権侵害",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73684015041732608,
+      "m_Localized": "プライバシー侵害/ドキシング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73684315404230656,
+      "m_Localized": "その他",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

@@ -1,0 +1,679 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skins_tr-TR",
+  "m_LocaleId": {
+    "m_Code": "tr-TR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 6506703471677536427
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 26278420799488,
+      "m_Localized": "Kostümler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26278441771008,
+      "m_Localized": "Kostüm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11907389233029120,
+      "m_Localized": "Basamak Taşları",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190401,
+      "m_Localized": "Otomatik Koşu Sonuçları ({1} koşu)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190402,
+      "m_Localized": "Başarısız",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190403,
+      "m_Localized": "Stepping Stones oynayarak havalı görünümleri aç!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190404,
+      "m_Localized": "Her zıplama %50 şans. Bir taş güvenli, diğeri kırılacak.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190405,
+      "m_Localized": "Ne kadar ilerlersen o kadar ödül!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190406,
+      "m_Localized": "En uzak kareye ulaş ve en iyi ödülleri kap!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190407,
+      "m_Localized": "Nasıl oynanır?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190408,
+      "m_Localized": "Otomatik",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190410,
+      "m_Localized": "Oyna",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736193,
+      "m_Localized": "Taş {0} için otomatik",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736195,
+      "m_Localized": "Dur ve topla!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736196,
+      "m_Localized": "Rastgele Görünüm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736197,
+      "m_Localized": "Ödül yok",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14046346632749056,
+      "m_Localized": "Fayans",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14046346645331968,
+      "m_Localized": "Ulaşıldı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 18856902585737216,
+      "m_Localized": "Tekrar oyna?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160766685184,
+      "m_Localized": "Noel Baba Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160779268096,
+      "m_Localized": "Kardan Adam Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160779268097,
+      "m_Localized": "Snowboard Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 24191974679502848,
+      "m_Localized": "Otomatik Koşu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 24191974687891456,
+      "m_Localized": "Koşu başına olasılıklar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092757524480,
+      "m_Localized": "Kırmızı Burun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092770107392,
+      "m_Localized": "Havuç Çubuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301696,
+      "m_Localized": "Noel Baba Şapkası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301697,
+      "m_Localized": "Noel Baba'nın Paltosu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301698,
+      "m_Localized": "Kardan Adam'ın Şapkası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301699,
+      "m_Localized": "Kardan Adam'ın Vücudu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301700,
+      "m_Localized": "Snowboard Şapkası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301701,
+      "m_Localized": "Snowboard Paltosu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301702,
+      "m_Localized": "Dede Kafası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301703,
+      "m_Localized": "Baş Bandı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964940742656,
+      "m_Localized": "Tavşan Kafası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964949131264,
+      "m_Localized": "Tavşan Gövdesi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964949131265,
+      "m_Localized": "Beyzbol Sopası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301707,
+      "m_Localized": "Palyaço Kafası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301708,
+      "m_Localized": "Palyaço Gövdesi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301709,
+      "m_Localized": "Palyaço Kornası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301710,
+      "m_Localized": "Milyoner Kafası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301711,
+      "m_Localized": "Milyoner Gövdesi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301712,
+      "m_Localized": "Kristal Küre Bastonu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954119957667840,
+      "m_Localized": "Çiçek Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954120041553920,
+      "m_Localized": "Druid Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954120041553921,
+      "m_Localized": "Leprechaun Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422651969536,
+      "m_Localized": "Sıradan Yumurta Kabuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422668746752,
+      "m_Localized": "Nadir Yumurta Kabuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941056,
+      "m_Localized": "Destansı Yumurta Kabuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941057,
+      "m_Localized": "Efsanevi Yumurta Kabuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941058,
+      "m_Localized": "Nihai Yumurta Kabuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941059,
+      "m_Localized": "Mistik Yumurta Kabuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540702420992,
+      "m_Localized": "Leprechaun Şapkası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615296,
+      "m_Localized": "Leprechaun Takımı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615297,
+      "m_Localized": "Dört Yapraklı Tokmak",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615298,
+      "m_Localized": "Çiçek Kafa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615299,
+      "m_Localized": "Çiçek Gövde",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615300,
+      "m_Localized": "Çiçek Silahı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615301,
+      "m_Localized": "Druid Kapüşonu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615302,
+      "m_Localized": "Druid Pelerini",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615303,
+      "m_Localized": "Druid Silahı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556185362432,
+      "m_Localized": "Tavşan Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556193751040,
+      "m_Localized": "Palyaço Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556193751041,
+      "m_Localized": "Milyoner Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 47417077105942528,
+      "m_Localized": "Birleştirilecek görünümleri seç",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804325638144,
+      "m_Localized": "Japon Balığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803968,
+      "m_Localized": "Denizaltı Enkazı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803969,
+      "m_Localized": "Paslı Boru",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803970,
+      "m_Localized": "Cesur Gagalı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803971,
+      "m_Localized": "Kanatlı Tehdit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803972,
+      "m_Localized": "Sivri Mızrak",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803973,
+      "m_Localized": "Ters Şapka",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803974,
+      "m_Localized": "Havalı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998272,
+      "m_Localized": "Kaykay",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998273,
+      "m_Localized": "Kedi Kafası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998274,
+      "m_Localized": "Tüylü Vücut",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998275,
+      "m_Localized": "Pençeler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998279,
+      "m_Localized": "Ev Yapımı Kafa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998280,
+      "m_Localized": "Ağaç Kabuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998281,
+      "m_Localized": "Mantar Çubuğu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998282,
+      "m_Localized": "Gözlük",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998284,
+      "m_Localized": "Güneş Gözlüğü",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192576,
+      "m_Localized": "Akvaryum Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192577,
+      "m_Localized": "Kartal Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192578,
+      "m_Localized": "Kaykaycı Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192579,
+      "m_Localized": "Kedi Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192581,
+      "m_Localized": "Mantar Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036070227968,
+      "m_Localized": "Balık Şapka",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810880,
+      "m_Localized": "Yapışkan Köpekbalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810881,
+      "m_Localized": "Poseidon'un Mızrağı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810882,
+      "m_Localized": "Köpekbalığı Seti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54923833574940672,
+      "m_Localized": "Göz bandı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54955948945432576,
+      "m_Localized": "Mantar Şapka",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

@@ -1,0 +1,1418 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "General_en",
+  "m_LocaleId": {
+    "m_Code": "en"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -7974773596385334045
+  },
+  "m_Metadata": {
+    "m_Items": [
+      {
+        "rid": 2566708103035748765
+      }
+    ]
+  },
+  "m_TableData": [
+    {
+      "m_Id": 1830775273078784,
+      "m_Localized": "Account",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830808110284800,
+      "m_Localized": "Link Account",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830852523769856,
+      "m_Localized": "Login",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830880994705408,
+      "m_Localized": "Logout",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830906689011712,
+      "m_Localized": "Settings",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1831050188734464,
+      "m_Localized": "Link your account to keep your game data safe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1837060659920896,
+      "m_Localized": "Choose how you want to login",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1839334803161088,
+      "m_Localized": "Sign in with {0}",
+      "m_Metadata": {
+        "m_Items": [
+          {
+            "rid": 2566708103035748765
+          }
+        ]
+      }
+    },
+    {
+      "m_Id": 1858491783364608,
+      "m_Localized": "Disconnect",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2248123788345344,
+      "m_Localized": "Failed to link account!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312336348209152,
+      "m_Localized": "Forge Master",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312462114414592,
+      "m_Localized": "Forge Master",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312567328530432,
+      "m_Localized": "Accepting tracking helps us provide a better gaming experience",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532132964720640,
+      "m_Localized": "Cancel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6731203815194624,
+      "m_Localized": "Free",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6731538138972160,
+      "m_Localized": "Premium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7329341366124544,
+      "m_Localized": "Battle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502015217664,
+      "m_Localized": "Hard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189184,
+      "m_Localized": "Extreme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189185,
+      "m_Localized": "Hell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189186,
+      "m_Localized": "Nightmare",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189187,
+      "m_Localized": "Chaos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189188,
+      "m_Localized": "Void",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189189,
+      "m_Localized": "Abyss",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189190,
+      "m_Localized": "Eternal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189191,
+      "m_Localized": "Inferno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7719387525070848,
+      "m_Localized": "Difficulty",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7719887569993728,
+      "m_Localized": "Summon probabilities",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10619610219986944,
+      "m_Localized": "Mounts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11670393447301120,
+      "m_Localized": "Summon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11670393472466944,
+      "m_Localized": "Level",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11677876031111168,
+      "m_Localized": "Summon Mounts to level up and increase your summon probabilities!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15414414065844224,
+      "m_Localized": "Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25442363505307659,
+      "m_Localized": "Server Time",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25466346099372032,
+      "m_Localized": "Languages",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25736002664067072,
+      "m_Localized": "Profile",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25736392600121344,
+      "m_Localized": "Name:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737088519041024,
+      "m_Localized": "Gender:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737252952535040,
+      "m_Localized": "Power Rankings",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737513393647616,
+      "m_Localized": "Clan Rankings",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25738558836502528,
+      "m_Localized": "Vibrations",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25738683373776896,
+      "m_Localized": "Sound Effects",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739437660631040,
+      "m_Localized": "Privacy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739510138204160,
+      "m_Localized": "Block List",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739620972687360,
+      "m_Localized": "Write Us",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25749971952922624,
+      "m_Localized": "You Died!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25750022188101632,
+      "m_Localized": "Returning to",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751598017474560,
+      "m_Localized": "Connection Lost",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751687679111168,
+      "m_Localized": "Please check your internet connection!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751817480237056,
+      "m_Localized": "Tap to reconnect",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25753177110016000,
+      "m_Localized": "Connecting",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25780206593306624,
+      "m_Localized": "Offline Reward",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781074621296640,
+      "m_Localized": "Collection time",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781236299132928,
+      "m_Localized": "max",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781574997569536,
+      "m_Localized": "Collect",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25782489326481408,
+      "m_Localized": "It looks like you’ve made lots of progress! Make sure to back up your data so that your progress is safe incase something goes wrong or if you want to switch phones!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783697135038464,
+      "m_Localized": "Notice",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783712830124032,
+      "m_Localized": "You have been logged out",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783797269852160,
+      "m_Localized": "OK",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25786994701037568,
+      "m_Localized": "Start",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788122108981248,
+      "m_Localized": "Upgrade in progress....",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788256913911808,
+      "m_Localized": "Maxed",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788540620828672,
+      "m_Localized": "Upgrade",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25799296414314496,
+      "m_Localized": "Lv.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26811981503328256,
+      "m_Localized": "Common",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812088114147328,
+      "m_Localized": "Rare",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812108808843264,
+      "m_Localized": "Epic",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812123002368000,
+      "m_Localized": "Legendary",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812135207792640,
+      "m_Localized": "Ultimate",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812150785437696,
+      "m_Localized": "Mythic",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26903988305326080,
+      "m_Localized": "Coins",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904079866982400,
+      "m_Localized": "Gems",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904091808165888,
+      "m_Localized": "Hammers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904103917121536,
+      "m_Localized": "Skill Tickets",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904137874206720,
+      "m_Localized": "Tech Potions",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904198951661568,
+      "m_Localized": "Pvp Tickets",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904212474097664,
+      "m_Localized": "Clock Winders",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27923188553543680,
+      "m_Localized": "Support",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27927471772594176,
+      "m_Localized": "Remove",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27927471772594177,
+      "m_Localized": "Equipped",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27933087392002048,
+      "m_Localized": "Equip",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27937469076533248,
+      "m_Localized": "Complete",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27999994002468864,
+      "m_Localized": "Skip",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28003344441864192,
+      "m_Localized": "xp",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28006207175979008,
+      "m_Localized": "Unlocks at {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28307134017630208,
+      "m_Localized": "m",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28307134051184640,
+      "m_Localized": "s",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28308895591755776,
+      "m_Localized": "d",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28308895591755777,
+      "m_Localized": "h",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341082164752384,
+      "m_Localized": "Defeat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341082185723904,
+      "m_Localized": "Okay",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341671737094144,
+      "m_Localized": "Enter",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28342484547072000,
+      "m_Localized": "Leave",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28348250729410560,
+      "m_Localized": "Open",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29369553787744256,
+      "m_Localized": "Terms of Service",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29369768682909696,
+      "m_Localized": "By continuing, you agree to our\n<color=#4CBEFF>Terms of Service.</color>",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29370014829834240,
+      "m_Localized": "Continue",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29372916365455360,
+      "m_Localized": "Coming soon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375658140037120,
+      "m_Localized": "Edit Privacy Settings?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375798267539456,
+      "m_Localized": "You will be required to restart the app after making your changes!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375989867540480,
+      "m_Localized": "Edit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29741794152407040,
+      "m_Localized": "Server {0} (list updated hourly)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29746067175104512,
+      "m_Localized": "Clan Power Rankings",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29747952145653760,
+      "m_Localized": "Server {0} Rankings",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29748466790948864,
+      "m_Localized": "Choose an Avatar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29748886850494464,
+      "m_Localized": "Enter Player Name",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29750633891356672,
+      "m_Localized": "NEW!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29758280640225280,
+      "m_Localized": "This item is more powerful than the item that you have equipped.\n\nAre you sure you want to sell?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29759899083726848,
+      "m_Localized": "ranged",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29760435187081216,
+      "m_Localized": "Sell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29790294030409728,
+      "m_Localized": "Max",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29815644231819264,
+      "m_Localized": "Submit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816091566923776,
+      "m_Localized": "How can we improve the game?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816781940973568,
+      "m_Localized": "Your Feedback",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816958047215616,
+      "m_Localized": "Please enter your feedback here...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818466696421376,
+      "m_Localized": "Enjoying the game?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818784373006336,
+      "m_Localized": "1-4 Stars",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818942720565248,
+      "m_Localized": "5 Stars",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818654978727936,
+      "m_Localized": "Please take a moment to rate us!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29820062658453504,
+      "m_Localized": "Nope",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29820196972650496,
+      "m_Localized": "Yes!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30155911439511552,
+      "m_Localized": "Select a language",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30182856113975296,
+      "m_Localized": "Tier Up",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30209797294583808,
+      "m_Localized": "Start Upgrade",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31931272254910464,
+      "m_Localized": "Server",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 188474387181068288,
+      "m_Localized": "General",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 188474423793147904,
+      "m_Localized": "General, gameplay related notifications",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148529360896,
+      "m_Localized": "Final Result",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469760,
+      "m_Localized": "Points Ranking",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469761,
+      "m_Localized": "Weekly",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469762,
+      "m_Localized": "Daily",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659439110742016,
+      "m_Localized": "Disabled",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 40634894802477056,
+      "m_Localized": "Attack",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092802191360,
+      "m_Localized": "Servers under maintenance!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162880,
+      "m_Localized": "Please come back later.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162881,
+      "m_Localized": "Update required!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162882,
+      "m_Localized": "Please update your game to continue playing.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162883,
+      "m_Localized": "Can’t see the update?\nTry restarting your app store and checking again.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162884,
+      "m_Localized": "Update",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42396247389102080,
+      "m_Localized": "You've been temporarily banned!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42396247397490688,
+      "m_Localized": "You've been permanently banned!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42398661798256640,
+      "m_Localized": "Ban ends in {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007670284288,
+      "m_Localized": "Sign out",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007682867201,
+      "m_Localized": "Deleting your account is permanent, and all of your user data will be removed. You will not be able to restore your account on another device.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007682867202,
+      "m_Localized": "Delete",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946917205106688,
+      "m_Localized": "Delete Account",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946917205106689,
+      "m_Localized": "Delete Account?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55090011081531392,
+      "m_Localized": "Requires",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468096,
+      "m_Localized": "Code of Conduct",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468097,
+      "m_Localized": "By continuing, you agree to our",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468098,
+      "m_Localized": "and",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68537888493248512,
+      "m_Localized": "What is your age?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68537888514220032,
+      "m_Localized": "Use the slider to set your age.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78900637817888768,
+      "m_Localized": "or",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 95743441482280960,
+      "m_Localized": "Change",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 95748098749362176,
+      "m_Localized": "Choose a server",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96056509286313984,
+      "m_Localized": "Are you sure you'd like to change servers? This can only be done once.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96056782641688576,
+      "m_Localized": "Yes, change",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96071128903774208,
+      "m_Localized": "Server {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96215312229199872,
+      "m_Localized": "Error!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649757990912,
+      "m_Localized": "Summon {0} to level up and increase your summon probabilities!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573824,
+      "m_Localized": "Ascend",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573825,
+      "m_Localized": "Are you sure you want to ascend? Ascending will remove all of your {0} and will reset your {1} level back to Level 1.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573826,
+      "m_Localized": "Your future {0} will be much stronger!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573827,
+      "m_Localized": "Ascend to unlock more powerful {0}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573828,
+      "m_Localized": "Max all your {0} first!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 100505843009576960,
+      "m_Localized": "Last",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103879382550962176,
+      "m_Localized": "Removed items",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103881630010040320,
+      "m_Localized": "Purchase Refunded",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 105585154724978688,
+      "m_Localized": "Privacy Policy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 107036963603734528,
+      "m_Localized": "Music",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108442575155748864,
+      "m_Localized": "Eggshell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108442575164137472,
+      "m_Localized": "Random",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 109490579467919360,
+      "m_Localized": "Your Summon Level is already maxed. Ascend before summoning again to resume Summon Level progress.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720124297216,
+      "m_Localized": "Coin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268736,
+      "m_Localized": "Gem",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268737,
+      "m_Localized": "Hammer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268738,
+      "m_Localized": "SkillSummonTicket",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463040,
+      "m_Localized": "TechPotion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463041,
+      "m_Localized": "PvpTicket",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463042,
+      "m_Localized": "ClockWinder",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113959603035693056,
+      "m_Localized": "Evolve",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186816,
+      "m_Localized": "Mega",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186817,
+      "m_Localized": "Ultra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186818,
+      "m_Localized": "Apex",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 115723395822247936,
+      "m_Localized": "Mission Energy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 115723434254655488,
+      "m_Localized": "Clan Potions",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116428612633092096,
+      "m_Localized": "Are you sure you want to spend {0}?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116428748906029056,
+      "m_Localized": "Don't ask again",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119351836584960000,
+      "m_Localized": "Locked",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119351836593348608,
+      "m_Localized": "List of all {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119425594028974080,
+      "m_Localized": "{0} will roll {1} unique substats from the list below:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 123984074035421184,
+      "m_Localized": "Refresh Info",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 125819198494466048,
+      "m_Localized": "Show Chat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 125854061930995712,
+      "m_Localized": "Clan Chat Preview",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 128326236642467840,
+      "m_Localized": "Global list (updated hourly)\n\nOnly players who are currently ranked \n#1 in their server appear here",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 2566708103035748765,
+        "type": {
+          "class": "SmartFormatTag",
+          "ns": "UnityEngine.Localization.Metadata",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

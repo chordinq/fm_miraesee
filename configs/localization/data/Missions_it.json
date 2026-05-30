@@ -1,0 +1,441 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Missions_it",
+  "m_LocaleId": {
+    "m_Code": "it"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5371603394758010093
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 251863429120,
+      "m_Localized": "Missioni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16036715491328,
+      "m_Localized": "L'energia si ricarica ogni giorno alle {0}. L'energia viene consumata solo se completi una missione con successo!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28244723822592,
+      "m_Localized": "Raduno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44740485246976,
+      "m_Localized": "Successo!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 45374441713664,
+      "m_Localized": "Fallimento!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 48422304018432,
+      "m_Localized": "Raccogli Ricompense",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 52887002214400,
+      "m_Localized": "Raduni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623317729280,
+      "m_Localized": "Potenza suggerita:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312192,
+      "m_Localized": "Potenza totale:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312193,
+      "m_Localized": "Radunando... {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312194,
+      "m_Localized": "{0} ha completato una <color=#{2}>Missione di Livello {1}</color>",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6251320826327040,
+      "m_Localized": "Aggiorna",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6882146555457536,
+      "m_Localized": "Combattere...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10232987525308416,
+      "m_Localized": "Supporto:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14155878936276992,
+      "m_Localized": "Raccogli tutto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25460050683224064,
+      "m_Localized": "Tempo di raduno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695739834368,
+      "m_Localized": "Urlo della Prima Era",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417280,
+      "m_Localized": "Una tribù dimenticata è emersa dalla natura selvaggia, razziando carovane con pietra e osso. Se non vengono respinti, presto i loro terreni di caccia includeranno il tuo clan.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417281,
+      "m_Localized": "La Seconda Età della Pietra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417282,
+      "m_Localized": "Quella che una volta era una semplice banda è diventata qualcosa di peggio. Se il tuo clan non agisce, presto domineranno queste terre.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417283,
+      "m_Localized": "I Samurai Gemelli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417284,
+      "m_Localized": "Due maestri spadaccini camminano per le tue terre, abbattendo chiunque li sfidi. Sconfiggi i gemelli prima che la loro leggenda sommerga il tuo clan nella paura.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417285,
+      "m_Localized": "La Legione dell'Elmo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417286,
+      "m_Localized": "Questi combattenti si nascondono dietro il ferro e le armi pesanti, credendosi intoccabili. Mostra loro che anche l'acciaio si piega davanti al tuo clan.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417287,
+      "m_Localized": "Le Vele Nere",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417288,
+      "m_Localized": "Navi senza bandiere hanno ancorato vicino alle tue terre. I pirati intendono saccheggiare tutto ciò che non è inchiodato.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417289,
+      "m_Localized": "I Tre Moschettieri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417290,
+      "m_Localized": "Questi maestri cercano di dimostrare che solo loro meritano rispetto e potere. Mostra loro che il tuo clan non si inchina a nessuna lama.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417291,
+      "m_Localized": "Attacco di teppisti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417292,
+      "m_Localized": "Una banda di teppisti è venuta a riscuotere una “tassa” sul reddito duramente guadagnato del tuo clan. Hai rifiutato di pagare - e ora sono alle tue porte. Resisti e mostra loro che il tuo clan non si piega alle minacce.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417293,
+      "m_Localized": "La Legge bussa alla porta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417294,
+      "m_Localized": "Hai rifiutato la partnership con il dittatore, scegliendo la libertà al posto delle catene. Ora le sue unità corazzate marciano per dare un esempio al tuo popolo.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417295,
+      "m_Localized": "Avanguardia Tossica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417297,
+      "m_Localized": "Le Lame Stellari",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417298,
+      "m_Localized": "Una squadra di guerrieri con spade luminose è atterrata, dichiarando il tuo clan inadatto a governare queste terre. Scacciali prima che decidano il tuo destino per sempre.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417299,
+      "m_Localized": "Invasione Aliena",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417300,
+      "m_Localized": "Essere di un'altra stella hanno iniziato a raccogliere il tuo popolo come bestiame. Combatti prima che la tua casa diventi la loro colonia.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417301,
+      "m_Localized": "La Lama Colossale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417302,
+      "m_Localized": "Il guerriero combatte con una lama più grande di qualsiasi casa. Se il tuo clan non può fermarlo, nient'altro lo farà.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417303,
+      "m_Localized": "Violazione Digitale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417304,
+      "m_Localized": "Uno strappo nel regno dei dati ha liberato strani guerrieri di luce e numeri. Chiudi la breccia prima che riscrivano le tue terre.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417305,
+      "m_Localized": "La tecnologia non basta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417306,
+      "m_Localized": "I combattenti comuni si sono armati di lame tecnologiche luminose, credendo che li renda invincibili. Dimostra che la vera forza conta ancora.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417307,
+      "m_Localized": "Ribelli Quantici",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417308,
+      "m_Localized": "Un gruppo di guerrieri appariscenti è apparso, armato con armi quantistiche instabili. Il loro potere è selvaggio e pericoloso, e il tuo clan deve fermarli prima che il danno si diffonda.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417309,
+      "m_Localized": "Ordine del Trono",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417310,
+      "m_Localized": "Il sovrano ha inviato le sue guardie d'élite per mettere il tuo clan sotto la corona. Dimostra che il tuo clan non risponde a nessun trono.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417311,
+      "m_Localized": "I Due Maghi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417312,
+      "m_Localized": "I maghi sostengono di venire per \"rimodellare\" il tuo territorio a loro piacimento. Il tuo clan deve rispondere con coraggio e spezzare i loro incantesimi.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417313,
+      "m_Localized": "Scendere dall'alto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417314,
+      "m_Localized": "Un esercito di angeli è sceso, affermando che il tuo clan è diventato troppo orgoglioso. Dimostra il tuo valore o sarai cancellato in nome della purezza.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417315,
+      "m_Localized": "Stregoni della Notte",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417316,
+      "m_Localized": "Ovunque camminino questi incantatori, i raccolti falliscono e le persone scompaiono. Cacciali via prima che la tua casa diventi un altro luogo morto.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417317,
+      "m_Localized": "Dall'Oltretomba",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417318,
+      "m_Localized": "Guerrieri sono emersi dalle profondità dove i vivi non appartengono. Se il tuo clan non riesce a fermarli, la superficie diventerà il loro nuovo regno.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78356377112666112,
+      "m_Localized": "Un'unità mascherata armata con tecnologia proibita ha invaso il tuo territorio, lasciando aria bruciata dietro di sé. Ferma il loro avanzamento prima che causino più danni.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88072866833096704,
+      "m_Localized": "Livelli di missione {0}-{1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312195,
+      "m_Localized": "Missione {0}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 90987145798344704,
+      "m_Localized": "Sei già in un'altra missione!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

@@ -1,0 +1,679 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skins_pt-BR",
+  "m_LocaleId": {
+    "m_Code": "pt-BR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 6506703471677536427
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 26278420799488,
+      "m_Localized": "Skins",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26278441771008,
+      "m_Localized": "Skin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11907389233029120,
+      "m_Localized": "Pedras de Passo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190401,
+      "m_Localized": "Resultados de Execução Automática ({1} execuções)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190402,
+      "m_Localized": "Falha",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190403,
+      "m_Localized": "Desbloqueie skins incríveis jogando Stepping Stones!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190404,
+      "m_Localized": "Cada salto é um 50/50. Uma pedra é segura, outra vai quebrar.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190405,
+      "m_Localized": "Quanto mais longe você chegar, mais recompensas!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190406,
+      "m_Localized": "Alcance o bloco mais distante para obter as melhores recompensas!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190407,
+      "m_Localized": "Como jogar?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190408,
+      "m_Localized": "Auto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190410,
+      "m_Localized": "Jogar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736193,
+      "m_Localized": "Auto para o Azulejo {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736195,
+      "m_Localized": "Pare e colete!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736196,
+      "m_Localized": "Skin Aleatória",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736197,
+      "m_Localized": "Sem recompensa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14046346632749056,
+      "m_Localized": "Azulejo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14046346645331968,
+      "m_Localized": "Alcançado",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 18856902585737216,
+      "m_Localized": "Jogar de novo?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160766685184,
+      "m_Localized": "Conjunto do Papai Noel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160779268096,
+      "m_Localized": "Conjunto de Boneco de Neve",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160779268097,
+      "m_Localized": "Conjunto de Snowboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 24191974679502848,
+      "m_Localized": "Corrida automática",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 24191974687891456,
+      "m_Localized": "Probabilidades por corrida",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092757524480,
+      "m_Localized": "Nariz Vermelho",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092770107392,
+      "m_Localized": "Cenoura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301696,
+      "m_Localized": "Chapéu do Papai Noel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301697,
+      "m_Localized": "Casaco do Papai Noel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301698,
+      "m_Localized": "Chapéu de Boneco de Neve",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301699,
+      "m_Localized": "Corpo de Boneco de Neve",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301700,
+      "m_Localized": "Chapéu de Snowboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301701,
+      "m_Localized": "Casaco de Snowboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301702,
+      "m_Localized": "Cabeça do Vovô",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301703,
+      "m_Localized": "Faixa de Cabeça",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964940742656,
+      "m_Localized": "Cabeça de Coelho",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964949131264,
+      "m_Localized": "Corpo de Coelho",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964949131265,
+      "m_Localized": "Taco de Beisebol",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301707,
+      "m_Localized": "Cabeça de Palhaço",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301708,
+      "m_Localized": "Corpo de Palhaço",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301709,
+      "m_Localized": "Buzina de Palhaço",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301710,
+      "m_Localized": "Cabeça de Milionário",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301711,
+      "m_Localized": "Corpo de Milionário",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301712,
+      "m_Localized": "Bengala de Bola de Cristal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954119957667840,
+      "m_Localized": "Conjunto de Flores",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954120041553920,
+      "m_Localized": "Conjunto de Druida",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954120041553921,
+      "m_Localized": "Conjunto de Duende",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422651969536,
+      "m_Localized": "Casca de Ovo Comum",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422668746752,
+      "m_Localized": "Casca de Ovo Rara",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941056,
+      "m_Localized": "Casca de Ovo Épica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941057,
+      "m_Localized": "Casca de Ovo Lendária",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941058,
+      "m_Localized": "Casca de Ovo Definitiva",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941059,
+      "m_Localized": "Casca de Ovo Mítica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540702420992,
+      "m_Localized": "Chapéu de leprechaun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615296,
+      "m_Localized": "Traje de leprechaun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615297,
+      "m_Localized": "Trevo de Quatro Pancadas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615298,
+      "m_Localized": "Cabeça de flor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615299,
+      "m_Localized": "Corpo de flor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615300,
+      "m_Localized": "Arma de flor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615301,
+      "m_Localized": "Capuz do Druida",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615302,
+      "m_Localized": "Capa do Druida",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615303,
+      "m_Localized": "Arma do Druida",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556185362432,
+      "m_Localized": "Conjunto Coelho",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556193751040,
+      "m_Localized": "Conjunto Palhaço",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556193751041,
+      "m_Localized": "Conjunto Milionário",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 47417077105942528,
+      "m_Localized": "Selecione skins para fundir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804325638144,
+      "m_Localized": "Peixinho dourado",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803968,
+      "m_Localized": "Destroços de submarino",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803969,
+      "m_Localized": "Cano enferrujado",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803970,
+      "m_Localized": "Bico Valente",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803971,
+      "m_Localized": "Ameaça Alada",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803972,
+      "m_Localized": "Lança Pontuda",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803973,
+      "m_Localized": "Boné ao Contrário",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803974,
+      "m_Localized": "Estilo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998272,
+      "m_Localized": "Skate",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998273,
+      "m_Localized": "Cabeça de Gato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998274,
+      "m_Localized": "Corpo Peludo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998275,
+      "m_Localized": "Garras",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998279,
+      "m_Localized": "Cabeça Caseira",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998280,
+      "m_Localized": "Casca de Árvore",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998281,
+      "m_Localized": "Bastão de Cogumelo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998282,
+      "m_Localized": "Óculos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998284,
+      "m_Localized": "Óculos de Sol",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192576,
+      "m_Localized": "Conjunto de Aquário",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192577,
+      "m_Localized": "Conjunto de Águia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192578,
+      "m_Localized": "Conjunto de Skatista",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192579,
+      "m_Localized": "Conjunto de Gato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192581,
+      "m_Localized": "Conjunto de Cogumelo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036070227968,
+      "m_Localized": "Chapéu de Peixe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810880,
+      "m_Localized": "Tubarão Pegajoso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810881,
+      "m_Localized": "Lança de Poseidon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810882,
+      "m_Localized": "Conjunto de Tubarão",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54923833574940672,
+      "m_Localized": "Tapa-olho",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54955948945432576,
+      "m_Localized": "Boné Cogumelo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

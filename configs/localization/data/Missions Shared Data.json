@@ -1,0 +1,449 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": 7442561414784416887
+  },
+  "m_Name": "Missions Shared Data",
+  "m_TableCollectionName": "Missions",
+  "m_TableCollectionNameGuidString": "b99a59fb19b37664597096c40d4b5f35",
+  "m_Entries": [
+    {
+      "m_Id": 251863429120,
+      "m_Key": "Missions",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16036715491328,
+      "m_Key": "EnergyReplenish",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28244723822592,
+      "m_Key": "Rally",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44740485246976,
+      "m_Key": "Success!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 45374441713664,
+      "m_Key": "Fail!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 48422304018432,
+      "m_Key": "CollectRewards",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 52887002214400,
+      "m_Key": "Rallies",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623317729280,
+      "m_Key": "SuggestedPower",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312192,
+      "m_Key": "TotalPowerX",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312193,
+      "m_Key": "Rallying...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312194,
+      "m_Key": "XCompletedYMissionZColor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312195,
+      "m_Key": "XMission",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10232987525308416,
+      "m_Key": "Support:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14155878936276992,
+      "m_Key": "CollectAll",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6251320826327040,
+      "m_Key": "Refresh",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6882146555457536,
+      "m_Key": "Battling...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25460050683224064,
+      "m_Key": "RallyTime",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695739834368,
+      "m_Key": "HowlOfTheFirstAge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417280,
+      "m_Key": "HowlOfTheFirstAgeDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417281,
+      "m_Key": "TheSecondStoneAge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417282,
+      "m_Key": "TheSecondStoneAgeDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417283,
+      "m_Key": "TheTwinSamurai",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417284,
+      "m_Key": "TheTwinSamuraiDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417285,
+      "m_Key": "TheHelmLegion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417286,
+      "m_Key": "TheHelmLegionDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417287,
+      "m_Key": "TheBlackSails",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417288,
+      "m_Key": "TheBlackSailsDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417289,
+      "m_Key": "TheThreeMusketeers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417290,
+      "m_Key": "TheThreeMusketeersDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417291,
+      "m_Key": "ThugAttack",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417292,
+      "m_Key": "ThugAttackDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417293,
+      "m_Key": "TheLawComesKnocking",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417294,
+      "m_Key": "TheLawComesKnockingDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417295,
+      "m_Key": "ToxicVanguard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78356377112666112,
+      "m_Key": "ToxicVanguardDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417297,
+      "m_Key": "TheStarBlades",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417298,
+      "m_Key": "TheStarBladesDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417299,
+      "m_Key": "AlienInvasion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417300,
+      "m_Key": "AlienInvasionDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417301,
+      "m_Key": "TheColossalBlade",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417302,
+      "m_Key": "TheColossalBladeDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417303,
+      "m_Key": "DigitalBreach",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417304,
+      "m_Key": "DigitalBreachDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417305,
+      "m_Key": "TechIsNotEnough",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417306,
+      "m_Key": "TechIsNotEnoughDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417307,
+      "m_Key": "QuantumRebels",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417308,
+      "m_Key": "QuantumRebelsDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417309,
+      "m_Key": "OrderOfTheThrone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417310,
+      "m_Key": "OrderOfTheThroneDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417311,
+      "m_Key": "TheTwoWizards",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417312,
+      "m_Key": "TheTwoWizardsDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417313,
+      "m_Key": "DescendFromAbove",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417314,
+      "m_Key": "DescendFromAboveDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417315,
+      "m_Key": "NightSorcerers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417316,
+      "m_Key": "NightSorcerersDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417317,
+      "m_Key": "FromTheUnderworld",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417318,
+      "m_Key": "FromTheUnderworldDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88072866833096704,
+      "m_Key": "MissionLevels",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 90987145798344704,
+      "m_Key": "AlreadyInMission",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_KeyGenerator": {
+    "rid": 5782784772004118528
+  },
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 5782784772004118528,
+        "type": {
+          "class": "DistributedUIDGenerator",
+          "ns": "UnityEngine.Localization.Tables",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

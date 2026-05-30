@@ -1,0 +1,378 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Pets_ko",
+  "m_LocaleId": {
+    "m_Code": "ko"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5940147478223713777
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 153364393984,
+      "m_Localized": "무작위 {1} 펫을 부화시키려면 {0}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393985,
+      "m_Localized": "비어 있음",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393986,
+      "m_Localized": "준비 완료",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544512,
+      "m_Localized": "부화 슬롯이 가득 찼습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544513,
+      "m_Localized": "부화 중...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7431547187200,
+      "m_Localized": "슬롯 +1",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8513174302720,
+      "m_Localized": "합칠 펫 선택",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328656904192,
+      "m_Localized": "닭",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652928,
+      "m_Localized": "개",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652929,
+      "m_Localized": "고양이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652930,
+      "m_Localized": "달팽이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652931,
+      "m_Localized": "쥐",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652932,
+      "m_Localized": "거북이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652933,
+      "m_Localized": "고슴도치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652934,
+      "m_Localized": "곰",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652935,
+      "m_Localized": "타조",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652936,
+      "m_Localized": "거미",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652937,
+      "m_Localized": "전갈",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652938,
+      "m_Localized": "그리핀",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652939,
+      "m_Localized": "검치호",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652940,
+      "m_Localized": "유니콘",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652941,
+      "m_Localized": "호랑이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652942,
+      "m_Localized": "판다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652943,
+      "m_Localized": "뱀",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652944,
+      "m_Localized": "케르베로스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652945,
+      "m_Localized": "키츠네",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652946,
+      "m_Localized": "일렉트리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652947,
+      "m_Localized": "트렌트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652948,
+      "m_Localized": "마법의 엘크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652949,
+      "m_Localized": "아기 용",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652950,
+      "m_Localized": "지니",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652951,
+      "m_Localized": "스펙트럴 타이거",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435264,
+      "m_Localized": "{0} 선택됨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435265,
+      "m_Localized": "합칠 펫 선택",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601476976640,
+      "m_Localized": "수련잎",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919680,
+      "m_Localized": "백합잎",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919681,
+      "m_Localized": "갈색 잎",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919682,
+      "m_Localized": "갈색 말",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919683,
+      "m_Localized": "공룡",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919684,
+      "m_Localized": "게",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919685,
+      "m_Localized": "돼지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919686,
+      "m_Localized": "염소",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919687,
+      "m_Localized": "자전거",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919688,
+      "m_Localized": "거대 벌",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919689,
+      "m_Localized": "드로이드",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113984,
+      "m_Localized": "미니 드래곤",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113985,
+      "m_Localized": "호버 디스크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113986,
+      "m_Localized": "호버보드",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 364392176349184,
+      "m_Localized": "합칠 탈것 선택",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5414995050356736,
+      "m_Localized": "알이 부화할 준비가 되었어요!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

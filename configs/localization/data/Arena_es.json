@@ -1,0 +1,238 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Arena_es",
+  "m_LocaleId": {
+    "m_Code": "es"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 551601825646573866
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 312139771904,
+      "m_Localized": "Desafío",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 703946485760,
+      "m_Localized": "Elige un oponente",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 784816861184,
+      "m_Localized": "¡Los boletos de desafío se reponen todos los días a las {0}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1048948961280,
+      "m_Localized": "Resultado",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1248786575360,
+      "m_Localized": "Victoria",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1385223090176,
+      "m_Localized": "Empate",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1625233747968,
+      "m_Localized": "¡Recompensas recogidas!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797120,
+      "m_Localized": "¡Felicidades! Terminaste en el puesto {0} en la última temporada y ahora has sido ascendido a {1}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797121,
+      "m_Localized": "¡Mejor suerte la próxima vez! Terminaste en el puesto {0} en la última temporada y has sido degradado a {1}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797122,
+      "m_Localized": "Mantén tu rango actual ({0}) para recoger las siguientes recompensas al final de la temporada:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797123,
+      "m_Localized": "¡La temporada ha terminado! Alcanzaste el rango {0} y has ganado las siguientes recompensas:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797124,
+      "m_Localized": "¡Necesitas mejorar tu rango para recoger algunas recompensas!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797125,
+      "m_Localized": "¡Tus recompensas por participar en la arena aparecen aquí!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797126,
+      "m_Localized": "Recompensas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797127,
+      "m_Localized": "Recoger en: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797128,
+      "m_Localized": "Nueva temporada en: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797129,
+      "m_Localized": "La temporada termina en: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797130,
+      "m_Localized": "¡Nueva temporada pronto!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404032,
+      "m_Localized": "Ascenso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404033,
+      "m_Localized": "Degradación",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472960,
+      "m_Localized": "Sin clasificar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472961,
+      "m_Localized": "Liga de bronce",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472962,
+      "m_Localized": "Liga de plata",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472963,
+      "m_Localized": "Liga de oro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472964,
+      "m_Localized": "Liga de platino",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472965,
+      "m_Localized": "Liga de diamante",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701382651904,
+      "m_Localized": "Zona de ascenso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701386846208,
+      "m_Localized": "Zona de descenso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6855896432570368,
+      "m_Localized": "Derrota",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 32343429450031104,
+      "m_Localized": "¡La temporada ha terminado!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

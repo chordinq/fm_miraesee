@@ -1,0 +1,749 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "TechTree_tr-TR",
+  "m_LocaleId": {
+    "m_Code": "tr-TR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 3510350058130572738
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 55555327238144,
+      "m_Localized": "Silah Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555335626752,
+      "m_Localized": "Kask Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821056,
+      "m_Localized": "Zırh Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821057,
+      "m_Localized": "Ayakkabı Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821058,
+      "m_Localized": "Eldiven Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821059,
+      "m_Localized": "Kemer Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821060,
+      "m_Localized": "Kolye Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821061,
+      "m_Localized": "Yüzük Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821062,
+      "m_Localized": "Silah Seviye Atlama",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821063,
+      "m_Localized": "Kask Seviye Atlama",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821064,
+      "m_Localized": "Zırh Seviye Atlama",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821065,
+      "m_Localized": "Ayakkabı Seviye Atlama",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821066,
+      "m_Localized": "Eldiven Seviye Atlama",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821067,
+      "m_Localized": "Kemer Seviye Atlama",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821068,
+      "m_Localized": "Kolye Seviye Atlama",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821069,
+      "m_Localized": "Yüzük Seviye Atlama",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664321523712,
+      "m_Localized": "Binek Hasar Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718016,
+      "m_Localized": "Binek Sağlık Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718017,
+      "m_Localized": "Ekstra Binek Şansı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718018,
+      "m_Localized": "Binek Çağırma Maliyeti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821073,
+      "m_Localized": "Dövme Zamanlayıcı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821074,
+      "m_Localized": "Dövme Yükseltme Maliyeti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821075,
+      "m_Localized": "Ekipman Satış Fiyatı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821076,
+      "m_Localized": "Otomatik Dövme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821077,
+      "m_Localized": "Çekiç Çevrimdışı Ödülü",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821078,
+      "m_Localized": "Para Çevrimdışı Ödülü",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821079,
+      "m_Localized": "Maksimum Çevrimdışı Süre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821080,
+      "m_Localized": "Ücretsiz Dövme Şansı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821081,
+      "m_Localized": "Çekiç Hırsızı Çekiç Bonusu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821082,
+      "m_Localized": "Çekiç Hırsızı Para Bonusu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821083,
+      "m_Localized": "Beceri Hasarı Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821084,
+      "m_Localized": "Beceri Pasif Hasarı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821085,
+      "m_Localized": "Beceri Pasif Sağlık",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821086,
+      "m_Localized": "Hayalet Kasaba Beceri Bileti Bonusu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821087,
+      "m_Localized": "Beceri Çağırma Maliyeti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821088,
+      "m_Localized": "Evcil Hayvan Hasar Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821089,
+      "m_Localized": "Evcil Hayvan Sağlık Ustalığı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821090,
+      "m_Localized": "Ekstra Yumurta Şansı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821091,
+      "m_Localized": "Sıradan Yumurta Zamanlayıcı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821092,
+      "m_Localized": "Nadir Yumurta Zamanlayıcı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821093,
+      "m_Localized": "Destansı Yumurta Zamanlayıcı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821094,
+      "m_Localized": "Efsanevi Yumurta Zamanlayıcı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821095,
+      "m_Localized": "Nihai Yumurta Zamanlayıcı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821096,
+      "m_Localized": "Mistik Yumurta Zamanlayıcı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821097,
+      "m_Localized": "Zombi Hücum Teknoloji İksir Bonusu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821098,
+      "m_Localized": "Teknoloji Düğümü Yükseltme Maliyeti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821099,
+      "m_Localized": "Teknoloji Araştırma Zamanlayıcı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821100,
+      "m_Localized": "Silah Bonus Hasarı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821101,
+      "m_Localized": "Kask Bonus Sağlık {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821102,
+      "m_Localized": "Zırh Bonus Sağlık {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821103,
+      "m_Localized": "Ayakkabı Bonus Sağlık {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821104,
+      "m_Localized": "Eldiven Bonus Hasar {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821105,
+      "m_Localized": "Kemer Bonus Sağlık {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821106,
+      "m_Localized": "Kolye Bonus Hasar {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821107,
+      "m_Localized": "Yüzük Bonus Hasar {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821108,
+      "m_Localized": "Silah Maks Seviye {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821109,
+      "m_Localized": "Kask Maks Seviye {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821110,
+      "m_Localized": "Zırh Maks Seviye {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821111,
+      "m_Localized": "Ayakkabı Maks Seviye {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821112,
+      "m_Localized": "Eldiven Maks Seviye {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821113,
+      "m_Localized": "Kemer Maks Seviye {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821114,
+      "m_Localized": "Kolye Maks Seviye {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821115,
+      "m_Localized": "Yüzük Maks Seviye {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821116,
+      "m_Localized": "Binek Bonus Hasar {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821117,
+      "m_Localized": "Binek Bonus Sağlık {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821118,
+      "m_Localized": "Binek yükseltirken bonus XP {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718019,
+      "m_Localized": "Binek Çağırma Maliyeti {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821119,
+      "m_Localized": "Demirhane Yükseltme Zamanlayıcı Hızı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821120,
+      "m_Localized": "Demirhane Yükseltme Maliyeti {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821121,
+      "m_Localized": "Ekipman Satış Fiyatı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821122,
+      "m_Localized": "Bir seferde kullanılan çekiç sayısı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821123,
+      "m_Localized": "Çekiç Çevrimdışı Ödül Bonusu {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821124,
+      "m_Localized": "Para Çevrimdışı Ödül Bonusu {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821125,
+      "m_Localized": "Maks Çevrimdışı Ödül Süresi {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821126,
+      "m_Localized": "Ücretsiz ekipman dövme şansı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821127,
+      "m_Localized": "Çekiç Hırsızı Zindanı {0} daha fazla çekiç düşürür",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821128,
+      "m_Localized": "Çekiç Hırsızı Zindanı {0} daha fazla para düşürür",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821129,
+      "m_Localized": "Beceri Hasarı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821130,
+      "m_Localized": "Beceri Pasif Temel Hasar {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821131,
+      "m_Localized": "Beceri Pasif Temel Sağlık {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821132,
+      "m_Localized": "Hayalet Kasaba Zindanı {0} daha fazla beceri bileti düşürür",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821133,
+      "m_Localized": "Beceri Çağırma Maliyeti {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821134,
+      "m_Localized": "Evcil Hayvan Bonus Hasar {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821135,
+      "m_Localized": "Evcil Hayvan Bonus Sağlık {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821136,
+      "m_Localized": "Evcil hayvan yükseltirken bonus XP {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821137,
+      "m_Localized": "Yaygın Yumurta Çatlama Zamanlayıcı Hızı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821138,
+      "m_Localized": "Nadir Yumurta Çatlama Zamanlayıcı Hızı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821139,
+      "m_Localized": "Efsanevi Yumurta Çatlama Zamanlayıcı Hızı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821140,
+      "m_Localized": "Efsanevi Yumurta Çatlama Zamanlayıcı Hızı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821141,
+      "m_Localized": "Nihai Yumurta Çatlama Zamanlayıcı Hızı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821142,
+      "m_Localized": "Efsanevi Yumurta Çatlama Zamanlayıcı Hızı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821143,
+      "m_Localized": "Zombi Hücum Zindanı {0} daha fazla teknoloji iksiri düşürür",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821144,
+      "m_Localized": "Teknoloji Düğümü Yükseltme Maliyeti {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821145,
+      "m_Localized": "Teknoloji Araştırma Zamanlayıcı Hızı {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280318681088,
+      "m_Localized": "Teknoloji Ağacı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846912,
+      "m_Localized": "Demirhane",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846913,
+      "m_Localized": "Güç",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846914,
+      "m_Localized": "Beceriler, Evcil Hayvanlar & Teknoloji",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17687817399296000,
+      "m_Localized": "Başka bir teknoloji zaten araştırılıyor!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17688556561489920,
+      "m_Localized": "MAKS",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17690949319647232,
+      "m_Localized": "Araştırma devam ediyor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 21246931924672512,
+      "m_Localized": "Teknoloji Ağacı yükseltmen tamamlandı!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103966219382546432,
+      "m_Localized": "Klan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

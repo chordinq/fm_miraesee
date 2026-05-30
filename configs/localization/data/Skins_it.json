@@ -1,0 +1,679 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skins_it",
+  "m_LocaleId": {
+    "m_Code": "it"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 6506703471677536427
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 26278420799488,
+      "m_Localized": "Skin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26278441771008,
+      "m_Localized": "Skin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11907389233029120,
+      "m_Localized": "Pietre miliari",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190401,
+      "m_Localized": "Risultati auto-esecuzione ({1} corse)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190402,
+      "m_Localized": "Fallire",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190403,
+      "m_Localized": "Sblocca skin fantastiche giocando a Stepping Stones!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190404,
+      "m_Localized": "Ogni salto è un 50/50. Una pietra è sicura, l'altra si romperà.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190405,
+      "m_Localized": "Più vai lontano, più ricompense!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190406,
+      "m_Localized": "Raggiungi la casella più lontana per ottenere le migliori ricompense!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190407,
+      "m_Localized": "Come si gioca?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190408,
+      "m_Localized": "Auto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190410,
+      "m_Localized": "Gioca",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736193,
+      "m_Localized": "Auto alla tessera {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736195,
+      "m_Localized": "Fermati e raccogli!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736196,
+      "m_Localized": "Aspetto casuale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736197,
+      "m_Localized": "Nessuna ricompensa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14046346632749056,
+      "m_Localized": "Piastrella",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14046346645331968,
+      "m_Localized": "Raggiunto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 18856902585737216,
+      "m_Localized": "Giocare di nuovo?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160766685184,
+      "m_Localized": "Set di Babbo Natale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160779268096,
+      "m_Localized": "Set Pupazzo di Neve",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160779268097,
+      "m_Localized": "Set da snowboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 24191974679502848,
+      "m_Localized": "Corsa automatica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 24191974687891456,
+      "m_Localized": "Probabilità per corsa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092757524480,
+      "m_Localized": "Naso rosso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092770107392,
+      "m_Localized": "Bastoncino di carota",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301696,
+      "m_Localized": "Cappello di Babbo Natale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301697,
+      "m_Localized": "Cappotto di Babbo Natale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301698,
+      "m_Localized": "Cappello del Pupazzo di Neve",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301699,
+      "m_Localized": "Corpo del Pupazzo di Neve",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301700,
+      "m_Localized": "Cappello da snowboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301701,
+      "m_Localized": "Cappotto da snowboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301702,
+      "m_Localized": "Testa del Nonno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301703,
+      "m_Localized": "Fascia per Capelli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964940742656,
+      "m_Localized": "Testa di coniglio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964949131264,
+      "m_Localized": "Corpo di coniglio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964949131265,
+      "m_Localized": "Mazza da baseball",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301707,
+      "m_Localized": "Testa di clown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301708,
+      "m_Localized": "Corpo di clown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301709,
+      "m_Localized": "Clacson da clown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301710,
+      "m_Localized": "Testa da milionario",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301711,
+      "m_Localized": "Corpo da milionario",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301712,
+      "m_Localized": "Bastone con sfera di cristallo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954119957667840,
+      "m_Localized": "Set di Fiori",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954120041553920,
+      "m_Localized": "Set del Druido",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954120041553921,
+      "m_Localized": "Set Folletto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422651969536,
+      "m_Localized": "Guscio d'uovo comune",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422668746752,
+      "m_Localized": "Guscio d'uovo raro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941056,
+      "m_Localized": "Guscio d'uovo epico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941057,
+      "m_Localized": "Guscio d'uovo leggendario",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941058,
+      "m_Localized": "Guscio d'uovo definitivo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941059,
+      "m_Localized": "Guscio d'uovo mitico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540702420992,
+      "m_Localized": "Cappello da leprechaun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615296,
+      "m_Localized": "Abito da leprechaun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615297,
+      "m_Localized": "Colpo a quattro foglie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615298,
+      "m_Localized": "Testa di fiore",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615299,
+      "m_Localized": "Corpo di fiore",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615300,
+      "m_Localized": "Arma di fiore",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615301,
+      "m_Localized": "Cappuccio del Druido",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615302,
+      "m_Localized": "Mantello del Druido",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615303,
+      "m_Localized": "Arma del Druido",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556185362432,
+      "m_Localized": "Set Coniglio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556193751040,
+      "m_Localized": "Set Clown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556193751041,
+      "m_Localized": "Set Milionario",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 47417077105942528,
+      "m_Localized": "Seleziona le skin da unire",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804325638144,
+      "m_Localized": "Pesce rosso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803968,
+      "m_Localized": "Detriti di sottomarino",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803969,
+      "m_Localized": "Tubo arrugginito",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803970,
+      "m_Localized": "Becco Coraggioso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803971,
+      "m_Localized": "Minaccia Alata",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803972,
+      "m_Localized": "Lancia Appuntita",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803973,
+      "m_Localized": "Cappello all'indietro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803974,
+      "m_Localized": "Stile",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998272,
+      "m_Localized": "Skateboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998273,
+      "m_Localized": "Testa di Gatto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998274,
+      "m_Localized": "Corpo Peloso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998275,
+      "m_Localized": "Artigli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998279,
+      "m_Localized": "Testa Fatta in Casa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998280,
+      "m_Localized": "Corteccia di Albero",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998281,
+      "m_Localized": "Bastone di Fungo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998282,
+      "m_Localized": "Occhiali",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998284,
+      "m_Localized": "Occhiali da Sole",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192576,
+      "m_Localized": "Set Boccia per Pesci",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192577,
+      "m_Localized": "Set Aquila",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192578,
+      "m_Localized": "Set Skater",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192579,
+      "m_Localized": "Set Gatto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192581,
+      "m_Localized": "Set Fungo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036070227968,
+      "m_Localized": "Cappello di Pesce",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810880,
+      "m_Localized": "Squalo Appiccicoso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810881,
+      "m_Localized": "Lancia di Poseidone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810882,
+      "m_Localized": "Set Squalo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54923833574940672,
+      "m_Localized": "Benda sull'occhio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54955948945432576,
+      "m_Localized": "Cappello Fungo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

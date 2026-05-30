@@ -1,0 +1,749 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "TechTree_ko",
+  "m_LocaleId": {
+    "m_Code": "ko"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 3510350058130572738
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 55555327238144,
+      "m_Localized": "무기 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555335626752,
+      "m_Localized": "헬멧 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821056,
+      "m_Localized": "갑옷 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821057,
+      "m_Localized": "신발 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821058,
+      "m_Localized": "장갑 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821059,
+      "m_Localized": "벨트 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821060,
+      "m_Localized": "목걸이 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821061,
+      "m_Localized": "반지 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821062,
+      "m_Localized": "무기 레벨 업",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821063,
+      "m_Localized": "헬멧 레벨 업",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821064,
+      "m_Localized": "갑옷 레벨 업",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821065,
+      "m_Localized": "신발 레벨 업",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821066,
+      "m_Localized": "장갑 레벨 업",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821067,
+      "m_Localized": "벨트 레벨 업",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821068,
+      "m_Localized": "목걸이 레벨 업",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821069,
+      "m_Localized": "반지 레벨 업",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664321523712,
+      "m_Localized": "탈것 피해 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718016,
+      "m_Localized": "탈것 체력 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718017,
+      "m_Localized": "추가 탈것 기회",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718018,
+      "m_Localized": "탈것 소환 비용",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821073,
+      "m_Localized": "제련 타이머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821074,
+      "m_Localized": "제련 업그레이드 비용",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821075,
+      "m_Localized": "장비 판매 가격",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821076,
+      "m_Localized": "자동 제련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821077,
+      "m_Localized": "망치 오프라인 보상",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821078,
+      "m_Localized": "코인 오프라인 보상",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821079,
+      "m_Localized": "최대 오프라인 시간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821080,
+      "m_Localized": "무료 제련 기회",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821081,
+      "m_Localized": "망치 도둑 망치 보너스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821082,
+      "m_Localized": "망치 도둑 코인 보너스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821083,
+      "m_Localized": "스킬 피해 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821084,
+      "m_Localized": "스킬 패시브 피해",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821085,
+      "m_Localized": "스킬 패시브 체력",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821086,
+      "m_Localized": "유령 마을 스킬 티켓 보너스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821087,
+      "m_Localized": "스킬 소환 비용",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821088,
+      "m_Localized": "펫 피해 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821089,
+      "m_Localized": "펫 체력 숙련",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821090,
+      "m_Localized": "추가 알 획득 기회",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821091,
+      "m_Localized": "일반 알 타이머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821092,
+      "m_Localized": "희귀 알 타이머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821093,
+      "m_Localized": "에픽 알 타이머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821094,
+      "m_Localized": "전설의 알 타이머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821095,
+      "m_Localized": "궁극의 알 타이머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821096,
+      "m_Localized": "신화의 알 타이머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821097,
+      "m_Localized": "좀비 돌진 기술 물약 보너스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821098,
+      "m_Localized": "기술 노드 업그레이드 비용",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821099,
+      "m_Localized": "기술 연구 타이머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821100,
+      "m_Localized": "무기 보너스 피해 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821101,
+      "m_Localized": "헬멧 보너스 체력 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821102,
+      "m_Localized": "갑옷 보너스 체력 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821103,
+      "m_Localized": "신발 보너스 체력 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821104,
+      "m_Localized": "장갑 보너스 피해 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821105,
+      "m_Localized": "벨트 보너스 체력 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821106,
+      "m_Localized": "목걸이 보너스 피해 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821107,
+      "m_Localized": "반지 보너스 피해 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821108,
+      "m_Localized": "무기 최대 레벨 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821109,
+      "m_Localized": "헬멧 최대 레벨 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821110,
+      "m_Localized": "바디 최대 레벨 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821111,
+      "m_Localized": "신발 최대 레벨 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821112,
+      "m_Localized": "장갑 최대 레벨 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821113,
+      "m_Localized": "벨트 최대 레벨 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821114,
+      "m_Localized": "목걸이 최대 레벨 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821115,
+      "m_Localized": "반지 최대 레벨 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821116,
+      "m_Localized": "탈것 보너스 피해 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821117,
+      "m_Localized": "탈것 보너스 체력 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821118,
+      "m_Localized": "탈것 업그레이드 시 보너스 경험치 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718019,
+      "m_Localized": "탈것 소환 비용 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821119,
+      "m_Localized": "대장간 업그레이드 타이머 속도 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821120,
+      "m_Localized": "대장간 업그레이드 비용 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821121,
+      "m_Localized": "장비 판매 가격 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821122,
+      "m_Localized": "한 번에 사용되는 망치 수 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821123,
+      "m_Localized": "망치 오프라인 보상 보너스 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821124,
+      "m_Localized": "동전 오프라인 보상 보너스 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821125,
+      "m_Localized": "최대 오프라인 보상 시간 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821126,
+      "m_Localized": "장비를 무료로 제작할 기회 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821127,
+      "m_Localized": "망치 도둑 던전에서 {0}개의 망치 추가 드롭",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821128,
+      "m_Localized": "망치 도둑 던전에서 {0}개의 동전 추가 드롭",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821129,
+      "m_Localized": "스킬 피해 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821130,
+      "m_Localized": "스킬 패시브 기본 피해 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821131,
+      "m_Localized": "스킬 패시브 기본 체력 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821132,
+      "m_Localized": "유령 마을 던전에서 {0}개의 스킬 티켓 추가 드롭",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821133,
+      "m_Localized": "스킬 소환 비용 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821134,
+      "m_Localized": "펫 보너스 피해 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821135,
+      "m_Localized": "펫 보너스 체력 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821136,
+      "m_Localized": "펫 업그레이드 시 보너스 경험치 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821137,
+      "m_Localized": "일반 알 부화 타이머 속도 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821138,
+      "m_Localized": "희귀 알 부화 타이머 속도 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821139,
+      "m_Localized": "에픽 알 부화 타이머 속도 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821140,
+      "m_Localized": "전설 알 부화 타이머 속도 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821141,
+      "m_Localized": "궁극의 알 부화 타이머 속도 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821142,
+      "m_Localized": "신화 알 부화 타이머 속도 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821143,
+      "m_Localized": "좀비 러쉬 던전에서 {0}개의 기술 포션 추가 드롭",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821144,
+      "m_Localized": "기술 노드 업그레이드 비용 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821145,
+      "m_Localized": "기술 연구 타이머 속도 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280318681088,
+      "m_Localized": "기술 트리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846912,
+      "m_Localized": "대장간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846913,
+      "m_Localized": "힘",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846914,
+      "m_Localized": "스킬, 펫 & 기술",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17687817399296000,
+      "m_Localized": "다른 기술이 이미 연구 중입니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17688556561489920,
+      "m_Localized": "최대",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17690949319647232,
+      "m_Localized": "연구 진행 중",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 21246931924672512,
+      "m_Localized": "기술 트리 업그레이드가 완료되었습니다!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103966219382546432,
+      "m_Localized": "클랜",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

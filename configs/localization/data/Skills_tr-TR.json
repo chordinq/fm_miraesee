@@ -1,0 +1,329 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skills_tr-TR",
+  "m_LocaleId": {
+    "m_Code": "tr-TR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -3517678328824788358
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 208976670720,
+      "m_Localized": "Et",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 216287342592,
+      "m_Localized": "Moral",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 233735647232,
+      "m_Localized": "Oklar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 247690096640,
+      "m_Localized": "Çığlık",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 264307929088,
+      "m_Localized": "Göktaşı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 288559394816,
+      "m_Localized": "Çılgın",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 306217414656,
+      "m_Localized": "Kaçış",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 321933471744,
+      "m_Localized": "Dikenler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 338651967488,
+      "m_Localized": "Bomba",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 356767166464,
+      "m_Localized": "Solucan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 430301704192,
+      "m_Localized": "Yıldırım",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 446353305600,
+      "m_Localized": "Güçlendirme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460181925888,
+      "m_Localized": "Yüksek Moral",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 503324536832,
+      "m_Localized": "Ok Yağmuru",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 640000126976,
+      "m_Localized": "Biraz et ye ve sağlığını {1} saniye boyunca {0} artır",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 996302057472,
+      "m_Localized": "İlham al ve {2} saniye boyunca Hasarını {0} ve Sağlığını {1} artır",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1018934521856,
+      "m_Localized": "Bir ok patlaması çağır, her biri {0} Hasar verir.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1055152336896,
+      "m_Localized": "Ninja arkadaşlarının shuriken atmasını sağla, her biri {0} Hasar verir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1093542801408,
+      "m_Localized": "Sağır edici bir çığlık at, tüm düşmanlara {0} Hasar verir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1132528857088,
+      "m_Localized": "Bir göktaşı dalgası indir, her biri {0} Hasar verir.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1158541930496,
+      "m_Localized": "Çılgına dön ve {1} saniye boyunca Hasarını {0} artır",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1200103288832,
+      "m_Localized": "Bir boğa kaçışı çağır, her biri {0} Hasar verir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1263252729856,
+      "m_Localized": "Savaş alanına dikenler ek, tüm düşmanlara {0} Hasar verir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1304310771712,
+      "m_Localized": "Savaş alanına bir bomba bırak, tüm düşmanlara {0} Hasar verir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1334736252928,
+      "m_Localized": "Dev bir solucan çağır, tüm düşmanlara {0} Hasar verir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1369259569152,
+      "m_Localized": "Yıldırım çağır, her biri tüm düşmanlara {0} Hasar verir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1406169444352,
+      "m_Localized": "Kendini güçlendir ve {2} saniye boyunca Hasarını {0} ve Sağlığını {1} artır",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1429477191680,
+      "m_Localized": "İlahi ilham al ve {2} saniye boyunca Hasarını {0} ve Sağlığını {1} artır",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1468731682816,
+      "m_Localized": "Bir ok yağmuru indir, {0} Hasar verir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400141123584,
+      "m_Localized": "Shurikenler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483712,
+      "m_Localized": "Tarama Koşusu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483713,
+      "m_Localized": "Ağır Hava Desteği çağır, {0} Hasar ver",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483714,
+      "m_Localized": "Topçu Barajı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483715,
+      "m_Localized": "Her biri {0} Hasar veren top mermisi barajı ateşle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483716,
+      "m_Localized": "Drone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483717,
+      "m_Localized": "Yanında savaşması için bir drone çağır, {1} saniye boyunca {0} Hasar ver",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764945125376,
+      "m_Localized": "OTOMATİK AÇIK",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764974485504,
+      "m_Localized": "OTOMATİK KAPALI",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101696,
+      "m_Localized": "Çağır",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101697,
+      "m_Localized": "Temel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066688,
+      "m_Localized": "Hepsini Yükselt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066689,
+      "m_Localized": "Hızlı Donat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3898839411974144,
+      "m_Localized": "Pasif:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

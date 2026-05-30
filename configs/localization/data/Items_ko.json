@@ -1,0 +1,1652 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Items_ko",
+  "m_LocaleId": {
+    "m_Code": "ko"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 8394530462835593926
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 5028479430656,
+      "m_Localized": "해골",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624960,
+      "m_Localized": "수염",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624961,
+      "m_Localized": "전쟁 가면",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624962,
+      "m_Localized": "페이스 페인트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624963,
+      "m_Localized": "도끼",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624964,
+      "m_Localized": "취관",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624965,
+      "m_Localized": "나뭇가지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624966,
+      "m_Localized": "곤봉",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624967,
+      "m_Localized": "바위",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624968,
+      "m_Localized": "투석기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624969,
+      "m_Localized": "뼈",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624970,
+      "m_Localized": "가죽",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624971,
+      "m_Localized": "곰가죽",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624972,
+      "m_Localized": "뼈 치마",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624973,
+      "m_Localized": "허리끈",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624974,
+      "m_Localized": "나무껍질",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624975,
+      "m_Localized": "곰 발",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624976,
+      "m_Localized": "부적",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624977,
+      "m_Localized": "이빨 목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624978,
+      "m_Localized": "파편 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624979,
+      "m_Localized": "해골 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624980,
+      "m_Localized": "발 감싸기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624981,
+      "m_Localized": "상아 정강이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624982,
+      "m_Localized": "죽음의 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624983,
+      "m_Localized": "로마 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624984,
+      "m_Localized": "그리스 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624985,
+      "m_Localized": "사무라이 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624986,
+      "m_Localized": "기사 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624987,
+      "m_Localized": "흉갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624988,
+      "m_Localized": "철판",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624989,
+      "m_Localized": "발타자르 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624990,
+      "m_Localized": "주머니",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624991,
+      "m_Localized": "건틀릿",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624992,
+      "m_Localized": "철권",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624993,
+      "m_Localized": "행운의 부적",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624994,
+      "m_Localized": "용기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624995,
+      "m_Localized": "축복받은 보석",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624996,
+      "m_Localized": "철 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624997,
+      "m_Localized": "샌들",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624998,
+      "m_Localized": "스톰퍼",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624999,
+      "m_Localized": "검과 방패",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625000,
+      "m_Localized": "창과 방패",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625001,
+      "m_Localized": "낫",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625002,
+      "m_Localized": "전쟁 망치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625003,
+      "m_Localized": "활",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625004,
+      "m_Localized": "카타나",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625005,
+      "m_Localized": "토마호크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625006,
+      "m_Localized": "전투 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625007,
+      "m_Localized": "선장의 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625008,
+      "m_Localized": "깃털 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625009,
+      "m_Localized": "슬라브 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625010,
+      "m_Localized": "탑 햇",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625011,
+      "m_Localized": "갑옷 치마",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625012,
+      "m_Localized": "가디건",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625013,
+      "m_Localized": "하네스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625014,
+      "m_Localized": "가죽 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625015,
+      "m_Localized": "가죽 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625016,
+      "m_Localized": "벙어리 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625017,
+      "m_Localized": "시계",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625018,
+      "m_Localized": "보물 열쇠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625019,
+      "m_Localized": "에메랄드",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625020,
+      "m_Localized": "삼위일체",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625021,
+      "m_Localized": "가죽 부츠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625022,
+      "m_Localized": "승마 부츠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625023,
+      "m_Localized": "석궁",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625024,
+      "m_Localized": "머스킷",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625025,
+      "m_Localized": "집행자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625026,
+      "m_Localized": "이중 권총",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625027,
+      "m_Localized": "해적 검",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625028,
+      "m_Localized": "레이피어",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625029,
+      "m_Localized": "페도라 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625030,
+      "m_Localized": "케블라 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625031,
+      "m_Localized": "장교 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625032,
+      "m_Localized": "폭동 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625033,
+      "m_Localized": "하사 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625034,
+      "m_Localized": "강철 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625035,
+      "m_Localized": "겨울 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625036,
+      "m_Localized": "위장",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625037,
+      "m_Localized": "케블라",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625038,
+      "m_Localized": "탄약 파우치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625039,
+      "m_Localized": "전술 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625040,
+      "m_Localized": "전투 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625041,
+      "m_Localized": "반손가락 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625042,
+      "m_Localized": "군번줄",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625043,
+      "m_Localized": "행운의 목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625044,
+      "m_Localized": "볼트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625045,
+      "m_Localized": "형제애 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625046,
+      "m_Localized": "전투 부츠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625047,
+      "m_Localized": "베테랑 부츠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625048,
+      "m_Localized": "AK",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625049,
+      "m_Localized": "배턴",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625050,
+      "m_Localized": "너클 더스터",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625051,
+      "m_Localized": "M4",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625052,
+      "m_Localized": "폭동 방패",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625053,
+      "m_Localized": "저격수",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625054,
+      "m_Localized": "우지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625055,
+      "m_Localized": "렌치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625056,
+      "m_Localized": "바이오 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625057,
+      "m_Localized": "방독면",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625058,
+      "m_Localized": "아이언 메크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625059,
+      "m_Localized": "우주 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625060,
+      "m_Localized": "외골격",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625061,
+      "m_Localized": "우주복",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625062,
+      "m_Localized": "코르셋",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625063,
+      "m_Localized": "끈",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625064,
+      "m_Localized": "리모컨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625065,
+      "m_Localized": "우주 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625066,
+      "m_Localized": "카이퍼 목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625067,
+      "m_Localized": "펜던트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625068,
+      "m_Localized": "이카루스 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625069,
+      "m_Localized": "솔라리우스 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625070,
+      "m_Localized": "발 추진기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625071,
+      "m_Localized": "우주 부츠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625072,
+      "m_Localized": "블래스터",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625073,
+      "m_Localized": "로봇 검",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625074,
+      "m_Localized": "세이버",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625075,
+      "m_Localized": "우주 총",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625076,
+      "m_Localized": "우주 권총",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625077,
+      "m_Localized": "고급 메카",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625078,
+      "m_Localized": "외계인 머리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625079,
+      "m_Localized": "파괴자 마스크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625080,
+      "m_Localized": "헤비 듀티",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625081,
+      "m_Localized": "로보 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625082,
+      "m_Localized": "스텔라리움",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625083,
+      "m_Localized": "아다만티움",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625084,
+      "m_Localized": "플라즈마 슈트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625085,
+      "m_Localized": "골반 동기화기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625086,
+      "m_Localized": "척추 안정기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625087,
+      "m_Localized": "임팩터",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625088,
+      "m_Localized": "임플란트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625089,
+      "m_Localized": "감마 칼라",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625090,
+      "m_Localized": "사이 초커",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625091,
+      "m_Localized": "이클립스 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625092,
+      "m_Localized": "라리움 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625093,
+      "m_Localized": "유압 발",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625094,
+      "m_Localized": "로보 발",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625095,
+      "m_Localized": "더블 세이버",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625096,
+      "m_Localized": "이온 블래스터",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625097,
+      "m_Localized": "등압 커터",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625098,
+      "m_Localized": "빛 & 방패",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625099,
+      "m_Localized": "플라즈마 소총",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625100,
+      "m_Localized": "레이 건",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625101,
+      "m_Localized": "캐스켓",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625102,
+      "m_Localized": "아이언 홀로",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625103,
+      "m_Localized": "마스크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625104,
+      "m_Localized": "가상 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625105,
+      "m_Localized": "홀로 아머",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625106,
+      "m_Localized": "스펙트럼 플레이트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625107,
+      "m_Localized": "궤도 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625108,
+      "m_Localized": "현실 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625109,
+      "m_Localized": "임펄스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625110,
+      "m_Localized": "무지개 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625111,
+      "m_Localized": "크리스탈 아뮬렛",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625112,
+      "m_Localized": "글리치 목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625113,
+      "m_Localized": "연결 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625114,
+      "m_Localized": "모비우스 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625115,
+      "m_Localized": "에테리얼 양말",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625116,
+      "m_Localized": "빠른 여행자들",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625117,
+      "m_Localized": "투영된 커틀라스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625118,
+      "m_Localized": "스피어쉬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625119,
+      "m_Localized": "삼지창",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625120,
+      "m_Localized": "가상 활",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625121,
+      "m_Localized": "가상 총",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625122,
+      "m_Localized": "가상 검",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625123,
+      "m_Localized": "에너지 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625124,
+      "m_Localized": "헤어 반다나",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625125,
+      "m_Localized": "묶은 머리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625126,
+      "m_Localized": "양자 헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625127,
+      "m_Localized": "서브 마스크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625128,
+      "m_Localized": "델타 갑옷",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625129,
+      "m_Localized": "오비터 슈트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625130,
+      "m_Localized": "검은 띠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625131,
+      "m_Localized": "중성미자 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625132,
+      "m_Localized": "중력 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625133,
+      "m_Localized": "중성자 지문",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625134,
+      "m_Localized": "힉스 칼라",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625135,
+      "m_Localized": "공허 목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625136,
+      "m_Localized": "오라 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625137,
+      "m_Localized": "확률 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625138,
+      "m_Localized": "반중력 부츠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625139,
+      "m_Localized": "반물질 발",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625140,
+      "m_Localized": "검은 활",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625141,
+      "m_Localized": "검은 총",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625142,
+      "m_Localized": "검은 망치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625143,
+      "m_Localized": "검은 창",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625144,
+      "m_Localized": "검은 지팡이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625145,
+      "m_Localized": "검은 검과 방패",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625146,
+      "m_Localized": "켈트 오버헤드",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625147,
+      "m_Localized": "보호의 후광",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625148,
+      "m_Localized": "뱀 화환",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625149,
+      "m_Localized": "흰 머리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625150,
+      "m_Localized": "마법사 모자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625151,
+      "m_Localized": "성스러운 가운",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625152,
+      "m_Localized": "팔라딘 갑옷",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625153,
+      "m_Localized": "성스러운 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625154,
+      "m_Localized": "마법사 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625155,
+      "m_Localized": "마법사 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625156,
+      "m_Localized": "숭배자 장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625157,
+      "m_Localized": "발톱 목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625158,
+      "m_Localized": "토르 아뮬렛",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625159,
+      "m_Localized": "신성의 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625160,
+      "m_Localized": "나자르 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625161,
+      "m_Localized": "천상의 신발",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625162,
+      "m_Localized": "머큐리 샌들",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625163,
+      "m_Localized": "천사의 쇠스랑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625164,
+      "m_Localized": "드래곤 단검",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625165,
+      "m_Localized": "뱀의 검",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625166,
+      "m_Localized": "세이렌의 노래",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625167,
+      "m_Localized": "지팡이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625168,
+      "m_Localized": "지혜의 지팡이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036190056448,
+      "m_Localized": "지옥의 삼지창",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445056,
+      "m_Localized": "심연의 포크",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445057,
+      "m_Localized": "영혼 관통자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445058,
+      "m_Localized": "파멸의 철퇴",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445059,
+      "m_Localized": "그림자 시미터",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445060,
+      "m_Localized": "원한의 왕관",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445061,
+      "m_Localized": "썩은 이빨 바이저",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445062,
+      "m_Localized": "지옥에서 단련된 투구",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445063,
+      "m_Localized": "독 문장",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445064,
+      "m_Localized": "파멸의 갑옷",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445065,
+      "m_Localized": "고통의 손아귀",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445066,
+      "m_Localized": "공허의 발톱",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445067,
+      "m_Localized": "공포의 발걸음",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445068,
+      "m_Localized": "각반",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445069,
+      "m_Localized": "고통의 원",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445070,
+      "m_Localized": "진홍의 벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445071,
+      "m_Localized": "가시 목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445072,
+      "m_Localized": "원한의 목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445073,
+      "m_Localized": "두개골 결속자",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445074,
+      "m_Localized": "프리즘 반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350273392640,
+      "m_Localized": "망토",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350285975552,
+      "m_Localized": "녹은 판",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

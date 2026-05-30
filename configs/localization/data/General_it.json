@@ -1,0 +1,1418 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "General_it",
+  "m_LocaleId": {
+    "m_Code": "it"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -7974773596385334045
+  },
+  "m_Metadata": {
+    "m_Items": [
+      {
+        "rid": 2566708103035748772
+      }
+    ]
+  },
+  "m_TableData": [
+    {
+      "m_Id": 1830775273078784,
+      "m_Localized": "Account",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830808110284800,
+      "m_Localized": "Collega account",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830852523769856,
+      "m_Localized": "Accedi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830880994705408,
+      "m_Localized": "Esci",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1830906689011712,
+      "m_Localized": "Impostazioni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1831050188734464,
+      "m_Localized": "Collega il tuo account per mantenere i dati di gioco al sicuro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1837060659920896,
+      "m_Localized": "Scegli come accedere",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1839334803161088,
+      "m_Localized": "Accedi con {0}",
+      "m_Metadata": {
+        "m_Items": [
+          {
+            "rid": 2566708103035748772
+          }
+        ]
+      }
+    },
+    {
+      "m_Id": 1858491783364608,
+      "m_Localized": "Disconnetti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2248123788345344,
+      "m_Localized": "Impossibile collegare l'account!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312336348209152,
+      "m_Localized": "Forge Master",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312462114414592,
+      "m_Localized": "Maestro della Forgia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4312567328530432,
+      "m_Localized": "Accettare il tracciamento ci aiuta a fornire un'esperienza di gioco migliore",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532132964720640,
+      "m_Localized": "Annulla",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6731203815194624,
+      "m_Localized": "Gratis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6731538138972160,
+      "m_Localized": "Premium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7329341366124544,
+      "m_Localized": "Battaglia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502015217664,
+      "m_Localized": "Difficile",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189184,
+      "m_Localized": "Estremo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189185,
+      "m_Localized": "Inferno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189186,
+      "m_Localized": "Incubo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189187,
+      "m_Localized": "Caos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189188,
+      "m_Localized": "Vuoto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189189,
+      "m_Localized": "Abisso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189190,
+      "m_Localized": "Eterno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7383502036189191,
+      "m_Localized": "Inferno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7719387525070848,
+      "m_Localized": "Difficoltà",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7719887569993728,
+      "m_Localized": "Probabilità di evocazione",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10619610219986944,
+      "m_Localized": "Cavalcature",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11670393447301120,
+      "m_Localized": "Evocare",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11670393472466944,
+      "m_Localized": "Livello",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11677876031111168,
+      "m_Localized": "Evoca cavalcature per salire di livello e aumentare le probabilità di evocazione!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15414414065844224,
+      "m_Localized": "Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25442363505307659,
+      "m_Localized": "Ora del server",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25466346099372032,
+      "m_Localized": "Lingue",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25736002664067072,
+      "m_Localized": "Profilo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25736392600121344,
+      "m_Localized": "Nome:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737088519041024,
+      "m_Localized": "Genere:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737252952535040,
+      "m_Localized": "Classifica di Potenza",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25737513393647616,
+      "m_Localized": "Classifica dei Clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25738558836502528,
+      "m_Localized": "Vibrazioni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25738683373776896,
+      "m_Localized": "Effetti sonori",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739437660631040,
+      "m_Localized": "Privacy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739510138204160,
+      "m_Localized": "Lista di blocco",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25739620972687360,
+      "m_Localized": "Scrivici",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25749971952922624,
+      "m_Localized": "Sei morto!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25750022188101632,
+      "m_Localized": "Ritorno a",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751598017474560,
+      "m_Localized": "Connessione persa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751687679111168,
+      "m_Localized": "Per favore, controlla la tua connessione internet!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25751817480237056,
+      "m_Localized": "Tocca per riconnettere",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25753177110016000,
+      "m_Localized": "Connessione",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25780206593306624,
+      "m_Localized": "Ricompensa offline",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781074621296640,
+      "m_Localized": "Tempo di raccolta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781236299132928,
+      "m_Localized": "max",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25781574997569536,
+      "m_Localized": "Raccogli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25782489326481408,
+      "m_Localized": "Sembra che tu abbia fatto molti progressi! Assicurati di fare il backup dei tuoi dati per mantenere i tuoi progressi al sicuro nel caso succeda qualcosa o se vuoi cambiare telefono!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783697135038464,
+      "m_Localized": "Avviso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783712830124032,
+      "m_Localized": "Sei stato disconnesso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25783797269852160,
+      "m_Localized": "OK",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25786994701037568,
+      "m_Localized": "Inizio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788122108981248,
+      "m_Localized": "Aggiornamento in corso....",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788256913911808,
+      "m_Localized": "Massimo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25788540620828672,
+      "m_Localized": "Aggiorna",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25799296414314496,
+      "m_Localized": "Lv.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26811981503328256,
+      "m_Localized": "Comune",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812088114147328,
+      "m_Localized": "Raro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812108808843264,
+      "m_Localized": "Epico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812123002368000,
+      "m_Localized": "Leggendario",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812135207792640,
+      "m_Localized": "Definitivo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26812150785437696,
+      "m_Localized": "Mitico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26903988305326080,
+      "m_Localized": "Monete",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904079866982400,
+      "m_Localized": "Gemme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904091808165888,
+      "m_Localized": "Martelli",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904103917121536,
+      "m_Localized": "Biglietti Abilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904137874206720,
+      "m_Localized": "Pozioni Tecnologiche",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904198951661568,
+      "m_Localized": "Biglietti PvP",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26904212474097664,
+      "m_Localized": "Carica Orologi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27923188553543680,
+      "m_Localized": "Supporto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27927471772594176,
+      "m_Localized": "Rimuovi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27927471772594177,
+      "m_Localized": "Equipaggiato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27933087392002048,
+      "m_Localized": "Equipaggia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27937469076533248,
+      "m_Localized": "Completo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27999994002468864,
+      "m_Localized": "Salta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28003344441864192,
+      "m_Localized": "xp",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28006207175979008,
+      "m_Localized": "Sblocca a {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28307134017630208,
+      "m_Localized": "m",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28307134051184640,
+      "m_Localized": "s",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28308895591755776,
+      "m_Localized": "g",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28308895591755777,
+      "m_Localized": "h",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341082164752384,
+      "m_Localized": "Sconfitta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341082185723904,
+      "m_Localized": "Ok",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28341671737094144,
+      "m_Localized": "Entra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28342484547072000,
+      "m_Localized": "Esci",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28348250729410560,
+      "m_Localized": "Apri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29369553787744256,
+      "m_Localized": "Termini di Servizio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29369768682909696,
+      "m_Localized": "Continuando, accetti i nostri\n<color=#4CBEFF>Termini di Servizio.</color>",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29370014829834240,
+      "m_Localized": "Continua",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29372916365455360,
+      "m_Localized": "In arrivo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375658140037120,
+      "m_Localized": "Modificare le impostazioni sulla privacy?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375798267539456,
+      "m_Localized": "Dovrai riavviare l'app dopo aver apportato le modifiche!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29375989867540480,
+      "m_Localized": "Modifica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29741794152407040,
+      "m_Localized": "Server {0} (lista aggiornata ogni ora)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29746067175104512,
+      "m_Localized": "Classifica Potenza Clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29747952145653760,
+      "m_Localized": "Classifiche del server {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29748466790948864,
+      "m_Localized": "Scegli un avatar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29748886850494464,
+      "m_Localized": "Inserisci il nome del giocatore",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29750633891356672,
+      "m_Localized": "NUOVO!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29758280640225280,
+      "m_Localized": "Questo oggetto è più potente di quello che hai equipaggiato.\n\nSei sicuro di volerlo vendere?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29759899083726848,
+      "m_Localized": "a distanza",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29760435187081216,
+      "m_Localized": "Vendere",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29790294030409728,
+      "m_Localized": "Max",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29815644231819264,
+      "m_Localized": "Invia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816091566923776,
+      "m_Localized": "Come possiamo migliorare il gioco?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816781940973568,
+      "m_Localized": "Il tuo feedback",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29816958047215616,
+      "m_Localized": "Per favore, inserisci il tuo feedback qui...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818466696421376,
+      "m_Localized": "Ti stai divertendo?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818654978727936,
+      "m_Localized": "Per favore, valutaci!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818784373006336,
+      "m_Localized": "1-4 Stelle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29818942720565248,
+      "m_Localized": "5 Stelle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29820062658453504,
+      "m_Localized": "No",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29820196972650496,
+      "m_Localized": "Sì!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30155911439511552,
+      "m_Localized": "Seleziona una lingua",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30182856113975296,
+      "m_Localized": "Livello su",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 30209797294583808,
+      "m_Localized": "Inizia aggiornamento",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31931272254910464,
+      "m_Localized": "Server",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 188474387181068288,
+      "m_Localized": "Generale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 188474423793147904,
+      "m_Localized": "Notifiche generali relative al gioco",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148529360896,
+      "m_Localized": "Risultato finale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469760,
+      "m_Localized": "Classifica punti",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469761,
+      "m_Localized": "Settimanale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659148596469762,
+      "m_Localized": "Quotidiano",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39659439110742016,
+      "m_Localized": "Disabilitato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 40634894802477056,
+      "m_Localized": "Attacco",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092802191360,
+      "m_Localized": "Server in manutenzione!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162880,
+      "m_Localized": "Per favore, torna più tardi.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162881,
+      "m_Localized": "Aggiornamento richiesto!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162882,
+      "m_Localized": "Per favore, aggiorna il tuo gioco per continuare a giocare.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162883,
+      "m_Localized": "Non vedi l'aggiornamento?\nProva a riavviare il tuo app store e controlla di nuovo.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42205092823162884,
+      "m_Localized": "Aggiorna",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42396247389102080,
+      "m_Localized": "Sei stato temporaneamente bannato!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42396247397490688,
+      "m_Localized": "Sei stato permanentemente bannato!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 42398661798256640,
+      "m_Localized": "Il ban termina tra {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007670284288,
+      "m_Localized": "Esci",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007682867201,
+      "m_Localized": "Eliminare il tuo account è permanente e tutti i tuoi dati utente verranno rimossi. Non potrai ripristinare il tuo account su un altro dispositivo.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946007682867202,
+      "m_Localized": "Elimina",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946917205106688,
+      "m_Localized": "Elimina account",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 51946917205106689,
+      "m_Localized": "Eliminare account?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55090011081531392,
+      "m_Localized": "Richiede",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468096,
+      "m_Localized": "Codice di Condotta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468097,
+      "m_Localized": "Continuando, accetti il nostro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 62984451326468098,
+      "m_Localized": "e",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68537888493248512,
+      "m_Localized": "Quanti anni hai?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68537888514220032,
+      "m_Localized": "Usa il cursore per impostare la tua età.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78900637817888768,
+      "m_Localized": "o",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 95743441482280960,
+      "m_Localized": "Cambia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 95748098749362176,
+      "m_Localized": "Scegli un server",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96056509286313984,
+      "m_Localized": "Sei sicuro di voler cambiare server? Questo può essere fatto solo una volta.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96056782641688576,
+      "m_Localized": "Sì, cambia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96071128903774208,
+      "m_Localized": "Server {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 96215312229199872,
+      "m_Localized": "Errore!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649757990912,
+      "m_Localized": "Evoca {0} per salire di livello e aumentare le tue probabilità di evocazione!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573824,
+      "m_Localized": "Ascendere",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573825,
+      "m_Localized": "Sei sicuro di voler ascendere? L'ascesa rimuoverà tutti i tuoi {0} e reimposterà il tuo livello {1} al livello 1.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573826,
+      "m_Localized": "I tuoi futuri {0} saranno molto più forti!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573827,
+      "m_Localized": "Ascendi per sbloccare {0} più potenti!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99004649770573828,
+      "m_Localized": "Massimizza prima tutti i tuoi {0}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 100505843009576960,
+      "m_Localized": "Ultimo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103879382550962176,
+      "m_Localized": "Elementi rimossi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103881630010040320,
+      "m_Localized": "Acquisto rimborsato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 105585154724978688,
+      "m_Localized": "Informativa sulla privacy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 107036963603734528,
+      "m_Localized": "Musica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108442575155748864,
+      "m_Localized": "Guscio d'uovo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108442575164137472,
+      "m_Localized": "Casuale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 109490579467919360,
+      "m_Localized": "Il tuo livello di evocazione è già al massimo. Ascendi prima di evocare di nuovo per riprendere il progresso del livello di evocazione.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720124297216,
+      "m_Localized": "Moneta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268736,
+      "m_Localized": "Gemma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268737,
+      "m_Localized": "Martello",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720145268738,
+      "m_Localized": "Biglietto di Evocazione Abilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463040,
+      "m_Localized": "Pozione Tecnologica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463041,
+      "m_Localized": "Biglietto PvP",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930720149463042,
+      "m_Localized": "Carica Orologio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113959603035693056,
+      "m_Localized": "Evolvere",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186816,
+      "m_Localized": "Mega",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186817,
+      "m_Localized": "Ultra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114015310481186818,
+      "m_Localized": "Apex",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 115723395822247936,
+      "m_Localized": "Energia missione",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 115723434254655488,
+      "m_Localized": "Pozioni del clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116428612633092096,
+      "m_Localized": "Sei sicuro di voler spendere {0}?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116428748906029056,
+      "m_Localized": "Non chiedere più",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119351836584960000,
+      "m_Localized": "Bloccato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119351836593348608,
+      "m_Localized": "Elenco di tutti i {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 119425594028974080,
+      "m_Localized": "{0} tirerà {1} sottostatistiche uniche dalla lista qui sotto:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 123984074035421184,
+      "m_Localized": "Aggiorna info",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 125819198494466048,
+      "m_Localized": "Mostra chat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 125854061930995712,
+      "m_Localized": "Anteprima chat del clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 128326236642467840,
+      "m_Localized": "Elenco globale (aggiornato ogni ora)\n\nSolo i giocatori attualmente al \n#1 nel loro server appaiono qui",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 2566708103035748772,
+        "type": {
+          "class": "SmartFormatTag",
+          "ns": "UnityEngine.Localization.Metadata",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

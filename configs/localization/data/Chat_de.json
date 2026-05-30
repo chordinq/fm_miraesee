@@ -1,0 +1,322 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Chat_de",
+  "m_LocaleId": {
+    "m_Code": "de"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -3267501124420665462
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 115976368128,
+      "m_Localized": "Welt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116009922560,
+      "m_Localized": "Clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116009922561,
+      "m_Localized": "Nachricht senden...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773824,
+      "m_Localized": "gestern",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773825,
+      "m_Localized": "vor {0} Tagen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773826,
+      "m_Localized": "{0} hat einen Kampf geteilt!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4447354417152,
+      "m_Localized": "Blockliste",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5039376232448,
+      "m_Localized": "Wie alt bist du?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5176358006784,
+      "m_Localized": "Durch Tippen auf Bestätigen und Teilnahme am Chat stimmst du unseren <color=#4CBEFF>Nutzungsbedingungen</color> und unserer <color=#4CBEFF>Datenschutzrichtlinie</color> zu.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5456508153856,
+      "m_Localized": "Melden",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5553342050304,
+      "m_Localized": "Belästigung",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5685189996544,
+      "m_Localized": "Unangemessene Sprache",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5764445564928,
+      "m_Localized": "Anstößiger Spielername",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5850772729856,
+      "m_Localized": "Schummeln",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 403255837319168,
+      "m_Localized": "Gesamt-Schaden",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 403255854096384,
+      "m_Localized": "Gesamt-Gesundheit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404752809582592,
+      "m_Localized": "Kampf",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404868249411584,
+      "m_Localized": "Block",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404956870860800,
+      "m_Localized": "Benutzer gemeldet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 407420491784192,
+      "m_Localized": "Stummschaltung aufheben",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460145283817472,
+      "m_Localized": "Im Chat geteilt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460375794376704,
+      "m_Localized": "Teilen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14149557431558144,
+      "m_Localized": "Spam",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290084843520,
+      "m_Localized": "Belästige, beleidige oder bedrohe keine anderen Spieler.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009344,
+      "m_Localized": "Verwende keine Hassrede, Beleidigungen oder diskriminierende Sprache.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009345,
+      "m_Localized": "Diskutiere nicht über Drogen, Religion, Politik oder sexuelle Themen.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009346,
+      "m_Localized": "Spamme oder flute den Chat nicht.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009347,
+      "m_Localized": "Gib dich nicht als andere Spieler, Moderatoren oder Mitarbeiter aus.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009348,
+      "m_Localized": "Teile keine privaten oder persönlichen Informationen.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009349,
+      "m_Localized": "Missbrauche das Meldesystem nicht.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009350,
+      "m_Localized": "Weitere Informationen findest du in unserem",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009351,
+      "m_Localized": "Chat-Regeln",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 35993381137014784,
+      "m_Localized": "Du wurdest stummgeschaltet für",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 71558567759437824,
+      "m_Localized": "Chat-Dunkelmodus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683019230076928,
+      "m_Localized": "Hassrede",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683200906354688,
+      "m_Localized": "Drohungen/Gewalt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683325225525248,
+      "m_Localized": "Illegale Aktivitäten",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683413213634560,
+      "m_Localized": "Betrug/Abzocke",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683591861624832,
+      "m_Localized": "Identitätsdiebstahl",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683883986509824,
+      "m_Localized": "Verletzung des geistigen Eigentums",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73684015041732608,
+      "m_Localized": "Verletzung der Privatsphäre/Doxxing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73684315404230656,
+      "m_Localized": "Sonstiges",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

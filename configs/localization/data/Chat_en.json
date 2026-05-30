@@ -1,0 +1,322 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Chat_en",
+  "m_LocaleId": {
+    "m_Code": "en"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -3267501124420665462
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 115976368128,
+      "m_Localized": "World",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116009922560,
+      "m_Localized": "Clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 116009922561,
+      "m_Localized": "Send a message...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773824,
+      "m_Localized": "yesterday",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773825,
+      "m_Localized": "{0} days ago",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4349597773826,
+      "m_Localized": "{0} shared a battle!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4447354417152,
+      "m_Localized": "Block list",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5039376232448,
+      "m_Localized": "How old are you?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5176358006784,
+      "m_Localized": "By tapping confirm and engaging with chat, you agree to our <color=#4CBEFF>Terms of Service</color> and <color=#4CBEFF>Privacy Policy</color>.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5456508153856,
+      "m_Localized": "Report",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5553342050304,
+      "m_Localized": "Harassment",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5685189996544,
+      "m_Localized": "Inappropriate Language",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5764445564928,
+      "m_Localized": "Offensive Player Name",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5850772729856,
+      "m_Localized": "Cheating",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 403255837319168,
+      "m_Localized": "Total Damage",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 403255854096384,
+      "m_Localized": "Total Health",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404752809582592,
+      "m_Localized": "Battle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404868249411584,
+      "m_Localized": "Block",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 404956870860800,
+      "m_Localized": "User Reported",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 407420491784192,
+      "m_Localized": "Unmute",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460145283817472,
+      "m_Localized": "Shared to chat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460375794376704,
+      "m_Localized": "Share",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14149557431558144,
+      "m_Localized": "Spam/Junk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290084843520,
+      "m_Localized": "Don’t harass, insult, or threaten other players.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009344,
+      "m_Localized": "Don’t use hate speech, slurs, or discriminatory language.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009345,
+      "m_Localized": "Don’t discuss drugs, religion, politics, or sexual topics.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009346,
+      "m_Localized": "Don’t spam or flood chat.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009347,
+      "m_Localized": "Don’t impersonate other players, moderators, or staff.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009348,
+      "m_Localized": "Don’t share private or personal information.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009349,
+      "m_Localized": "Don’t misuse the report system.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009350,
+      "m_Localized": "Please find more information in our",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 33623290110009351,
+      "m_Localized": "Chat Rules",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 35993381137014784,
+      "m_Localized": "You have been muted for",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 71558567759437824,
+      "m_Localized": "Chat Dark Mode",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683019230076928,
+      "m_Localized": "Hate Speech",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683200906354688,
+      "m_Localized": "Threats/Violence",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683325225525248,
+      "m_Localized": "Illegal Activities",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683413213634560,
+      "m_Localized": "Fraud/Scam",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683591861624832,
+      "m_Localized": "Impersonation",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73683883986509824,
+      "m_Localized": "Intellectual Property Violation",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73684015041732608,
+      "m_Localized": "Privacy Violation/Doxxing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73684315404230656,
+      "m_Localized": "Other",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Missions_pt-BR",
+  "m_LocaleId": {
+    "m_Code": "pt-BR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5371603394758010093
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 251863429120,
+      "m_Localized": "Missões",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16036715491328,
+      "m_Localized": "A energia é reabastecida todos os dias às {0}. A energia só é consumida se você completar uma missão com sucesso!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28244723822592,
+      "m_Localized": "Rali",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44740485246976,
+      "m_Localized": "Sucesso!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 45374441713664,
+      "m_Localized": "Falha!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 48422304018432,
+      "m_Localized": "Coletar Recompensas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 52887002214400,
+      "m_Localized": "Ralis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623317729280,
+      "m_Localized": "Poder sugerido:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312192,
+      "m_Localized": "Poder total:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312193,
+      "m_Localized": "Reunindo... {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312194,
+      "m_Localized": "{0} completou uma <color=#{2}>Missão Nível {1}</color>",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6251320826327040,
+      "m_Localized": "Atualizar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6882146555457536,
+      "m_Localized": "Lutando...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10232987525308416,
+      "m_Localized": "Suporte:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14155878936276992,
+      "m_Localized": "Coletar tudo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25460050683224064,
+      "m_Localized": "Hora de Reunião",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695739834368,
+      "m_Localized": "Uivo da Primeira Era",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417280,
+      "m_Localized": "Uma tribo esquecida rastejou para fora das selvas, atacando caravanas com pedra e osso. Se não forem repelidos, seus terrenos de caça logo incluirão seu clã.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417281,
+      "m_Localized": "A Segunda Idade da Pedra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417282,
+      "m_Localized": "O que antes era um simples bando tornou-se algo pior. Se seu clã não agir, eles logo governarão estas terras.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417283,
+      "m_Localized": "Os Samurais Gêmeos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417284,
+      "m_Localized": "Dois mestres espadachins percorrem suas terras, derrubando qualquer um que os desafie. Derrote os gêmeos antes que sua lenda afogue seu clã em medo.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417285,
+      "m_Localized": "A Legião do Elmo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417286,
+      "m_Localized": "Esses lutadores se escondem atrás de ferro e armas pesadas, acreditando serem intocáveis. Mostre a eles que até o aço se curva diante do seu clã.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417287,
+      "m_Localized": "As Velas Negras",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417288,
+      "m_Localized": "Navios sem bandeiras ancoraram perto de suas terras. Os piratas planejam saquear tudo que não estiver pregado.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417289,
+      "m_Localized": "Os Três Mosqueteiros",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417290,
+      "m_Localized": "Esses mestres buscam provar que só eles merecem respeito e poder. Mostre a eles que seu clã não se curva a nenhuma lâmina.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417291,
+      "m_Localized": "Ataque de bandidos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417292,
+      "m_Localized": "Uma gangue de bandidos veio cobrar um “imposto” sobre a renda arduamente conquistada do seu clã. Você se recusou a pagar - e agora eles estão nos seus portões. Defenda-se e mostre que seu clã não se curva a ameaças.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417293,
+      "m_Localized": "A Lei bate à porta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417294,
+      "m_Localized": "Você recusou a parceria do ditador, escolhendo a liberdade em vez das correntes. Agora suas unidades blindadas marcham para dar um exemplo ao seu povo.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417295,
+      "m_Localized": "Vanguarda Tóxica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417297,
+      "m_Localized": "As Lâminas Estelares",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417298,
+      "m_Localized": "Um esquadrão de guerreiros com espadas brilhantes pousou, declarando seu clã inapto para governar estas terras. Expulse-os antes que decidam seu destino para sempre.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417299,
+      "m_Localized": "Invasão Alienígena",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417300,
+      "m_Localized": "Seres de outra estrela começaram a colher seu povo como gado. Lute antes que sua casa se torne a colônia deles.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417301,
+      "m_Localized": "A Lâmina Colossal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417302,
+      "m_Localized": "O guerreiro luta com uma lâmina maior que qualquer casa. Se seu clã não puder detê-lo, nada mais poderá.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417303,
+      "m_Localized": "Brecha Digital",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417304,
+      "m_Localized": "Uma fenda no reino dos dados liberou estranhos guerreiros de luz e números. Feche a brecha antes que eles reescrevam suas terras.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417305,
+      "m_Localized": "Tecnologia não é suficiente",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417306,
+      "m_Localized": "Lutadores comuns se armaram com lâminas tecnológicas brilhantes, acreditando que isso os torna invencíveis. Prove que a verdadeira força ainda importa.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417307,
+      "m_Localized": "Rebeldes Quânticos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417308,
+      "m_Localized": "Um grupo de guerreiros chamativos apareceu, armado com armas quânticas instáveis. Seu poder é selvagem e perigoso, e seu clã deve detê-los antes que o dano se espalhe.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417309,
+      "m_Localized": "Ordem do Trono",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417310,
+      "m_Localized": "O governante enviou seus guardas de elite para colocar seu clã sob a coroa. Mostre que seu clã não responde a nenhum trono.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417311,
+      "m_Localized": "Os Dois Magos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417312,
+      "m_Localized": "Os magos afirmam que vieram \"remodelar\" seu território ao seu gosto. Seu clã deve responder com coragem e quebrar seus encantamentos.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417313,
+      "m_Localized": "Descer de cima",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417314,
+      "m_Localized": "Um exército de anjos desceu, alegando que seu clã se tornou muito orgulhoso. Prove seu valor ou seja apagado em nome da pureza.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417315,
+      "m_Localized": "Feiticeiros da Noite",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417316,
+      "m_Localized": "Onde quer que esses feiticeiros andem, as colheitas falham e as pessoas desaparecem. Expulse-os antes que sua casa se torne outro lugar morto.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417317,
+      "m_Localized": "Do Submundo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417318,
+      "m_Localized": "Guerreiros surgiram das profundezas onde os vivos não pertencem. Se seu clã não conseguir detê-los, a superfície se tornará seu novo reino.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78356377112666112,
+      "m_Localized": "Uma unidade mascarada armada com tecnologia proibida entrou no seu território, deixando o ar queimado para trás. Pare o avanço deles antes que causem mais danos.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88072866833096704,
+      "m_Localized": "Níveis de Missão {0}-{1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312195,
+      "m_Localized": "Missão {0}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 90987145798344704,
+      "m_Localized": "Você já está em outra missão!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

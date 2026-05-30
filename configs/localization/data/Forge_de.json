@@ -1,0 +1,196 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Forge_de",
+  "m_LocaleId": {
+    "m_Code": "de"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -1109569138593657648
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 795088711680,
+      "m_Localized": "Auto-Schmiede",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 936298344448,
+      "m_Localized": "Schmiede-Wahrscheinlichkeiten",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1082071379968,
+      "m_Localized": "Behalten",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1589087236096,
+      "m_Localized": "Anzahl der gleichzeitig verwendeten Hämmer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1985914531840,
+      "m_Localized": "Wahrscheinlichkeitsinformationen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3116539506688,
+      "m_Localized": "Gratis überspringen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4278676287488,
+      "m_Localized": "Primitiv",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4307390492672,
+      "m_Localized": "Mittelalterlich",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4347643228160,
+      "m_Localized": "Frühneuzeitlich",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4418057203712,
+      "m_Localized": "Modern",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4441834713088,
+      "m_Localized": "Weltraum",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4465301843968,
+      "m_Localized": "Interstellar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4489779802112,
+      "m_Localized": "Multiversum",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4513184018432,
+      "m_Localized": "Quanten",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532624617472,
+      "m_Localized": "Göttlich",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5039128768512,
+      "m_Localized": "Verbessere deine Schmiede, um Ausrüstung aus höheren Zivilisationen zu schmieden",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12856879411200,
+      "m_Localized": "Schmiede",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13479431565312,
+      "m_Localized": "Auto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7565893205745664,
+      "m_Localized": "Dein Schmiede-Upgrade ist abgeschlossen!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9738126318301184,
+      "m_Localized": "Filter",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28987765965185024,
+      "m_Localized": "Unterwelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105988059136,
+      "m_Localized": "Weiter schmieden, wenn das Ziel-Equipment gefunden ist",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105996447744,
+      "m_Localized": "Alles verkaufen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105996447745,
+      "m_Localized": "Bist du sicher, dass du deinen gesamten Stapel geschmiedeter Ausrüstung verkaufen möchtest?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

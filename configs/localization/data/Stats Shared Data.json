@@ -1,0 +1,456 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": 7442561414784416887
+  },
+  "m_Name": "Stats Shared Data",
+  "m_TableCollectionName": "Stats",
+  "m_TableCollectionNameGuidString": "729faad174a13244a8329a0ddd7c6ac3",
+  "m_Entries": [
+    {
+      "m_Id": 988710824505344,
+      "m_Key": "Ranged",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988735260520448,
+      "m_Key": "Melee",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988835206590464,
+      "m_Key": "Damage",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989213239209984,
+      "m_Key": "Health",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989601996664832,
+      "m_Key": "CriticalChance",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989623647662080,
+      "m_Key": "CriticalDamage",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989649430048768,
+      "m_Key": "AttackSpeed",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989678303637504,
+      "m_Key": "MaxLevel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989714643087360,
+      "m_Key": "Experience",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989736638017536,
+      "m_Key": "Cost",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989762269409280,
+      "m_Key": "TimerSpeed",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989780216836096,
+      "m_Key": "SellPrice",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989810910752768,
+      "m_Key": "MaxCount",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989834340134912,
+      "m_Key": "Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989849557069824,
+      "m_Key": "FreebieChance",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989867693240320,
+      "m_Key": "BlockChance",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989885338677248,
+      "m_Key": "HealthRegen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989920193343488,
+      "m_Key": "LifeSteal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989947519234048,
+      "m_Key": "DoubleDamageChance",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989965953200128,
+      "m_Key": "MoveSpeed",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990649838661632,
+      "m_Key": "Equipment",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990668201324544,
+      "m_Key": "Weapon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990690527604736,
+      "m_Key": "Skill",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990701055307776,
+      "m_Key": "SkillPassive",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990866679984128,
+      "m_Key": "Mounts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083840310996992,
+      "m_Key": "TechTree",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083902730629120,
+      "m_Key": "OfflineRewardTime",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083950377922560,
+      "m_Key": "OfflineReward",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084108339605504,
+      "m_Key": "Egg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084121421639680,
+      "m_Key": "Currency",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084153545814016,
+      "m_Key": "OfflineCurrencyReward",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084261779828736,
+      "m_Key": "Dungeons",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1085979657695232,
+      "m_Key": "ForgeFreebieChanceDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086156044955648,
+      "m_Key": "ForgeNumberOfHammers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086608887181312,
+      "m_Key": "Upgrade",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086663727706112,
+      "m_Key": "Summon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086680802717696,
+      "m_Key": "Cooldown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086689396846592,
+      "m_Key": "Base",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086835153104896,
+      "m_Key": "WhenUpgrading",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087433751588864,
+      "m_Key": "Hatch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087456035926016,
+      "m_Key": "Max",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1089653901553664,
+      "m_Key": "XDungeonDropY",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090103212175360,
+      "m_Key": "DungeonsDropMoreCurrency",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090219507642368,
+      "m_Key": "Dungeon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090359232491520,
+      "m_Key": "TechResearch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090396830232576,
+      "m_Key": "TechNodeUpgrade",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1762375497347072,
+      "m_Key": "Pet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763141620527104,
+      "m_Key": "Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763160431980544,
+      "m_Key": "Armour",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763216392384512,
+      "m_Key": "Gloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763337381277696,
+      "m_Key": "Necklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763350417174528,
+      "m_Key": "Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763362966532096,
+      "m_Key": "Shoes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763387549347840,
+      "m_Key": "Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2109395617640448,
+      "m_Key": "Skills",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2110564712771584,
+      "m_Key": "Pets",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23865403343101952,
+      "m_Key": "LevelUpRequirement",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 85115613318471680,
+      "m_Key": "EggsFreebieChanceDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23905947930845185,
+      "m_Key": "MountFreebieChanceDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73184492695576576,
+      "m_Key": "Eggs",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_KeyGenerator": {
+    "rid": 7036434803681394971
+  },
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 7036434803681394971,
+        "type": {
+          "class": "DistributedUIDGenerator",
+          "ns": "UnityEngine.Localization.Tables",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

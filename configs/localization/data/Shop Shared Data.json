@@ -1,0 +1,148 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": 7442561414784416887
+  },
+  "m_Name": "Shop Shared Data",
+  "m_TableCollectionName": "Shop",
+  "m_TableCollectionNameGuidString": "120db1f363ce1e143864c205f3bd26a7",
+  "m_Entries": [
+    {
+      "m_Id": 207412195328,
+      "m_Key": "Shop",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 302685810688,
+      "m_Key": "DailyDeals",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 522211487744,
+      "m_Key": "Resources",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 698598748160,
+      "m_Key": "CheckTomorrowDeals",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1065419993088,
+      "m_Key": "RefillHammers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1163478626304,
+      "m_Key": "Refill",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3485185273856,
+      "m_Key": "Deal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3485185273857,
+      "m_Key": "Offer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701478907904,
+      "m_Key": "Dungeon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701483102208,
+      "m_Key": "Resource",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701483102209,
+      "m_Key": "Pet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701483102210,
+      "m_Key": "Skill",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701483102211,
+      "m_Key": "Tech",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 22473983646490624,
+      "m_Key": "Mount",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 27127988465164288,
+      "m_Key": "DailyDealsDescription",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 53302178176032768,
+      "m_Key": "SteppingStonesTokens",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_KeyGenerator": {
+    "rid": 7036434962474860624
+  },
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 7036434962474860624,
+        "type": {
+          "class": "DistributedUIDGenerator",
+          "ns": "UnityEngine.Localization.Tables",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

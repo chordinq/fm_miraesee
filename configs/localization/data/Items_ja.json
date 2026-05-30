@@ -1,0 +1,1652 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Items_ja",
+  "m_LocaleId": {
+    "m_Code": "ja"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 8394530462835593926
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 5028479430656,
+      "m_Localized": "頭蓋骨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624960,
+      "m_Localized": "ひげ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624961,
+      "m_Localized": "戦争マスク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624962,
+      "m_Localized": "フェイスペイント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624963,
+      "m_Localized": "斧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624964,
+      "m_Localized": "吹き矢",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624965,
+      "m_Localized": "枝",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624966,
+      "m_Localized": "棍棒",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624967,
+      "m_Localized": "岩",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624968,
+      "m_Localized": "投石機",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624969,
+      "m_Localized": "骨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624970,
+      "m_Localized": "皮",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624971,
+      "m_Localized": "熊皮",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624972,
+      "m_Localized": "骨スカート",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624973,
+      "m_Localized": "腰ひも",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624974,
+      "m_Localized": "樹皮",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624975,
+      "m_Localized": "熊の足",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624976,
+      "m_Localized": "お守り",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624977,
+      "m_Localized": "歯のネックレス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624978,
+      "m_Localized": "破片リング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624979,
+      "m_Localized": "頭蓋骨リング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624980,
+      "m_Localized": "足の包帯",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624981,
+      "m_Localized": "象牙のすね",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624982,
+      "m_Localized": "死の帽子",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624983,
+      "m_Localized": "ローマのヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624984,
+      "m_Localized": "ギリシャのヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624985,
+      "m_Localized": "侍のヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624986,
+      "m_Localized": "騎士のヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624987,
+      "m_Localized": "胸当て",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624988,
+      "m_Localized": "鉄板",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624989,
+      "m_Localized": "バルタザールのベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624990,
+      "m_Localized": "ポーチ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624991,
+      "m_Localized": "ガントレット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624992,
+      "m_Localized": "鉄の拳",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624993,
+      "m_Localized": "幸運のお守り",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624994,
+      "m_Localized": "勇気",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624995,
+      "m_Localized": "祝福された宝石",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624996,
+      "m_Localized": "鉄の指輪",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624997,
+      "m_Localized": "サンダル",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624998,
+      "m_Localized": "スタンパー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624999,
+      "m_Localized": "剣と盾",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625000,
+      "m_Localized": "槍と盾",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625001,
+      "m_Localized": "大鎌",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625002,
+      "m_Localized": "戦鎚",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625003,
+      "m_Localized": "弓",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625004,
+      "m_Localized": "刀",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625005,
+      "m_Localized": "トマホーク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625006,
+      "m_Localized": "戦闘ヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625007,
+      "m_Localized": "船長の帽子",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625008,
+      "m_Localized": "羽の帽子",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625009,
+      "m_Localized": "スラブ帽",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625010,
+      "m_Localized": "シルクハット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625011,
+      "m_Localized": "アーマースカート",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625012,
+      "m_Localized": "カーディガン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625013,
+      "m_Localized": "ハーネス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625014,
+      "m_Localized": "レザーベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625015,
+      "m_Localized": "レザーグローブ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625016,
+      "m_Localized": "ミット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625017,
+      "m_Localized": "時計",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625018,
+      "m_Localized": "宝の鍵",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625019,
+      "m_Localized": "エメラルド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625020,
+      "m_Localized": "トリニティ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625021,
+      "m_Localized": "レザーブーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625022,
+      "m_Localized": "乗馬ブーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625023,
+      "m_Localized": "クロスボウ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625024,
+      "m_Localized": "マスケット銃",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625025,
+      "m_Localized": "死刑執行人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625026,
+      "m_Localized": "二丁拳銃",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625027,
+      "m_Localized": "海賊の剣",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625028,
+      "m_Localized": "レイピア",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625029,
+      "m_Localized": "フェドラハット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625030,
+      "m_Localized": "ケブラー ヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625031,
+      "m_Localized": "将校の帽子",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625032,
+      "m_Localized": "暴動ヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625033,
+      "m_Localized": "軍曹の帽子",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625034,
+      "m_Localized": "スチールヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625035,
+      "m_Localized": "冬の帽子",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625036,
+      "m_Localized": "カモフラージュ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625037,
+      "m_Localized": "ケブラー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625038,
+      "m_Localized": "弾薬ポーチ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625039,
+      "m_Localized": "タクティカルベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625040,
+      "m_Localized": "コンバットグローブ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625041,
+      "m_Localized": "ハーフフィンガー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625042,
+      "m_Localized": "ドッグタグ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625043,
+      "m_Localized": "フォーチュンネックレス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625044,
+      "m_Localized": "ボルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625045,
+      "m_Localized": "兄弟の指輪",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625046,
+      "m_Localized": "コンバットブーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625047,
+      "m_Localized": "ベテランブーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625048,
+      "m_Localized": "AK",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625049,
+      "m_Localized": "バトン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625050,
+      "m_Localized": "ナックルダスター",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625051,
+      "m_Localized": "M4",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625052,
+      "m_Localized": "暴動シールド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625053,
+      "m_Localized": "スナイパー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625054,
+      "m_Localized": "ウジ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625055,
+      "m_Localized": "レンチ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625056,
+      "m_Localized": "バイオヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625057,
+      "m_Localized": "ガスマスク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625058,
+      "m_Localized": "アイアンメック",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625059,
+      "m_Localized": "スペースヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625060,
+      "m_Localized": "外骨格",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625061,
+      "m_Localized": "宇宙服",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625062,
+      "m_Localized": "コルセット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625063,
+      "m_Localized": "ストラップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625064,
+      "m_Localized": "リモコン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625065,
+      "m_Localized": "スペースグローブ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625066,
+      "m_Localized": "カイパーネックレス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625067,
+      "m_Localized": "ペンダント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625068,
+      "m_Localized": "イカロスリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625069,
+      "m_Localized": "ソラリウスリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625070,
+      "m_Localized": "フットスラスター",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625071,
+      "m_Localized": "スペースブーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625072,
+      "m_Localized": "ブラスター",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625073,
+      "m_Localized": "ロボットソード",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625074,
+      "m_Localized": "サーベル",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625075,
+      "m_Localized": "スペースガン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625076,
+      "m_Localized": "スペースピストル",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625077,
+      "m_Localized": "アドバンスドメック",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625078,
+      "m_Localized": "エイリアンヘッド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625079,
+      "m_Localized": "デストロイヤーマスク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625080,
+      "m_Localized": "ヘビーデューティ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625081,
+      "m_Localized": "ロボヘルム",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625082,
+      "m_Localized": "ステラリウム",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625083,
+      "m_Localized": "アダマンチウム",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625084,
+      "m_Localized": "プラズマスーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625085,
+      "m_Localized": "骨盤シンクロナイザー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625086,
+      "m_Localized": "脊椎スタビライザー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625087,
+      "m_Localized": "インパクター",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625088,
+      "m_Localized": "インプラント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625089,
+      "m_Localized": "ガンマカラー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625090,
+      "m_Localized": "サイチョーカー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625091,
+      "m_Localized": "エクリプスリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625092,
+      "m_Localized": "ラリウムリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625093,
+      "m_Localized": "油圧フィート",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625094,
+      "m_Localized": "ロボフィート",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625095,
+      "m_Localized": "ダブルサーベル",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625096,
+      "m_Localized": "イオンブラスター",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625097,
+      "m_Localized": "等圧カッター",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625098,
+      "m_Localized": "ライト＆シールド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625099,
+      "m_Localized": "プラズマライフル",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625100,
+      "m_Localized": "レイガン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625101,
+      "m_Localized": "キャスケット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625102,
+      "m_Localized": "アイアンホロ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625103,
+      "m_Localized": "マスク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625104,
+      "m_Localized": "バーチャルヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625105,
+      "m_Localized": "ホロアーマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625106,
+      "m_Localized": "スペクトラルプレート",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625107,
+      "m_Localized": "オービットベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625108,
+      "m_Localized": "リアリティベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625109,
+      "m_Localized": "インパルス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625110,
+      "m_Localized": "レインボーグローブ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625111,
+      "m_Localized": "クリスタルアミュレット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625112,
+      "m_Localized": "グリッチネックレス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625113,
+      "m_Localized": "コネクションリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625114,
+      "m_Localized": "メビウスリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625115,
+      "m_Localized": "エーテリアルソックス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625116,
+      "m_Localized": "ファストトラベラーズ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625117,
+      "m_Localized": "プロジェクテッドカトラス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625118,
+      "m_Localized": "スピアッシュ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625119,
+      "m_Localized": "トライデント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625120,
+      "m_Localized": "バーチャルボウ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625121,
+      "m_Localized": "バーチャルガン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625122,
+      "m_Localized": "バーチャルソード",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625123,
+      "m_Localized": "エナジーヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625124,
+      "m_Localized": "ヘアバンダナ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625125,
+      "m_Localized": "髪を結ぶ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625126,
+      "m_Localized": "クォンタムヘルム",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625127,
+      "m_Localized": "サブマスク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625128,
+      "m_Localized": "デルタアーマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625129,
+      "m_Localized": "オービタースーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625130,
+      "m_Localized": "ブラックベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625131,
+      "m_Localized": "ニュートリノベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625132,
+      "m_Localized": "グラビティグローブ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625133,
+      "m_Localized": "ニュートロンフィンガープリント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625134,
+      "m_Localized": "ヒッグスカラー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625135,
+      "m_Localized": "ヴォイドネックレス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625136,
+      "m_Localized": "オーラリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625137,
+      "m_Localized": "確率リング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625138,
+      "m_Localized": "反重力ブーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625139,
+      "m_Localized": "反物質の足",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625140,
+      "m_Localized": "ブラックボウ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625141,
+      "m_Localized": "ブラックガン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625142,
+      "m_Localized": "ブラックハンマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625143,
+      "m_Localized": "ブラックスピア",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625144,
+      "m_Localized": "ブラックスタッフ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625145,
+      "m_Localized": "ブラックソード＆シールド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625146,
+      "m_Localized": "ケルティックオーバーヘッド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625147,
+      "m_Localized": "プロテクティブハロー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625148,
+      "m_Localized": "サーペントリース",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625149,
+      "m_Localized": "白髪",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625150,
+      "m_Localized": "ウィザードハット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625151,
+      "m_Localized": "ホーリーガウン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625152,
+      "m_Localized": "パラディンアーマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625153,
+      "m_Localized": "神聖なベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625154,
+      "m_Localized": "魔術師のベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625155,
+      "m_Localized": "エンチャンターグローブ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625156,
+      "m_Localized": "崇拝者の手袋",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625157,
+      "m_Localized": "タロネックレス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625158,
+      "m_Localized": "トールアミュレット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625159,
+      "m_Localized": "神性の指輪",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625160,
+      "m_Localized": "ナザールリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625161,
+      "m_Localized": "天上の足跡",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625162,
+      "m_Localized": "マーキュリーサンダル",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625163,
+      "m_Localized": "天使のピッチフォーク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625164,
+      "m_Localized": "ドラゴンダガー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625165,
+      "m_Localized": "蛇の剣",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625166,
+      "m_Localized": "セイレーンの歌",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625167,
+      "m_Localized": "杖",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625168,
+      "m_Localized": "知恵の杖",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036190056448,
+      "m_Localized": "地獄の三叉槍",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445056,
+      "m_Localized": "深淵のフォーク",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445057,
+      "m_Localized": "魂貫き",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445058,
+      "m_Localized": "破滅のメイス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445059,
+      "m_Localized": "影のシミター",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445060,
+      "m_Localized": "悪意の冠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445061,
+      "m_Localized": "腐牙のバイザー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445062,
+      "m_Localized": "地獄鍛造の兜",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445063,
+      "m_Localized": "毒の紋章",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445064,
+      "m_Localized": "破滅の鎧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445065,
+      "m_Localized": "苦悩の握り",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445066,
+      "m_Localized": "虚無の爪",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445067,
+      "m_Localized": "恐怖の足音",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445068,
+      "m_Localized": "グリーブ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445069,
+      "m_Localized": "痛みの輪",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445070,
+      "m_Localized": "深紅のベルト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445071,
+      "m_Localized": "棘のネックレス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445072,
+      "m_Localized": "悪意の首輪",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445073,
+      "m_Localized": "頭蓋骨の束縛者",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445074,
+      "m_Localized": "プリズムリング",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350273392640,
+      "m_Localized": "マント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350285975552,
+      "m_Localized": "溶けたプレート",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

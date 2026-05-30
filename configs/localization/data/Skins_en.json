@@ -1,0 +1,679 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skins_en",
+  "m_LocaleId": {
+    "m_Code": "en"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 6506703471677536427
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 26278420799488,
+      "m_Localized": "Skins",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 26278441771008,
+      "m_Localized": "Skin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 11907389233029120,
+      "m_Localized": "Stepping Stones",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190401,
+      "m_Localized": "Auto-Run Results ({1} runs)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190402,
+      "m_Localized": "Fail",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190403,
+      "m_Localized": "Unlock cool skins by playing the Stepping Stones!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190404,
+      "m_Localized": "Each jump is a 50/50 chance. One stone is safe, one will break.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190405,
+      "m_Localized": "The further you reach the more rewards!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190406,
+      "m_Localized": "Reach the furthest tile you can to claim the best rewards!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190407,
+      "m_Localized": "How to play?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190408,
+      "m_Localized": "Auto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12024958489190410,
+      "m_Localized": "Play",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736193,
+      "m_Localized": "Auto to Tile {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736195,
+      "m_Localized": "Stop and collect!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736196,
+      "m_Localized": "Random Skin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12353770313736197,
+      "m_Localized": "No reward",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14046346632749056,
+      "m_Localized": "Tile",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14046346645331968,
+      "m_Localized": "Reached",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 18856902585737216,
+      "m_Localized": "Play Again?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160766685184,
+      "m_Localized": "Santa Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160779268096,
+      "m_Localized": "Snowman Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 19007160779268097,
+      "m_Localized": "Snowboard Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 24191974679502848,
+      "m_Localized": "Auto Run",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 24191974687891456,
+      "m_Localized": "Probabilities per run",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092757524480,
+      "m_Localized": "Red Nose",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092770107392,
+      "m_Localized": "Carrot Stick",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301696,
+      "m_Localized": "Santa's Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301697,
+      "m_Localized": "Santa's Coat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301698,
+      "m_Localized": "Snowman's Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301699,
+      "m_Localized": "Snowman's Body",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301700,
+      "m_Localized": "Snowboard Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301701,
+      "m_Localized": "Snowboard Coat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301702,
+      "m_Localized": "Grandpa Head",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301703,
+      "m_Localized": "Headband",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964940742656,
+      "m_Localized": "Bunny Head",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964949131264,
+      "m_Localized": "Bunny Body",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29354964949131265,
+      "m_Localized": "Baseball Bat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301707,
+      "m_Localized": "Clown Head",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301708,
+      "m_Localized": "Clown Body",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301709,
+      "m_Localized": "Clown Horn",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301710,
+      "m_Localized": "Millionaire Head",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301711,
+      "m_Localized": "Millionaire Body",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29350092774301712,
+      "m_Localized": "Crystal Ball Cane",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954119957667840,
+      "m_Localized": "Flower Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954120041553920,
+      "m_Localized": "Druid Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 31954120041553921,
+      "m_Localized": "Leprechaun Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422651969536,
+      "m_Localized": "Common Eggshell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422668746752,
+      "m_Localized": "Rare Eggshell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941056,
+      "m_Localized": "Epic Eggshell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941057,
+      "m_Localized": "Legendary Eggshell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941058,
+      "m_Localized": "Ultimate Eggshell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41866422672941059,
+      "m_Localized": "Mythic Eggshell",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540702420992,
+      "m_Localized": "Leprechaun Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615296,
+      "m_Localized": "Leprechaun Suit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615297,
+      "m_Localized": "Four Leaf Clobber",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615298,
+      "m_Localized": "Flower Head",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615299,
+      "m_Localized": "Flower Body",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615300,
+      "m_Localized": "Flower Weapon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615301,
+      "m_Localized": "Druid Hood",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615302,
+      "m_Localized": "Druid Cape",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41867540706615303,
+      "m_Localized": "Druid Weapon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556185362432,
+      "m_Localized": "Bunny Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556193751040,
+      "m_Localized": "Clown Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 41868556193751041,
+      "m_Localized": "Millionaire Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 47417077105942528,
+      "m_Localized": "Select skins to merge with",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804325638144,
+      "m_Localized": "Goldfish",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803968,
+      "m_Localized": "Submarine Debris",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803969,
+      "m_Localized": "Rusty Pipe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803970,
+      "m_Localized": "Brave Beak",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803971,
+      "m_Localized": "Winged Menace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803972,
+      "m_Localized": "Pointy Spear",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803973,
+      "m_Localized": "Backwards Cap",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804350803974,
+      "m_Localized": "Swag",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998272,
+      "m_Localized": "Skateboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998273,
+      "m_Localized": "Cat Head",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998274,
+      "m_Localized": "Furry Body",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998275,
+      "m_Localized": "Claws",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998279,
+      "m_Localized": "Homegrown Head",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998280,
+      "m_Localized": "Tree Husk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998281,
+      "m_Localized": "Mushroom Stick",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998282,
+      "m_Localized": "Glasses",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804354998284,
+      "m_Localized": "Sunglasses",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192576,
+      "m_Localized": "Fishbowl Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192577,
+      "m_Localized": "Eagle Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192578,
+      "m_Localized": "Skater Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192579,
+      "m_Localized": "Cat Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54570804359192581,
+      "m_Localized": "Mushroom Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036070227968,
+      "m_Localized": "Fish Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810880,
+      "m_Localized": "Clingy Shark",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810881,
+      "m_Localized": "Poseidon's Spear",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54878036082810882,
+      "m_Localized": "Shark Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54923833574940672,
+      "m_Localized": "Eyepatch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 54955948945432576,
+      "m_Localized": "Mush Cap",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

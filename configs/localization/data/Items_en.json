@@ -1,0 +1,1652 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Items_en",
+  "m_LocaleId": {
+    "m_Code": "en"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 8394530462835593926
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 5028479430656,
+      "m_Localized": "Skull",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624960,
+      "m_Localized": "Beard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624961,
+      "m_Localized": "War Mask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624962,
+      "m_Localized": "Face Paint",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624963,
+      "m_Localized": "Axe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624964,
+      "m_Localized": "Blowgun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624965,
+      "m_Localized": "Branch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624966,
+      "m_Localized": "Club",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624967,
+      "m_Localized": "Rock",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624968,
+      "m_Localized": "Slinger",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624969,
+      "m_Localized": "Bone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624970,
+      "m_Localized": "Hide",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624971,
+      "m_Localized": "Bearskin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624972,
+      "m_Localized": "Bone Skirt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624973,
+      "m_Localized": "Waist Tie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624974,
+      "m_Localized": "Bark",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624975,
+      "m_Localized": "Bearpaw",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624976,
+      "m_Localized": "Talisman",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624977,
+      "m_Localized": "Tooth Necklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624978,
+      "m_Localized": "Shardring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624979,
+      "m_Localized": "Skullring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624980,
+      "m_Localized": "Foot Wraps",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624981,
+      "m_Localized": "Ivoryshin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624982,
+      "m_Localized": "Death's Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624983,
+      "m_Localized": "Roman Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624984,
+      "m_Localized": "Greek Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624985,
+      "m_Localized": "Samurai Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624986,
+      "m_Localized": "Knight Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624987,
+      "m_Localized": "Cuirass",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624988,
+      "m_Localized": "Iron Plates",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624989,
+      "m_Localized": "Baltazar Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624990,
+      "m_Localized": "Pouch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624991,
+      "m_Localized": "Gauntlet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624992,
+      "m_Localized": "Iron Fist",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624993,
+      "m_Localized": "Lucky Charm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624994,
+      "m_Localized": "Valor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624995,
+      "m_Localized": "Blessed Gem",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624996,
+      "m_Localized": "Iron Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624997,
+      "m_Localized": "Sandals",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624998,
+      "m_Localized": "Stompers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624999,
+      "m_Localized": "Sword & Shield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625000,
+      "m_Localized": "Spear & Shield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625001,
+      "m_Localized": "Scythe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625002,
+      "m_Localized": "War Hammer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625003,
+      "m_Localized": "Bow",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625004,
+      "m_Localized": "Katana",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625005,
+      "m_Localized": "Tomahawk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625006,
+      "m_Localized": "Battle Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625007,
+      "m_Localized": "Captains Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625008,
+      "m_Localized": "Feather Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625009,
+      "m_Localized": "Slavic Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625010,
+      "m_Localized": "Top Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625011,
+      "m_Localized": "ArmorSkirt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625012,
+      "m_Localized": "Cardigan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625013,
+      "m_Localized": "Harness",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625014,
+      "m_Localized": "Leather Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625015,
+      "m_Localized": "Leather Gloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625016,
+      "m_Localized": "Mitts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625017,
+      "m_Localized": "Clock",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625018,
+      "m_Localized": "Treasure Key",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625019,
+      "m_Localized": "Emerald",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625020,
+      "m_Localized": "Trinity",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625021,
+      "m_Localized": "Leather Boots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625022,
+      "m_Localized": "Riding Boots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625023,
+      "m_Localized": "Crossbow",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625024,
+      "m_Localized": "Musket",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625025,
+      "m_Localized": "Executioner",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625026,
+      "m_Localized": "Dual Pistols",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625027,
+      "m_Localized": "Pirate Sword",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625028,
+      "m_Localized": "Rapier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625029,
+      "m_Localized": "Fedora Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625030,
+      "m_Localized": "Kevlar Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625031,
+      "m_Localized": "Officer Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625032,
+      "m_Localized": "Riot Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625033,
+      "m_Localized": "Sergeant Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625034,
+      "m_Localized": "Steel Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625035,
+      "m_Localized": "Winter Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625036,
+      "m_Localized": "Camouflage",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625037,
+      "m_Localized": "Kevlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625038,
+      "m_Localized": "Ammo Pouch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625039,
+      "m_Localized": "Tactical Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625040,
+      "m_Localized": "Combat Gloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625041,
+      "m_Localized": "Halffingers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625042,
+      "m_Localized": "Dog Tags",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625043,
+      "m_Localized": "Fortune Necklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625044,
+      "m_Localized": "Bolt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625045,
+      "m_Localized": "Brotherhood Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625046,
+      "m_Localized": "Combat Boots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625047,
+      "m_Localized": "Veteran Boots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625048,
+      "m_Localized": "AK",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625049,
+      "m_Localized": "Baton",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625050,
+      "m_Localized": "Knuckle Dusters",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625051,
+      "m_Localized": "M4",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625052,
+      "m_Localized": "Riot Shield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625053,
+      "m_Localized": "Sniper",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625054,
+      "m_Localized": "Uzi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625055,
+      "m_Localized": "Wrench",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625056,
+      "m_Localized": "Bio Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625057,
+      "m_Localized": "Gas Mask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625058,
+      "m_Localized": "Iron Mech",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625059,
+      "m_Localized": "Space Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625060,
+      "m_Localized": "Exoskeleton",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625061,
+      "m_Localized": "Space Suit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625062,
+      "m_Localized": "Corset",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625063,
+      "m_Localized": "Straps",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625064,
+      "m_Localized": "Remote",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625065,
+      "m_Localized": "Space Gloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625066,
+      "m_Localized": "Kuiper Necklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625067,
+      "m_Localized": "Pendant",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625068,
+      "m_Localized": "Icarus Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625069,
+      "m_Localized": "Solarius Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625070,
+      "m_Localized": "Feet Thrusters",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625071,
+      "m_Localized": "Space Boots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625072,
+      "m_Localized": "Blaster",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625073,
+      "m_Localized": "Robot Sword",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625074,
+      "m_Localized": "Saber",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625075,
+      "m_Localized": "Space Gun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625076,
+      "m_Localized": "Space Pistol",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625077,
+      "m_Localized": "Advanced Mech",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625078,
+      "m_Localized": "Alien Head",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625079,
+      "m_Localized": "Destroyer Mask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625080,
+      "m_Localized": "Heavy Duty",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625081,
+      "m_Localized": "Robo Helm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625082,
+      "m_Localized": "Stellarium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625083,
+      "m_Localized": "Adamantium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625084,
+      "m_Localized": "Plasma Suit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625085,
+      "m_Localized": "Pelvic Synchronizer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625086,
+      "m_Localized": "Spinal Stabilizer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625087,
+      "m_Localized": "Impactors",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625088,
+      "m_Localized": "Implants",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625089,
+      "m_Localized": "Gamma Collar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625090,
+      "m_Localized": "Psi Choker",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625091,
+      "m_Localized": "Eclipse Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625092,
+      "m_Localized": "Rarium Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625093,
+      "m_Localized": "Hydraulic Feet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625094,
+      "m_Localized": "Robo Feet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625095,
+      "m_Localized": "Double Saber",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625096,
+      "m_Localized": "Ionic Blaster",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625097,
+      "m_Localized": "Isobaric Cutter",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625098,
+      "m_Localized": "Light & Shield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625099,
+      "m_Localized": "Plasma Rifle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625100,
+      "m_Localized": "Ray Gun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625101,
+      "m_Localized": "Casquette",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625102,
+      "m_Localized": "Iron Holo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625103,
+      "m_Localized": "Mask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625104,
+      "m_Localized": "Virtual Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625105,
+      "m_Localized": "HoloArmor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625106,
+      "m_Localized": "Spectral Plates",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625107,
+      "m_Localized": "Orbit Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625108,
+      "m_Localized": "Reality Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625109,
+      "m_Localized": "Impulse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625110,
+      "m_Localized": "Rainbow Gloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625111,
+      "m_Localized": "Crystal Amulet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625112,
+      "m_Localized": "Glitch Necklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625113,
+      "m_Localized": "Connection Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625114,
+      "m_Localized": "Mobius Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625115,
+      "m_Localized": "Ethereal Socks",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625116,
+      "m_Localized": "Fast Travellers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625117,
+      "m_Localized": "Projected Cutlass",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625118,
+      "m_Localized": "Spearsh",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625119,
+      "m_Localized": "Trident",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625120,
+      "m_Localized": "Virtual Bow",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625121,
+      "m_Localized": "Virtual Gun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625122,
+      "m_Localized": "Virtual Sword",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625123,
+      "m_Localized": "Energy Helmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625124,
+      "m_Localized": "Hair Bandana",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625125,
+      "m_Localized": "Hair Tied",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625126,
+      "m_Localized": "Quantum Helm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625127,
+      "m_Localized": "Sub Mask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625128,
+      "m_Localized": "Delta Armor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625129,
+      "m_Localized": "Orbiter Suit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625130,
+      "m_Localized": "Black Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625131,
+      "m_Localized": "Neutrino Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625132,
+      "m_Localized": "Gravity Gloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625133,
+      "m_Localized": "Neutron Fingerprints",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625134,
+      "m_Localized": "Higgs Collar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625135,
+      "m_Localized": "Void Necklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625136,
+      "m_Localized": "Aura Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625137,
+      "m_Localized": "Probability Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625138,
+      "m_Localized": "Antigravity Boots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625139,
+      "m_Localized": "Antimatter Feet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625140,
+      "m_Localized": "Black Bow",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625141,
+      "m_Localized": "Black Gun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625142,
+      "m_Localized": "Black Hammer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625143,
+      "m_Localized": "Black Spear",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625144,
+      "m_Localized": "Black Staff",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625145,
+      "m_Localized": "Black Sword & Shield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625146,
+      "m_Localized": "Celtic Overhead",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625147,
+      "m_Localized": "Protective Halo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625148,
+      "m_Localized": "Serpent Wreath",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625149,
+      "m_Localized": "White Hair",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625150,
+      "m_Localized": "Wizard's Hat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625151,
+      "m_Localized": "Holy Gown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625152,
+      "m_Localized": "Paladin Armor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625153,
+      "m_Localized": "Sanctity Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625154,
+      "m_Localized": "Sorcerer Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625155,
+      "m_Localized": "Enchanter Gloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625156,
+      "m_Localized": "Worshipper Gloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625157,
+      "m_Localized": "Talon Necklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625158,
+      "m_Localized": "Thor Amulet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625159,
+      "m_Localized": "Divinity Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625160,
+      "m_Localized": "Nazar Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625161,
+      "m_Localized": "Celestial Treaders",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625162,
+      "m_Localized": "Mercury Sandals",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625163,
+      "m_Localized": "Angelic Pitchfork",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625164,
+      "m_Localized": "Dragon Dagger",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625165,
+      "m_Localized": "Serpent Sword",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625166,
+      "m_Localized": "Siren's Song",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625167,
+      "m_Localized": "Staff",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625168,
+      "m_Localized": "Staff Of Wisdom",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036190056448,
+      "m_Localized": "Infernal Trident",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445056,
+      "m_Localized": "Abyssal Fork",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445057,
+      "m_Localized": "Soulpiercer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445058,
+      "m_Localized": "Doom Mace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445059,
+      "m_Localized": "Shadow Scimitar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445060,
+      "m_Localized": "Spite Crown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445061,
+      "m_Localized": "Rotfang Visor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445062,
+      "m_Localized": "Hellforged Helm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445063,
+      "m_Localized": "Venom Crest",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445064,
+      "m_Localized": "Doomplate",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445065,
+      "m_Localized": "Grip of Torment",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445066,
+      "m_Localized": "Void Claw",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445067,
+      "m_Localized": "Dreadsteps",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445068,
+      "m_Localized": "Greaves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445069,
+      "m_Localized": "Circle of Pain",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445070,
+      "m_Localized": "Crimson Belt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445071,
+      "m_Localized": "Thorn Necklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445072,
+      "m_Localized": "Spite Collar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445073,
+      "m_Localized": "Skullbinder",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445074,
+      "m_Localized": "Prism Ring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350273392640,
+      "m_Localized": "Cape",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350285975552,
+      "m_Localized": "Molten Plates",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Arena_ja",
+  "m_LocaleId": {
+    "m_Code": "ja"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 551601825646573866
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 312139771904,
+      "m_Localized": "挑戦",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 703946485760,
+      "m_Localized": "対戦相手を選ぶ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 784816861184,
+      "m_Localized": "チャレンジチケットは毎日{0}に補充されます！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1048948961280,
+      "m_Localized": "結果",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1248786575360,
+      "m_Localized": "勝利",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1385223090176,
+      "m_Localized": "引き分け",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1625233747968,
+      "m_Localized": "報酬を獲得！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797120,
+      "m_Localized": "おめでとう！前シーズンでランク{0}を達成し、{1}に昇格しました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797121,
+      "m_Localized": "次回はもっと頑張ろう！前シーズンでランク{0}を達成し、{1}に降格しました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797122,
+      "m_Localized": "現在のランク({0})を維持して、シーズン終了時に以下の報酬を獲得しよう：",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797123,
+      "m_Localized": "シーズン終了！ランク{0}に到達し、以下の報酬を獲得しました:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797124,
+      "m_Localized": "報酬を集めるにはランクを上げる必要があります！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797125,
+      "m_Localized": "アリーナ参加の報酬はここに表示されます！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797126,
+      "m_Localized": "報酬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797127,
+      "m_Localized": "受け取りまで: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797128,
+      "m_Localized": "新シーズンまで: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797129,
+      "m_Localized": "シーズン終了まで: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797130,
+      "m_Localized": "新シーズン間もなく！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404032,
+      "m_Localized": "昇進",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404033,
+      "m_Localized": "降格",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472960,
+      "m_Localized": "ランクなし",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472961,
+      "m_Localized": "ブロンズリーグ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472962,
+      "m_Localized": "シルバーリーグ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472963,
+      "m_Localized": "ゴールドリーグ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472964,
+      "m_Localized": "プラチナリーグ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472965,
+      "m_Localized": "ダイヤモンドリーグ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701382651904,
+      "m_Localized": "昇格ゾーン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701386846208,
+      "m_Localized": "降格ゾーン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6855896432570368,
+      "m_Localized": "敗北",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 32343429450031104,
+      "m_Localized": "シーズンが終了しました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

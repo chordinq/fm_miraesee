@@ -1,0 +1,378 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Pets_pt-BR",
+  "m_LocaleId": {
+    "m_Code": "pt-BR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5940147478223713777
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 153364393984,
+      "m_Localized": "{0} para chocar um pet {1} aleatório!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393985,
+      "m_Localized": "Vazio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393986,
+      "m_Localized": "Pronto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544512,
+      "m_Localized": "Slots de eclosão cheios!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544513,
+      "m_Localized": "Eclosão em andamento...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7431547187200,
+      "m_Localized": "Slot +1",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8513174302720,
+      "m_Localized": "Selecione os pets para fundir",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328656904192,
+      "m_Localized": "Galinha",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652928,
+      "m_Localized": "Cachorro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652929,
+      "m_Localized": "Gato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652930,
+      "m_Localized": "Caracol",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652931,
+      "m_Localized": "Rato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652932,
+      "m_Localized": "Tartaruga",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652933,
+      "m_Localized": "Ouriço",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652934,
+      "m_Localized": "Urso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652935,
+      "m_Localized": "Avestruz",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652936,
+      "m_Localized": "Aranha",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652937,
+      "m_Localized": "Escorpião",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652938,
+      "m_Localized": "Grifo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652939,
+      "m_Localized": "Dente de Sabre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652940,
+      "m_Localized": "Unicórnio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652941,
+      "m_Localized": "Tigre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652942,
+      "m_Localized": "Panda",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652943,
+      "m_Localized": "Serpente",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652944,
+      "m_Localized": "Cérbero",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652945,
+      "m_Localized": "Kitsune",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652946,
+      "m_Localized": "Electry",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652947,
+      "m_Localized": "Treant",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652948,
+      "m_Localized": "Alce Encantado",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652949,
+      "m_Localized": "Dragão Bebê",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652950,
+      "m_Localized": "Gênio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652951,
+      "m_Localized": "Tigre Espectral",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435264,
+      "m_Localized": "{0} Selecionado",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435265,
+      "m_Localized": "Selecione pets para mesclar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601476976640,
+      "m_Localized": "Vitória-régia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919680,
+      "m_Localized": "Folha de lírio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919681,
+      "m_Localized": "Folha marrom",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919682,
+      "m_Localized": "Cavalo marrom",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919683,
+      "m_Localized": "Dino",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919684,
+      "m_Localized": "Caranguejo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919685,
+      "m_Localized": "Porco",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919686,
+      "m_Localized": "Cabra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919687,
+      "m_Localized": "Bicicleta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919688,
+      "m_Localized": "Abelha gigante",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919689,
+      "m_Localized": "Droide",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113984,
+      "m_Localized": "Mini Dragão",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113985,
+      "m_Localized": "Disco flutuante",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113986,
+      "m_Localized": "Hoverboard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 364392176349184,
+      "m_Localized": "Selecione montarias para mesclar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5414995050356736,
+      "m_Localized": "Seu ovo está pronto para chocar!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

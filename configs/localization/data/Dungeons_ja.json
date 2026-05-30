@@ -1,0 +1,133 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Dungeons_ja",
+  "m_LocaleId": {
+    "m_Code": "ja"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -1566388065941213110
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 7559233536,
+      "m_Localized": "ゴーストタウンダンジョンを進めて、スキルのドロップ率を上げよう！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113821925376,
+      "m_Localized": "ハンマースリ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 274077892608,
+      "m_Localized": "ゴーストタウン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 419066593280,
+      "m_Localized": "侵略",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 463001927680,
+      "m_Localized": "ゾンビラッシュ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20628242469416960,
+      "m_Localized": "{0} 個の卵",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20628242498777088,
+      "m_Localized": "{0} の力を強化して再挑戦！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20628877046640640,
+      "m_Localized": "一掃",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20629289455775744,
+      "m_Localized": "ダンジョンキーは毎日{0}に補充されます。キーはダンジョンをクリアした時だけ消費されます",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20629569807249408,
+      "m_Localized": "退出してもキーは消費されません",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20636048635392000,
+      "m_Localized": "報酬:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 22043275081801728,
+      "m_Localized": "卵2個ドロップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 22043521560076288,
+      "m_Localized": "侵略ダンジョンを進めて、卵のドロップ率を上げよう！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 22043664615202816,
+      "m_Localized": "卵ドロップ率",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25636250063986688,
+      "m_Localized": "毎日のダンジョンキーが補充されました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

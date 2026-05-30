@@ -1,0 +1,329 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skills_it",
+  "m_LocaleId": {
+    "m_Code": "it"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -3517678328824788358
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 208976670720,
+      "m_Localized": "Carne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 216287342592,
+      "m_Localized": "Morale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 233735647232,
+      "m_Localized": "Frecce",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 247690096640,
+      "m_Localized": "Urlo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 264307929088,
+      "m_Localized": "Meteorite",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 288559394816,
+      "m_Localized": "Berserk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 306217414656,
+      "m_Localized": "Fuga",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 321933471744,
+      "m_Localized": "Spine",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 338651967488,
+      "m_Localized": "Bomba",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 356767166464,
+      "m_Localized": "Verme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 430301704192,
+      "m_Localized": "Fulmine",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 446353305600,
+      "m_Localized": "Potenzia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460181925888,
+      "m_Localized": "Morale Alta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 503324536832,
+      "m_Localized": "Pioggia di Frecce",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 640000126976,
+      "m_Localized": "Mangia carne e aumenta la tua salute di {0} per {1} secondi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 996302057472,
+      "m_Localized": "Lasciati ispirare e aumenta il tuo danno di {0} e la tua salute di {1} per {2} secondi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1018934521856,
+      "m_Localized": "Richiama una raffica di frecce, ognuna infliggendo {0} danni.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1055152336896,
+      "m_Localized": "Fai lanciare shuriken ai tuoi amici ninja, ognuno infliggendo {0} danni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1093542801408,
+      "m_Localized": "Emetti un urlo assordante, infliggendo {0} danni a tutti i nemici",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1132528857088,
+      "m_Localized": "Fai cadere un'onda di meteoriti, ognuno infliggendo {0} danni.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1158541930496,
+      "m_Localized": "Diventa Berserk e aumenta il tuo danno di {0} per {1} secondi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1200103288832,
+      "m_Localized": "Richiama una fuga di tori, ognuno infliggendo {0} danni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1263252729856,
+      "m_Localized": "Pianta spine sul campo di battaglia, infliggendo {0} danni a tutti i nemici",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1304310771712,
+      "m_Localized": "Lancia una bomba sul campo di battaglia, infliggendo {0} danni a tutti i nemici",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1334736252928,
+      "m_Localized": "Evoca un verme gigantesco che infligge {0} danni a tutti i nemici",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1369259569152,
+      "m_Localized": "Richiama un fulmine, ognuno infliggendo {0} danni a tutti i nemici",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1406169444352,
+      "m_Localized": "Potenzia te stesso e aumenta il tuo danno di {0} e la tua salute di {1} per {2} secondi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1429477191680,
+      "m_Localized": "Lasciati ispirare divinamente e aumenta il tuo danno di {0} e la tua salute di {1} per {2} secondi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1468731682816,
+      "m_Localized": "Fai piovere frecce, infliggendo {0} danni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400141123584,
+      "m_Localized": "Shuriken",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483712,
+      "m_Localized": "Attacco in picchiata",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483713,
+      "m_Localized": "Richiama supporto aereo pesante, infliggendo {0} danni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483714,
+      "m_Localized": "Sbarramento di Cannoni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483715,
+      "m_Localized": "Spara una raffica di palle di cannone, ognuna infliggendo {0} danni",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483716,
+      "m_Localized": "Drone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483717,
+      "m_Localized": "Richiama un drone per combattere al tuo fianco, infliggendo {0} danni per {1} secondi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764945125376,
+      "m_Localized": "AUTO ON",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764974485504,
+      "m_Localized": "AUTO OFF",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101696,
+      "m_Localized": "Evoca",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101697,
+      "m_Localized": "Base",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066688,
+      "m_Localized": "Aggiorna tutto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066689,
+      "m_Localized": "Equipaggiamento rapido",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3898839411974144,
+      "m_Localized": "Passivo:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

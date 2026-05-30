@@ -1,0 +1,329 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skills_fr",
+  "m_LocaleId": {
+    "m_Code": "fr"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -3517678328824788358
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 208976670720,
+      "m_Localized": "Viande",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 216287342592,
+      "m_Localized": "Moral",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 233735647232,
+      "m_Localized": "Flèches",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 247690096640,
+      "m_Localized": "Cri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 264307929088,
+      "m_Localized": "Météorite",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 288559394816,
+      "m_Localized": "Berserk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 306217414656,
+      "m_Localized": "Ruée",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 321933471744,
+      "m_Localized": "Épines",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 338651967488,
+      "m_Localized": "Bombe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 356767166464,
+      "m_Localized": "Ver",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 430301704192,
+      "m_Localized": "Éclair",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 446353305600,
+      "m_Localized": "Amélioration",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460181925888,
+      "m_Localized": "Moral supérieur",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 503324536832,
+      "m_Localized": "Pluie de flèches",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 640000126976,
+      "m_Localized": "Mangez de la viande et augmentez votre santé de {0} pendant {1} secondes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 996302057472,
+      "m_Localized": "Soyez inspiré et augmentez vos dégâts de {0} et votre santé de {1} pendant {2} secondes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1018934521856,
+      "m_Localized": "Appelez une volée de flèches, chacune infligeant {0} dégâts.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1055152336896,
+      "m_Localized": "Faites lancer des shurikens par vos amis ninjas, chacun infligeant {0} dégâts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1093542801408,
+      "m_Localized": "Lancez un cri assourdissant, infligeant {0} dégâts à tous les ennemis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1132528857088,
+      "m_Localized": "Faites tomber une vague de météorites, chacune infligeant {0} dégâts.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1158541930496,
+      "m_Localized": "Devenez Berserk et augmentez vos dégâts de {0} pendant {1} secondes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1200103288832,
+      "m_Localized": "Appelez une ruée de taureaux, chacun infligeant {0} dégâts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1263252729856,
+      "m_Localized": "Plantez des épines sur le champ de bataille, infligeant {0} dégâts à tous les ennemis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1304310771712,
+      "m_Localized": "Lâchez une bombe sur le champ de bataille, infligeant {0} dégâts à tous les ennemis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1334736252928,
+      "m_Localized": "Invoquez un ver massif qui inflige {0} dégâts à tous les ennemis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1369259569152,
+      "m_Localized": "Appelez la foudre, chacune infligeant {0} dégâts à tous les ennemis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1406169444352,
+      "m_Localized": "Améliorez-vous et augmentez vos dégâts de {0} et votre santé de {1} pendant {2} secondes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1429477191680,
+      "m_Localized": "Soyez divinement inspiré et augmentez vos dégâts de {0} et votre santé de {1} pendant {2} secondes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1468731682816,
+      "m_Localized": "Faites tomber une pluie de flèches, infligeant {0} dégâts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400141123584,
+      "m_Localized": "Shurikens",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483712,
+      "m_Localized": "Passage en rafale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483713,
+      "m_Localized": "Appel à un soutien aérien lourd, infligeant {0} dégâts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483714,
+      "m_Localized": "Barrage de canons",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483715,
+      "m_Localized": "Tirez une salve de boulets de canon, chacun infligeant {0} dégâts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483716,
+      "m_Localized": "Drone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483717,
+      "m_Localized": "Appelez un drone pour combattre à vos côtés, infligeant {0} dégâts pendant {1} secondes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764945125376,
+      "m_Localized": "AUTO ON",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764974485504,
+      "m_Localized": "AUTO OFF",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101696,
+      "m_Localized": "Invoquer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101697,
+      "m_Localized": "Base",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066688,
+      "m_Localized": "Tout améliorer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066689,
+      "m_Localized": "Équipement rapide",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3898839411974144,
+      "m_Localized": "Passif :",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

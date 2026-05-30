@@ -1,0 +1,1660 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": 7442561414784416887
+  },
+  "m_Name": "Items Shared Data",
+  "m_TableCollectionName": "Items",
+  "m_TableCollectionNameGuidString": "7184c207ab0e3e74a8f646d9a853738b",
+  "m_Entries": [
+    {
+      "m_Id": 5028479430656,
+      "m_Key": "Skull",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624960,
+      "m_Key": "Beard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624961,
+      "m_Key": "WarMask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624962,
+      "m_Key": "FacePaint",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624963,
+      "m_Key": "Axe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624964,
+      "m_Key": "Blowgun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624965,
+      "m_Key": "Branch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624966,
+      "m_Key": "Club",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624967,
+      "m_Key": "Rock",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624968,
+      "m_Key": "Slinger",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624969,
+      "m_Key": "Bone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624970,
+      "m_Key": "Hide",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624971,
+      "m_Key": "Bearskin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624972,
+      "m_Key": "Boneskirt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624973,
+      "m_Key": "Waisttie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624974,
+      "m_Key": "BarkGloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624975,
+      "m_Key": "BearPaw",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624976,
+      "m_Key": "ShamanTalisman",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624977,
+      "m_Key": "ToothNecklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624978,
+      "m_Key": "Shardring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624979,
+      "m_Key": "Skullring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624980,
+      "m_Key": "FootWraps",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624981,
+      "m_Key": "Ivoryshin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624982,
+      "m_Key": "DeathHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624983,
+      "m_Key": "RomanHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624984,
+      "m_Key": "GreekHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624985,
+      "m_Key": "SamuraiHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624986,
+      "m_Key": "KnightHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624987,
+      "m_Key": "Cuirass",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624988,
+      "m_Key": "IronPlates",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624989,
+      "m_Key": "BeltOfBaltazar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624990,
+      "m_Key": "Beltpouch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624991,
+      "m_Key": "Gauntlet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624992,
+      "m_Key": "Ironfist",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624993,
+      "m_Key": "LuckyCharm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624994,
+      "m_Key": "ValorSigil",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624995,
+      "m_Key": "Blessedgem",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624996,
+      "m_Key": "Ironring",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624997,
+      "m_Key": "Sandals",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624998,
+      "m_Key": "SpurredStomper",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483624999,
+      "m_Key": "SwordShield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625000,
+      "m_Key": "Spear&Shield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625001,
+      "m_Key": "Scythe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625002,
+      "m_Key": "WarHammer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625003,
+      "m_Key": "Bow",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625004,
+      "m_Key": "Katana",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625005,
+      "m_Key": "Tomahawk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625006,
+      "m_Key": "BattleHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625007,
+      "m_Key": "CaptainsHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625008,
+      "m_Key": "FeatherHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625009,
+      "m_Key": "SlavicHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625010,
+      "m_Key": "TopHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625011,
+      "m_Key": "ArmorSkirt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625012,
+      "m_Key": "Cardigan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625013,
+      "m_Key": "Harness",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625014,
+      "m_Key": "LeatherBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625015,
+      "m_Key": "LeatherGloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625016,
+      "m_Key": "Mitts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625017,
+      "m_Key": "Clock",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625018,
+      "m_Key": "TreasureKey",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625019,
+      "m_Key": "Emerald",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625020,
+      "m_Key": "Trinity",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625021,
+      "m_Key": "LeatherBoots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625022,
+      "m_Key": "RidingBoots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625023,
+      "m_Key": "Crossbow",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625024,
+      "m_Key": "Musket",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625025,
+      "m_Key": "Executioner",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625026,
+      "m_Key": "DualPistols",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625027,
+      "m_Key": "PirateSword",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625028,
+      "m_Key": "Rapier",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625029,
+      "m_Key": "FedoraHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625030,
+      "m_Key": "KevlarHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625031,
+      "m_Key": "OfficerHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625032,
+      "m_Key": "RiotHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625033,
+      "m_Key": "SergeantHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625034,
+      "m_Key": "SteelHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625035,
+      "m_Key": "WinterHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625036,
+      "m_Key": "Camouflage",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625037,
+      "m_Key": "Kevlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625038,
+      "m_Key": "AmmoPouch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625039,
+      "m_Key": "TacticalBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625040,
+      "m_Key": "CombatGloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625041,
+      "m_Key": "Halffingers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625042,
+      "m_Key": "DogTags",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625043,
+      "m_Key": "FortuneNecklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625044,
+      "m_Key": "Bolt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625045,
+      "m_Key": "BrotherhoodRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625046,
+      "m_Key": "CombatBoots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625047,
+      "m_Key": "VeteranBoots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625048,
+      "m_Key": "AK",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625049,
+      "m_Key": "Baton",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625050,
+      "m_Key": "KnuckleDusters",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625051,
+      "m_Key": "M4",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625052,
+      "m_Key": "RiotShield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625053,
+      "m_Key": "Sniper",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625054,
+      "m_Key": "Uzi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625055,
+      "m_Key": "Wrench",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625056,
+      "m_Key": "BioHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625057,
+      "m_Key": "GasMask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625058,
+      "m_Key": "IronMech",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625059,
+      "m_Key": "SpaceHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625060,
+      "m_Key": "Exoskeleton",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625061,
+      "m_Key": "SpaceSuit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625062,
+      "m_Key": "Corset",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625063,
+      "m_Key": "Straps",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625064,
+      "m_Key": "Remote",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625065,
+      "m_Key": "SpaceGloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625066,
+      "m_Key": "KuiperNecklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625067,
+      "m_Key": "Pendant",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625068,
+      "m_Key": "IcarusRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625069,
+      "m_Key": "SolariusRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625070,
+      "m_Key": "FeetThrusters",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625071,
+      "m_Key": "SpaceBoots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625072,
+      "m_Key": "Blaster",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625073,
+      "m_Key": "RobotSword",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625074,
+      "m_Key": "Saber",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625075,
+      "m_Key": "SpaceGun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625076,
+      "m_Key": "SpacePistol",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625077,
+      "m_Key": "AdvancedMech",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625078,
+      "m_Key": "AlienHead",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625079,
+      "m_Key": "DestroyerMask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625080,
+      "m_Key": "HeavyDuty",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625081,
+      "m_Key": "RoboHelm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625082,
+      "m_Key": "Stellarium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625083,
+      "m_Key": "Adamantium",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625084,
+      "m_Key": "PlasmaSuit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625085,
+      "m_Key": "PelvicSynchronizer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625086,
+      "m_Key": "SpinalStabilizer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625087,
+      "m_Key": "Impactors",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625088,
+      "m_Key": "Implants",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625089,
+      "m_Key": "GammaCollar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625090,
+      "m_Key": "PsiChoker",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625091,
+      "m_Key": "EclipseRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625092,
+      "m_Key": "RariumRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625093,
+      "m_Key": "HydraulicFeet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625094,
+      "m_Key": "RoboFeet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625095,
+      "m_Key": "DoubleSaber",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625096,
+      "m_Key": "IonicBlaster",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625097,
+      "m_Key": "IsobaricCutter",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625098,
+      "m_Key": "Light&Shield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625099,
+      "m_Key": "PlasmaRifle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625100,
+      "m_Key": "RayGun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625101,
+      "m_Key": "Casquette",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625102,
+      "m_Key": "IronHolo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625103,
+      "m_Key": "Mask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625104,
+      "m_Key": "VirtualHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625105,
+      "m_Key": "HoloArmor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625106,
+      "m_Key": "SpectralPlates",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625107,
+      "m_Key": "OrbitBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625108,
+      "m_Key": "RealityBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625109,
+      "m_Key": "Impulse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625110,
+      "m_Key": "RainbowGloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625111,
+      "m_Key": "CrystalAmulet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625112,
+      "m_Key": "GlitchNecklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625113,
+      "m_Key": "ConnectionRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625114,
+      "m_Key": "MobiusRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625115,
+      "m_Key": "EtherealSocks",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625116,
+      "m_Key": "FastTravellers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625117,
+      "m_Key": "ProjectedCutlass",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625118,
+      "m_Key": "Spearsh",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625119,
+      "m_Key": "Trident",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625120,
+      "m_Key": "VirtualBow",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625121,
+      "m_Key": "VirtualGun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625122,
+      "m_Key": "VirtualSword",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625123,
+      "m_Key": "EnergyHelmet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625124,
+      "m_Key": "HairBandana",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625125,
+      "m_Key": "HairTied",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625126,
+      "m_Key": "QuantumHelm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625127,
+      "m_Key": "SubMask",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625128,
+      "m_Key": "DeltaArmor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625129,
+      "m_Key": "OrbiterSuit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625130,
+      "m_Key": "BlackBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625131,
+      "m_Key": "NeutrinoBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625132,
+      "m_Key": "GravityGloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625133,
+      "m_Key": "NeutronFingerprints",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625134,
+      "m_Key": "HiggsCollar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625135,
+      "m_Key": "VoidNecklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625136,
+      "m_Key": "AuraRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625137,
+      "m_Key": "ProbabilityRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625138,
+      "m_Key": "AntigravityBoots",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625139,
+      "m_Key": "AntimatterFeet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625140,
+      "m_Key": "BlackBow",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625141,
+      "m_Key": "BlackGun",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625142,
+      "m_Key": "BlackHammer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625143,
+      "m_Key": "BlackSpear",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625144,
+      "m_Key": "BlackStaff",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625145,
+      "m_Key": "BlackSword&Shield",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625146,
+      "m_Key": "CelticOverhead",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625147,
+      "m_Key": "ProtectiveHalo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625148,
+      "m_Key": "SerpentWreath",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625149,
+      "m_Key": "WhiteHair",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625150,
+      "m_Key": "WizardHat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625151,
+      "m_Key": "HolyGown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625152,
+      "m_Key": "PaladinArmor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625153,
+      "m_Key": "SanctityBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625154,
+      "m_Key": "SorcererBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625155,
+      "m_Key": "EnchanterGloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625156,
+      "m_Key": "WorshipperGloves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625157,
+      "m_Key": "TalonNecklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625158,
+      "m_Key": "ThorAmulet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625159,
+      "m_Key": "DivinityRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625160,
+      "m_Key": "NazarRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625161,
+      "m_Key": "CelestialTreaders",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625162,
+      "m_Key": "MercurySandals",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625163,
+      "m_Key": "AngelicPitchfork",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625164,
+      "m_Key": "DragonDagger",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625165,
+      "m_Key": "SerpentSword",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625166,
+      "m_Key": "SirenSong",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625167,
+      "m_Key": "Staff",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5028483625168,
+      "m_Key": "StaffOfWisdom",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036190056448,
+      "m_Key": "InfernalTrident",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445056,
+      "m_Key": "AbyssalFork",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445057,
+      "m_Key": "Soulpiercer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445058,
+      "m_Key": "DoomMace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445059,
+      "m_Key": "ShadowScimitar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445060,
+      "m_Key": "SpiteCrown",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445061,
+      "m_Key": "RotfangVisor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445062,
+      "m_Key": "HellforgedHelm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445063,
+      "m_Key": "VenomCrest",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445064,
+      "m_Key": "Doomplate",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445065,
+      "m_Key": "GripofTorment",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445066,
+      "m_Key": "VoidClaw",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445067,
+      "m_Key": "Dreadsteps",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445068,
+      "m_Key": "Greaves",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445069,
+      "m_Key": "CircleofPain",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445070,
+      "m_Key": "CrimsonBelt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445071,
+      "m_Key": "ThornNecklace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445072,
+      "m_Key": "SpiteCollar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445073,
+      "m_Key": "Skullbinder",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28999036198445074,
+      "m_Key": "PrismRing",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350273392640,
+      "m_Key": "Cape",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 36593350285975552,
+      "m_Key": "MoltenPlates",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_KeyGenerator": {
+    "rid": 7036434803681394891
+  },
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 7036434803681394891,
+        "type": {
+          "class": "DistributedUIDGenerator",
+          "ns": "UnityEngine.Localization.Tables",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

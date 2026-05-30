@@ -1,0 +1,448 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Stats_es",
+  "m_LocaleId": {
+    "m_Code": "es"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -8718801674694835696
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 988710824505344,
+      "m_Localized": "A distancia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988735260520448,
+      "m_Localized": "Cuerpo a cuerpo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988835206590464,
+      "m_Localized": "Daño",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989213239209984,
+      "m_Localized": "Salud",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989601996664832,
+      "m_Localized": "Probabilidad crítica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989623647662080,
+      "m_Localized": "Daño crítico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989649430048768,
+      "m_Localized": "Velocidad de ataque",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989678303637504,
+      "m_Localized": "Nivel máximo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989714643087360,
+      "m_Localized": "xp",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989736638017536,
+      "m_Localized": "Costo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989762269409280,
+      "m_Localized": "Velocidad del temporizador",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989780216836096,
+      "m_Localized": "Precio de venta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989810910752768,
+      "m_Localized": "Cuenta máxima",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989834340134912,
+      "m_Localized": "Bono",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989849557069824,
+      "m_Localized": "Oportunidad",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989867693240320,
+      "m_Localized": "Probabilidad de bloqueo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989885338677248,
+      "m_Localized": "Regeneración de salud",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989920193343488,
+      "m_Localized": "Robo de vida",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989947519234048,
+      "m_Localized": "Doble oportunidad",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989965953200128,
+      "m_Localized": "Velocidad de movimiento",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990649838661632,
+      "m_Localized": "Equipo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990668201324544,
+      "m_Localized": "Arma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990690527604736,
+      "m_Localized": "Habilidad",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990701055307776,
+      "m_Localized": "Habilidad Pasiva",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990866679984128,
+      "m_Localized": "Monturas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083840310996992,
+      "m_Localized": "Árbol Tecnológico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083902730629120,
+      "m_Localized": "Tiempo de Recompensa Offline",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083950377922560,
+      "m_Localized": "Recompensa Offline",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084108339605504,
+      "m_Localized": "Huevo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084121421639680,
+      "m_Localized": "Moneda",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084153545814016,
+      "m_Localized": "Recompensa de Moneda Offline",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084261779828736,
+      "m_Localized": "Mazmorras",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1085979657695232,
+      "m_Localized": "Oportunidad de forjar equipo gratis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086156044955648,
+      "m_Localized": "Número de martillos usados a la vez",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086608887181312,
+      "m_Localized": "Mejora",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086663727706112,
+      "m_Localized": "Invocar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086680802717696,
+      "m_Localized": "Tiempo de Espera",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086689396846592,
+      "m_Localized": "Base",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086835153104896,
+      "m_Localized": "al mejorar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087433751588864,
+      "m_Localized": "Eclosionar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087456035926016,
+      "m_Localized": "Máx",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1089653901553664,
+      "m_Localized": "{0} caídas de mazmorra más {1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090103212175360,
+      "m_Localized": "Mazmorras dejan caer {{0}} más moneda",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090219507642368,
+      "m_Localized": "Mazmorra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090359232491520,
+      "m_Localized": "Investigación Tecnológica",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090396830232576,
+      "m_Localized": "Mejora de Nodo Tecnológico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1762375497347072,
+      "m_Localized": "Mascota",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763141620527104,
+      "m_Localized": "Casco",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763160431980544,
+      "m_Localized": "Armadura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763216392384512,
+      "m_Localized": "Guantes",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763337381277696,
+      "m_Localized": "Collar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763350417174528,
+      "m_Localized": "Anillo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763362966532096,
+      "m_Localized": "Zapatos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763387549347840,
+      "m_Localized": "Cinturón",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2109395617640448,
+      "m_Localized": "Habilidades",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2110564712771584,
+      "m_Localized": "Mascotas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23865403343101952,
+      "m_Localized": "Requisito de subir de nivel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23905947930845185,
+      "m_Localized": "Oportunidad de invocar una montura extra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73184492695576576,
+      "m_Localized": "Huevos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 85115613318471680,
+      "m_Localized": "Oportunidad de invocar un huevo extra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

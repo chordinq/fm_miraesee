@@ -1,0 +1,196 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Forge_fr",
+  "m_LocaleId": {
+    "m_Code": "fr"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -1109569138593657648
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 795088711680,
+      "m_Localized": "Forge Auto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 936298344448,
+      "m_Localized": "Probabilités de forge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1082071379968,
+      "m_Localized": "Garder",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1589087236096,
+      "m_Localized": "Nombre de marteaux utilisés à la fois",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1985914531840,
+      "m_Localized": "Informations sur les probabilités",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3116539506688,
+      "m_Localized": "Saut gratuit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4278676287488,
+      "m_Localized": "Primitif",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4307390492672,
+      "m_Localized": "Médiéval",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4347643228160,
+      "m_Localized": "Début moderne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4418057203712,
+      "m_Localized": "Moderne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4441834713088,
+      "m_Localized": "Espace",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4465301843968,
+      "m_Localized": "Interstellaire",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4489779802112,
+      "m_Localized": "Multivers",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4513184018432,
+      "m_Localized": "Quantique",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532624617472,
+      "m_Localized": "Divin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5039128768512,
+      "m_Localized": "Améliorez votre niveau de forge pour fabriquer des équipements de civilisations supérieures",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12856879411200,
+      "m_Localized": "Forge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13479431565312,
+      "m_Localized": "Auto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7565893205745664,
+      "m_Localized": "La mise à niveau de votre forge est terminée !",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9738126318301184,
+      "m_Localized": "Filtre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28987765965185024,
+      "m_Localized": "Enfer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105988059136,
+      "m_Localized": "Continuer à forger lorsque l'équipement cible est trouvé",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105996447744,
+      "m_Localized": "Tout vendre",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105996447745,
+      "m_Localized": "Êtes-vous sûr de vouloir vendre toute votre pile d'équipements forgés ?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

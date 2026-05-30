@@ -1,0 +1,1131 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Guilds_ja",
+  "m_LocaleId": {
+    "m_Code": "ja"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -8331198245221904091
+  },
+  "m_Metadata": {
+    "m_Items": [
+      {
+        "rid": 963795083077615766
+      }
+    ]
+  },
+  "m_TableData": [
+    {
+      "m_Id": 164289830912,
+      "m_Localized": "クイック参加",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1787028299776,
+      "m_Localized": "クランを作成",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8305240956928,
+      "m_Localized": "クランに参加",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9750841384960,
+      "m_Localized": "クランを検索...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 43440120258560,
+      "m_Localized": "参加リクエスト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 43788159410176,
+      "m_Localized": "参加",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44561178025984,
+      "m_Localized": "満員",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 46393233235968,
+      "m_Localized": "一致するクランが見つかりませんでした :(",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108401508999168,
+      "m_Localized": "旗：",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110802668347392,
+      "m_Localized": "名前",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111147750514688,
+      "m_Localized": "タグ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111518849949696,
+      "m_Localized": "参加設定",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113398871220224,
+      "m_Localized": "クランを作成",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 114685960511488,
+      "m_Localized": "クラン名は既に使用されています！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1921325498540032,
+      "m_Localized": "エンブレムをカスタマイズ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2018521346646016,
+      "m_Localized": "背景",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2018697561939968,
+      "m_Localized": "アイコン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2191723909783552,
+      "m_Localized": "旗を選ぶ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2195898320199680,
+      "m_Localized": "プレイヤーはどうやって参加できますか？",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2203246031970304,
+      "m_Localized": "オープン（誰でも参加可能）",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2203557232549888,
+      "m_Localized": "承認制（新メンバーは参加申請が必要）",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2672568359182336,
+      "m_Localized": "メンバー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2673971966238720,
+      "m_Localized": "ミッション",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2674153848037376,
+      "m_Localized": "タイタン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2683258901880832,
+      "m_Localized": "戦争",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2741213772898304,
+      "m_Localized": "お知らせ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2887213657350144,
+      "m_Localized": "総力: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2887439923273728,
+      "m_Localized": "メンバー: {0}/{1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990437265563648,
+      "m_Localized": "リーダー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990840757608448,
+      "m_Localized": "指揮官",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990912127885312,
+      "m_Localized": "キャプテン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2990963533275136,
+      "m_Localized": "R1",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991018264748032,
+      "m_Localized": "R2",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991053652090880,
+      "m_Localized": "R3",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991110405218304,
+      "m_Localized": "R4",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991146010664960,
+      "m_Localized": "R5",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991700380213248,
+      "m_Localized": "司令官まで昇格/降格。お知らせを設定。リクエストを承認。参加設定を変更。プレイヤーを削除。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2991983734808576,
+      "m_Localized": "キャプテンまで昇格/降格。お知らせを設定。リクエストを承認。参加設定を変更。プレイヤーを削除。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992061497204736,
+      "m_Localized": "R1まで昇格/降格。お知らせを設定。リクエストを承認。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992120037105664,
+      "m_Localized": "R2まで昇格/降格。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992183740194816,
+      "m_Localized": "信頼される古参メンバー。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992236173189120,
+      "m_Localized": "価値あるメンバー。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992272856571904,
+      "m_Localized": "もう新人じゃない。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992331396472832,
+      "m_Localized": "新人。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2992411356684288,
+      "m_Localized": "オンライン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3079969885380608,
+      "m_Localized": "役割の権限",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3282046154694656,
+      "m_Localized": "リーダーシップを移譲",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3282496966877184,
+      "m_Localized": "確認",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4530868835049472,
+      "m_Localized": "このプレイヤーをクランから削除してもよろしいですか？",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4531611302354944,
+      "m_Localized": "はい、削除",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532707466928128,
+      "m_Localized": "このギルドを離れてもよろしいですか？",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532892901302272,
+      "m_Localized": "はい、離れる",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4533569346068480,
+      "m_Localized": "このプレイヤーにリーダーシップを譲渡してもよろしいですか？これは元に戻せません！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4534157022584832,
+      "m_Localized": "はい、譲渡",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4547171457163264,
+      "m_Localized": "昇格 / 降格",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4547743275016192,
+      "m_Localized": "プレイヤーを削除",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4548011723055104,
+      "m_Localized": "ギルドを離れる",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4548662943277056,
+      "m_Localized": "ギルドを離れる前にリーダーシップを譲渡する必要があります！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4701955971604480,
+      "m_Localized": "クラン設定",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4720734575255552,
+      "m_Localized": "クラン名",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4727083027652608,
+      "m_Localized": "オープン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4728355130695680,
+      "m_Localized": "承認",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9039444463050752,
+      "m_Localized": "リクエスト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9069529651994624,
+      "m_Localized": "クラン参加リクエスト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9073199571525632,
+      "m_Localized": "承認",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9141308802195456,
+      "m_Localized": "却下",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9171111450238976,
+      "m_Localized": "このクランのメンバーではなく、リクエストを承認できません！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9171624921128960,
+      "m_Localized": "必要な権限がありません！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172155123097600,
+      "m_Localized": "プレイヤーはすでにクランに参加しています！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172292146814976,
+      "m_Localized": "プレイヤーはすでに別のクランにいます！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172441757638656,
+      "m_Localized": "クランが満員です！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9172648964644864,
+      "m_Localized": "このリクエストはもう存在しません！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816857337913344,
+      "m_Localized": "{0}日前",
+      "m_Metadata": {
+        "m_Items": [
+          {
+            "rid": 963795083077615766
+          }
+        ]
+      }
+    },
+    {
+      "m_Id": 9816556459515904,
+      "m_Localized": "{0}分前",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9816734847459328,
+      "m_Localized": "{0}時間前",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14867313500086272,
+      "m_Localized": "クランメンバーへのお知らせを書こう...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17031808318169088,
+      "m_Localized": "クランタグは既に使用されています！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17032169531629568,
+      "m_Localized": "クラン名は許可されていません！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17032692984963072,
+      "m_Localized": "内部エラーが発生しました。後でもう一度お試しください！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17141006318166016,
+      "m_Localized": "別の名前を選んでください。この名前はルールに合いません。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17141607118659584,
+      "m_Localized": "別のクランタグを選んでください。このタグはルールに合いません。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17770654513225728,
+      "m_Localized": "リクエスト送信済み",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20120750559059968,
+      "m_Localized": "クランタグは許可されていません！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29374167438258176,
+      "m_Localized": "戦争進捗",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29374544795594752,
+      "m_Localized": "日数と結果",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204544,
+      "m_Localized": "{0}がクランを去りました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204545,
+      "m_Localized": "{0}がクランから追放されました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204546,
+      "m_Localized": "{0}がクランに参加しました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204547,
+      "m_Localized": "{0}がリーダーに昇進しました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204548,
+      "m_Localized": "{0}が{1}されて{2}になりました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204549,
+      "m_Localized": "昇進",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 29422156324204550,
+      "m_Localized": "降格",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 37825289286311936,
+      "m_Localized": "最近クランを抜けたばかりです。{0} 待ってから別のクランに参加してください！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39541792190472192,
+      "m_Localized": "最終化中...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915179372544,
+      "m_Localized": "勝利！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149760,
+      "m_Localized": "敗北！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149761,
+      "m_Localized": "総力戦",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149762,
+      "m_Localized": "進行中...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39562915196149763,
+      "m_Localized": "開始まで：",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245696,
+      "m_Localized": "獲得した合計ポイント:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245697,
+      "m_Localized": "ティア",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245698,
+      "m_Localized": "勝利",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245699,
+      "m_Localized": "敗北",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245700,
+      "m_Localized": "あなたのクランは今週の戦争で{0}しました！次の{1}報酬を集めてください：",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245701,
+      "m_Localized": "あなたのクランは現在{0}です。戦争が終わったら、次の{1}報酬を集めましょう:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245703,
+      "m_Localized": "負けてる！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39588652217245704,
+      "m_Localized": "勝ってる！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364647813120,
+      "m_Localized": "{0} 戦争報酬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978944,
+      "m_Localized": "戦争の結果",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978945,
+      "m_Localized": "今週獲得したポイント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609515733917696,
+      "m_Localized": "日",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978947,
+      "m_Localized": "勝利ポイント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978948,
+      "m_Localized": "勝者",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39593364672978949,
+      "m_Localized": "MVP",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864256,
+      "m_Localized": "{0} 報酬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864257,
+      "m_Localized": "勝利",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39595432896864258,
+      "m_Localized": "敗北",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511680,
+      "m_Localized": "階層",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511681,
+      "m_Localized": "現在のクランティアポイント: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511682,
+      "m_Localized": "{0} ティアポイント",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39597607773511683,
+      "m_Localized": "クラン戦に勝利してティアポイントを稼ぎ、ティアを進めよう。ティアが高いほど、報酬が良くなるよ！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261568,
+      "m_Localized": "{0}日目",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261569,
+      "m_Localized": "{0}日目の行動",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261570,
+      "m_Localized": "ライバルのクランメンバーを倒せ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39609218433261571,
+      "m_Localized": "総力戦で勝利",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135833505792,
+      "m_Localized": "戦闘ログ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283008,
+      "m_Localized": "{0}がリセットされました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283009,
+      "m_Localized": "{0}が{1}を倒した",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39613135850283010,
+      "m_Localized": "{0}は{1}を倒せなかった",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39618987466399744,
+      "m_Localized": "{0}人のライバルクランメンバーを倒すと、クラン全体がリセットされるよ！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39656479710502912,
+      "m_Localized": "次の戦争開始まで:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39656479718891520,
+      "m_Localized": "戦争が終わった！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983426318336,
+      "m_Localized": "鍛冶場のアップグレードを開始",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901248,
+      "m_Localized": "鍛冶場のアップグレードを完了",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901249,
+      "m_Localized": "鍛冶場で{0}を使う",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901250,
+      "m_Localized": "{0}装備を鍛造",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901251,
+      "m_Localized": "{0}ダンジョンキーを使用",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901252,
+      "m_Localized": "{0}スキルを召喚",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901253,
+      "m_Localized": "{0}スキルをアップグレード",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901254,
+      "m_Localized": "{0}卵を孵化",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901255,
+      "m_Localized": "{0}ペットを合成",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901256,
+      "m_Localized": "技術ツリー{0}のアップグレードを完了",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901257,
+      "m_Localized": "{0}マウントを召喚",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39666983438901258,
+      "m_Localized": "{0}マウントを合成",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39931445744693248,
+      "m_Localized": "勝利!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 39961057296052224,
+      "m_Localized": "報酬を全部集めるのを忘れずに！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103770579654402048,
+      "m_Localized": "この発表は許可されていません！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108816660394139648,
+      "m_Localized": "レベル{0}のミッションを完了する",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 110930755662635008,
+      "m_Localized": "鍛冶場で{0}{1}を使う",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111663885956669440,
+      "m_Localized": "クランを脱退すると、24時間待ってから別のクランに参加できます。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 111663885973446656,
+      "m_Localized": "今シーズンで50kポイント以上貢献しました。脱退すると、次のシーズンが始まるまで戦争に参加できなくなります。",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 108816777775931392,
+      "m_Localized": "伝説のミッションを完了する",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124387185199669248,
+      "m_Localized": "{0}は{1}によってクランから追放されました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124428308832051200,
+      "m_Localized": "{0}は{1}によってクラン参加が承認されました",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 124445730247008256,
+      "m_Localized": "{0}は{3}によって{2}に{1}されました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 963795083077615766,
+        "type": {
+          "class": "SmartFormatTag",
+          "ns": "UnityEngine.Localization.Metadata",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

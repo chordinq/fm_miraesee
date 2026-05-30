@@ -1,0 +1,749 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "TechTree_ja",
+  "m_LocaleId": {
+    "m_Code": "ja"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 3510350058130572738
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 55555327238144,
+      "m_Localized": "武器の達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555335626752,
+      "m_Localized": "ヘルメットの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821056,
+      "m_Localized": "ボディの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821057,
+      "m_Localized": "靴の達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821058,
+      "m_Localized": "手袋の達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821059,
+      "m_Localized": "ベルトの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821060,
+      "m_Localized": "ネックレスの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821061,
+      "m_Localized": "指輪の達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821062,
+      "m_Localized": "武器レベルアップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821063,
+      "m_Localized": "ヘルメットレベルアップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821064,
+      "m_Localized": "ボディレベルアップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821065,
+      "m_Localized": "靴レベルアップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821066,
+      "m_Localized": "手袋レベルアップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821067,
+      "m_Localized": "ベルトレベルアップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821068,
+      "m_Localized": "ネックレスレベルアップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821069,
+      "m_Localized": "指輪レベルアップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664321523712,
+      "m_Localized": "マウントダメージの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718016,
+      "m_Localized": "マウントヘルスの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718017,
+      "m_Localized": "追加マウントチャンス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718018,
+      "m_Localized": "マウント召喚コスト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821073,
+      "m_Localized": "鍛冶タイマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821074,
+      "m_Localized": "鍛冶アップグレードコスト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821075,
+      "m_Localized": "装備売却価格",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821076,
+      "m_Localized": "自動鍛冶",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821077,
+      "m_Localized": "ハンマーオフライン報酬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821078,
+      "m_Localized": "コインオフライン報酬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821079,
+      "m_Localized": "最大オフライン時間",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821080,
+      "m_Localized": "無料鍛冶チャンス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821081,
+      "m_Localized": "ハンマースリーハンマーボーナス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821082,
+      "m_Localized": "ハンマースリーコインボーナス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821083,
+      "m_Localized": "スキルダメージの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821084,
+      "m_Localized": "スキルパッシブダメージ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821085,
+      "m_Localized": "スキルパッシブヘルス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821086,
+      "m_Localized": "ゴーストタウンスキルチケットボーナス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821087,
+      "m_Localized": "スキル召喚コスト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821088,
+      "m_Localized": "ペットダメージの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821089,
+      "m_Localized": "ペットヘルスの達人",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821090,
+      "m_Localized": "追加卵チャンス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821091,
+      "m_Localized": "コモンエッグタイマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821092,
+      "m_Localized": "レアエッグタイマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821093,
+      "m_Localized": "エピックエッグタイマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821094,
+      "m_Localized": "レジェンダリーエッグタイマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821095,
+      "m_Localized": "アルティメットエッグタイマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821096,
+      "m_Localized": "ミシカルエッグタイマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821097,
+      "m_Localized": "ゾンビラッシュ技術ポーションボーナス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821098,
+      "m_Localized": "技術ノードアップグレードコスト",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821099,
+      "m_Localized": "技術研究タイマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821100,
+      "m_Localized": "武器ボーナスダメージ {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821101,
+      "m_Localized": "ヘルメットボーナスヘルス {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821102,
+      "m_Localized": "ボディボーナスヘルス {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821103,
+      "m_Localized": "靴ボーナス体力 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821104,
+      "m_Localized": "手袋ボーナスダメージ {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821105,
+      "m_Localized": "ベルトボーナス体力 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821106,
+      "m_Localized": "ネックレスボーナスダメージ {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821107,
+      "m_Localized": "リングボーナスダメージ {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821108,
+      "m_Localized": "武器最大レベル {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821109,
+      "m_Localized": "ヘルメット最大レベル {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821110,
+      "m_Localized": "ボディ最大レベル {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821111,
+      "m_Localized": "靴最大レベル {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821112,
+      "m_Localized": "手袋最大レベル {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821113,
+      "m_Localized": "ベルト最大レベル {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821114,
+      "m_Localized": "ネックレス最大レベル {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821115,
+      "m_Localized": "リング最大レベル {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821116,
+      "m_Localized": "マウントボーナスダメージ {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821117,
+      "m_Localized": "マウントボーナス体力 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821118,
+      "m_Localized": "マウント強化時のボーナスXP {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718019,
+      "m_Localized": "マウント召喚コスト {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821119,
+      "m_Localized": "鍛冶場アップグレードタイマー速度 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821120,
+      "m_Localized": "鍛冶場アップグレードコスト {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821121,
+      "m_Localized": "装備売却価格 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821122,
+      "m_Localized": "一度に使用されるハンマーの数 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821123,
+      "m_Localized": "ハンマーオフライン報酬ボーナス {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821124,
+      "m_Localized": "コインオフライン報酬ボーナス {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821125,
+      "m_Localized": "最大オフライン報酬時間 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821126,
+      "m_Localized": "無料で装備を鍛造するチャンス {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821127,
+      "m_Localized": "ハンマースリダンジョンでハンマーが{0}個多くドロップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821128,
+      "m_Localized": "ハンマースリダンジョンでコインが{0}枚多くドロップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821129,
+      "m_Localized": "スキルダメージ {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821130,
+      "m_Localized": "スキルパッシブ基礎ダメージ {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821131,
+      "m_Localized": "スキルパッシブ基礎体力 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821132,
+      "m_Localized": "ゴーストタウンダンジョンでスキルチケットが{0}枚多くドロップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821133,
+      "m_Localized": "スキル召喚コスト {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821134,
+      "m_Localized": "ペットボーナスダメージ {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821135,
+      "m_Localized": "ペットボーナス体力 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821136,
+      "m_Localized": "ペット強化時のボーナスXP {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821137,
+      "m_Localized": "一般卵孵化タイマー速度 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821138,
+      "m_Localized": "レア卵孵化タイマー速度 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821139,
+      "m_Localized": "エピック卵孵化タイマー速度 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821140,
+      "m_Localized": "レジェンダリー卵孵化タイマー速度 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821141,
+      "m_Localized": "アルティメット卵孵化タイマー速度 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821142,
+      "m_Localized": "ミシック卵孵化タイマー速度 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821143,
+      "m_Localized": "ゾンビラッシュダンジョンでテックポーションが{0}個多くドロップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821144,
+      "m_Localized": "テックノードアップグレードコスト {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821145,
+      "m_Localized": "テック研究タイマー速度 {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280318681088,
+      "m_Localized": "テックツリー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846912,
+      "m_Localized": "鍛冶場",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846913,
+      "m_Localized": "パワー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846914,
+      "m_Localized": "スキル、ペット＆テック",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17687817399296000,
+      "m_Localized": "別の技術がすでに研究中です！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17688556561489920,
+      "m_Localized": "最大",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17690949319647232,
+      "m_Localized": "研究中",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 21246931924672512,
+      "m_Localized": "技術ツリーのアップグレードが完了しました！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103966219382546432,
+      "m_Localized": "クラン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

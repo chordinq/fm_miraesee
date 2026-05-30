@@ -1,0 +1,329 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skills_ko",
+  "m_LocaleId": {
+    "m_Code": "ko"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -3517678328824788358
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 208976670720,
+      "m_Localized": "고기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 216287342592,
+      "m_Localized": "사기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 233735647232,
+      "m_Localized": "화살",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 247690096640,
+      "m_Localized": "외침",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 264307929088,
+      "m_Localized": "운석",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 288559394816,
+      "m_Localized": "광전사",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 306217414656,
+      "m_Localized": "쇄도",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 321933471744,
+      "m_Localized": "가시",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 338651967488,
+      "m_Localized": "폭탄",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 356767166464,
+      "m_Localized": "벌레",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 430301704192,
+      "m_Localized": "번개",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 446353305600,
+      "m_Localized": "버프",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460181925888,
+      "m_Localized": "높은 사기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 503324536832,
+      "m_Localized": "화살비",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 640000126976,
+      "m_Localized": "고기를 먹고 {1}초 동안 체력을 {0} 증가시킵니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 996302057472,
+      "m_Localized": "영감을 받아 {2}초 동안 피해를 {0} 및 체력을 {1} 증가시킵니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1018934521856,
+      "m_Localized": "화살의 폭발을 불러와 각각 {0}의 피해를 줍니다.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1055152336896,
+      "m_Localized": "닌자 친구들이 수리검을 던지게 하여 각각 {0}의 피해를 줍니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1093542801408,
+      "m_Localized": "귀청이 터질 듯한 외침을 내질러 모든 적에게 {0}의 피해를 줍니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1132528857088,
+      "m_Localized": "운석의 파도를 내려 각각 {0}의 피해를 줍니다.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1158541930496,
+      "m_Localized": "광전사가 되어 {1}초 동안 피해를 {0} 증가시킵니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1200103288832,
+      "m_Localized": "황소의 쇄도를 불러와 각각 {0}의 피해를 줍니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1263252729856,
+      "m_Localized": "전장에 가시를 심어 모든 적에게 {0}의 피해를 줍니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1304310771712,
+      "m_Localized": "전장에 폭탄을 떨어뜨려 모든 적에게 {0}의 피해를 줍니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1334736252928,
+      "m_Localized": "거대한 벌레를 소환하여 모든 적에게 {0}의 피해를 줍니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1369259569152,
+      "m_Localized": "번개를 불러와 각각 모든 적에게 {0}의 피해를 줍니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1406169444352,
+      "m_Localized": "자신을 강화하여 {2}초 동안 피해를 {0} 및 체력을 {1} 증가시킵니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1429477191680,
+      "m_Localized": "신성한 영감을 받아 {2}초 동안 피해를 {0} 및 체력을 {1} 증가시킵니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1468731682816,
+      "m_Localized": "화살비를 내려 {0}의 피해를 줍니다",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400141123584,
+      "m_Localized": "수리검",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483712,
+      "m_Localized": "기총 소사",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483713,
+      "m_Localized": "강력한 공중 지원 요청, {0} 피해",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483714,
+      "m_Localized": "포격",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483715,
+      "m_Localized": "포탄 연발 발사, 각각 {0} 피해",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483716,
+      "m_Localized": "드론",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483717,
+      "m_Localized": "드론을 불러 {1}초 동안 {0} 피해를 입히세요",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764945125376,
+      "m_Localized": "자동 켜짐",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764974485504,
+      "m_Localized": "자동 꺼짐",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101696,
+      "m_Localized": "소환",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101697,
+      "m_Localized": "기본",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066688,
+      "m_Localized": "모두 업그레이드",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066689,
+      "m_Localized": "빠른 장착",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3898839411974144,
+      "m_Localized": "패시브:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

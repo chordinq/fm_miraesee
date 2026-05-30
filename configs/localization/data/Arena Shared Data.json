@@ -1,0 +1,246 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": 7442561414784416887
+  },
+  "m_Name": "Arena Shared Data",
+  "m_TableCollectionName": "Arena",
+  "m_TableCollectionNameGuidString": "2f3f345921dbbc640907b66c812ae898",
+  "m_Entries": [
+    {
+      "m_Id": 312139771904,
+      "m_Key": "Challenge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 703946485760,
+      "m_Key": "ChooseOpponent",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 784816861184,
+      "m_Key": "ChallengeTicketsReplenish",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1048948961280,
+      "m_Key": "Result",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1248786575360,
+      "m_Key": "Win",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1385223090176,
+      "m_Key": "Draw",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1625233747968,
+      "m_Key": "RewardsCollected",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797120,
+      "m_Key": "PromotionDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797121,
+      "m_Key": "NotPromotionDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797122,
+      "m_Key": "MaintainRank",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797123,
+      "m_Key": "SeasonEndedRewards",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797124,
+      "m_Key": "ImproveToCollect",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797125,
+      "m_Key": "RewardsForParticipating",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797126,
+      "m_Key": "Rewards",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797127,
+      "m_Key": "CollectIn",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797128,
+      "m_Key": "NewSeasonIn",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797129,
+      "m_Key": "SeasonEndsIn",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797130,
+      "m_Key": "NewSeasonSoon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404032,
+      "m_Key": "Promotion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404033,
+      "m_Key": "Demotion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472960,
+      "m_Key": "Unranked",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472961,
+      "m_Key": "BronzeLeague",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472962,
+      "m_Key": "SilverLeague",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472963,
+      "m_Key": "GoldLeague",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472964,
+      "m_Key": "PlatinumLeague",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472965,
+      "m_Key": "DiamondLeague",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701382651904,
+      "m_Key": "PromotionZone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701386846208,
+      "m_Key": "DemotionZone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6855896432570368,
+      "m_Key": "Loss",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 32343429450031104,
+      "m_Key": "New Entry",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_KeyGenerator": {
+    "rid": 7036434962474860752
+  },
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 7036434962474860752,
+        "type": {
+          "class": "DistributedUIDGenerator",
+          "ns": "UnityEngine.Localization.Tables",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

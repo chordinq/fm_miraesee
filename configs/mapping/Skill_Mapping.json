@@ -1,0 +1,164 @@
+{
+	"0_0": {
+		"Key": "Meat",
+		"Localization_Id": 208976670720,
+		"Localization_Desc_Id": 640000126976,
+		"Rarity": 0,
+		"Idx": 0,
+		"Enum": 0,
+		"SpriteId": 0
+	},
+	"0_1": {
+		"Key": "Arrows",
+		"Localization_Id": 233735647232,
+		"Localization_Desc_Id": 1018934521856,
+		"Rarity": 0,
+		"Idx": 1,
+		"Enum": 2,
+		"SpriteId": 1
+	},
+	"0_2": {
+		"Key": "Shout",
+		"Localization_Id": 247690096640,
+		"Localization_Desc_Id": 1093542801408,
+		"Rarity": 0,
+		"Idx": 2,
+		"Enum": 4,
+		"SpriteId": 2
+	},
+	"1_0": {
+		"Key": "Berserk",
+		"Localization_Id": 288559394816,
+		"Localization_Desc_Id": 1158541930496,
+		"Rarity": 1,
+		"Idx": 0,
+		"Enum": 6,
+		"SpriteId": 4
+	},
+	"1_1": {
+		"Key": "Shuriken",
+		"Localization_Id": 1711400141123584,
+		"Localization_Desc_Id": 1055152336896,
+		"Rarity": 1,
+		"Idx": 1,
+		"Enum": 3,
+		"SpriteId": 10
+	},
+	"1_2": {
+		"Key": "CannonBarrage",
+		"Localization_Id": 1711400170483714,
+		"Localization_Desc_Id": 1711400170483715,
+		"Rarity": 1,
+		"Idx": 2,
+		"Enum": 16,
+		"SpriteId": 8
+	},
+	"2_0": {
+		"Key": "Buff",
+		"Localization_Id": 446353305600,
+		"Localization_Desc_Id": 1406169444352,
+		"Rarity": 2,
+		"Idx": 0,
+		"Enum": 12,
+		"SpriteId": 6
+	},
+	"2_1": {
+		"Key": "RainOfArrows",
+		"Localization_Id": 503324536832,
+		"Localization_Desc_Id": 1468731682816,
+		"Rarity": 2,
+		"Idx": 1,
+		"Enum": 14,
+		"SpriteId": 7
+	},
+	"2_2": {
+		"Key": "Thorns",
+		"Localization_Id": 321933471744,
+		"Localization_Desc_Id": 1263252729856,
+		"Rarity": 2,
+		"Idx": 2,
+		"Enum": 8,
+		"SpriteId": 4
+	},
+	"3_0": {
+		"Key": "Morale",
+		"Localization_Id": 216287342592,
+		"Localization_Desc_Id": 996302057472,
+		"Rarity": 3,
+		"Idx": 0,
+		"Enum": 1,
+		"SpriteId": 9
+	},
+	"3_1": {
+		"Key": "Bomb",
+		"Localization_Id": 338651967488,
+		"Localization_Desc_Id": 1304310771712,
+		"Rarity": 3,
+		"Idx": 1,
+		"Enum": 9,
+		"SpriteId": 11
+	},
+	"3_2": {
+		"Key": "Meteorite",
+		"Localization_Id": 264307929088,
+		"Localization_Desc_Id": 1132528857088,
+		"Rarity": 3,
+		"Idx": 2,
+		"Enum": 5,
+		"SpriteId": 11
+	},
+	"4_0": {
+		"Key": "Stampede",
+		"Localization_Id": 306217414656,
+		"Localization_Desc_Id": 1200103288832,
+		"Rarity": 4,
+		"Idx": 0,
+		"Enum": 7,
+		"SpriteId": 12
+	},
+	"4_1": {
+		"Key": "Worm",
+		"Localization_Id": 356767166464,
+		"Localization_Desc_Id": 1334736252928,
+		"Rarity": 4,
+		"Idx": 1,
+		"Enum": 10,
+		"SpriteId": 5
+	},
+	"4_2": {
+		"Key": "Lightning",
+		"Localization_Id": 430301704192,
+		"Localization_Desc_Id": 1369259569152,
+		"Rarity": 4,
+		"Idx": 2,
+		"Enum": 11,
+		"SpriteId": 14
+	},
+	"5_0": {
+		"Key": "HigherMorale",
+		"Localization_Id": 460181925888,
+		"Localization_Desc_Id": 1429477191680,
+		"Rarity": 5,
+		"Idx": 0,
+		"Enum": 13,		
+		"SpriteId": 15
+	},
+	"5_1": {
+		"Key": "StrafeRun",
+		"Localization_Id": 1711400170483712,
+		"Localization_Desc_Id": 1711400170483713,
+		"Rarity": 5,
+		"Idx": 1,
+		"Enum": 15,
+		"SpriteId": 16
+	},
+	"5_2": {
+		"Key": "Drone",
+		"Localization_Id": 1711400170483716,
+		"Localization_Desc_Id": 1711400170483717,
+		"Rarity": 5,
+		"Idx": 2,
+		"Enum": 17,
+		"SpriteId": 17
+	}
+}

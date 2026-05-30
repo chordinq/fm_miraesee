@@ -1,0 +1,749 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "TechTree_de",
+  "m_LocaleId": {
+    "m_Code": "de"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 3510350058130572738
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 55555327238144,
+      "m_Localized": "Waffen-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555335626752,
+      "m_Localized": "Helm-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821056,
+      "m_Localized": "Rüstungs-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821057,
+      "m_Localized": "Schuh-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821058,
+      "m_Localized": "Handschuh-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821059,
+      "m_Localized": "Gürtel-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821060,
+      "m_Localized": "Halsketten-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821061,
+      "m_Localized": "Ring-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821062,
+      "m_Localized": "Waffen-Aufstieg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821063,
+      "m_Localized": "Helm-Aufstieg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821064,
+      "m_Localized": "Rüstungs-Aufstieg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821065,
+      "m_Localized": "Schuh-Aufstieg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821066,
+      "m_Localized": "Handschuh-Aufstieg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821067,
+      "m_Localized": "Gürtel-Aufstieg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821068,
+      "m_Localized": "Halsketten-Aufstieg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821069,
+      "m_Localized": "Ring-Aufstieg",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664321523712,
+      "m_Localized": "Reittier-Schaden-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718016,
+      "m_Localized": "Reittier-Gesundheit-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718017,
+      "m_Localized": "Zusätzliche Reittier-Chance",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718018,
+      "m_Localized": "Reittier-Beschwörungskosten",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821073,
+      "m_Localized": "Schmiede-Timer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821074,
+      "m_Localized": "Schmiede-Aufrüstungskosten",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821075,
+      "m_Localized": "Ausrüstungs-Verkaufspreis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821076,
+      "m_Localized": "Auto-Schmiede",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821077,
+      "m_Localized": "Hammer-Offline-Belohnung",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821078,
+      "m_Localized": "Münzen-Offline-Belohnung",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821079,
+      "m_Localized": "Maximale Offline-Zeit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821080,
+      "m_Localized": "Kostenlose Schmiede-Chance",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821081,
+      "m_Localized": "Hammerdieb-Hammer-Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821082,
+      "m_Localized": "Hammerdieb-Münzen-Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821083,
+      "m_Localized": "Fähigkeits-Schaden-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821084,
+      "m_Localized": "Fähigkeits-Passivschaden",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821085,
+      "m_Localized": "Fähigkeits-Passivgesundheit",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821086,
+      "m_Localized": "Geisterstadt-Fähigkeits-Ticket-Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821087,
+      "m_Localized": "Fähigkeits-Beschwörungskosten",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821088,
+      "m_Localized": "Begleiter-Schaden-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821089,
+      "m_Localized": "Begleiter-Gesundheit-Meisterschaft",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821090,
+      "m_Localized": "Zusätzliche Ei-Chance",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821091,
+      "m_Localized": "Gewöhnlicher Ei-Timer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821092,
+      "m_Localized": "Seltenes Ei-Timer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821093,
+      "m_Localized": "Episches Ei-Timer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821094,
+      "m_Localized": "Legendäres Ei-Timer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821095,
+      "m_Localized": "Ultimatives Ei-Timer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821096,
+      "m_Localized": "Mythisches Ei-Timer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821097,
+      "m_Localized": "Zombieansturm-Techniktrank-Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821098,
+      "m_Localized": "Technik-Knoten-Aufrüstungskosten",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821099,
+      "m_Localized": "Technik-Forschungs-Timer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821100,
+      "m_Localized": "Waffen-Bonus-Schaden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821101,
+      "m_Localized": "Helm-Bonus-Gesundheit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821102,
+      "m_Localized": "Rüstungs-Bonus-Gesundheit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821103,
+      "m_Localized": "Schuh Bonus Gesundheit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821104,
+      "m_Localized": "Handschuh Bonus Schaden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821105,
+      "m_Localized": "Gürtel Bonus Gesundheit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821106,
+      "m_Localized": "Halskette Bonus Schaden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821107,
+      "m_Localized": "Ring Bonus Schaden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821108,
+      "m_Localized": "Waffen Max Level {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821109,
+      "m_Localized": "Helm Max Level {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821110,
+      "m_Localized": "Körper Max Level {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821111,
+      "m_Localized": "Schuh Max Level {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821112,
+      "m_Localized": "Handschuh Max Level {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821113,
+      "m_Localized": "Gürtel Max Level {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821114,
+      "m_Localized": "Halskette Max Level {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821115,
+      "m_Localized": "Ring Max Level {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821116,
+      "m_Localized": "Reittier Bonus Schaden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821117,
+      "m_Localized": "Reittier Bonus Gesundheit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821118,
+      "m_Localized": "Bonus XP beim Aufrüsten von Reittieren {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 58664325718019,
+      "m_Localized": "Reittier Beschwörungskosten {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821119,
+      "m_Localized": "Schmiede Upgrade Timer Geschwindigkeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821120,
+      "m_Localized": "Schmiede Upgrade Kosten {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821121,
+      "m_Localized": "Ausrüstung Verkaufspreis {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821122,
+      "m_Localized": "Anzahl der gleichzeitig verwendeten Hämmer {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821123,
+      "m_Localized": "Hammer Offline Belohnungsbonus {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821124,
+      "m_Localized": "Münz Offline Belohnungsbonus {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821125,
+      "m_Localized": "Maximale Offline Belohnungszeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821126,
+      "m_Localized": "Chance, Ausrüstung kostenlos zu schmieden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821127,
+      "m_Localized": "Hammerdieb Dungeon lässt {0} mehr Hämmer fallen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821128,
+      "m_Localized": "Hammerdieb Dungeon lässt {0} mehr Münzen fallen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821129,
+      "m_Localized": "Fähigkeitsschaden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821130,
+      "m_Localized": "Fähigkeit Passiver Grundschaden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821131,
+      "m_Localized": "Fähigkeit Passiver Grundgesundheit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821132,
+      "m_Localized": "Geisterstadt Dungeon lässt {0} mehr Fähigkeitstickets fallen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821133,
+      "m_Localized": "Fähigkeit Beschwörungskosten {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821134,
+      "m_Localized": "Haustier Bonus Schaden {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821135,
+      "m_Localized": "Haustier Bonus Gesundheit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821136,
+      "m_Localized": "Bonus XP beim Aufrüsten von Haustieren {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821137,
+      "m_Localized": "Gewöhnliches Ei Schlupf Timer Geschwindigkeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821138,
+      "m_Localized": "Seltenes Ei Schlupf Timer Geschwindigkeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821139,
+      "m_Localized": "Episches Ei Schlupf Timer Geschwindigkeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821140,
+      "m_Localized": "Legendäres Ei Schlupf Timer Geschwindigkeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821141,
+      "m_Localized": "Ultimatives Ei Schlupf Timer Geschwindigkeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821142,
+      "m_Localized": "Mythisches Ei Schlupf Timer Geschwindigkeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821143,
+      "m_Localized": "Zombieansturm Dungeon lässt {0} mehr Tech-Tränke fallen",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821144,
+      "m_Localized": "Tech-Knoten Upgrade Kosten {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 55555339821145,
+      "m_Localized": "Tech-Forschung Timer Geschwindigkeit {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280318681088,
+      "m_Localized": "Tech-Baum",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846912,
+      "m_Localized": "Schmiede",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846913,
+      "m_Localized": "Macht",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 280343846914,
+      "m_Localized": "Fähigkeiten, Haustiere & Tech",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17687817399296000,
+      "m_Localized": "Eine andere Technologie wird bereits erforscht!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17688556561489920,
+      "m_Localized": "MAX",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 17690949319647232,
+      "m_Localized": "Forschung läuft...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 21246931924672512,
+      "m_Localized": "Dein Tech-Baum-Upgrade ist fertig!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 103966219382546432,
+      "m_Localized": "Clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

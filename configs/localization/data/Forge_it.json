@@ -1,0 +1,196 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Forge_it",
+  "m_LocaleId": {
+    "m_Code": "it"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -1109569138593657648
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 795088711680,
+      "m_Localized": "Forno Automatico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 936298344448,
+      "m_Localized": "Probabilità di forgiatura",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1082071379968,
+      "m_Localized": "Conserva",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1589087236096,
+      "m_Localized": "Numero di martelli usati contemporaneamente",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1985914531840,
+      "m_Localized": "Informazioni sulla probabilità",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3116539506688,
+      "m_Localized": "Salto gratuito",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4278676287488,
+      "m_Localized": "Primitivo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4307390492672,
+      "m_Localized": "Medievale",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4347643228160,
+      "m_Localized": "Primo-Moderno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4418057203712,
+      "m_Localized": "Moderno",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4441834713088,
+      "m_Localized": "Spazio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4465301843968,
+      "m_Localized": "Interstellare",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4489779802112,
+      "m_Localized": "Multiverso",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4513184018432,
+      "m_Localized": "Quantico",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 4532624617472,
+      "m_Localized": "Divino",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5039128768512,
+      "m_Localized": "Aggiorna il tuo livello di forgia per forgiare equipaggiamenti di civiltà superiori",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 12856879411200,
+      "m_Localized": "Forgia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13479431565312,
+      "m_Localized": "Auto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7565893205745664,
+      "m_Localized": "L'aggiornamento della tua forgia è completo!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 9738126318301184,
+      "m_Localized": "Filtro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28987765965185024,
+      "m_Localized": "Sotterraneo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105988059136,
+      "m_Localized": "Continua a forgiare quando l'equipaggiamento desiderato è trovato",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105996447744,
+      "m_Localized": "Vendi tutto",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88503105996447745,
+      "m_Localized": "Sei sicuro di voler vendere l'intero stack di equipaggiamenti forgiati?",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

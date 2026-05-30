@@ -1,0 +1,329 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Skills_pt-BR",
+  "m_LocaleId": {
+    "m_Code": "pt-BR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -3517678328824788358
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 208976670720,
+      "m_Localized": "Carne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 216287342592,
+      "m_Localized": "Moral",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 233735647232,
+      "m_Localized": "Flechas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 247690096640,
+      "m_Localized": "Grito",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 264307929088,
+      "m_Localized": "Meteorito",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 288559394816,
+      "m_Localized": "Berserker",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 306217414656,
+      "m_Localized": "Estouro",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 321933471744,
+      "m_Localized": "Espinhos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 338651967488,
+      "m_Localized": "Bomba",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 356767166464,
+      "m_Localized": "Verme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 430301704192,
+      "m_Localized": "Raio",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 446353305600,
+      "m_Localized": "Buff",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 460181925888,
+      "m_Localized": "Moral Elevada",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 503324536832,
+      "m_Localized": "Chuva de Flechas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 640000126976,
+      "m_Localized": "Coma carne e aumente sua saúde em {0} por {1} segundos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 996302057472,
+      "m_Localized": "Seja inspirado e aumente seu dano em {0} e sua saúde em {1} por {2} segundos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1018934521856,
+      "m_Localized": "Chame uma rajada de flechas, cada uma causando {0} de dano.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1055152336896,
+      "m_Localized": "Faça seus amigos ninjas jogarem shurikens, cada um causando {0} de dano",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1093542801408,
+      "m_Localized": "Solte um grito ensurdecedor, causando {0} de dano a todos os inimigos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1132528857088,
+      "m_Localized": "Traga uma onda de meteoritos, cada um causando {0} de dano.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1158541930496,
+      "m_Localized": "Fique Berserker e aumente seu dano em {0} por {1} segundos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1200103288832,
+      "m_Localized": "Chame uma estampida de touros, cada um causando {0} de dano",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1263252729856,
+      "m_Localized": "Plante espinhos no campo de batalha, causando {0} de dano a todos os inimigos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1304310771712,
+      "m_Localized": "Solte uma bomba no campo de batalha, causando {0} de dano a todos os inimigos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1334736252928,
+      "m_Localized": "Invoque um verme gigante que causa {0} de dano a todos os inimigos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1369259569152,
+      "m_Localized": "Chame um raio, cada um causando {0} de dano a todos os inimigos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1406169444352,
+      "m_Localized": "Buffe-se e aumente seu dano em {0} e sua saúde em {1} por {2} segundos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1429477191680,
+      "m_Localized": "Seja divinamente inspirado e aumente seu dano em {0} e sua saúde em {1} por {2} segundos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1468731682816,
+      "m_Localized": "Traga uma chuva de flechas, causando {0} de dano",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400141123584,
+      "m_Localized": "Shurikens",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483712,
+      "m_Localized": "Ataque Aéreo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483713,
+      "m_Localized": "Chame Suporte Aéreo pesado, causando {0} de Dano",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483714,
+      "m_Localized": "Rajada de Canhão",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483715,
+      "m_Localized": "Dispare uma rajada de balas de canhão, cada uma causando {0} de Dano",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483716,
+      "m_Localized": "Drone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1711400170483717,
+      "m_Localized": "Chame um drone para lutar ao seu lado, causando {0} de Dano por {1} segundos",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764945125376,
+      "m_Localized": "AUTO LIGADO",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2058764974485504,
+      "m_Localized": "AUTO DESLIGADO",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101696,
+      "m_Localized": "Invocar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2060633843101697,
+      "m_Localized": "Base",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066688,
+      "m_Localized": "Melhorar tudo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2061927358066689,
+      "m_Localized": "Equipar rápido",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 3898839411974144,
+      "m_Localized": "Passivo:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

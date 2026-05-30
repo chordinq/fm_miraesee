@@ -1,0 +1,238 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Arena_ru",
+  "m_LocaleId": {
+    "m_Code": "ru"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": 551601825646573866
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 312139771904,
+      "m_Localized": "Вызов",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 703946485760,
+      "m_Localized": "Выбери соперника",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 784816861184,
+      "m_Localized": "Билеты на испытания пополняются каждый день в {0}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1048948961280,
+      "m_Localized": "Результат",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1248786575360,
+      "m_Localized": "Победа",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1385223090176,
+      "m_Localized": "Ничья",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1625233747968,
+      "m_Localized": "Награды собраны!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797120,
+      "m_Localized": "Поздравляем! Вы заняли {0} место в прошлом сезоне и теперь повышены до {1}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797121,
+      "m_Localized": "Удачи в следующий раз! Вы заняли {0} место в прошлом сезоне и понижены до {1}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797122,
+      "m_Localized": "Сохраняйте текущий ранг ({0}), чтобы получить следующие награды в конце сезона:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797123,
+      "m_Localized": "Сезон завершён! Вы достигли ранга {0} и получили следующие награды:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797124,
+      "m_Localized": "Вам нужно улучшить свой ранг, чтобы получить некоторые награды!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797125,
+      "m_Localized": "Ваши награды за участие в арене появятся здесь!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797126,
+      "m_Localized": "Награды",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797127,
+      "m_Localized": "Собрать через: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797128,
+      "m_Localized": "Новый сезон через: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797129,
+      "m_Localized": "Сезон заканчивается через: {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 13902225797130,
+      "m_Localized": "Скоро новый сезон!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404032,
+      "m_Localized": "Повышение",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14071583404033,
+      "m_Localized": "Понижение",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472960,
+      "m_Localized": "Без ранга",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472961,
+      "m_Localized": "Бронзовая лига",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472962,
+      "m_Localized": "Серебряная лига",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472963,
+      "m_Localized": "Золотая лига",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472964,
+      "m_Localized": "Платиновая лига",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 15774290472965,
+      "m_Localized": "Алмазная лига",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701382651904,
+      "m_Localized": "Зона повышения",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16701386846208,
+      "m_Localized": "Зона понижения",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6855896432570368,
+      "m_Localized": "Поражение",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 32343429450031104,
+      "m_Localized": "Сезон закончился!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

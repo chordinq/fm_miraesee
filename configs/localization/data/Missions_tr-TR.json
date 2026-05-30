@@ -1,0 +1,441 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Missions_tr-TR",
+  "m_LocaleId": {
+    "m_Code": "tr-TR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5371603394758010093
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 251863429120,
+      "m_Localized": "Görevler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 16036715491328,
+      "m_Localized": "Enerji her gün {0}'da yenilenir. Enerji yalnızca bir görevi başarıyla tamamlarsan harcanır!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 28244723822592,
+      "m_Localized": "Toplanma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 44740485246976,
+      "m_Localized": "Başarı!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 45374441713664,
+      "m_Localized": "Başarısız!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 48422304018432,
+      "m_Localized": "Ödülleri Topla",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 52887002214400,
+      "m_Localized": "Toplanmalar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623317729280,
+      "m_Localized": "Önerilen güç:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312192,
+      "m_Localized": "Toplam güç:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312193,
+      "m_Localized": "Toplanıyor... {0}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312194,
+      "m_Localized": "{0}, <color=#{2}>Seviye {1} Görevini</color> tamamladı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6251320826327040,
+      "m_Localized": "Yenile",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 6882146555457536,
+      "m_Localized": "Savaşmak...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 10232987525308416,
+      "m_Localized": "Destek:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 14155878936276992,
+      "m_Localized": "Hepsini topla",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25460050683224064,
+      "m_Localized": "Toplanma Zamanı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695739834368,
+      "m_Localized": "İlk Çağın Uluması",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417280,
+      "m_Localized": "Unutulmuş bir kabile, taş ve kemikle kervanlara saldırarak vahşi doğadan çıktı. Geri püskürtülmezlerse, av alanları yakında klanınızı da kapsayacak.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417281,
+      "m_Localized": "İkinci Taş Devri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417282,
+      "m_Localized": "Bir zamanlar basit bir grup olan şey, şimdi daha kötü bir şeye dönüştü. Klanınız harekete geçmezse, yakında bu toprakları yönetecekler.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417283,
+      "m_Localized": "İkiz Samuraylar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417284,
+      "m_Localized": "İki usta kılıç ustası topraklarınızda dolaşıyor, onlara meydan okuyan herkesi kesiyor. Efsaneleri klanınızı korkuya boğmadan önce ikizleri yenin.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417285,
+      "m_Localized": "Miğfer Lejyonu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417286,
+      "m_Localized": "Bu savaşçılar demir ve ağır silahların arkasına saklanarak dokunulmaz olduklarını düşünüyorlar. Klanınızın önünde çeliğin bile eğildiğini gösterin.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417287,
+      "m_Localized": "Kara Yelkenler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417288,
+      "m_Localized": "Bayraksız gemiler topraklarınızın yakınında demir attı. Korsanlar, çakılı olmayan her şeyi yağmalamayı planlıyor.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417289,
+      "m_Localized": "Üç Silahşorler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417290,
+      "m_Localized": "Bu ustalar, yalnızca kendilerinin saygı ve yönetimi hak ettiğini kanıtlamak istiyorlar. Klanınızın hiçbir kılıca boyun eğmediğini gösterin.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417291,
+      "m_Localized": "Haydut saldırısı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417292,
+      "m_Localized": "Bir grup haydut, klanınızın zorlu kazançlarından 'vergi' toplamaya geldi. Ödemeyi reddettiniz - ve şimdi kapınızda bekliyorlar. Direnin ve klanınızın tehditlere boyun eğmediğini gösterin.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417293,
+      "m_Localized": "Yasa kapıya dayanıyor",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417294,
+      "m_Localized": "Diktatörün ortaklığını reddettiniz, zincirler yerine özgürlüğü seçtiniz. Şimdi zırhlı birlikleri, halkınıza örnek olmak için yola çıkıyor.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417295,
+      "m_Localized": "Zehirli Öncü",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417297,
+      "m_Localized": "Yıldız Kılıçları",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417298,
+      "m_Localized": "Parlayan kılıçlı bir savaşçı grubu, bu toprakları yönetmeye uygun olmadığınızı ilan ederek indi. Kaderinizi tamamen belirlemeden önce onları kovun.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417299,
+      "m_Localized": "Uzaylı İstilası",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417300,
+      "m_Localized": "Başka bir yıldızdan gelen varlıklar, halkınızı sığır gibi toplamaya başladı. Eviniz onların kolonisi olmadan önce karşılık verin.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417301,
+      "m_Localized": "Devasa Kılıç",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417302,
+      "m_Localized": "Savaşçı, herhangi bir evden daha büyük bir kılıçla savaşıyor. Klanınız onu durduramazsa, başka kimse durduramaz.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417303,
+      "m_Localized": "Dijital İhlal",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417304,
+      "m_Localized": "Veri alemindeki bir yırtık, ışık ve sayı savaşçılarını serbest bıraktı. Topraklarınızı yeniden yazmadan önce ihlali kapatın.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417305,
+      "m_Localized": "Teknoloji yetmez",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417306,
+      "m_Localized": "Sıradan savaşçılar, kendilerini yenilmez kıldığına inanarak parlayan teknoloji kılıçlarıyla silahlandılar. Gerçek gücün hâlâ önemli olduğunu kanıtla.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417307,
+      "m_Localized": "Kuantum İsyancıları",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417308,
+      "m_Localized": "Gösterişli savaşçılardan oluşan bir ekip, dengesiz kuantum silahlarıyla ortaya çıktı. Güçleri vahşi ve tehlikeli, ve klanınız hasar yayılmadan önce onları durdurmalı.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417309,
+      "m_Localized": "Tahtın Emri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417310,
+      "m_Localized": "Hükümdar, klanınızı taç altına almak için seçkin muhafızlarını gönderdi. Klanınızın hiçbir tahta boyun eğmediğini gösterin.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417311,
+      "m_Localized": "İki Büyücü",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417312,
+      "m_Localized": "Büyücüler, bölgenizi kendi zevklerine göre 'yeniden şekillendirmek' için geldiklerini iddia ediyorlar. Klanınız cesaretle çeliğe karşılık vermeli ve büyülerini bozmalıdır.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417313,
+      "m_Localized": "Yukarıdan inmek",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417314,
+      "m_Localized": "Bir melek ordusu indi ve klanınızın çok kibirli hale geldiğini iddia ediyor. Değerinizi kanıtlayın ya da saflık adına silin.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417315,
+      "m_Localized": "Gece Büyücüleri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417316,
+      "m_Localized": "Bu büyücüler nerede yürürse, mahsuller bozulur ve insanlar kaybolur. Eviniz başka bir ölü yer olmadan onları kovun.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417317,
+      "m_Localized": "Yeraltından",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 70472695752417318,
+      "m_Localized": "Yaşayanların ait olmadığı derinliklerden savaşçılar yükseldi. Klanınız onları durduramazsa, yüzey onların yeni krallığı olacak.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 78356377112666112,
+      "m_Localized": "Yasaklı teknolojiyle donatılmış maskeli bir birlik, bölgenize girdi ve ardında yanmış hava bırakıyor. Daha fazla zarar vermeden ilerlemelerini durdurun.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 88072866833096704,
+      "m_Localized": "Görev Seviyeleri {0}-{1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090623330312195,
+      "m_Localized": "{0} Görev!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 90987145798344704,
+      "m_Localized": "Zaten başka bir görevdesin!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

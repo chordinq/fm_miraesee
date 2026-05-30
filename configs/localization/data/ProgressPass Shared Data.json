@@ -1,0 +1,50 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": 7442561414784416887
+  },
+  "m_Name": "ProgressPass Shared Data",
+  "m_TableCollectionName": "ProgressPass",
+  "m_TableCollectionNameGuidString": "8a6ccc6dcc01a3941b4e5565866c98fe",
+  "m_Entries": [
+    {
+      "m_Id": 15620685824,
+      "m_Key": "ProgressPass",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7651162374144,
+      "m_Key": "MainProgressPassDesc",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_KeyGenerator": {
+    "rid": 2566708016746594393
+  },
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 2566708016746594393,
+        "type": {
+          "class": "DistributedUIDGenerator",
+          "ns": "UnityEngine.Localization.Tables",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
+}

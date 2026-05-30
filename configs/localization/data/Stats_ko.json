@@ -1,0 +1,448 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Stats_ko",
+  "m_LocaleId": {
+    "m_Code": "ko"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -8718801674694835696
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 988710824505344,
+      "m_Localized": "원거리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988735260520448,
+      "m_Localized": "근접",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988835206590464,
+      "m_Localized": "피해",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989213239209984,
+      "m_Localized": "체력",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989601996664832,
+      "m_Localized": "치명타 확률",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989623647662080,
+      "m_Localized": "치명타 피해",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989649430048768,
+      "m_Localized": "공격 속도",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989678303637504,
+      "m_Localized": "최대 레벨",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989714643087360,
+      "m_Localized": "경험치",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989736638017536,
+      "m_Localized": "비용",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989762269409280,
+      "m_Localized": "타이머 속도",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989780216836096,
+      "m_Localized": "판매 가격",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989810910752768,
+      "m_Localized": "최대 수량",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989834340134912,
+      "m_Localized": "보너스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989849557069824,
+      "m_Localized": "기회",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989867693240320,
+      "m_Localized": "블록 확률",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989885338677248,
+      "m_Localized": "체력 재생",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989920193343488,
+      "m_Localized": "생명력 흡수",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989947519234048,
+      "m_Localized": "더블 찬스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989965953200128,
+      "m_Localized": "이동 속도",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990649838661632,
+      "m_Localized": "장비",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990668201324544,
+      "m_Localized": "무기",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990690527604736,
+      "m_Localized": "스킬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990701055307776,
+      "m_Localized": "패시브 스킬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990866679984128,
+      "m_Localized": "탈것",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083840310996992,
+      "m_Localized": "기술 트리",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083902730629120,
+      "m_Localized": "오프라인 보상 시간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083950377922560,
+      "m_Localized": "오프라인 보상",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084108339605504,
+      "m_Localized": "알",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084121421639680,
+      "m_Localized": "화폐",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084153545814016,
+      "m_Localized": "오프라인 화폐 보상",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084261779828736,
+      "m_Localized": "던전",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1085979657695232,
+      "m_Localized": "장비를 무료로 제작할 기회",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086156044955648,
+      "m_Localized": "한 번에 사용하는 망치 수",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086608887181312,
+      "m_Localized": "업그레이드",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086663727706112,
+      "m_Localized": "소환",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086680802717696,
+      "m_Localized": "재사용 대기시간",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086689396846592,
+      "m_Localized": "기지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086835153104896,
+      "m_Localized": "업그레이드 시",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087433751588864,
+      "m_Localized": "부화",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087456035926016,
+      "m_Localized": "최대",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1089653901553664,
+      "m_Localized": "{0} 던전 드롭이 더 {1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090103212175360,
+      "m_Localized": "던전에서 {{0}} 더 많은 화폐 드롭",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090219507642368,
+      "m_Localized": "던전",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090359232491520,
+      "m_Localized": "기술 연구",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090396830232576,
+      "m_Localized": "기술 노드 업그레이드",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1762375497347072,
+      "m_Localized": "펫",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763141620527104,
+      "m_Localized": "헬멧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763160431980544,
+      "m_Localized": "갑옷",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763216392384512,
+      "m_Localized": "장갑",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763337381277696,
+      "m_Localized": "목걸이",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763350417174528,
+      "m_Localized": "반지",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763362966532096,
+      "m_Localized": "신발",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763387549347840,
+      "m_Localized": "벨트",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2109395617640448,
+      "m_Localized": "스킬",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2110564712771584,
+      "m_Localized": "펫",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23865403343101952,
+      "m_Localized": "레벨 업 요구 사항",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23905947930845185,
+      "m_Localized": "추가 탈것 소환 기회",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73184492695576576,
+      "m_Localized": "달걀",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 85115613318471680,
+      "m_Localized": "추가 알 소환 기회",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

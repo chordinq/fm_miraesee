@@ -1,0 +1,448 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Stats_tr-TR",
+  "m_LocaleId": {
+    "m_Code": "tr-TR"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -8718801674694835696
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 988710824505344,
+      "m_Localized": "Uzaktan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988735260520448,
+      "m_Localized": "Yakın dövüş",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988835206590464,
+      "m_Localized": "Hasar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989213239209984,
+      "m_Localized": "Sağlık",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989601996664832,
+      "m_Localized": "Kritik Şansı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989623647662080,
+      "m_Localized": "Kritik Hasar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989649430048768,
+      "m_Localized": "Saldırı Hızı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989678303637504,
+      "m_Localized": "Maks Seviye",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989714643087360,
+      "m_Localized": "xp",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989736638017536,
+      "m_Localized": "Maliyet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989762269409280,
+      "m_Localized": "Zamanlayıcı Hızı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989780216836096,
+      "m_Localized": "Satış Fiyatı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989810910752768,
+      "m_Localized": "Maks Sayı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989834340134912,
+      "m_Localized": "Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989849557069824,
+      "m_Localized": "Şans",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989867693240320,
+      "m_Localized": "Blok Şansı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989885338677248,
+      "m_Localized": "Sağlık Yenileme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989920193343488,
+      "m_Localized": "Can Çalma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989947519234048,
+      "m_Localized": "Çifte Şans",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989965953200128,
+      "m_Localized": "Hareket Hızı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990649838661632,
+      "m_Localized": "Ekipman",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990668201324544,
+      "m_Localized": "Silah",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990690527604736,
+      "m_Localized": "Beceri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990701055307776,
+      "m_Localized": "Pasif Beceri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990866679984128,
+      "m_Localized": "Binekler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083840310996992,
+      "m_Localized": "Teknoloji Ağacı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083902730629120,
+      "m_Localized": "Çevrimdışı Ödül Süresi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083950377922560,
+      "m_Localized": "Çevrimdışı Ödül",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084108339605504,
+      "m_Localized": "Yumurta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084121421639680,
+      "m_Localized": "Para Birimi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084153545814016,
+      "m_Localized": "Çevrimdışı Para Ödülü",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084261779828736,
+      "m_Localized": "Zindanlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1085979657695232,
+      "m_Localized": "Ücretsiz ekipman dövme şansı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086156044955648,
+      "m_Localized": "Bir seferde kullanılan çekiç sayısı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086608887181312,
+      "m_Localized": "Yükseltme",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086663727706112,
+      "m_Localized": "Çağırma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086680802717696,
+      "m_Localized": "Bekleme Süresi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086689396846592,
+      "m_Localized": "Üs",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086835153104896,
+      "m_Localized": "yükseltirken",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087433751588864,
+      "m_Localized": "Yumurtadan Çıkma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087456035926016,
+      "m_Localized": "Maks",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1089653901553664,
+      "m_Localized": "{0} zindan düşüşü daha fazla {1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090103212175360,
+      "m_Localized": "Zindanlar {{0}} daha fazla para birimi düşürür",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090219507642368,
+      "m_Localized": "Zindan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090359232491520,
+      "m_Localized": "Teknoloji Araştırması",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090396830232576,
+      "m_Localized": "Teknoloji Düğümü Yükseltmesi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1762375497347072,
+      "m_Localized": "Evcil Hayvan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763141620527104,
+      "m_Localized": "Miğfer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763160431980544,
+      "m_Localized": "Zırh",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763216392384512,
+      "m_Localized": "Eldiven",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763337381277696,
+      "m_Localized": "Kolye",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763350417174528,
+      "m_Localized": "Yüzük",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763362966532096,
+      "m_Localized": "Ayakkabı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763387549347840,
+      "m_Localized": "Kemer",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2109395617640448,
+      "m_Localized": "Beceriler",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2110564712771584,
+      "m_Localized": "Evcil Hayvanlar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23865403343101952,
+      "m_Localized": "Seviye Atlama Gereksinimi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23905947930845185,
+      "m_Localized": "Ekstra binek çağırma şansı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73184492695576576,
+      "m_Localized": "Yumurtalar",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 85115613318471680,
+      "m_Localized": "Ekstra yumurta çağırma şansı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

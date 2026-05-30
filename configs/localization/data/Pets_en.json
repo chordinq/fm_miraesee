@@ -1,0 +1,378 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Pets_en",
+  "m_LocaleId": {
+    "m_Code": "en"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -5940147478223713777
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 153364393984,
+      "m_Localized": "{0} to hatch for a random {1} pet!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393985,
+      "m_Localized": "Empty",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393986,
+      "m_Localized": "Ready",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544512,
+      "m_Localized": "Hatching Slots full!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544513,
+      "m_Localized": "Hatching in progress...",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7431547187200,
+      "m_Localized": "Slot +1",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8513174302720,
+      "m_Localized": "Select pets to merge with",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328656904192,
+      "m_Localized": "Chicken",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652928,
+      "m_Localized": "Dog",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652929,
+      "m_Localized": "Cat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652930,
+      "m_Localized": "Snail",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652931,
+      "m_Localized": "Mouse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652932,
+      "m_Localized": "Turtle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652933,
+      "m_Localized": "Hedgehog",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652934,
+      "m_Localized": "Bear",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652935,
+      "m_Localized": "Ostrich",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652936,
+      "m_Localized": "Spider",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652937,
+      "m_Localized": "Scorpion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652938,
+      "m_Localized": "Griffin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652939,
+      "m_Localized": "Saber Tooth",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652940,
+      "m_Localized": "Unicorn",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652941,
+      "m_Localized": "Tiger",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652942,
+      "m_Localized": "Panda",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652943,
+      "m_Localized": "Serpent",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652944,
+      "m_Localized": "Cerberus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652945,
+      "m_Localized": "Kitsune",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652946,
+      "m_Localized": "Electry",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652947,
+      "m_Localized": "Treant",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652948,
+      "m_Localized": "Enchanted Elk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652949,
+      "m_Localized": "Baby Dragon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652950,
+      "m_Localized": "Genie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652951,
+      "m_Localized": "Spectral Tiger",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435264,
+      "m_Localized": "{0} Selected",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435265,
+      "m_Localized": "Select pets to merge with",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601476976640,
+      "m_Localized": "Lily Pad",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919680,
+      "m_Localized": "Lily Leaf",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919681,
+      "m_Localized": "Brown Leaf",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919682,
+      "m_Localized": "Brown Horse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919683,
+      "m_Localized": "Dino",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919684,
+      "m_Localized": "Crab",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919685,
+      "m_Localized": "Pig",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919686,
+      "m_Localized": "Goat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919687,
+      "m_Localized": "Bike",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919688,
+      "m_Localized": "Giant Bee",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919689,
+      "m_Localized": "Droid",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113984,
+      "m_Localized": "Mini Dragon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113985,
+      "m_Localized": "Hover Disk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113986,
+      "m_Localized": "Hover Board",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 364392176349184,
+      "m_Localized": "Select mounts to merge with",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5414995050356736,
+      "m_Localized": "Your egg is ready to hatch!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}
