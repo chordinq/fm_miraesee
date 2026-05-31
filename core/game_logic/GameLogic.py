@@ -9,7 +9,7 @@ modules in core/game_logic/.
 
 from __future__ import annotations
 
-from configs import SKILL_SUMMON_CONFIG, EGG_SUMMON_CONFIG, MOUNT_SUMMON_CONFIG
+from config import EGG_SUMMON_CONFIG, MOUNT_SUMMON_CONFIG, SKILL_SUMMON_CONFIG
 from core.game_logic.player_model.PlayerModel import PlayerModel
 from core.game_logic.forge import ForgeResult, ForgeSimulator
 from core.game_logic.skill_summon import SkillSummonSimulator

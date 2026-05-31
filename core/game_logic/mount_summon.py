@@ -15,7 +15,7 @@ Per pull (C# MountSummonFinalizedAction$$Execute + MountExtensions$$CreateMount)
 
 from __future__ import annotations
 
-from configs import MOUNT_LIBRARY, MOUNT_MAPPING, SECONDARY_STAT_PET_UNLOCK
+from config import MOUNT_LIBRARY, MOUNTS_MAPPING, SECONDARY_STAT_PET_UNLOCK
 from core.enums import Rarity, SummonKind, TechTreeNodeType
 from core.enums import RARITY_NAMES
 from core.random_pcg import RandomPCG
@@ -98,7 +98,7 @@ class MountSummonSimulator:
 			self.player.mounts.add_mount(mount)
 
 			name = next(
-				(d["Name"] for d in MOUNT_MAPPING.values() if d["idx"] == mount_id and d["Rarity"] == rarity.value),
+				(d["Key"] for d in MOUNTS_MAPPING.values() if d.get("Idx") == mount_id and d.get("Rarity") == rarity.value),
 				str(mount_id),
 			)
 			pulls.append(SummonPullResult(

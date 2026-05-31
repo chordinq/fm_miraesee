@@ -22,7 +22,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from configs import PET_LIBRARY, PET_MAPPING, SECONDARY_STAT_PET_UNLOCK
+from config import PET_LIBRARY, PETS_MAPPING, SECONDARY_STAT_PET_UNLOCK
 from core.enums import AscensionLevel, Rarity, RARITY_NAMES
 from core.random_pcg import RandomPCG
 from core.game_logic.player_model.EggModel import EggModel
@@ -104,8 +104,8 @@ def predict_hatch(egg: EggModel, player: "PlayerModel | None" = None) -> HatchPr
 	# Resolve display name from PetMapping
 	rarity_val = egg.rarity.value
 	pet_name   = next(
-		(v["Name"] for v in PET_MAPPING.values()
-		 if v.get("Rarity") == rarity_val and v.get("idx") == pet_id),
+		(v["Key"] for v in PETS_MAPPING.values()
+		 if v.get("Rarity") == rarity_val and v.get("Idx") == pet_id),
 		f"Pet#{pet_id}",
 	)
 

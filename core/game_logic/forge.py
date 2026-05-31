@@ -11,11 +11,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from configs import (
+from config import (
 	FORGE_CONFIG,
-	ITEM_AGE_DROP_CHANCES,
+	ITEM_AGE_DROP_CHANCES_LIBRARY,
 	ITEM_BALANCING_LIBRARY,
-	SECONDARY_STAT_UNLOCK,
+	SECONDARY_STAT_ITEM_UNLOCK,
 	STAT_DISPLAY_NAMES,
 	STAT_RANGES,
 	WEAPON_LIBRARY,
@@ -108,9 +108,9 @@ def _get_free_forge_chance_pct(player: PlayerModel) -> float:
 def _roll_age(player: PlayerModel, rng: RandomPCG) -> int:
 	"""next_f64 cumulative; forge_level key is (UI level - 1)."""
 	level_key = str(max(0, player.forge.forge_level - 1))
-	row = ITEM_AGE_DROP_CHANCES.get(
+	row = ITEM_AGE_DROP_CHANCES_LIBRARY.get(
 		level_key,
-		ITEM_AGE_DROP_CHANCES.get(str(player.forge.forge_level), {}),
+		ITEM_AGE_DROP_CHANCES_LIBRARY.get(str(player.forge.forge_level), {}),
 	)
 	roll = rng.next_f64()
 	acc = 0.0
@@ -151,7 +151,7 @@ def _filter_pool(player: PlayerModel, item_type: ItemType, age: int) -> list[dic
 
 
 def _stat_count(player: PlayerModel, age: int) -> int:
-	num = int(SECONDARY_STAT_UNLOCK.get(str(age), {}).get("NumberOfSecondStats", 0))
+	num = int(SECONDARY_STAT_ITEM_UNLOCK.get(str(age), {}).get("NumberOfSecondStats", 0))
 	if player.forge.ascension_model.current_level >= 1:
 		num = max(2, num)
 	return num

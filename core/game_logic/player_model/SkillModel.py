@@ -1,38 +1,37 @@
-# models/SkillModel.py
-from core.enums import Rarity, CombatSkill
-from configs import SKILL_MAPPING
+# core/game_logic/player_model/SkillModel.py
+from core.enums import CombatSkill, Rarity
+from config import SKILL_UPGRADE_LIBRARY, SKILLS_MAPPING
 
 class SkillModel:
 	def __init__(self, rarity: Rarity, idx: int):
 		self.rarity = rarity
 		self.idx = idx
-		
 		self.level = 0
 		self.shard_count = 0
 		self.is_equipped = False
 		self.equip_slot = 0
 
+	def _mapping_entry(self) -> dict:
+		key = f"{self.rarity.value}_{self.idx}"
+		entry = SKILLS_MAPPING.get(key)
+		if not entry:
+			raise ValueError(f"Unknown Skill. (Rarity: {self.rarity.name}, Idx: {self.idx})")
+		return entry
+
 	@property
 	def combat_skill(self) -> CombatSkill:
-		mapping_key = f"{self.rarity.value}_{self.idx}"
-		mapping_data = SKILL_MAPPING.get(mapping_key)
-		if mapping_data:
-			return CombatSkill(mapping_data["Enum"])
-		raise ValueError(f"Unknown Skill. (Rarity: {self.rarity.name}, Idx: {self.idx})")
+		return CombatSkill(self._mapping_entry()["Enum"])
 
 	@property
 	def name(self) -> str:
-		mapping_key = f"{self.rarity.value}_{self.idx}"
-		mapping_data = SKILL_MAPPING.get(mapping_key)
-		return mapping_data.get("Kor") or mapping_data.get("Name", "Unknown")
+		entry = self._mapping_entry()
+		return entry.get("Key", "Unknown")
 
 	def add_shards(self, amount: int) -> None:
 		self.shard_count += amount
 		self._apply_level_ups()
 
 	def _apply_level_ups(self) -> None:
-		from configs import SKILL_UPGRADE_LIBRARY
-
 		while True:
 			nxt = self.level + 1
 			entry = SKILL_UPGRADE_LIBRARY.get(str(nxt))
@@ -44,5 +43,8 @@ class SkillModel:
 			self.shard_count -= cost
 			self.level += 1
 
-	def __repr__(self):
-		return f"<Skill {self.name}({self.combat_skill.name}) | Lv.{self.level} | Shards:{self.shard_count}>"
+	def __repr__(self) -> str:
+		return (
+			f"<Skill {self.name}({self.combat_skill.name}) | "
+			f"Lv.{self.level} | Shards:{self.shard_count}>"
+		)

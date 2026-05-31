@@ -12,7 +12,7 @@ Per pull (C# SkillSummonFinalizedAction$$Execute):
 
 from __future__ import annotations
 
-from configs import SKILL_LIBRARY, SKILL_MAPPING
+from config import SKILL_LIBRARY, SKILLS_MAPPING
 from core.enums import CombatSkill, SummonKind
 from core.enums import RARITY_NAMES
 from core.random_pcg import RandomPCG
@@ -80,7 +80,7 @@ class SkillSummonSimulator:
 
 		data = SKILL_LIBRARY[skill_name]
 		combat_skill = CombatSkill[data["Type"]]
-		for mapping in SKILL_MAPPING.values():
+		for mapping in SKILLS_MAPPING.values():
 			if mapping.get("Enum") == combat_skill.value:
 				return combat_skill, Rarity(mapping["Rarity"]), int(mapping["Idx"])
 		lib_rarity = data.get("Rarity", "Common")

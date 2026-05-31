@@ -1,6 +1,6 @@
 # models/StatModel.py
 from core.enums import SecondaryStatType
-from configs import STAT_RANGES
+from config import STAT_RANGES
 
 class StatModel:
 	def __init__(self, stat_type: SecondaryStatType, perfection: float):

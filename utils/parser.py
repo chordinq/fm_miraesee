@@ -10,7 +10,7 @@ from __future__ import annotations
 import re
 from typing import Callable
 
-from configs import SKILL_MAPPING, TECH_TREE_POSITION_LIBRARY
+from config import SKILLS_MAPPING, TECH_TREE_POSITION_LIBRARY
 from core.enums import CurrencyType, ItemAge, ItemType, Rarity, SecondaryStatType, TechTreeNodeType, TechTreeType
 from core.game_logic.player_model.EggModel import EggModel
 from core.game_logic.player_model.ItemModel import ItemModel
@@ -254,7 +254,7 @@ class DumpParser:
 
 	def _parse_skill_collection(self, player: PlayerModel, lines: list[str]) -> None:
 		# Build enum?mapping lookup once per parse call
-		enum_to_skill: dict[int, dict] = {data["Enum"]: data for data in SKILL_MAPPING.values()}
+		enum_to_skill: dict[int, dict] = {data["Enum"]: data for data in SKILLS_MAPPING.values()}
 		for line in lines:
 			m = SKILL_COLL_LINE.match(line)
 			if not m:

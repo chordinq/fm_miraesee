@@ -15,7 +15,6 @@ _EXTRA_SUMMON_MAX_RESEARCH   = 25
 _EXTRA_SUMMON_PCT_PER_LEVEL  = 2.0   # Egg / Mount: +2 % per level, cap 50 %
 _SKILL_BONUS_PCT_PER_LEVEL   = 0.5   # Skill: +0.5 % per level, cap 100 %
 
-
 class StatHelper:
 	"""
 	Game.Logic.StatHelper -- static utility class.

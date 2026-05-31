@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from configs.config import TECH_TREE_LIBRARY
+from config import TECH_TREE_LIBRARY
 from core.enums import TechTreeNodeType
 from core.game_logic.summon_config import SummonConfig
 

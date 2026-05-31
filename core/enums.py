@@ -146,6 +146,9 @@ class Rarity(IntEnum):
 	Ultimate = 4
 	Mythic = 5
 
+
+RARITY_NAMES: tuple[str, ...] = tuple(r.name for r in Rarity)
+
 class CombatSkill(IntEnum):
 	Meat = 0
 	Morale = 1

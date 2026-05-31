@@ -48,15 +48,12 @@ class EggSummonSimulator:
 			seed     = summon_model.get_seed()
 			rng      = RandomPCG(seed)
 
-			# PCG call #1: StatHelper$$RollStat (ExtraEggChance bonus check)
 			if not is_bonus and StatHelper.roll_bonus_summon(self.player, SummonKind.Pets, rng):
 				total_target += 1
 
-			# PCG call #2: SummonLevelConfig$$RollRarity
 			level_cfg = config.get_level_config(summon_model.level)
 			rarity    = level_cfg.roll_rarity(rng)
 
-			# Main PCG discarded; CreateEggModel uses a separate PCG from seed for GUID.
 			egg = EggModel(rarity, seed)
 			self.player.pets.add_egg(egg)
 
