@@ -1,0 +1,150 @@
+{
+	"SecondaryStatType": {
+		"0": {
+			"Key": "CriticalChance",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 989601996664832
+				}
+			],
+			"Idx": 0
+		},
+		"1": {
+			"Key": "CriticalMulti",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 989623647662080
+				}
+			],
+			"Idx": 1
+		},
+		"2": {
+			"Key": "BlockChance",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 989867693240320
+				}
+			],
+			"Idx": 2
+		},
+		"3": {
+			"Key": "HealthRegen",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 989885338677248
+				}
+			],
+			"Idx": 3
+		},
+		"4": {
+			"Key": "LifeSteal",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 989920193343488
+				}
+			],
+			"Idx": 4
+		},
+		"5": {
+			"Key": "DoubleDamageChance",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 989947519234048
+				}
+			],
+			"Idx": 5
+		},
+		"6": {
+			"Key": "DamageMulti",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 988835206590464
+				}
+			],
+			"Idx": 6
+		},
+		"7": {
+			"Key": "MeleeDamageMulti",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 988735260520448
+				},
+				{
+					"File": "Stats",
+					"Id": 988835206590464
+				}
+			],
+			"Idx": 7
+		},
+		"8": {
+			"Key": "RangedDamageMulti",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 988710824505344
+				},
+				{
+					"File": "Stats",
+					"Id": 988835206590464
+				}
+			],
+			"Idx": 8
+		},
+		"9": {
+			"Key": "AttackSpeed",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 989649430048768
+				}
+			],
+			"Idx": 9
+		},
+		"10": {
+			"Key": "SkillDamageMulti",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 990690527604736
+				},
+				{
+					"File": "Stats",
+					"Id": 988835206590464
+				}
+			],
+			"Idx": 10
+		},
+		"11": {
+			"Key": "SkillCooldownMulti",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 990690527604736
+				},
+				{
+					"File": "Stats",
+					"Id": 1086680802717696
+				}
+			],
+			"Idx": 11
+		},
+		"12": {
+			"Key": "HealthMulti",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 989213239209984
+				}
+			],
+			"Idx": 12
+		}
+	}
+}

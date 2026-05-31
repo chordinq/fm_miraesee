@@ -16,6 +16,7 @@ if _ROOT not in sys.path:
 
 
 def main() -> None:
+    os.chdir(_ROOT)
     from ui.app import run
 
     run()

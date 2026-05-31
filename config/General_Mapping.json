@@ -1,0 +1,488 @@
+{
+	"AscendableType": {
+		"0": {
+			"Key": "Forge",
+			"Localization": [
+				{
+					"File": "Forge",
+					"Id": 12856879411200
+				}
+			],
+			"Idx": 0
+		},
+		"1": {
+			"Key": "Mounts",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 990866679984128
+				}
+			],
+			"Idx": 1
+		},
+		"2": {
+			"Key": "Pets",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 2110564712771584
+				}
+			],
+			"Idx": 2
+		},
+		"3": {
+			"Key": "Skills",
+			"Localization": [
+				{
+					"File": "Stats",
+					"Id": 2109395617640448
+				}
+			],
+			"Idx": 3
+		}
+	},
+	"AscensionLevel": {
+		"1": {
+			"Key": "Mega",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 114015310481186816
+				}
+			],
+			"Idx": 1
+		},
+		"2": {
+			"Key": "Ultra",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 114015310481186817
+				}
+			],
+			"Idx": 2
+		},
+		"3": {
+			"Key": "Apex",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 114015310481186818
+				}
+			],
+			"Idx": 3
+		}
+	},
+	"Rarity": {
+		"0": {
+			"Key": "Common",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26811981503328256
+				}
+			],
+			"Idx": 0
+		},
+		"1": {
+			"Key": "Rare",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26812088114147328
+				}
+			],
+			"Idx": 1
+		},
+		"2": {
+			"Key": "Epic",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26812108808843264
+				}
+			],
+			"Idx": 2
+		},
+		"3": {
+			"Key": "Legendary",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26812123002368000
+				}
+			],
+			"Idx": 3
+		},
+		"4": {
+			"Key": "Ultimate",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26812135207792640
+				}
+			],
+			"Idx": 4
+		},
+		"5": {
+			"Key": "Mythic",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26812150785437696
+				}
+			],
+			"Idx": 5
+		}
+	},
+	"CurrencyType": {
+		"0": {
+			"Key": "Coins",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26903988305326080
+				}
+			],
+			"Sprite": [
+				{
+					"File": "CoinIcon",
+					"Idx": 0
+				}
+			],
+			"Idx": 0
+		},
+		"1": {
+			"Key": "Gems",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26904079866982400
+				}
+			],
+			"Sprite": [
+				{
+					"File": "GemIcon",
+					"Idx": 0
+				}
+			],
+			"Idx": 1
+		},
+		"2": {
+			"Key": "Hammers",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26904091808165888
+				}
+			],
+			"Sprite": [
+				{
+					"File": "hammer",
+					"Idx": 0
+				}
+			],
+			"Idx": 2
+		},
+		"3": {
+			"Key": "SkillSummonTickets",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26904103917121536
+				}
+			],
+			"Sprite": [
+				{
+					"File": "skillTicket",
+					"Idx": 0
+				}
+			],
+			"Idx": 3
+		},
+		"4": {
+			"Key": "TechPotions",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26904137874206720
+				}
+			],
+			"Sprite": [
+				{
+					"File": "techPotions",
+					"Idx": 0
+				}
+			],
+			"Idx": 4
+		},
+		"5": {
+			"Key": "PvpTickets",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26904198951661568
+				}
+			],
+			"Sprite": [
+				{
+					"File": "pvpTicket",
+					"Idx": 0
+				}
+			],
+			"Idx": 5
+		},
+		"6": {
+			"Key": "ClockWinders",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 26904212474097664
+				}
+			],
+			"Sprite": [
+				{
+					"File": "clockWinders",
+					"Idx": 0
+				}
+			],
+			"Idx": 6
+		},
+		"8": {
+			"Key": "Token",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 53302178176032768
+				}
+			],
+			"Sprite": [
+				{
+					"File": "Token",
+					"Idx": 0
+				}
+			],
+			"Idx": 8
+		},
+		"9": {
+			"Key": "Eggshells",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 108442575155748864
+				}
+			],
+			"Sprite": [
+				{
+					"File": "Eggshells",
+					"Idx": 0
+				}
+			],
+			"Idx": 9
+		},
+		"10": {
+			"Key": "MissionEnery",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 115723395822247936
+				}
+			],
+			"Sprite": [
+				{
+					"File": "Energy",
+					"Idx": 0
+				}
+			],
+			"Idx": 1
+		},
+		"11": {
+			"Key": "GuildPotions",
+			"Localization": [
+				{
+					"File": "General",
+					"Id": 115723434254655488
+				}
+			],
+			"Sprite": [
+				{
+					"File": "guildPotions",
+					"Idx": 0
+				}
+			],
+			"Idx": 1
+		}
+	},
+	"Game": {
+		"0": {
+			"Key": "OK",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 25783797269852160
+				}
+			],
+			"Idx": 0
+		},
+		"1": {
+			"Key": "Cancel",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 4532132964720640
+				}
+			],
+			"Idx": 1
+		},
+		"2": {
+			"Key": "Settings",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 1830906689011712
+				}
+			],
+			"Idx": 2
+		},
+		"3": {
+			"Key": "Languages",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 25466346099372032
+				}
+			],
+			"Idx": 3
+		},
+		"4": {
+			"Key": "Summon",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 11670393447301120
+				}
+			],
+			"Idx": 4
+		},
+		"5": {
+			"Key": "SummonProbabilities",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 7719887569993728
+				}
+			],
+			"Idx": 5
+		},
+		"6": {
+			"Key": "Level",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 11670393472466944
+				}
+			],
+			"Idx": 6
+		},
+		"7": {
+			"Key": "Bonus",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 15414414065844224
+				}
+			],
+			"Idx": 7
+		},
+		"8": {
+			"Key": "Upgrade",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 25788540620828672
+				}
+			],
+			"Idx": 8
+		},
+		"9": {
+			"Key": "Complete",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 27937469076533248
+				}
+			],
+			"Idx": 9
+		},
+		"10": {
+			"Key": "Equip",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 27933087392002048
+				}
+			],
+			"Idx": 10
+		},
+		"11": {
+			"Key": "Equipped",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 27927471772594177
+				}
+			],
+			"Idx": 11
+		},
+		"12": {
+			"Key": "Remove",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 27927471772594176
+				}
+			],
+			"Idx": 12
+		},
+		"13": {
+			"Key": "Lv",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 25799296414314496
+				}
+			],
+			"Idx": 13
+		},
+		"14": {
+			"Key": "xp",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 28003344441864192
+				}
+			],
+			"Idx": 14
+		},
+		"15": {
+			"Key": "NEW!",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 29750633891356672
+				}
+			],
+			"Idx": 15
+		},
+		"16": {
+			"Key": "Update",
+			"Localization": [
+				{
+					"File": "General",
+					"id": 42205092823162884
+				}
+			],
+			"Idx": 16
+		}
+	}
+}

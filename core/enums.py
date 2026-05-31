@@ -92,7 +92,6 @@ class StatNature(IntEnum):
 	OneMinusMultiplier = 3
 
 class StatType(IntEnum):
-	"""Matches game StatType ordering used by StatHelper.RollStat (Bonus summon = 10)."""
 	Damage = 0
 	Health = 1
 	TechTreeDamage = 2
@@ -187,5 +186,3 @@ class SummonKind(IntEnum):
 	Skills = 0
 	Pets = 1
 	Mounts = 2
-
-RARITY_NAMES = ("Common", "Rare", "Epic", "Legendary", "Ultimate", "Mythic")

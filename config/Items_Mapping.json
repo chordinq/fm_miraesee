@@ -1,0 +1,3716 @@
+{
+	"items": {
+		"0_0_0": {
+			"Key": "Skull",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028479430656
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveHeadgearSkull",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"0_0_1": {
+			"Key": "Beard",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624960
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveHeadgearBeard",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"0_0_2": {
+			"Key": "WarMask",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624961
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveHeadgearPaint",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"0_0_3": {
+			"Key": "FacePaint",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624962
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveHeadgearMask",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"0_1_0": {
+			"Key": "Hide",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624970
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveArmorHide",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"0_1_1": {
+			"Key": "Bearskin",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624971
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveArmorBearskin",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"0_2_0": {
+			"Key": "BarkGloves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624974
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveGloveBark",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"0_2_1": {
+			"Key": "BearPaw",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624975
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveGloveBearpaw",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"0_3_0": {
+			"Key": "ShamanTalisman",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624976
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveNeckShamantalisman",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"0_3_1": {
+			"Key": "ToothNecklace",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624977
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveNeckToothnecklace",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"0_4_0": {
+			"Key": "Shardring",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624978
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveRingShardring",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"0_4_1": {
+			"Key": "Skullring",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624979
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveRingSkullring",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"0_5_0": {
+			"Key": "Axe",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624963
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveWeaponAxe",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"0_5_1": {
+			"Key": "Blowgun",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624964
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveWeaponBlowgun",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"0_5_2": {
+			"Key": "Branch",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624965
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveWeaponBranch",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"0_5_3": {
+			"Key": "Club",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624966
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveWeaponClub",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"0_5_4": {
+			"Key": "Rock",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624967
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveWeaponRock",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"0_5_5": {
+			"Key": "Slinger",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624968
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveWeaponSlinger",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 5,
+			"Idx": 5
+		},
+		"0_5_6": {
+			"Key": "Bone",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624969
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveWeaponBone",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 5,
+			"Idx": 6
+		},
+		"0_6_0": {
+			"Key": "FootWraps",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624980
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveFootWraps",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"0_6_1": {
+			"Key": "Ivoryshin",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624981
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveFootIvoryshin",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"0_7_0": {
+			"Key": "Boneskirt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624972
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveBeltBoneskirt",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"0_7_1": {
+			"Key": "Waisttie",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624973
+				}
+			],
+			"Sprite": {
+				"File": "IconPrimitiveBeltWaisttie",
+				"Pos": 0
+			},
+			"ItemAge": 0,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"1_0_0": {
+			"Key": "DeathHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624982
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalHeadgearDeathshat",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"1_0_1": {
+			"Key": "RomanHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624983
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalHeadgearRomanhelmet",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"1_0_2": {
+			"Key": "GreekHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624984
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalHeadgearGreekhelmet",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"1_0_3": {
+			"Key": "SamuraiHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624985
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalHeadgearSamuraihelmet",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"1_0_4": {
+			"Key": "KnightHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624986
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalHeadgearKnighthelmet",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 0,
+			"Idx": 4
+		},
+		"1_1_0": {
+			"Key": "Cuirass",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624987
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalArmorQuirass",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"1_1_1": {
+			"Key": "IronPlates",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624988
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalArmorIronplates",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"1_2_0": {
+			"Key": "Gauntlet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624991
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalGloveGauntlet",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"1_2_1": {
+			"Key": "Ironfist",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624992
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalGloveIronfist",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"1_3_0": {
+			"Key": "LuckyCharm",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624993
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalNeckLuckycharm",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"1_3_1": {
+			"Key": "ValorSigil",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624994
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalNeckValorsigil",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"1_4_0": {
+			"Key": "Blessedgem",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624995
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalRingBlessedgem",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"1_4_1": {
+			"Key": "Ironring",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624996
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalRingIronring",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"1_5_0": {
+			"Key": "SwordShield",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624999
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalWeaponSwordandshield",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"1_5_1": {
+			"Key": "Spear&Shield",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625000
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalWeaponSpearandshield",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"1_5_2": {
+			"Key": "Scythe",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625001
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalWeaponScythe",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"1_5_3": {
+			"Key": "WarHammer",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625002
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalWeaponWarhammer",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"1_5_4": {
+			"Key": "Bow",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625003
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalWeaponBow",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"1_5_5": {
+			"Key": "Katana",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625004
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalWeaponKatana",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 5,
+			"Idx": 5
+		},
+		"1_5_6": {
+			"Key": "Tomahawk",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625005
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalWeaponTomahawk",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 5,
+			"Idx": 6
+		},
+		"1_6_0": {
+			"Key": "Sandals",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624997
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalFootSandals",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"1_6_1": {
+			"Key": "SpurredStomper",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624998
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalFootSpurredstomper",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"1_7_0": {
+			"Key": "BeltOfBaltazar",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624989
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalBeltBeltofbaltazar",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"1_7_1": {
+			"Key": "Beltpouch",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483624990
+				}
+			],
+			"Sprite": {
+				"File": "IconMedievalBeltBeltpouch",
+				"Pos": 0
+			},
+			"ItemAge": 1,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"2_0_0": {
+			"Key": "BattleHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625006
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernHeadgearBattlehelmet",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"2_0_1": {
+			"Key": "CaptainsHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625007
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernHeadgearCaptainshat",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"2_0_2": {
+			"Key": "FeatherHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625008
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernHeadgearFeatherhat",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"2_0_3": {
+			"Key": "SlavicHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625009
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernHeadgearSlavichat",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"2_0_4": {
+			"Key": "TopHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625010
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernHeadgearTophat",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 0,
+			"Idx": 4
+		},
+		"2_1_0": {
+			"Key": "ArmorSkirt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625011
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernArmorArmorskirt",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"2_1_1": {
+			"Key": "Cardigan",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625012
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernArmorCavalrycardigan",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"2_2_0": {
+			"Key": "LeatherGloves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625015
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernGloveLeathergloves",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"2_2_1": {
+			"Key": "Mitts",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625016
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernGloveFencermitts",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"2_3_0": {
+			"Key": "Clock",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625017
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernNeckClock",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"2_3_1": {
+			"Key": "TreasureKey",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625018
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernNeckTreasurekey",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"2_4_0": {
+			"Key": "Emerald",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625019
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernRingEmeraldeye",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"2_4_1": {
+			"Key": "Trinity",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625020
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernRingTrinityband",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"2_5_0": {
+			"Key": "Crossbow",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625023
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernWeaponCrossbow",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"2_5_1": {
+			"Key": "Musket",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625024
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernWeaponMusket",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"2_5_2": {
+			"Key": "Executioner",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625025
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernWeaponExecutioner",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"2_5_3": {
+			"Key": "DualPistols",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625026
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernWeaponDualpistols",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"2_5_4": {
+			"Key": "PirateSword",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625027
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernWeaponPiratessword",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"2_5_5": {
+			"Key": "Rapier",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625028
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernWeaponRapier",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 5,
+			"Idx": 5
+		},
+		"2_6_0": {
+			"Key": "LeatherBoots",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625021
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernFootLeatherboots",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"2_6_1": {
+			"Key": "RidingBoots",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625022
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernlFootRidingboots",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"2_7_0": {
+			"Key": "Harness",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625013
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernBeltHaroldsharness",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"2_7_1": {
+			"Key": "LeatherBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625014
+				}
+			],
+			"Sprite": {
+				"File": "IconEarlymodernBeltLeatherbelt",
+				"Pos": 0
+			},
+			"ItemAge": 2,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"3_0_0": {
+			"Key": "FedoraHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625029
+				}
+			],
+			"Sprite": {
+				"File": "IconModernHeadgearFedorahat",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"3_0_1": {
+			"Key": "KevlarHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625030
+				}
+			],
+			"Sprite": {
+				"File": "IconModernHeadgearKevlarhelmet",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"3_0_2": {
+			"Key": "OfficerHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625031
+				}
+			],
+			"Sprite": {
+				"File": "IconModernHeadgearOfficershat",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"3_0_3": {
+			"Key": "RiotHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625032
+				}
+			],
+			"Sprite": {
+				"File": "IconModernHeadgearRiothelmet",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"3_0_4": {
+			"Key": "SergeantHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625033
+				}
+			],
+			"Sprite": {
+				"File": "IconModernHeadgearSergeanthat",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 0,
+			"Idx": 4
+		},
+		"3_0_5": {
+			"Key": "SteelHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625034
+				}
+			],
+			"Sprite": {
+				"File": "IconModernHeadgearSteelhelmet",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 0,
+			"Idx": 5
+		},
+		"3_0_6": {
+			"Key": "WinterHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625035
+				}
+			],
+			"Sprite": {
+				"File": "IconModernHeadgearWinterhat",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 0,
+			"Idx": 6
+		},
+		"3_1_0": {
+			"Key": "Camouflage",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625036
+				}
+			],
+			"Sprite": {
+				"File": "IconModernArmorCamouflage",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"3_1_1": {
+			"Key": "Kevlar",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625037
+				}
+			],
+			"Sprite": {
+				"File": "IconModernArmorKevlar",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"3_2_0": {
+			"Key": "CombatGloves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625040
+				}
+			],
+			"Sprite": {
+				"File": "IconModernGloveCombatgloves",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"3_2_1": {
+			"Key": "Halffingers",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625041
+				}
+			],
+			"Sprite": {
+				"File": "IconModernGloveTacticalhalffingers",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"3_3_0": {
+			"Key": "DogTags",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625042
+				}
+			],
+			"Sprite": {
+				"File": "IconModernNeckDogtags",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"3_3_1": {
+			"Key": "FortuneNecklace",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625043
+				}
+			],
+			"Sprite": {
+				"File": "IconModernNeckFortunenecklace",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"3_4_0": {
+			"Key": "Bolt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625044
+				}
+			],
+			"Sprite": {
+				"File": "IconModernRingBolt",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"3_4_1": {
+			"Key": "BrotherhoodRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625045
+				}
+			],
+			"Sprite": {
+				"File": "IconModernRingBrotherhoodring",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"3_5_0": {
+			"Key": "AK",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625048
+				}
+			],
+			"Sprite": {
+				"File": "IconModernWeaponAk",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"3_5_1": {
+			"Key": "Baton",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625049
+				}
+			],
+			"Sprite": {
+				"File": "IconModernWeaponBaton",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"3_5_2": {
+			"Key": "KnuckleDusters",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625050
+				}
+			],
+			"Sprite": {
+				"File": "IconModernWeaponKnuckledusters",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"3_5_3": {
+			"Key": "M4",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625051
+				}
+			],
+			"Sprite": {
+				"File": "IconModernWeaponM4",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"3_5_4": {
+			"Key": "RiotShield",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625052
+				}
+			],
+			"Sprite": {
+				"File": "IconModernWeaponRiotshield",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"3_5_5": {
+			"Key": "Sniper",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625053
+				}
+			],
+			"Sprite": {
+				"File": "IconModernWeaponSniper",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 5,
+			"Idx": 5
+		},
+		"3_5_6": {
+			"Key": "Uzi",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625054
+				}
+			],
+			"Sprite": {
+				"File": "IconModernWeaponUzi",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 5,
+			"Idx": 6
+		},
+		"3_5_7": {
+			"Key": "Wrench",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625055
+				}
+			],
+			"Sprite": {
+				"File": "IconModernWeaponWrench",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 5,
+			"Idx": 7
+		},
+		"3_6_0": {
+			"Key": "CombatBoots",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625046
+				}
+			],
+			"Sprite": {
+				"File": "IconModernlFootCombatboots",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"3_6_1": {
+			"Key": "VeteranBoots",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625047
+				}
+			],
+			"Sprite": {
+				"File": "IconModernFootVeteranboots",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"3_7_0": {
+			"Key": "AmmoPouch",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625038
+				}
+			],
+			"Sprite": {
+				"File": "IconModernBeltAmmopouch",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"3_7_1": {
+			"Key": "TacticalBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625039
+				}
+			],
+			"Sprite": {
+				"File": "IconModernBeltTacticalbelt",
+				"Pos": 0
+			},
+			"ItemAge": 3,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"4_0_0": {
+			"Key": "BioHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625056
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceHeadgearBiohelmet",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"4_0_1": {
+			"Key": "GasMask",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625057
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceHeadgearGasmask",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"4_0_2": {
+			"Key": "IronMech",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625058
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceHeadgearIronmech",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"4_0_3": {
+			"Key": "SpaceHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625059
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceHeadgearSpacehelmet",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"4_1_0": {
+			"Key": "Exoskeleton",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625060
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceArmorExoskeleton",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"4_1_1": {
+			"Key": "SpaceSuit",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625061
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceArmorSpacesuit",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"4_2_0": {
+			"Key": "Remote",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625064
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceGloveRemote",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"4_2_1": {
+			"Key": "SpaceGloves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625065
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceGloveSpacegloves",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"4_3_0": {
+			"Key": "KuiperNecklace",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625066
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceNeckKuipernecklace",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"4_3_1": {
+			"Key": "Pendant",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625067
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceNeckPulsarpendant",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"4_4_0": {
+			"Key": "IcarusRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625068
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceRingIcarusring",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"4_4_1": {
+			"Key": "SolariusRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625069
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceRingSolariusring",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"4_5_0": {
+			"Key": "Blaster",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625072
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceWeaponBlaster",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"4_5_1": {
+			"Key": "RobotSword",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625073
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceWeaponRobotsword",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"4_5_2": {
+			"Key": "Saber",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625074
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceWeaponSaber",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"4_5_3": {
+			"Key": "SpaceGun",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625075
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceWeaponSpacegun",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"4_5_4": {
+			"Key": "SpacePistol",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625076
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceWeaponSpacepistol",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"4_6_0": {
+			"Key": "FeetThrusters",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625070
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceFootFeetthrusters",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"4_6_1": {
+			"Key": "SpaceBoots",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625071
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceFootSpaceshoes",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"4_7_0": {
+			"Key": "Corset",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625062
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceBeltSupportcorset",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"4_7_1": {
+			"Key": "Straps",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625063
+				}
+			],
+			"Sprite": {
+				"File": "IconSpaceBeltAnabiosisstraps",
+				"Pos": 0
+			},
+			"ItemAge": 4,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"5_0_0": {
+			"Key": "AdvancedMech",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625077
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarHeadgearAdvancedmech",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"5_0_1": {
+			"Key": "AlienHead",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625078
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarHeadgearAlienhead",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"5_0_2": {
+			"Key": "DestroyerMask",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625079
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarHeadgearDestroyermask",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"5_0_3": {
+			"Key": "HeavyDuty",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625080
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarHeadgearHeavyduty",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"5_0_4": {
+			"Key": "RoboHelm",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625081
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarHeadgearRobohelm",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 0,
+			"Idx": 4
+		},
+		"5_0_5": {
+			"Key": "Stellarium",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625082
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarHeadgearStellariumhelm",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 0,
+			"Idx": 5
+		},
+		"5_1_0": {
+			"Key": "Adamantium",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625083
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarArmorAdamantiumsuit",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"5_1_1": {
+			"Key": "PlasmaSuit",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625084
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarArmorPlasmasuit",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"5_2_0": {
+			"Key": "Impactors",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625087
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarGloveManualimpactors",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"5_2_1": {
+			"Key": "Implants",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625088
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarGlovePalmimplants",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"5_3_0": {
+			"Key": "GammaCollar",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625089
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarNeckGammaartifactscollar",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"5_3_1": {
+			"Key": "PsiChoker",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625090
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarNeckPsichoker",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"5_4_0": {
+			"Key": "EclipseRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625091
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarRingEclipsering",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"5_4_1": {
+			"Key": "RariumRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625092
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarRingRariumring",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"5_5_0": {
+			"Key": "DoubleSaber",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625095
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarWeaponDualwieldmelee",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"5_5_1": {
+			"Key": "IonicBlaster",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625096
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarWeaponIonicblaster",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"5_5_2": {
+			"Key": "IsobaricCutter",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625097
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarWeaponIsobariccutter",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"5_5_3": {
+			"Key": "Light&Shield",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625098
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarWeaponLightswordandshield",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"5_5_4": {
+			"Key": "PlasmaRifle",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625099
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarWeaponPlasmarifle",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"5_5_5": {
+			"Key": "RayGun",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625100
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarWeaponRaygun",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 5,
+			"Idx": 5
+		},
+		"5_6_0": {
+			"Key": "HydraulicFeet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625093
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarFootHydraulicfeet",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"5_6_1": {
+			"Key": "RoboFeet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625094
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarFootRobofeet",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"5_7_0": {
+			"Key": "PelvicSynchronizer",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625085
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarBeltPelvicsynchronizer",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"5_7_1": {
+			"Key": "SpinalStabilizer",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625086
+				}
+			],
+			"Sprite": {
+				"File": "IconInterstellarBeltSpinalstabilizer",
+				"Pos": 0
+			},
+			"ItemAge": 5,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"6_0_0": {
+			"Key": "Casquette",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625101
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseHeadgearFirewallmask",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"6_0_1": {
+			"Key": "IronHolo",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625102
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseHeadgearSpeedrunnercasquette",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"6_0_2": {
+			"Key": "Mask",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625103
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseHeadgearStalkerhelm",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"6_0_3": {
+			"Key": "VirtualHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625104
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseHeadgearVirtualhelmet",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"6_1_0": {
+			"Key": "HoloArmor",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625105
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseArmorHoloarmor",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"6_1_1": {
+			"Key": "SpectralPlates",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625106
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseArmorSpectralplates",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"6_2_0": {
+			"Key": "Impulse",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625109
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseGloveImpulsecontroller",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"6_2_1": {
+			"Key": "RainbowGloves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625110
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseGloveRainbowgloves",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"6_3_0": {
+			"Key": "CrystalAmulet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625111
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseNeckCrystallamulet",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"6_3_1": {
+			"Key": "GlitchNecklace",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625112
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseNeckGlitchnecklace",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"6_4_0": {
+			"Key": "ConnectionRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625113
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseRingConnectionring",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"6_4_1": {
+			"Key": "MobiusRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625114
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseRingMobeusring",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"6_5_0": {
+			"Key": "ProjectedCutlass",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625117
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseWeaponProjectedcutlass",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"6_5_1": {
+			"Key": "Spearsh",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625118
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseWeaponMentalspear",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"6_5_2": {
+			"Key": "Trident",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625119
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseWeaponHolographictrident",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"6_5_3": {
+			"Key": "VirtualBow",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625120
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseWeaponSimulatedbow",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"6_5_4": {
+			"Key": "VirtualGun",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625121
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseWeaponVirtualgun",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"6_5_5": {
+			"Key": "VirtualSword",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625122
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseWeaponVirtualsword",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 5,
+			"Idx": 5
+		},
+		"6_6_0": {
+			"Key": "EtherealSocks",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625115
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseFootEtherealsocks",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"6_6_1": {
+			"Key": "FastTravellers",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625116
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseFootFasttravelshoes",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"6_7_0": {
+			"Key": "OrbitBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625107
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseBeltOrbitbelt",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"6_7_1": {
+			"Key": "RealityBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625108
+				}
+			],
+			"Sprite": {
+				"File": "IconMultiverseBeltRealitybelt",
+				"Pos": 0
+			},
+			"ItemAge": 6,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"7_0_0": {
+			"Key": "EnergyHelmet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625123
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumHeadgearEnergyhelmet",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"7_0_1": {
+			"Key": "HairBandana",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625124
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumHeadgearHairbandana",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"7_0_2": {
+			"Key": "HairTied",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625125
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumHeadgearHairtied",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"7_0_3": {
+			"Key": "QuantumHelm",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625126
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumHeadgearEntanglementhelm",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"7_0_4": {
+			"Key": "SubMask",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625127
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumHeadgearSubfrequencymask",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 0,
+			"Idx": 4
+		},
+		"7_1_0": {
+			"Key": "DeltaArmor",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625128
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumArmorDeltaarmor",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"7_1_1": {
+			"Key": "OrbiterSuit",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625129
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumArmorOrbitersuit",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"7_2_0": {
+			"Key": "GravityGloves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625132
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumGloveGravitygloves",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"7_2_1": {
+			"Key": "NeutronFingerprints",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625133
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumGloveNeutronfingerprints",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"7_3_0": {
+			"Key": "HiggsCollar",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625134
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumNeckHiggsnecklace",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"7_3_1": {
+			"Key": "VoidNecklace",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625135
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumNeckVoidnecklace",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"7_4_0": {
+			"Key": "AuraRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625136
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumRingAuraring",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"7_4_1": {
+			"Key": "ProbabilityRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625137
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumRingProbabilityring",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"7_5_0": {
+			"Key": "BlackBow",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625140
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumWeaponBlackbow",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"7_5_1": {
+			"Key": "BlackGun",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625141
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumWeaponBlackgun",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"7_5_2": {
+			"Key": "BlackHammer",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625142
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumWeaponBlackhammer",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"7_5_3": {
+			"Key": "BlackSpear",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625143
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumWeaponBlackspear",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"7_5_4": {
+			"Key": "BlackStaff",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625144
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumWeaponQuantumstaff",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"7_5_5": {
+			"Key": "BlackSword&Shield",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625145
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumWeaponBlackswordandshield",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 5,
+			"Idx": 5
+		},
+		"7_6_0": {
+			"Key": "AntigravityBoots",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625138
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumFootAntiravityboots",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"7_6_1": {
+			"Key": "AntimatterFeet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625139
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumFootAntimatterfeet",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"7_7_0": {
+			"Key": "BlackBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625130
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumBeltUncertaintybelt",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"7_7_1": {
+			"Key": "NeutrinoBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625131
+				}
+			],
+			"Sprite": {
+				"File": "IconQuantumBeltNeutrinobelt",
+				"Pos": 0
+			},
+			"ItemAge": 7,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"8_0_0": {
+			"Key": "SpiteCrown",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445060
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldHeadgearSpiteCrown",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"8_0_1": {
+			"Key": "RotfangVisor",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445061
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldHeadgearRotfangVisor",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"8_0_2": {
+			"Key": "HellforgedHelm",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445062
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldHeadgearHellforgedHelm",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"8_0_3": {
+			"Key": "VenomCrest",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445063
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldHeadgearVenomCrest",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"8_1_0": {
+			"Key": "Doomplate",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445064
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldArmorDoomplate",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"8_1_1": {
+			"Key": "Cape",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 36593350273392640
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldArmorCape",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"8_1_2": {
+			"Key": "MoltenPlates",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 36593350285975552
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldArmorMoltenPlates",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 1,
+			"Idx": 2
+		},
+		"8_2_0": {
+			"Key": "GripofTorment",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445065
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldGloveGripofTorment",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"8_2_1": {
+			"Key": "VoidClaw",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445066
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldGloveVoidClaw",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"8_3_0": {
+			"Key": "ThornNecklace",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445071
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldNeckThornNecklace",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"8_3_1": {
+			"Key": "SpiteCollar",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445072
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldNeckSpiteCollar",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"8_4_0": {
+			"Key": "Skullbinder",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445073
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldRingSkullbinder",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"8_4_1": {
+			"Key": "PrismRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445074
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldRingPrismRing",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"8_5_0": {
+			"Key": "InfernalTrident",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036190056448
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldWeaponInfernalTrident",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"8_5_1": {
+			"Key": "AbyssalFork",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445056
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldWeaponAbyssalFork",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"8_5_2": {
+			"Key": "Soulpiercer",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445057
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldWeaponSoulpiercer",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"8_5_3": {
+			"Key": "DoomMace",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445058
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldWeaponDoomMace",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"8_5_4": {
+			"Key": "ShadowScimitar",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445059
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldWeaponShadowScimitar",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"8_6_0": {
+			"Key": "Dreadsteps",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445067
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldFootDreadsteps",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"8_6_1": {
+			"Key": "Greaves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445068
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldFootGreaves",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"8_7_0": {
+			"Key": "CircleofPain",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445069
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldBeltCircleofPain",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"8_7_1": {
+			"Key": "CrimsonBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 28999036198445070
+				}
+			],
+			"Sprite": {
+				"File": "IconUnderworldBeltCrimsonBelt",
+				"Pos": 0
+			},
+			"ItemAge": 8,
+			"ItemType": 7,
+			"Idx": 1
+		},
+		"9_0_0": {
+			"Key": "CelticOverhead",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625146
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineHeadgearCelticoverhead",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 0,
+			"Idx": 0
+		},
+		"9_0_1": {
+			"Key": "ProtectiveHalo",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625147
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineHeadgearProtectivehalo",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 0,
+			"Idx": 1
+		},
+		"9_0_2": {
+			"Key": "SerpentWreath",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625148
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineHeadgearSerpentwreath",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 0,
+			"Idx": 2
+		},
+		"9_0_3": {
+			"Key": "WhiteHair",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625149
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineHeadgearWhitehair",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 0,
+			"Idx": 3
+		},
+		"9_0_4": {
+			"Key": "WizardHat",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625150
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineHeadgearWizardshat",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 0,
+			"Idx": 4
+		},
+		"9_1_0": {
+			"Key": "HolyGown",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625151
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineArmorHolygown",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 1,
+			"Idx": 0
+		},
+		"9_1_1": {
+			"Key": "PaladinArmor",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625152
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineArmorPaladinarmor",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 1,
+			"Idx": 1
+		},
+		"9_2_0": {
+			"Key": "EnchanterGloves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625155
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineGloveEnchantergloves",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 2,
+			"Idx": 0
+		},
+		"9_2_1": {
+			"Key": "WorshipperGloves",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625156
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineGloveWorshipergloves",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 2,
+			"Idx": 1
+		},
+		"9_3_0": {
+			"Key": "TalonNecklace",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625157
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineNeckTalonnecklace",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 3,
+			"Idx": 0
+		},
+		"9_3_1": {
+			"Key": "ThorAmulet",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625158
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineNeckThoramulet",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 3,
+			"Idx": 1
+		},
+		"9_4_0": {
+			"Key": "DivinityRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625159
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineRingDivinityring",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 4,
+			"Idx": 0
+		},
+		"9_4_1": {
+			"Key": "NazarRing",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625160
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineRingNazarring",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 4,
+			"Idx": 1
+		},
+		"9_5_0": {
+			"Key": "AngelicPitchfork",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625163
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineWeaponAngelicpitchfork",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 5,
+			"Idx": 0
+		},
+		"9_5_1": {
+			"Key": "DragonDagger",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625164
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineWeaponDragondagger",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 5,
+			"Idx": 1
+		},
+		"9_5_2": {
+			"Key": "SerpentSword",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625165
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineWeaponSerpentsword",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 5,
+			"Idx": 2
+		},
+		"9_5_3": {
+			"Key": "SirenSong",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625166
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineWeaponSirenssong",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 5,
+			"Idx": 3
+		},
+		"9_5_4": {
+			"Key": "Staff",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625167
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineWeaponStaff",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 5,
+			"Idx": 4
+		},
+		"9_5_5": {
+			"Key": "StaffOfWisdom",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625168
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineWeaponStaffofwisdom",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 5,
+			"Idx": 5
+		},
+		"9_6_0": {
+			"Key": "CelestialTreaders",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625161
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineFootCelestialtreaders",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 6,
+			"Idx": 0
+		},
+		"9_6_1": {
+			"Key": "MercurySandals",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625162
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineFootMercurysandals",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 6,
+			"Idx": 1
+		},
+		"9_7_0": {
+			"Key": "SanctityBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625153
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineBeltSanctitybelt",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 7,
+			"Idx": 0
+		},
+		"9_7_1": {
+			"Key": "SorcererBelt",
+			"Localization": [
+				{
+					"File": "Items",
+					"Id": 5028483625154
+				}
+			],
+			"Sprite": {
+				"File": "IconDivineBeltSorcererbelt",
+				"Pos": 0
+			},
+			"ItemAge": 9,
+			"ItemType": 7,
+			"Idx": 1
+		}
+	}
+}

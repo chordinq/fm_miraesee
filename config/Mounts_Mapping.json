@@ -1,0 +1,227 @@
+{
+	"0_0": {
+		"Key": "LilyPad",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601476976640
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 0
+		},
+		"Rarity": 0,
+		"Idx": 0
+	},
+	"0_1": {
+		"Key": "LilyLeaf",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919680
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 3
+		},
+		"Rarity": 0,
+		"Idx": 1
+	},
+	"0_2": {
+		"Key": "BrownLeaf",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919681
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 1
+		},
+		"Rarity": 0,
+		"Idx": 2
+	},
+	"1_0": {
+		"Key": "BrownHorse",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919682
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 1
+		},
+		"Rarity": 1,
+		"Idx": 0
+	},
+	"1_1": {
+		"Key": "Dino",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919683
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 2
+		},
+		"Rarity": 1,
+		"Idx": 1
+	},
+	"1_2": {
+		"Key": "Crab",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919684
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 5
+		},
+		"Rarity": 1,
+		"Idx": 2
+	},
+	"1_3": {
+		"Key": "Turtle",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652932
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 6
+		},
+		"Rarity": 1,
+		"Idx": 3
+	},
+	"2_0": {
+		"Key": "Pig",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919685
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 7
+		},
+		"Rarity": 2,
+		"Idx": 0
+	},
+	"2_1": {
+		"Key": "Goat",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919686
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 8
+		},
+		"Rarity": 2,
+		"Idx": 1
+	},
+	"3_0": {
+		"Key": "Bike",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919687
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 9
+		},
+		"Rarity": 3,
+		"Idx": 0
+	},
+	"3_1": {
+		"Key": "GiantBee",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919688
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 10
+		},
+		"Rarity": 3,
+		"Idx": 1
+	},
+	"4_0": {
+		"Key": "OneWheelDroid",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601518919689
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 11
+		},
+		"Rarity": 4,
+		"Idx": 0
+	},
+	"4_1": {
+		"Key": "MiniDragon",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601523113984
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 12
+		},
+		"Rarity": 4,
+		"Idx": 1
+	},
+	"5_0": {
+		"Key": "HoverDisk",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601523113985
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 13
+		},
+		"Rarity": 5,
+		"Idx": 0
+	},
+	"5_1": {
+		"Key": "HoverBoard",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 362601523113986
+			}
+		],
+		"Sprite": {
+			"File": "MountIcons",
+			"Idx": 14
+		},
+		"Rarity": 5,
+		"Idx": 1
+	}
+}

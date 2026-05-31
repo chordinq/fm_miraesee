@@ -1,0 +1,398 @@
+{
+	"0_0": {
+		"Key": "Meat",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 208976670720
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 640000126976
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 0
+		},
+		"Enum": 0,
+		"Rarity": 0,
+		"Idx": 0
+	},
+	"0_1": {
+		"Key": "Arrows",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 233735647232
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1018934521856
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 1
+		},
+		"Enum": 2,
+		"Rarity": 0,
+		"Idx": 1
+	},
+	"0_2": {
+		"Key": "Shout",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 247690096640
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1093542801408
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 2
+		},
+		"Enum": 4,
+		"Rarity": 0,
+		"Idx": 2
+	},
+	"1_0": {
+		"Key": "Berserk",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 288559394816
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1158541930496
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 4
+		},
+		"Enum": 6,
+		"Rarity": 1,
+		"Idx": 0
+	},
+	"1_1": {
+		"Key": "Shuriken",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 1711400141123584
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1055152336896
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 10
+		},
+		"Enum": 3,
+		"Rarity": 1,
+		"Idx": 1
+	},
+	"1_2": {
+		"Key": "CannonBarrage",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 1711400170483714
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1711400170483715
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 8
+		},
+		"Enum": 16,
+		"Rarity": 1,
+		"Idx": 2
+	},
+	"2_0": {
+		"Key": "Buff",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 446353305600
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1406169444352
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 6
+		},
+		"Enum": 12,
+		"Rarity": 2,
+		"Idx": 0
+	},
+	"2_1": {
+		"Key": "RainOfArrows",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 503324536832
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1468731682816
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 7
+		},
+		"Enum": 14,
+		"Rarity": 2,
+		"Idx": 1
+	},
+	"2_2": {
+		"Key": "Thorns",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 321933471744
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1263252729856
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 4
+		},
+		"Enum": 8,
+		"Rarity": 2,
+		"Idx": 2
+	},
+	"3_0": {
+		"Key": "Morale",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 216287342592
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 996302057472
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 9
+		},
+		"Enum": 1,
+		"Rarity": 3,
+		"Idx": 0
+	},
+	"3_1": {
+		"Key": "Bomb",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 338651967488
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1304310771712
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 11
+		},
+		"Enum": 9,
+		"Rarity": 3,
+		"Idx": 1
+	},
+	"3_2": {
+		"Key": "Meteorite",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 264307929088
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1132528857088
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 11
+		},
+		"Enum": 5,
+		"Rarity": 3,
+		"Idx": 2
+	},
+	"4_0": {
+		"Key": "Stampede",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 306217414656
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1200103288832
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 12
+		},
+		"Enum": 7,
+		"Rarity": 4,
+		"Idx": 0
+	},
+	"4_1": {
+		"Key": "Worm",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 356767166464
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1334736252928
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 5
+		},
+		"Enum": 10,
+		"Rarity": 4,
+		"Idx": 1
+	},
+	"4_2": {
+		"Key": "Lightning",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 430301704192
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1369259569152
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 14
+		},
+		"Enum": 11,
+		"Rarity": 4,
+		"Idx": 2
+	},
+	"5_0": {
+		"Key": "HigherMorale",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 460181925888
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1429477191680
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 15
+		},
+		"Enum": 13,
+		"Rarity": 5,
+		"Idx": 0
+	},
+	"5_1": {
+		"Key": "StrafeRun",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 1711400170483712
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1711400170483713
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 16
+		},
+		"Enum": 15,
+		"Rarity": 5,
+		"Idx": 1
+	},
+	"5_2": {
+		"Key": "Drone",
+		"Localization": [
+			{
+				"File": "Skills",
+				"Id": 1711400170483716
+			}
+		],
+		"DescLocalization": [
+			{
+				"File": "Skills",
+				"Id": 1711400170483717
+			}
+		],
+		"Sprite": {
+			"File": "SkillIcons",
+			"Idx": 17
+		},
+		"Enum": 17,
+		"Rarity": 5,
+		"Idx": 2
+	}
+}

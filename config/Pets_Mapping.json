@@ -1,0 +1,402 @@
+{
+	"0_0": {
+		"Key": "Chicken",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328656904192
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 1
+		},
+		"PetType": 0,
+		"Rarity": 0,
+		"Idx": 0
+	},
+	"0_1": {
+		"Key": "Dog",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652928
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 6
+		},
+		"PetType": 1,
+		"Rarity": 0,
+		"Idx": 1
+	},
+	"0_2": {
+		"Key": "Cat",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652929
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 7
+		},
+		"PetType": 0,
+		"Rarity": 0,
+		"Idx": 2
+	},
+	"0_3": {
+		"Key": "Snail",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652930
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 8
+		},
+		"PetType": 2,
+		"Rarity": 0,
+		"Idx": 3
+	},
+	"0_4": {
+		"Key": "Mouse",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652931
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 9
+		},
+		"PetType": 0,
+		"Rarity": 0,
+		"Idx": 4
+	},
+	"0_5": {
+		"Key": "Turtle",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652932
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 10
+		},
+		"PetType": 2,
+		"Rarity": 0,
+		"Idx": 5
+	},
+	"1_0": {
+		"Key": "Hedgehog",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652933
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 11
+		},
+		"PetType": 2,
+		"Rarity": 1,
+		"Idx": 0
+	},
+	"1_1": {
+		"Key": "Bear",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652934
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 12
+		},
+		"PetType": 2,
+		"Rarity": 1,
+		"Idx": 1
+	},
+	"1_2": {
+		"Key": "Ostrich",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652935
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 13
+		},
+		"PetType": 0,
+		"Rarity": 1,
+		"Idx": 2
+	},
+	"1_3": {
+		"Key": "Spider",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652936
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 14
+		},
+		"PetType": 1,
+		"Rarity": 1,
+		"Idx": 3
+	},
+	"1_4": {
+		"Key": "Scorpion",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652937
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 15
+		},
+		"PetType": 1,
+		"Rarity": 1,
+		"Idx": 4
+	},
+	"2_0": {
+		"Key": "Griffin",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652938
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 16
+		},
+		"PetType": 2,
+		"Rarity": 2,
+		"Idx": 0
+	},
+	"2_1": {
+		"Key": "SaberTooth",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652939
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 17
+		},
+		"PetType": 1,
+		"Rarity": 2,
+		"Idx": 1
+	},
+	"2_2": {
+		"Key": "Unicorn",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652940
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 18
+		},
+		"PetType": 0,
+		"Rarity": 2,
+		"Idx": 2
+	},
+	"2_3": {
+		"Key": "Tiger",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652941
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 19
+		},
+		"PetType": 1,
+		"Rarity": 2,
+		"Idx": 3
+	},
+	"2_4": {
+		"Key": "Panda",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652942
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 0
+		},
+		"PetType": 2,
+		"Rarity": 2,
+		"Idx": 4
+	},
+	"3_0": {
+		"Key": "Serpent",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652943
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 2
+		},
+		"PetType": 1,
+		"Rarity": 3,
+		"Idx": 0
+	},
+	"3_1": {
+		"Key": "Cerberus",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652944
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 3
+		},
+		"PetType": 0,
+		"Rarity": 3,
+		"Idx": 1
+	},
+	"3_2": {
+		"Key": "Kitsune",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652945
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 4
+		},
+		"PetType": 1,
+		"Rarity": 3,
+		"Idx": 2
+	},
+	"4_0": {
+		"Key": "Electry",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652946
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 5
+		},
+		"PetType": 1,
+		"Rarity": 4,
+		"Idx": 0
+	},
+	"4_1": {
+		"Key": "Treant",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652947
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 20
+		},
+		"PetType": 2,
+		"Rarity": 4,
+		"Idx": 1
+	},
+	"4_2": {
+		"Key": "EnchantedElk",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652948
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 21
+		},
+		"PetType": 0,
+		"Rarity": 4,
+		"Idx": 2
+	},
+	"5_0": {
+		"Key": "BabyDragon",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652949
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 22
+		},
+		"PetType": 0,
+		"Rarity": 5,
+		"Idx": 0
+	},
+	"5_1": {
+		"Key": "Genie",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652950
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 23
+		},
+		"PetType": 2,
+		"Rarity": 5,
+		"Idx": 1
+	},
+	"5_2": {
+		"Key": "SpectralTiger",
+		"Localization": [
+			{
+				"File": "Pets",
+				"Id": 57328694652951
+			}
+		],
+		"Sprite": {
+			"File": "Pets",
+			"Idx": 24
+		},
+		"PetType": 1,
+		"Rarity": 5,
+		"Idx": 2
+	}
+}
