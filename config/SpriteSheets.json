@@ -1,0 +1,978 @@
+{
+	"None_SkillIcons": {
+		"cols": 8,
+		"iconSize": 256
+	},
+	"MegaSkillIcons": {
+		"cols": 8,
+		"iconSize": 256
+	},
+	"UltraSkillIcons": {
+		"cols": 8,
+		"iconSize": 256
+	},
+	"ApexSkillIcons": {
+		"cols": 8,
+		"iconSize": 256
+	},
+	"None_Pets": {
+		"cols": 8,
+		"iconSize": 256
+	},
+	"MegaPets": {
+		"cols": 8,
+		"iconSize": 256
+	},
+	"UltraPets": {
+		"cols": 8,
+		"iconSize": 256
+	},
+	"ApexPets": {
+		"cols": 8,
+		"iconSize": 256
+	},
+	"None_MountIcons": {
+		"cols": 4,
+		"iconSize": 256
+	},
+	"MegaMountIcons": {
+		"cols": 4,
+		"iconSize": 256
+	},
+	"UltraMountIcons": {
+		"cols": 4,
+		"iconSize": 256
+	},
+	"ApexMountIcons": {
+		"cols": 4,
+		"iconSize": 256
+	},
+	"IconPrimitiveHeadgearSkull": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveHeadgearBeard": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveHeadgearPaint": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveHeadgearMask": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveArmorHide": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveArmorBearskin": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveGloveBark": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveGloveBearpaw": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveNeckShamantalisman": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveNeckToothnecklace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveRingShardring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveRingSkullring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveWeaponAxe": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveWeaponBlowgun": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveWeaponBranch": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveWeaponClub": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveWeaponRock": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveWeaponSlinger": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveWeaponBone": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveFootWraps": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveFootIvoryshin": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveBeltBoneskirt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconPrimitiveBeltWaisttie": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalHeadgearDeathshat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalHeadgearRomanhelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalHeadgearGreekhelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalHeadgearSamuraihelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalHeadgearKnighthelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalArmorQuirass": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalArmorIronplates": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalGloveGauntlet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalGloveIronfist": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalNeckLuckycharm": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalNeckValorsigil": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalRingBlessedgem": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalRingIronring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalWeaponSwordandshield": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalWeaponSpearandshield": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalWeaponScythe": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalWeaponWarhammer": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalWeaponBow": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalWeaponKatana": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalWeaponTomahawk": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalFootSandals": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalFootSpurredstomper": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalBeltBeltofbaltazar": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMedievalBeltBeltpouch": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernHeadgearBattlehelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernHeadgearCaptainshat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernHeadgearFeatherhat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernHeadgearSlavichat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernHeadgearTophat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernArmorArmorskirt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernArmorCavalrycardigan": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernGloveLeathergloves": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernGloveFencermitts": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernNeckClock": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernNeckTreasurekey": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernRingEmeraldeye": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernRingTrinityband": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernWeaponCrossbow": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernWeaponMusket": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernWeaponExecutioner": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernWeaponDualpistols": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernWeaponPiratessword": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernWeaponRapier": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernFootLeatherboots": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernlFootRidingboots": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernBeltHaroldsharness": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconEarlymodernBeltLeatherbelt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernHeadgearFedorahat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernHeadgearKevlarhelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernHeadgearOfficershat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernHeadgearRiothelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernHeadgearSergeanthat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernHeadgearSteelhelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernHeadgearWinterhat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernArmorCamouflage": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernArmorKevlar": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernGloveCombatgloves": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernGloveTacticalhalffingers": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernNeckDogtags": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernNeckFortunenecklace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernRingBolt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernRingBrotherhoodring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernWeaponAk": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernWeaponBaton": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernWeaponKnuckledusters": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernWeaponM4": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernWeaponRiotshield": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernWeaponSniper": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernWeaponUzi": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernWeaponWrench": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernlFootCombatboots": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernFootVeteranboots": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernBeltAmmopouch": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconModernBeltTacticalbelt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceHeadgearBiohelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceHeadgearGasmask": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceHeadgearIronmech": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceHeadgearSpacehelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceArmorExoskeleton": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceArmorSpacesuit": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceGloveRemote": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceGloveSpacegloves": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceNeckKuipernecklace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceNeckPulsarpendant": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceRingIcarusring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceRingSolariusring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceWeaponBlaster": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceWeaponRobotsword": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceWeaponSaber": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceWeaponSpacegun": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceWeaponSpacepistol": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceFootFeetthrusters": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceFootSpaceshoes": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceBeltSupportcorset": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconSpaceBeltAnabiosisstraps": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarHeadgearAdvancedmech": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarHeadgearAlienhead": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarHeadgearDestroyermask": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarHeadgearHeavyduty": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarHeadgearRobohelm": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarHeadgearStellariumhelm": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarArmorAdamantiumsuit": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarArmorPlasmasuit": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarGloveManualimpactors": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarGlovePalmimplants": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarNeckGammaartifactscollar": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarNeckPsichoker": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarRingEclipsering": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarRingRariumring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarWeaponDualwieldmelee": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarWeaponIonicblaster": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarWeaponIsobariccutter": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarWeaponLightswordandshield": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarWeaponPlasmarifle": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarWeaponRaygun": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarFootHydraulicfeet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarFootRobofeet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarBeltPelvicsynchronizer": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconInterstellarBeltSpinalstabilizer": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseHeadgearFirewallmask": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseHeadgearSpeedrunnercasquette": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseHeadgearStalkerhelm": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseHeadgearVirtualhelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseArmorHoloarmor": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseArmorSpectralplates": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseGloveImpulsecontroller": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseGloveRainbowgloves": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseNeckCrystallamulet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseNeckGlitchnecklace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseRingConnectionring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseRingMobeusring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseWeaponProjectedcutlass": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseWeaponMentalspear": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseWeaponHolographictrident": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseWeaponSimulatedbow": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseWeaponVirtualgun": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseWeaponVirtualsword": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseFootEtherealsocks": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseFootFasttravelshoes": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseBeltOrbitbelt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconMultiverseBeltRealitybelt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumHeadgearEnergyhelmet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumHeadgearHairbandana": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumHeadgearHairtied": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumHeadgearEntanglementhelm": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumHeadgearSubfrequencymask": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumArmorDeltaarmor": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumArmorOrbitersuit": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumGloveGravitygloves": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumGloveNeutronfingerprints": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumNeckHiggsnecklace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumNeckVoidnecklace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumRingAuraring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumRingProbabilityring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumWeaponBlackbow": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumWeaponBlackgun": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumWeaponBlackhammer": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumWeaponBlackspear": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumWeaponQuantumstaff": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumWeaponBlackswordandshield": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumFootAntiravityboots": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumFootAntimatterfeet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumBeltUncertaintybelt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconQuantumBeltNeutrinobelt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldHeadgearSpiteCrown": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldHeadgearRotfangVisor": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldHeadgearHellforgedHelm": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldHeadgearVenomCrest": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldArmorDoomplate": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldArmorCape": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldArmorMoltenPlates": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldGloveGripofTorment": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldGloveVoidClaw": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldNeckThornNecklace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldNeckSpiteCollar": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldRingSkullbinder": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldRingPrismRing": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldWeaponInfernalTrident": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldWeaponAbyssalFork": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldWeaponSoulpiercer": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldWeaponDoomMace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldWeaponShadowScimitar": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldFootDreadsteps": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldFootGreaves": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldBeltCircleofPain": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconUnderworldBeltCrimsonBelt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineHeadgearCelticoverhead": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineHeadgearProtectivehalo": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineHeadgearSerpentwreath": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineHeadgearWhitehair": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineHeadgearWizardshat": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineArmorHolygown": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineArmorPaladinarmor": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineGloveEnchantergloves": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineGloveWorshipergloves": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineNeckTalonnecklace": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineNeckThoramulet": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineRingDivinityring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineRingNazarring": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineWeaponAngelicpitchfork": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineWeaponDragondagger": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineWeaponSerpentsword": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineWeaponSirenssong": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineWeaponStaff": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineWeaponStaffofwisdom": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineFootCelestialtreaders": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineFootMercurysandals": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineBeltSanctitybelt": {
+		"cols": 1,
+		"iconSize": 256
+	},
+	"IconDivineBeltSorcererbelt": {
+		"cols": 1,
+		"iconSize": 256
+	}
+}

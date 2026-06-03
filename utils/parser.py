@@ -12,14 +12,16 @@ from typing import Callable
 
 from config import SKILLS_MAPPING, TECH_TREE_POSITION_LIBRARY
 from core.enums import CurrencyType, ItemAge, ItemType, Rarity, SecondaryStatType, TechTreeNodeType, TechTreeType
-from core.game_logic.player_model.EggModel import EggModel
-from core.game_logic.player_model.ItemModel import ItemModel
-from core.game_logic.player_model.MountModel import MountModel
-from core.game_logic.player_model.PetModel import PetModel
-from core.game_logic.player_model.PlayerModel import PlayerModel
-from core.game_logic.player_model.SkillModel import SkillModel
-from core.game_logic.player_model.SecondaryStatsModel import SecondaryStatsModel
-from core.game_logic.player_model.StatModel import StatModel
+from core.game_logic.player_model import (
+	EggModel,
+	ItemModel,
+	MountModel,
+	PetModel,
+	PlayerModel,
+	SecondaryStatsModel,
+	SkillModel,
+	StatModel,
+)
 
 _U32_DENOM = 4294967296
 _STATS_CHUNK_LEN = 10

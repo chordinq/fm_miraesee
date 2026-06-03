@@ -17,7 +17,7 @@
 			"File": "SkillIcons",
 			"Idx": 0
 		},
-		"Enum": 0,
+		"Type": 0,
 		"Rarity": 0,
 		"Idx": 0
 	},
@@ -39,7 +39,7 @@
 			"File": "SkillIcons",
 			"Idx": 1
 		},
-		"Enum": 2,
+		"Type": 2,
 		"Rarity": 0,
 		"Idx": 1
 	},
@@ -61,7 +61,7 @@
 			"File": "SkillIcons",
 			"Idx": 2
 		},
-		"Enum": 4,
+		"Type": 4,
 		"Rarity": 0,
 		"Idx": 2
 	},
@@ -81,9 +81,9 @@
 		],
 		"Sprite": {
 			"File": "SkillIcons",
-			"Idx": 4
+			"Idx": 3
 		},
-		"Enum": 6,
+		"Type": 6,
 		"Rarity": 1,
 		"Idx": 0
 	},
@@ -105,7 +105,7 @@
 			"File": "SkillIcons",
 			"Idx": 10
 		},
-		"Enum": 3,
+		"Type": 3,
 		"Rarity": 1,
 		"Idx": 1
 	},
@@ -127,7 +127,7 @@
 			"File": "SkillIcons",
 			"Idx": 8
 		},
-		"Enum": 16,
+		"Type": 16,
 		"Rarity": 1,
 		"Idx": 2
 	},
@@ -149,7 +149,7 @@
 			"File": "SkillIcons",
 			"Idx": 6
 		},
-		"Enum": 12,
+		"Type": 12,
 		"Rarity": 2,
 		"Idx": 0
 	},
@@ -171,7 +171,7 @@
 			"File": "SkillIcons",
 			"Idx": 7
 		},
-		"Enum": 14,
+		"Type": 14,
 		"Rarity": 2,
 		"Idx": 1
 	},
@@ -193,7 +193,7 @@
 			"File": "SkillIcons",
 			"Idx": 4
 		},
-		"Enum": 8,
+		"Type": 8,
 		"Rarity": 2,
 		"Idx": 2
 	},
@@ -215,7 +215,7 @@
 			"File": "SkillIcons",
 			"Idx": 9
 		},
-		"Enum": 1,
+		"Type": 1,
 		"Rarity": 3,
 		"Idx": 0
 	},
@@ -237,7 +237,7 @@
 			"File": "SkillIcons",
 			"Idx": 11
 		},
-		"Enum": 9,
+		"Type": 9,
 		"Rarity": 3,
 		"Idx": 1
 	},
@@ -259,7 +259,7 @@
 			"File": "SkillIcons",
 			"Idx": 11
 		},
-		"Enum": 5,
+		"Type": 5,
 		"Rarity": 3,
 		"Idx": 2
 	},
@@ -281,7 +281,7 @@
 			"File": "SkillIcons",
 			"Idx": 12
 		},
-		"Enum": 7,
+		"Type": 7,
 		"Rarity": 4,
 		"Idx": 0
 	},
@@ -303,7 +303,7 @@
 			"File": "SkillIcons",
 			"Idx": 5
 		},
-		"Enum": 10,
+		"Type": 10,
 		"Rarity": 4,
 		"Idx": 1
 	},
@@ -325,7 +325,7 @@
 			"File": "SkillIcons",
 			"Idx": 14
 		},
-		"Enum": 11,
+		"Type": 11,
 		"Rarity": 4,
 		"Idx": 2
 	},
@@ -347,7 +347,7 @@
 			"File": "SkillIcons",
 			"Idx": 15
 		},
-		"Enum": 13,
+		"Type": 13,
 		"Rarity": 5,
 		"Idx": 0
 	},
@@ -369,7 +369,7 @@
 			"File": "SkillIcons",
 			"Idx": 16
 		},
-		"Enum": 15,
+		"Type": 15,
 		"Rarity": 5,
 		"Idx": 1
 	},
@@ -391,7 +391,7 @@
 			"File": "SkillIcons",
 			"Idx": 17
 		},
-		"Enum": 17,
+		"Type": 17,
 		"Rarity": 5,
 		"Idx": 2
 	}

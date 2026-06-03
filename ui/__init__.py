@@ -1,3 +1,1 @@
-from ui.app import run
-
-__all__ = ["run"]
+# ui package — avoid importing app here (breaks `python ui/app.py` + early QPixmap)

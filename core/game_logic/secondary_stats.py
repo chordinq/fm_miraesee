@@ -1,56 +1,30 @@
-# core/game_logic/secondary_stats.py
-"""
-SecondaryStatHelper$$GenerateSecondaryStats
-
-C# algorithm (SecondaryStatHelper$$GenerateSecondaryStats):
-  1. Build available = list(SecondaryStatType)
-  2. Remove any types already present (excluded_types param -- usually None)
-  3. For i in range(stat_count):
-       stat_type  = available[rng.NextInt(available.Count)]  -> 1 PCG call
-       perfection = rng.NextF64()                             -> 1 PCG call
-       result.add(stat_type, perfection)
-       available.RemoveAt(idx)                                -> no duplicates
-  4. Return SecondaryStats
-"""
-
 from __future__ import annotations
+from typing import Tuple
+from ..miraesee_extension import miraesee_extension
+from .enums import SecondaryStatType
+from config import SECONDARY_STAT_LIBRARY
 
-from typing import Sequence
+class SecondaryStats:
+	def __init__(self) -> None:
+		self.interpolated_stat_values: dict[SecondaryStatType, float] = {}
 
-from core.enums import SecondaryStatType
-from core.game_logic.player_model.SecondaryStatsModel import SecondaryStatsModel
-from core.game_logic.player_model.StatModel import StatModel
-from core.random_pcg import RandomPCG
+	def add_or_replace_stat_contribution(self, stat_type: SecondaryStatType, value: float) -> None:
+		self.interpolated_stat_values[stat_type] = value
 
+	def try_get_stat_value(self, stat_type: SecondaryStatType) -> Tuple[bool, float]:
+		if stat_type not in self.interpolated_stat_values:
+			return False, 0.0
 
-def generate_secondary_stats(
-	stat_count: int,
-	rng: RandomPCG,
-	excluded_types: Sequence[SecondaryStatType] | None = None,
-) -> SecondaryStatsModel:
-	"""
-	SecondaryStatHelper$$GenerateSecondaryStats(stat_count, pcg, excluded, 0).
+		clamped_value = max(0.0, min(1.0, self.interpolated_stat_values[stat_type]))
+		stat_name = stat_type.name
+		stat_config = SECONDARY_STAT_LIBRARY.get(stat_name)
 
-	Args:
-	    stat_count:     number of secondary stats to generate.
-	    rng:            active RandomPCG -- consumed in-place.
-	    excluded_types: stat types already present elsewhere (usually None).
-	"""
-	available: list[SecondaryStatType] = list(SecondaryStatType)
-	if excluded_types:
-		for t in excluded_types:
-			try:
-				available.remove(t)
-			except ValueError:
-				pass
+		lower_range = stat_config.get("LowerRange", 0.0)
+		upper_range = stat_config.get("UpperRange", 0.0)
+			
+		return True, lower_range + (upper_range - lower_range) * clamped_value
 
-	result = SecondaryStatsModel()
-	for _ in range(stat_count):
-		if not available:
-			break
-		idx = rng.next_int(len(available))
-		stat_type: SecondaryStatType = available.pop(idx)
-		perfection: float = rng.next_f64()
-		result.add_stat(StatModel(stat_type, perfection))
-
-	return result
+	@property
+	@miraesee_extension
+	def perfection(self) -> float:
+		return sum(self.interpolated_stat_values.values()) / len(self.interpolated_stat_values) if self.interpolated_stat_values else 0.0
