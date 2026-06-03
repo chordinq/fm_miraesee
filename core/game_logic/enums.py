@@ -187,25 +187,6 @@ class SummonKind(IntEnum):
 	Pets = 1
 	Mounts = 2
 
-class StatTargetTypeCode(IntEnum):
-    PlayerStatTarget = 1
-    EquipmentStatTarget = 2
-    ActiveSkillStatTarget = 3
-    PassiveSkillStatTarget = 4
-    MountStatTarget = 5
-    ForgeStatTarget = 6
-    EggStatTarget = 7
-    CurrencyBonusStatTarget = 8
-    PetStatTarget = 9
-    TechTreeStatTarget = 10
-    WeaponStatTarget = 11
-    OfflineTimerStatTarget = 12
-    OfflineCurrencyStatTarget = 13
-    DungeonStatTarget = 14
-    PlayerMeleeOnlyStatTarget = 15
-    PlayerRangedOnlyStatTarget = 16
-    PlayerSkinMultiplierStatTarget = 17
-
 class DungeonType(IntEnum):
 	Hammer = 0
 	Skill = 1
