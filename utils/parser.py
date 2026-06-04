@@ -187,7 +187,7 @@ class DumpParser:
 		level, count, seed, asc = raw
 		summon_model.level = level
 		summon_model.count = count
-		summon_model.set_seed(seed)
+		summon_model.seed = seed
 		if ascension_model is not None:
 			ascension_model.current_level = asc
 

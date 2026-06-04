@@ -2,7 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from uuid import uuid4
 from ..enums import Rarity, AscendableType
-from ..secondary_stats import SecondaryStats
+from ..stats import SecondaryStats
 from .summon_model import SummonModel
 from .ascension_model import AscensionModel
 
@@ -33,10 +33,12 @@ class PlayerMountModel:
 		return self.secondary_stats.perfection
 
 class PlayerMountCollectionModel:
-	def __init__(self):
+	def __init__(self) -> None:
 		self.player_mount_models: list[PlayerMountModel] = []
 		self.summon_model = SummonModel()
 		self.ascension_model = AscensionModel(AscendableType.Mounts)
 
-	def get_equipped_mounts_count(self) -> int:
-		return sum(1 for mount in self.player_mount_models if mount.is_equipped)
+	def ascend(self) -> None:
+		self.player_mount_models.clear()
+		self.summon_model.reset()
+		self.ascension_model.ascend()

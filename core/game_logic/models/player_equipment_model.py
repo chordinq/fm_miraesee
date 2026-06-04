@@ -1,5 +1,5 @@
 from ..enums import ItemAge, ItemType
-from ..secondary_stats import SecondaryStats
+from ..stats import SecondaryStats
 from dataclasses import dataclass
 from uuid import uuid4
 

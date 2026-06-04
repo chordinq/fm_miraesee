@@ -103,24 +103,36 @@ class PlayerSkillModel:
 class PlayerSkillCollectionModel:
 	def __init__(self) -> None:
 		self.player_skills: dict[CombatSkill, PlayerSkillModel] = {}
+		self.auto_activate_skill_active: bool = False
 		self.summon_model = SummonModel()
 		self.ascension_model = AscensionModel(AscendableType.Skills)
+
+	# --- Game.Logic.PlayerSkillCollectionModel (stubs) ---
+
+	def ascend(self) -> None:
+		raise NotImplementedError
+
+	def are_all_my_skills_maxed(self) -> bool:
+		raise NotImplementedError
+
+	def get_empty_slots(self) -> list[int]:
+		raise NotImplementedError
+
+	def get_equipped_skills(self) -> list[PlayerSkillModel]:
+		raise NotImplementedError
+
+	def get_total_passives(self, player_model: PlayerModel) -> int:
+		raise NotImplementedError
+
+	def has_all_skills(self) -> bool:
+		raise NotImplementedError
+
+	def try_get_skill_in_slot(self, slot_index: int) -> PlayerSkillModel | None:
+		raise NotImplementedError
 
 	@staticmethod
 	def max_skill_level() -> int:
 		return MAX_SKILL_LEVEL
 
-	def get_equipped_skills(self) -> list[PlayerSkillModel]:
-		return [skill for skill in self.player_skills.values() if skill.is_equipped]
-
-	def try_get_skill_in_slot(self, slot_index: int) -> PlayerSkillModel | None:
-		for skill in self.player_skills.values():
-			if skill.equip_slot == slot_index:
-				return skill
-		return None
-
 	def try_get_skill(self, combat_skill: CombatSkill) -> PlayerSkillModel | None:
 		return self.player_skills.get(combat_skill)
-
-	def get_total_passives(self, player_model: PlayerModel) -> int:
-		raise NotImplementedError("Not implemented")
