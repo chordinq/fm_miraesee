@@ -3,12 +3,13 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Tuple, Optional
 from .enums import SummonKind, CurrencyType
 from .summon_level_config import SummonLevelConfig
-from .stat_target import StatTargetBase, ActiveSkillStatTarget, EggStatTarget, MountStatTarget
+from stats import StatTargetBase, ActiveSkillStatTarget, EggStatTarget, MountStatTarget
 from config import SKILL_SUMMON_CONFIG, EGG_SUMMON_CONFIG, MOUNT_SUMMON_CONFIG
 
 if TYPE_CHECKING:
 	from .models.player_model import PlayerModel
 	from .models.player_currency_model import Price, SpendContext
+
 
 class SummonableId:
 	def __init__(self, id: str) -> None:
