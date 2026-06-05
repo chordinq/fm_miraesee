@@ -6,7 +6,7 @@ Re-enable by uncommenting the block below.
 # from __future__ import annotations
 #
 # from config import MOUNT_LIBRARY, MOUNTS_MAPPING, SECONDARY_STAT_PET_UNLOCK
-# from core.enums import Rarity, SummonKind, TechTreeNodeType
+# from core.game_logic.enums import AscendableType, Rarity, TechTreeNodeType
 # from core.random_pcg import RandomPCG
 # from core.game_logic.player_model import MountModel, PlayerModel
 # from core.game_logic.summon_config import SummonConfig
@@ -41,12 +41,12 @@ Re-enable by uncommenting the block below.
 # 		summon_model = self.player.mounts.summon_model
 #
 # 		if count not in config.possible_summon_count:
-# 			return SummonResult(SummonKind.Mounts, count, 0, success=False, error="invalid_summon_count")
+# 			return SummonResult(AscendableType.Mounts, count, 0, success=False, error="invalid_summon_count")
 #
 # 		if not can_afford_summon_batch(
 # 			self.player, config, TechTreeNodeType.MountSummonCost, count
 # 		):
-# 			return SummonResult(SummonKind.Mounts, count, 0, success=False, error="insufficient_currency")
+# 			return SummonResult(AscendableType.Mounts, count, 0, success=False, error="insufficient_currency")
 #
 # 		spend_summon_batch(self.player, config, TechTreeNodeType.MountSummonCost, count)
 # 		pulls: list[SummonPullResult] = []
@@ -58,7 +58,7 @@ Re-enable by uncommenting the block below.
 # 			seed     = summon_model.get_seed()
 # 			rng      = RandomPCG(seed)
 #
-# 			if not is_bonus and StatHelper.roll_bonus_summon(self.player, SummonKind.Mounts, rng):
+# 			if not is_bonus and StatHelper.roll_bonus_summon(self.player, AscendableType.Mounts, rng):
 # 				total_target += 1
 #
 # 			level_cfg = config.get_level_config(summon_model.level)
@@ -93,4 +93,4 @@ Re-enable by uncommenting the block below.
 # 			config.advance_seed(summon_model)
 # 			pull_idx += 1
 #
-# 		return SummonResult(SummonKind.Mounts, count, len(pulls), pulls=pulls)
+# 		return SummonResult(AscendableType.Mounts, count, len(pulls), pulls=pulls)

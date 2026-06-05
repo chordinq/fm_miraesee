@@ -1,14 +1,29 @@
 #updated 2026-06-03
 from __future__ import annotations
-from typing import TYPE_CHECKING, Tuple, Optional
-from .enums import SummonKind, CurrencyType
+from typing import TYPE_CHECKING, Optional
+
+from config import EGG_SUMMON_CONFIG, MOUNT_SUMMON_CONFIG, SKILL_SUMMON_CONFIG
+
+from .enums import AscendableType, CurrencyType
+from .models.player_currency_model import Price
+from .stats.stat_target import (
+	ActiveSkillStatTarget,
+	EggStatTarget,
+	MountStatTarget,
+	StatTargetBase,
+)
 from .summon_level_config import SummonLevelConfig
-from stats import StatTargetBase, ActiveSkillStatTarget, EggStatTarget, MountStatTarget
-from config import SKILL_SUMMON_CONFIG, EGG_SUMMON_CONFIG, MOUNT_SUMMON_CONFIG
 
 if TYPE_CHECKING:
 	from .models.player_model import PlayerModel
-	from .models.player_currency_model import Price, SpendContext
+	from .models.player_currency_model import SpendContext
+
+# C# has SummonableId ("Skills" / "Eggs" / "Mounts"), not SummonKind.
+_ASCENDABLE_SUMMON_CONFIG: dict[AscendableType, dict] = {
+	AscendableType.Skills: SKILL_SUMMON_CONFIG,
+	AscendableType.Pets: EGG_SUMMON_CONFIG,
+	AscendableType.Mounts: MOUNT_SUMMON_CONFIG,
+}
 
 
 class SummonableId:
@@ -27,15 +42,13 @@ class SummonableId:
 
 
 class SummonConfig:
-	def __init__(self, SummonKind: SummonKind) -> SummonConfig:
-		if SummonKind == SummonKind.Skills:
-			data = SKILL_SUMMON_CONFIG
-		elif SummonKind == SummonKind.Pets:
-			data = EGG_SUMMON_CONFIG
-		elif SummonKind == SummonKind.Mounts:
-			data = MOUNT_SUMMON_CONFIG
-		else:
-			raise ValueError(f"Invalid summon kind: {SummonKind}")
+	def __init__(self, ascendable_type: AscendableType) -> None:
+		try:
+			data = _ASCENDABLE_SUMMON_CONFIG[ascendable_type]
+		except KeyError:
+			raise ValueError(
+				f"SummonConfig requires Skills, Pets, or Mounts AscendableType, got {ascendable_type!r}"
+			) from None
 
 		single_summon_cost = data.get("SingleSummonCost")
 		cost_amount = single_summon_cost["Amount"]
@@ -50,10 +63,11 @@ class SummonConfig:
 	def get_base_summon_count(self) -> int:
 		return self.possible_summon_count[0]
 
-	def can_afford_summon(self,
+	def can_afford_summon(
+		self,
 		player_model: PlayerModel,
 		summon_count: int,
-	) -> Tuple[bool, Optional[SpendContext]]:
+	) -> tuple[bool, Optional[SpendContext]]:
 		if player_model.player_currency_model.can_afford_price(self.single_summon_cost * summon_count):
 			return True, player_model.player_currency_model.create_spend_context(self.single_summon_cost.currency, self.single_summon_cost.amount * summon_count)
 		return False, None

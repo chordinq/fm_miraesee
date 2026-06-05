@@ -107,8 +107,6 @@ class PlayerSkillCollectionModel:
 		self.summon_model = SummonModel()
 		self.ascension_model = AscensionModel(AscendableType.Skills)
 
-	# --- Game.Logic.PlayerSkillCollectionModel (stubs) ---
-
 	def ascend(self) -> None:
 		raise NotImplementedError
 

@@ -5,7 +5,7 @@ Re-enable by uncommenting the block below.
 
 # from __future__ import annotations
 #
-# from ..enums import SummonKind
+# from ..enums import AscendableType
 # from ...random_pcg import RandomPCG
 # from ..model import EggModel, PlayerModel
 # from .pet_hatch import predict_hatch
@@ -24,7 +24,7 @@ Re-enable by uncommenting the block below.
 # 		summon_model = self.player.pets.summon_model
 #
 # 		if count not in config.possible_summon_count:
-# 			return SummonResult(SummonKind.Pets, count, 0, success=False, error="invalid_summon_count")
+# 			return SummonResult(AscendableType.Pets, count, 0, success=False, error="invalid_summon_count")
 #
 # 		config.spend(self.player, count)
 # 		pulls: list[SummonPullResult] = []
@@ -36,7 +36,7 @@ Re-enable by uncommenting the block below.
 # 			seed     = summon_model.get_seed()
 # 			rng      = RandomPCG(seed)
 #
-# 			if not is_bonus and StatHelper.roll_bonus_summon(self.player, SummonKind.Pets, rng):
+# 			if not is_bonus and StatHelper.roll_bonus_summon(self.player, AscendableType.Pets, rng):
 # 				total_target += 1
 #
 # 			level_cfg = config.get_level_config(summon_model.level)
@@ -60,4 +60,4 @@ Re-enable by uncommenting the block below.
 # 			config.advance_seed(summon_model)
 # 			pull_idx += 1
 #
-# 		return SummonResult(SummonKind.Pets, count, len(pulls), pulls=pulls)
+# 		return SummonResult(AscendableType.Pets, count, len(pulls), pulls=pulls)

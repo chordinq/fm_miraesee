@@ -8,7 +8,7 @@ Re-enable by uncommenting the block below.
 # from dataclasses import dataclass, field
 # from typing import Optional
 #
-# from core.enums import Rarity, SummonKind
+# from core.game_logic.enums import AscendableType, Rarity
 # from core.game_logic.secondary_stats import SecondaryStats
 #
 #
@@ -25,7 +25,7 @@ Re-enable by uncommenting the block below.
 #
 # @dataclass
 # class SummonResult:
-# 	summon_kind:     SummonKind
+# 	ascendable_type: AscendableType
 # 	requested_count: int
 # 	actual_count:    int
 # 	pulls:           list[SummonPullResult] = field(default_factory=list)

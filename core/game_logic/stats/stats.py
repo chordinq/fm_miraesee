@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Iterable, Mapping
 
 from ..enums import SecondaryStatType, StatNature, StatType
-from ..stat_target import PlayerStatTarget, StatTargetBase
+from .stat_target import PlayerStatTarget, StatTargetBase
 from .secondary_stats import SecondaryStats
 
 if TYPE_CHECKING:

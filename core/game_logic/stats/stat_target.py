@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Optional
-from .enums import ItemType, AttackType, CombatSkill, Rarity, CurrencyType, DungeonType
+from ..enums import ItemType, AttackType, CombatSkill, Rarity, CurrencyType, DungeonType
 
 class StatTargetBase(ABC):
 	@abstractmethod

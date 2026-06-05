@@ -5,7 +5,7 @@ from typing import Any, Callable, Iterable, Optional, Sequence, TypeVar
 
 from ..enums import *
 from ..random_pcg import RandomPCG
-from ..stat_target import *
+from .stat_target import *
 from .stats import *
 
 T = TypeVar("T")
@@ -27,9 +27,8 @@ class _NatureAccumulators:
 	one_minus: float
 
 
-# C# IL uses stat types 0x13/0x15 (Damage) and 0x14/0x16 (Health) — mapped to tech/ascension here
-_DAMAGE_DEPENDENCY_TYPES = (StatType.TechTreeDamage, StatType.AscensionDamage)
-_HEALTH_DEPENDENCY_TYPES = (StatType.TechTreeHealth, StatType.AscensionHealth)
+_DAMAGE_DEPENDENCY_TYPES = (StatType.AscensionDamage, StatType.TechTreeDamage)
+_HEALTH_DEPENDENCY_TYPES = (StatType.AscensionHealth, StatType.TechTreeHealth)
 
 
 class StatHelper:
@@ -169,7 +168,7 @@ class StatHelper:
 	) -> float:
 		game_config = StatHelper._player_game_config(player)
 		stats = StatHelper._player_total_stats(player)
-		is_ranged = getattr(player, "is_ranged", None)
+		is_ranged = StatHelper._player_is_ranged_optional(player)
 		return StatHelper.calculate_value_from_stats(
 			game_config,
 			stats,
@@ -210,14 +209,13 @@ class StatHelper:
 			target_base,
 			acc,
 			is_ranged,
+			merge_current_target=False,
 		)
 
 		result = float(incoming_value) + acc.additive
 		result *= acc.multiplier
 		result *= 1.0 - acc.one_minus
-		if acc.divisor != 0.0:
-			result /= acc.divisor
-		return result
+		return result / acc.divisor
 
 	@staticmethod
 	def roll_stat(
@@ -240,7 +238,7 @@ class StatHelper:
 		target_base: StatTargetBase,
 		random: RandomPCG,
 	) -> bool:
-		raise NotImplementedError("RollFromCustomStats — deferred")
+		return StatHelper.roll_stat(player, stat_type, target_base, random)
 
 	@staticmethod
 	def _merge_try_get_into_accumulators(
@@ -282,10 +280,13 @@ class StatHelper:
 		target: StatTargetBase,
 		acc: _NatureAccumulators,
 		is_ranged: Optional[bool],
+		*,
+		merge_current_target: bool = True,
 	) -> None:
-		StatHelper._merge_try_get_into_accumulators(
-			stats, game_config, stat_type, target, acc
-		)
+		if merge_current_target:
+			StatHelper._merge_try_get_into_accumulators(
+				stats, game_config, stat_type, target, acc
+			)
 
 		if stat_type == StatType.Health:
 			for dep in _HEALTH_DEPENDENCY_TYPES:
@@ -311,15 +312,16 @@ class StatHelper:
 		acc: _NatureAccumulators,
 		is_ranged: Optional[bool],
 	) -> None:
-		if isinstance(target, PlayerStatTarget) and is_ranged is not None:
-			alt = (
-				PlayerRangedOnlyStatTarget()
-				if is_ranged
-				else PlayerMeleeOnlyStatTarget()
-			)
-			StatHelper._add_dependency_contributions(
-				game_config, stats, stat_type, alt, acc, is_ranged
-			)
+		if isinstance(target, PlayerStatTarget):
+			if is_ranged is not None:
+				alt = (
+					PlayerRangedOnlyStatTarget()
+					if is_ranged
+					else PlayerMeleeOnlyStatTarget()
+				)
+				StatHelper._add_dependency_contributions(
+					game_config, stats, stat_type, alt, acc, is_ranged
+				)
 			StatHelper._add_dependency_contributions(
 				game_config,
 				stats,
@@ -328,6 +330,209 @@ class StatHelper:
 				acc,
 				is_ranged,
 			)
+			return
+
+		if isinstance(target, WeaponStatTarget):
+			if target.attack_type is None:
+				if is_ranged is not None:
+					attack = (
+						AttackType.Ranged if is_ranged else AttackType.Melee
+					)
+					StatHelper._add_dependency_contributions(
+						game_config,
+						stats,
+						stat_type,
+						WeaponStatTarget(attack),
+						acc,
+						is_ranged,
+					)
+			else:
+				StatHelper._add_dependency_contributions(
+					game_config,
+					stats,
+					stat_type,
+					WeaponStatTarget(),
+					acc,
+					is_ranged,
+				)
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				EquipmentStatTarget(ItemType.Weapon),
+				acc,
+				is_ranged,
+			)
+			return
+
+		if isinstance(target, EquipmentStatTarget):
+			if target.item_type is None or target.item_type != ItemType.Weapon:
+				return
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				EquipmentStatTarget(),
+				acc,
+				is_ranged,
+			)
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				WeaponStatTarget(),
+				acc,
+				is_ranged,
+			)
+			if is_ranged is not None:
+				attack = AttackType.Ranged if is_ranged else AttackType.Melee
+				StatHelper._add_dependency_contributions(
+					game_config,
+					stats,
+					stat_type,
+					WeaponStatTarget(attack),
+					acc,
+					is_ranged,
+				)
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				EquipmentStatTarget(),
+				acc,
+				is_ranged,
+			)
+			return
+
+		if isinstance(target, (PassiveSkillStatTarget, ActiveSkillStatTarget)):
+			if target.skill_type is None:
+				return
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				type(target)(),
+				acc,
+				is_ranged,
+			)
+			return
+
+		if isinstance(target, MountStatTarget):
+			if target.mount_rarity is None:
+				return
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				MountStatTarget(),
+				acc,
+				is_ranged,
+			)
+			return
+
+		if isinstance(target, PetStatTarget):
+			if target.pet_rarity is None:
+				return
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				PetStatTarget(),
+				acc,
+				is_ranged,
+			)
+			return
+
+		if isinstance(target, EggStatTarget):
+			if target.egg_rarity is None:
+				return
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				EggStatTarget(),
+				acc,
+				is_ranged,
+			)
+			return
+
+		if isinstance(target, OfflineCurrencyStatTarget):
+			if target.currency_type is None:
+				return
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				OfflineCurrencyStatTarget(),
+				acc,
+				is_ranged,
+			)
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				CurrencyBonusStatTarget(target.currency_type),
+				acc,
+				is_ranged,
+			)
+			StatHelper._add_dependency_contributions(
+				game_config,
+				stats,
+				stat_type,
+				CurrencyBonusStatTarget(),
+				acc,
+				is_ranged,
+			)
+			return
+
+		if isinstance(target, CurrencyBonusStatTarget):
+			return
+
+		if isinstance(target, DungeonStatTarget):
+			if target.dungeon_type is not None:
+				StatHelper._add_dependency_contributions(
+					game_config,
+					stats,
+					stat_type,
+					DungeonStatTarget(),
+					acc,
+					is_ranged,
+				)
+			if target.currency_type is not None:
+				StatHelper._add_dependency_contributions(
+					game_config,
+					stats,
+					stat_type,
+					CurrencyBonusStatTarget(target.currency_type),
+					acc,
+					is_ranged,
+				)
+			return
+
+	@staticmethod
+	def _player_is_ranged_optional(player: Any) -> Optional[bool]:
+		explicit = getattr(player, "is_ranged", None)
+		if explicit is not None:
+			return bool(explicit)
+
+		equipment = getattr(player, "equipment", None)
+		if equipment is None:
+			return None
+		weapon = getattr(equipment, "weapon", None)
+		if weapon is None:
+			return None
+
+		game_config = StatHelper._player_game_config(player)
+		weapons = getattr(game_config, "weapons", None)
+		if not weapons:
+			return None
+		item_id = getattr(weapon, "item_id", None)
+		if item_id is None:
+			return None
+		info = weapons.get(item_id)
+		if info is None:
+			return None
+		return bool(info.get("IsRanged", False))
 
 	@staticmethod
 	def _player_game_config(player: Any) -> Any:

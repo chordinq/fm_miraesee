@@ -242,7 +242,7 @@ class SharedGameConfig:
 	@classmethod
 	def load(cls) -> SharedGameConfig:
 		import config as cfg
-		from .enums import SummonKind
+		from .enums import AscendableType
 
 		return cls(
 			base_config=cfg.BASE_CONFIG,
@@ -250,9 +250,9 @@ class SharedGameConfig:
 			item_balancing_config=ItemBalancingConfig.from_dict(cfg.ITEM_BALANCING_CONFIG),
 			skill_base_config=SkillBaseConfig.from_dict(cfg.SKILL_BASE_CONFIG),
 			pet_base_config=PetBaseConfig.from_dict(cfg.PET_BASE_CONFIG),
-			egg_summon_config=SummonConfig(SummonKind.Pets),
-			mount_summon_config=SummonConfig(SummonKind.Mounts),
-			skill_summon_config=SummonConfig(SummonKind.Skills),
+			egg_summon_config=SummonConfig(AscendableType.Pets),
+			mount_summon_config=SummonConfig(AscendableType.Mounts),
+			skill_summon_config=SummonConfig(AscendableType.Skills),
 			secondary_stat_library=build_secondary_stat_library(cfg.SECONDARY_STAT_LIBRARY),
 			secondary_stat_item_unlock_library={
 				int(k): v for k, v in cfg.SECONDARY_STAT_ITEM_UNLOCK_LIBRARY.items()

@@ -6,7 +6,7 @@ Re-enable by uncommenting the block below.
 # from __future__ import annotations
 #
 # from config import SKILL_LIBRARY, SKILLS_MAPPING
-# from core.enums import CombatSkill, Rarity, SummonKind, TechTreeNodeType
+# from core.game_logic.enums import AscendableType, CombatSkill, Rarity, TechTreeNodeType
 # from core.random_pcg import RandomPCG
 # from core.game_logic.player_model import PlayerModel, SkillModel
 # from core.game_logic.summon_config import SummonConfig
@@ -35,12 +35,12 @@ Re-enable by uncommenting the block below.
 # 		summon_model = self.player.skills.summon_model
 #
 # 		if count not in config.possible_summon_count:
-# 			return SummonResult(SummonKind.Skills, count, 0, success=False, error="invalid_summon_count")
+# 			return SummonResult(AscendableType.Skills, count, 0, success=False, error="invalid_summon_count")
 #
 # 		if not can_afford_summon_batch(
 # 			self.player, config, TechTreeNodeType.SkillSummonCost, count
 # 		):
-# 			return SummonResult(SummonKind.Skills, count, 0, success=False, error="insufficient_currency")
+# 			return SummonResult(AscendableType.Skills, count, 0, success=False, error="insufficient_currency")
 #
 # 		spend_summon_batch(self.player, config, TechTreeNodeType.SkillSummonCost, count)
 # 		pulls: list[SummonPullResult] = []
@@ -49,7 +49,7 @@ Re-enable by uncommenting the block below.
 # 			seed = summon_model.get_seed()
 # 			rng  = RandomPCG(seed)
 #
-# 			StatHelper.roll_bonus_summon(self.player, SummonKind.Skills, rng)
+# 			StatHelper.roll_bonus_summon(self.player, AscendableType.Skills, rng)
 #
 # 			level_cfg = config.get_level_config(summon_model.level)
 # 			rarity    = level_cfg.roll_rarity(rng)
@@ -60,7 +60,7 @@ Re-enable by uncommenting the block below.
 # 			config.advance_progress(summon_model)
 # 			config.advance_seed(summon_model)
 #
-# 		return SummonResult(SummonKind.Skills, count, len(pulls), pulls=pulls)
+# 		return SummonResult(AscendableType.Skills, count, len(pulls), pulls=pulls)
 #
 # 	def _resolve_skill(self, skill_name: str) -> tuple:
 # 		from core.enums import Rarity

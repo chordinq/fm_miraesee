@@ -1,36 +1,34 @@
 from __future__ import annotations
+
 from dataclasses import dataclass
-from uuid import uuid4
-from ..enums import Rarity, AscendableType
+
+from ..enums import AscendableType, Rarity
 from ..stats import SecondaryStats
-from .summon_model import SummonModel
 from .ascension_model import AscensionModel
+from .summon_model import SummonModel
+
 
 @dataclass(frozen=True)
 class MountId:
 	rarity: Rarity
 	id: int
 
-class PlayerMountModel:
-	def __init__(self,
-		mount_id: MountId,
-		level: int = 0,
-		experience: int = 0,
-		is_equipped: bool = False,
-		equip_slot: int = 0,
-		secondary_stats: SecondaryStats = SecondaryStats(),
-	) -> None:
-		self.guid = str(uuid4())
-		self.mount_id = mount_id
-		self.level = level
-		self.experience = experience
-		self.is_equipped = is_equipped
-		self.equip_slot = equip_slot
-		self.secondary_stats = secondary_stats
 
-	@property
-	def perfection(self) -> float:
-		return self.secondary_stats.perfection
+class PlayerMountModel:
+	def __init__(
+		self,
+		guid: str,
+		mount_id: MountId,
+		secondary_stats: SecondaryStats,
+	) -> None:
+		# IL .ctor(Guid, MountId, SecondaryStats)
+		self.guid = guid
+		self.mount_id = mount_id
+		self.secondary_stats = secondary_stats
+		self.level = 0
+		self.experience = 0
+		self.is_equipped = False
+
 
 class PlayerMountCollectionModel:
 	def __init__(self) -> None:

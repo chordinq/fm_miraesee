@@ -1,59 +1,156 @@
 from __future__ import annotations
-from typing import Sequence, TypeVar
 
-_MASK64     = 0xFFFFFFFFFFFFFFFF
-_MUL        = 0x5851F42D4C957F2D
-_INC_CREATE = 0x1A08EE1184BA6D32
-_INC_NEXT   = 0x14057B7EF767814F
-
-U32_DENOM = 4_294_967_296
+import time
+import uuid
+from typing import Iterable, Sequence, TypeVar
 
 T = TypeVar("T")
 
-def _mask64(v: int) -> int: return v & _MASK64
-def _mask32(v: int) -> int: return v & 0xFFFFFFFF
 
 class RandomPCG:
-	def __init__(self, seed: int) -> None:
-		self._state: int = _mask64(seed * _MUL + _INC_CREATE)
+	_MASK64: int = 0xFFFFFFFFFFFFFFFF
+	_MUL: int = 0x5851F42D4C957F2D
+	_INC_CREATE: int = 0x1A08EE1184BA6D32
+	_INC_NEXT: int = 0x14057B7EF767814F
+	_U32_DENOM: int = 4_294_967_296
+	_U16_DENOM: int = 65_536
+	_TO_DOUBLE01: float = 2.3283064365386963e-10 
+
+	@staticmethod
+	def _mask64(value: int) -> int:
+		return value & RandomPCG._MASK64
+
+	@staticmethod
+	def _mask32(value: int) -> int:
+		return value & 0xFFFFFFFF
+
+	def __init__(self, seed: int | RandomPCG | None = None) -> None:
+		if isinstance(seed, RandomPCG):
+			self._state = seed._state
+		elif seed is None:
+			self._state = 0
+		else:
+			self._state = self._mask64(int(seed) * self._MUL + self._INC_CREATE)
+
+	@classmethod
+	def create_from_seed(cls, seed: int) -> RandomPCG:
+		return cls(seed)
+
+	@classmethod
+	def create_new(cls) -> RandomPCG:
+		return cls(cls._random_seed())
+
+	@classmethod
+	def _random_seed(cls) -> int:
+		tick_a = int(time.time() * 1000) & 0xFFFFFFFF
+		guid_a = uuid.uuid4().int & 0xFFFFFFFF
+		tick_b = int(time.time() * 1000) & 0xFFFFFFFF
+		guid_b = uuid.uuid4().int & 0xFFFFFFFF
+		low = guid_b ^ tick_b
+		high = guid_a ^ tick_a
+		return cls._mask64(low | (high << 32))
+
+	def _advance(self) -> None:
+		self._state = self._mask64(self._state * self._MUL + self._INC_NEXT)
 
 	def _next_pcg32(self) -> int:
 		old = self._state
-		self._state = _mask64(old * _MUL + _INC_NEXT)
-		xorshifted = _mask32(((old >> 18) ^ old) >> 27)
-		rot = (old >> 59) & 0x1F
-		return _mask32((xorshifted << ((~rot + 1) & 0x1F)) + (xorshifted >> rot))
+		hi = self._mask32(old >> 32)
+		lo = self._mask32(old >> 27)
+		xorshifted = self._mask32((hi >> 13) ^ lo)
+		rot = hi >> 27
+		self._state = self._mask64(old * self._MUL + self._INC_NEXT)
+		return self._mask32((xorshifted << ((-rot) & 0x1F)) + (xorshifted >> rot))
 
-	def next_f64(self) -> float:
-		return self._next_pcg32() / U32_DENOM
+	def next_uint(self) -> int:
+		return self._next_pcg32()
 
-	def next_int(self, max_val: int) -> int:
-		if max_val <= 0:
-			return 0
-		raw = self._next_pcg32()
-		pos = (raw >> 1) & 0x7FFFFFFF
-		return pos - (pos // max_val) * max_val
+	def next_int(self, max_exclusive: int | None = None) -> int:
+		raw = self._next_pcg32() >> 1
+		if max_exclusive is None:
+			return raw
+		if max_exclusive <= 0:
+			raise ValueError("maxExclusive must be positive")
+		return raw - (raw // max_exclusive) * max_exclusive
 
 	def next_int_min_max(self, min_inclusive: int, max_exclusive: int) -> int:
-		if max_exclusive <= min_inclusive:
-			return min_inclusive
+		if max_exclusive - min_inclusive == 0 or min_inclusive > max_exclusive:
+			raise ValueError("invalid int range")
 		return min_inclusive + self.next_int(max_exclusive - min_inclusive)
-
-	def choice(self, items: Sequence[T]) -> T:
-		if not items:
-			raise ValueError("choice() called with empty sequence")
-		selected = items[0]
-		for bound, item in enumerate(items, 1):
-			if self.next_int(bound) == 0:
-				selected = item
-		return selected
 
 	def next_ulong(self) -> int:
 		high = self._next_pcg32()
-		low  = self._next_pcg32()
-		return _mask64((high << 32) | low)
+		low = self._next_pcg32()
+		return self._mask64((high << 32) | low)
+
+	def next_long(self, max_exclusive: int | None = None) -> int:
+		value = self.next_ulong() >> 1
+		if max_exclusive is None:
+			return value
+		if max_exclusive <= 0:
+			raise ValueError("maxExclusive must be positive")
+		return value - (value // max_exclusive) * max_exclusive
+
+	def next_float(self) -> float:
+		return float(self._next_pcg32()) / float(self._U32_DENOM)
+
+	def next_double(self) -> float:
+		return float(self._next_pcg32()) / float(self._U32_DENOM)
+
+	def next_f32_bits(self) -> int:
+		return self._next_pcg32() & 0xFFFF
+
+	def next_f32(self) -> float:
+		return float(self.next_f32_bits()) / float(self._U16_DENOM)
+
+	def next_f64_bits(self) -> int:
+		return self._next_pcg32()
+
+	def next_f64(self) -> float:
+		return float(self.next_f64_bits()) / float(self._U32_DENOM)
+
+	def next_f64_in_range(self, min_value: float, max_value: float) -> float:
+		return min_value + self.next_f64() * (max_value - min_value)
+
+	def next_fixed_d6(self) -> float:
+		return self.next_f64()
+
+	def next_bool(self) -> bool:
+		return (self._next_pcg32() >> 31) != 0
+
+	def choice(self, items: Sequence[T] | Iterable[T]) -> T:
+		if isinstance(items, Sequence):
+			count = len(items)
+			if count < 1:
+				raise ValueError("choice() called with empty sequence")
+			return items[self.next_int(count)]
+
+		selected: T | None = None
+		bound = 1
+		for item in items:
+			if selected is None:
+				selected = item
+			elif self.next_int(bound) == 0:
+				selected = item
+			bound += 1
+		if selected is None:
+			raise ValueError("choice() called with empty sequence")
+		return selected
 
 	def next_guid(self) -> str:
 		part1 = self.next_ulong()
 		part2 = self.next_ulong()
 		return f"{part1:016X}-{part2:016X}"
+
+	def __eq__(self, other: object) -> bool:
+		if self is other:
+			return True
+		if not isinstance(other, RandomPCG):
+			return False
+		return self._state == other._state
+
+	def __hash__(self) -> int:
+		return hash(self._state)
+
+	def __repr__(self) -> str:
+		return f"RandomPCG(state=0x{self._state:016X})"
