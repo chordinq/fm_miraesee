@@ -17,28 +17,28 @@ class Price:
 
 
 class SpendContext:
-    def __init__(self,
-        player_model: PlayerModel,
-        currency_type: CurrencyType,
-        spent_amount: int,
-    ):
-        self._player_model = player_model
-        self._currency_type = currency_type
-        self._spent_amount = spent_amount
+	def __init__(
+		self,
+		currency_model: "PlayerCurrencyModel",
+		currency_type: CurrencyType,
+		spent_amount: int,
+	) -> None:
+		self._currency_model = currency_model
+		self._currency_type = currency_type
+		self._spent_amount = spent_amount
 
-    def free(self, amount: int):
-        self._spent_amount = max(0, self._spent_amount - amount)
-    
-    def can_afford(self):
-        return self._player_model.player_currency_model.can_afford(self._currency_type, self._spent_amount)
-    
-    def spend(self, sink_name):
-        if self._spent_amount < 1:
-            self._player_model.player_currency_model._current_transaction = None
-            return
-            
-        self._player_model.player_currency_model.currencies[self._currency_type] -= self._spent_amount
-        self._player_model.player_currency_model._current_transaction = None
+	def free(self, amount: int) -> None:
+		self._spent_amount = max(0, self._spent_amount - amount)
+
+	def can_afford(self) -> bool:
+		return self._currency_model.can_afford(self._currency_type, self._spent_amount)
+
+	def spend(self, sink_name: str) -> None:
+		if self._spent_amount < 1:
+			self._currency_model._current_transaction = None
+			return
+		self._currency_model.currencies[self._currency_type] -= self._spent_amount
+		self._currency_model._current_transaction = None
 
 
 class PlayerCurrencyModel:
@@ -61,6 +61,9 @@ class PlayerCurrencyModel:
 
     def get(self, currency_type: CurrencyType) -> int:
         return self.currencies[currency_type]
+
+    def set_currency(self, currency_type: CurrencyType, amount: int) -> None:
+        self.currencies[currency_type] = amount
 
     def can_afford(self, currency_type: CurrencyType, amount: int) -> bool:
         return self.currencies[currency_type] >= amount

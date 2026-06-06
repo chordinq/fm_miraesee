@@ -1,5 +1,6 @@
 from .secondary_stat_helper import SecondaryStatHelper
 from .secondary_stats import SecondaryStats
+from .skill_stats import SkillStats
 from .stat_helper import StatHelper
 from .stats import (
 	RandomValueStatContribution,
@@ -17,6 +18,7 @@ __all__ = [
 	"StatContribution",
 	"StatContributions",
 	"RandomValueStatContribution",
+	"SkillStats",
 	"StatHelper",
 	"SecondaryStats",
 	"SecondaryStatHelper",

@@ -1,1 +1,2 @@
-from .parser import DumpParser, parse_dump
+from .dump import DumpSnapshot, parse_dump, parse_dump_text
+from .parser import DumpParser

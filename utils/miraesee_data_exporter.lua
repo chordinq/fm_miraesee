@@ -39,29 +39,43 @@ function extract_stats_20char(stats_ptr)
     return extract_stats_blob(stats_ptr, 2)
 end
 
-function extract_summon_meta(summon_ptr, asc_ptr, is_forge)
+function extract_summon_meta(summon_ptr, asc_ptr)
     local count, level, seed = 0, 0, 0
     local asc_lvl = 0
 
-    if is_forge then
-        if summon_ptr ~= 0 then
-            seed = read_qword(summon_ptr + 0x18)
-            level = read_dword(summon_ptr + 0x20)
-            count = 0 -- Forge는 count가 없으므로 0
-        end
-    else
-        if summon_ptr ~= 0 then
-            level = read_dword(summon_ptr + 0x10)
-            count = read_dword(summon_ptr + 0x14)
-            seed = read_qword(summon_ptr + 0x18)
-        end
+    if summon_ptr ~= 0 then
+        -- IL SummonModel: +0x10 count, +0x14 level, +0x18 seed
+        count = read_dword(summon_ptr + 0x10)
+        level = read_dword(summon_ptr + 0x14)
+        seed = read_qword(summon_ptr + 0x18)
     end
 
     if asc_ptr ~= 0 then
         asc_lvl = read_dword(asc_ptr + 0x14)
     end
 
-    return string.format("%02X%02X%016X00000000000%X", count % 256, level % 256, seed, asc_lvl % 16)
+    -- summon wire: level(1B) + count(1B) + seed(8B) + pad + asc
+    return string.format("%02X%02X%016X00000000000%X", level % 256, count % 256, seed, asc_lvl % 16)
+end
+
+function extract_forge_meta(forge_ptr, asc_ptr)
+    local count, level, seed, highest_age = 0, 0, 0, 0
+    local asc_lvl = 0
+
+    if forge_ptr ~= 0 then
+        -- IL PlayerForgeModel: +0x18 ForgeSeed, +0x20 ForgeLevel, +0x3C ForgeCount, +0x40 HighestAge
+        seed = read_qword(forge_ptr + 0x18)
+        level = read_dword(forge_ptr + 0x20)
+        count = read_dword(forge_ptr + 0x3C)
+        highest_age = read_dword(forge_ptr + 0x40)
+    end
+
+    if asc_ptr ~= 0 then
+        asc_lvl = read_dword(asc_ptr + 0x14)
+    end
+
+    -- dump v3 forge wire: level(1B) + forge_count(4B) + seed(8B) + highest_age(1B) + reserved(3) + asc
+    return string.format("%02X%08X%016X%02X000%X", level % 256, count % 4294967296, seed, highest_age % 256, asc_lvl % 16)
 end
 
 function get_pointers(t_addr) gg.clearResults() gg.searchNumber(string.format("%X",t_addr).."h", gg.TYPE_QWORD) local r=gg.getResults(200) local p={} for _,v in ipairs(r) do if read_qword(v.address-0x8)==0 or read_qword(v.address+0x8)==0 then table.insert(p,v.address) end end return p end
@@ -155,31 +169,37 @@ end
 function extract_forge(player_ptr)
     local forge_ptr = read_qword(player_ptr + 0x218)
     local asc_ptr = forge_ptr ~= 0 and read_qword(forge_ptr + 0x50) or 0
-    return {"[FORGE]", extract_summon_meta(forge_ptr, asc_ptr, true)}
+    return {"[FORGE]", extract_forge_meta(forge_ptr, asc_ptr)}
 end
 
 function extract_skill_meta(player_ptr)
     local col = read_qword(player_ptr + 0x240)
     local sum_ptr = col ~= 0 and read_qword(col + 0x20) or 0
     local asc_ptr = col ~= 0 and read_qword(col + 0x28) or 0
-    return {"[SKILL]", extract_summon_meta(sum_ptr, asc_ptr, false)}
+    return {"[SKILL]", extract_summon_meta(sum_ptr, asc_ptr)}
 end
 
 function extract_pet_meta(player_ptr)
     local col = read_qword(player_ptr + 0x258)
     local sum_ptr = col ~= 0 and read_qword(col + 0x28) or 0
     local asc_ptr = col ~= 0 and read_qword(col + 0x30) or 0
-    return {"[PET]", extract_summon_meta(sum_ptr, asc_ptr, false)}
+    return {"[PET]", extract_summon_meta(sum_ptr, asc_ptr)}
 end
 
 function extract_mount_meta(player_ptr)
     local col = read_qword(player_ptr + 0x278)
     local sum_ptr = col ~= 0 and read_qword(col + 0x18) or 0
     local asc_ptr = col ~= 0 and read_qword(col + 0x20) or 0
-    return {"[MOUNT]", extract_summon_meta(sum_ptr, asc_ptr, false)}
+    return {"[MOUNT]", extract_summon_meta(sum_ptr, asc_ptr)}
 end
 
 function extract_hidden_levels(equip_model)
+    -- MetaDictionary<ItemType, MetaDictionary<int,int>> @ PlayerEquipmentModel+0x50
+    -- Outer: +0x18 entries ptr, +0x20 count (8 ItemTypes)
+    -- Outer slot i: key @ entries+0x30+i*0x28, inner dict ptr @ entries+0x40+i*0x28
+    -- Inner: +0x18 entries ptr, +0x20 count (10 ItemAges)
+    -- Inner slot stride 0x1C (int,int — not 0x28):
+    --   hash @ +0x0, key(age) @ +0x4, value(bracket) @ +0x8, next @ +0xC
     local out = {"[HIDDEN_LEVELS]"}
     if equip_model == 0 then return out end
     local outer_dict = read_qword(equip_model + 0x50)
@@ -197,13 +217,16 @@ function extract_hidden_levels(equip_model)
             local i_cnt = read_dword(inner_dict + 0x20)
             local i_ent = read_qword(inner_dict + 0x18)
             for j = 0, i_cnt - 1 do
-                local age = read_dword(i_ent + 0x30 + (j * 0x28))
-                local lvl = read_dword(i_ent + 0x34 + (j * 0x28))
-                current_line = current_line .. string.format("%X%X%02X", t_type % 16, age % 16, lvl % 256)
-                idx = idx + 1
-                if idx % 8 == 0 then
-                    table.insert(out, current_line)
-                    current_line = ""
+                local slot = i_ent + 0x30 + (j * 0x1C)
+                local age = read_dword(slot + 0x4)
+                local lvl = read_dword(slot + 0x8)
+                if age >= 0 and age <= 9 and lvl >= 0 and lvl <= 99 then
+                    current_line = current_line .. string.format("%X%X%02X", t_type % 16, age % 16, lvl % 256)
+                    idx = idx + 1
+                    if idx % 8 == 0 then
+                        table.insert(out, current_line)
+                        current_line = ""
+                    end
                 end
             end
         end
@@ -279,7 +302,7 @@ function extract_equipment(equip_model)
             local header = string.format("0%X%X%X", read_dword(id_ptr + 0x10) % 16, read_dword(id_ptr + 0x14) % 16, read_dword(id_ptr + 0x18) % 16)
             local flags = 1 + ((read_dword(item_ptr + 0x2C) & 0xFF) * 2) + ((read_dword(item_ptr + 0x2D) & 0xFF) * 4)
             local prog = string.format("%02X00%04X", read_dword(item_ptr + 0x28) % 256, flags)
-            table.insert(out, header .. prog .. extract_stats_blob(read_qword(item_ptr + 0x30), 4))
+            table.insert(out, header .. prog .. extract_stats_20char(read_qword(item_ptr + 0x30)))
         end
     end
     return out
@@ -327,7 +350,11 @@ function extract_pets_eggs_collection(player_ptr)
                 local rarity = read_dword(p_id_ptr + 0x10)
                 local p_id = read_dword(p_id_ptr + 0x14)
                 local header = string.format("2%X%02X", rarity % 16, p_id % 256)
-                local prog = string.format("%02X%02X%02X%02X", read_dword(model + 0x28) % 256, read_dword(model + 0x2C) % 256, read_dword(model + 0x30) % 256, read_dword(model + 0x34) % 256)
+                local lvl = read_dword(model + 0x28)
+                local exp = read_dword(model + 0x2C)
+                local is_eq = read_dword(model + 0x30) % 256
+                local slot = read_dword(model + 0x34) % 256
+                local prog = string.format("%08X%08X%02X%02X", lvl, exp, is_eq, slot)
                 table.insert(out, header .. prog .. extract_stats_20char(read_qword(model + 0x38)))
             end
         end
@@ -363,8 +390,85 @@ function extract_mounts_collection(player_ptr)
             if model ~= 0 then
                 local m_id_ptr = read_qword(model + 0x20)
                 local header = string.format("4%X%02X", read_dword(m_id_ptr + 0x10) % 16, read_dword(m_id_ptr + 0x14) % 256)
-                local prog = string.format("%02X%02X%02X00", read_dword(model + 0x28) % 256, read_dword(model + 0x2C) % 256, read_dword(model + 0x30) % 256)
+                local lvl = read_dword(model + 0x28)
+                local exp = read_dword(model + 0x2C)
+                local is_eq = read_dword(model + 0x30) % 256
+                local prog = string.format("%08X%08X%02X00", lvl, exp, is_eq)
                 table.insert(out, header .. prog .. extract_stats_20char(read_qword(model + 0x38)))
+            end
+        end
+    end
+    return out
+end
+
+-- Extract PlayerSkinCollectionModel (player_ptr + 0x290)
+-- Skin line format (35 chars):
+--   5 <item_type:1hex> <idx:02hex> <is_eq:1hex> <level:02hex> <exp:08hex> <stats:20hex>
+--
+-- NOTE: EquippedSkinGuids = MetaDictionary<ItemType, Guid>.
+--   Guid is a 16-byte value type, so entry stride is 0x30 (not the usual 0x28).
+--   Verify by checking: if extracted equipped flags are wrong, adjust stride.
+function extract_skin_collection(player_ptr)
+    local out = {"[SKIN_COLLECTION]"}
+    local col = read_qword(player_ptr + 0x290)
+    if col == 0 then return out end
+
+    local skins_dict   = read_qword(col + 0x10)
+    local eq_guid_dict = read_qword(col + 0x20)
+
+    -- Build equipped GUID map: item_type -> {lo, hi}
+    -- MetaDictionary<ItemType, Guid> entry stride = 0x30 (Guid is 16 bytes)
+    local eq_map = {}
+    if eq_guid_dict ~= 0 then
+        local eq_count   = read_dword(eq_guid_dict + 0x20)
+        local eq_entries = read_qword(eq_guid_dict + 0x18)
+        if eq_entries ~= 0 then
+            for i = 0, eq_count - 1 do
+                local off = i * 0x30
+                local it      = read_dword(eq_entries + 0x30 + off)
+                local guid_lo = read_qword(eq_entries + 0x40 + off)
+                local guid_hi = read_qword(eq_entries + 0x48 + off)
+                if guid_lo ~= 0 or guid_hi ~= 0 then
+                    eq_map[it] = {lo = guid_lo, hi = guid_hi}
+                end
+            end
+        end
+    end
+
+    if skins_dict == 0 then return out end
+
+    local outer_count   = read_dword(skins_dict + 0x20)
+    local outer_entries = read_qword(skins_dict + 0x18)
+    if outer_entries == 0 then return out end
+
+    for i = 0, outer_count - 1 do
+        local off       = i * 0x28
+        local item_type = read_dword(outer_entries + 0x30 + off)
+        local list_ptr  = read_qword(outer_entries + 0x40 + off)
+        if list_ptr ~= 0 then
+            local l_count = read_dword(list_ptr + 0x18)
+            local l_arr   = read_qword(list_ptr + 0x10)
+            if l_arr ~= 0 and l_count > 0 then
+                for j = 0, l_count - 1 do
+                    local model = read_qword(l_arr + 0x20 + (j * 8))
+                    if model ~= 0 then
+                        local guid_lo   = read_qword(model + 0x10)
+                        local guid_hi   = read_qword(model + 0x18)
+                        local sid_ptr   = read_qword(model + 0x20)
+                        local skin_idx  = sid_ptr ~= 0 and read_dword(sid_ptr + 0x14) or 0
+                        local level     = read_dword(model + 0x30)
+                        local exp       = read_dword(model + 0x34)
+                        local stat_ptr  = read_qword(model + 0x28)
+
+                        local eq = eq_map[item_type]
+                        local is_eq = (eq and eq.lo == guid_lo and eq.hi == guid_hi) and 1 or 0
+
+                        local line = string.format("5%X%02X%X%02X%08X",
+                            item_type % 16, skin_idx % 256, is_eq,
+                            level % 256, exp % 4294967296)
+                        table.insert(out, line .. extract_stats_20char(stat_ptr))
+                    end
+                end
             end
         end
     end
@@ -412,7 +516,7 @@ function main()
         return 
     end
 
-    local final_output = {}
+    local final_output = {"[DUMP_VERSION]", "2"}
     
     local function append_data(data_table)
         for _, line in ipairs(data_table) do table.insert(final_output, line) end
@@ -435,6 +539,7 @@ function main()
     append_data(extract_skills_collection(PlayerModel_Base_Addr))
     append_data(extract_pets_eggs_collection(PlayerModel_Base_Addr))
     append_data(extract_mounts_collection(PlayerModel_Base_Addr))
+    append_data(extract_skin_collection(PlayerModel_Base_Addr))
     table.insert(final_output, "[END]")
     table.insert(final_output, "")
     table.insert(final_output, "")

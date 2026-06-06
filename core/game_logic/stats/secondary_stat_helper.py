@@ -1,9 +1,7 @@
 from __future__ import annotations
-
 from typing import TYPE_CHECKING, Sequence
-
 from ..enums import SecondaryStatType
-from ..random_pcg import RandomPCG
+from ...random_pcg import RandomPCG
 from .secondary_stats import SecondaryStats
 
 if TYPE_CHECKING:
@@ -43,12 +41,13 @@ class SecondaryStatHelper:
 			available = [t for t in available if t not in excluded]
 
 		result = SecondaryStats()
-		while stat_count > 0:
+		remaining = stat_count
+		while remaining > 0:
 			if not available:
 				break
 			stat_type = random.choice(available)
 			interpolation = random.next_f64()
 			result.add_or_replace_stat_contribution(stat_type, interpolation)
 			available.remove(stat_type)
-			stat_count -= 1
+			remaining -= 1
 		return result

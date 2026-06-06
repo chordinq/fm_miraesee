@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 from typing import TYPE_CHECKING
-
 from ..enums import AscendableType, AscensionLevel
 from ..stats import StatContributions
 from ..stats.stat_helper import StatHelper

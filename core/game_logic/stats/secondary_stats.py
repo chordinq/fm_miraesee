@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 from typing import TYPE_CHECKING, Mapping
-
 from ...miraesee_extension import miraesee_extension
 from ..enums import SecondaryStatType
 

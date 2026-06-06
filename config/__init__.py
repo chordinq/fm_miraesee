@@ -15,7 +15,10 @@ ASSETS_DIR = PROJECT_ROOT / "assets"
 GAME_CONFIGS_DIR = ASSETS_DIR / "game_configs"
 LOCALIZATIONS_DIR = ASSETS_DIR / "localizations"
 SPRITES_DIR = ASSETS_DIR / "sprites"
-FONTS_DIR = ASSETS_DIR / "fonts"
+UI_SPRITES_DIR = SPRITES_DIR / "UI"
+UI_META_FILE = UI_SPRITES_DIR / "UI_meta.json"
+_FONTS_CANDIDATE = ASSETS_DIR / "Fonts"
+FONTS_DIR = _FONTS_CANDIDATE if _FONTS_CANDIDATE.is_dir() else ASSETS_DIR / "fonts"
 
 GAME_LOGIC_DIR = CORE_DIR / "game_logic"
 
@@ -82,6 +85,7 @@ SKINS_LIBRARY = load_json(GAME_CONFIGS_DIR / "SkinsLibrary.json")
 SKIN_UPGRADE_LIBRARY = load_json(GAME_CONFIGS_DIR / "SkinUpgradeLibrary.json")
 SETS_LIBRARY = load_json(GAME_CONFIGS_DIR / "SetsLibrary.json")
 PLAYER_SEGMENTS= load_json(GAME_CONFIGS_DIR / "PlayerSegments.json")
+UNLOCK_CONDITIONS = load_json(GAME_CONFIGS_DIR / "UnlockConditions.json")
 PROFILE_BASE_CONFIG = load_json(GAME_CONFIGS_DIR / "ProfileBaseConfig.json")
 PVP_BASE_CONFIG = load_json(GAME_CONFIGS_DIR / "PvpBaseConfig.json")
 ARENA_REWARD_LIBRARY = load_json(GAME_CONFIGS_DIR / "ArenaRewardLibrary.json")

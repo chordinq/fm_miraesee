@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, Optional
 from config import EGG_SUMMON_CONFIG, MOUNT_SUMMON_CONFIG, SKILL_SUMMON_CONFIG
 
 from .enums import AscendableType, CurrencyType
-from .models.player_currency_model import Price
+from .player.player_currency_model import Price
 from .stats.stat_target import (
 	ActiveSkillStatTarget,
 	EggStatTarget,
@@ -15,10 +15,9 @@ from .stats.stat_target import (
 from .summon_level_config import SummonLevelConfig
 
 if TYPE_CHECKING:
-	from .models.player_model import PlayerModel
-	from .models.player_currency_model import SpendContext
+	from .player.player_model import PlayerModel
+	from .player.player_currency_model import SpendContext
 
-# C# has SummonableId ("Skills" / "Eggs" / "Mounts"), not SummonKind.
 _ASCENDABLE_SUMMON_CONFIG: dict[AscendableType, dict] = {
 	AscendableType.Skills: SKILL_SUMMON_CONFIG,
 	AscendableType.Pets: EGG_SUMMON_CONFIG,

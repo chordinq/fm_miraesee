@@ -1,12 +1,14 @@
 from __future__ import annotations
-
 from dataclasses import dataclass
-from typing import Any
-
+from typing import TYPE_CHECKING, Any, Sequence
 from ..enums import AscendableType, Rarity
-from ..random_pcg import RandomPCG
+from ...random_pcg import RandomPCG
 from ..stats import SecondaryStats
+from ..stats.secondary_stat_helper import SecondaryStatHelper
 from .ascension_model import AscensionModel
+
+if TYPE_CHECKING:
+	from .player_model import PlayerModel
 from .summon_model import SummonModel
 from .timer_model import TimerModel
 
@@ -34,15 +36,85 @@ class PlayerPetModel:
 		self.is_equipped = False
 		self.equip_slot = _EMPTY_EGG_SLOT
 
+	def get_resolved_damage(self, player: Any) -> float:
+		from ..stats.pet_stats import resolve_pet_primary_stats
+
+		return resolve_pet_primary_stats(player, self)[0]
+
+	def get_resolved_health(self, player: Any) -> float:
+		from ..stats.pet_stats import resolve_pet_primary_stats
+
+		return resolve_pet_primary_stats(player, self)[1]
+
+	def get_resolved_stats(self, player: Any) -> tuple[float, float]:
+		from ..stats.pet_stats import resolve_pet_primary_stats
+
+		return resolve_pet_primary_stats(player, self)
+
+	def get_display_level(self) -> int:
+		return self.level + 1
+
+	def get_experience_required(self, player: Any) -> int:
+		from ..stats.pet_stats import get_pet_experience_required, resolve_player_game_config
+
+		return get_pet_experience_required(
+			resolve_player_game_config(player), self.pet_id.rarity, self.level
+		)
+
+	@staticmethod
+	def get_total_level_xp(pet: PlayerPetModel, player: PlayerModel, level: int) -> int:
+		from ..stats.experience_helper import _level_info_entries, total_level_xp
+
+		upgrade_config = player.game_config.pet_upgrade_library.get(pet.pet_id.rarity)
+		if upgrade_config is None:
+			raise ValueError(f"No pet upgrade config for rarity: {pet.pet_id.rarity!r}")
+		return total_level_xp(_level_info_entries(upgrade_config), level)
+
+	def get_total_xp(self, player: PlayerModel) -> int:
+		return self.get_total_level_xp(self, player, self.level) + self.experience
+
+	@staticmethod
+	def calculate_level_and_xp(
+		player: PlayerModel,
+		pet: PlayerPetModel,
+		total_xp: int,
+	) -> tuple[int, int]:
+		from ..stats.experience_helper import _level_info_entries, calculate_level_and_xp
+
+		upgrade_config = player.game_config.pet_upgrade_library.get(pet.pet_id.rarity)
+		if upgrade_config is None:
+			raise ValueError(f"No pet upgrade config for rarity: {pet.pet_id.rarity!r}")
+		return calculate_level_and_xp(_level_info_entries(upgrade_config), total_xp)
+
 
 class PlayerEggModel:
 	def __init__(self, guid: str, rarity: Rarity, seed: int) -> None:
 		self.guid = guid
 		self.rarity = rarity
 		self.seed = seed
-		self.timer = TimerModel(start_time=0, end_time=0, duration=0)
+		self.timer: TimerModel | None = None
 		self.is_equipped = False
 		self.equip_slot = _EMPTY_EGG_SLOT
+
+	def get_xp(self, player: PlayerModel) -> int:
+		from ..stats.experience_helper import _level_info_entries, first_level_experience
+
+		upgrade_config = player.game_config.pet_upgrade_library.get(self.rarity)
+		if upgrade_config is None:
+			raise ValueError(f"No pet upgrade config for rarity: {self.rarity!r}")
+		return first_level_experience(_level_info_entries(upgrade_config))
+
+
+class HatchedPetInfo:
+	def __init__(
+		self,
+		model: PlayerPetModel,
+		is_new: bool,
+		previous_hatch_slot_id: int,
+	) -> None:
+		self.pet_id = model.pet_id
+		self.is_new = is_new
+		self.previous_hatch_slot_id = previous_hatch_slot_id
 
 
 class PlayerPvpPetModel:
@@ -63,7 +135,6 @@ class PlayerPvpPetModel:
 
 class PlayerPetCollectionModel:
 	def __init__(self) -> None:
-		# IL .ctor: lists, SummonModel, AscensionModel(AscendableType.Pets = 2).
 		self.pets: list[PlayerPetModel] = []
 		self.eggs: list[PlayerEggModel] = []
 		self.unlocked_hatch_slots_count: int = 0
@@ -77,9 +148,12 @@ class PlayerPetCollectionModel:
 		self.ascension_model.ascend()
 
 	def create_egg_model(self, rarity: Rarity, seed: int) -> PlayerEggModel:
-		# IL: RandomPCG.CreateFromSeed(seed), NextGuid, rarity, seed, timer=0, equip_slot=-1.
 		rng = RandomPCG.create_from_seed(seed)
-		return PlayerEggModel(rng.next_guid(), rarity, seed)
+		egg = PlayerEggModel(rng.next_guid(), rarity, seed)
+		egg.timer = None
+		egg.is_equipped = False
+		egg.equip_slot = _EMPTY_EGG_SLOT
+		return egg
 
 	def get_equipped_eggs_count(self) -> int:
 		return sum(1 for egg in self.eggs if egg.is_equipped)
@@ -143,14 +217,53 @@ class PlayerPetCollectionModel:
 
 	@staticmethod
 	def _pet_base_config(player: Any) -> Any:
-		cfg = getattr(player, "game_config", None)
-		if cfg is not None:
-			return cfg.pet_base_config
-		from ..shared_game_config import get_shared_game_config
-
-		return get_shared_game_config().pet_base_config
+		return player.game_config.pet_base_config
 
 	@staticmethod
 	def _get_unlocked_pet_slot_count(player: Any) -> int:
-		# IL: SharedGameConfigExtensions.GetUnlockedPetSlotCount(player).
 		return PlayerPetCollectionModel._pet_base_config(player).pet_slots_count
+
+
+def create_pet(
+	player: PlayerModel,
+	pet_id: PetId,
+	rng: RandomPCG,
+	secondary_stats: SecondaryStats | None = None,
+) -> PlayerPetModel:
+	game_config = player.game_config
+	guid = rng.next_guid()
+	ascension_level = player.player_pet_collection_model.ascension_model.current_level
+	library = game_config.secondary_stat_pet_unlock_library
+
+	if ascension_level < 1:
+		unlock_row = library.get(pet_id.rarity)
+	else:
+		unlock_row = list(library.values())[-1] if library else None
+
+	if unlock_row is None:
+		raise ValueError(f"Missing SecondaryStatPetUnlockLibrary entry for {pet_id.rarity!r}")
+
+	stat_count = int(unlock_row["NumberOfSecondStats"])
+	if secondary_stats is None:
+		secondary_stats = SecondaryStatHelper.generate_secondary_stats(stat_count, rng)
+
+	return PlayerPetModel(guid, pet_id, secondary_stats)
+
+
+def create_pet_from_ids(
+	player: PlayerModel,
+	pet_ids: Sequence[PetId],
+	rng: RandomPCG,
+	secondary_stats: SecondaryStats | None = None,
+) -> PlayerPetModel:
+	if not pet_ids:
+		raise ValueError("pet_ids must not be empty")
+	chosen = rng.choice(list(pet_ids))
+	return create_pet(player, chosen, rng, secondary_stats)
+
+
+def pet_ids_for_rarity(
+	pet_library: dict[PetId, dict],
+	rarity: Rarity,
+) -> list[PetId]:
+	return [pet_id for pet_id in pet_library if pet_id.rarity == rarity]

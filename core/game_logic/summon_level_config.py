@@ -1,7 +1,7 @@
 #updated 2026-06-03
 from __future__ import annotations
 from .enums import Rarity
-from .random_pcg import RandomPCG
+from ..random_pcg import RandomPCG
 
 class SummonLevelConfig:
 	def __init__(self, data: dict) -> None:
