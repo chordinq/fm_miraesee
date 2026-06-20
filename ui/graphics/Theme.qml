@@ -31,8 +31,21 @@ QtObject {
 	}
 
 	readonly property string latinFontFamily: fontBaloo.status === FontLoader.Ready ? fontBaloo.name : ""
-	readonly property var fontFamilies: [fontBaloo.name, fontKR.name, fontJP.name, fontRU.name, fontTR.name]
-	
+	readonly property string uiFontFamily: {
+		switch (language) {
+		case "ko":
+			return fontKR.status === FontLoader.Ready ? fontKR.name : latinFontFamily
+		case "ja":
+			return fontJP.status === FontLoader.Ready ? fontJP.name : latinFontFamily
+		case "ru":
+			return fontRU.status === FontLoader.Ready ? fontRU.name : latinFontFamily
+		case "tr-TR":
+			return fontTR.status === FontLoader.Ready ? fontTR.name : latinFontFamily
+		default:
+			return latinFontFamily
+		}
+	}
+
 	readonly property color black:						"#000000"
 	readonly property color	white:						"#FFFFFF"
 	readonly property color	brown:						"#E5A27D"

@@ -34,13 +34,15 @@ Item {
 		anchors.horizontalCenter: icon.horizontalCenter
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: icon.height * 0.09
-		locId: "25799296414314496"
-		locTable: "General"
-		suffix: "\u200A" + ((root.petModel?.level ?? -1) + 1)
-		useUiFont: true
+		segments: [
+			{ locId: "25799296414314496" },
+			{ text: (root.petModel?.level ?? -1) + 1 }
+		]
+		segmentSpacing: iconSize * 0.015
+		locLetterSpacing: 4
+		rawLetterSpacing: 0
 		fillColor: Theme.white
 		pixelSize: iconSize * 5 / 16
-		letterSpacing: 4
 		outlineColor: Theme.black
 		outlineWeight: 8
 	}

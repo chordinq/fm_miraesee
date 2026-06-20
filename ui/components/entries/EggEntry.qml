@@ -25,12 +25,10 @@ Item {
 		anchors.horizontalCenter: icon.horizontalCenter
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: icon.height * 0.09
-		locId: "1084108339605504"
-		locTable: "Stats"
-		useUiFont: true
+		segments: [{ locId: "1084108339605504", table: "Stats" }]
+		locLetterSpacing: 4
 		fillColor: Theme.white
 		pixelSize: iconSize * 5 / 16
-		letterSpacing: 4
 		outlineColor: Theme.black
 		outlineWeight: 8
 	}

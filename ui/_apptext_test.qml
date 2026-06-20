@@ -10,19 +10,18 @@ Window {
         spacing: 12
 
         AppText {
+            segments: [{ text: "Lv. 10" }]
             pixelSize: 28
             fillColor: "black"
             outlineWeight: 0
-            prefix: "Lv. 10"
         }
 
         AppText {
+            segments: [{ locId: "4980716816252928" }]
             pixelSize: 28
             fillColor: "black"
             outlineWeight: 0
-            useUiFont: true
-            locId: "4980716816252928"
-            locTable: "General"
+            locLetterSpacing: 4
         }
     }
 

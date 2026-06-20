@@ -22,12 +22,10 @@ Item {
 
 	AppText {
 		anchors.centerIn: parent
-		locId: "27927471772594177"
-		locTable: "General"
-		useUiFont: true
+		segments: [{ locId: "27927471772594177" }]
+		locLetterSpacing: 4
 		fillColor: Theme.white
 		pixelSize: root.height * fontScale
-		letterSpacing : 0
 		outlineColor: Theme.black
 		outlineWeight: 7
 	}

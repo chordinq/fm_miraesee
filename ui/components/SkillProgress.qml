@@ -62,12 +62,13 @@ Item {
 
 	AppText {
 		anchors.centerIn: parent
-		suffix: maxShardCount > 0 ? shardCount + "/" + maxShardCount : ""
-		useUiFont: false
+		segments: root.maxShardCount > 0
+			? [{ text: root.shardCount + "/" + root.maxShardCount }]
+			: []
+		rawLetterSpacing: 0
 		fillColor: Theme.white
 		pixelSize: root.height * fontScale
 		anchors.verticalCenterOffset: (root.height - pixelSize) * 1 / 6
-		letterSpacing: 0
 		outlineColor: Theme.black
 		outlineWeight: 7
 	}

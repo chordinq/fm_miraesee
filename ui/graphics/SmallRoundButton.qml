@@ -1,65 +1,39 @@
 import QtQuick
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
 Item {
-    id: root
+	id: root
 
-    property color fillColor: "#FFFFFF"
-    property real fillOpacity: 1.0
+	property color fillColor: "#FFFFFF"
+	property real fillOpacity: 1.0
 
-    readonly property int sourceNativeSize: 256
+	readonly property int sourceNativeSize: 256
 
-    implicitWidth: sourceNativeSize
-    implicitHeight: sourceNativeSize
+	implicitWidth: sourceNativeSize
+	implicitHeight: sourceNativeSize
 
-    Image {
-        id: bgMask
-        anchors.fill: parent
-        source: Qt.resolvedUrl("../../assets/sprites/UI/SmallRoundButton.png")
-        sourceSize: Qt.size(root.sourceNativeSize, root.sourceNativeSize)
-        fillMode: Image.Stretch
-        smooth: true
-        visible: false
-    }
+	Item {
+		anchors.fill: parent
+		opacity: root.fillOpacity
+		visible: root.fillColor !== "#00000000" && root.fillOpacity > 0
 
-    Image {
-        id: bgBase
-        anchors.fill: parent
-        source: Qt.resolvedUrl("../../assets/sprites/UI/SmallRoundButton.png")
-        sourceSize: Qt.size(root.sourceNativeSize, root.sourceNativeSize)
-        fillMode: Image.Stretch
-        smooth: true
-        opacity: 0
-        layer.enabled: true
-        layer.smooth: true
-    }
+		Image {
+			id: bgBase
+			anchors.fill: parent
+			source: Qt.resolvedUrl("../../assets/sprites/UI/SmallRoundButton.png")
+			sourceSize: Qt.size(root.sourceNativeSize, root.sourceNativeSize)
+			fillMode: Image.Stretch
+			smooth: true
+			visible: false
+			layer.enabled: true
+			layer.smooth: true
+		}
 
-    ColorOverlay {
-        id: fillTint
-        anchors.fill: bgBase
-        source: bgBase
-        color: root.fillColor
-        opacity: 0
-        layer.enabled: true
-        layer.smooth: true
-    }
-
-    Blend {
-        id: tintedBlend
-        anchors.fill: parent
-        source: bgBase
-        foregroundSource: fillTint
-        mode: "multiply"
-        opacity: 0
-        layer.enabled: true
-        layer.smooth: true
-    }
-
-    OpacityMask {
-        anchors.fill: parent
-        source: tintedBlend
-        maskSource: bgMask
-        opacity: root.fillOpacity
-        visible: root.fillColor !== "#00000000" && root.fillOpacity > 0
-    }
+		MultiEffect {
+			anchors.fill: bgBase
+			source: bgBase
+			colorization: 1.0
+			colorizationColor: root.fillColor
+		}
+	}
 }
