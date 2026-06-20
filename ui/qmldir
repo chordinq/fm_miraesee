@@ -26,4 +26,5 @@ ItemEntry 1.0 components/entries/ItemEntry.qml
 SkillCollection 1.0 components/SkillCollection.qml
 EquipmentCollection 1.0 components/EquipmentCollection.qml
 ItemCatalogCollection 1.0 components/ItemCatalogCollection.qml
+SummonButton 1.0 components/buttons/SummonButton.qml
 TopTabBar 1.0 TopTabBar.qml

@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Layouts
 import ui 1.0
 
 Item {
@@ -9,7 +10,7 @@ Item {
 
     property real locLetterSpacing: 4
     property real rawLetterSpacing: 0
-    property real segmentSpacing: pixelSize * 0.2
+    property real segmentSpacing: pixelSize * 0.15
 
     property real pixelSize: 24
     property color fillColor: Theme.white
@@ -31,6 +32,7 @@ Item {
         return true
     }
 
+    // 🌟 safePadding 제거: 순수하게 아웃라인 두께만큼만 더해줍니다.
     implicitWidth: container.width + _actualOutlineWidth * 2
     implicitHeight: container.height + _actualOutlineWidth * 2
 
@@ -41,12 +43,11 @@ Item {
         for (var i = 0; i < segments.length; i++) {
             var seg = segments[i]
 
-            // 🌟 방어 로직 1: locId가 있으면 먼저 다국어로 처리해서 넣습니다.
             if (seg.locId) {
                 var table = seg.table || root.defaultLocTable
                 var args = seg.args || []
                 var resolvedLoc = LocManager.get_string(seg.locId, Theme.language, table, args)
-                
+
                 if (resolvedLoc !== "") {
                     var hasNonAsciiLoc = /[^\x00-\x7F]/.test(resolvedLoc)
                     temp.push({
@@ -55,13 +56,11 @@ Item {
                         spacing: root.locLetterSpacing
                     })
                 }
-            } 
-            
-            // 🌟 방어 로직 2: 'else if'가 아니라 그냥 'if'로 변경!
-            // 사용자가 {locId: "...", text: "..."} 로 한 번에 넘겨도 알아서 분리해 냅니다.
+            }
+
             if (seg.text !== undefined) {
                 var resolvedRaw = seg.text.toString()
-                
+
                 if (resolvedRaw !== "") {
                     var hasNonAsciiRaw = /[^\x00-\x7F]/.test(resolvedRaw)
                     temp.push({
@@ -108,14 +107,11 @@ Item {
         Repeater {
             model: root.outlineWeight > 0 ? root.outlineSamples : 0
 
-            Row {
+            RowLayout {
                 readonly property real angle: (index / root.outlineSamples) * Math.PI * 2
                 x: Math.cos(angle) * root._actualOutlineWidth
                 y: Math.sin(angle) * root._actualOutlineWidth
-                
-                // 🌟 버그 해결 1: length 조건문을 삭제하고 무조건 spacing 값을 참조하게 강제합니다!
                 spacing: root.segmentSpacing
-                height: mainRow.height
 
                 Repeater {
                     model: root._resolvedSegments
@@ -126,17 +122,14 @@ Item {
                         font.pixelSize: root.pixelSize
                         font.letterSpacing: modelData.spacing
                         color: root.outlineColor
-                        verticalAlignment: Text.AlignVCenter
-                        height: parent.height
+                        Layout.alignment: Qt.AlignBaseline
                     }
                 }
             }
         }
 
-        Row {
+        RowLayout {
             id: mainRow
-            
-            // 🌟 버그 해결 2: 메인 텍스트 영역도 무조건 spacing 적용
             spacing: root.segmentSpacing
 
             Repeater {
@@ -148,7 +141,7 @@ Item {
                     font.pixelSize: root.pixelSize
                     font.letterSpacing: modelData.spacing
                     color: root.fillColor
-                    verticalAlignment: Text.AlignVCenter
+                    Layout.alignment: Qt.AlignBaseline
                 }
             }
         }

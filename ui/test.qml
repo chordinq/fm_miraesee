@@ -8,15 +8,17 @@ ApplicationWindow {
 	width: initWinWidth
 	height: initWinHeight
 	visible: true
-	title: "SkillCollection test (" + testSkillCollection.skillCount + ")"
-	color: Theme.white
+	title: "SummonButton test (x" + testSummonCount + ", cost " + testSummonCost + ")"
+	color: "#888888"
 
 	Component.onCompleted: {
 		Theme.language = uiLanguage
 	}
 
-	SkillCollection {
-		anchors.fill: parent
-		skillCollectionModel: testSkillCollection
+	SummonButton {
+		anchors.centerIn: parent
+		summonCount: testSummonCount
+		cost: testSummonCost
+		onClicked: console.log("SummonButton clicked")
 	}
 }

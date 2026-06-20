@@ -42,7 +42,7 @@ class ItemCatalogCollectionBridge(QObject):
         for age in AGE_GRID_ORDER:
             for item_type in TYPE_GRID_ORDER:
                 idx = _first_idx_for(age, item_type)
-                item = ItemModel(age, item_type, idx, level=0)
+                item = ItemModel(age, item_type, idx, level=26)
                 self._item_bridges.append(ItemModelBridge(item, parent=self))
 
     @Property("QVariantList", notify=changed)
