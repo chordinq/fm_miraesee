@@ -97,7 +97,6 @@ Item {
 			scaleW: root.scaleW
 			scaleH: root.scaleH
 			fillColor: "white"
-			outlineOpacity: 0
 			visible: false
 		}
 

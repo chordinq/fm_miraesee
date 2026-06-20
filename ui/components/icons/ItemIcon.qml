@@ -27,7 +27,6 @@ Item {
 		scaleH: 4
 		fillColor: Theme.itemAgeColors[root.itemAge]
 		fillOpacity: 1.0
-		outlineOpacity: 0
 	}
 
 	Loader {
@@ -56,11 +55,10 @@ Item {
 		}
 	}
 
-	RectRounded {
+	RectRoundedOutline {
 		anchors.fill: parent
 		scaleW: 4
 		scaleH: 4
-		fillOpacity: 0
 		outlineColor: Theme.black
 		outlineOpacity: 1.0
 	}

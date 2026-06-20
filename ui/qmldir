@@ -3,6 +3,7 @@ singleton Theme 1.0 graphics/Theme.qml
 AppText 1.0 graphics/AppText.qml
 LevelText 1.0 components/LevelText.qml
 RectRounded 1.0 graphics/RectRounded.qml
+RectRoundedOutline 1.0 graphics/RectRoundedOutline.qml
 RectExtraRounded 1.0 graphics/RectExtraRounded.qml
 RectRoundButton 1.0 graphics/RectRoundButton.qml
 SmallRoundButton 1.0 graphics/SmallRoundButton.qml
@@ -24,8 +25,9 @@ EggEntry 1.0 components/entries/EggEntry.qml
 MountEntry 1.0 components/entries/MountEntry.qml
 SkillEntry 1.0 components/entries/SkillEntry.qml
 ItemEntry 1.0 components/entries/ItemEntry.qml
-SkillCollection 1.0 components/SkillCollection.qml
-EquipmentCollection 1.0 components/EquipmentCollection.qml
+SkillCollection 1.0 components/collections/SkillCollection.qml
+EquipmentCollection 1.0 components/collections/EquipmentCollection.qml
+PetCollection 1.0 components/collections/PetCollection.qml
 ItemCatalogCollection 1.0 components/ItemCatalogCollection.qml
 SummonButton 1.0 components/buttons/SummonButton.qml
 TopTabBar 1.0 TopTabBar.qml

@@ -8,8 +8,8 @@ Item {
     property real scaleW: 1.0
     property real scaleH: 1.0
 
-    property color fillColor: Theme.white
-    property real fillOpacity: 1.0
+    property color outlineColor: Theme.black
+    property real outlineOpacity: 1.0
 
     readonly property real baseSize: 256
 
@@ -33,13 +33,13 @@ Item {
 
         Item {
             anchors.fill: parent
-            opacity: root.fillOpacity
-            visible: root.fillColor.a > 0 && root.fillOpacity > 0
+            opacity: root.outlineOpacity
+            visible: root.outlineColor.a > 0 && root.outlineOpacity > 0
 
             BorderImage {
-                id: fillBase
+                id: outlineBase
                 anchors.fill: parent
-                source: Qt.resolvedUrl("../../assets/sprites/UI/Rect_Rounded_Filled.png")
+                source: Qt.resolvedUrl("../../assets/sprites/UI/Rect_Rounded_Outline.png")
                 border.left: 255
                 border.top: 255
                 border.right: 255
@@ -51,10 +51,10 @@ Item {
             }
 
             MultiEffect {
-                anchors.fill: fillBase
-                source: fillBase
+                anchors.fill: outlineBase
+                source: outlineBase
                 colorization: 1.0
-                colorizationColor: root.fillColor
+                colorizationColor: root.outlineColor
             }
         }
     }

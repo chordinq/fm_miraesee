@@ -23,6 +23,14 @@ class SkillCollectionBridge(QObject):
             for skill in collection.to_list()
         ]
 
+    def refresh(self) -> None:
+        ascension_level = AscensionLevel(self._collection.ascension_model.current_level)
+        self._skill_bridges = [
+            SkillModelBridge(skill, ascension_level=ascension_level, parent=self)
+            for skill in self._collection.to_list()
+        ]
+        self.changed.emit()
+
     @Property("QVariantList", notify=changed)
     def skills(self) -> list[SkillModelBridge]:
         return self._skill_bridges

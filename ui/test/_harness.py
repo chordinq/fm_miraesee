@@ -1,0 +1,58 @@
+from __future__ import annotations
+
+import os
+import sys
+from pathlib import Path
+
+from PySide6.QtCore import QUrl
+from PySide6.QtGui import QGuiApplication
+from PySide6.QtQml import QQmlApplicationEngine
+
+TEST_DIR = Path(__file__).resolve().parent
+UI_DIR = TEST_DIR.parent
+SCRIPTS_ROOT = UI_DIR.parent
+UTILS_DIR = UI_DIR / "utils"
+DUMP_PATH = SCRIPTS_ROOT / "core_test" / "test_user_dump.txt"
+TEST_LANGUAGE = "ko"
+
+
+def bootstrap() -> None:
+    for path in (TEST_DIR, UTILS_DIR, SCRIPTS_ROOT):
+        text = str(path)
+        if text not in sys.path:
+            sys.path.insert(0, text)
+    os.environ.setdefault("QML_XHR_ALLOW_FILE_READ", "1")
+    os.environ.setdefault("QT_QUICK_CONTROLS_STYLE", "Fusion")
+
+
+def create_app_engine() -> tuple[QGuiApplication, QQmlApplicationEngine]:
+    bootstrap()
+    from localizer import register_loc_manager
+
+    app = QGuiApplication.instance() or QGuiApplication(sys.argv)
+    engine = QQmlApplicationEngine()
+    engine.addImportPath(str(SCRIPTS_ROOT))
+    register_loc_manager(engine)
+    return app, engine
+
+
+def default_window_size(app: QGuiApplication, width_ratio: float = 0.9, height_ratio: float = 0.9) -> tuple[int, int]:
+    size = app.primaryScreen().size()
+    return int(size.width() * width_ratio), int(size.height() * height_ratio)
+
+
+def set_window_context(engine: QQmlApplicationEngine, width: int, height: int, **extra: object) -> None:
+    ctx = engine.rootContext()
+    ctx.setContextProperty("initWinWidth", width)
+    ctx.setContextProperty("initWinHeight", height)
+    ctx.setContextProperty("uiLanguage", TEST_LANGUAGE)
+    for key, value in extra.items():
+        ctx.setContextProperty(key, value)
+
+
+def load_qml(engine: QQmlApplicationEngine, filename: str) -> bool:
+    engine.load(QUrl.fromLocalFile(str(TEST_DIR / filename)))
+    return bool(engine.rootObjects())
+
+
+bootstrap()

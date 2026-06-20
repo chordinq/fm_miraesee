@@ -51,7 +51,6 @@ Item {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.verticalCenter: parent.verticalCenter
 			anchors.verticalCenterOffset: -canvas.height * 0.18
-			spacing: -canvas.height * root.titleFontScale * 0.06
 
 			AppText {
 				locId: root.summonLocId

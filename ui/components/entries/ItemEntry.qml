@@ -25,8 +25,8 @@ Item {
 	LevelText {
 		anchors.horizontalCenter: icon.horizontalCenter
 		anchors.verticalCenter: icon.verticalCenter
-		anchors.verticalCenterOffset: icon.height * 0.29
+		anchors.verticalCenterOffset: icon.height * 0.3
 		level: (root.itemModel?.level ?? -1) + 1
-		pixelSize: iconSize * 10 / 32
+		pixelSize: iconSize * 7 / 32
 	}
 }

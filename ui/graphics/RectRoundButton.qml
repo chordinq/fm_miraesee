@@ -7,7 +7,7 @@ Item {
     property real scaleW: 8.0
     property real scaleH: 8.0
 
-    property color fillColor: "#FFFFFF"
+    property color fillColor: Theme.white
     property real fillOpacity: 1.0
 
     readonly property real baseSize: 256

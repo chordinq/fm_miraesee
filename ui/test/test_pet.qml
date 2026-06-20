@@ -8,15 +8,15 @@ ApplicationWindow {
 	width: initWinWidth
 	height: initWinHeight
 	visible: true
-	title: "ItemCatalogCollection test (" + testItemCatalogCollection.itemCount + ")"
+	title: "PetCollection test (" + testPetCollection.petCount + " pets, " + testPetCollection.eggCount + " eggs)"
 	color: Theme.white
 
 	Component.onCompleted: {
 		Theme.language = uiLanguage
 	}
 
-	ItemCatalogCollection {
+	PetCollection {
 		anchors.fill: parent
-		itemCatalogCollectionModel: testItemCatalogCollection
+		petCollectionModel: testPetCollection
 	}
 }

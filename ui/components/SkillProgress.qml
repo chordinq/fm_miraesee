@@ -25,8 +25,6 @@ Item {
 		scaleH: root.scaleH
 		fillColor: Theme.darkBlue
 		fillOpacity: 14 / 16
-		outlineColor: "transparent"
-		outlineOpacity: 0
 	}
 
 	Item {
@@ -45,17 +43,13 @@ Item {
 			scaleH: root.scaleH
 			fillColor: Theme.white
 			fillOpacity: 1.0
-			outlineColor: "transparent"
-			outlineOpacity: 0
 		}
 	}
 
-	RectRounded {
+	RectRoundedOutline {
 		anchors.fill: parent
 		scaleW: root.scaleW
 		scaleH: root.scaleH
-		fillColor: "transparent"
-		fillOpacity: 0
 		outlineColor: Theme.black
 		outlineOpacity: 1.0
 	}

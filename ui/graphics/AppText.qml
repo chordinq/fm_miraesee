@@ -15,7 +15,7 @@ Item {
     property color outlineColor: Theme.black
     property int outlineSamples: 32
 
-    property real letterSpacing: locId !== "" ? 4 : 0
+    property real letterSpacing: 0
 
     readonly property real _actualOutlineWidth: pixelSize * (outlineWeight / 100.0)
 

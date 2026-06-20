@@ -22,8 +22,6 @@ Item {
 		scaleH: 4
 		fillColor: Theme.rarityColors[root.rarity]
 		fillOpacity: 1.0
-		outlineColor: Theme.black
-		outlineOpacity: 1.0
 	}
 
 	SpriteSheet {
@@ -33,5 +31,13 @@ Item {
 		sheetCols: root.sheetCols
 		sheetNativeSize: root.sheetNativeSize
 		sizeRatio: root.iconSizeRatio
+	}
+
+	RectRoundedOutline {
+		anchors.fill: parent
+		scaleW: 4
+		scaleH: 4
+		outlineColor: Theme.black
+		outlineOpacity: 1.0
 	}
 }

@@ -15,6 +15,7 @@ RowLayout {
 	AppText {
 		locId: "25799296414314496"
 		pixelSize: root.pixelSize
+		letterSpacing: 4
 		fillColor: root.fillColor
 		outlineColor: root.outlineColor
 		outlineWeight: root.outlineWeight
