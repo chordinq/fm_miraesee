@@ -5,44 +5,57 @@ import ui 1.0
 Item {
 	id: root
 
-	property int summonCount: 5
-	property int cost: 176
+	property int summonCount: 1
+	property int cost
+	property url spriteImage: Qt.resolvedUrl("../../../assets/sprites/Currency/clockWinders.png")
 	property real scaleW: 4
 	property real scaleH: 2
 
 	readonly property string summonLocId: "11670393447301120"
-	readonly property real titleFontScale: 7 / 32
-	readonly property real costFontScale: 5 / 32
+	readonly property real titleFontScale: 10 / 32
+	readonly property real costFontScale: 11 / 32
 
 	signal clicked()
 
-	implicitWidth: background.implicitWidth
-	implicitHeight: background.implicitHeight
+	readonly property real baseSize: 128
+	readonly property real bakedWidth: baseSize * scaleW
+	readonly property real bakedHeight: baseSize * scaleH
 
-	RectRoundButton {
-		id: background
-		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
-		fillColor: Theme.blue
-	}
+	implicitWidth: bakedWidth
+	implicitHeight: bakedHeight
 
-	MouseArea {
-		anchors.fill: parent
-		onClicked: root.clicked()
-	}
+	Item {
+		id: canvas
+		width: root.bakedWidth
+		height: root.bakedHeight
+		transformOrigin: Item.TopLeft
+		transform: Scale {
+			xScale: root.width / canvas.width
+			yScale: root.height / canvas.height
+		}
 
-	Column {
-		anchors.centerIn: parent
-		spacing: root.height * 0.04
+		RectRoundButton {
+			id: background
+			anchors.fill: parent
+			scaleW: root.scaleW
+			scaleH: root.scaleH
+			fillColor: Theme.blue
+		}
+
+		MouseArea {
+			anchors.fill: parent
+			onClicked: root.clicked()
+		}
 
 		RowLayout {
 			anchors.horizontalCenter: parent.horizontalCenter
-			spacing: root.height * 0.012
+			anchors.verticalCenter: parent.verticalCenter
+			anchors.verticalCenterOffset: -canvas.height * 0.18
+			spacing: -canvas.height * root.titleFontScale * 0.06
 
 			AppText {
 				locId: root.summonLocId
-				pixelSize: root.height * root.titleFontScale
+				pixelSize: canvas.height * root.titleFontScale
 				fillColor: Theme.white
 				outlineColor: Theme.black
 				outlineWeight: 8
@@ -50,8 +63,8 @@ Item {
 			}
 
 			AppText {
-				text: " x" + root.summonCount
-				pixelSize: root.height * root.titleFontScale
+				text: "x" + root.summonCount
+				pixelSize: canvas.height * root.titleFontScale
 				fillColor: Theme.white
 				outlineColor: Theme.black
 				outlineWeight: 8
@@ -61,25 +74,25 @@ Item {
 
 		RowLayout {
 			anchors.horizontalCenter: parent.horizontalCenter
-			spacing: root.height * 0.025
+			anchors.verticalCenter: parent.verticalCenter
+			anchors.verticalCenterOffset: canvas.height * 0.14
 
 			Item {
-				width: root.height * root.costFontScale * 0.95
+				width: canvas.height * 25 / 64
 				height: width
 				Layout.alignment: Qt.AlignVCenter
 
 				Image {
 					anchors.fill: parent
-					source: Qt.resolvedUrl("../../../assets/sprites/Currency/skillTicket.png")
+					source: root.spriteImage
 					fillMode: Image.PreserveAspectFit
 					smooth: true
-					rotation: 1
 				}
 			}
 
 			AppText {
 				text: root.cost
-				pixelSize: root.height * root.costFontScale
+				pixelSize: canvas.height * root.costFontScale
 				fillColor: Theme.white
 				outlineColor: Theme.black
 				outlineWeight: 8
