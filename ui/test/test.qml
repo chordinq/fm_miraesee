@@ -9,7 +9,7 @@ ApplicationWindow {
 	height: initWinHeight
 	visible: true
 	title: "SummonButton test (x" + testSummonCount + ", cost " + testSummonCost + ")"
-	color: "#888888"
+	color: Theme.darkBlue
 
 	readonly property real summonAspect: 4 / 2
 

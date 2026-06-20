@@ -96,7 +96,7 @@ Item {
 			anchors.fill: parent
 			scaleW: root.scaleW
 			scaleH: root.scaleH
-			fillColor: "white"
+			fillColor: Theme.white
 			visible: false
 		}
 

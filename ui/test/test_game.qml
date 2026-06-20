@@ -35,7 +35,7 @@ ApplicationWindow {
 			id: sidePanel
 			Layout.fillHeight: true
 			Layout.preferredWidth: parent.width * 0.32
-			color: "#eeeeee"
+			color: Theme.lightGrey
 
 			ColumnLayout {
 				anchors.fill: parent

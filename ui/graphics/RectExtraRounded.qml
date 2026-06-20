@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Effects
+import ui 1.0
 
 Item {
 	id: root
@@ -7,10 +8,10 @@ Item {
 	property real scaleW: 1.0
 	property real scaleH: 1.0
 
-	property color fillColor: "transparent"
+	property color fillColor: Theme.transparent
 	property real fillOpacity: 1.0
 
-	property color outlineColor: "transparent"
+	property color outlineColor: Theme.transparent
 	property real outlineOpacity: 1.0
 
 	readonly property real baseSize: 256
@@ -36,7 +37,7 @@ Item {
 		Item {
 			anchors.fill: parent
 			opacity: root.fillOpacity
-			visible: root.fillColor !== "#00000000" && root.fillOpacity > 0
+			visible: root.fillColor.a > 0 && root.fillOpacity > 0
 
 			BorderImage {
 				id: fillBase
@@ -63,7 +64,7 @@ Item {
 		Item {
 			anchors.fill: parent
 			opacity: root.outlineOpacity
-			visible: root.outlineColor !== "#00000000" && root.outlineOpacity > 0
+			visible: root.outlineColor.a > 0 && root.outlineOpacity > 0
 
 			BorderImage {
 				id: outlineBase

@@ -51,7 +51,7 @@ Item {
 					width: patternSource.animOffset + (index * root.stepDiameter)
 					height: width
 					radius: width / 2
-					color: "transparent"
+					color: Theme.transparent
 					border.color: Theme.white
 					border.width: root.ringWidth
 					opacity: root.ringOpacity
@@ -64,7 +64,7 @@ Item {
 			anchors.fill: parent
 			scaleW: root.scaleW
 			scaleH: root.scaleH
-			fillColor: "white"
+			fillColor: Theme.white
 			visible: false
 		}
 

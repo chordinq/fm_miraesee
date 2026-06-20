@@ -20,42 +20,38 @@ Item {
     readonly property real bakedH: 512 * scaleH
 
     Item {
-        id: bakeCanvas
-        width: root.bakedW
-        height: root.bakedH
-        transformOrigin: Item.TopLeft
-        transform: Scale {
-            xScale: root.width / root.bakedW
-            yScale: root.height / root.bakedH
-            origin.x: 0
-            origin.y: 0
-        }
+        anchors.fill: parent
+        opacity: root.outlineOpacity
+        visible: root.outlineColor.a > 0 && root.outlineOpacity > 0
 
         Item {
+            id: effectSource
             anchors.fill: parent
-            opacity: root.outlineOpacity
-            visible: root.outlineColor.a > 0 && root.outlineOpacity > 0
+            visible: false
 
             BorderImage {
-                id: outlineBase
-                anchors.fill: parent
+                width: root.bakedW
+                height: root.bakedH
+                transformOrigin: Item.TopLeft
+                transform: Scale {
+                    xScale: root.width / root.bakedW
+                    yScale: root.height / root.bakedH
+                }
                 source: Qt.resolvedUrl("../../assets/sprites/UI/Rect_Rounded_Outline.png")
                 border.left: 255
                 border.top: 255
                 border.right: 255
                 border.bottom: 255
                 smooth: true
-                visible: false
-                layer.enabled: true
-                layer.smooth: true
+                // ❌ layer.enabled: true 삭제!
             }
+        }
 
-            MultiEffect {
-                anchors.fill: outlineBase
-                source: outlineBase
-                colorization: 1.0
-                colorizationColor: root.outlineColor
-            }
+        MultiEffect {
+            anchors.fill: effectSource
+            source: effectSource
+            colorization: 1.0
+            colorizationColor: root.outlineColor
         }
     }
 }

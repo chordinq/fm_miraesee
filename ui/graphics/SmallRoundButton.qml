@@ -1,10 +1,11 @@
 import QtQuick
 import QtQuick.Effects
+import ui 1.0
 
 Item {
 	id: root
 
-	property color fillColor: "#FFFFFF"
+	property color fillColor: Theme.white
 	property real fillOpacity: 1.0
 
 	readonly property int sourceNativeSize: 256
@@ -15,7 +16,7 @@ Item {
 	Item {
 		anchors.fill: parent
 		opacity: root.fillOpacity
-		visible: root.fillColor !== "#00000000" && root.fillOpacity > 0
+		visible: root.fillColor.a > 0 && root.fillOpacity > 0
 
 		Image {
 			id: bgBase
