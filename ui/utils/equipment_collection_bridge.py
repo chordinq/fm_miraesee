@@ -1,0 +1,51 @@
+from PySide6.QtCore import QObject, Property, Signal
+
+from core.game_logic.player.player_equipment_model import PlayerEquipmentModel
+from item_model_bridge import ItemModelBridge
+
+SLOT_GRID_ORDER = (
+    "helmet",
+    "armour",
+    "gloves",
+    "necklace",
+    "weapon",
+    "shoes",
+    "belt",
+    "ring",
+)
+
+
+class EquipmentCollectionBridge(QObject):
+    """Read-only QML bridge for equipped equipment in fixed 4x2 slot order."""
+
+    changed = Signal()
+
+    def __init__(
+        self,
+        equipment: PlayerEquipmentModel,
+        parent: QObject | None = None,
+    ) -> None:
+        super().__init__(parent)
+        self._slot_bridges: list[ItemModelBridge | None] = []
+        for slot_name in SLOT_GRID_ORDER:
+            item = getattr(equipment, slot_name)
+            if item is not None:
+                self._slot_bridges.append(ItemModelBridge(item, parent=self))
+            else:
+                self._slot_bridges.append(None)
+
+    @Property("QVariantList", notify=changed)
+    def items(self) -> list[ItemModelBridge | None]:
+        return self._slot_bridges
+
+    @Property(int, constant=True)
+    def slotCount(self) -> int:
+        return len(SLOT_GRID_ORDER)
+
+    @Property(int, constant=True)
+    def columnsPerRow(self) -> int:
+        return 4
+
+    @Property(int, notify=changed)
+    def equippedCount(self) -> int:
+        return sum(1 for bridge in self._slot_bridges if bridge is not None)

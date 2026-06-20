@@ -106,6 +106,17 @@ class PlayerSkillModel:
 		if client_listener is None:
 			raise ValueError("client_listener is required")
 
+	@miraesee_extension
+	def __lt__(self, other: object) -> bool:
+		if not isinstance(other, PlayerSkillModel):
+			return NotImplemented
+		self_id = combat_skill_to_skill_id(self.type)
+		other_id = combat_skill_to_skill_id(other.type)
+		return (self_id.rarity.value, self.type.value) < (
+			other_id.rarity.value,
+			other.type.value,
+		)
+
 class PlayerSkillCollectionModel:
 	def __init__(self) -> None:
 		self.player_skills: dict[CombatSkill, PlayerSkillModel] = {}
@@ -161,6 +172,10 @@ class PlayerSkillCollectionModel:
 
 	def try_get_skill(self, combat_skill: CombatSkill) -> PlayerSkillModel | None:
 		return self.player_skills.get(combat_skill)
+
+	@miraesee_extension
+	def to_list(self) -> list[PlayerSkillModel]:
+		return sorted(self.player_skills.values())
 
 	@staticmethod
 	def _get_unlocked_skill_slot_count(player: Any) -> int:
