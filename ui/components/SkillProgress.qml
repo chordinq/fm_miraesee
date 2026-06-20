@@ -62,10 +62,8 @@ Item {
 
 	AppText {
 		anchors.centerIn: parent
-		segments: root.maxShardCount > 0
-			? [{ text: root.shardCount + "/" + root.maxShardCount }]
-			: []
-		rawLetterSpacing: 0
+		text: root.maxShardCount > 0 ? root.shardCount + "/" + root.maxShardCount : ""
+		visible: root.maxShardCount > 0
 		fillColor: Theme.white
 		pixelSize: root.height * fontScale
 		anchors.verticalCenterOffset: (root.height - pixelSize) * 1 / 6

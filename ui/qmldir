@@ -1,6 +1,7 @@
 module ui
 singleton Theme 1.0 graphics/Theme.qml
 AppText 1.0 graphics/AppText.qml
+LevelText 1.0 components/LevelText.qml
 RectRounded 1.0 graphics/RectRounded.qml
 RectExtraRounded 1.0 graphics/RectExtraRounded.qml
 RectRoundButton 1.0 graphics/RectRoundButton.qml

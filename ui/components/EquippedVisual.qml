@@ -22,8 +22,7 @@ Item {
 
 	AppText {
 		anchors.centerIn: parent
-		segments: [{ locId: "27927471772594177" }]
-		locLetterSpacing: 4
+		locId: "27927471772594177"
 		fillColor: Theme.white
 		pixelSize: root.height * fontScale
 		outlineColor: Theme.black

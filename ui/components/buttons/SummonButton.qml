@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Layouts
 import ui 1.0
 
 Item {
@@ -35,33 +36,40 @@ Item {
 		anchors.centerIn: parent
 		spacing: root.height * 0.04
 
-		AppText {
+		RowLayout {
 			anchors.horizontalCenter: parent.horizontalCenter
-			segments: [
-				{ locId: root.summonLocId },
-				{ text: " x" + root.summonCount }
-			]
-			pixelSize: root.height * root.titleFontScale
-			locLetterSpacing: 4
-			rawLetterSpacing: 0
-			segmentSpacing: root.height * 0.012
-			fillColor: Theme.white
-			outlineColor: Theme.black
-			outlineWeight: 8
+			spacing: root.height * 0.012
+
+			AppText {
+				locId: root.summonLocId
+				pixelSize: root.height * root.titleFontScale
+				fillColor: Theme.white
+				outlineColor: Theme.black
+				outlineWeight: 8
+				Layout.alignment: Qt.AlignBaseline
+			}
+
+			AppText {
+				text: " x" + root.summonCount
+				pixelSize: root.height * root.titleFontScale
+				fillColor: Theme.white
+				outlineColor: Theme.black
+				outlineWeight: 8
+				Layout.alignment: Qt.AlignBaseline
+			}
 		}
 
-		Row {
+		RowLayout {
 			anchors.horizontalCenter: parent.horizontalCenter
 			spacing: root.height * 0.025
 
 			Item {
 				width: root.height * root.costFontScale * 0.95
 				height: width
+				Layout.alignment: Qt.AlignVCenter
 
 				Image {
-					anchors.centerIn: parent
-					width: parent.width
-					height: parent.height
+					anchors.fill: parent
 					source: Qt.resolvedUrl("../../../assets/sprites/Currency/skillTicket.png")
 					fillMode: Image.PreserveAspectFit
 					smooth: true
@@ -70,13 +78,12 @@ Item {
 			}
 
 			AppText {
-				anchors.verticalCenter: parent.verticalCenter
-				segments: [{ text: root.cost }]
+				text: root.cost
 				pixelSize: root.height * root.costFontScale
-				rawLetterSpacing: 0
 				fillColor: Theme.white
 				outlineColor: Theme.black
 				outlineWeight: 8
+				Layout.alignment: Qt.AlignVCenter
 			}
 		}
 	}

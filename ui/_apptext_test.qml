@@ -10,18 +10,17 @@ Window {
         spacing: 12
 
         AppText {
-            segments: [{ text: "Lv. 10" }]
+            text: "Lv. 10"
             pixelSize: 28
             fillColor: "black"
             outlineWeight: 0
         }
 
         AppText {
-            segments: [{ locId: "4980716816252928" }]
+            locId: "4980716816252928"
             pixelSize: 28
             fillColor: "black"
             outlineWeight: 0
-            locLetterSpacing: 4
         }
     }
 

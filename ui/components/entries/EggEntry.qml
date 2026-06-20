@@ -25,8 +25,8 @@ Item {
 		anchors.horizontalCenter: icon.horizontalCenter
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: icon.height * 0.09
-		segments: [{ locId: "1084108339605504", table: "Stats" }]
-		locLetterSpacing: 4
+		locId: "1084108339605504"
+		locTable: "Stats"
 		fillColor: Theme.white
 		pixelSize: iconSize * 5 / 16
 		outlineColor: Theme.black

@@ -31,20 +31,12 @@ Item {
 		width: iconSize * 1.4
 	}
 
-	AppText {
+	LevelText {
 		anchors.horizontalCenter: icon.horizontalCenter
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: -icon.height * 0.04
-		segments: [
-			{ locId: "25799296414314496" },
-			{ text: (root.skillModel?.level ?? -1) + 1 }
-		]
-		locLetterSpacing: 4
-		rawLetterSpacing: 0
-		fillColor: Theme.white
+		level: (root.skillModel?.level ?? -1) + 1
 		pixelSize: iconSize * 5 / 16
-		outlineColor: Theme.black
-		outlineWeight: 8
 	}
 
 	SkillProgress {
