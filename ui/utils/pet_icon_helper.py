@@ -1,0 +1,35 @@
+from PySide6.QtCore import QObject, QUrl, Slot
+
+from config import PETS_MAPPING, SPRITE_SHEETS, SPRITES_DIR
+from core.game_logic.enums import AscensionLevel
+
+
+class PetIconHelper(QObject):
+    @Slot(int, int, int, result="QVariantMap")
+    def lookup(self, rarity: int, index: int, ascension_level: int = 0) -> dict:
+        if index < 0:
+            return {}
+        entry = PETS_MAPPING.get(f"{rarity}_{index}")
+        if entry is None:
+            return {}
+        try:
+            ascension = AscensionLevel(ascension_level)
+        except ValueError:
+            ascension = AscensionLevel.None_
+        sprite_file: str = entry["Sprite"]["File"]
+        sheet_key = ascension.name + sprite_file
+        sheet = SPRITE_SHEETS[sheet_key]
+        sheet_path = SPRITES_DIR / "Pet" / f"{sheet_key}.png"
+        return {
+            "spriteSheet": QUrl.fromLocalFile(str(sheet_path)).toString(),
+            "spriteIndex": int(entry["Sprite"]["Idx"]),
+            "sheetCols": int(sheet["cols"]),
+            "sheetNativeSize": int(sheet["cols"] * sheet["iconSize"]),
+            "rarity": int(entry["Rarity"]),
+        }
+
+
+def register_pet_icon_helper(engine) -> PetIconHelper:
+    instance = PetIconHelper(parent=engine)
+    engine.rootContext().setContextProperty("PetIconHelper", instance)
+    return instance

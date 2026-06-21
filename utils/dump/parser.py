@@ -32,7 +32,10 @@ from .snapshot import (
 
 BLOCK_HEADER = re.compile(r"^\[([A-Z_]+)\]$")
 SUMMON_META = re.compile(r"^([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{16})")
-# v3+: ForgeCount is uint32 (IL +0x3C), not a single byte like summon count.
+PET_META_V4 = re.compile(
+	r"^([0-9A-Fa-f]{2})([0-9A-Fa-f]{2})([0-9A-Fa-f]{16})"
+	r"([0-9A-Fa-f]{2})00000000([0-9A-Fa-f])$"
+)
 FORGE_META_V3 = re.compile(
 	r"^([0-9A-Fa-f]{2})([0-9A-Fa-f]{8})([0-9A-Fa-f]{16})"
 	r"([0-9A-Fa-f]{2})000([0-9A-Fa-f])$"
@@ -201,11 +204,36 @@ class DumpTextParser:
 			self._apply_summon_meta(meta, lines[0])
 			snapshot.skill_summon_meta = meta
 
+	def _parse_pet_meta_line(self, line: str) -> tuple[int, int, int, int, int] | None:
+		match = PET_META_V4.match(line)
+		if match:
+			return (
+				int(match.group(1), 16),
+				int(match.group(2), 16),
+				int(match.group(3), 16),
+				int(match.group(4), 16),
+				int(match.group(5), 16),
+			)
+		raw = self._parse_meta_line(line)
+		if raw is None:
+			return None
+		level, count, seed, asc = raw
+		return level, count, seed, 0, asc
+
 	def _parse_pet_meta(self, snapshot: DumpSnapshot, lines: list[str]) -> None:
-		if lines:
-			meta = SummonMetaDump()
-			self._apply_summon_meta(meta, lines[0])
-			snapshot.pet_summon_meta = meta
+		if not lines:
+			return
+		raw = self._parse_pet_meta_line(lines[0])
+		if not raw:
+			return
+		level, count, seed, hatch_slots, asc = raw
+		snapshot.pet_summon_meta = SummonMetaDump(
+			level=level,
+			count=count,
+			seed=seed,
+			ascension_level=asc,
+			hatch_slots_count=hatch_slots,
+		)
 
 	def _parse_mount_meta(self, snapshot: DumpSnapshot, lines: list[str]) -> None:
 		if lines:

@@ -18,7 +18,7 @@ ApplicationWindow {
 	EquipmentCollection {
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.verticalCenter: parent.verticalCenter
-		width: Math.min(parent.width * 0.9, parent.height * 0.85)
+		width: Math.min(parent.width * 0.9, parent.height * 0.9)
 		equipmentCollectionModel: testEquipmentCollection
 	}
 }

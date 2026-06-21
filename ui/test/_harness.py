@@ -13,7 +13,7 @@ UI_DIR = TEST_DIR.parent
 SCRIPTS_ROOT = UI_DIR.parent
 UTILS_DIR = UI_DIR / "utils"
 DUMP_PATH = SCRIPTS_ROOT / "core_test" / "test_user_dump.txt"
-TEST_LANGUAGE = "en"
+TEST_LANGUAGE = "ja"
 
 
 def bootstrap() -> None:
@@ -28,11 +28,19 @@ def bootstrap() -> None:
 def create_app_engine() -> tuple[QGuiApplication, QQmlApplicationEngine]:
     bootstrap()
     from localizer import register_loc_manager
+    from egg_icon_helper import register_egg_icon_helper
+    from mount_icon_helper import register_mount_icon_helper
+    from pet_icon_helper import register_pet_icon_helper
+    from skill_icon_helper import register_skill_icon_helper
 
     app = QGuiApplication.instance() or QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
     engine.addImportPath(str(SCRIPTS_ROOT))
     register_loc_manager(engine)
+    register_pet_icon_helper(engine)
+    register_egg_icon_helper(engine)
+    register_skill_icon_helper(engine)
+    register_mount_icon_helper(engine)
     return app, engine
 
 

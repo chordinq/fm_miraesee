@@ -4,19 +4,26 @@ import ui 1.0
 Item {
 	id: root
 
-	property string source: ""
-	property int spriteIndex: -1
-	property int sheetCols: 8
-	property int sheetNativeSize: 2048
+	property int rarity: -1
+	property int ascensionLevel: 0
+
+	readonly property var _sprite: EggIconHelper.lookup(rarity, ascensionLevel)
+	readonly property bool hasSprite: rarity >= 0 && _sprite.spriteSheet !== undefined
+
+	readonly property string spriteSheet: _sprite.spriteSheet ?? ""
+	readonly property int spriteIndex: _sprite.spriteIndex ?? -1
+	readonly property int sheetCols: _sprite.sheetCols ?? 8
+	readonly property int sheetNativeSize: _sprite.sheetNativeSize ?? 2048
 
 	readonly property int logicalSize: 256
 
 	implicitWidth: logicalSize
 	implicitHeight: logicalSize
+	visible: hasSprite
 
 	SpriteSheet {
 		anchors.fill: parent
-		source: root.source
+		source: root.spriteSheet
 		spriteIndex: root.spriteIndex
 		sheetCols: root.sheetCols
 		sheetNativeSize: root.sheetNativeSize

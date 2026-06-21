@@ -8,14 +8,14 @@ ApplicationWindow {
 	width: initWinWidth
 	height: initWinHeight
 	visible: true
-	title: "PetCollection test (" + testPetCollection.petCount + " pets, " + testPetCollection.eggCount + " eggs)"
+	title: "PetSlotGrid test"
 	color: Theme.white
 
 	Component.onCompleted: {
 		Theme.language = uiLanguage
 	}
 
-	PetCollection {
+	PetSlotGrid {
 		anchors.fill: parent
 		petCollectionModel: testPetCollection
 	}

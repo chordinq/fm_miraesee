@@ -6,15 +6,22 @@ Item {
 	id: root
 
 	property int rarity: 0
-	property int spriteIndex: 0
-	property string spriteSheet: ""
-	property int sheetCols: 8
-	property int sheetNativeSize: 2048
+	property int index: -1
+	property int ascensionLevel: 0
+
+	readonly property var _sprite: SkillIconHelper.lookup(rarity, index, ascensionLevel)
+	readonly property bool hasSprite: index >= 0 && _sprite.spriteSheet !== undefined
+
+	readonly property string spriteSheet: _sprite.spriteSheet ?? ""
+	readonly property int spriteIndex: _sprite.spriteIndex ?? 0
+	readonly property int sheetCols: _sprite.sheetCols ?? 8
+	readonly property int sheetNativeSize: _sprite.sheetNativeSize ?? 2048
 
 	readonly property int logicalSize: 256
 
 	implicitWidth: logicalSize
 	implicitHeight: logicalSize
+	visible: hasSprite
 
 	Item {
 		anchors.fill: parent

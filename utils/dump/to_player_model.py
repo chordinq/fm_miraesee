@@ -62,6 +62,7 @@ def dump_snapshot_to_player_model(snapshot: DumpSnapshot) -> PlayerModel:
 	_apply_summon_metas(player, snapshot)
 	_apply_skills(player, snapshot)
 	_apply_pets_and_eggs(player, snapshot)
+	_apply_pet_hatch_slots(player, snapshot)
 	_apply_mounts(player, snapshot)
 	_apply_equipment_meta(player, snapshot)
 	_apply_equipment(player, snapshot)
@@ -158,6 +159,20 @@ def _apply_pets_and_eggs(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 		egg.is_equipped = entry.is_equipped
 		egg.equip_slot = _normalize_equip_slot(entry.is_equipped, entry.equip_slot)
 		collection.eggs.append(egg)
+
+
+def _apply_pet_hatch_slots(player: PlayerModel, snapshot: DumpSnapshot) -> None:
+	collection = player.player_pet_collection_model
+	meta = snapshot.pet_summon_meta
+	if meta and meta.hatch_slots_count > 0:
+		collection.unlocked_hatch_slots_count = meta.hatch_slots_count
+		return
+	max_slot = _EMPTY_SLOT
+	for entry in snapshot.eggs:
+		if entry.is_equipped:
+			max_slot = max(max_slot, entry.equip_slot)
+	if max_slot >= 0:
+		collection.unlocked_hatch_slots_count = max_slot + 1
 
 
 def _apply_mounts(player: PlayerModel, snapshot: DumpSnapshot) -> None:

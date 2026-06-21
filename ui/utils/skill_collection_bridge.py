@@ -2,6 +2,7 @@ from PySide6.QtCore import QObject, Property, Signal
 
 from core.game_logic.enums import AscensionLevel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillCollectionModel
+from localizer import ascension_loc_from_level
 from skill_model_bridge import SkillModelBridge
 
 
@@ -16,19 +17,32 @@ class SkillCollectionBridge(QObject):
     ) -> None:
         super().__init__(parent)
         self._collection = collection
-        ascension_level = AscensionLevel(collection.ascension_model.current_level)
+        self._refresh_bridges()
+
+    def _refresh_bridges(self) -> None:
+        ascension_level = AscensionLevel(self._collection.ascension_model.current_level)
+        self._ascension_level = int(ascension_level.value)
+        self._ascension_loc_id, self._ascension_loc_table = ascension_loc_from_level(ascension_level)
         self._skill_bridges: list[SkillModelBridge] = [
-            SkillModelBridge(skill, ascension_level=ascension_level, parent=self)
-            for skill in collection.get_player_skills()
+            SkillModelBridge(skill, parent=self)
+            for skill in self._collection.get_player_skills()
         ]
 
     def refresh(self) -> None:
-        ascension_level = AscensionLevel(self._collection.ascension_model.current_level)
-        self._skill_bridges = [
-            SkillModelBridge(skill, ascension_level=ascension_level, parent=self)
-            for skill in self._collection.get_player_skills()
-        ]
+        self._refresh_bridges()
         self.changed.emit()
+
+    @Property(int, notify=changed)
+    def ascensionLevel(self) -> int:
+        return self._ascension_level
+
+    @Property(str, notify=changed)
+    def ascensionLocId(self) -> str:
+        return self._ascension_loc_id
+
+    @Property(str, notify=changed)
+    def ascensionLocTable(self) -> str:
+        return self._ascension_loc_table
 
     @Property("QVariantList", notify=changed)
     def skills(self) -> list[SkillModelBridge]:

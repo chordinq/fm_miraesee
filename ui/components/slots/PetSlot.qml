@@ -4,9 +4,12 @@ import ui 1.0
 Item {
 	id: root
 
-	property var petModel
+	property var petModel: null
+	property int ascensionLevel: 0
 
 	readonly property int iconSize: 256
+	readonly property int index: petModel?.index ?? -1
+	readonly property int rarity: petModel?.rarity ?? 0
 
 	implicitWidth: iconSize
 	implicitHeight: iconSize
@@ -14,13 +17,10 @@ Item {
 	PetIcon {
 		id: icon
 		anchors.fill: parent
-		visible: root.petModel !== null
+		index: root.index
+		rarity: root.rarity
+		ascensionLevel: root.ascensionLevel
 		opacity: (root.petModel && root.petModel.isEquipped) ? 5 / 16 : 1
-		rarity: root.petModel?.rarity ?? 0
-		spriteIndex: root.petModel?.spriteIndex ?? 0
-		spriteSheet: root.petModel?.spriteSheet ?? ""
-		sheetCols: root.petModel?.sheetCols ?? 8
-		sheetNativeSize: root.petModel?.sheetNativeSize ?? 2048
 	}
 
 	EquippedVisual {
@@ -35,6 +35,7 @@ Item {
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: icon.height * 0.09
 		level: (root.petModel?.level ?? -1) + 1
+		visible: root.index >= 0
 		pixelSize: iconSize * 5 / 16
 	}
 }

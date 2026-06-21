@@ -43,7 +43,7 @@ Item {
 				width: root.iconSize
 				height: root.iconSize
 
-				ItemEntry {
+				ItemSlot {
 					itemModel: parent.itemModel
 					scale: root.entryScale
 					transformOrigin: Item.TopLeft

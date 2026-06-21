@@ -44,7 +44,6 @@ function extract_summon_meta(summon_ptr, asc_ptr)
     local asc_lvl = 0
 
     if summon_ptr ~= 0 then
-        -- IL SummonModel: +0x10 count, +0x14 level, +0x18 seed
         count = read_dword(summon_ptr + 0x10)
         level = read_dword(summon_ptr + 0x14)
         seed = read_qword(summon_ptr + 0x18)
@@ -54,8 +53,31 @@ function extract_summon_meta(summon_ptr, asc_ptr)
         asc_lvl = read_dword(asc_ptr + 0x14)
     end
 
-    -- summon wire: level(1B) + count(1B) + seed(8B) + pad + asc
     return string.format("%02X%02X%016X00000000000%X", level % 256, count % 256, seed, asc_lvl % 16)
+end
+
+function extract_pet_meta_line(summon_ptr, asc_ptr, hatch_slots_count)
+    local count, level, seed = 0, 0, 0
+    local asc_lvl = 0
+
+    if summon_ptr ~= 0 then
+        count = read_dword(summon_ptr + 0x10)
+        level = read_dword(summon_ptr + 0x14)
+        seed = read_qword(summon_ptr + 0x18)
+    end
+
+    if asc_ptr ~= 0 then
+        asc_lvl = read_dword(asc_ptr + 0x14)
+    end
+
+    return string.format(
+        "%02X%02X%016X%02X00000000%X",
+        level % 256,
+        count % 256,
+        seed,
+        hatch_slots_count % 256,
+        asc_lvl % 16
+    )
 end
 
 function extract_forge_meta(forge_ptr, asc_ptr)
@@ -181,9 +203,10 @@ end
 
 function extract_pet_meta(player_ptr)
     local col = read_qword(player_ptr + 0x258)
+    local hatch_slots = col ~= 0 and read_dword(col + 0x20) or 0
     local sum_ptr = col ~= 0 and read_qword(col + 0x28) or 0
     local asc_ptr = col ~= 0 and read_qword(col + 0x30) or 0
-    return {"[PET]", extract_summon_meta(sum_ptr, asc_ptr)}
+    return {"[PET]", extract_pet_meta_line(sum_ptr, asc_ptr, hatch_slots)}
 end
 
 function extract_mount_meta(player_ptr)

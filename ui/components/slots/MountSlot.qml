@@ -4,9 +4,12 @@ import ui 1.0
 Item {
 	id: root
 
-	property var mountModel
+	property var mountModel: null
+	property int ascensionLevel: 0
 
 	readonly property int iconSize: 256
+	readonly property int index: mountModel?.index ?? -1
+	readonly property int rarity: mountModel?.rarity ?? 0
 
 	implicitWidth: iconSize
 	implicitHeight: iconSize
@@ -14,13 +17,10 @@ Item {
 	MountIcon {
 		id: icon
 		anchors.fill: parent
-		visible: root.mountModel !== null
+		index: root.index
+		rarity: root.rarity
+		ascensionLevel: root.ascensionLevel
 		opacity: (root.mountModel && root.mountModel.isEquipped) ? 5 / 16 : 1
-		rarity: root.mountModel?.rarity ?? 0
-		spriteIndex: root.mountModel?.spriteIndex ?? 0
-		spriteSheet: root.mountModel?.spriteSheet ?? ""
-		sheetCols: root.mountModel?.sheetCols ?? 8
-		sheetNativeSize: root.mountModel?.sheetNativeSize ?? 2048
 	}
 
 	EquippedVisual {
@@ -37,6 +37,7 @@ Item {
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: icon.height * 0.09
 		level: (root.mountModel?.level ?? -1) + 1
+		visible: root.index >= 0
 		pixelSize: iconSize * 5 / 16
 	}
 }

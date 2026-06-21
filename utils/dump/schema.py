@@ -7,8 +7,10 @@ DUMP_VERSION = 3
 # [FORGE] meta line (32 hex chars, v3+):
 #   forge_level(2) + forge_count(8, uint32) + forge_seed(16, uint64)
 #   + highest_age(2, IL +0x40) + reserved(3) + asc(1)
-# Summon meta lines (SKILL/PET/MOUNT) still use 1-byte count — see SUMMON_META in parser.
-FORGE_META_LINE_LEN = 32
+# Summon meta lines (SKILL/MOUNT): level(2) + count(2) + seed(16) + pad(10) + asc(1)
+# PET meta v4: level(2) + count(2) + seed(16) + hatch_slots(2) + pad(8) + asc(1)
+SUMMON_META_LINE_LEN = 31
+PET_META_LINE_LEN = 31
 
 # Secondary stat blob: 10 chars per stat chunk (type nibble + 8 hex raw FD6-ish u32)
 STATS_CHUNK_LEN = 10

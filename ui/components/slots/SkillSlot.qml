@@ -4,9 +4,12 @@ import ui 1.0
 Item {
 	id: root
 
-	property var skillModel
+	property var skillModel: null
+	property int ascensionLevel: 0
 
 	readonly property int iconSize: 256
+	readonly property int index: skillModel?.index ?? -1
+	readonly property int rarity: skillModel?.rarity ?? 0
 	readonly property bool showProgress: (skillModel?.maxShardCount ?? 0) > 0
 
 	implicitWidth: iconSize
@@ -15,13 +18,10 @@ Item {
 	SkillIcon {
 		id: icon
 		anchors.fill: parent
-		visible: root.skillModel !== null
+		index: root.index
+		rarity: root.rarity
+		ascensionLevel: root.ascensionLevel
 		opacity: (root.skillModel && root.skillModel.isEquipped) ? 5 / 16 : 1
-		rarity: root.skillModel?.rarity ?? 0
-		spriteIndex: root.skillModel?.spriteIndex ?? 0
-		spriteSheet: root.skillModel?.spriteSheet ?? ""
-		sheetCols: root.skillModel?.sheetCols ?? 8
-		sheetNativeSize: root.skillModel?.sheetNativeSize ?? 2048
 	}
 
 	EquippedVisual {
@@ -36,6 +36,7 @@ Item {
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: -icon.height * 0.04
 		level: (root.skillModel?.level ?? -1) + 1
+		visible: root.index >= 0
 		pixelSize: iconSize * 5 / 16
 	}
 

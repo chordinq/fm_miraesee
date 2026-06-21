@@ -7,7 +7,9 @@ Item {
     property string locId: ""
     property string locTable: "General"
     property var formatArgs: []
+    property string prefix: ""
     property string text: ""
+    property string suffix: ""
 
     property real pixelSize: 24
     property color fillColor: Theme.white
@@ -19,10 +21,11 @@ Item {
 
     readonly property real _actualOutlineWidth: pixelSize * (outlineWeight / 100.0)
 
-    readonly property string _resolvedText: {
-        if (locId !== "") return LocManager.get_string(locId, Theme.language, locTable, formatArgs)
-        return root.text.toString()
-    }
+    readonly property string _coreText: locId !== ""
+        ? LocManager.get_string(locId, Theme.language, locTable, formatArgs)
+        : text
+
+    readonly property string _resolvedText: prefix + _coreText + suffix
 
     readonly property string _dynamicFontFamily: {
         if (_resolvedText === "") return Theme.latinFontFamily

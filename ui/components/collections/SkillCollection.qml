@@ -11,6 +11,7 @@ Item {
 	property real columnSpacingRatio: 5 / 9
 	property real rowSpacingRatio: 7 / 9
 
+	readonly property int ascensionLevel: skillCollectionModel ? skillCollectionModel.ascensionLevel : 0
 	readonly property var skillModels: skillCollectionModel ? skillCollectionModel.skills : []
 	readonly property int skillCount: skillModels.length
 	readonly property int iconLogicalSize: 256
@@ -49,8 +50,9 @@ Item {
 			width: root.iconSize
 			height: root.iconSize
 
-			SkillEntry {
+			SkillSlot {
 				skillModel: parent.skillModel
+				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft
 			}

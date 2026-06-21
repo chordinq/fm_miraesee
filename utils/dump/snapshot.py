@@ -9,6 +9,7 @@ class SummonMetaDump:
 	count: int = 0
 	seed: int = 0
 	ascension_level: int = 0
+	hatch_slots_count: int = 0
 
 
 @dataclass

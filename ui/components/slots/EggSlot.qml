@@ -4,9 +4,11 @@ import ui 1.0
 Item {
 	id: root
 
-	property var eggModel
+	property var eggModel: null
+	property int ascensionLevel: 0
 
 	readonly property int iconSize: 256
+	readonly property int rarity: eggModel?.rarity ?? -1
 
 	implicitWidth: iconSize
 	implicitHeight: iconSize
@@ -14,11 +16,8 @@ Item {
 	EggIcon {
 		id: icon
 		anchors.fill: parent
-		visible: root.eggModel !== null
-		source: root.eggModel?.spriteSheet ?? ""
-		spriteIndex: root.eggModel?.spriteIndex ?? -1
-		sheetCols: root.eggModel?.sheetCols ?? 8
-		sheetNativeSize: root.eggModel?.sheetNativeSize ?? 2048
+		rarity: root.rarity
+		ascensionLevel: root.ascensionLevel
 	}
 
 	AppText {
@@ -31,5 +30,6 @@ Item {
 		pixelSize: iconSize * 5 / 16
 		outlineColor: Theme.black
 		outlineWeight: 8
+		visible: root.rarity >= 0
 	}
 }

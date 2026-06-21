@@ -11,8 +11,19 @@ Item {
 	property real columnSpacingRatio: 5 / 9
 	property real rowSpacingRatio: 5 / 9
 
+	readonly property int ascensionLevel: petCollectionModel ? petCollectionModel.ascensionLevel : 0
 	readonly property var petModels: petCollectionModel ? petCollectionModel.pets : []
-	readonly property var eggModels: petCollectionModel ? petCollectionModel.eggs : []
+	readonly property var eggModels: {
+		if (!petCollectionModel || !petCollectionModel.eggs)
+			return []
+		var all = petCollectionModel.eggs
+		var visible = []
+		for (var i = 0; i < all.length; i++) {
+			if (!all[i].isEquipped)
+				visible.push(all[i])
+		}
+		return visible
+	}
 	readonly property int petCount: petModels.length
 	readonly property int eggCount: eggModels.length
 	readonly property int entryCount: petCount + eggCount
@@ -52,16 +63,18 @@ Item {
 			width: root.iconSize
 			height: root.iconSize
 
-			PetEntry {
+			PetSlot {
 				visible: parent.isPet
 				petModel: root.petModels[parent.index]
+				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft
 			}
 
-			EggEntry {
+			EggSlot {
 				visible: !parent.isPet
 				eggModel: root.eggModels[parent.index - root.petCount]
+				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft
 			}
