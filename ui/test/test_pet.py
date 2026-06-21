@@ -37,7 +37,7 @@ def main() -> None:
     print(
         f"QML loaded in {load_ms:.0f}ms "
         f"({pet_bridge.petCount} pets, {pet_bridge.eggCount} eggs, "
-        f"dump={DUMP_PATH.name})"
+        f"{pet_bridge.hatchSlotCount} hatch slots, dump={DUMP_PATH.name})"
     )
 
     if not ok:
