@@ -13,7 +13,7 @@ UI_DIR = TEST_DIR.parent
 SCRIPTS_ROOT = UI_DIR.parent
 UTILS_DIR = UI_DIR / "utils"
 DUMP_PATH = SCRIPTS_ROOT / "core_test" / "test_user_dump.txt"
-TEST_LANGUAGE = "ko"
+TEST_LANGUAGE = "en"
 
 
 def bootstrap() -> None:

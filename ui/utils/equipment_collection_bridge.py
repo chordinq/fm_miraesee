@@ -16,7 +16,6 @@ SLOT_GRID_ORDER = (
 
 
 class EquipmentCollectionBridge(QObject):
-    """Read-only QML bridge for equipped equipment in fixed 4x2 slot order."""
 
     changed = Signal()
 

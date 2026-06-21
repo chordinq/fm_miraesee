@@ -10,8 +10,6 @@ from localizer import ascension_loc_from_level, name_loc_from_entry
 
 
 class SkillModelBridge(QObject):
-    """Read-only QML bridge for PlayerSkillModel."""
-
     changed = Signal()
 
     def __init__(

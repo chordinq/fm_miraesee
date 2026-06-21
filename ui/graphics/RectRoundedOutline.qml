@@ -43,7 +43,6 @@ Item {
                 border.right: 255
                 border.bottom: 255
                 smooth: true
-                // ❌ layer.enabled: true 삭제!
             }
         }
 

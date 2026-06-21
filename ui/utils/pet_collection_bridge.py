@@ -7,7 +7,6 @@ from pet_model_bridge import PetModelBridge
 
 
 class PetCollectionBridge(QObject):
-    """Read-only QML bridge for PlayerPetCollectionModel (pets first, then eggs)."""
 
     changed = Signal()
 
@@ -24,11 +23,11 @@ class PetCollectionBridge(QObject):
         ascension_level = AscensionLevel(self._collection.ascension_model.current_level)
         self._pet_bridges: list[PetModelBridge] = [
             PetModelBridge(pet, ascension_level=ascension_level, parent=self)
-            for pet in self._collection.pets
+            for pet in self._collection.get_pets()
         ]
         self._egg_bridges: list[EggModelBridge] = [
             EggModelBridge(egg, ascension_level=ascension_level, parent=self)
-            for egg in self._collection.eggs
+            for egg in self._collection.get_eggs()
         ]
 
     def refresh(self) -> None:

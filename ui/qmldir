@@ -21,6 +21,7 @@ EggIcon 1.0 components/icons/EggIcon.qml
 ItemIcon 1.0 components/icons/ItemIcon.qml
 EquippedVisual 1.0 components/EquippedVisual.qml
 EquipSlot 1.0 components/EquipSlot.qml
+HatchSlot 1.0 components/HatchSlot.qml
 SkillProgress 1.0 components/SkillProgress.qml
 PetEntry 1.0 components/entries/PetEntry.qml
 EggEntry 1.0 components/entries/EggEntry.qml

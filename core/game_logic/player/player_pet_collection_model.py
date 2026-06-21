@@ -1,6 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any, Sequence
+from ...miraesee_extension import miraesee_extension
 from ..enums import AscendableType, Rarity
 from ...random_pcg import RandomPCG
 from ..stats import SecondaryStats
@@ -140,6 +141,14 @@ class PlayerPetCollectionModel:
 		self.unlocked_hatch_slots_count: int = 0
 		self.summon_model = SummonModel()
 		self.ascension_model = AscensionModel(AscendableType.Pets)
+
+	@miraesee_extension
+	def get_pets(self) -> list[PlayerPetModel]:
+		return list(self.pets)
+
+	@miraesee_extension
+	def get_eggs(self) -> list[PlayerEggModel]:
+		return sorted(self.eggs, key=lambda egg: egg.rarity.value, reverse=True)
 
 	def ascend(self) -> None:
 		self.pets.clear()

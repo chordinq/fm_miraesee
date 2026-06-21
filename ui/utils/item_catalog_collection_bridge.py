@@ -32,7 +32,6 @@ def _first_idx_for(age: ItemAge, item_type: ItemType) -> int:
 
 
 class ItemCatalogCollectionBridge(QObject):
-    """Read-only QML bridge for 8 item types x 10 ages catalog grid."""
 
     changed = Signal()
 

@@ -6,7 +6,6 @@ from skill_model_bridge import SkillModelBridge
 
 
 class SkillCollectionBridge(QObject):
-    """Read-only QML bridge for PlayerSkillCollectionModel."""
 
     changed = Signal()
 
@@ -20,14 +19,14 @@ class SkillCollectionBridge(QObject):
         ascension_level = AscensionLevel(collection.ascension_model.current_level)
         self._skill_bridges: list[SkillModelBridge] = [
             SkillModelBridge(skill, ascension_level=ascension_level, parent=self)
-            for skill in collection.to_list()
+            for skill in collection.get_player_skills()
         ]
 
     def refresh(self) -> None:
         ascension_level = AscensionLevel(self._collection.ascension_model.current_level)
         self._skill_bridges = [
             SkillModelBridge(skill, ascension_level=ascension_level, parent=self)
-            for skill in self._collection.to_list()
+            for skill in self._collection.get_player_skills()
         ]
         self.changed.emit()
 

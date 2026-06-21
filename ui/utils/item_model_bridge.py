@@ -12,7 +12,6 @@ def _item_mapping_key(item_id: ItemId) -> str:
 
 
 class ItemModelBridge(QObject):
-    """Read-only QML bridge for PlayerItemModel via Items_Mapping."""
 
     changed = Signal()
 

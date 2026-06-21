@@ -124,6 +124,10 @@ class PlayerSkillCollectionModel:
 		self.summon_model = SummonModel()
 		self.ascension_model = AscensionModel(AscendableType.Skills)
 
+	@miraesee_extension
+	def get_player_skills(self) -> list[PlayerSkillModel]:
+		return sorted(self.player_skills.values())
+
 	def get_equipped_skills(self) -> list[PlayerSkillModel]:
 		return sorted(
 			(skill for skill in self.player_skills.values() if skill.is_equipped),
@@ -172,10 +176,6 @@ class PlayerSkillCollectionModel:
 
 	def try_get_skill(self, combat_skill: CombatSkill) -> PlayerSkillModel | None:
 		return self.player_skills.get(combat_skill)
-
-	@miraesee_extension
-	def to_list(self) -> list[PlayerSkillModel]:
-		return sorted(self.player_skills.values())
 
 	@staticmethod
 	def _get_unlocked_skill_slot_count(player: Any) -> int:

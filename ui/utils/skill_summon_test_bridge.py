@@ -94,7 +94,9 @@ class SkillSummonTestBridge(QObject):
         else:
             parts = [f"summon x{count} ok"]
             for info in summoned:
-                skill = self._logic.player.player_skill_collection_model.player_skills[info.type]
+                skill = self._logic.player.player_skill_collection_model.try_get_skill(info.type)
+                if skill is None:
+                    continue
                 if info.is_new:
                     parts.append(f"  NEW {_skill_key(info.type)} Lv{skill.level + 1}")
                 else:
@@ -126,7 +128,9 @@ class SkillSummonTestBridge(QObject):
             "",
         ]
         for index, info in enumerate(summoned, 1):
-            skill = collection.player_skills[info.type]
+            skill = collection.try_get_skill(info.type)
+            if skill is None:
+                continue
             if info.is_new:
                 detail = "NEW"
             else:

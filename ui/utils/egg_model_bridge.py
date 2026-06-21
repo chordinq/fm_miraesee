@@ -12,7 +12,6 @@ def _egg_sheet_filename(ascension_level: AscensionLevel) -> str:
 
 
 class EggModelBridge(QObject):
-    """Read-only QML bridge for PlayerEggModel."""
 
     changed = Signal()
 

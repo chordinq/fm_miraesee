@@ -59,7 +59,9 @@ def main() -> None:
 	print(f"  skills {skills_before} -> {len(collection.player_skills)}")
 	print(f"  summoned pulls={len(summoned)}")
 	for info in summoned:
-		skill = collection.player_skills[info.type]
+		skill = collection.try_get_skill(info.type)
+		if skill is None:
+			raise SystemExit(f"missing skill after summon: {info.type!r}")
 		print(
 			f"    {info.type.name}  new={info.is_new}  "
 			f"shards={skill.shard_count}  lv={skill.level}"
