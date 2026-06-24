@@ -17,7 +17,7 @@ from utils.dump.to_player_model import dump_snapshot_to_player_model
 
 
 def _load_dump_player() -> GameLogic:
-	dump_path = _ROOT / "test_user_dump.txt"
+	dump_path = Path(__file__).resolve().parent / "test_user_dump.txt"
 	text = dump_path.read_text(encoding="utf-8")
 	player = dump_snapshot_to_player_model(parse_dump_text(text))
 	return GameLogic(player)
@@ -33,18 +33,19 @@ def main() -> None:
 	print("=== Before summon ===")
 	print(f"  seed={summon.seed:#018x}  level={summon.level}  count={summon.count}")
 	tickets = currency.get(CurrencyType.SkillSummonTickets)
+	summon_config = player.game_config.skill_summon_config
+	base_cost = summon_config.single_summon_cost.amount * 5
 	print(f"  SkillSummonTickets={tickets}")
+	print(f"  5x base cost={base_cost}")
 
-	# Dry-run validation
 	dry = logic.skill_summon(5, commit=False)
 	print(f"\nDry-run count=5: {dry[0].name}")
 
-	# Ensure afford for test
-	cost = player.game_config.skill_summon_config.single_summon_cost
-	needed = cost.amount * 5
-	if tickets < needed:
-		currency.set_currency(cost.currency, needed)
+	can_afford, _ = summon_config.can_afford_summon(player, 5)
+	if not can_afford:
+		currency.set_currency(CurrencyType.SkillSummonTickets, max(tickets, 100_000))
 
+	tickets_before = currency.get(CurrencyType.SkillSummonTickets)
 	seed_before = summon.seed
 	level_before = summon.level
 	count_before = summon.count
@@ -66,6 +67,10 @@ def main() -> None:
 			f"    {info.type.name}  new={info.is_new}  "
 			f"shards={skill.shard_count}  lv={skill.level}"
 		)
+
+	tickets_after = currency.get(CurrencyType.SkillSummonTickets)
+	cost = tickets_before - tickets_after
+	print(f"  tickets spent={cost}")
 
 	if result != ActionResult.Success:
 		raise SystemExit(1)

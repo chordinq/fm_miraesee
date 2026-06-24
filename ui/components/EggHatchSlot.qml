@@ -7,6 +7,8 @@ Item {
 	property var eggModel: null
 	property int ascensionLevel: 0
 
+	signal clicked()
+
 	readonly property int rarity: eggModel?.rarity ?? -1
 	readonly property real lampTopRatio: -0.38 - (3.5 / 7.25 / 2)
 	readonly property real bedBottomRatio: 0.34 + (5.8 / 7.25 / 2)
@@ -118,5 +120,11 @@ Item {
 		pixelSize: parent.width * 0.165
 		outlineWeight: 6
 		fillColor: eggModel ? Theme.green : Theme.white
+	}
+
+	MouseArea {
+		anchors.fill: parent
+		enabled: root.eggModel !== null
+		onClicked: root.clicked()
 	}
 }

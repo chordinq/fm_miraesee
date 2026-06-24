@@ -1,6 +1,6 @@
 # updated 2026-06-03
 from __future__ import annotations
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
 from dataclasses import dataclass
 from ..enums import CurrencyType
 if TYPE_CHECKING:
@@ -19,11 +19,11 @@ class Price:
 class SpendContext:
 	def __init__(
 		self,
-		currency_model: "PlayerCurrencyModel",
+		player_model: "PlayerModel",
 		currency_type: CurrencyType,
 		spent_amount: int,
 	) -> None:
-		self._currency_model = currency_model
+		self._player = player_model
 		self._currency_type = currency_type
 		self._spent_amount = spent_amount
 
@@ -31,14 +31,16 @@ class SpendContext:
 		self._spent_amount = max(0, self._spent_amount - amount)
 
 	def can_afford(self) -> bool:
-		return self._currency_model.can_afford(self._currency_type, self._spent_amount)
+		currency_model = self._player.player_currency_model
+		return currency_model.can_afford(self._currency_type, self._spent_amount)
 
 	def spend(self, sink_name: str) -> None:
+		currency_model = self._player.player_currency_model
 		if self._spent_amount < 1:
-			self._currency_model._current_transaction = None
+			currency_model._current_transaction = None
 			return
-		self._currency_model.currencies[self._currency_type] -= self._spent_amount
-		self._currency_model._current_transaction = None
+		currency_model.currencies[self._currency_type] -= self._spent_amount
+		currency_model._current_transaction = None
 
 
 class PlayerCurrencyModel:
@@ -46,8 +48,13 @@ class PlayerCurrencyModel:
         self.currencies = {ctype: 0 for ctype in CurrencyType}
         self._current_transaction = None
 
-    def create_spend_context(self, currency_type, spent_amount):
-        context = SpendContext(self, currency_type, spent_amount)
+    def create_spend_context(
+        self,
+        player_model: "PlayerModel",
+        currency_type: CurrencyType,
+        spent_amount: int,
+    ) -> SpendContext:
+        context = SpendContext(player_model, currency_type, spent_amount)
         self._current_transaction = context
         return context
     
@@ -79,3 +86,25 @@ class PlayerCurrencyModel:
 
     def reset_currency(self, player_model: PlayerModel, currency_type: CurrencyType) -> None:
         player_model.player_currency_model.currencies[currency_type] = 0
+
+
+def can_afford(
+    player_model: "PlayerModel",
+    currency_type: CurrencyType,
+    amount: int,
+) -> tuple[bool, Optional[SpendContext]]:
+    if amount < 0:
+        return False, None
+    if player_model is None:
+        raise ValueError("CurrencyPlayerModelExtensions.CanAfford requires player")
+    currency_model = player_model.player_currency_model
+    if currency_model is None:
+        raise ValueError("CurrencyPlayerModelExtensions.CanAfford requires PlayerCurrencyModel")
+    if not currency_model.can_afford(currency_type, amount):
+        return False, None
+    spend_context = currency_model.create_spend_context(
+        player_model,
+        currency_type,
+        amount,
+    )
+    return True, spend_context

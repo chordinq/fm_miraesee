@@ -974,5 +974,9 @@
 	"IconDivineBeltSorcererbelt": {
 		"cols": 1,
 		"iconSize": 256
+	},
+	"TechTreeIcons": {
+		"cols": 8,
+		"iconSize": 128
 	}
 }

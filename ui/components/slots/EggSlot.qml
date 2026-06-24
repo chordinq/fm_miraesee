@@ -10,6 +10,8 @@ Item {
 	readonly property int iconSize: 256
 	readonly property int rarity: eggModel?.rarity ?? -1
 
+	signal clicked()
+
 	implicitWidth: iconSize
 	implicitHeight: iconSize
 
@@ -31,5 +33,10 @@ Item {
 		outlineColor: Theme.black
 		outlineWeight: 8
 		visible: root.rarity >= 0
+	}
+
+	MouseArea {
+		anchors.fill: parent
+		onClicked: root.clicked()
 	}
 }

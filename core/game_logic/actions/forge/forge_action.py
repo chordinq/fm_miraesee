@@ -54,6 +54,7 @@ class ForgeAction(PlayerAction):
 
 		total_cost = effective_hammers * forge_cost
 		spend_ctx = player.player_currency_model.create_spend_context(
+			player,
 			CurrencyType.Hammers,
 			total_cost,
 		)

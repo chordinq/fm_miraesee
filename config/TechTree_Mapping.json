@@ -68,7 +68,11 @@
                     "Id": 55555339821100
                 }
             ],
-            "Idx": 0
+            "Idx": 0,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 4
+            }
         },
         "1": {
             "Key": "HelmetBonus",
@@ -84,7 +88,11 @@
                     "Id": 55555339821101
                 }
             ],
-            "Idx": 1
+            "Idx": 1,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 5
+            }
         },
         "2": {
             "Key": "BodyBonus",
@@ -100,7 +108,11 @@
                     "Id": 55555339821102
                 }
             ],
-            "Idx": 2
+            "Idx": 2,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 6
+            }
         },
         "3": {
             "Key": "ShoeBonus",
@@ -116,7 +128,11 @@
                     "Id": 55555339821103
                 }
             ],
-            "Idx": 3
+            "Idx": 3,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 7
+            }
         },
         "4": {
             "Key": "GloveBonus",
@@ -132,7 +148,11 @@
                     "Id": 55555339821104
                 }
             ],
-            "Idx": 4
+            "Idx": 4,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 10
+            }
         },
         "5": {
             "Key": "BeltBonus",
@@ -148,7 +168,11 @@
                     "Id": 55555339821105
                 }
             ],
-            "Idx": 5
+            "Idx": 5,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 11
+            }
         },
         "6": {
             "Key": "NecklaceBonus",
@@ -164,7 +188,11 @@
                     "Id": 55555339821106
                 }
             ],
-            "Idx": 6
+            "Idx": 6,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 12
+            }
         },
         "7": {
             "Key": "RingBonus",
@@ -180,7 +208,11 @@
                     "Id": 55555339821107
                 }
             ],
-            "Idx": 7
+            "Idx": 7,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 13
+            }
         },
         "8": {
             "Key": "WeaponLevelUp",
@@ -196,7 +228,11 @@
                     "Id": 55555339821108
                 }
             ],
-            "Idx": 8
+            "Idx": 8,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 14
+            }
         },
         "9": {
             "Key": "HelmetLevelUp",
@@ -212,7 +248,11 @@
                     "Id": 55555339821109
                 }
             ],
-            "Idx": 9
+            "Idx": 9,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 15
+            }
         },
         "10": {
             "Key": "BodyLevelUp",
@@ -228,7 +268,11 @@
                     "Id": 55555339821110
                 }
             ],
-            "Idx": 10
+            "Idx": 10,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 16
+            }
         },
         "11": {
             "Key": "ShoeLevelUp",
@@ -244,7 +288,11 @@
                     "Id": 55555339821111
                 }
             ],
-            "Idx": 11
+            "Idx": 11,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 17
+            }
         },
         "12": {
             "Key": "GloveLevelUp",
@@ -260,7 +308,11 @@
                     "Id": 55555339821112
                 }
             ],
-            "Idx": 12
+            "Idx": 12,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 18
+            }
         },
         "13": {
             "Key": "BeltLevelUp",
@@ -276,7 +328,11 @@
                     "Id": 55555339821113
                 }
             ],
-            "Idx": 13
+            "Idx": 13,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 19
+            }
         },
         "14": {
             "Key": "NecklaceLevelUp",
@@ -292,7 +348,11 @@
                     "Id": 55555339821114
                 }
             ],
-            "Idx": 14
+            "Idx": 14,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 20
+            }
         },
         "15": {
             "Key": "RingLevelUp",
@@ -308,7 +368,11 @@
                     "Id": 55555339821115
                 }
             ],
-            "Idx": 15
+            "Idx": 15,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 21
+            }
         },
         "16": {
             "Key": "MountDamage",
@@ -324,7 +388,11 @@
                     "Id": 55555339821116
                 }
             ],
-            "Idx": 16
+            "Idx": 16,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 22
+            }
         },
         "17": {
             "Key": "MountHealth",
@@ -340,7 +408,11 @@
                     "Id": 55555339821117
                 }
             ],
-            "Idx": 17
+            "Idx": 17,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 23
+            }
         },
         "18": {
             "Key": "ExtraMountChance",
@@ -356,7 +428,11 @@
                     "Id": 55555339821118
                 }
             ],
-            "Idx": 18
+            "Idx": 18,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 24
+            }
         },
         "19": {
             "Key": "MountSummonCost",
@@ -372,7 +448,11 @@
                     "Id": 58664325718019
                 }
             ],
-            "Idx": 19
+            "Idx": 19,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 25
+            }
         },
         "20": {
             "Key": "ForgeTimerSpeed",
@@ -388,7 +468,11 @@
                     "Id": 55555339821119
                 }
             ],
-            "Idx": 20
+            "Idx": 20,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 26
+            }
         },
         "21": {
             "Key": "ForgeUpgradeCost",
@@ -404,7 +488,11 @@
                     "Id": 55555339821120
                 }
             ],
-            "Idx": 21
+            "Idx": 21,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 27
+            }
         },
         "22": {
             "Key": "EquipmentSellPrice",
@@ -420,7 +508,11 @@
                     "Id": 55555339821121
                 }
             ],
-            "Idx": 22
+            "Idx": 22,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 3
+            }
         },
         "23": {
             "Key": "AutoForge",
@@ -436,7 +528,11 @@
                     "Id": 55555339821122
                 }
             ],
-            "Idx": 23
+            "Idx": 23,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 28
+            }
         },
         "24": {
             "Key": "HammerOfflineReward",
@@ -452,7 +548,11 @@
                     "Id": 55555339821123
                 }
             ],
-            "Idx": 24
+            "Idx": 24,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 29
+            }
         },
         "25": {
             "Key": "CoinOfflineReward",
@@ -468,7 +568,11 @@
                     "Id": 55555339821124
                 }
             ],
-            "Idx": 25
+            "Idx": 25,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 30
+            }
         },
         "26": {
             "Key": "MaxOfflineReward",
@@ -484,7 +588,11 @@
                     "Id": 55555339821125
                 }
             ],
-            "Idx": 26
+            "Idx": 26,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 31
+            }
         },
         "27": {
             "Key": "FreeForgeChance",
@@ -500,7 +608,11 @@
                     "Id": 55555339821126
                 }
             ],
-            "Idx": 27
+            "Idx": 27,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 32
+            }
         },
         "28": {
             "Key": "HammerThiefHammerReward",
@@ -516,7 +628,11 @@
                     "Id": 55555339821127
                 }
             ],
-            "Idx": 28
+            "Idx": 28,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 33
+            }
         },
         "29": {
             "Key": "HammerThiefCoinReward",
@@ -532,7 +648,11 @@
                     "Id": 55555339821128
                 }
             ],
-            "Idx": 29
+            "Idx": 29,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 34
+            }
         },
         "30": {
             "Key": "SkillDamage",
@@ -548,7 +668,11 @@
                     "Id": 55555339821129
                 }
             ],
-            "Idx": 30
+            "Idx": 30,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 35
+            }
         },
         "31": {
             "Key": "SkillPassiveDamage",
@@ -564,7 +688,11 @@
                     "Id": 55555339821130
                 }
             ],
-            "Idx": 31
+            "Idx": 31,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 36
+            }
         },
         "32": {
             "Key": "SkillPassiveHealth",
@@ -580,7 +708,11 @@
                     "Id": 55555339821131
                 }
             ],
-            "Idx": 32
+            "Idx": 32,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 37
+            }
         },
         "33": {
             "Key": "GhostTownSkillBonus",
@@ -596,7 +728,11 @@
                     "Id": 55555339821132
                 }
             ],
-            "Idx": 33
+            "Idx": 33,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 38
+            }
         },
         "34": {
             "Key": "SkillSummonCost",
@@ -612,7 +748,11 @@
                     "Id": 55555339821133
                 }
             ],
-            "Idx": 34
+            "Idx": 34,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 39
+            }
         },
         "35": {
             "Key": "PetBonusDamage",
@@ -628,7 +768,11 @@
                     "Id": 55555339821134
                 }
             ],
-            "Idx": 35
+            "Idx": 35,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 40
+            }
         },
         "36": {
             "Key": "PetBonusHealth",
@@ -644,7 +788,11 @@
                     "Id": 55555339821135
                 }
             ],
-            "Idx": 36
+            "Idx": 36,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 41
+            }
         },
         "37": {
             "Key": "ExtraEggChance",
@@ -660,7 +808,11 @@
                     "Id": 55555339821136
                 }
             ],
-            "Idx": 37
+            "Idx": 37,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 42
+            }
         },
         "38": {
             "Key": "CommonEggTimer",
@@ -676,7 +828,11 @@
                     "Id": 55555339821137
                 }
             ],
-            "Idx": 38
+            "Idx": 38,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 43
+            }
         },
         "39": {
             "Key": "RareEggTimer",
@@ -692,7 +848,11 @@
                     "Id": 55555339821138
                 }
             ],
-            "Idx": 39
+            "Idx": 39,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 44
+            }
         },
         "40": {
             "Key": "EpicEggTimer",
@@ -708,7 +868,11 @@
                     "Id": 55555339821139
                 }
             ],
-            "Idx": 40
+            "Idx": 40,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 45
+            }
         },
         "41": {
             "Key": "LegendaryEggTimer",
@@ -724,7 +888,11 @@
                     "Id": 55555339821140
                 }
             ],
-            "Idx": 41
+            "Idx": 41,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 46
+            }
         },
         "42": {
             "Key": "UltimateEggTimer",
@@ -740,7 +908,11 @@
                     "Id": 55555339821141
                 }
             ],
-            "Idx": 42
+            "Idx": 42,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 47
+            }
         },
         "43": {
             "Key": "MythicEggTimer",
@@ -756,7 +928,11 @@
                     "Id": 55555339821142
                 }
             ],
-            "Idx": 43
+            "Idx": 43,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 48
+            }
         },
         "44": {
             "Key": "ZombieRushTechPotions",
@@ -772,7 +948,11 @@
                     "Id": 55555339821143
                 }
             ],
-            "Idx": 44
+            "Idx": 44,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 49
+            }
         },
         "45": {
             "Key": "TechNodeUpgradeCost",
@@ -788,7 +968,11 @@
                     "Id": 55555339821144
                 }
             ],
-            "Idx": 45
+            "Idx": 45,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 50
+            }
         },
         "46": {
             "Key": "TechResearchTimer",
@@ -804,7 +988,11 @@
                     "Id": 55555339821145
                 }
             ],
-            "Idx": 46
+            "Idx": 46,
+            "Sprite": {
+                "File": "TechTreeIcons",
+                "Idx": 9
+            }
         }
     }
 }

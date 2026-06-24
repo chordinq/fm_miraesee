@@ -4,8 +4,9 @@ from typing import TYPE_CHECKING, Optional
 
 from config import EGG_SUMMON_CONFIG, MOUNT_SUMMON_CONFIG, SKILL_SUMMON_CONFIG
 
-from .enums import AscendableType, CurrencyType
-from .player.player_currency_model import Price
+from .enums import AscendableType, CurrencyType, StatType
+from .player.player_currency_model import Price, can_afford
+from .stats.stat_helper import StatHelper
 from .stats.stat_target import (
 	ActiveSkillStatTarget,
 	EggStatTarget,
@@ -67,12 +68,53 @@ class SummonConfig:
 		player_model: PlayerModel,
 		summon_count: int,
 	) -> tuple[bool, Optional[SpendContext]]:
-		if player_model.player_currency_model.can_afford_price(self.single_summon_cost * summon_count):
-			return True, player_model.player_currency_model.create_spend_context(self.single_summon_cost.currency, self.single_summon_cost.amount * summon_count)
-		return False, None
+		if self.single_summon_cost is None or player_model is None:
+			raise ValueError("SummonConfig.CanAffordSummon requires SingleSummonCost and player")
 
-	def min_summon_cycle_cost(self, player_model: PlayerModel) -> int:
-		raise NotImplementedError("After implementing the currency model, implement this method")
+		base_amount = self.single_summon_cost.amount * summon_count
+		target = self.summonable_id.get_stat_target()
+		resolved_amount = round(
+			StatHelper.calculate_value(
+				player_model,
+				StatType.Cost,
+				target,
+				base_amount,
+			)
+		)
+		return can_afford(
+			player_model,
+			self.single_summon_cost.currency,
+			resolved_amount,
+		)
+
+	def min_summon_cycle_cost(self, player_model: PlayerModel) -> Price:
+		if self.single_summon_cost is None:
+			raise ValueError("SummonConfig.MinSummonCycleCost requires SingleSummonCost")
+		if player_model is None:
+			raise ValueError("SummonConfig.MinSummonCycleCost requires player")
+
+		base_amount = self.single_summon_cost.amount * self.get_base_summon_count()
+		target = self.summonable_id.get_stat_target()
+		resolved_amount = round(
+			StatHelper.calculate_value(
+				player_model,
+				StatType.Cost,
+				target,
+				base_amount,
+			)
+		)
+		return Price(amount=resolved_amount, currency=self.single_summon_cost.currency)
 
 	def max_summons_count(self, player_model: PlayerModel) -> int:
-		raise NotImplementedError("After implementing the currency model, implement this method")
+		if player_model is None or self.single_summon_cost is None:
+			raise ValueError("SummonConfig.MaxSummonsCount requires SingleSummonCost and player")
+		if player_model.player_currency_model is None:
+			raise ValueError("SummonConfig.MaxSummonsCount requires PlayerCurrencyModel")
+
+		currency_amount = player_model.player_currency_model.get(self.single_summon_cost.currency)
+		cycle_cost = self.min_summon_cycle_cost(player_model)
+		base_count = self.get_base_summon_count()
+		if cycle_cost.amount == 0:
+			return 0
+		cycles = currency_amount // cycle_cost.amount
+		return base_count * cycles

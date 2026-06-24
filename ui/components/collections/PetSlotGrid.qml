@@ -7,6 +7,7 @@ Item {
 	id: root
 
 	property var petCollectionModel: null
+	property var eggHatchTest: null
 	property int columnsPerRow: 5
 	property real columnSpacingRatio: 5 / 9
 	property real rowSpacingRatio: 5 / 9
@@ -59,6 +60,7 @@ Item {
 		delegate: Item {
 			required property int index
 			readonly property bool isPet: index < root.petCount
+			readonly property var eggModel: isPet ? null : root.eggModels[index - root.petCount]
 
 			width: root.iconSize
 			height: root.iconSize
@@ -73,10 +75,14 @@ Item {
 
 			EggSlot {
 				visible: !parent.isPet
-				eggModel: root.eggModels[parent.index - root.petCount]
+				eggModel: parent.eggModel
 				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft
+				onClicked: {
+					if (root.eggHatchTest && parent.eggModel)
+						root.eggHatchTest.predictHatch(parent.eggModel.guid)
+				}
 			}
 		}
 	}

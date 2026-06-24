@@ -8,15 +8,15 @@ ApplicationWindow {
 	width: initWinWidth
 	height: initWinHeight
 	visible: true
-	title: "SkillGrid test (" + testSkillCollection.skillCount + " skills)"
+	title: "MountSlotGrid test (" + testMountCollection.mountCount + " mounts)"
 	color: Theme.white
 
 	Component.onCompleted: {
 		Theme.language = uiLanguage
 	}
 
-	SkillGrid {
+	MountSlotGrid {
 		anchors.fill: parent
-		skillCollectionModel: testSkillCollection
+		mountCollectionModel: testMountCollection
 	}
 }

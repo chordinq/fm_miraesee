@@ -17,6 +17,11 @@ def _skill_key(combat_skill) -> str:
     return SKILLS_MAPPING[f"{skill_id.rarity.value}_{skill_id.idx}"]["Key"]
 
 
+def _min_cycle_cost(logic: GameLogic) -> int:
+    player = logic.player
+    return player.game_config.skill_summon_config.min_summon_cycle_cost(player).amount
+
+
 class SkillSummonTestBridge(QObject):
     stateChanged = Signal()
 
@@ -44,8 +49,7 @@ class SkillSummonTestBridge(QObject):
         collection = player.player_skill_collection_model
         summon = collection.summon_model
         tickets = player.player_currency_model.get(CurrencyType.SkillSummonTickets)
-        cost = player.game_config.skill_summon_config.single_summon_cost
-        total_cost = cost.amount * self._summon_count
+        total_cost = _min_cycle_cost(self._logic)
         self._status_text = (
             f"tickets {tickets}  cost {total_cost}  "
             f"seed {summon.seed:#018x}  lv {summon.level}  count {summon.count}"
@@ -61,8 +65,7 @@ class SkillSummonTestBridge(QObject):
 
     @Property(int, notify=stateChanged)
     def summonCost(self) -> int:
-        cost = self._logic.player.game_config.skill_summon_config.single_summon_cost
-        return cost.amount * self._summon_count
+        return _min_cycle_cost(self._logic)
 
     @Property(str, notify=stateChanged)
     def summonSpriteImage(self) -> str:

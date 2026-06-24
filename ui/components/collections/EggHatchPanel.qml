@@ -5,6 +5,7 @@ Rectangle {
     id: root
 
     property var petCollectionModel: null
+    property var eggHatchTest: null
 
     readonly property int ascensionLevel: petCollectionModel ? petCollectionModel.ascensionLevel : 0
     readonly property int slotCount: petCollectionModel ? petCollectionModel.hatchSlotCount : 0
@@ -42,10 +43,16 @@ Rectangle {
                     model: root.slotCount
 
                     EggHatchSlot {
+                        required property int index
+
                         anchors.top: parent.top
                         eggModel: root.eggModels[index]
                         ascensionLevel: root.ascensionLevel
                         width: root.slotWidth
+                        onClicked: {
+                            if (root.eggHatchTest && eggModel)
+                                root.eggHatchTest.predictHatch(eggModel.guid)
+                        }
                     }
                 }
             }

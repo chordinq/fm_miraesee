@@ -6,14 +6,14 @@ import ui 1.0
 Item {
 	id: root
 
-	property var skillCollectionModel: null
+	property var mountCollectionModel: null
 	property int columnsPerRow: 5
 	property real columnSpacingRatio: 5 / 9
-	property real rowSpacingRatio: 7 / 9
+	property real rowSpacingRatio: 5 / 9
 
-	readonly property int ascensionLevel: skillCollectionModel ? skillCollectionModel.ascensionLevel : 0
-	readonly property var skillModels: skillCollectionModel ? skillCollectionModel.skills : []
-	readonly property int skillCount: skillModels.length
+	readonly property int ascensionLevel: mountCollectionModel ? mountCollectionModel.ascensionLevel : 0
+	readonly property var mountModels: mountCollectionModel ? mountCollectionModel.mounts : []
+	readonly property int mountCount: mountModels.length
 	readonly property int iconLogicalSize: 256
 
 	readonly property real totalWidthUnits: columnsPerRow + (columnsPerRow + 1) * columnSpacingRatio
@@ -24,12 +24,12 @@ Item {
 	readonly property real entryScale: iconSize / iconLogicalSize
 
 	GridView {
-		id: skillGrid
+		id: mountGrid
 
 		anchors.fill: parent
 		leftMargin: root.hSpacing
 		topMargin: root.vSpacing
-		model: root.skillCount
+		model: root.mountCount
 		cellWidth: root.iconSize + root.hSpacing
 		cellHeight: root.iconSize + root.vSpacing
 		clip: true
@@ -45,13 +45,13 @@ Item {
 
 		delegate: Item {
 			required property int index
-			property var skillModel: root.skillModels[index]
+			property var mountModel: root.mountModels[index]
 
 			width: root.iconSize
 			height: root.iconSize
 
-			SkillSlot {
-				skillModel: parent.skillModel
+			MountSlot {
+				mountModel: parent.mountModel
 				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft

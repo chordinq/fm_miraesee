@@ -13,7 +13,7 @@ UI_DIR = TEST_DIR.parent
 SCRIPTS_ROOT = UI_DIR.parent
 UTILS_DIR = UI_DIR / "utils"
 DUMP_PATH = SCRIPTS_ROOT / "core_test" / "test_user_dump.txt"
-TEST_LANGUAGE = "ko"
+TEST_LANGUAGE = "en"
 
 
 def bootstrap() -> None:
@@ -32,6 +32,7 @@ def create_app_engine() -> tuple[QGuiApplication, QQmlApplicationEngine]:
     from mount_icon_helper import register_mount_icon_helper
     from pet_icon_helper import register_pet_icon_helper
     from skill_icon_helper import register_skill_icon_helper
+    from tech_tree_icon_helper import register_tech_tree_icon_helper
 
     app = QGuiApplication.instance() or QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
@@ -41,6 +42,7 @@ def create_app_engine() -> tuple[QGuiApplication, QQmlApplicationEngine]:
     register_egg_icon_helper(engine)
     register_skill_icon_helper(engine)
     register_mount_icon_helper(engine)
+    register_tech_tree_icon_helper(engine)
     return app, engine
 
 
