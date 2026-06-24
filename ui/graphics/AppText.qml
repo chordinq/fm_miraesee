@@ -18,8 +18,11 @@ Item {
     property int outlineSamples: 32
 
     property real letterSpacing: 0
+    property int wrapMode: Text.NoWrap
+    property int horizontalAlignment: Text.AlignLeft
 
     readonly property real _actualOutlineWidth: pixelSize * (outlineWeight / 100.0)
+    readonly property bool _wraps: root.wrapMode !== Text.NoWrap
 
     readonly property string _coreText: locId !== ""
         ? LocManager.get_string(locId, Theme.language, locTable, formatArgs)
@@ -35,18 +38,29 @@ Item {
 
     readonly property bool _fontsReady: _dynamicFontFamily !== ""
 
-    implicitWidth: mainText.implicitWidth + _actualOutlineWidth * 2
+    readonly property real _textWidth: root._wraps
+        ? Math.max(0, root.width - root._actualOutlineWidth * 2)
+        : mainText.implicitWidth
+
+    implicitWidth: root._wraps
+        ? root.width
+        : mainText.implicitWidth + _actualOutlineWidth * 2
     implicitHeight: mainText.implicitHeight + _actualOutlineWidth * 2
 
-	baselineOffset: container.y + mainText.baselineOffset
+    baselineOffset: container.y + mainText.baselineOffset
 
     layer.enabled: root.outlineWeight > 0 && root._fontsReady
     layer.smooth: false
 
     Item {
-		id: container
-        anchors.centerIn: parent
-        width: mainText.implicitWidth
+        id: container
+
+        anchors.centerIn: root._wraps ? undefined : parent
+        anchors.left: root._wraps ? parent.left : undefined
+        anchors.top: root._wraps ? parent.top : undefined
+        anchors.leftMargin: root._wraps ? root._actualOutlineWidth : 0
+        anchors.topMargin: root._wraps ? root._actualOutlineWidth : 0
+        width: root._textWidth
         height: mainText.implicitHeight
 
         Repeater {
@@ -56,7 +70,10 @@ Item {
                 readonly property real angle: (index / root.outlineSamples) * Math.PI * 2
                 x: Math.cos(angle) * root._actualOutlineWidth
                 y: Math.sin(angle) * root._actualOutlineWidth
-                
+
+                width: root._textWidth
+                wrapMode: root.wrapMode
+                horizontalAlignment: root.horizontalAlignment
                 text: root._resolvedText
                 font.family: root._dynamicFontFamily
                 font.pixelSize: root.pixelSize
@@ -67,6 +84,10 @@ Item {
 
         Text {
             id: mainText
+
+            width: root._textWidth
+            wrapMode: root.wrapMode
+            horizontalAlignment: root.horizontalAlignment
             text: root._resolvedText
             font.family: root._dynamicFontFamily
             font.pixelSize: root.pixelSize

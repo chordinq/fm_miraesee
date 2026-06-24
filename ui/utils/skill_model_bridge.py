@@ -1,11 +1,13 @@
 from PySide6.QtCore import QObject, Property, Signal
 
 from config import SKILL_UPGRADE_LIBRARY, SKILLS_MAPPING
+from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_skill_collection_model import (
     PlayerSkillModel,
     combat_skill_to_skill_id,
 )
-from localizer import name_loc_from_entry
+from core.game_logic.skill_description import format_skill_description_args
+from localizer import desc_loc_from_entry, name_loc_from_entry, rarity_loc_from_rarity
 
 
 class SkillModelBridge(QObject):
@@ -14,10 +16,12 @@ class SkillModelBridge(QObject):
     def __init__(
         self,
         skill: PlayerSkillModel,
+        player: PlayerModel,
         parent: QObject | None = None,
     ) -> None:
         super().__init__(parent)
         self._skill = skill
+        self._player = player
 
         skill_id = combat_skill_to_skill_id(skill.type)
         key = f"{skill_id.rarity.value}_{skill_id.idx}"
@@ -27,6 +31,9 @@ class SkillModelBridge(QObject):
         self._rarity: int = entry["Rarity"]
         self._skill_key: str = entry["Key"]
         self._name_loc_id, self._name_loc_table = name_loc_from_entry(entry)
+        self._desc_loc_id, self._desc_loc_table = desc_loc_from_entry(entry)
+        self._rarity_loc_id, self._rarity_loc_table = rarity_loc_from_rarity(self._rarity)
+        self._desc_format_args: list[str] = format_skill_description_args(player, skill)
 
         next_level_key = str(skill.level + 1)
         if next_level_key in SKILL_UPGRADE_LIBRARY:
@@ -69,3 +76,23 @@ class SkillModelBridge(QObject):
     @Property(str, notify=changed)
     def nameLocTable(self) -> str:
         return self._name_loc_table
+
+    @Property(str, notify=changed)
+    def descLocId(self) -> str:
+        return self._desc_loc_id
+
+    @Property(str, notify=changed)
+    def descLocTable(self) -> str:
+        return self._desc_loc_table
+
+    @Property(str, notify=changed)
+    def rarityLocId(self) -> str:
+        return self._rarity_loc_id
+
+    @Property(str, notify=changed)
+    def rarityLocTable(self) -> str:
+        return self._rarity_loc_table
+
+    @Property("QVariantList", notify=changed)
+    def descFormatArgs(self) -> list[str]:
+        return self._desc_format_args

@@ -12,6 +12,8 @@ Item {
 	readonly property int rarity: skillModel?.rarity ?? 0
 	readonly property bool showProgress: (skillModel?.maxShardCount ?? 0) > 0
 
+	signal clicked()
+
 	implicitWidth: iconSize
 	implicitHeight: iconSize
 
@@ -48,5 +50,11 @@ Item {
 		visible: showProgress
 		shardCount: root.skillModel?.shardCount ?? 0
 		maxShardCount: root.skillModel?.maxShardCount ?? 0
+	}
+
+	MouseArea {
+		anchors.fill: parent
+		enabled: root.index >= 0
+		onClicked: root.clicked()
 	}
 }

@@ -6,6 +6,7 @@ RectRounded 1.0 graphics/RectRounded.qml
 RectRoundedOutline 1.0 graphics/RectRoundedOutline.qml
 TagBanner 1.0 graphics/TagBanner.qml
 RectExtraRounded 1.0 graphics/RectExtraRounded.qml
+RectRoundedFilledOutline 1.0 graphics/RectRoundedFilledOutline.qml
 RectRoundButton 1.0 graphics/RectRoundButton.qml
 SmallRoundButton 1.0 graphics/SmallRoundButton.qml
 SpriteSheet 1.0 graphics/SpriteSheet.qml
@@ -38,6 +39,9 @@ PetSlotGrid 1.0 components/collections/PetSlotGrid.qml
 MountSlotGrid 1.0 components/collections/MountSlotGrid.qml
 ItemCatalogCollection 1.0 components/ItemCatalogCollection.qml
 SummonButton 1.0 components/buttons/SummonButton.qml
+XButton 1.0 components/buttons/XButton.qml
+PopupView 1.0 components/PopupView.qml
+SkillDetailsView 1.0 components/SkillDetailsView.qml
 TopTabBar 1.0 TopTabBar.qml
 ForgeCollectionView 1.0 views/forge/ForgeCollectionView.qml
 ForgeMainView 1.0 views/forge/ForgeMainView.qml

@@ -11,6 +11,8 @@ Item {
 	property real columnSpacingRatio: 5 / 9
 	property real rowSpacingRatio: 7 / 9
 
+	signal skillClicked(var skillModel)
+
 	readonly property int ascensionLevel: skillCollectionModel ? skillCollectionModel.ascensionLevel : 0
 	readonly property var skillModels: skillCollectionModel ? skillCollectionModel.skills : []
 	readonly property int skillCount: skillModels.length
@@ -46,6 +48,10 @@ Item {
 				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft
+				onClicked: {
+					if (parent.skillModel)
+						root.skillClicked(parent.skillModel)
+				}
 			}
 		}
 	}

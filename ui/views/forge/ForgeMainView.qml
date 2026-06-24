@@ -4,7 +4,7 @@ import ui 1.0
 Rectangle {
     id: root
 
-    color: "#F8C8D4"
+    color: theme.white
 
     AppText {
         anchors.centerIn: parent

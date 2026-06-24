@@ -8,14 +8,14 @@ ApplicationWindow {
 	width: initWinWidth
 	height: initWinHeight
 	visible: true
-	title: "SkillGrid test (" + testSkillCollection.skillCount + " skills)"
+	title: "SkillCollection test (" + testSkillCollection.skillCount + " skills)"
 	color: Theme.white
 
 	Component.onCompleted: {
 		Theme.language = uiLanguage
 	}
 
-	SkillGrid {
+	SkillCollectionView {
 		anchors.fill: parent
 		skillCollectionModel: testSkillCollection
 	}

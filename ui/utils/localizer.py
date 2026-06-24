@@ -14,6 +14,19 @@ def name_loc_from_entry(entry: dict) -> tuple[str, str]:
     return str(loc["Id"]), loc["File"]
 
 
+def desc_loc_from_entry(entry: dict) -> tuple[str, str]:
+    loc = entry["DescLocalization"][0]
+    return str(loc["Id"]), loc["File"]
+
+
+def rarity_loc_from_rarity(rarity: int) -> tuple[str, str]:
+    entry = GENERAL_MAPPING["Rarity"].get(str(rarity))
+    if entry is None:
+        return "", "General"
+    loc = entry["Localization"][0]
+    return str(loc["Id"]), loc["File"]
+
+
 def ascension_loc_from_level(level: AscensionLevel) -> tuple[str, str]:
     asc = GENERAL_MAPPING["AscensionLevel"].get(str(int(level.value)))
     if asc is None:

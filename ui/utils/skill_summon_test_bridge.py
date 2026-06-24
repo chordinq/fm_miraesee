@@ -33,6 +33,7 @@ class SkillSummonTestBridge(QObject):
         self._summon_count = summon_config.get_base_summon_count()
         self._skill_collection = SkillCollectionBridge(
             player.player_skill_collection_model,
+            player,
             parent=self,
         )
         self._prediction_text = ""

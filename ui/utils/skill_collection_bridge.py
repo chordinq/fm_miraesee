@@ -1,6 +1,7 @@
 from PySide6.QtCore import QObject, Property, Signal
 
 from core.game_logic.enums import AscensionLevel
+from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillCollectionModel
 from localizer import ascension_loc_from_level
 from skill_model_bridge import SkillModelBridge
@@ -13,10 +14,12 @@ class SkillCollectionBridge(QObject):
     def __init__(
         self,
         collection: PlayerSkillCollectionModel,
+        player: PlayerModel,
         parent: QObject | None = None,
     ) -> None:
         super().__init__(parent)
         self._collection = collection
+        self._player = player
         self._refresh_bridges()
 
     def _refresh_bridges(self) -> None:
@@ -24,7 +27,7 @@ class SkillCollectionBridge(QObject):
         self._ascension_level = int(ascension_level.value)
         self._ascension_loc_id, self._ascension_loc_table = ascension_loc_from_level(ascension_level)
         self._skill_bridges: list[SkillModelBridge] = [
-            SkillModelBridge(skill, parent=self)
+            SkillModelBridge(skill, self._player, parent=self)
             for skill in self._collection.get_player_skills()
         ]
 
