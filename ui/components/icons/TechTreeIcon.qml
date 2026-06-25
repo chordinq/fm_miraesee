@@ -22,6 +22,10 @@ Item {
 	implicitHeight: logicalSize
 	visible: hasSprite
 
+	layer.enabled: true
+	layer.smooth: true
+	layer.mipmap: true
+
 	Item {
 		anchors.fill: parent
 
@@ -34,6 +38,7 @@ Item {
 			visible: false
 			layer.enabled: true
 			layer.smooth: true
+			layer.mipmap: true
 		}
 
 		MultiEffect {

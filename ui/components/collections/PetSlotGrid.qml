@@ -12,6 +12,8 @@ Item {
 	property real columnSpacingRatio: 5 / 9
 	property real rowSpacingRatio: 5 / 9
 
+	signal petClicked(var petModel)
+
 	readonly property int ascensionLevel: petCollectionModel ? petCollectionModel.ascensionLevel : 0
 	readonly property var petModels: petCollectionModel ? petCollectionModel.pets : []
 	readonly property var eggModels: {
@@ -32,9 +34,12 @@ Item {
 
 	readonly property real totalWidthUnits: columnsPerRow + (columnsPerRow + 1) * columnSpacingRatio
 	readonly property real exactIconSize: width > 0 ? (width / totalWidthUnits) : iconLogicalSize
-	readonly property real iconSize: Math.floor(exactIconSize)
-	readonly property real hSpacing: Math.floor(iconSize * columnSpacingRatio)
-	readonly property real vSpacing: Math.floor(iconSize * rowSpacingRatio)
+	readonly property real hSpacing: exactIconSize * columnSpacingRatio
+	readonly property real cellWidth: width > 0
+		? (width - hSpacing) / columnsPerRow
+		: exactIconSize + exactIconSize * columnSpacingRatio
+	readonly property real iconSize: cellWidth / (1 + columnSpacingRatio)
+	readonly property real vSpacing: iconSize * rowSpacingRatio
 	readonly property real entryScale: iconSize / iconLogicalSize
 
 	GridView {
@@ -44,7 +49,7 @@ Item {
 		leftMargin: root.hSpacing
 		topMargin: root.vSpacing
 		model: root.entryCount
-		cellWidth: root.iconSize + root.hSpacing
+		cellWidth: root.cellWidth
 		cellHeight: root.iconSize + root.vSpacing
 		clip: true
 
@@ -71,6 +76,11 @@ Item {
 				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft
+				onClicked: {
+					var model = root.petModels[parent.index]
+					if (model)
+						root.petClicked(model)
+				}
 			}
 
 			EggSlot {

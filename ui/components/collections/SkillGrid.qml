@@ -20,9 +20,12 @@ Item {
 
 	readonly property real totalWidthUnits: columnsPerRow + (columnsPerRow + 1) * columnSpacingRatio
 	readonly property real exactIconSize: width > 0 ? (width / totalWidthUnits) : iconLogicalSize
-	readonly property real iconSize: Math.floor(exactIconSize)
-	readonly property real hSpacing: Math.floor(iconSize * columnSpacingRatio)
-	readonly property real vSpacing: Math.floor(iconSize * rowSpacingRatio)
+	readonly property real hSpacing: exactIconSize * columnSpacingRatio
+	readonly property real cellWidth: width > 0
+		? (width - hSpacing) / columnsPerRow
+		: exactIconSize + exactIconSize * columnSpacingRatio
+	readonly property real iconSize: cellWidth / (1 + columnSpacingRatio)
+	readonly property real vSpacing: iconSize * rowSpacingRatio
 	readonly property real entryScale: iconSize / iconLogicalSize
 
 	GridView {
@@ -32,7 +35,7 @@ Item {
 		leftMargin: root.hSpacing
 		topMargin: root.vSpacing
 		model: root.skillCount
-		cellWidth: root.iconSize + root.hSpacing
+		cellWidth: root.cellWidth
 		cellHeight: root.iconSize + root.vSpacing
 		clip: true
 

@@ -13,6 +13,10 @@ Item {
 	readonly property real bakedW: sourceBorder * widthScale
 	readonly property real bakedH: sourceBorder * heightScale
 
+	layer.enabled: true
+	layer.smooth: true
+	layer.mipmap: true
+
 	Item {
 		id: bakeCanvas
 

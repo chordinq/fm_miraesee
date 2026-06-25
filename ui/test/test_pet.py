@@ -21,6 +21,7 @@ def main() -> None:
     player = dump_snapshot_to_player_model(parse_dump_text(dump_text))
     pet_bridge = PetCollectionBridge(
         player.player_pet_collection_model,
+        player,
         parent=engine,
     )
 

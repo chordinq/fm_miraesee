@@ -15,11 +15,15 @@ Item {
     implicitWidth: baseSize * scaleW
     implicitHeight: baseSize * scaleH
 
-    readonly property real bakedW: 512 * scaleW
-    readonly property real bakedH: 512 * scaleH
+	readonly property real bakedW: 512 * scaleW
+	readonly property real bakedH: 512 * scaleH
 
-    Item {
-        id: bakeCanvas
+	layer.enabled: true
+	layer.smooth: true
+	layer.mipmap: true
+
+	Item {
+		id: bakeCanvas
         width: root.bakedW
         height: root.bakedH
         transformOrigin: Item.TopLeft

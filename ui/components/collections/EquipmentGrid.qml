@@ -17,9 +17,9 @@ Item {
 
 	readonly property real totalWidthUnits: columnsPerRow + (columnsPerRow + 1) * columnSpacingRatio
 	readonly property real exactIconSize: width > 0 ? (width / totalWidthUnits) : iconLogicalSize
-	readonly property real iconSize: Math.floor(exactIconSize)
-	readonly property real hSpacing: Math.floor(iconSize * columnSpacingRatio)
-	readonly property real vSpacing: Math.floor(iconSize * rowSpacingRatio)
+	readonly property real iconSize: exactIconSize
+	readonly property real hSpacing: exactIconSize * columnSpacingRatio
+	readonly property real vSpacing: exactIconSize * rowSpacingRatio
 	readonly property real entryScale: iconSize / iconLogicalSize
 
 	implicitHeight: (iconSize * rowCount) + (vSpacing * (rowCount + 1))

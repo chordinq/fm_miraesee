@@ -38,4 +38,12 @@ Item {
 		visible: root.index >= 0
 		pixelSize: iconSize * 5 / 16
 	}
+
+	signal clicked()
+
+	MouseArea {
+		anchors.fill: parent
+		enabled: root.index >= 0
+		onClicked: root.clicked()
+	}
 }

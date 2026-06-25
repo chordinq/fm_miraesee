@@ -21,6 +21,10 @@ Item {
 	implicitHeight: logicalSize
 	visible: hasSprite
 
+	layer.enabled: true
+	layer.smooth: true
+	layer.mipmap: true
+
 	SpriteSheet {
 		anchors.fill: parent
 		source: root.spriteSheet

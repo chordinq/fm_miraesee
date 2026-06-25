@@ -38,12 +38,12 @@ Item {
             return width / widthFitDenominator
         return width * iconSizeRatio
     }
-    readonly property int iconSize: Math.floor(exactIconSize)
-    readonly property int verticalGap: Math.floor(iconSize * verticalGapRatio)
-    readonly property int horizontalGap: Math.floor(iconSize * horizontalGapRatio)
+    readonly property real iconSize: exactIconSize
+    readonly property real verticalGap: iconSize * verticalGapRatio
+    readonly property real horizontalGap: iconSize * horizontalGapRatio
     readonly property real entryScale: iconSize / iconLogicalSize
-    readonly property int lineWidth: Math.floor(10 * entryScale)
-    readonly property real visualCenterY: Math.floor(iconSize * iconCenterYRatio)
+    readonly property real lineWidth: 10 * entryScale
+    readonly property real visualCenterY: iconSize * iconCenterYRatio
 
     function nodeFillColor(nodeModel) {
         if (!nodeModel)

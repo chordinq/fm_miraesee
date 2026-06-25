@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Effects
 import ui 1.0
 
 Item {
@@ -43,6 +44,8 @@ Item {
 	}
 
 	SkillProgress {
+		id: skillProgress
+
 		anchors.horizontalCenter: icon.horizontalCenter
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: icon.height * 1/3
@@ -50,6 +53,35 @@ Item {
 		visible: showProgress
 		shardCount: root.skillModel?.shardCount ?? 0
 		maxShardCount: root.skillModel?.maxShardCount ?? 0
+	}
+
+	Item {
+		visible: skillProgress.upgradable
+		width: icon.width * 0.52
+		height: width
+		anchors.right: icon.right
+		anchors.top: icon.top
+		anchors.rightMargin: -width * 0.25
+		anchors.topMargin: -height * 0.18
+
+		Image {
+			id: upgradeArrowShape
+
+			anchors.fill: parent
+			source: Qt.resolvedUrl("../../../assets/sprites/General/UpgradeArrow.png")
+			fillMode: Image.PreserveAspectFit
+			visible: false
+			layer.enabled: true
+			layer.smooth: true
+			layer.mipmap: true
+		}
+
+		MultiEffect {
+			anchors.fill: parent
+			source: upgradeArrowShape
+			colorization: 1.0
+			colorizationColor: Theme.green
+		}
 	}
 
 	MouseArea {

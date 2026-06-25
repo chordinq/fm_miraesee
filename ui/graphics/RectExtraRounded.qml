@@ -22,6 +22,10 @@ Item {
 	readonly property real bakedW: 512 * scaleW
 	readonly property real bakedH: 512 * scaleH
 
+	layer.enabled: true
+	layer.smooth: true
+	layer.mipmap: true
+
 	Item {
 		id: bakeCanvas
 		width: root.bakedW

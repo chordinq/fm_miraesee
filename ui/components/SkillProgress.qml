@@ -15,6 +15,11 @@ Item {
 		? Math.min(1, Math.max(0, shardCount / maxShardCount))
 		: 0
 
+	readonly property bool upgradable:
+		root.maxShardCount > 0 && root.shardCount >= root.maxShardCount
+
+	readonly property color progressFillColor: root.upgradable ? Theme.green : Theme.white
+
 	implicitWidth: 256
 	implicitHeight: implicitWidth * scaleH / scaleW
 	height: width * scaleH / scaleW
@@ -41,7 +46,7 @@ Item {
 			height: root.height
 			scaleW: root.scaleW
 			scaleH: root.scaleH
-			fillColor: Theme.white
+			fillColor: root.progressFillColor
 			fillOpacity: 1.0
 		}
 	}

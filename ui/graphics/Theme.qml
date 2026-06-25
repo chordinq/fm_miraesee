@@ -34,13 +34,13 @@ QtObject {
 	readonly property string uiFontFamily: {
 		switch (language) {
 		case "ko":
-			return fontKR.status === FontLoader.Ready ? fontKR.name : latinFontFamily
+			return fontKR.status === FontLoader.Ready ? fontKR.name : ""
 		case "ja":
-			return fontJP.status === FontLoader.Ready ? fontJP.name : latinFontFamily
+			return fontJP.status === FontLoader.Ready ? fontJP.name : ""
 		case "ru":
-			return fontRU.status === FontLoader.Ready ? fontRU.name : latinFontFamily
+			return fontRU.status === FontLoader.Ready ? fontRU.name : ""
 		case "tr-TR":
-			return fontTR.status === FontLoader.Ready ? fontTR.name : latinFontFamily
+			return fontTR.status === FontLoader.Ready ? fontTR.name : ""
 		default:
 			return latinFontFamily
 		}

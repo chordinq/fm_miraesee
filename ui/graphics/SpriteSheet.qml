@@ -10,9 +10,9 @@ Item {
 	property real sizeRatio: 1.0
 	property bool clipCell: true
 
-	readonly property int cellSize: Math.floor(sheetNativeSize / sheetCols)
+	readonly property int cellSize: sheetNativeSize / sheetCols
 	readonly property int iconCol: spriteIndex % sheetCols
-	readonly property int iconRow: Math.floor(spriteIndex / sheetCols)
+	readonly property int iconRow: spriteIndex / sheetCols
 
 	implicitWidth: 0
 	implicitHeight: 0

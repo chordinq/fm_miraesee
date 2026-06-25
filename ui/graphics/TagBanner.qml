@@ -16,6 +16,10 @@ Item {
 	readonly property real bakedW: Math.min(512 * scaleW, maxBakedExtent)
 	readonly property real bakedH: Math.min(512 * scaleH, maxBakedExtent)
 
+	layer.enabled: true
+	layer.smooth: true
+	layer.mipmap: true
+
 	Item {
 		id: bakeCanvas
 

@@ -12,10 +12,14 @@ RowLayout {
 	property int outlineWeight: 8
 	property color outlineColor: Theme.black
 
+	readonly property real lvLetterSpacing: pixelSize * 4 / 80
+
+	spacing: 0
+
 	AppText {
 		locId: "25799296414314496"
 		pixelSize: root.pixelSize
-		letterSpacing: 4
+		letterSpacing: root.lvLetterSpacing
 		fillColor: root.fillColor
 		outlineColor: root.outlineColor
 		outlineWeight: root.outlineWeight

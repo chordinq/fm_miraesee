@@ -21,6 +21,10 @@ Item {
 	implicitWidth: logicalSize
 	implicitHeight: logicalSize
 
+	layer.enabled: true
+	layer.smooth: true
+	layer.mipmap: true
+
 	RectRounded {
 		anchors.fill: parent
 		scaleW: 4

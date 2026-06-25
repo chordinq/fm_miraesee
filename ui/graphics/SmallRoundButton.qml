@@ -28,6 +28,7 @@ Item {
 			visible: false
 			layer.enabled: true
 			layer.smooth: true
+			layer.mipmap: true
 		}
 
 		MultiEffect {

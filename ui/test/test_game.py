@@ -35,6 +35,7 @@ def main() -> None:
     )
     pet_bridge = PetCollectionBridge(
         player.player_pet_collection_model,
+        player,
         parent=engine,
     )
     pet_egg_test = PetEggTestBridge(logic, pet_bridge, parent=engine)

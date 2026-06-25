@@ -39,9 +39,11 @@ PetSlotGrid 1.0 components/collections/PetSlotGrid.qml
 MountSlotGrid 1.0 components/collections/MountSlotGrid.qml
 ItemCatalogCollection 1.0 components/ItemCatalogCollection.qml
 SummonButton 1.0 components/buttons/SummonButton.qml
+CollectionTabButton 1.0 components/buttons/CollectionTabButton.qml
 XButton 1.0 components/buttons/XButton.qml
 PopupView 1.0 components/PopupView.qml
 SkillDetailsView 1.0 components/SkillDetailsView.qml
+PetDetailsView 1.0 components/PetDetailsView.qml
 TopTabBar 1.0 TopTabBar.qml
 ForgeCollectionView 1.0 views/forge/ForgeCollectionView.qml
 ForgeMainView 1.0 views/forge/ForgeMainView.qml

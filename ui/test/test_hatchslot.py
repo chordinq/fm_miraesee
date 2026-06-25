@@ -38,7 +38,7 @@ def main() -> None:
     player = dump_snapshot_to_player_model(parse_dump_text(dump_text))
     collection = player.player_pet_collection_model
     kept, cleared = _prepare_mixed_hatch_slots(collection)
-    pet_collection_bridge = PetCollectionBridge(collection, parent=engine)
+    pet_collection_bridge = PetCollectionBridge(collection, player, parent=engine)
     slot_count = pet_collection_bridge.hatchSlotCount
     empty_count = slot_count - kept
 

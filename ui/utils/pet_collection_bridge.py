@@ -1,6 +1,7 @@
 from PySide6.QtCore import QObject, Property, Signal
 
 from core.game_logic.enums import AscensionLevel
+from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_pet_collection_model import PlayerPetCollectionModel
 from egg_model_bridge import EggModelBridge
 from localizer import ascension_loc_from_level
@@ -14,10 +15,12 @@ class PetCollectionBridge(QObject):
     def __init__(
         self,
         collection: PlayerPetCollectionModel,
+        player: PlayerModel,
         parent: QObject | None = None,
     ) -> None:
         super().__init__(parent)
         self._collection = collection
+        self._player = player
         self._refresh_bridges()
 
     def _refresh_bridges(self) -> None:
@@ -26,7 +29,7 @@ class PetCollectionBridge(QObject):
         self._ascension_loc_id, self._ascension_loc_table = ascension_loc_from_level(ascension_level)
 
         self._pet_bridges: list[PetModelBridge] = [
-            PetModelBridge(pet, parent=self)
+            PetModelBridge(pet, self._player, parent=self)
             for pet in self._collection.get_pets()
         ]
         self._egg_bridges: list[EggModelBridge] = [

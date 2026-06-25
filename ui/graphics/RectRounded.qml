@@ -28,6 +28,9 @@ Item {
             id: effectSource
             anchors.fill: parent
             visible: false
+            layer.enabled: true
+            layer.smooth: true
+            layer.mipmap: true
 
             BorderImage {
                 width: root.bakedW

@@ -10,10 +10,10 @@ PopupView {
 	widthScale: 52
 	heightScale: 47
 
-	readonly property int slotSize: width * 0.13
+	readonly property real slotSize: width * 0.13
 	readonly property real slotScale: slotSize / 256
-	readonly property real titleFontScale: 0.055
-	readonly property real bodyFontScale: 0.038
+	readonly property real titleFontScale: 0.043
+	readonly property real bodyFontScale: 0.043
 	readonly property color titleColor: skillModel
 		? Theme.rarityColors[skillModel.rarity]
 		: Theme.darkText
@@ -33,19 +33,18 @@ PopupView {
 		id: infoColumn
 
 		anchors.left: parent.left
-		anchors.leftMargin: root.slotSize + root.width * 0.04
+		anchors.leftMargin: root.slotSize + root.width * 0.13
 		anchors.top: parent.top
-		anchors.topMargin: parent.height * 0.06
+		anchors.topMargin: parent.height * 0.03
 		anchors.right: parent.right
-		spacing: root.width * 0.025
+		anchors.rightMargin: root.width * 0.05
+		spacing: root.height * -0.01
 
 		Row {
-			spacing: root.width * 0.012
-
 			AppText {
 				prefix: "["
-				locId: root.skillModel ? root.skillModel.rarityLocId : ""
 				locTable: root.skillModel ? root.skillModel.rarityLocTable : "General"
+				locId: root.skillModel ? root.skillModel.rarityLocId : ""
 				suffix: "]"
 				fillColor: root.titleColor
 				pixelSize: root.width * root.titleFontScale
@@ -53,8 +52,8 @@ PopupView {
 			}
 
 			AppText {
+				locTable: "Skills"
 				locId: root.skillModel ? root.skillModel.nameLocId : ""
-				locTable: root.skillModel ? root.skillModel.nameLocTable : "General"
 				fillColor: root.titleColor
 				pixelSize: root.width * root.titleFontScale
 				outlineWeight: 8
@@ -64,10 +63,10 @@ PopupView {
 		AppText {
 			width: infoColumn.width
 			wrapMode: Text.WordWrap
+			locTable: "Skills"
 			locId: root.skillModel ? root.skillModel.descLocId : ""
-			locTable: root.skillModel ? root.skillModel.descLocTable : "Skills"
 			formatArgs: root.skillModel ? root.skillModel.descFormatArgs : []
-			fillColor: Theme.darkText
+			fillColor: Theme.black
 			pixelSize: root.width * root.bodyFontScale
 			outlineWeight: 0
 		}
