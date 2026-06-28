@@ -1,12 +1,16 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
 from ....random_pcg import RandomPCG
+from ...enums import StatType
 from ...player.player_pet_collection_model import (
 	HatchedPetInfo,
 	PlayerEggModel,
 	create_pet_from_ids,
 	pet_ids_for_rarity,
 )
+from ...player.timer_model import TimerModel
+from ...stats.stat_helper import StatHelper
+from ...stats.stat_target import EggStatTarget
 from ..action_codes import ActionCodes
 from ..action_result import ActionResult, MetaActionResult
 from ..player_action import PlayerAction
@@ -36,7 +40,11 @@ class PetEggHatchStartAction(PlayerAction):
 		if egg is None:
 			return ActionResult.DoesNotExist
 
-		if egg.is_equipped or egg.equip_slot >= 0:
+		if (
+			egg.timer is not None
+			or egg.is_equipped
+			or egg.equip_slot >= 0
+		):
 			return ActionResult.AlreadyInProgress
 
 		if not collection.is_hatch_slot_available(self.slot_index):
@@ -45,6 +53,21 @@ class PetEggHatchStartAction(PlayerAction):
 		if not commit:
 			return ActionResult.Success
 
+		egg_config = player.game_config.egg_library.get(egg.rarity)
+		if egg_config is None:
+			raise ValueError(f"No EggConfig for rarity: {egg.rarity!r}")
+
+		base_duration = float(egg_config.get("HatchTime", 0))
+		target = EggStatTarget(egg.rarity)
+		duration = round(
+			StatHelper.calculate_value(
+				player,
+				StatType.TimerSpeed,
+				target,
+				base_duration,
+			)
+		)
+		egg.timer = TimerModel(player, duration)
 		egg.equip_slot = self.slot_index
 		egg.is_equipped = True
 		return ActionResult.Success

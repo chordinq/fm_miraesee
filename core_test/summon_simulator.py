@@ -4,6 +4,11 @@ import copy
 from dataclasses import dataclass, field
 
 from core.game_logic.actions import ActionResult, MetaActionResult
+from core.game_logic.actions.summon.egg_summon_action import SummonedEggInfo
+from core.game_logic.actions.summon.mount_summon_action import (
+	SummonedMountsInfo,
+	_mount_ids_for_rarity,
+)
 from core.game_logic.actions.summon.skill_summon_action import (
 	SummonedSkillInfo,
 	_skills_for_rarity,
@@ -11,9 +16,14 @@ from core.game_logic.actions.summon.skill_summon_action import (
 from core.game_logic.enums import CurrencyType, StatType
 from core.game_logic.game_logic import GameLogic
 from core.game_logic.player.player_model import PlayerModel
+from core.game_logic.player.player_mount_collection_model import create_mount_from_ids
 from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
 from core.game_logic.stats.stat_helper import StatHelper
-from core.game_logic.stats.stat_target import ActiveSkillStatTarget
+from core.game_logic.stats.stat_target import (
+	ActiveSkillStatTarget,
+	EggStatTarget,
+	MountStatTarget,
+)
 from core.game_logic.summon_config import SummonConfig
 from core.miraesee_extension import miraesee_extension
 from core.random_pcg import RandomPCG
@@ -172,6 +182,141 @@ def skill_summon_allow_overdraft(
 		cumulative_deficit=cumulative_deficit,
 	)
 	return result, summoned, ledger
+
+
+def _run_egg_summon_rolls(
+	player: PlayerModel,
+	summon_count: int,
+) -> tuple[MetaActionResult, list[SummonedEggInfo]]:
+	game_config = player.game_config
+	summon_config = game_config.egg_summon_config
+	collection = player.player_pet_collection_model
+	summon_model = collection.summon_model
+	summoned: list[SummonedEggInfo] = []
+
+	freebie_target = EggStatTarget()
+	effective_count = summon_count
+	i = 0
+	while i < effective_count:
+		rng = RandomPCG.create_from_seed(summon_model.seed)
+		if i < summon_count:
+			if StatHelper.roll_stat(
+				player,
+				StatType.FreebieChance,
+				freebie_target,
+				rng,
+			):
+				effective_count += 1
+
+		level_cfg = summon_config.levels[summon_model.level]
+		rolled_rarity = level_cfg.roll_rarity(rng)
+		egg = collection.create_egg_model(rolled_rarity, summon_model.seed)
+		is_new = all(existing.rarity != rolled_rarity for existing in collection.eggs)
+		collection.eggs.append(egg)
+		summoned.append(SummonedEggInfo(egg, is_new))
+
+		summon_model.increment_summon_count(summon_config)
+		i += 1
+
+	return ActionResult.Success, summoned
+
+
+def _run_mount_summon_rolls(
+	player: PlayerModel,
+	summon_count: int,
+) -> tuple[MetaActionResult, list[SummonedMountsInfo]]:
+	game_config = player.game_config
+	summon_config = game_config.mount_summon_config
+	collection = player.player_mount_collection_model
+	summon_model = collection.summon_model
+	summoned: list[SummonedMountsInfo] = []
+
+	freebie_target = MountStatTarget()
+	effective_count = summon_count
+	i = 0
+	while i < effective_count:
+		rng = RandomPCG.create_from_seed(summon_model.seed)
+		if i < summon_count:
+			if StatHelper.roll_stat(
+				player,
+				StatType.FreebieChance,
+				freebie_target,
+				rng,
+			):
+				effective_count += 1
+
+		level_cfg = summon_config.levels[summon_model.level]
+		rolled_rarity = level_cfg.roll_rarity(rng)
+		candidates = _mount_ids_for_rarity(game_config.mount_library, rolled_rarity)
+		if not candidates:
+			return ActionResult.DoesNotExist, summoned
+
+		mount = create_mount_from_ids(player, candidates, rng)
+		is_new = all(
+			existing.mount_id != mount.mount_id
+			for existing in collection.player_mount_models
+		)
+		collection.player_mount_models.append(mount)
+		summoned.append(SummonedMountsInfo(mount, is_new))
+
+		summon_model.increment_summon_count(summon_config)
+		i += 1
+
+	return ActionResult.Success, summoned
+
+
+@miraesee_extension
+def egg_summon_allow_overdraft(
+	logic: GameLogic,
+	summon_count: int,
+	*,
+	commit: bool = True,
+) -> tuple[MetaActionResult, list[SummonedEggInfo]]:
+	player = logic.player
+	summon_config = player.game_config.egg_summon_config
+	currency = summon_config.single_summon_cost.currency
+
+	if summon_count not in summon_config.possible_summon_count:
+		return ActionResult.DoesNotExist, []
+
+	cost = resolved_summon_cost(player, summon_config, summon_count)
+	if not commit:
+		return ActionResult.Success, []
+
+	spend_context = player.player_currency_model.create_spend_context(
+		player,
+		currency,
+		cost,
+	)
+	spend_context.spend("EggSummon")
+	return _run_egg_summon_rolls(player, summon_count)
+
+
+@miraesee_extension
+def mount_summon_allow_overdraft(
+	logic: GameLogic,
+	summon_count: int,
+	*,
+	commit: bool = True,
+) -> tuple[MetaActionResult, list[SummonedMountsInfo]]:
+	player = logic.player
+	summon_config = player.game_config.mount_summon_config
+	currency = summon_config.single_summon_cost.currency
+
+	if summon_count not in summon_config.possible_summon_count:
+		return ActionResult.DoesNotExist, []
+
+	cost = resolved_summon_cost(player, summon_config, summon_count)
+	if not commit:
+		return ActionResult.Success, []
+
+	spend_context = player.player_currency_model.create_spend_context(
+		player,
+		currency,
+		cost,
+	)
+	spend_context.spend("MountSummon")
+	return _run_mount_summon_rolls(player, summon_count)
 
 
 @miraesee_extension

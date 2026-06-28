@@ -1,148 +1,131 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 import ui 1.0
 
-Rectangle {
+Item {
 	id: root
 
-	property var eggHatchTest: null
+	property var petController: null
+	property var petCollectionModel: null
+	property real summonResultWidthRatio: 1.0
 
-	color: Theme.white
+	readonly property real summonAspect: 4 / 2
+	readonly property real bottomMargin: Math.max(8, height * 0.04)
+	readonly property real topMargin: Math.max(8, width * 0.02)
+	readonly property real topBarHeight: Math.max(32, height * 0.08)
+	readonly property int summonOptionCount: petController
+		? petController.summonCountOptions.length
+		: 3
+	readonly property real targetSummonHeight: height * 0.12
+	readonly property real summonBarSpacing: targetSummonHeight * 0.06
+	readonly property real summonCountButtonSize: targetSummonHeight * 0.72
+	readonly property real summonButtonWidth: Math.min(
+		targetSummonHeight * summonAspect,
+		(width - summonCountButtonSize * summonOptionCount - summonBarSpacing * (summonOptionCount + 1)) * 0.95
+	)
+	readonly property real summonButtonHeight: summonButtonWidth / summonAspect
+	readonly property real countLabelScale: 0.34
 
-	readonly property real statusFontSize: Math.max(13, height * 0.03)
-	readonly property real bodyFontSize: Math.max(12, height * 0.026)
-	readonly property real hintFontSize: Math.max(12, height * 0.024)
-	readonly property real actionFontSize: Math.max(12, height * 0.024)
-	readonly property real hatchButtonWidth: Math.min(width * 0.42, hatchBar.height * 2.2)
-	readonly property real hatchButtonHeight: hatchButtonWidth / 2
-
-	Column {
+	Rectangle {
 		anchors.fill: parent
-		spacing: 0
+		color: Qt.darker(Theme.darkBlue, 1.5)
+	}
 
-		Item {
-			width: parent.width
-			height: parent.height * 0.1
+	MainViewHeader {
+		id: topBar
 
-			AppText {
-				anchors.left: parent.left
-				anchors.right: parent.right
-				anchors.verticalCenter: parent.verticalCenter
-				anchors.leftMargin: 12
-				anchors.rightMargin: 12
-				text: root.eggHatchTest ? root.eggHatchTest.statusText : ""
-				fillColor: Theme.darkText
-				pixelSize: root.statusFontSize
-				outlineWeight: 0
-			}
-		}
+		anchors.left: parent.left
+		anchors.right: parent.right
+		anchors.top: parent.top
+		anchors.leftMargin: root.topMargin
+		anchors.rightMargin: root.topMargin
+		anchors.topMargin: root.topMargin
+		height: root.topBarHeight
+		primaryCurrencyIcon: root.petController ? root.petController.summonSpriteImage : ""
+		primaryCurrencyAmount: root.petController ? root.petController.eggshellCount : 0
+		rarityCounts: root.petCollectionModel ? root.petCollectionModel.eggRarityCounts : []
+		rarityIconType: "egg"
+		ascensionLevel: root.petController ? root.petController.ascensionLevel : 0
+	}
 
-		Item {
-			width: parent.width
-			height: parent.height * 0.08
+	EggSummonResult {
+		anchors.top: topBar.bottom
+		anchors.bottom: bottomColumn.top
+		anchors.left: parent.left
+		anchors.leftMargin: root.topMargin
+		anchors.topMargin: root.topMargin
+		anchors.bottomMargin: root.topMargin
+		anchors.right: root.summonResultWidthRatio >= 1 ? parent.right : undefined
+		anchors.rightMargin: root.summonResultWidthRatio >= 1 ? root.topMargin : undefined
+		width: root.summonResultWidthRatio >= 1
+			? undefined
+			: parent.width * root.summonResultWidthRatio
+		results: root.petController ? root.petController.summonResults : []
+		ascensionLevel: root.petController ? root.petController.ascensionLevel : 0
+	}
 
-			AppText {
-				anchors.left: parent.left
-				anchors.right: parent.right
-				anchors.verticalCenter: parent.verticalCenter
-				anchors.leftMargin: 12
-				anchors.rightMargin: 12
-				text: "Egg hatch preview"
-				fillColor: Theme.darkBlue
-				pixelSize: root.hintFontSize
-				outlineWeight: 0
-			}
-		}
+	Row {
+		id: bottomColumn
 
-		Flickable {
-			id: predictionArea
+		anchors.horizontalCenter: parent.horizontalCenter
+		anchors.bottom: parent.bottom
+		anchors.bottomMargin: root.bottomMargin
+		spacing: root.summonBarSpacing
 
-			width: parent.width
-			height: parent.height * 0.58
-			clip: true
-			boundsBehavior: Flickable.StopAtBounds
-			contentWidth: width
-			contentHeight: predictionBody.height
+		Repeater {
+			model: root.petController ? root.petController.summonCountOptions : [1, 15, 50]
 
-			ScrollBar.vertical: ScrollBar {
-				policy: ScrollBar.AsNeeded
-				contentItem: Rectangle {
-					implicitWidth: 8
-					radius: width / 2
-					color: Theme.darkGrey
-				}
-			}
+			delegate: Item {
+				required property int modelData
+				required property int index
 
-			Text {
-				id: predictionBody
+				readonly property bool selected:
+					root.petController && root.petController.summonCount === modelData
+				readonly property bool canAfford:
+					root.petController && root.petController.summonAffordFlags[index]
 
-				width: predictionArea.width - 24
-				x: 12
-				text: root.eggHatchTest ? root.eggHatchTest.predictionText : ""
-				font.family: Theme.latinFontFamily
-				font.pixelSize: root.bodyFontSize
-				color: Theme.darkText
-				lineHeight: 1.35
-				lineHeightMode: Text.ProportionalHeight
-			}
-		}
+				width: root.summonCountButtonSize
+				height: width
 
-		Item {
-			width: parent.width
-			height: parent.height * 0.12
-
-			Text {
-				anchors.left: parent.left
-				anchors.right: parent.right
-				anchors.verticalCenter: parent.verticalCenter
-				anchors.leftMargin: 12
-				anchors.rightMargin: 12
-				text: root.eggHatchTest ? root.eggHatchTest.lastActionText : ""
-				font.family: Theme.latinFontFamily
-				font.pixelSize: root.actionFontSize
-				color: Theme.darkBlue
-				wrapMode: Text.WordWrap
-				maximumLineCount: 3
-				elide: Text.ElideRight
-			}
-		}
-
-		Rectangle {
-			id: hatchBar
-
-			width: parent.width
-			height: parent.height * 0.12
-			color: Theme.darkBlue
-
-			Item {
-				anchors.centerIn: parent
-				width: root.hatchButtonWidth
-				height: root.hatchButtonHeight
-
-				RectRoundButton {
-					id: hatchButtonBg
+				SmallRoundButton {
 					anchors.fill: parent
-					scaleW: 2
-					scaleH: 1
-					fillColor: root.eggHatchTest && root.eggHatchTest.canHatchSelected
-						? Theme.green
-						: Theme.darkGrey
+					fillColor: parent.selected && parent.canAfford ? Theme.blue : Theme.lightGrey
 				}
 
 				AppText {
 					anchors.centerIn: parent
-					text: "Hatch"
+					text: modelData
+					pixelSize: parent.width * root.countLabelScale
 					fillColor: Theme.white
-					pixelSize: parent.height * 0.42
 					outlineColor: Theme.black
 					outlineWeight: 8
 				}
 
 				MouseArea {
 					anchors.fill: parent
-					enabled: root.eggHatchTest && root.eggHatchTest.canHatchSelected
-					onClicked: root.eggHatchTest.performSelectedHatch()
+					onClicked: {
+						if (root.petController)
+							root.petController.setSummonCount(modelData)
+					}
 				}
+			}
+		}
+
+		SummonButton {
+			width: root.summonButtonWidth
+			height: root.summonButtonHeight
+			summonCount: root.petController ? root.petController.summonCount : 1
+			cost: root.petController ? root.petController.summonCost : 0
+			spriteImage: root.petController ? root.petController.summonSpriteImage : ""
+			fillColor: root.petController && root.petController.canAffordSummon
+				? Theme.blue
+				: Theme.lightGrey
+			enabled: root.petController && root.petController.canAffordSummon
+			onClicked: {
+				if (root.petController)
+					root.petController.performSummon()
 			}
 		}
 	}

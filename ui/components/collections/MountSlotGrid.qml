@@ -1,6 +1,5 @@
 pragma ComponentBehavior: Bound
 import QtQuick
-import QtQuick.Controls
 import ui 1.0
 
 Item {
@@ -11,8 +10,28 @@ Item {
 	property real columnSpacingRatio: 5 / 9
 	property real rowSpacingRatio: 5 / 9
 
+	signal mountClicked(var mountModel)
+
 	readonly property int ascensionLevel: mountCollectionModel ? mountCollectionModel.ascensionLevel : 0
-	readonly property var mountModels: mountCollectionModel ? mountCollectionModel.mounts : []
+	readonly property var mountModels: {
+		if (!mountCollectionModel || !mountCollectionModel.mounts)
+			return []
+		var all = mountCollectionModel.mounts
+		var indexed = []
+		for (var i = 0; i < all.length; i++)
+			indexed.push({ model: all[i], index: i })
+		indexed.sort(function(a, b) {
+			if (a.model.isEquipped !== b.model.isEquipped)
+				return a.model.isEquipped ? -1 : 1
+			if (a.model.rarity !== b.model.rarity)
+				return b.model.rarity - a.model.rarity
+			return a.index - b.index
+		})
+		var sorted = []
+		for (var j = 0; j < indexed.length; j++)
+			sorted.push(indexed[j].model)
+		return sorted
+	}
 	readonly property int mountCount: mountModels.length
 	readonly property int iconLogicalSize: 256
 
@@ -37,15 +56,6 @@ Item {
 		cellHeight: root.iconSize + root.vSpacing
 		clip: true
 
-		ScrollBar.vertical: ScrollBar {
-			policy: ScrollBar.AsNeeded
-			contentItem: Rectangle {
-				implicitWidth: 8
-				radius: width / 2
-				color: Theme.darkGrey
-			}
-		}
-
 		delegate: Item {
 			required property int index
 			property var mountModel: root.mountModels[index]
@@ -58,6 +68,10 @@ Item {
 				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft
+				onClicked: {
+					if (parent.mountModel)
+						root.mountClicked(parent.mountModel)
+				}
 			}
 		}
 	}

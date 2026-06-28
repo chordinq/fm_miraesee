@@ -1,13 +1,13 @@
 from __future__ import annotations
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
-from uuid import uuid4
+from typing import TYPE_CHECKING, Union
 from ..enums import ItemAge, ItemType, StatType
 from ..stats import SecondaryStats
 from ..stats.stat_helper import StatHelper
 from ..stats.stat_target import EquipmentStatTarget
 
 if TYPE_CHECKING:
+	from .player_item_model import PlayerItemModel
 	from .player_model import PlayerModel
 
 @dataclass(frozen=True)
@@ -16,16 +16,17 @@ class ItemId:
 	Type: ItemType
 	Idx: int
 
-class ItemModel:
-	def __init__(self, age: ItemAge, item_type: ItemType, idx: int, level: int = 0):
-		self.guid = str(uuid4())
-		self.item_id = ItemId(age, item_type, idx)
-		self.level = level
-		self.is_new = False
-		self.is_newly_forged = False
-		self.secondary_stats = SecondaryStats()
 
-_SLOT_FIELDS = (
+def get_default_weapon_item_id() -> ItemId:
+	"""IL: ItemId.get_DefaultWeapon — Age=10000, Type=Weapon, Idx=0."""
+	return ItemId(ItemAge.DefaultWeapon, ItemType.Weapon, 0)
+
+
+def item_id_equals(left: ItemId, right: ItemId) -> bool:
+	return left == right
+
+
+_EQUIPMENT_SLOT_FIELDS: tuple[str, ...] = (
 	"helmet",
 	"armour",
 	"gloves",
@@ -36,6 +37,16 @@ _SLOT_FIELDS = (
 	"belt",
 )
 
+EquippedItem = Union["ItemModel", "PlayerItemModel"]
+
+class ItemModel:
+	def __init__(self, age: ItemAge, item_type: ItemType, idx: int, level: int = 0):
+		self.guid = str(__import__("uuid").uuid4())
+		self.item_id = ItemId(age, item_type, idx)
+		self.level = level
+		self.is_new = False
+		self.is_newly_forged = False
+		self.secondary_stats = SecondaryStats()
 
 class PlayerEquipmentModel:
 	def __init__(
@@ -54,16 +65,44 @@ class PlayerEquipmentModel:
 		self.gloves = gloves
 		self.necklace = necklace
 		self.ring = ring
-		self.weapon = weapon
 		self.shoes = shoes
 		self.belt = belt
 		self.hidden_item_levels: dict[ItemType, dict[int, int]] = {}
 		self.item_round_robin: dict[ItemType, dict[int, list[int]]] = {}
+		self._cached_default_weapon_model: PlayerItemModel | None = None
+		self.weapon = weapon if weapon is not None else self.default_weapon_model
+
+	def get_equipped_item(self, item_type: ItemType) -> EquippedItem | None:
+		"""IL: PlayerEquipmentModel.GetEquippedItem."""
+		slot_index = int(item_type)
+		if slot_index < 0 or slot_index >= len(_EQUIPMENT_SLOT_FIELDS):
+			raise ValueError(f"Invalid ItemType for GetEquippedItem: {item_type!r}")
+		return getattr(self, _EQUIPMENT_SLOT_FIELDS[slot_index])
+
+	def equip_item(self, player: PlayerModel, item: PlayerItemModel) -> None:
+		"""IL: PlayerEquipmentModel.EquipItem."""
+		item_type = item.item_id.Type
+		slot_index = int(item_type)
+		if slot_index < 0 or slot_index >= len(_EQUIPMENT_SLOT_FIELDS):
+			raise ValueError(f"Invalid ItemType for EquipItem: {item_type!r}")
+		setattr(self, _EQUIPMENT_SLOT_FIELDS[slot_index], item)
+		player.player_power_model.update_power(player, publish_update=True)
+
+	def unequip_item(self, player: PlayerModel, item_type: ItemType) -> None:
+		"""IL: PlayerEquipmentModel.UnequipItem."""
+		slot_index = int(item_type)
+		if slot_index < 0 or slot_index >= len(_EQUIPMENT_SLOT_FIELDS):
+			raise ValueError(f"Invalid ItemType for UnequipItem: {item_type!r}")
+		if item_type == ItemType.Weapon:
+			setattr(self, "weapon", self.default_weapon_model)
+		else:
+			setattr(self, _EQUIPMENT_SLOT_FIELDS[slot_index], None)
+		player.player_power_model.update_power(player, publish_update=True)
 
 	def set_item_at_slot(self, slot_index: int, item: ItemModel | None) -> None:
-		if slot_index < 0 or slot_index >= len(_SLOT_FIELDS):
+		if slot_index < 0 or slot_index >= len(_EQUIPMENT_SLOT_FIELDS):
 			return
-		setattr(self, _SLOT_FIELDS[slot_index], item)
+		setattr(self, _EQUIPMENT_SLOT_FIELDS[slot_index], item)
 
 	def set_hidden_level(self, item_type: ItemType, age: int, level: int) -> None:
 		self.hidden_item_levels.setdefault(item_type, {})[age] = level
@@ -85,7 +124,7 @@ class PlayerEquipmentModel:
 
 	def get_items(self) -> dict[ItemType, ItemModel]:
 		items: dict[ItemType, ItemModel] = {}
-		for slot_name in _SLOT_FIELDS:
+		for slot_name in _EQUIPMENT_SLOT_FIELDS:
 			item = getattr(self, slot_name)
 			if item is not None:
 				items[item.item_id.Type] = item
@@ -154,5 +193,14 @@ class PlayerEquipmentModel:
 		self.item_round_robin.clear()
 
 	@property
-	def default_weapon_model(self) -> ItemModel | None:
-		return self.weapon
+	def default_weapon_model(self) -> PlayerItemModel:
+		"""IL: PlayerEquipmentModel.DefaultWeaponModel — Guid.Empty, level 1."""
+		if self._cached_default_weapon_model is None:
+			from .player_item_model import PlayerItemModel
+
+			self._cached_default_weapon_model = PlayerItemModel(
+				"00000000-0000-0000-0000-000000000000",
+				get_default_weapon_item_id(),
+				1,
+			)
+		return self._cached_default_weapon_model

@@ -5,8 +5,6 @@ from core.game_logic.stats import SecondaryStats
 
 from .schema import STATS_CHUNK_LEN
 
-_U32_DENOM = 4_294_967_296
-
 
 def parse_stats_blob(
 	stats_blob: str,
@@ -24,6 +22,7 @@ def parse_stats_blob(
 			raw_val = int(chunk[2:STATS_CHUNK_LEN], 16)
 		except (ValueError, KeyError):
 			continue
-		perfection = raw_val / _U32_DENOM if raw_val else 0.0
-		result.add_or_replace_stat_contribution(stat_type, perfection)
+		if raw_val == 0:
+			continue
+		result.add_or_replace_stat_contribution(stat_type, raw_val)
 	return result

@@ -73,7 +73,9 @@ class PlayerForgeModel:
 		return self.current_forge_tier_level >= int(tier_row.get("Tiers", 0))
 
 	def forge_levels_maxed(self, player: PlayerModel) -> bool:
-		return self.forge_level >= player.game_config.max_forge_level()
+		from ..shared_game_config import max_forge_level
+
+		return self.forge_level >= max_forge_level(player.game_config)
 
 	def forge_ascensions_maxed(self, player: PlayerModel) -> bool:
 		return self.ascension_model.is_maxed(player.game_config)

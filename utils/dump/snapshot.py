@@ -19,6 +19,8 @@ class ForgeMetaDump:
 	forge_seed: int = 0
 	highest_age_of_crafted_item: int = 0
 	ascension_level: int = 0
+	timer_start_ms: int = 0
+	timer_end_ms: int = 0
 
 
 @dataclass
@@ -47,6 +49,16 @@ class EggEntryDump:
 	is_equipped: bool
 	equip_slot: int
 	seed: int
+	timer_start_ms: int = 0
+	timer_end_ms: int = 0
+
+
+@dataclass
+class TechTreeTimerDump:
+	tree_type: int
+	local_id: int
+	timer_start_ms: int
+	timer_end_ms: int
 
 
 @dataclass
@@ -110,6 +122,7 @@ class DumpSnapshot:
 	version: int = 1
 	currencies: dict[int, int] = field(default_factory=dict)
 	techtree_nodes: list[TechTreeNodeDump] = field(default_factory=list)
+	techtree_timers: list[TechTreeTimerDump] = field(default_factory=list)
 	forge_meta: ForgeMetaDump | None = None
 	skill_summon_meta: SummonMetaDump | None = None
 	pet_summon_meta: SummonMetaDump | None = None

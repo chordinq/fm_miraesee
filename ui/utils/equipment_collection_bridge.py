@@ -1,7 +1,7 @@
 from PySide6.QtCore import QObject, Property, Signal
 
 from core.game_logic.player.player_equipment_model import PlayerEquipmentModel
-from item_model_bridge import ItemModelBridge
+from item_model_bridge import ItemModelBridge, can_bridge_item
 
 SLOT_GRID_ORDER = (
     "helmet",
@@ -28,10 +28,20 @@ class EquipmentCollectionBridge(QObject):
         self._slot_bridges: list[ItemModelBridge | None] = []
         for slot_name in SLOT_GRID_ORDER:
             item = getattr(equipment, slot_name)
-            if item is not None:
+            if item is not None and can_bridge_item(item):
                 self._slot_bridges.append(ItemModelBridge(item, parent=self))
             else:
                 self._slot_bridges.append(None)
+
+    def reload(self, equipment: PlayerEquipmentModel) -> None:
+        self._slot_bridges = []
+        for slot_name in SLOT_GRID_ORDER:
+            item = getattr(equipment, slot_name)
+            if item is not None and can_bridge_item(item):
+                self._slot_bridges.append(ItemModelBridge(item, parent=self))
+            else:
+                self._slot_bridges.append(None)
+        self.changed.emit()
 
     @Property("QVariantList", notify=changed)
     def items(self) -> list[ItemModelBridge | None]:

@@ -17,9 +17,10 @@ Item {
 			return ""
 		if (maxLevel)
 			return "Max"
-		if (iconLevel < 0)
+		if (iconLevel === -2)
 			return "0/" + levelMax
-		return (iconLevel + 1) + "/" + levelMax
+		var displayLevel = nodeModel ? nodeModel.level : 0
+		return displayLevel + "/" + levelMax
 	}
 
 	implicitWidth: iconSize

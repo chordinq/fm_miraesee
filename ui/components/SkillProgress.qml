@@ -15,10 +15,20 @@ Item {
 		? Math.min(1, Math.max(0, shardCount / maxShardCount))
 		: 0
 
+	readonly property string formattedShardProgress: {
+		if (root.maxShardCount <= 0)
+			return ""
+		NumberDisplay.revision
+		UiSettings.gameNumberFormattingEnabled
+		return NumberDisplay.formatInteger(root.shardCount) + "/"
+			+ NumberDisplay.formatInteger(root.maxShardCount)
+	}
+
 	readonly property bool upgradable:
 		root.maxShardCount > 0 && root.shardCount >= root.maxShardCount
 
 	readonly property color progressFillColor: root.upgradable ? Theme.green : Theme.white
+
 
 	implicitWidth: 256
 	implicitHeight: implicitWidth * scaleH / scaleW
@@ -61,7 +71,7 @@ Item {
 
 	AppText {
 		anchors.centerIn: parent
-		text: root.maxShardCount > 0 ? root.shardCount + "/" + root.maxShardCount : ""
+		text: root.formattedShardProgress
 		visible: root.maxShardCount > 0
 		fillColor: Theme.white
 		pixelSize: root.height * fontScale

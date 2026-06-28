@@ -196,6 +196,13 @@ class CurrencyType(IntEnum):
 	MissionEnergy = 10
 	GuildPotions = 11
 
+
+class GemSkipTarget(IntEnum):
+	Forge = 0
+	PetEgg = 1
+	TechTree = 2
+
+
 @miraesee_extension
 class ItemAge(IntEnum):
 	Primitive = 0
@@ -208,6 +215,7 @@ class ItemAge(IntEnum):
 	Quantum = 7
 	Underworld = 8
 	Divine = 9
+	DefaultWeapon = 10000
 
 class ItemType(IntEnum):
 	Helmet = 0

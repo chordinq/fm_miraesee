@@ -18,6 +18,12 @@ Item {
 	readonly property int sheetNativeSize: _sprite.sheetNativeSize ?? 2048
 
 	readonly property int logicalSize: 256
+	readonly property color rarityFillColor: {
+		var colors = Theme.rarityColors
+		if (root.rarity >= 0 && root.rarity < colors.length)
+			return colors[root.rarity]
+		return Theme.commonGrey
+	}
 
 	implicitWidth: logicalSize
 	implicitHeight: logicalSize
@@ -46,7 +52,7 @@ Item {
 			anchors.fill: parent
 			source: bgShape
 			colorization: 1.0
-			colorizationColor: Theme.rarityColors[root.rarity]
+			colorizationColor: root.rarityFillColor
 		}
 
 		SpriteSheet {

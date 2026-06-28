@@ -18,6 +18,12 @@ Item {
 	readonly property real iconSizeRatio: 1.0
 
 	readonly property int logicalSize: 256
+	readonly property color rarityFillColor: {
+		var colors = Theme.rarityColors
+		if (root.rarity >= 0 && root.rarity < colors.length)
+			return colors[root.rarity]
+		return Theme.commonGrey
+	}
 
 	implicitWidth: logicalSize
 	implicitHeight: logicalSize
@@ -31,7 +37,7 @@ Item {
 		anchors.fill: parent
 		scaleW: 4
 		scaleH: 4
-		fillColor: Theme.rarityColors[root.rarity]
+		fillColor: root.rarityFillColor
 		fillOpacity: 1.0
 	}
 

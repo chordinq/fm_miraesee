@@ -122,11 +122,11 @@ class PlayerTechTreeModel:
 				return False
 		return True
 
-	def is_any_node_research_in_progress(self) -> bool:
+	def is_any_node_research_in_progress(self, player: PlayerModel) -> bool:
 		for nodes in self.tech_trees.values():
 			for node_model in nodes.values():
 				timer = node_model.node_upgrade_timer_model
-				if timer.end_time > timer.start_time and not timer.has_ended():
+				if timer.end_time > timer.start_time and not timer.has_ended(player):
 					return True
 		return False
 

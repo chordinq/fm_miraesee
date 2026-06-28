@@ -7,6 +7,8 @@ Item {
 
 	property int summonCount: 1
 	property int cost
+	property color fillColor: Theme.blue
+	property bool enabled: true
 	property url spriteImage: Qt.resolvedUrl("../../../assets/sprites/Currency/clockWinders.png")
 	property real scaleW: 4
 	property real scaleH: 2
@@ -14,6 +16,16 @@ Item {
 	readonly property string summonLocId: "11670393447301120"
 	readonly property real titleFontScale: 10 / 32
 	readonly property real costFontScale: 11 / 32
+	readonly property string formattedCost: {
+		NumberDisplay.revision
+		UiSettings.gameNumberFormattingEnabled
+		return NumberDisplay.formatInteger(root.cost)
+	}
+	readonly property string formattedSummonCount: {
+		NumberDisplay.revision
+		UiSettings.gameNumberFormattingEnabled
+		return NumberDisplay.formatInteger(root.summonCount)
+	}
 
 	signal clicked()
 
@@ -39,11 +51,12 @@ Item {
 			anchors.fill: parent
 			scaleW: root.scaleW
 			scaleH: root.scaleH
-			fillColor: Theme.blue
+			fillColor: root.fillColor
 		}
 
 		MouseArea {
 			anchors.fill: parent
+			enabled: root.enabled
 			onClicked: root.clicked()
 		}
 
@@ -62,7 +75,7 @@ Item {
 			}
 
 			AppText {
-				text: "x" + root.summonCount
+				text: "x" + root.formattedSummonCount
 				pixelSize: canvas.height * root.titleFontScale
 				fillColor: Theme.white
 				outlineColor: Theme.black
@@ -90,7 +103,7 @@ Item {
 			}
 
 			AppText {
-				text: root.cost
+				text: root.formattedCost
 				pixelSize: canvas.height * root.costFontScale
 				fillColor: Theme.white
 				outlineColor: Theme.black

@@ -6,6 +6,7 @@ from core.game_logic.player.player_pet_collection_model import PlayerPetCollecti
 from egg_model_bridge import EggModelBridge
 from localizer import ascension_loc_from_level
 from pet_model_bridge import PetModelBridge
+from rarity_counts import count_rarities
 
 
 class PetCollectionBridge(QObject):
@@ -41,6 +42,25 @@ class PetCollectionBridge(QObject):
         for egg in self._collection.eggs:
             if egg.is_equipped and 0 <= egg.equip_slot < self._hatch_slot_count:
                 self._hatch_egg_bridges[egg.equip_slot] = EggModelBridge(egg, parent=self)
+
+        self._pet_rarity_counts = count_rarities(
+            self._collection.get_pets(),
+            lambda pet: pet.pet_id.rarity.value,
+        )
+        self._egg_rarity_counts = count_rarities(
+            self._collection.get_eggs(),
+            lambda egg: egg.rarity.value,
+        )
+
+    def reload(
+        self,
+        collection: PlayerPetCollectionModel,
+        player: PlayerModel,
+    ) -> None:
+        self._collection = collection
+        self._player = player
+        self._refresh_bridges()
+        self.changed.emit()
 
     def refresh(self) -> None:
         self._refresh_bridges()
@@ -85,3 +105,11 @@ class PetCollectionBridge(QObject):
     @Property(int, notify=changed)
     def entryCount(self) -> int:
         return self.petCount + self.eggCount
+
+    @Property("QVariantList", notify=changed)
+    def petRarityCounts(self) -> list[dict[str, int]]:
+        return self._pet_rarity_counts
+
+    @Property("QVariantList", notify=changed)
+    def eggRarityCounts(self) -> list[dict[str, int]]:
+        return self._egg_rarity_counts

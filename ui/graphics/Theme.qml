@@ -31,6 +31,25 @@ QtObject {
 	}
 
 	readonly property string latinFontFamily: fontBaloo.status === FontLoader.Ready ? fontBaloo.name : ""
+
+	function _readyFontFamily(loader: FontLoader, fallback: string): string {
+		return loader.status === FontLoader.Ready ? loader.name : fallback
+	}
+
+	function fontFamilyForText(text: string): string {
+		if (!text || /^[\x00-\x7F\s]*$/.test(text))
+			return latinFontFamily
+		if (/[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/.test(text))
+			return _readyFontFamily(fontKR, latinFontFamily)
+		if (/[\u3040-\u309F\u30A0-\u30FF\uFF66-\uFF9F]/.test(text))
+			return _readyFontFamily(fontJP, latinFontFamily)
+		if (/[\u0400-\u04FF]/.test(text))
+			return _readyFontFamily(fontRU, latinFontFamily)
+		if (/[\u4E00-\u9FFF]/.test(text))
+			return _readyFontFamily(fontJP, latinFontFamily)
+		return latinFontFamily
+	}
+
 	readonly property string uiFontFamily: {
 		switch (language) {
 		case "ko":

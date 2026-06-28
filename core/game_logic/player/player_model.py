@@ -1,4 +1,6 @@
 from __future__ import annotations
+
+import time
 from typing import TYPE_CHECKING, Any
 from . import player_item_stats as pmi
 from .player_currency_model import PlayerCurrencyModel
@@ -30,6 +32,21 @@ class PlayerModel:
 		self.player_mount_collection_model = PlayerMountCollectionModel()
 		self.player_skin_collection_model = PlayerSkinCollectionModel()
 		self.sets_model = PlayerSetsModel()
+		self._server_time_seconds: int = 0
+		self._wall_clock_server_time: bool = False
+
+	def get_server_time(self) -> int:
+		"""IL: PlayerModel.get_ServerTime — sim clock, or wall clock after dump load."""
+		if self._wall_clock_server_time:
+			return int(time.time())
+		return self._server_time_seconds
+
+	def enable_wall_clock_server_time(self) -> None:
+		self._wall_clock_server_time = True
+
+	def advance_server_time(self, seconds: int) -> None:
+		self._wall_clock_server_time = False
+		self._server_time_seconds += seconds
 
 	@property
 	def game_config(self) -> Any:

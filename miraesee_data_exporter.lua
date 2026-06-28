@@ -10,6 +10,20 @@ function read_dword(addr)
     return t[1].value and tonumber(t[1].value) or 0
 end
 
+function read_timer_epoch_ms(timer_ptr)
+    if timer_ptr == 0 then
+        return 0, 0
+    end
+    local start_ms = read_qword(timer_ptr + 0x10)
+    local end_ms = read_qword(timer_ptr + 0x18)
+    return start_ms, end_ms
+end
+
+function format_timer_suffix(timer_ptr)
+    local start_ms, end_ms = read_timer_epoch_ms(timer_ptr)
+    return string.format("%016X%016X", start_ms, end_ms)
+end
+
 function extract_stats_blob(stats_ptr, num_chunks)
     num_chunks = num_chunks or 2
     local chunks = {}
@@ -70,7 +84,9 @@ function extract_forge_meta(forge_ptr, asc_ptr)
     if asc_ptr ~= 0 then
         asc_lvl = read_dword(asc_ptr + 0x14)
     end
-    return string.format("%02X%08X%016X%02X000%X", level % 256, count % 4294967296, seed, highest_age % 256, asc_lvl % 16)
+    local base = string.format("%02X%08X%016X%02X000%X", level % 256, count % 4294967296, seed, highest_age % 256, asc_lvl % 16)
+    local timer_ptr = forge_ptr ~= 0 and read_qword(forge_ptr + 0x28) or 0
+    return base .. format_timer_suffix(timer_ptr)
 end
 
 function get_pointers(t_addr) gg.clearResults() gg.searchNumber(string.format("%X",t_addr).."h", gg.TYPE_QWORD) local r=gg.getResults(200) local p={} for _,v in ipairs(r) do if read_qword(v.address-0x8)==0 or read_qword(v.address+0x8)==0 then table.insert(p,v.address) end end return p end
@@ -157,6 +173,42 @@ function extract_techtree(player_ptr)
     if current_line ~= "" then
         while string.len(current_line) < 32 do current_line = current_line .. "F000" end
         table.insert(out, current_line)
+    end
+    return out
+end
+
+function extract_techtree_timers(player_ptr)
+    local out = {"[TECH_TREE_TIMERS]"}
+    local model = read_qword(player_ptr + 0x250)
+    if model == 0 then return out end
+    local dict = read_qword(model + 0x10)
+    if dict == 0 then return out end
+
+    local count = read_dword(dict + 0x20)
+    local entries = read_qword(dict + 0x18)
+
+    for i = 0, count - 1 do
+        local t_type = read_dword(entries + 0x30 + (i * 0x28))
+        local inner_dict = read_qword(entries + 0x40 + (i * 0x28))
+        if t_type ~= 3 and inner_dict ~= 0 then
+            local i_cnt = read_dword(inner_dict + 0x20)
+            local i_ent = read_qword(inner_dict + 0x18)
+            for j = 0, i_cnt - 1 do
+                local n_id = read_dword(i_ent + 0x30 + (j * 0x28))
+                local n_mdl = read_qword(i_ent + 0x40 + (j * 0x28))
+                if n_mdl ~= 0 then
+                    local timer_ptr = read_qword(n_mdl + 0x18)
+                    local start_ms, end_ms = read_timer_epoch_ms(timer_ptr)
+                    if end_ms > start_ms and start_ms > 0 then
+                        table.insert(out, string.format(
+                            "%X%02X%016X%016X",
+                            t_type % 16, n_id % 256,
+                            start_ms, end_ms
+                        ))
+                    end
+                end
+            end
+        end
     end
     return out
 end
@@ -358,7 +410,8 @@ function extract_pets_eggs_collection(player_ptr)
             if model ~= 0 then
                 local header = string.format("3%X00", read_dword(model + 0x20) % 16)
                 local prog = string.format("0000%02X%02X", read_dword(model + 0x30) % 256, read_dword(model + 0x34) % 256)
-                table.insert(out, header .. prog .. string.format("0000%016X", read_qword(model + 0x38)))
+                local timer_ptr = read_qword(model + 0x28)
+                table.insert(out, header .. prog .. string.format("0000%016X", read_qword(model + 0x38)) .. format_timer_suffix(timer_ptr))
             end
         end
     end
@@ -506,6 +559,7 @@ function main()
 
     append_data(extract_currency(PlayerModel_Base_Addr))
     append_data(extract_techtree(PlayerModel_Base_Addr))
+    append_data(extract_techtree_timers(PlayerModel_Base_Addr))
     
     append_data(extract_forge(PlayerModel_Base_Addr))
     append_data(extract_skill_meta(PlayerModel_Base_Addr))

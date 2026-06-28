@@ -23,8 +23,8 @@ class EggIconHelper(QObject):
         return {
             "spriteSheet": QUrl.fromLocalFile(str(sheet_path)).toString(),
             "spriteIndex": rarity,
-            "sheetCols": 8,
-            "sheetNativeSize": 2048,
+            "sheetCols": 4,
+            "sheetNativeSize": 1024,
         }
 
 

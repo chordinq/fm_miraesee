@@ -11,6 +11,10 @@ def _item_mapping_key(item_id: ItemId) -> str:
     return f"{item_id.Age.value}_{item_id.Type.value}_{item_id.Idx}"
 
 
+def can_bridge_item(item: PlayerItemModel | ItemModel) -> bool:
+    return _item_mapping_key(item.item_id) in ITEMS_MAPPING["items"]
+
+
 class ItemModelBridge(QObject):
 
     changed = Signal()

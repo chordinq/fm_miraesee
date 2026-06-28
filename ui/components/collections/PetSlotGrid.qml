@@ -1,30 +1,55 @@
 pragma ComponentBehavior: Bound
 import QtQuick
-import QtQuick.Controls
 import ui 1.0
 
 Item {
 	id: root
 
 	property var petCollectionModel: null
-	property var eggHatchTest: null
 	property int columnsPerRow: 5
 	property real columnSpacingRatio: 5 / 9
 	property real rowSpacingRatio: 5 / 9
 
 	signal petClicked(var petModel)
+	signal eggClicked(var eggModel)
 
 	readonly property int ascensionLevel: petCollectionModel ? petCollectionModel.ascensionLevel : 0
-	readonly property var petModels: petCollectionModel ? petCollectionModel.pets : []
+	readonly property var petModels: {
+		if (!petCollectionModel || !petCollectionModel.pets)
+			return []
+		var all = petCollectionModel.pets
+		var indexed = []
+		for (var i = 0; i < all.length; i++)
+			indexed.push({ model: all[i], index: i })
+		indexed.sort(function(a, b) {
+			if (a.model.isEquipped !== b.model.isEquipped)
+				return a.model.isEquipped ? -1 : 1
+			if (a.model.rarity !== b.model.rarity)
+				return b.model.rarity - a.model.rarity
+			return a.index - b.index
+		})
+		var sorted = []
+		for (var j = 0; j < indexed.length; j++)
+			sorted.push(indexed[j].model)
+		return sorted
+	}
 	readonly property var eggModels: {
 		if (!petCollectionModel || !petCollectionModel.eggs)
 			return []
 		var all = petCollectionModel.eggs
-		var visible = []
+		var indexed = []
 		for (var i = 0; i < all.length; i++) {
 			if (!all[i].isEquipped)
-				visible.push(all[i])
+				indexed.push({ model: all[i], index: i })
 		}
+		indexed.sort(function(a, b) {
+			if (a.model.rarity !== b.model.rarity)
+				return b.model.rarity - a.model.rarity
+			return a.index - b.index
+		})
+		var visible = []
+		for (var k = 0; k < indexed.length; k++)
+			visible.push(indexed[k].model)
 		return visible
 	}
 	readonly property int petCount: petModels.length
@@ -52,15 +77,6 @@ Item {
 		cellWidth: root.cellWidth
 		cellHeight: root.iconSize + root.vSpacing
 		clip: true
-
-		ScrollBar.vertical: ScrollBar {
-			policy: ScrollBar.AsNeeded
-			contentItem: Rectangle {
-				implicitWidth: 8
-				radius: width / 2
-				color: Theme.darkGrey
-			}
-		}
 
 		delegate: Item {
 			required property int index
@@ -90,8 +106,8 @@ Item {
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft
 				onClicked: {
-					if (root.eggHatchTest && parent.eggModel)
-						root.eggHatchTest.predictHatch(parent.eggModel.guid)
+					if (parent.eggModel)
+						root.eggClicked(parent.eggModel)
 				}
 			}
 		}

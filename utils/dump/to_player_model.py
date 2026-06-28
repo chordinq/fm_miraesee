@@ -16,6 +16,7 @@ from core.game_logic.player.player_mount_collection_model import MountId, Player
 from core.game_logic.player.player_pet_collection_model import PetId, PlayerEggModel, PlayerPetModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
 from core.game_logic.player.player_skin_collection_model import PlayerSkinModel, SkinId
+from core.game_logic.player.timer_model import TimerModel
 
 from .parser import _TECHTREE_LOOKUP
 from .schema import EMPTY_EQUIP_SLOT, EQUIPMENT_STATS_LEN
@@ -34,6 +35,15 @@ _EQUIPMENT_SLOT_FIELDS = (
 )
 
 _EMPTY_SLOT = -1
+
+
+def _timer_from_epoch_ms(start_ms: int, end_ms: int) -> TimerModel | None:
+	if start_ms <= 0 or end_ms <= start_ms:
+		return None
+	start_s = start_ms // 1000
+	end_s = end_ms // 1000
+	duration = float(end_s - start_s)
+	return TimerModel(start_time=start_s, end_time=end_s, duration=duration)
 
 
 def _resolve_combat_skill(enum_value: int) -> CombatSkill | None:
@@ -58,6 +68,7 @@ def dump_snapshot_to_player_model(snapshot: DumpSnapshot) -> PlayerModel:
 	player = PlayerModel(game_config=get_shared_game_config())
 	_apply_currency(player, snapshot)
 	_apply_techtree(player, snapshot)
+	_apply_techtree_timers(player, snapshot)
 	_apply_forge_meta(player, snapshot)
 	_apply_summon_metas(player, snapshot)
 	_apply_skills(player, snapshot)
@@ -67,6 +78,7 @@ def dump_snapshot_to_player_model(snapshot: DumpSnapshot) -> PlayerModel:
 	_apply_equipment_meta(player, snapshot)
 	_apply_equipment(player, snapshot)
 	_apply_skins(player, snapshot)
+	player.enable_wall_clock_server_time()
 	return player
 
 
@@ -93,6 +105,22 @@ def _apply_techtree(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 		)
 
 
+def _apply_techtree_timers(player: PlayerModel, snapshot: DumpSnapshot) -> None:
+	for entry in snapshot.techtree_timers:
+		if _TECHTREE_LOOKUP.get((entry.tree_type, entry.local_id)) is None:
+			continue
+		try:
+			tree_type = TechTreeType(entry.tree_type)
+		except ValueError:
+			continue
+		node = player.player_techtree_model.get_node(tree_type, entry.local_id)
+		if node is None:
+			continue
+		timer = _timer_from_epoch_ms(entry.timer_start_ms, entry.timer_end_ms)
+		if timer is not None:
+			node.node_upgrade_timer_model = timer
+
+
 def _apply_forge_meta(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 	if snapshot.forge_meta is None:
 		return
@@ -102,6 +130,9 @@ def _apply_forge_meta(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 	player.player_forge_model.forge_seed = meta.forge_seed
 	player.player_forge_model.highest_age_of_crafted_item = meta.highest_age_of_crafted_item
 	player.player_forge_model.ascension_model.current_level = meta.ascension_level
+	timer = _timer_from_epoch_ms(meta.timer_start_ms, meta.timer_end_ms)
+	if timer is not None:
+		player.player_forge_model.forge_upgrade_timer = timer
 
 
 def _apply_summon_meta(target, meta) -> None:
@@ -158,6 +189,9 @@ def _apply_pets_and_eggs(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 		egg = PlayerEggModel(f"dump-egg-{i}", rarity, entry.seed)
 		egg.is_equipped = entry.is_equipped
 		egg.equip_slot = _normalize_equip_slot(entry.is_equipped, entry.equip_slot)
+		timer = _timer_from_epoch_ms(entry.timer_start_ms, entry.timer_end_ms)
+		if timer is not None:
+			egg.timer = timer
 		collection.eggs.append(egg)
 
 

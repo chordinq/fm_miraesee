@@ -1,12 +1,13 @@
 pragma ComponentBehavior: Bound
 import QtQuick
-import QtQuick.Controls
 import ui 1.0
 
 Item {
     id: root
 
     property var techTreeModel: null
+
+    signal nodeClicked(var nodeModel)
 
     property real verticalGapRatio: 0.7
     property real horizontalGapRatio: 1.7
@@ -68,15 +69,6 @@ Item {
         contentHeight: Math.max(height, treeColumn.height)
         clip: true
         boundsBehavior: Flickable.StopAtBounds
-
-        ScrollBar.vertical: ScrollBar {
-            policy: ScrollBar.AsNeeded
-            contentItem: Rectangle {
-                implicitWidth: 8
-                radius: width / 2
-                color: Theme.darkGrey
-            }
-        }
 
         Column {
             id: treeColumn
@@ -174,6 +166,11 @@ Item {
                             transformOrigin: Item.TopLeft
                             nodeModel: modelData
                             fillColor: root.nodeFillColor(modelData)
+
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: root.nodeClicked(modelData)
+                            }
                         }
                     }
                 }

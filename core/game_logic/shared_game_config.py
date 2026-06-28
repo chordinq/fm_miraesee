@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from .enums import (
 	AscendableType,
 	CombatSkill,
+	GemSkipTarget,
 	ItemAge,
 	ItemType,
 	PetBalancingType,
@@ -50,6 +51,14 @@ class ForgeConfig:
 			tech_tree_gem_skip_cost_per_second=float(data.get("TechTreeGemSkipCostPerSecond", 0.0)),
 			pet_gem_skip_cost_per_second=float(data.get("PetGemSkipCostPerSecond", 0.0)),
 		)
+
+	def get_gem_skip_cost_per_second(self, target: GemSkipTarget) -> float:
+		"""IL: TimerModel.GetCostPerSecond — rates from ForgeConfig.json."""
+		if target == GemSkipTarget.PetEgg:
+			return self.pet_gem_skip_cost_per_second
+		if target == GemSkipTarget.TechTree:
+			return self.tech_tree_gem_skip_cost_per_second
+		return self.forge_gem_skip_cost_per_second
 
 
 @dataclass(frozen=True)
@@ -413,6 +422,37 @@ def get_resolved_pet_stats(
 	return result
 
 
+def format_pet_stats(
+	game_config: SharedGameConfig,
+	pet_id: PetId,
+	secondary_stats,
+	level: int,
+	total_stats: Stats,
+	*,
+	show_secondary_stats: bool = True,
+) -> str:
+	"""IL: Config.FormatPetStats(PetId, SecondaryStats, int level, Stats, bool showSecondaryStats)"""
+	from .player.player_item_stats import format_secondary_stats_collection
+	from .stats.stats_format import format_stat_node
+
+	lines: list[str] = []
+	resolved = get_resolved_pet_stats(game_config, pet_id, level, total_stats)
+	for stat_node, fd6_value in resolved.all_stat_contributions.items():
+		text = format_stat_node(
+			stat_node,
+			fd6_value,
+			show_multipliers_as_percentage=False,
+			show_value_at_end=False,
+		)
+		if text:
+			lines.append(text)
+	if show_secondary_stats:
+		secondary_text = format_secondary_stats_collection(secondary_stats, game_config)
+		if secondary_text:
+			lines.extend(secondary_text.split("\n"))
+	return "\n".join(lines)
+
+
 def get_resolved_mount_stats(
 	game_config: SharedGameConfig,
 	mount_id: Any,
@@ -559,45 +599,89 @@ def get_skill_shard_count_to_upgrade(game_config: SharedGameConfig, current_leve
 	return int(entry.get("Shards", -1))
 
 
+def can_be_upgraded(skill_model, player) -> tuple:
+	"""IL: SharedGameConfigExtensions.CanBeUpgraded(PlayerSkillModel, PlayerModel, out config)."""
+	from .actions.action_result import ActionResult
+
+	game_config = player.game_config
+	upgrade_config = game_config.skill_upgrade_library.get(skill_model.level + 1)
+	if upgrade_config is None:
+		return ActionResult.MaxLevelReached, None
+
+	shard_cost = int(upgrade_config.get("Shards", 0))
+	if skill_model.shard_count < shard_cost:
+		return ActionResult.NotEnoughResources, None
+
+	return ActionResult.Success, upgrade_config
+
+
+def can_be_upgraded_skill(combat_skill, player) -> tuple:
+	"""IL: SharedGameConfigExtensions.CanBeUpgraded(CombatSkill, PlayerModel, out config, out model)."""
+	from .actions.action_result import ActionResult
+	from .enums import CombatSkill
+	from .player.player_skill_collection_model import PlayerSkillModel
+
+	if not isinstance(combat_skill, CombatSkill):
+		raise TypeError(f"combat_skill must be CombatSkill, got {type(combat_skill)!r}")
+
+	skill_model = player.player_skill_collection_model.try_get_skill(combat_skill)
+	if skill_model is None:
+		return ActionResult.DoesNotExist, None, None
+
+	result, upgrade_config = can_be_upgraded(skill_model, player)
+	return result, upgrade_config, skill_model
+
+
+# ── Unlock conditions ─────────────────────────────────────────────────────────
+
+
+def try_get_unlock_condition(
+	game_config: SharedGameConfig,
+	feature_id: str,
+) -> tuple[bool, dict | None]:
+	"""IL: SharedGameConfigExtensions.TryGetUnlockCondition."""
+	condition = game_config.unlock_conditions_library.get(feature_id)
+	if condition is None:
+		return False, None
+	return True, condition
+
+
 # ── Slot unlock counts ────────────────────────────────────────────────────────
-# Full IL: iterates Features.SkillSlots / Features.PetSlots (static C# lists),
-# looks up each PlayerSegmentId in player_segments_library, and calls
-# IsAgeGateUnlocked(condition, player) which checks battle progress.
-# Simplified: counts how many SkillSlot* / PetSlot* segments exist in the
-# player_segments_library (i.e. always returns the total configured slot count).
-# For a full implementation, add battle-progress tracking to PlayerModel and
-# check {DifficultyIdx, AgeIdx, BattleIdx} per slot condition.
-
-_SKILL_SLOT_PREFIX = "SkillSlot"
-_PET_SLOT_PREFIX = "PetSlot"
 
 
-def get_unlocked_skill_slot_count(game_config: SharedGameConfig) -> int:
-	"""IL: SharedGameConfigExtensions.GetUnlockedSkillSlotCount (simplified).
+def get_unlocked_skill_slot_count(player) -> int:
+	"""IL: SharedGameConfigExtensions.GetUnlockedSkillSlotCount(PlayerModel)."""
+	from .features import SKILL_SLOTS
+	from .unlock_extensions import is_age_gate_unlocked
 
-	Returns the total number of SkillSlot* entries in UnlockConditions.
-	Real implementation requires player battle-progress tracking.
-	"""
-	return sum(
-		1 for key in game_config.unlock_conditions_library if key.startswith(_SKILL_SLOT_PREFIX)
-	)
+	game_config = player.game_config
+	count = 0
+	for segment_id in SKILL_SLOTS:
+		found, condition = try_get_unlock_condition(game_config, segment_id)
+		if found and is_age_gate_unlocked(condition, player):
+			count += 1
+	return count
 
 
-def get_unlocked_pet_slot_count(game_config: SharedGameConfig) -> int:
-	"""IL: SharedGameConfigExtensions.GetUnlockedPetSlotCount (simplified).
+def get_unlocked_pet_slot_count(player) -> int:
+	"""IL: SharedGameConfigExtensions.GetUnlockedPetSlotCount(PlayerModel)."""
+	from .features import PET_SLOTS
+	from .unlock_extensions import is_age_gate_unlocked
 
-	Returns the total number of PetSlot* entries in UnlockConditions.
-	Real implementation requires player battle-progress tracking.
-	"""
-	return sum(
-		1 for key in game_config.unlock_conditions_library if key.startswith(_PET_SLOT_PREFIX)
-	)
+	game_config = player.game_config
+	count = 0
+	for segment_id in PET_SLOTS:
+		found, condition = try_get_unlock_condition(game_config, segment_id)
+		if found and is_age_gate_unlocked(condition, player):
+			count += 1
+	return count
 
 
 SharedGameConfig.get_resolved_passive_skill_stats = staticmethod(
 	get_resolved_passive_skill_stats
 )
 SharedGameConfig.get_resolved_pet_stats = staticmethod(get_resolved_pet_stats)
+SharedGameConfig.format_pet_stats = staticmethod(format_pet_stats)
 SharedGameConfig.get_resolved_mount_stats = staticmethod(get_resolved_mount_stats)
 SharedGameConfig.get_base_active_skill_stats = staticmethod(get_base_active_skill_stats)
 SharedGameConfig.get_resolved_active_skill_stats = staticmethod(get_resolved_active_skill_stats)
@@ -606,6 +690,7 @@ SharedGameConfig.get_pet_max_level = staticmethod(get_pet_max_level)
 SharedGameConfig.get_mount_max_level = staticmethod(get_mount_max_level)
 SharedGameConfig.max_forge_level = staticmethod(max_forge_level)
 SharedGameConfig.get_skill_shard_count_to_upgrade = staticmethod(get_skill_shard_count_to_upgrade)
+SharedGameConfig.try_get_unlock_condition = staticmethod(try_get_unlock_condition)
 SharedGameConfig.get_unlocked_skill_slot_count = staticmethod(get_unlocked_skill_slot_count)
 SharedGameConfig.get_unlocked_pet_slot_count = staticmethod(get_unlocked_pet_slot_count)
 

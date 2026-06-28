@@ -18,59 +18,61 @@ ApplicationWindow {
         1 - sidePanelWidthRatio - collectionWidthRatio
 
     property int activeTabIndex: 0
+    property bool settingsOpen: false
+    property bool languageOpen: false
 
     Component.onCompleted: {
         Theme.language = uiLanguage
+        gamePetEggTest.setUiLanguage(Theme.language)
+    }
+
+    Connections {
+        target: Theme
+        function onLanguageChanged() {
+            gamePetEggTest.setUiLanguage(Theme.language)
+        }
+    }
+
+    Rectangle {
+        anchors.fill: parent
+        color: "#80000000"
+        visible: window.settingsOpen
+        z: 100
+
+        MouseArea {
+            anchors.fill: parent
+        }
+    }
+
+    SettingsView {
+        visible: window.settingsOpen
+        anchors.centerIn: parent
+        z: 101
+        onClosed: {
+            window.settingsOpen = false
+            window.languageOpen = false
+        }
+        onLanguagesClicked: window.languageOpen = true
+    }
+
+    LanguageSettingsView {
+        visible: window.settingsOpen && window.languageOpen
+        anchors.centerIn: parent
+        z: 102
+        onClosed: window.languageOpen = false
     }
 
     Row {
         anchors.fill: parent
         spacing: 0
 
-        Item {
-            id: sidePanel
-
+        SidePanel {
             width: parent.width * window.sidePanelWidthRatio
             height: parent.height
-
-            Rectangle {
-                anchors.fill: parent
-                color: Theme.darkGrey
-            }
-
-            Column {
-                id: sideTabColumn
-
-                anchors.top: parent.top
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.margins: Math.max(4, sidePanel.width * 0.06)
-                height: parent.height * 0.3
-
-                Repeater {
-                    model: [
-                        { locId: "12856879411200", locTable: "Forge", color: Theme.darkGrey },
-                        { locId: "2109395617640448", locTable: "Stats", color: Theme.lightGreen },
-                        { locId: "2110564712771584", locTable: "Stats", color: Theme.lightBlue },
-                        { locId: "990866679984128", locTable: "Stats", color: Theme.orange },
-                        { locId: "280318681088", locTable: "TechTree", color: Theme.red }
-                    ]
-
-                    delegate: CollectionTabButton {
-                        required property var modelData
-                        required property int index
-
-                        width: sideTabColumn.width
-                        height: sideTabColumn.height / 5
-
-                        locId: modelData.locId
-                        locTable: modelData.locTable
-                        activeColor: modelData.color
-                        active: window.activeTabIndex === index
-                        onClicked: window.activeTabIndex = index
-                    }
-                }
-            }
+            activeTabIndex: window.activeTabIndex
+            onTabClicked: function(index) { window.activeTabIndex = index }
+            onSettingsClicked: window.settingsOpen = true
+            onLoadDumpClicked: gameSession.loadDumpFromClipboard()
         }
 
         Item {
@@ -79,9 +81,40 @@ ApplicationWindow {
             width: parent.width * window.centerWidthRatio
             height: parent.height
 
+            property bool skillMainReady: false
+            property bool petMainReady: false
+            property bool mountMainReady: false
+
             Rectangle {
                 anchors.fill: parent
                 color: Qt.darker(Theme.darkBlue, 1.5)
+                visible: window.activeTabIndex !== 1
+                    && window.activeTabIndex !== 2
+                    && window.activeTabIndex !== 3
+            }
+
+            Loader {
+                anchors.fill: parent
+                active: window.activeTabIndex === 1 || centerPanel.skillMainReady
+                visible: window.activeTabIndex === 1
+                sourceComponent: skillMainComponent
+                onLoaded: centerPanel.skillMainReady = true
+            }
+
+            Loader {
+                anchors.fill: parent
+                active: window.activeTabIndex === 2 || centerPanel.petMainReady
+                visible: window.activeTabIndex === 2
+                sourceComponent: petMainComponent
+                onLoaded: centerPanel.petMainReady = true
+            }
+
+            Loader {
+                anchors.fill: parent
+                active: window.activeTabIndex === 3 || centerPanel.mountMainReady
+                visible: window.activeTabIndex === 3
+                sourceComponent: mountMainComponent
+                onLoaded: centerPanel.mountMainReady = true
             }
         }
 
@@ -100,7 +133,6 @@ ApplicationWindow {
                 id: collectionHost
 
                 anchors.fill: parent
-                anchors.margins: 8
 
                 property bool forgeReady: false
                 property bool skillReady: false
@@ -157,6 +189,38 @@ ApplicationWindow {
     }
 
     Component {
+        id: skillMainComponent
+
+        SkillMainView {
+            anchors.fill: parent
+            skillController: gameTest
+            summonResultWidthRatio: 0.25
+        }
+    }
+
+    Component {
+        id: petMainComponent
+
+        PetMainView {
+            anchors.fill: parent
+            petController: gamePetSummonTest
+            petCollectionModel: gamePetCollection
+            summonResultWidthRatio: 0.25
+        }
+    }
+
+    Component {
+        id: mountMainComponent
+
+        MountMainView {
+            anchors.fill: parent
+            mountController: gameMountSummonTest
+            mountCollectionModel: gameMountCollection
+            summonResultWidthRatio: 0.25
+        }
+    }
+
+    Component {
         id: forgeCollectionComponent
 
         ForgeCollectionView {
@@ -171,6 +235,7 @@ ApplicationWindow {
         SkillCollectionView {
             anchors.fill: parent
             skillCollectionModel: gameTest.skillCollection
+            skillController: gameTest
         }
     }
 
@@ -180,7 +245,8 @@ ApplicationWindow {
         PetCollectionView {
             anchors.fill: parent
             petCollectionModel: gamePetCollection
-            eggHatchTest: gamePetEggTest
+            petController: gamePetSummonTest
+            eggController: gamePetEggTest
         }
     }
 
@@ -190,6 +256,7 @@ ApplicationWindow {
         MountCollectionView {
             anchors.fill: parent
             mountCollectionModel: gameMountCollection
+            mountController: gameMountSummonTest
         }
     }
 
@@ -198,7 +265,9 @@ ApplicationWindow {
 
         TechCollectionView {
             anchors.fill: parent
-            techTreeModel: gameTechTree
+            techTreeForgeModel: gameTechTreeForge
+            techTreePowerModel: gameTechTreePower
+            techTreeSkillsPetTechModel: gameTechTreeSkillsPetTech
         }
     }
 }

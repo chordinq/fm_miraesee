@@ -8,6 +8,8 @@ Item {
 	property real heightScale: 50
 	property real parentWidthRatio: 0.9
 	property real closeButtonSizeRatio: 0.15
+	property real contentInsetWOverride: -1
+	property real contentInsetHOverride: -1
 
 	signal closed()
 
@@ -20,8 +22,12 @@ Item {
 	width: parent ? parent.width * parentWidthRatio : 0
 	height: width * heightWidthRatio
 
-	readonly property real contentInsetW: width / widthScale
-	readonly property real contentInsetH: height / heightScale
+	readonly property real contentInsetW: contentInsetWOverride >= 0
+		? contentInsetWOverride
+		: width / widthScale
+	readonly property real contentInsetH: contentInsetHOverride >= 0
+		? contentInsetHOverride
+		: height / heightScale
 	readonly property real closeSize: width * closeButtonSizeRatio
 
 	RectRoundedFilledOutline {

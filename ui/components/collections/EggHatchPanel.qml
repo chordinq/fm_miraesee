@@ -5,7 +5,8 @@ Rectangle {
     id: root
 
     property var petCollectionModel: null
-    property var eggHatchTest: null
+
+    signal eggClicked(var eggModel)
 
     readonly property int ascensionLevel: petCollectionModel ? petCollectionModel.ascensionLevel : 0
     readonly property int slotCount: petCollectionModel ? petCollectionModel.hatchSlotCount : 0
@@ -50,8 +51,8 @@ Rectangle {
                         ascensionLevel: root.ascensionLevel
                         width: root.slotWidth
                         onClicked: {
-                            if (root.eggHatchTest && eggModel)
-                                root.eggHatchTest.predictHatch(eggModel.guid)
+                            if (eggModel)
+                                root.eggClicked(eggModel)
                         }
                     }
                 }

@@ -147,12 +147,14 @@ class PlayerSkillCollectionModel:
 		return result
 
 	def get_empty_slots(self, player: PlayerModel) -> list[int]:
-		count = self._get_unlocked_skill_slot_count(player)
-		return [
-			slot
-			for slot in range(count)
-			if self.try_get_skill_in_slot(slot) is None
-		]
+		from ..shared_game_config import get_unlocked_skill_slot_count
+
+		unlocked_count = get_unlocked_skill_slot_count(player)
+		empty_slots: list[int] = []
+		for slot_index in range(unlocked_count):
+			if self.try_get_skill_in_slot(slot_index) is None:
+				empty_slots.append(slot_index)
+		return empty_slots
 
 	def ascend(self) -> None:
 		self.player_skills.clear()
@@ -176,7 +178,3 @@ class PlayerSkillCollectionModel:
 
 	def try_get_skill(self, combat_skill: CombatSkill) -> PlayerSkillModel | None:
 		return self.player_skills.get(combat_skill)
-
-	@staticmethod
-	def _get_unlocked_skill_slot_count(player: Any) -> int:
-		return player.game_config.skill_base_config.skill_slots_count

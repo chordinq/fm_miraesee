@@ -67,7 +67,7 @@ Item {
         var out = ""
         for (var i = 0; i < root._textRuns.length; i++) {
             var run = root._textRuns[i]
-            var family = run.latin ? Theme.latinFontFamily : Theme.uiFontFamily
+            var family = run.latin ? Theme.latinFontFamily : Theme.fontFamilyForText(run.text)
             var weight = run.latin ? "normal" : "bold"
             out += "<span style=\"font-family:'" + family + "'; font-weight:" + weight + "\">"
             out += root._escapeRichText(run.text)
@@ -83,10 +83,11 @@ Item {
 
     readonly property string _singleFontFamily: {
         void root._fontEpoch
-        return root._coreHasNonAscii ? Theme.uiFontFamily : Theme.latinFontFamily
+        return Theme.fontFamilyForText(_coreText)
     }
 
-    readonly property int _singleFontWeight: root._coreHasNonAscii ? Font.Bold : Font.Normal
+    readonly property int _singleFontWeight:
+        Theme.fontFamilyForText(_coreText) === Theme.latinFontFamily ? Font.Normal : Font.Bold
 
     readonly property real _wrapWidthCandidate: root._wraps
         ? Math.max(1, root.width - root._actualOutlineWidth * 2)
@@ -222,7 +223,9 @@ Item {
                     readonly property bool segmentLatin: modelData.latin
                     readonly property string segmentFontFamily: {
                         void root._fontEpoch
-                        return segmentLatin ? Theme.latinFontFamily : Theme.uiFontFamily
+                        return segmentLatin
+                            ? Theme.latinFontFamily
+                            : Theme.fontFamilyForText(segmentText)
                     }
                     readonly property int segmentFontWeight: segmentLatin ? Font.Normal : Font.Bold
 

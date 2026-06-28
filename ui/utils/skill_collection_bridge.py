@@ -4,6 +4,7 @@ from core.game_logic.enums import AscensionLevel
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillCollectionModel
 from localizer import ascension_loc_from_level
+from rarity_counts import count_rarities
 from skill_model_bridge import SkillModelBridge
 
 
@@ -30,6 +31,20 @@ class SkillCollectionBridge(QObject):
             SkillModelBridge(skill, self._player, parent=self)
             for skill in self._collection.get_player_skills()
         ]
+        self._rarity_counts = count_rarities(
+            self._skill_bridges,
+            lambda bridge: bridge._rarity,
+        )
+
+    def reload(
+        self,
+        collection: PlayerSkillCollectionModel,
+        player: PlayerModel,
+    ) -> None:
+        self._collection = collection
+        self._player = player
+        self._refresh_bridges()
+        self.changed.emit()
 
     def refresh(self) -> None:
         self._refresh_bridges()
@@ -54,3 +69,7 @@ class SkillCollectionBridge(QObject):
     @Property(int, notify=changed)
     def skillCount(self) -> int:
         return len(self._skill_bridges)
+
+    @Property("QVariantList", notify=changed)
+    def rarityCounts(self) -> list[dict[str, int]]:
+        return self._rarity_counts

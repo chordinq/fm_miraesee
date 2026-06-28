@@ -20,8 +20,9 @@ Item {
 
 		Image {
 			id: bgBase
+
 			anchors.fill: parent
-			source: Qt.resolvedUrl("../../assets/sprites/UI/SmallRoundButton.png")
+			source: Qt.resolvedUrl("../../../assets/sprites/UI/SmallRoundButton.png")
 			sourceSize: Qt.size(root.sourceNativeSize, root.sourceNativeSize)
 			fillMode: Image.Stretch
 			smooth: true

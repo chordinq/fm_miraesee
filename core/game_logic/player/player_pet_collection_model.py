@@ -230,7 +230,9 @@ class PlayerPetCollectionModel:
 
 	@staticmethod
 	def _get_unlocked_pet_slot_count(player: Any) -> int:
-		return PlayerPetCollectionModel._pet_base_config(player).pet_slots_count
+		from ..shared_game_config import get_unlocked_pet_slot_count
+
+		return get_unlocked_pet_slot_count(player)
 
 
 def create_pet(

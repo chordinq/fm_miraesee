@@ -12,8 +12,11 @@ from .schema import (
 	DUMP_VERSION,
 	EMPTY_EQUIP_SLOT,
 	EQUIPMENT_STATS_LEN,
+	FORGE_META_LINE_LEN,
+	FORGE_META_TIMER_SUFFIX_LEN,
 	PET_MOUNT_LINE_V2_LEN,
 	SKIN_LINE_LEN,
+	TECH_TREE_TIMER_LINE_LEN,
 )
 from .snapshot import (
 	DumpSnapshot,
@@ -28,6 +31,7 @@ from .snapshot import (
 	SkillEntryDump,
 	SummonMetaDump,
 	TechTreeNodeDump,
+	TechTreeTimerDump,
 )
 
 BLOCK_HEADER = re.compile(r"^\[([A-Z_]+)\]$")
@@ -86,6 +90,7 @@ class DumpTextParser:
 			"DUMP_VERSION": self._parse_version,
 			"CURRENCY": self._parse_currency,
 			"TECH_TREE": self._parse_techtree,
+			"TECH_TREE_TIMERS": self._parse_techtree_timers,
 			"FORGE": self._parse_forge_meta,
 			"SKILL": self._parse_skill_meta,
 			"PET": self._parse_pet_meta,
@@ -153,6 +158,15 @@ class DumpTextParser:
 		asc = int(line[-1], 16) if len(line) > 20 else 0
 		return byte1, byte2, seed, asc
 
+	def _parse_timer_suffix(self, line: str, base_len: int) -> tuple[int, int]:
+		if len(line) < base_len + FORGE_META_TIMER_SUFFIX_LEN:
+			return 0, 0
+		offset = base_len
+		return (
+			int(line[offset : offset + 16], 16),
+			int(line[offset + 16 : offset + 32], 16),
+		)
+
 	def _parse_forge_meta_line(
 		self, line: str, version: int
 	) -> tuple[int, int, int, int, int] | None:
@@ -179,12 +193,15 @@ class DumpTextParser:
 		if not raw:
 			return
 		level, count, seed, highest_age, asc = raw
+		timer_start_ms, timer_end_ms = self._parse_timer_suffix(lines[0], FORGE_META_LINE_LEN)
 		snapshot.forge_meta = ForgeMetaDump(
 			forge_level=level,
 			forge_count=count,
 			forge_seed=seed,
 			highest_age_of_crafted_item=highest_age,
 			ascension_level=asc,
+			timer_start_ms=timer_start_ms,
+			timer_end_ms=timer_end_ms,
 		)
 
 	def _apply_summon_meta(self, target: SummonMetaDump, line: str) -> None:
@@ -275,6 +292,28 @@ class DumpTextParser:
 				except ValueError:
 					continue
 
+	def _parse_techtree_timers(self, snapshot: DumpSnapshot, lines: list[str]) -> None:
+		for line in lines:
+			if len(line) < TECH_TREE_TIMER_LINE_LEN:
+				continue
+			try:
+				tree_type = int(line[0], 16)
+				local_id = int(line[1:3], 16)
+				timer_start_ms = int(line[3:19], 16)
+				timer_end_ms = int(line[19:35], 16)
+			except ValueError:
+				continue
+			if timer_end_ms <= timer_start_ms:
+				continue
+			snapshot.techtree_timers.append(
+				TechTreeTimerDump(
+					tree_type=tree_type,
+					local_id=local_id,
+					timer_start_ms=timer_start_ms,
+					timer_end_ms=timer_end_ms,
+				)
+			)
+
 	def _parse_skill_collection(self, snapshot: DumpSnapshot, lines: list[str]) -> None:
 		for line in lines:
 			m = SKILL_COLL_LINE.match(line)
@@ -312,12 +351,15 @@ class DumpTextParser:
 			stats_blob=stats,
 		)
 
-	def _parse_egg(self, rarity: int, prog: str) -> EggEntryDump:
+	def _parse_egg(self, rarity: int, prog: str, line: str) -> EggEntryDump:
+		timer_start_ms, timer_end_ms = self._parse_timer_suffix(line, COLLECTION_LINE_V1_LEN)
 		return EggEntryDump(
 			rarity=rarity,
 			is_equipped=int(prog[4:6], 16) != 0,
 			equip_slot=int(prog[6:8], 16),
 			seed=int(prog[12:28], 16),
+			timer_start_ms=timer_start_ms,
+			timer_end_ms=timer_end_ms,
 		)
 
 	def _parse_mount_v1(self, rarity: int, mount_id: int, prog: str, stats: str) -> MountEntryDump:
@@ -360,7 +402,7 @@ class DumpTextParser:
 					snapshot.pets.append(self._parse_pet_v1(rarity, entry_id, prog, stats))
 			elif kind == "3" and len(line) >= COLLECTION_LINE_V1_LEN:
 				prog = line[4:32]
-				snapshot.eggs.append(self._parse_egg(rarity, prog))
+				snapshot.eggs.append(self._parse_egg(rarity, prog, line))
 
 	def _parse_mount_collection(self, snapshot: DumpSnapshot, lines: list[str]) -> None:
 		for line in lines:

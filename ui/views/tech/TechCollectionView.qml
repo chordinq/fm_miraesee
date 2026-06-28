@@ -2,12 +2,140 @@ import QtQuick
 import ui 1.0
 
 Item {
-    id: root
+	id: root
 
-    property var techTreeModel: null
+	property var techTreeForgeModel: null
+	property var techTreePowerModel: null
+	property var techTreeSkillsPetTechModel: null
 
-    TechTree {
-        anchors.fill: parent
-        techTreeModel: root.techTreeModel
-    }
+	property string selectedTreeType: ""
+
+	property bool detailsOpen: false
+	property var selectedNodeModel: null
+
+	property real columnSpacingRatio: 0.15
+	property real rowSpacingRatio: 0.15
+
+	readonly property bool showingTree: selectedTreeType !== ""
+	readonly property real typeCardWidth: width > 0
+		? Math.floor(width / (2 + 3 * columnSpacingRatio))
+		: 0
+	readonly property real columnSpacing: typeCardWidth * columnSpacingRatio
+	readonly property real rowSpacing: typeCardWidth * rowSpacingRatio
+	readonly property real gridInnerWidth: width - 2 * columnSpacing
+	readonly property real backButtonSize: width * 0.08
+
+	function techTreeModelForType(treeType) {
+		switch (treeType) {
+		case "power":
+			return root.techTreePowerModel
+		case "skillsPetTech":
+			return root.techTreeSkillsPetTechModel
+		default:
+			return root.techTreeForgeModel
+		}
+	}
+
+	function openTree(treeType) {
+		root.selectedTreeType = treeType
+	}
+
+	function closeTree() {
+		root.selectedTreeType = ""
+		root.detailsOpen = false
+		root.selectedNodeModel = null
+	}
+
+	Item {
+		anchors.fill: parent
+		visible: !root.showingTree
+
+		Grid {
+			id: typeGrid
+
+			x: root.columnSpacing
+			y: root.rowSpacing
+			width: root.gridInnerWidth
+			columns: 2
+			columnSpacing: root.columnSpacing
+			rowSpacing: root.rowSpacing
+
+			TechTreeTypeView {
+				width: root.typeCardWidth
+				treeType: "forge"
+				progress: root.techTreeForgeModel
+					? root.techTreeForgeModel.progress
+					: 0
+				onClicked: root.openTree("forge")
+			}
+
+			TechTreeTypeView {
+				width: root.typeCardWidth
+				treeType: "power"
+				progress: root.techTreePowerModel
+					? root.techTreePowerModel.progress
+					: 0
+				onClicked: root.openTree("power")
+			}
+
+			TechTreeTypeView {
+				width: root.typeCardWidth
+				treeType: "skillsPetTech"
+				progress: root.techTreeSkillsPetTechModel
+					? root.techTreeSkillsPetTechModel.progress
+					: 0
+				onClicked: root.openTree("skillsPetTech")
+			}
+		}
+	}
+
+	Item {
+		anchors.fill: parent
+		visible: root.showingTree
+
+		TechTree {
+			anchors.fill: parent
+			techTreeModel: root.techTreeModelForType(root.selectedTreeType)
+			onNodeClicked: function(nodeModel) {
+				root.selectedNodeModel = nodeModel
+				root.detailsOpen = true
+			}
+		}
+
+		ReturnButton {
+			id: returnButton
+
+			anchors.left: parent.left
+			anchors.bottom: parent.bottom
+			anchors.margins: root.columnSpacing
+			height: root.backButtonSize
+			width: returnButton.height * returnButton.widthHeightRatio
+			onClicked: root.closeTree()
+		}
+	}
+
+	TechTreeDetailsView {
+		z: 10
+		visible: root.detailsOpen && root.selectedNodeModel !== null
+		anchors.centerIn: parent
+		nodeModel: root.selectedNodeModel
+		techTreeModel: root.techTreeModelForType(root.selectedTreeType)
+		onClosed: {
+			root.detailsOpen = false
+			root.selectedNodeModel = null
+		}
+	}
+
+	Connections {
+		target: root.techTreeModelForType(root.selectedTreeType)
+		enabled: root.showingTree && root.selectedNodeModel !== null
+		function onChanged() {
+			var model = root.techTreeModelForType(root.selectedTreeType)
+			if (!model || !root.selectedNodeModel)
+				return
+			var refreshed = model.nodeById(root.selectedNodeModel.nodeId)
+			if (refreshed)
+				root.selectedNodeModel = refreshed
+		}
+	}
 }
