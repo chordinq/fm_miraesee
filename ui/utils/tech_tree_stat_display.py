@@ -6,12 +6,12 @@ from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.shared_game_config import SharedGameConfig
 from core.game_logic.stats.stat_helper import StatHelper
 from core.game_logic.stats.stat_target import DungeonStatTarget
-from stat_display_format import (
+from ui.utils.stat_display_format import (
     format_ui_dungeon_percent,
     format_ui_percentage,
     format_ui_stat,
 )
-from timer_display import format_timer_duration
+from ui.utils.timer_display import format_timer_duration
 
 _TIER_ROMAN = ("I", "II", "III", "IV", "V")
 

@@ -16,15 +16,19 @@ This registers `config`, `core`, `ui`, and `utils` on your Python path. No `sys.
 
 ```bash
 python main.py
+python ui/test/test.py
+python ui/test/test_game.py
 python sprite_preview.py
-python -m ui.tests.sprite_preview
 ```
 
-Run commands from `scripts/` (project root). Do not run `ui/app.py` directly as a file — use the commands above.
+Run commands from `scripts/` (project root).
 
 ## Layout
 
 - `config/` — paths (`paths.py`) and JSON loaders
 - `core/` — enums, player model, simulators
-- `ui/` — Qt sprites and previews
+- `controllers/` — Python ↔ QML bridges (`Property`, `Signal`, `Slot`)
+- `app/` — QML bootstrap, session orchestration
+- `ui/` — QML widgets, component preview harnesses (`ui/test/`)
+- `utils/` — dump ingest, shared non-UI helpers
 - `assets/` — game JSON and sprites

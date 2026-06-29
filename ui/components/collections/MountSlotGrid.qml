@@ -63,7 +63,7 @@ Item {
 			width: root.iconSize
 			height: root.iconSize
 
-			MountSlot {
+			MountEntryView {
 				mountModel: parent.mountModel
 				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale

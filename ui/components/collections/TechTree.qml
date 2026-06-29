@@ -157,7 +157,7 @@ Item {
                     Repeater {
                         model: layerRow.nodesInLayer
 
-                        delegate: TechTreeNodeSlot {
+                        delegate: TechTreeNodeView {
                             required property var modelData
                             required property int index
 

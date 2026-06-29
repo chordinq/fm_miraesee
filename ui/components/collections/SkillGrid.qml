@@ -45,7 +45,7 @@ Item {
 			width: root.iconSize
 			height: root.iconSize
 
-			SkillSlot {
+			SkillEntryView {
 				skillModel: parent.skillModel
 				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale

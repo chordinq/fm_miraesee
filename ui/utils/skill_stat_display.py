@@ -10,7 +10,7 @@ from core.game_logic.skill_description import (
     _sum_active_damage_health,
 )
 from core.game_logic.player.player_item_stats import get_total_stats
-from stat_display_format import format_ui_stat
+from ui.utils.stat_display_format import format_ui_stat
 
 
 def format_skill_description_args(

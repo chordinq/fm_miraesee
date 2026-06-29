@@ -20,10 +20,48 @@ ApplicationWindow {
     property int activeTabIndex: 0
     property bool settingsOpen: false
     property bool languageOpen: false
+    property int tabLoadMask: 1
+
+    function tabIsLoaded(index) {
+        return (tabLoadMask & (1 << index)) !== 0
+    }
+
+    function markTabLoaded(index) {
+        if (!tabIsLoaded(index))
+            tabLoadMask = tabLoadMask | (1 << index)
+    }
+
+    function selectTab(index) {
+        markTabLoaded(index)
+        activeTabIndex = index
+    }
 
     Component.onCompleted: {
         Theme.language = uiLanguage
         gamePetEggTest.setUiLanguage(Theme.language)
+        tabPreloadStartTimer.start()
+    }
+
+    Timer {
+        id: tabPreloadStartTimer
+        interval: 100
+        repeat: false
+        onTriggered: tabPreloadTimer.start()
+    }
+
+    Timer {
+        id: tabPreloadTimer
+        interval: 150
+        repeat: true
+        property int nextIndex: 1
+        onTriggered: {
+            if (nextIndex >= 5) {
+                stop()
+                return
+            }
+            window.markTabLoaded(nextIndex)
+            nextIndex++
+        }
     }
 
     Connections {
@@ -70,7 +108,7 @@ ApplicationWindow {
             width: parent.width * window.sidePanelWidthRatio
             height: parent.height
             activeTabIndex: window.activeTabIndex
-            onTabClicked: function(index) { window.activeTabIndex = index }
+            onTabClicked: function(index) { window.selectTab(index) }
             onSettingsClicked: window.settingsOpen = true
             onLoadDumpClicked: gameSession.loadDumpFromClipboard()
         }
@@ -81,40 +119,41 @@ ApplicationWindow {
             width: parent.width * window.centerWidthRatio
             height: parent.height
 
-            property bool skillMainReady: false
-            property bool petMainReady: false
-            property bool mountMainReady: false
-
             Rectangle {
                 anchors.fill: parent
                 color: Qt.darker(Theme.darkBlue, 1.5)
                 visible: window.activeTabIndex !== 1
                     && window.activeTabIndex !== 2
                     && window.activeTabIndex !== 3
+                    && window.activeTabIndex !== 4
             }
 
             Loader {
                 anchors.fill: parent
-                active: window.activeTabIndex === 1 || centerPanel.skillMainReady
+                active: window.tabIsLoaded(4)
+                visible: window.activeTabIndex === 4
+                sourceComponent: techMainComponent
+            }
+
+            Loader {
+                anchors.fill: parent
+                active: window.tabIsLoaded(1)
                 visible: window.activeTabIndex === 1
                 sourceComponent: skillMainComponent
-                onLoaded: centerPanel.skillMainReady = true
             }
 
             Loader {
                 anchors.fill: parent
-                active: window.activeTabIndex === 2 || centerPanel.petMainReady
+                active: window.tabIsLoaded(2)
                 visible: window.activeTabIndex === 2
                 sourceComponent: petMainComponent
-                onLoaded: centerPanel.petMainReady = true
             }
 
             Loader {
                 anchors.fill: parent
-                active: window.activeTabIndex === 3 || centerPanel.mountMainReady
+                active: window.tabIsLoaded(3)
                 visible: window.activeTabIndex === 3
                 sourceComponent: mountMainComponent
-                onLoaded: centerPanel.mountMainReady = true
             }
         }
 
@@ -134,55 +173,44 @@ ApplicationWindow {
 
                 anchors.fill: parent
 
-                property bool forgeReady: false
-                property bool skillReady: false
-                property bool petReady: false
-                property bool mountReady: false
-                property bool techReady: false
-
                 Loader {
                     anchors.fill: parent
-                    active: window.activeTabIndex === 0 || collectionHost.forgeReady
+                    active: window.tabIsLoaded(0)
                     visible: window.activeTabIndex === 0
                     z: window.activeTabIndex === 0 ? 1 : 0
                     sourceComponent: forgeCollectionComponent
-                    onLoaded: collectionHost.forgeReady = true
                 }
 
                 Loader {
                     anchors.fill: parent
-                    active: window.activeTabIndex === 1 || collectionHost.skillReady
+                    active: window.tabIsLoaded(1)
                     visible: window.activeTabIndex === 1
                     z: window.activeTabIndex === 1 ? 1 : 0
                     sourceComponent: skillCollectionComponent
-                    onLoaded: collectionHost.skillReady = true
                 }
 
                 Loader {
                     anchors.fill: parent
-                    active: window.activeTabIndex === 2 || collectionHost.petReady
+                    active: window.tabIsLoaded(2)
                     visible: window.activeTabIndex === 2
                     z: window.activeTabIndex === 2 ? 1 : 0
                     sourceComponent: petCollectionComponent
-                    onLoaded: collectionHost.petReady = true
                 }
 
                 Loader {
                     anchors.fill: parent
-                    active: window.activeTabIndex === 3 || collectionHost.mountReady
+                    active: window.tabIsLoaded(3)
                     visible: window.activeTabIndex === 3
                     z: window.activeTabIndex === 3 ? 1 : 0
                     sourceComponent: mountCollectionComponent
-                    onLoaded: collectionHost.mountReady = true
                 }
 
                 Loader {
                     anchors.fill: parent
-                    active: window.activeTabIndex === 4 || collectionHost.techReady
+                    active: window.tabIsLoaded(4)
                     visible: window.activeTabIndex === 4
                     z: window.activeTabIndex === 4 ? 1 : 0
                     sourceComponent: techCollectionComponent
-                    onLoaded: collectionHost.techReady = true
                 }
             }
         }
@@ -217,6 +245,15 @@ ApplicationWindow {
             mountController: gameMountSummonTest
             mountCollectionModel: gameMountCollection
             summonResultWidthRatio: 0.25
+        }
+    }
+
+    Component {
+        id: techMainComponent
+
+        TechMainView {
+            anchors.fill: parent
+            gameSession: gameSession
         }
     }
 

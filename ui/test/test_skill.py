@@ -7,7 +7,7 @@ from core.game_logic.enums import CombatSkill
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
 from core.game_logic.shared_game_config import get_shared_game_config
-from skill_collection_bridge import SkillCollectionBridge
+from controllers.collections.skill_collection_bridge import SkillCollectionBridge
 
 SKILL_TEST_KEYS = [
     "Meat",

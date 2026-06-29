@@ -3,7 +3,7 @@ import time
 
 from _harness import DUMP_PATH, create_app_engine, default_window_size, load_qml, set_window_context
 from core.game_logic.enums import TechTreeType
-from tech_tree_collection_bridge import TechTreeCollectionBridge
+from controllers.collections.tech_tree_collection_bridge import TechTreeCollectionBridge
 from utils.dump.parser import parse_dump_text
 from utils.dump.to_player_model import dump_snapshot_to_player_model
 

@@ -10,7 +10,7 @@ from core.game_logic.stats.stats_format import (
 	get_stat_operator,
 	should_show_operator,
 )
-from ui_settings import game_number_formatting_enabled
+from ui.utils.ui_settings import game_number_formatting_enabled
 
 _default_game_config: SharedGameConfig | None = None
 

@@ -16,7 +16,7 @@ DetailsView {
 	readonly property string equipLocId: "27933087392002048"
 	readonly property string removeLocId: "27927471772594176"
 
-	SkillSlot {
+	SkillEntryView {
 		parent: root.slotHost
 		anchors.left: root.slotHost.left
 		anchors.top: root.slotHost.top

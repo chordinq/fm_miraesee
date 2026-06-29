@@ -2,7 +2,7 @@ import sys
 import time
 
 from _harness import DUMP_PATH, create_app_engine, default_window_size, load_qml, set_window_context
-from mount_collection_bridge import MountCollectionBridge
+from controllers.collections.mount_collection_bridge import MountCollectionBridge
 from utils.dump.parser import parse_dump_text
 from utils.dump.to_player_model import dump_snapshot_to_player_model
 

@@ -46,7 +46,7 @@ DetailsView {
 		root.techTreeModel.refresh()
 	}
 
-	TechTreeNodeSlot {
+	TechTreeNodeView {
 		parent: root.slotHost
 		anchors.left: root.slotHost.left
 		anchors.top: root.slotHost.top
@@ -76,30 +76,22 @@ DetailsView {
 		}
 	}
 
-	Row {
+	AppText {
 		parent: root.bodyColumn
 		width: root.bodyColumn.width
-		spacing: 0
-
-		AppText {
-			locTable: root.nodeModel ? root.nodeModel.descLocTable : "TechTree"
-			locId: root.nodeModel ? root.nodeModel.descLocId : ""
-			formatArgs: root.nodeModel ? root.nodeModel.descFormatArgs : []
-			fillColor: Theme.black
-			pixelSize: root.width * root.bodyFontScale
-			outlineWeight: 0
-		}
-
-		AppText {
-			visible: root.nodeModel
-				&& !root.nodeModel.maxLevel
-				&& root.nodeModel.perLevelIncreaseText !== ""
-			prefix: " "
-			text: root.nodeModel ? root.nodeModel.perLevelIncreaseText : ""
-			fillColor: Theme.greenText
-			pixelSize: root.width * root.bodyFontScale
-			outlineWeight: 0
-		}
+		wrapMode: Text.WordWrap
+		locTable: root.nodeModel ? root.nodeModel.descLocTable : "TechTree"
+		locId: root.nodeModel ? root.nodeModel.descLocId : ""
+		formatArgs: root.nodeModel ? root.nodeModel.descFormatArgs : []
+		suffix: root.nodeModel
+			&& !root.nodeModel.maxLevel
+			&& root.nodeModel.perLevelIncreaseText !== ""
+			? " " + root.nodeModel.perLevelIncreaseText
+			: ""
+		suffixFillColor: Theme.greenText
+		fillColor: Theme.black
+		pixelSize: root.width * root.bodyFontScale
+		outlineWeight: 0
 	}
 
 	AppText {

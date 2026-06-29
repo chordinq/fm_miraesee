@@ -76,7 +76,7 @@ PopupView {
 		outlineWeight: 0
 	}
 
-	PetSlot {
+	PetEntryView {
 		anchors.left: parent.left
 		anchors.top: parent.top
 		anchors.leftMargin: parent.width * 0.05

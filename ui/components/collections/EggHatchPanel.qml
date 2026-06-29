@@ -43,7 +43,7 @@ Rectangle {
                 Repeater {
                     model: root.slotCount
 
-                    EggHatchSlot {
+                    EggHatchSlotView {
                         required property int index
 
                         anchors.top: parent.top

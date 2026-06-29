@@ -2,9 +2,12 @@ import os
 
 os.environ.setdefault("PYTHONUTF8", "1")
 
+
 def main() -> None:
-	from ui.app import run
-	run()
+    from app.run import main as run_app
+
+    run_app()
+
 
 if __name__ == "__main__":
-	main()
+    main()

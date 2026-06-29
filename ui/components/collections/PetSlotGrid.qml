@@ -86,7 +86,7 @@ Item {
 			width: root.iconSize
 			height: root.iconSize
 
-			PetSlot {
+			PetEntryView {
 				visible: parent.isPet
 				petModel: root.petModels[parent.index]
 				ascensionLevel: root.ascensionLevel
@@ -99,7 +99,7 @@ Item {
 				}
 			}
 
-			EggSlot {
+			EggEntryView {
 				visible: !parent.isPet
 				eggModel: parent.eggModel
 				ascensionLevel: root.ascensionLevel

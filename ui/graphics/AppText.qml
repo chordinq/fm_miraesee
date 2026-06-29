@@ -10,6 +10,7 @@ Item {
     property string prefix: ""
     property string text: ""
     property string suffix: ""
+    property color suffixFillColor: "transparent"
 
     property real pixelSize: 24
     property color fillColor: Theme.white
@@ -57,12 +58,30 @@ Item {
         && /[^\x00-\x7F]/.test(root._plainText)
         && /[\x00-\x7F]/.test(root._plainText)
 
-    readonly property bool _useSplitFonts: root._hasMixedScripts && !root._wraps
-    readonly property bool _useRichText: root._hasMixedScripts && root._wraps
+    readonly property bool _useSuffixColor:
+        root.suffix !== "" && root.suffixFillColor.a > 0
+
+    readonly property bool _useSplitFonts:
+        root._hasMixedScripts && !root._wraps && !root._useSuffixColor
+    readonly property bool _useRichText:
+        (root._hasMixedScripts && root._wraps) || root._useSuffixColor
 
     readonly property string _richText: {
         void root._fontEpoch
-        if (!root._useRichText)
+        if (root._useSuffixColor) {
+            var mainPart = root.prefix + root._coreText
+            var family = root._singleFontFamily
+            var weight = root._singleFontWeight === Font.Bold ? "bold" : "normal"
+            var out = "<span style=\"font-family:'" + family + "'; font-weight:" + weight
+                + "; color:" + root.fillColor + "\">"
+            out += root._escapeRichText(mainPart)
+            out += "</span><span style=\"font-family:'" + family + "'; font-weight:" + weight
+                + "; color:" + root.suffixFillColor + "\">"
+            out += root._escapeRichText(root.suffix)
+            out += "</span>"
+            return out
+        }
+        if (!root._hasMixedScripts || !root._wraps)
             return ""
         var out = ""
         for (var i = 0; i < root._textRuns.length; i++) {
@@ -164,6 +183,7 @@ Item {
     onTextChanged: updateStableWrapWidth()
     onPrefixChanged: updateStableWrapWidth()
     onSuffixChanged: updateStableWrapWidth()
+    onSuffixFillColorChanged: updateStableWrapWidth()
     onWrapModeChanged: refreshStableLayout()
     onOutlineWeightChanged: updateStableWrapWidth()
     on_StablePixelSizeChanged: updateStableWrapWidth()

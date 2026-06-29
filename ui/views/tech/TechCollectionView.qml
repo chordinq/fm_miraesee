@@ -60,32 +60,32 @@ Item {
 			columnSpacing: root.columnSpacing
 			rowSpacing: root.rowSpacing
 
-			TechTreeTypeView {
-				width: root.typeCardWidth
-				treeType: "forge"
-				progress: root.techTreeForgeModel
-					? root.techTreeForgeModel.progress
-					: 0
-				onClicked: root.openTree("forge")
-			}
+		TechTreeCategoryView {
+			width: root.typeCardWidth
+			treeType: "forge"
+			progress: root.techTreeForgeModel
+				? root.techTreeForgeModel.progress
+				: 0
+			onClicked: root.openTree("forge")
+		}
 
-			TechTreeTypeView {
-				width: root.typeCardWidth
-				treeType: "power"
-				progress: root.techTreePowerModel
-					? root.techTreePowerModel.progress
-					: 0
-				onClicked: root.openTree("power")
-			}
+		TechTreeCategoryView {
+			width: root.typeCardWidth
+			treeType: "power"
+			progress: root.techTreePowerModel
+				? root.techTreePowerModel.progress
+				: 0
+			onClicked: root.openTree("power")
+		}
 
-			TechTreeTypeView {
-				width: root.typeCardWidth
-				treeType: "skillsPetTech"
-				progress: root.techTreeSkillsPetTechModel
-					? root.techTreeSkillsPetTechModel.progress
-					: 0
-				onClicked: root.openTree("skillsPetTech")
-			}
+		TechTreeCategoryView {
+			width: root.typeCardWidth
+			treeType: "skillsPetTech"
+			progress: root.techTreeSkillsPetTechModel
+				? root.techTreeSkillsPetTechModel.progress
+				: 0
+			onClicked: root.openTree("skillsPetTech")
+		}
 		}
 	}
 
@@ -136,6 +136,17 @@ Item {
 			var refreshed = model.nodeById(root.selectedNodeModel.nodeId)
 			if (refreshed)
 				root.selectedNodeModel = refreshed
+		}
+	}
+
+	Timer {
+		interval: 1000
+		running: root.showingTree
+		repeat: true
+		onTriggered: {
+			var model = root.techTreeModelForType(root.selectedTreeType)
+			if (model)
+				model.refresh()
 		}
 	}
 }

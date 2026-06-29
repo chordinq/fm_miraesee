@@ -14,9 +14,9 @@ from core.game_logic.player.player_pet_collection_model import (
 from core.random_pcg import RandomPCG
 from core.game_logic.stats.stat_helper import StatHelper
 from core.game_logic.stats.stat_target import EggStatTarget
-from localizer import LOCALIZATIONS_DIR, rarity_loc_from_rarity
-from pet_stat_display import build_pet_stat_lines
-from timer_display import format_hatch_duration, format_timer_duration
+from ui.utils.localizer import LOCALIZATIONS_DIR, rarity_loc_from_rarity
+from ui.utils.pet_stat_display import build_pet_stat_lines
+from ui.utils.timer_display import format_hatch_duration, format_timer_duration
 
 _DEFAULT_LANGUAGE = "en"
 

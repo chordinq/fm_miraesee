@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 
-from localizer import LOCALIZATIONS_DIR
+from ui.utils.localizer import LOCALIZATIONS_DIR
 
 _DAYS_D_LOC_ID = "28308895591755776"
 _HOURS_H_LOC_ID = "28308895591755777"

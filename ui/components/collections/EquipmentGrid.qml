@@ -13,6 +13,9 @@ Item {
 
 	readonly property var itemModels: equipmentCollectionModel ? equipmentCollectionModel.items : []
 	readonly property int slotCount: equipmentCollectionModel ? equipmentCollectionModel.slotCount : 0
+	readonly property string emptySlotSheetSource: equipmentCollectionModel
+		? equipmentCollectionModel.emptySlotSheetUrl
+		: ""
 	readonly property int iconLogicalSize: 256
 
 	readonly property real totalWidthUnits: columnsPerRow + (columnsPerRow + 1) * columnSpacingRatio
@@ -38,13 +41,25 @@ Item {
 
 			Item {
 				required property int index
-				property var itemModel: root.itemModels[index]
+				property var itemModel: {
+					if (!root.equipmentCollectionModel)
+						return null
+					var models = root.itemModels
+					if (!models || index < 0 || index >= models.length)
+						return null
+					var model = models[index]
+					return model === undefined ? null : model
+				}
 
 				width: root.iconSize
 				height: root.iconSize
 
-				ItemSlot {
+				ItemInventorySlotView {
 					itemModel: parent.itemModel
+					itemType: root.equipmentCollectionModel
+						? root.equipmentCollectionModel.slotItemType(index)
+						: -1
+					emptySheetSource: root.emptySlotSheetSource
 					scale: root.entryScale
 					transformOrigin: Item.TopLeft
 				}

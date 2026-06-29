@@ -1,17 +1,30 @@
 import QtQuick
 import ui 1.0
 
-Rectangle {
-    id: root
+Item {
+	id: root
 
-    color: "#F8C8D4"
+	property var gameSession: null
 
-    AppText {
-        anchors.centerIn: parent
-        width: parent.width * 0.9
-        text: "Tech"
-        fillColor: Theme.darkText
-        pixelSize: Math.max(18, parent.height * 0.04)
-        outlineWeight: 0
-    }
+	readonly property real topMargin: Math.max(8, width * 0.02)
+	readonly property real topBarHeight: Math.max(32, height * 0.08)
+	readonly property url techPotionIcon: Qt.resolvedUrl("../../assets/sprites/Currency/techPotions.png")
+
+	Rectangle {
+		anchors.fill: parent
+		color: Qt.darker(Theme.darkBlue, 1.5)
+	}
+
+	MainViewHeader {
+		anchors.left: parent.left
+		anchors.right: parent.right
+		anchors.top: parent.top
+		anchors.leftMargin: root.topMargin
+		anchors.rightMargin: root.topMargin
+		anchors.topMargin: root.topMargin
+		height: root.topBarHeight
+		primaryCurrencyIcon: root.techPotionIcon
+		primaryCurrencyAmount: root.gameSession ? root.gameSession.techPotionCount : 0
+		rarityCounts: []
+	}
 }

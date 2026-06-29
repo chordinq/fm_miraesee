@@ -58,10 +58,14 @@ class PlayerTechTreeModel:
 		node_id: int,
 		level: int,
 	) -> None:
-		if level < 0:
+		if level < -1:
 			self.tech_trees[tree_type].pop(node_id, None)
 			return
-		clamped = min(level, _MAX_NODE_LEVEL)
+		clamped = min(max(level, -1), _MAX_NODE_LEVEL)
+		existing = self.tech_trees[tree_type].get(node_id)
+		if existing is not None:
+			existing.level = clamped
+			return
 		self.tech_trees[tree_type][node_id] = TechTreeNodeModel(level=clamped)
 
 	def get_node(

@@ -19,7 +19,7 @@ DetailsView {
 	readonly property string removeLocId: "27927471772594176"
 	readonly property string comingSoonLocId: "29372916365455360"
 
-	MountSlot {
+	MountEntryView {
 		parent: root.slotHost
 		anchors.left: root.slotHost.left
 		anchors.top: root.slotHost.top
