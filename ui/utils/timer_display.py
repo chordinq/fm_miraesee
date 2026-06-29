@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 
 from ui.utils.localizer import LOCALIZATIONS_DIR
+from ui.utils.ui_settings import game_number_formatting_enabled
 
 _DAYS_D_LOC_ID = "28308895591755776"
 _HOURS_H_LOC_ID = "28308895591755777"
@@ -34,14 +35,21 @@ def _timer_units(language: str) -> tuple[str, str, str, str]:
     )
 
 
+def _timer_digits(explicit_digits: int | None) -> int:
+    if explicit_digits is not None:
+        return explicit_digits
+    return 2 if game_number_formatting_enabled() else 4
+
+
 def format_timer_duration(
     seconds: int,
     language: str = _DEFAULT_LANGUAGE,
     *,
-    digits: int = 2,
+    digits: int | None = None,
 ) -> str:
     """IL: TimeExtensions.Format — up to `digits` largest non-zero d/h/m/s components."""
-    if digits <= 0:
+    digit_count = _timer_digits(digits)
+    if digit_count <= 0:
         return ""
 
     total_seconds = max(0, int(seconds))
@@ -60,15 +68,15 @@ def format_timer_duration(
         parts.append(f"{days}{day_unit}")
         count += 1
 
-    if hours > 0 and count < digits:
+    if hours > 0 and count < digit_count:
         parts.append(f"{hours}{hour_unit}")
         count += 1
 
-    if minutes > 0 and count < digits:
+    if minutes > 0 and count < digit_count:
         parts.append(f"{minutes}{minute_unit}")
         count += 1
 
-    if secs >= 1 and count < digits:
+    if secs >= 1 and count < digit_count:
         parts.append(f"{secs}{second_unit}")
 
     return " ".join(parts)

@@ -313,6 +313,48 @@
       "m_Metadata": {
         "m_Items": []
       }
+    },
+    {
+      "m_Id": 99762288574062592,
+      "m_Localized": "Kalıcı olarak susturuldunuz.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762400402595840,
+      "m_Localized": "Aşağıdaki uygunsuz mesaj(lar) nedeniyle susturuldunuz:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762593743233024,
+      "m_Localized": "Aşağıdaki uygunsuz mesaj(lar) nedeniyle kalıcı olarak susturuldunuz:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104516326213541888,
+      "m_Localized": "Klan Liderleri",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104791134469873664,
+      "m_Localized": "(Liderler)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 109459179712798720,
+      "m_Localized": "Klanındaki herkes bu sohbeti okuyabilir, ancak yalnızca Lider, Komutan ve Kaptan buraya yazabilir.",
+      "m_Metadata": {
+        "m_Items": []
+      }
     }
   ],
   "references": {

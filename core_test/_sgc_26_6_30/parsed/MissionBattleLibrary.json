@@ -1,0 +1,473 @@
+{
+  "0": {
+    "MissionId": 0,
+    "MissionTitleId": "HowlOfTheFirstAge",
+    "MinLevel": 1,
+    "BaseDamage": 1000,
+    "BaseHealth": 8000,
+    "UnitCount": 6,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 0.3300000000745058,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {},
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "1": {
+    "MissionId": 1,
+    "MissionTitleId": "TheSecondStoneAge",
+    "MinLevel": 1,
+    "BaseDamage": 900,
+    "BaseHealth": 7200,
+    "UnitCount": 6,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 0.25,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "2": {
+    "MissionId": 2,
+    "MissionTitleId": "TheTwinSamurai",
+    "MinLevel": 1,
+    "BaseDamage": 3300,
+    "BaseHealth": 26400,
+    "UnitCount": 2,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "3": {
+    "MissionId": 3,
+    "MissionTitleId": "TheHelmLegion",
+    "MinLevel": 1,
+    "BaseDamage": 1500,
+    "BaseHealth": 12000,
+    "UnitCount": 5,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "4": {
+    "MissionId": 4,
+    "MissionTitleId": "TheBlackSails",
+    "MinLevel": 1,
+    "BaseDamage": 800,
+    "BaseHealth": 6400,
+    "UnitCount": 8,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 0.5,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {},
+      {}
+    ]
+  },
+  "5": {
+    "MissionId": 5,
+    "MissionTitleId": "TheThreeMusketeers",
+    "MinLevel": 1,
+    "BaseDamage": 3000,
+    "BaseHealth": 24000,
+    "UnitCount": 3,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "6": {
+    "MissionId": 6,
+    "MissionTitleId": "ThugAttack",
+    "MinLevel": 5,
+    "BaseDamage": 1000,
+    "BaseHealth": 8000,
+    "UnitCount": 5,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "7": {
+    "MissionId": 7,
+    "MissionTitleId": "TheLawComesKnocking",
+    "MinLevel": 10,
+    "BaseDamage": 1500,
+    "BaseHealth": 12000,
+    "UnitCount": 6,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "8": {
+    "MissionId": 8,
+    "MissionTitleId": "ToxicVanguard",
+    "MinLevel": 15,
+    "BaseDamage": 1000,
+    "BaseHealth": 8000,
+    "UnitCount": 5,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {},
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "9": {
+    "MissionId": 9,
+    "MissionTitleId": "TheStarBlades",
+    "MinLevel": 20,
+    "BaseDamage": 1000,
+    "BaseHealth": 8000,
+    "UnitCount": 9,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 0.25,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {}
+    ],
+    "PossibleHelmets": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleArmours": [
+      {},
+      {}
+    ]
+  },
+  "10": {
+    "MissionId": 10,
+    "MissionTitleId": "AlienInvasion",
+    "MinLevel": 20,
+    "BaseDamage": 900,
+    "BaseHealth": 7200,
+    "UnitCount": 6,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "11": {
+    "MissionId": 11,
+    "MissionTitleId": "TheColossalBlade",
+    "MinLevel": 25,
+    "BaseDamage": 6000,
+    "BaseHealth": 48000,
+    "UnitCount": 1,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "12": {
+    "MissionId": 12,
+    "MissionTitleId": "DigitalBreach",
+    "MinLevel": 25,
+    "BaseDamage": 975,
+    "BaseHealth": 7800,
+    "UnitCount": 7,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {},
+      {}
+    ]
+  },
+  "13": {
+    "MissionId": 13,
+    "MissionTitleId": "TechIsNotEnough",
+    "MinLevel": 30,
+    "BaseDamage": 1650,
+    "BaseHealth": 13200,
+    "UnitCount": 4,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [],
+    "PossibleArmours": [
+      {},
+      {}
+    ]
+  },
+  "14": {
+    "MissionId": 14,
+    "MissionTitleId": "QuantumRebels",
+    "MinLevel": 30,
+    "BaseDamage": 900,
+    "BaseHealth": 7200,
+    "UnitCount": 6,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 0.3300000000745058,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {},
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "15": {
+    "MissionId": 15,
+    "MissionTitleId": "OrderOfTheThrone",
+    "MinLevel": 35,
+    "BaseDamage": 800,
+    "BaseHealth": 6400,
+    "UnitCount": 8,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "16": {
+    "MissionId": 16,
+    "MissionTitleId": "TheTwoWizards",
+    "MinLevel": 35,
+    "BaseDamage": 2800,
+    "BaseHealth": 22400,
+    "UnitCount": 2,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 0.10000000009313226,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {},
+      {}
+    ],
+    "PossibleArmours": [
+      {},
+      {}
+    ]
+  },
+  "17": {
+    "MissionId": 17,
+    "MissionTitleId": "DescendFromAbove",
+    "MinLevel": 40,
+    "BaseDamage": 400,
+    "BaseHealth": 3200,
+    "UnitCount": 20,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {}
+    ],
+    "PossibleHelmets": [
+      {}
+    ],
+    "PossibleArmours": [
+      {}
+    ]
+  },
+  "18": {
+    "MissionId": 18,
+    "MissionTitleId": "NightSorcerers",
+    "MinLevel": 40,
+    "BaseDamage": 1350,
+    "BaseHealth": 10800,
+    "UnitCount": 4,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 0.25,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {},
+      {},
+      {}
+    ],
+    "PossibleArmours": [
+      {},
+      {}
+    ]
+  },
+  "19": {
+    "MissionId": 19,
+    "MissionTitleId": "FromTheUnderworld",
+    "MinLevel": 40,
+    "BaseDamage": 1350,
+    "BaseHealth": 10800,
+    "UnitCount": 6,
+    "MapAge": 0,
+    "ChanceToHaveWeapon": 1.0,
+    "ChanceToHaveHelmet": 1.0,
+    "ChanceToHaveArmour": 1.0,
+    "PossibleWeapons": [
+      {},
+      {}
+    ],
+    "PossibleHelmets": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "PossibleArmours": [
+      {},
+      {}
+    ]
+  }
+}

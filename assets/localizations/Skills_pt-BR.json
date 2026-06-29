@@ -169,7 +169,7 @@
     },
     {
       "m_Id": 1200103288832,
-      "m_Localized": "Chame uma estampida de touros, cada um causando {0} de dano",
+      "m_Localized": "Chame uma estampida, cada um causando {0} de dano",
       "m_Metadata": {
         "m_Items": []
       }

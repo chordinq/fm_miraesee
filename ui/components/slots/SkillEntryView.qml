@@ -15,13 +15,16 @@ Item {
 
 	readonly property real equippedOpacityFraction: 5 / 16
 	readonly property real equippedVisualWidthRatio: 1.4
-	readonly property real levelOffsetRatio: -0.04
-	readonly property real levelPixelSizeRatio: 5 / 16
-	readonly property real progressOffsetRatio: 1 / 3
+	readonly property real levelOffsetRatio:
+		root.ascensionLevel > 0 ? 0.25 : 0.03
+	readonly property real levelPixelSizeRatio: 0.32
+	readonly property real progressOffsetRatio: 0.34
 	readonly property real progressWidthRatio: 1.3
 	readonly property real arrowWidthRatio: 0.52
 	readonly property real arrowRightMarginRatio: 0.25
 	readonly property real arrowTopMarginRatio: 0.18
+	readonly property real ascensionStarSizeRatio: 0.25
+	readonly property real ascensionStarOffsetRatio: 0
 
 	signal clicked()
 
@@ -42,6 +45,15 @@ Item {
 		visible: root.skillModel?.isEquipped ?? false
 		scaleHorizontal: 3
 		width: iconSize * root.equippedVisualWidthRatio
+	}
+
+	AscensionStarView {
+		visible: root.ascensionLevel >= 1
+		ascensionLevel: root.ascensionLevel
+		starSize: iconSize * root.ascensionStarSizeRatio
+		anchors.horizontalCenter: icon.horizontalCenter
+		anchors.verticalCenter: icon.bottom
+		anchors.verticalCenterOffset: icon.height * root.ascensionStarOffsetRatio
 	}
 
 	LevelText {

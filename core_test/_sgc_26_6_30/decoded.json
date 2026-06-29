@@ -1,0 +1,15 @@
+{
+  "header": {
+    "schema": 5,
+    "created_at": 1782728533892,
+    "num_entries": 68,
+    "total_size": 98532
+  },
+  "content_hash": "50b089efb2801730d98c98924b693853",
+  "decoded_count": 3,
+  "decoded_keys": [
+    "BaseConfig",
+    "DungeonBaseConfig",
+    "EnemyLibrary"
+  ]
+}

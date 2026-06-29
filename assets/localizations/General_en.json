@@ -1080,7 +1080,7 @@
     },
     {
       "m_Id": 62984451326468098,
-      "m_Localized": "and",
+      "m_Localized": "{0} and {1}",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1396,6 +1396,20 @@
     {
       "m_Id": 128326236642467840,
       "m_Localized": "Global list (updated hourly)\n\nOnly players who are currently ranked \n#1 in their server appear here",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 131638735529828352,
+      "m_Localized": "Join our community on Discord",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 133877492005986304,
+      "m_Localized": "Donate",
       "m_Metadata": {
         "m_Items": []
       }

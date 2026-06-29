@@ -277,22 +277,8 @@
       }
     },
     {
-      "m_Id": 2991700380213248,
-      "m_Localized": "Komutana kadar terfi/düşür. Duyuru yap. Talepleri onayla. Katılım ayarlarını değiştir. Oyuncuları çıkar.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
-      "m_Id": 2991983734808576,
-      "m_Localized": "Kaptana kadar terfi/düşür. Duyuru yap. Talepleri onayla. Katılım ayarlarını değiştir. Oyuncuları çıkar.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
       "m_Id": 2992061497204736,
-      "m_Localized": "R1'e kadar terfi/düşür. Duyuru yap. Talepleri onayla.",
+      "m_Localized": "R1'e kadar terfi/düşür. Duyuru yap. Klan Liderleri'nde yaz. Talepleri onayla.",
       "m_Metadata": {
         "m_Items": []
       }
@@ -418,14 +404,14 @@
     },
     {
       "m_Id": 4548011723055104,
-      "m_Localized": "Guild'den Ayrıl",
+      "m_Localized": "Klandan ayrıl",
       "m_Metadata": {
         "m_Items": []
       }
     },
     {
       "m_Id": 4548662943277056,
-      "m_Localized": "Ayrılmadan önce guild'in liderliğini devretmelisiniz!",
+      "m_Localized": "Ayrılmadan önce klanın liderliğini başka bir üyeye devretmelisin!",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1109,6 +1095,20 @@
     {
       "m_Id": 124445730247008256,
       "m_Localized": "{0}, {3} tarafından {2} olarak {1}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340544,
+      "m_Localized": "Komutana kadar terfi/düşür. Duyuru yap. Klan Liderleri'nde yaz. Talepleri onayla. Katılım ayarlarını değiştir. Oyuncuları çıkar.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340545,
+      "m_Localized": "Kaptana kadar terfi/düşür. Duyuru yap. Klan Liderleri'nde yaz. Talepleri onayla. Katılım ayarlarını değiştir. Oyuncuları çıkar.",
       "m_Metadata": {
         "m_Items": []
       }

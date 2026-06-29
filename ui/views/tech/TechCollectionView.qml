@@ -66,6 +66,15 @@ Item {
 			progress: root.techTreeForgeModel
 				? root.techTreeForgeModel.progress
 				: 0
+			researchActive: root.techTreeForgeModel
+				? root.techTreeForgeModel.categoryResearchActive
+				: false
+			researchComplete: root.techTreeForgeModel
+				? root.techTreeForgeModel.categoryResearchComplete
+				: false
+			researchRemainingText: root.techTreeForgeModel
+				? root.techTreeForgeModel.categoryResearchRemainingText
+				: ""
 			onClicked: root.openTree("forge")
 		}
 
@@ -75,6 +84,15 @@ Item {
 			progress: root.techTreePowerModel
 				? root.techTreePowerModel.progress
 				: 0
+			researchActive: root.techTreePowerModel
+				? root.techTreePowerModel.categoryResearchActive
+				: false
+			researchComplete: root.techTreePowerModel
+				? root.techTreePowerModel.categoryResearchComplete
+				: false
+			researchRemainingText: root.techTreePowerModel
+				? root.techTreePowerModel.categoryResearchRemainingText
+				: ""
 			onClicked: root.openTree("power")
 		}
 
@@ -84,6 +102,15 @@ Item {
 			progress: root.techTreeSkillsPetTechModel
 				? root.techTreeSkillsPetTechModel.progress
 				: 0
+			researchActive: root.techTreeSkillsPetTechModel
+				? root.techTreeSkillsPetTechModel.categoryResearchActive
+				: false
+			researchComplete: root.techTreeSkillsPetTechModel
+				? root.techTreeSkillsPetTechModel.categoryResearchComplete
+				: false
+			researchRemainingText: root.techTreeSkillsPetTechModel
+				? root.techTreeSkillsPetTechModel.categoryResearchRemainingText
+				: ""
 			onClicked: root.openTree("skillsPetTech")
 		}
 		}
@@ -117,7 +144,7 @@ Item {
 	TechTreeDetailsView {
 		z: 10
 		visible: root.detailsOpen && root.selectedNodeModel !== null
-		anchors.centerIn: parent
+		anchors.fill: parent
 		nodeModel: root.selectedNodeModel
 		techTreeModel: root.techTreeModelForType(root.selectedTreeType)
 		onClosed: {
@@ -141,12 +168,26 @@ Item {
 
 	Timer {
 		interval: 1000
-		running: root.showingTree
+		running: root.visible && !root.showingTree
+		repeat: true
+		onTriggered: {
+			if (root.techTreeForgeModel)
+				root.techTreeForgeModel.tick()
+			if (root.techTreePowerModel)
+				root.techTreePowerModel.tick()
+			if (root.techTreeSkillsPetTechModel)
+				root.techTreeSkillsPetTechModel.tick()
+		}
+	}
+
+	Timer {
+		interval: 1000
+		running: root.visible && root.showingTree
 		repeat: true
 		onTriggered: {
 			var model = root.techTreeModelForType(root.selectedTreeType)
 			if (model)
-				model.refresh()
+				model.tick()
 		}
 	}
 }

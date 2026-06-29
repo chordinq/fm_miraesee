@@ -12,11 +12,11 @@ PopupView {
 
 	readonly property string mergeTitleLocId: "68706935435265"
 	readonly property string mergeConfirmLocId: "25783797269852160"
-	readonly property real slotSize: width * 0.11
+	readonly property real slotSize: panelWidth * 0.11
 	readonly property real slotScale: slotSize / 256
 	readonly property real titleFontScale: 0.04
 	readonly property real rowFontScale: 0.032
-	readonly property real actionButtonHeight: height * 0.09
+	readonly property real actionButtonHeight: panelHeight * 0.09
 	readonly property real actionButtonWidth: actionButtonHeight * 2.4
 	readonly property int selectedCount: root.selectedPetGuids.length + root.selectedEggGuids.length
 	readonly property bool canConfirm: root.selectedCount > 0
@@ -72,7 +72,7 @@ PopupView {
 		locTable: "Pets"
 		locId: root.mergeTitleLocId
 		fillColor: Theme.black
-		pixelSize: root.width * root.titleFontScale
+		pixelSize: root.panelWidth * root.titleFontScale
 		outlineWeight: 0
 	}
 
@@ -106,7 +106,7 @@ PopupView {
 				fillColor: root.targetPetModel
 					? Theme.rarityColors[root.targetPetModel.rarity]
 					: Theme.darkText
-				pixelSize: root.width * root.titleFontScale
+				pixelSize: root.panelWidth * root.titleFontScale
 				outlineWeight: 8
 			}
 
@@ -116,7 +116,7 @@ PopupView {
 				fillColor: root.targetPetModel
 					? Theme.rarityColors[root.targetPetModel.rarity]
 					: Theme.darkText
-				pixelSize: root.width * root.titleFontScale
+				pixelSize: root.panelWidth * root.titleFontScale
 				outlineWeight: 8
 			}
 		}
@@ -124,7 +124,7 @@ PopupView {
 		AppText {
 			text: root.targetPetModel ? "Lv." + root.targetPetModel.level : ""
 			fillColor: Theme.darkGreyText
-			pixelSize: root.width * root.rowFontScale
+			pixelSize: root.panelWidth * root.rowFontScale
 			outlineWeight: 0
 		}
 	}
@@ -148,7 +148,7 @@ PopupView {
 			id: candidateColumn
 
 			width: candidateList.width
-			spacing: root.height * 0.012
+			spacing: root.panelHeight * 0.012
 
 			Repeater {
 				model: root.petController && root.targetPetModel
@@ -196,7 +196,7 @@ PopupView {
 							anchors.verticalCenter: parent.verticalCenter
 							text: modelData.label
 							fillColor: Theme.black
-							pixelSize: root.width * root.rowFontScale
+							pixelSize: root.panelWidth * root.rowFontScale
 							outlineWeight: 0
 						}
 					}
@@ -218,7 +218,7 @@ PopupView {
 		locId: "68706935435264"
 		formatArgs: [root.selectedCount]
 		fillColor: Theme.darkGreyText
-		pixelSize: root.width * root.rowFontScale
+		pixelSize: root.panelWidth * root.rowFontScale
 		outlineWeight: 0
 	}
 

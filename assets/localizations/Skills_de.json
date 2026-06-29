@@ -169,7 +169,7 @@
     },
     {
       "m_Id": 1200103288832,
-      "m_Localized": "Rufe eine Bullenstampede herbei, jeder verursacht {0} Schaden",
+      "m_Localized": "Rufe einen Ansturm herbei, jeder verursacht {0} Schaden",
       "m_Metadata": {
         "m_Items": []
       }

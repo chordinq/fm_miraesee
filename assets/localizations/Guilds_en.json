@@ -277,22 +277,8 @@
       }
     },
     {
-      "m_Id": 2991700380213248,
-      "m_Localized": "Promote/demote up to Commander. Set announcements. Approve requests. Change join settings. Remove Players.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
-      "m_Id": 2991983734808576,
-      "m_Localized": "Promote/demote up to Captain. Set announcements. Approve requests. Change join settings. Remove Players.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
       "m_Id": 2992061497204736,
-      "m_Localized": "Promote/demote up to R1. Set announcements. Approve requests.",
+      "m_Localized": "Promote/demote up to R1. Set announcements. Write in Clan Leads. Approve requests.",
       "m_Metadata": {
         "m_Items": []
       }
@@ -418,14 +404,14 @@
     },
     {
       "m_Id": 4548011723055104,
-      "m_Localized": "Leave",
+      "m_Localized": "Leave clan",
       "m_Metadata": {
         "m_Items": []
       }
     },
     {
       "m_Id": 4548662943277056,
-      "m_Localized": "You need to transfer leadership of the guild before you can leave!",
+      "m_Localized": "You need to transfer leadership of the clan before you can leave!",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1109,6 +1095,20 @@
     {
       "m_Id": 124445730247008256,
       "m_Localized": "{0} has been {1} to {2} by {3}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340544,
+      "m_Localized": "Promote/demote up to Commander. Set announcements. Write in Clan Leads. Approve requests. Change join settings. Remove Players.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340545,
+      "m_Localized": "Promote/demote up to Captain. Set announcements. Write in Clan Leads. Approve requests. Change join settings. Remove Players.",
       "m_Metadata": {
         "m_Items": []
       }

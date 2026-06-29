@@ -36,7 +36,7 @@
     },
     {
       "m_Id": 28244723822592,
-      "m_Localized": "Reunión",
+      "m_Localized": "Convocar",
       "m_Metadata": {
         "m_Items": []
       }
@@ -64,7 +64,7 @@
     },
     {
       "m_Id": 52887002214400,
-      "m_Localized": "Reuniones",
+      "m_Localized": "Convocatorias",
       "m_Metadata": {
         "m_Items": []
       }
@@ -85,7 +85,7 @@
     },
     {
       "m_Id": 1090623330312193,
-      "m_Localized": "Reuniendo... {0}",
+      "m_Localized": "Convocando... {0}",
       "m_Metadata": {
         "m_Items": []
       }
@@ -127,7 +127,7 @@
     },
     {
       "m_Id": 25460050683224064,
-      "m_Localized": "Hora de reunión",
+      "m_Localized": "Tiempo de Convocación",
       "m_Metadata": {
         "m_Items": []
       }

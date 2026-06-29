@@ -169,7 +169,7 @@
     },
     {
       "m_Id": 1200103288832,
-      "m_Localized": "Richiama una fuga di tori, ognuno infliggendo {0} danni",
+      "m_Localized": "Scatena una carica, ognuno infliggendo {0} danni",
       "m_Metadata": {
         "m_Items": []
       }

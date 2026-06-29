@@ -130,7 +130,7 @@ class PlayerTechTreeModel:
 		for nodes in self.tech_trees.values():
 			for node_model in nodes.values():
 				timer = node_model.node_upgrade_timer_model
-				if timer.end_time > timer.start_time and not timer.has_ended(player):
+				if timer.start_time > 0 and not timer.has_ended(player):
 					return True
 		return False
 
@@ -142,7 +142,7 @@ class PlayerTechTreeModel:
 		for tree_type, nodes in self.tech_trees.items():
 			for node_id, node_model in nodes.items():
 				timer = node_model.node_upgrade_timer_model
-				if timer.end_time > timer.start_time and timer.has_ended(player):
+				if timer.start_time > 0 and timer.has_ended(player):
 					claimable.add((tree_type, node_id))
 		return len(claimable) > 0, claimable
 
@@ -150,7 +150,7 @@ class PlayerTechTreeModel:
 		for nodes in self.tech_trees.values():
 			for node_model in nodes.values():
 				timer = node_model.node_upgrade_timer_model
-				if timer.end_time > timer.start_time and timer.has_ended(player):
+				if timer.start_time > 0 and timer.has_ended(player):
 					return True
 		return False
 

@@ -1,0 +1,1526 @@
+{
+  "WeaponBonus": {
+    "Type": "WeaponBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Damage",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 5
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Weapon"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      },
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 5
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Weapon"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "HelmetBonus": {
+    "Type": "HelmetBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 0
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Helmet"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "BodyBonus": {
+    "Type": "BodyBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 1
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Armour"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "ShoeBonus": {
+    "Type": "ShoeBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 6
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Shoes"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "GloveBonus": {
+    "Type": "GloveBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Damage",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 2
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Gloves"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "BeltBonus": {
+    "Type": "BeltBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 7
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Belt"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "NecklaceBonus": {
+    "Type": "NecklaceBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Damage",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 3
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Necklace"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "RingBonus": {
+    "Type": "RingBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Damage",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 4
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Ring"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "WeaponLevelUp": {
+    "Type": "WeaponLevelUp",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxLevel",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 5
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Weapon"
+          }
+        },
+        "Value": 2.0,
+        "ValueIncrease": 2.0
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "HelmetLevelUp": {
+    "Type": "HelmetLevelUp",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxLevel",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 0
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Helmet"
+          }
+        },
+        "Value": 2.0,
+        "ValueIncrease": 2.0
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "BodyLevelUp": {
+    "Type": "BodyLevelUp",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxLevel",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 1
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Armour"
+          }
+        },
+        "Value": 2.0,
+        "ValueIncrease": 2.0
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "ShoeLevelUp": {
+    "Type": "ShoeLevelUp",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxLevel",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 6
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Shoes"
+          }
+        },
+        "Value": 2.0,
+        "ValueIncrease": 2.0
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "GloveLevelUp": {
+    "Type": "GloveLevelUp",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxLevel",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 2
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Gloves"
+          }
+        },
+        "Value": 2.0,
+        "ValueIncrease": 2.0
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "BeltLevelUp": {
+    "Type": "BeltLevelUp",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxLevel",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 7
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Belt"
+          }
+        },
+        "Value": 2.0,
+        "ValueIncrease": 2.0
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "NecklaceLevelUp": {
+    "Type": "NecklaceLevelUp",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxLevel",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 3
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Necklace"
+          }
+        },
+        "Value": 2.0,
+        "ValueIncrease": 2.0
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "RingLevelUp": {
+    "Type": "RingLevelUp",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxLevel",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": [
+              {
+                "Type": "ItemType",
+                "Value": 4
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget",
+            "ItemType": "Ring"
+          }
+        },
+        "Value": 2.0,
+        "ValueIncrease": 2.0
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "MountDamage": {
+    "Type": "MountDamage",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Damage",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Mount",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "MountStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "MountHealth": {
+    "Type": "MountHealth",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Mount",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "MountStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "ExtraMountChance": {
+    "Type": "ExtraMountChance",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "FreebieChance",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Mount",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "MountStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "MountSummonCost": {
+    "Type": "MountSummonCost",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Cost",
+            "StatNature": "OneMinusMultiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Mount",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "MountStatTarget"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "ForgeTimerSpeed": {
+    "Type": "ForgeTimerSpeed",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "TimerSpeed",
+            "StatNature": "Divisor"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Forge",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "ForgeStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "ForgeUpgradeCost": {
+    "Type": "ForgeUpgradeCost",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Cost",
+            "StatNature": "OneMinusMultiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Forge",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "ForgeStatTarget"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "EquipmentSellPrice": {
+    "Type": "EquipmentSellPrice",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "SellPrice",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Equipment",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "EquipmentStatTarget"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "AutoForge": {
+    "Type": "AutoForge",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "MaxCount",
+            "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Forge",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "ForgeStatTarget"
+          }
+        },
+        "Value": 1.0,
+        "ValueIncrease": 1.0
+      }
+    ],
+    "MaxLevel": 1,
+    "TierAddition": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "HammerOfflineReward": {
+    "Type": "HammerOfflineReward",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Bonus",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Currency",
+            "Qualifiers": [
+              {
+                "Type": "CurrencyType",
+                "Value": 2
+              },
+              {
+                "Type": "Source",
+                "Value": 0
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "OfflineCurrencyStatTarget",
+            "CurrencyType": "Hammers",
+            "Source": "Offline"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "CoinOfflineReward": {
+    "Type": "CoinOfflineReward",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Bonus",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Currency",
+            "Qualifiers": [
+              {
+                "Type": "CurrencyType",
+                "Value": 0
+              },
+              {
+                "Type": "Source",
+                "Value": 0
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "OfflineCurrencyStatTarget",
+            "CurrencyType": "Coins",
+            "Source": "Offline"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "MaxOfflineReward": {
+    "Type": "MaxOfflineReward",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Bonus",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Duration",
+            "Qualifiers": [
+              {
+                "Type": "Source",
+                "Value": 0
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "OfflineTimerStatTarget"
+          }
+        },
+        "Value": 0.15999999991618097,
+        "ValueIncrease": 0.15999999991618097
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "FreeForgeChance": {
+    "Type": "FreeForgeChance",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "FreebieChance",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Forge",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "ForgeStatTarget"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "HammerThiefHammerReward": {
+    "Type": "HammerThiefHammerReward",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Bonus",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Currency",
+            "Qualifiers": [
+              {
+                "Type": "CurrencyType",
+                "Value": 2
+              },
+              {
+                "Type": "DungeonType",
+                "Value": 0
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "OfflineCurrencyStatTarget",
+            "CurrencyType": "Hammers",
+            "DungeonType": "Hammer"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "HammerThiefCoinReward": {
+    "Type": "HammerThiefCoinReward",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Bonus",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Currency",
+            "Qualifiers": [
+              {
+                "Type": "CurrencyType",
+                "Value": 0
+              },
+              {
+                "Type": "DungeonType",
+                "Value": 0
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "OfflineCurrencyStatTarget",
+            "CurrencyType": "Coins",
+            "DungeonType": "Hammer"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "SkillDamage": {
+    "Type": "SkillDamage",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Damage",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "ActiveSkill",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "ActiveSkillStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      },
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "ActiveSkill",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "ActiveSkillStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "SkillPassiveDamage": {
+    "Type": "SkillPassiveDamage",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Damage",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "PassiveSkill",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "PassiveSkillStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "SkillPassiveHealth": {
+    "Type": "SkillPassiveHealth",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "PassiveSkill",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "PassiveSkillStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "GhostTownSkillBonus": {
+    "Type": "GhostTownSkillBonus",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Bonus",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Currency",
+            "Qualifiers": [
+              {
+                "Type": "CurrencyType",
+                "Value": 3
+              },
+              {
+                "Type": "DungeonType",
+                "Value": 1
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "OfflineCurrencyStatTarget",
+            "CurrencyType": "SkillSummonTickets",
+            "DungeonType": "Skill"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "SkillSummonCost": {
+    "Type": "SkillSummonCost",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Cost",
+            "StatNature": "OneMinusMultiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "ActiveSkill",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "ActiveSkillStatTarget"
+          }
+        },
+        "Value": 0.010000000009313226,
+        "ValueIncrease": 0.010000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "PetBonusDamage": {
+    "Type": "PetBonusDamage",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Damage",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Pet",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "PetStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "PetBonusHealth": {
+    "Type": "PetBonusHealth",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Health",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "TechTree",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Pet",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "PetStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "ExtraEggChance": {
+    "Type": "ExtraEggChance",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "FreebieChance",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Egg",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "EggStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "CommonEggTimer": {
+    "Type": "CommonEggTimer",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "TimerSpeed",
+            "StatNature": "Divisor"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Egg",
+            "Qualifiers": [
+              {
+                "Type": "Rarity",
+                "Value": 0
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EggStatTarget",
+            "Rarity": "Common"
+          }
+        },
+        "Value": 0.10000000009313226,
+        "ValueIncrease": 0.10000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "RareEggTimer": {
+    "Type": "RareEggTimer",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "TimerSpeed",
+            "StatNature": "Divisor"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Egg",
+            "Qualifiers": [
+              {
+                "Type": "Rarity",
+                "Value": 1
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EggStatTarget",
+            "Rarity": "Rare"
+          }
+        },
+        "Value": 0.10000000009313226,
+        "ValueIncrease": 0.10000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "EpicEggTimer": {
+    "Type": "EpicEggTimer",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "TimerSpeed",
+            "StatNature": "Divisor"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Egg",
+            "Qualifiers": [
+              {
+                "Type": "Rarity",
+                "Value": 2
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EggStatTarget",
+            "Rarity": "Epic"
+          }
+        },
+        "Value": 0.10000000009313226,
+        "ValueIncrease": 0.10000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "LegendaryEggTimer": {
+    "Type": "LegendaryEggTimer",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "TimerSpeed",
+            "StatNature": "Divisor"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Egg",
+            "Qualifiers": [
+              {
+                "Type": "Rarity",
+                "Value": 3
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EggStatTarget",
+            "Rarity": "Legendary"
+          }
+        },
+        "Value": 0.10000000009313226,
+        "ValueIncrease": 0.10000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "UltimateEggTimer": {
+    "Type": "UltimateEggTimer",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "TimerSpeed",
+            "StatNature": "Divisor"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Egg",
+            "Qualifiers": [
+              {
+                "Type": "Rarity",
+                "Value": 4
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EggStatTarget",
+            "Rarity": "Ultimate"
+          }
+        },
+        "Value": 0.10000000009313226,
+        "ValueIncrease": 0.10000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "MythicEggTimer": {
+    "Type": "MythicEggTimer",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "TimerSpeed",
+            "StatNature": "Divisor"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Egg",
+            "Qualifiers": [
+              {
+                "Type": "Rarity",
+                "Value": 5
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "EggStatTarget",
+            "Rarity": "Mythic"
+          }
+        },
+        "Value": 0.10000000009313226,
+        "ValueIncrease": 0.10000000009313226
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "ZombieRushTechPotions": {
+    "Type": "ZombieRushTechPotions",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Bonus",
+            "StatNature": "Multiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Currency",
+            "Qualifiers": [
+              {
+                "Type": "CurrencyType",
+                "Value": 4
+              },
+              {
+                "Type": "DungeonType",
+                "Value": 3
+              }
+            ]
+          },
+          "StatTarget": {
+            "$type": "OfflineCurrencyStatTarget",
+            "CurrencyType": "TechPotions",
+            "DungeonType": "Potion"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "TechNodeUpgradeCost": {
+    "Type": "TechNodeUpgradeCost",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "Cost",
+            "StatNature": "OneMinusMultiplier"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "TechTree",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "TechTreeStatTarget"
+          }
+        },
+        "Value": 0.02000000001862645,
+        "ValueIncrease": 0.02000000001862645
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  },
+  "TechResearchTimer": {
+    "Type": "TechResearchTimer",
+    "Stats": [
+      {
+        "StatNode": {
+          "UniqueStat": {
+            "StatType": "TimerSpeed",
+            "StatNature": "Divisor"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "TechTree",
+            "Qualifiers": []
+          },
+          "StatTarget": {
+            "$type": "TechTreeStatTarget"
+          }
+        },
+        "Value": 0.0400000000372529,
+        "ValueIncrease": 0.0400000000372529
+      }
+    ],
+    "MaxLevel": 5,
+    "TierAddition": []
+  }
+}

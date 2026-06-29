@@ -1,386 +1,386 @@
 {
-	"m_GameObject": {
-		"m_FileID": 0,
-		"m_PathID": 0
-	},
-	"m_Enabled": 1,
-	"m_Script": {
-		"m_FileID": 1,
-		"m_PathID": 7442561414784416887
-	},
-	"m_Name": "Pets Shared Data",
-	"m_TableCollectionName": "Pets",
-	"m_TableCollectionNameGuidString": "a95708e30f8245040866fb5e95b3fc6b",
-	"m_Entries": [
-		{
-			"m_Id": 153364393984,
-			"m_Key": "HatchToGet",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 153364393985,
-			"m_Key": "Empty",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 153364393986,
-			"m_Key": "Ready",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 1252196544512,
-			"m_Key": "HatchingSlotsFull",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 1252196544513,
-			"m_Key": "HatchingInProgress",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 7431547187200,
-			"m_Key": "SlotPlusOne",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 8513174302720,
-			"m_Key": "SelectPetsMerge",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328656904192,
-			"m_Key": "Chicken",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652928,
-			"m_Key": "Dog",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652929,
-			"m_Key": "Cat",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652930,
-			"m_Key": "Snail",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652931,
-			"m_Key": "Mouse",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652932,
-			"m_Key": "Turtle",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652933,
-			"m_Key": "Hedgehog",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652934,
-			"m_Key": "Bear",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652935,
-			"m_Key": "Ostrich",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652936,
-			"m_Key": "Spider",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652937,
-			"m_Key": "Scorpion",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652938,
-			"m_Key": "Griffin",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652939,
-			"m_Key": "SaberTooth",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652940,
-			"m_Key": "Unicorn",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652941,
-			"m_Key": "Tiger",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652942,
-			"m_Key": "Panda",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652943,
-			"m_Key": "Serpent",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652944,
-			"m_Key": "Cerberus",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652945,
-			"m_Key": "Kitsune",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652946,
-			"m_Key": "Electry",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652947,
-			"m_Key": "Treant",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652948,
-			"m_Key": "EnchantedElk",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652949,
-			"m_Key": "BabyDragon",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652950,
-			"m_Key": "Genie",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 57328694652951,
-			"m_Key": "SpectralTiger",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 68706935435264,
-			"m_Key": "PetsCountSelected",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 68706935435265,
-			"m_Key": "SelectPetsToMerge",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601476976640,
-			"m_Key": "LilyPad",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919680,
-			"m_Key": "LilyLeaf",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919681,
-			"m_Key": "BrownLeaf",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919682,
-			"m_Key": "BrownHorse",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919683,
-			"m_Key": "Dino",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919684,
-			"m_Key": "Crab",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919685,
-			"m_Key": "Pig",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919686,
-			"m_Key": "Goat",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919687,
-			"m_Key": "Bike",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919688,
-			"m_Key": "GiantBee",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601518919689,
-			"m_Key": "OneWheelDroid",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601523113984,
-			"m_Key": "MiniDragon",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601523113985,
-			"m_Key": "HoverDisk",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 362601523113986,
-			"m_Key": "HoverBoard",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 364392176349184,
-			"m_Key": "SelectMountsToMerge",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		},
-		{
-			"m_Id": 5414995050356736,
-			"m_Key": "EggReadyToHatchNotificationTitle",
-			"m_Metadata": {
-				"m_Items": []
-			}
-		}
-	],
-	"m_Metadata": {
-		"m_Items": []
-	},
-	"m_KeyGenerator": {
-		"rid": 7036434937656901821
-	},
-	"references": {
-		"version": 2,
-		"RefIds": [
-			{
-				"rid": 7036434937656901821,
-				"type": {
-					"class": "DistributedUIDGenerator",
-					"ns": "UnityEngine.Localization.Tables",
-					"asm": "Unity.Localization"
-				},
-				"data": {}
-			}
-		]
-	}
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": 7442561414784416887
+  },
+  "m_Name": "Pets Shared Data",
+  "m_TableCollectionName": "Pets",
+  "m_TableCollectionNameGuidString": "a95708e30f8245040866fb5e95b3fc6b",
+  "m_Entries": [
+    {
+      "m_Id": 153364393984,
+      "m_Key": "HatchToGet",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393985,
+      "m_Key": "Empty",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 153364393986,
+      "m_Key": "Ready",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544512,
+      "m_Key": "HatchingSlotsFull",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1252196544513,
+      "m_Key": "HatchingInProgress",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 7431547187200,
+      "m_Key": "SlotPlusOne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 8513174302720,
+      "m_Key": "SelectPetsMerge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328656904192,
+      "m_Key": "Chicken",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652928,
+      "m_Key": "Dog",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652929,
+      "m_Key": "Cat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652930,
+      "m_Key": "Snail",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652931,
+      "m_Key": "Mouse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652932,
+      "m_Key": "Turtle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652933,
+      "m_Key": "Hedgehog",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652934,
+      "m_Key": "Bear",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652935,
+      "m_Key": "Ostrich",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652936,
+      "m_Key": "Spider",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652937,
+      "m_Key": "Scorpion",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652938,
+      "m_Key": "Griffin",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652939,
+      "m_Key": "SaberTooth",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652940,
+      "m_Key": "Unicorn",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652941,
+      "m_Key": "Tiger",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652942,
+      "m_Key": "Panda",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652943,
+      "m_Key": "Serpent",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652944,
+      "m_Key": "Cerberus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652945,
+      "m_Key": "Kitsune",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652946,
+      "m_Key": "Electry",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652947,
+      "m_Key": "Treant",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652948,
+      "m_Key": "EnchantedElk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652949,
+      "m_Key": "BabyDragon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652950,
+      "m_Key": "Genie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 57328694652951,
+      "m_Key": "SpectralTiger",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435264,
+      "m_Key": "PetsCountSelected",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 68706935435265,
+      "m_Key": "SelectPetsToMerge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601476976640,
+      "m_Key": "LilyPad",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919680,
+      "m_Key": "LilyLeaf",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919681,
+      "m_Key": "BrownLeaf",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919682,
+      "m_Key": "BrownHorse",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919683,
+      "m_Key": "Dino",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919684,
+      "m_Key": "Crab",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919685,
+      "m_Key": "Pig",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919686,
+      "m_Key": "Goat",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919687,
+      "m_Key": "Bike",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919688,
+      "m_Key": "GiantBee",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601518919689,
+      "m_Key": "OneWheelDroid",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113984,
+      "m_Key": "MiniDragon",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113985,
+      "m_Key": "HoverDisk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 362601523113986,
+      "m_Key": "HoverBoard",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 364392176349184,
+      "m_Key": "SelectMountsToMerge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 5414995050356736,
+      "m_Key": "EggReadyToHatchNotificationTitle",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_KeyGenerator": {
+    "rid": 7036434937656901821
+  },
+  "references": {
+    "version": 2,
+    "RefIds": [
+      {
+        "rid": 7036434937656901821,
+        "type": {
+          "class": "DistributedUIDGenerator",
+          "ns": "UnityEngine.Localization.Tables",
+          "asm": "Unity.Localization"
+        },
+        "data": {}
+      }
+    ]
+  }
 }

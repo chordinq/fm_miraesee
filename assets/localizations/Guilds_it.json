@@ -277,22 +277,8 @@
       }
     },
     {
-      "m_Id": 2991700380213248,
-      "m_Localized": "Promuovi/declassa fino a Comandante. Fare annunci. Approvare richieste. Cambiare impostazioni di ingresso. Rimuovere giocatori.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
-      "m_Id": 2991983734808576,
-      "m_Localized": "Promuovi/declassa fino a Capitano. Fare annunci. Approvare richieste. Cambiare impostazioni di ingresso. Rimuovere giocatori.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
       "m_Id": 2992061497204736,
-      "m_Localized": "Promuovi/declassa fino a R1. Fare annunci. Approvare richieste.",
+      "m_Localized": "Promuovi/declassa fino a R1. Fare annunci. Scrivere in Capi del clan. Approvare richieste.",
       "m_Metadata": {
         "m_Items": []
       }
@@ -418,14 +404,14 @@
     },
     {
       "m_Id": 4548011723055104,
-      "m_Localized": "Lascia la gilda",
+      "m_Localized": "Lascia il clan",
       "m_Metadata": {
         "m_Items": []
       }
     },
     {
       "m_Id": 4548662943277056,
-      "m_Localized": "Devi trasferire la leadership della gilda prima di poter lasciare!",
+      "m_Localized": "Devi trasferire la leadership del clan prima di poterlo lasciare!",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1109,6 +1095,20 @@
     {
       "m_Id": 124445730247008256,
       "m_Localized": "{0} è stato {1} a {2} da {3}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340544,
+      "m_Localized": "Promuovi/declassa fino a Comandante. Fare annunci. Scrivere in Capi del clan. Approvare richieste. Cambiare impostazioni di ingresso. Rimuovere giocatori.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340545,
+      "m_Localized": "Promuovi/declassa fino a Capitano. Fare annunci. Scrivere in Capi del clan. Approvare richieste. Cambiare impostazioni di ingresso. Rimuovere giocatori.",
       "m_Metadata": {
         "m_Items": []
       }

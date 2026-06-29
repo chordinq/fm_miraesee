@@ -10,10 +10,11 @@ PopupView {
 	parentWidthRatio: 0.34
 	widthScale: 50
 	heightScale: 50
-	contentInsetWOverride: width / (widthScale * 4 - 6)
+	contentInsetWOverride: panelWidth / (widthScale * 4 - 6)
 
 	readonly property string settingsTitleLocId: "1830906689011712"
 	readonly property string languagesLocId: "25466346099372032"
+	readonly property string fullScreenLocId: "1000000000000003"
 	readonly property string gameNumberFormattingLocId: "1000000000000001"
 	readonly property string allowNegativeCurrencyLocId: "1000000000000002"
 	readonly property real titleFontScale: 0.09
@@ -21,9 +22,10 @@ PopupView {
 	readonly property real rowHeightRatio: 0.11
 	readonly property real toggleHeightRatio: 0.72
 	readonly property int settingsRowCount: settingsRows.length
-	readonly property real settingsRowHeight: width * rowHeightRatio
+	readonly property real settingsRowHeight: panelWidth * rowHeightRatio
 
 	readonly property var settingsRows: [
+		{ locId: fullScreenLocId, locTable: "Miraesee", toggleSetting: "fullScreen" },
 		{ locId: gameNumberFormattingLocId, locTable: "Miraesee", toggleSetting: "gameNumberFormatting" },
 		{ locId: allowNegativeCurrencyLocId, locTable: "Miraesee", toggleSetting: "allowNegativeCurrency" },
 		{ locId: languagesLocId, locTable: "General", navigable: true }
@@ -36,7 +38,7 @@ PopupView {
 		anchors.top: parent.top
 		locId: root.settingsTitleLocId
 		locTable: "General"
-		pixelSize: root.width * root.titleFontScale
+		pixelSize: root.panelWidth * root.titleFontScale
 		fillColor: Theme.white
 		outlineColor: Theme.black
 		outlineWeight: 8
@@ -47,7 +49,7 @@ PopupView {
 
 		anchors.top: settingsTitle.bottom
 		width: parent.width
-		height: root.width * 0.04
+		height: root.panelWidth * 0.04
 	}
 
 	Flickable {
@@ -83,11 +85,13 @@ PopupView {
 				readonly property string toggleSetting: modelData.toggleSetting || ""
 				readonly property bool hasToggle: toggleSetting !== ""
 				readonly property bool toggleChecked:
-					toggleSetting === "gameNumberFormatting"
-						? UiSettings.gameNumberFormattingEnabled
-						: toggleSetting === "allowNegativeCurrency"
-							? UiSettings.allowNegativeCurrencyEnabled
-							: false
+					toggleSetting === "fullScreen"
+						? UiSettings.fullScreenEnabled
+						: toggleSetting === "gameNumberFormatting"
+							? UiSettings.gameNumberFormattingEnabled
+							: toggleSetting === "allowNegativeCurrency"
+								? UiSettings.allowNegativeCurrencyEnabled
+								: false
 
 				Rectangle {
 					anchors.fill: parent
@@ -116,7 +120,9 @@ PopupView {
 					onToggled: function(enabled) {
 						if (!hasToggle)
 							return
-						if (toggleSetting === "gameNumberFormatting")
+						if (toggleSetting === "fullScreen")
+							UiSettings.setFullScreenEnabled(enabled)
+						else if (toggleSetting === "gameNumberFormatting")
 							UiSettings.setGameNumberFormattingEnabled(enabled)
 						else if (toggleSetting === "allowNegativeCurrency")
 							UiSettings.setAllowNegativeCurrencyEnabled(enabled)

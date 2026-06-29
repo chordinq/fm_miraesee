@@ -169,7 +169,7 @@
     },
     {
       "m_Id": 1200103288832,
-      "m_Localized": "Bir boğa kaçışı çağır, her biri {0} Hasar verir",
+      "m_Localized": "Bir akın çağır, her biri {0} Hasar verir",
       "m_Metadata": {
         "m_Items": []
       }

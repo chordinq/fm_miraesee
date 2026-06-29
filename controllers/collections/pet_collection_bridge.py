@@ -1,4 +1,4 @@
-from PySide6.QtCore import QObject, Property, Signal
+from PySide6.QtCore import QObject, Property, Signal, Slot
 
 from core.game_logic.enums import AscensionLevel
 from core.game_logic.player.player_model import PlayerModel
@@ -22,6 +22,7 @@ class PetCollectionBridge(QObject):
         super().__init__(parent)
         self._collection = collection
         self._player = player
+        self._ui_language = "en"
         self._refresh_bridges()
 
     def _refresh_bridges(self) -> None:
@@ -34,14 +35,19 @@ class PetCollectionBridge(QObject):
             for pet in self._collection.get_pets()
         ]
         self._egg_bridges: list[EggModelBridge] = [
-            EggModelBridge(egg, parent=self)
+            EggModelBridge(egg, self._player, parent=self, language=self._ui_language)
             for egg in self._collection.get_eggs()
         ]
         self._hatch_slot_count = self._collection.unlocked_hatch_slots_count
         self._hatch_egg_bridges: list[EggModelBridge | None] = [None] * self._hatch_slot_count
         for egg in self._collection.eggs:
             if egg.is_equipped and 0 <= egg.equip_slot < self._hatch_slot_count:
-                self._hatch_egg_bridges[egg.equip_slot] = EggModelBridge(egg, parent=self)
+                self._hatch_egg_bridges[egg.equip_slot] = EggModelBridge(
+                    egg,
+                    self._player,
+                    parent=self,
+                    language=self._ui_language,
+                )
 
         self._pet_rarity_counts = count_rarities(
             self._collection.get_pets(),
@@ -64,6 +70,21 @@ class PetCollectionBridge(QObject):
 
     def refresh(self) -> None:
         self._refresh_bridges()
+        self.changed.emit()
+
+    @Slot(str)
+    def setUiLanguage(self, language: str) -> None:
+        self.set_ui_language(language)
+
+    def set_ui_language(self, language: str) -> None:
+        if language == self._ui_language:
+            return
+        self._ui_language = language
+        for bridge in self._egg_bridges:
+            bridge.set_ui_language(language)
+        for bridge in self._hatch_egg_bridges:
+            if bridge is not None:
+                bridge.set_ui_language(language)
         self.changed.emit()
 
     @Property(int, notify=changed)

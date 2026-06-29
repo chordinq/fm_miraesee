@@ -1,0 +1,15 @@
+{
+  "declarations_old": 10953,
+  "declarations_new": 10953,
+  "qnames_added": 0,
+  "qnames_removed": 0,
+  "game_qnames_added": [],
+  "game_qnames_removed": [],
+  "typedef_index_changes_count": 0,
+  "typedef_index_changes_game_sample": [],
+  "inheritance_changes": [],
+  "priority_method_diffs": {},
+  "config_entries_identical": true,
+  "config_member_diff_classes": [],
+  "old_dump_artifact_line": 597666
+}

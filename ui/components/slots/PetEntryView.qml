@@ -14,8 +14,11 @@ Item {
 	readonly property real equippedOpacityFraction: 5 / 16
 	readonly property real equippedVisualWidthRatio: 1.2
 	readonly property real equippedScaleHorizontal: 2.5
-	readonly property real levelOffsetRatio: 0.09
-	readonly property real levelPixelSizeRatio: 5 / 16
+	readonly property real levelOffsetRatio:
+		root.ascensionLevel > 0 ? 0.29 : -0.1
+	readonly property real levelPixelSizeRatio: 0.32
+	readonly property real ascensionStarSizeRatio: 0.27
+	readonly property real ascensionStarOffsetRatio: -0.06
 
 	implicitWidth: iconSize
 	implicitHeight: iconSize
@@ -36,10 +39,19 @@ Item {
 		width: iconSize * root.equippedVisualWidthRatio
 	}
 
+	AscensionStarView {
+		visible: root.ascensionLevel >= 1
+		ascensionLevel: root.ascensionLevel
+		starSize: iconSize * root.ascensionStarSizeRatio
+		anchors.horizontalCenter: icon.horizontalCenter
+		anchors.verticalCenter: icon.bottom
+		anchors.verticalCenterOffset: icon.height * root.ascensionStarOffsetRatio
+	}
+
 	LevelText {
 		anchors.horizontalCenter: icon.horizontalCenter
 		anchors.verticalCenter: icon.bottom
-		anchors.verticalCenterOffset: icon.height * root.levelOffsetRatio
+		anchors.verticalCenterOffset: -icon.height * root.levelOffsetRatio
 		level: (root.petModel?.level ?? -1) + 1
 		visible: root.index >= 0
 		pixelSize: iconSize * root.levelPixelSizeRatio

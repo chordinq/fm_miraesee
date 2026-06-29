@@ -4,11 +4,11 @@ import ui 1.0
 Item {
 	id: root
 
-	property var gameSession: null
+	property var sessionBridge: null
 
 	readonly property real topMargin: Math.max(8, width * 0.02)
 	readonly property real topBarHeight: Math.max(32, height * 0.08)
-	readonly property url techPotionIcon: Qt.resolvedUrl("../../assets/sprites/Currency/techPotions.png")
+	readonly property url techPotionIcon: Qt.resolvedUrl("../../../assets/sprites/Currency/techPotions.png")
 
 	Rectangle {
 		anchors.fill: parent
@@ -24,7 +24,7 @@ Item {
 		anchors.topMargin: root.topMargin
 		height: root.topBarHeight
 		primaryCurrencyIcon: root.techPotionIcon
-		primaryCurrencyAmount: root.gameSession ? root.gameSession.techPotionCount : 0
+		primaryCurrencyAmount: root.sessionBridge ? root.sessionBridge.techPotionCount : 0
 		rarityCounts: []
 	}
 }

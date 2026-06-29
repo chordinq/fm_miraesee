@@ -11,6 +11,7 @@ from core.game_logic.game_logic import GameLogic
 from core.game_logic.player.player_currency_model import can_afford
 from core.game_logic.player.player_pet_collection_model import PlayerEggModel
 from ui.utils.egg_hatch_preview import build_egg_hatch_preview, format_hatch_duration
+from ui.utils.number_display_format import format_ui_integer
 from controllers.collections.pet_collection_bridge import PetCollectionBridge
 from controllers.common.timer_bar_bridge import TimerBarBridge
 
@@ -206,6 +207,30 @@ class PetEggTestBridge(QObject):
     @Property(bool, notify=stateChanged)
     def hatchButtonEnabled(self) -> bool:
         return self.canStartHatch or self.canCompleteHatch
+
+    @Property(bool, notify=stateChanged)
+    def gemSkipVisible(self) -> bool:
+        egg = self._selected_egg()
+        if egg is None or not egg.is_equipped or egg.timer is None:
+            return False
+        if egg.timer.end_time <= egg.timer.start_time:
+            return False
+        return not egg.timer.has_ended(self._logic.player)
+
+    @Property(str, notify=stateChanged)
+    def skipGemCostText(self) -> str:
+        egg = self._selected_egg()
+        if egg is None or egg.timer is None:
+            return ""
+        if egg.timer.end_time <= egg.timer.start_time:
+            return ""
+        if egg.timer.has_ended(self._logic.player):
+            return ""
+        gem_cost = egg.timer.calculate_gem_skip_cost(
+            self._logic.player,
+            GemSkipTarget.PetEgg,
+        )
+        return format_ui_integer(gem_cost)
 
     @Property(bool, notify=stateChanged)
     def selectedEggHatching(self) -> bool:

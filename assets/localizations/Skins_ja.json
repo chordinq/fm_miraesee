@@ -246,7 +246,7 @@
     },
     {
       "m_Id": 29350092774301702,
-      "m_Localized": "おじいちゃんの頭",
+      "m_Localized": "おじいちゃんの髪",
       "m_Metadata": {
         "m_Items": []
       }
@@ -667,6 +667,202 @@
     {
       "m_Id": 54955948945432576,
       "m_Localized": "キノコキャップ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106623004672,
+      "m_Localized": "アヌビスセット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639488,
+      "m_Localized": "ボクサーセット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639489,
+      "m_Localized": "シャドウセット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639490,
+      "m_Localized": "キューブガイセット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639491,
+      "m_Localized": "ラバマンセット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639492,
+      "m_Localized": "シェフセット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639493,
+      "m_Localized": "ジャッカルの仮面",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639494,
+      "m_Localized": "アヌビスの鎧",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639495,
+      "m_Localized": "アヌビスの笏",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639496,
+      "m_Localized": "ボクシングヘッドギア",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639497,
+      "m_Localized": "ボクシングショーツ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639498,
+      "m_Localized": "ボクシンググローブ",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639499,
+      "m_Localized": "シャドウヘルメット",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639500,
+      "m_Localized": "シャドウアーマー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639501,
+      "m_Localized": "ソウルリーパー",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639502,
+      "m_Localized": "ブロックヘッド",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639503,
+      "m_Localized": "ピクセルプレート",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639504,
+      "m_Localized": "ボクセルブレード",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639505,
+      "m_Localized": "マグマの王冠",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639506,
+      "m_Localized": "溶けた皮膚",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639507,
+      "m_Localized": "マグマの拳",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639508,
+      "m_Localized": "コック帽",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639509,
+      "m_Localized": "シェフのエプロン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639510,
+      "m_Localized": "肉切り包丁",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639511,
+      "m_Localized": "目出し帽",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639512,
+      "m_Localized": "スマイリーフェイス",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639513,
+      "m_Localized": "モヒカン",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639514,
+      "m_Localized": "ゾンビマスク",
       "m_Metadata": {
         "m_Items": []
       }

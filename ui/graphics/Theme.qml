@@ -132,4 +132,21 @@ QtObject {
 		ultimateRed,
 		mythicPurple
 	]
+
+	function lerpColor(c1: color, c2: color, t: real): color {
+		var f = Math.max(0, Math.min(1, t))
+		return Qt.rgba(
+			c1.r + (c2.r - c1.r) * f,
+			c1.g + (c2.g - c1.g) * f,
+			c1.b + (c2.b - c1.b) * f,
+			c1.a + (c2.a - c1.a) * f
+		)
+	}
+
+	function statRollColor(rollT: real): color {
+		var t = Math.max(0, Math.min(1, rollT))
+		if (t <= 0.5)
+			return lerpColor(red, yellowText, t * 2)
+		return lerpColor(yellowText, greenText, (t - 0.5) * 2)
+	}
 }

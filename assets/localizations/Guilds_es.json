@@ -277,22 +277,8 @@
       }
     },
     {
-      "m_Id": 2991700380213248,
-      "m_Localized": "Ascender/degradar hasta Comandante. Hacer anuncios. Aprobar solicitudes. Cambiar configuraciones de unión. Eliminar jugadores.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
-      "m_Id": 2991983734808576,
-      "m_Localized": "Ascender/degradar hasta Capitán. Hacer anuncios. Aprobar solicitudes. Cambiar configuraciones de unión. Eliminar jugadores.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
       "m_Id": 2992061497204736,
-      "m_Localized": "Ascender/degradar hasta R1. Hacer anuncios. Aprobar solicitudes.",
+      "m_Localized": "Ascender/degradar hasta R1. Hacer anuncios. Escribir en Líderes del clan. Aprobar solicitudes.",
       "m_Metadata": {
         "m_Items": []
       }
@@ -418,14 +404,14 @@
     },
     {
       "m_Id": 4548011723055104,
-      "m_Localized": "Salir de la guild",
+      "m_Localized": "Salir del clan",
       "m_Metadata": {
         "m_Items": []
       }
     },
     {
       "m_Id": 4548662943277056,
-      "m_Localized": "¡Debes transferir el liderazgo de la guild antes de poder salir!",
+      "m_Localized": "¡Debes transferir el liderazgo del clan antes de poder salir!",
       "m_Metadata": {
         "m_Items": []
       }
@@ -481,7 +467,7 @@
     },
     {
       "m_Id": 9141308802195456,
-      "m_Localized": "Descartar",
+      "m_Localized": "Rechazar",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1109,6 +1095,20 @@
     {
       "m_Id": 124445730247008256,
       "m_Localized": "{0} ha sido {1} a {2} por {3}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340544,
+      "m_Localized": "Ascender/degradar hasta Comandante. Hacer anuncios. Escribir en Líderes del clan. Aprobar solicitudes. Cambiar configuraciones de unión. Eliminar jugadores.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340545,
+      "m_Localized": "Ascender/degradar hasta Capitán. Hacer anuncios. Escribir en Líderes del clan. Aprobar solicitudes. Cambiar configuraciones de unión. Eliminar jugadores.",
       "m_Metadata": {
         "m_Items": []
       }

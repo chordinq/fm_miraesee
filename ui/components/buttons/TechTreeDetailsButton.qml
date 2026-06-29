@@ -10,6 +10,8 @@ Item {
 	property string bottomText: ""
 	property string skipLocId: "27999994002468864"
 	property string skipLocTable: "General"
+	property string claimLocId: "27937469076533248"
+	property string claimLocTable: "General"
 	property url topIconSource: Qt.resolvedUrl("../../../assets/sprites/General/Icons.png")
 	property int topIconIndex: 29
 	property url bottomIconSource: Qt.resolvedUrl("../../../assets/sprites/Currency/techPotions.png")
@@ -25,6 +27,7 @@ Item {
 	readonly property real bakedHeight: baseSize * scaleH
 	readonly property bool isUpgradeMode: root.mode === "upgrade"
 	readonly property bool isSkipMode: root.mode === "skip"
+	readonly property bool isClaimMode: root.mode === "claim"
 	readonly property real rowIconScale: 25 / 64
 	readonly property real topFontScale: 10 / 32
 	readonly property real bottomFontScale: 11 / 32
@@ -97,11 +100,23 @@ Item {
 			outlineWeight: 8
 		}
 
+		AppText {
+			anchors.centerIn: parent
+			visible: root.isClaimMode
+			locId: root.claimLocId
+			locTable: root.claimLocTable
+			pixelSize: canvas.height * root.topFontScale
+			fillColor: Theme.white
+			outlineColor: Theme.black
+			outlineWeight: 8
+		}
+
 		RowLayout {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.verticalCenter: parent.verticalCenter
 			anchors.verticalCenterOffset: canvas.height * 0.14
 			spacing: canvas.height * 0.04
+			visible: !root.isClaimMode
 
 			Item {
 				width: canvas.height * root.rowIconScale

@@ -1,0 +1,863 @@
+{
+  "AndroidNativeRateUs": {
+    "SegmentId": "AndroidNativeRateUs",
+    "Description": "For rating use the android native popup instead of redirecting to the store. This is here temporarliy because we need to be able to switch it on and off until android fixes it",
+    "DisplayName": "Android Native Popup (temporary)",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 16
+          },
+          "2": {
+            "1": -1,
+            "$type": 5
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "IdleCash": {
+    "SegmentId": "IdleCash",
+    "Description": "Can earn idle currency",
+    "DisplayName": "Idle Cash",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 0,
+              "3": 8,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "Shop": {
+    "SegmentId": "Shop",
+    "Description": "Player can buy IAPs and resources",
+    "DisplayName": "Ingame-Shop",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "StarterPackage": {
+    "SegmentId": "StarterPackage",
+    "Description": "Player gets starter offers",
+    "DisplayName": "Starter Packages",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "AutoForge": {
+    "SegmentId": "AutoForge",
+    "Description": "Auto Forge unlocked",
+    "DisplayName": "Auto Forge",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 9,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "Dungeons": {
+    "SegmentId": "Dungeons",
+    "Description": "Dungeons tab is unlocked",
+    "DisplayName": "Dungeons Feature unlocked",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 9,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "HammerDungeon": {
+    "SegmentId": "HammerDungeon",
+    "Description": "Hammer Dungeon unlocked",
+    "DisplayName": "Hammer Dungeon",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 9,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "SkillCollection": {
+    "SegmentId": "SkillCollection",
+    "Description": "Skill collection unlocked",
+    "DisplayName": "Skills",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 14,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "SkillSlot0": {
+    "SegmentId": "SkillSlot0",
+    "Description": "First skill slot",
+    "DisplayName": "First skill slot",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 14,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "SkillDungeon": {
+    "SegmentId": "SkillDungeon",
+    "Description": "Dungeon that gives skills currency",
+    "DisplayName": "Skill Ticket Dungeon ",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 14,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "Pets": {
+    "SegmentId": "Pets",
+    "Description": "pets tab",
+    "DisplayName": "Pets",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 2,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "PetSlot0": {
+    "SegmentId": "PetSlot0",
+    "Description": "First pet slot",
+    "DisplayName": "First pet slot",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 2,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "PetDungeon": {
+    "SegmentId": "PetDungeon",
+    "Description": "Dungeon that gives pet currency",
+    "DisplayName": "Eggshells Dungeon",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 2,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "Chat": {
+    "SegmentId": "Chat",
+    "Description": "Chat is now unlocked",
+    "DisplayName": "Chat",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 2,
+              "3": 9,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "Arena": {
+    "SegmentId": "Arena",
+    "Description": "Players compete in leagues",
+    "DisplayName": "Arena",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 2,
+              "3": 9,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "SkillSlot1": {
+    "SegmentId": "SkillSlot1",
+    "Description": "Second Skill Slot unlocked",
+    "DisplayName": "Second Skill Slot",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 3,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "TechTree": {
+    "SegmentId": "TechTree",
+    "Description": "Tech tree is now unlocked",
+    "DisplayName": "Tech Tree",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 3,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "PotionDungeon": {
+    "SegmentId": "PotionDungeon",
+    "Description": "Dungeon that gives tech tree currency",
+    "DisplayName": "Tech Potions Dungeon",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 3,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "PetSlot1": {
+    "SegmentId": "PetSlot1",
+    "Description": "Second Pet Slot is unlocked",
+    "DisplayName": "Second Pet Slot",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 3,
+              "3": 9,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "Guilds": {
+    "SegmentId": "Guilds",
+    "Description": "Guilds feature now unlocked",
+    "DisplayName": "Guilds",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 3,
+              "3": 14,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "SkillSlot2": {
+    "SegmentId": "SkillSlot2",
+    "Description": "Third Skill Slot now unlocked",
+    "DisplayName": "Third Skill Slot",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 4,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "AutoHammer1": {
+    "SegmentId": "AutoHammer1",
+    "Description": "Second Free Auto Hammer now unlocked",
+    "DisplayName": "First Free Auto Hammer",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 4,
+              "3": 14,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "PetSlot2": {
+    "SegmentId": "PetSlot2",
+    "Description": "Third Pet Slot now unlocked",
+    "DisplayName": "Third Pet Slot",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 5,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "AutoHammer2": {
+    "SegmentId": "AutoHammer2",
+    "Description": "Third Free Auto Hammer now unlocked",
+    "DisplayName": "Second Free Auto Hammer",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 6,
+              "3": 14,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "SwitchWorlds": {
+    "SegmentId": "SwitchWorlds",
+    "Description": "The player is allowed to change his current server",
+    "DisplayName": "Switch Worlds",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": null,
+          "3": {
+            "1": {
+              "1": 0,
+              "2": 1,
+              "3": 0,
+              "$type": 1
+            },
+            "$type": 7
+          }
+        },
+        {
+          "1": {
+            "$type": 22
+          },
+          "2": null,
+          "3": {
+            "1": {
+              "1": 3600000
+            },
+            "$type": 4
+          }
+        },
+        {
+          "1": {
+            "$type": 24
+          },
+          "2": null,
+          "3": {
+            "1": 0,
+            "$type": 1
+          }
+        },
+        {
+          "1": {
+            "$type": 14
+          },
+          "2": {
+            "1": 0,
+            "$type": 5
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "SteppingStones": {
+    "SegmentId": "SteppingStones",
+    "Description": "Determines if player has unlocked Stepping Stones event",
+    "DisplayName": "Stepping Stones Unlocked",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 2
+          },
+          "2": {
+            "1": {
+              "1": 0,
+              "2": 5,
+              "3": 14,
+              "$type": 1
+            },
+            "$type": 7
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "ForgeAscension": {
+    "SegmentId": "ForgeAscension",
+    "Description": "Determines if the player can ascend his forge",
+    "DisplayName": "Can Ascend Forge",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 3
+          },
+          "2": {
+            "1": -1,
+            "$type": 5
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "MountsAscension": {
+    "SegmentId": "MountsAscension",
+    "Description": "Determines if the player can ascend his mounts",
+    "DisplayName": "Can Ascend Mounts",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 9
+          },
+          "2": {
+            "1": -1,
+            "$type": 5
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "SkillsAscension": {
+    "SegmentId": "SkillsAscension",
+    "Description": "Determines if the player can ascend his skills",
+    "DisplayName": "Can Ascend Skills",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 8
+          },
+          "2": {
+            "1": -1,
+            "$type": 5
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "PetsAscension": {
+    "SegmentId": "PetsAscension",
+    "Description": "Determines if the player can ascend his pets",
+    "DisplayName": "Can Ascend Pets",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 10
+          },
+          "2": {
+            "1": -1,
+            "$type": 5
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "AutoForgeStack": {
+    "SegmentId": "AutoForgeStack",
+    "Description": "Auto forge stays active after finding an item and adds to a stack",
+    "DisplayName": "Auto Forge Stack",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 11
+          },
+          "2": {
+            "1": 19,
+            "$type": 1
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  },
+  "GuildMissions": {
+    "SegmentId": "GuildMissions",
+    "Description": "Players can participate and start missions within their clan",
+    "DisplayName": "Guild missions are available",
+    "PlayerCondition": {
+      "1": [
+        {
+          "1": {
+            "$type": 16
+          },
+          "2": {
+            "1": 0,
+            "$type": 5
+          },
+          "3": null
+        }
+      ],
+      "2": [],
+      "3": [],
+      "$type": 1000
+    }
+  }
+}

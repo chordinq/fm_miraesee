@@ -12,7 +12,7 @@ from core.game_logic.stats.stat_helper import StatHelper
 from controllers.collections.mount_collection_bridge import MountCollectionBridge
 from controllers.support.summon_overdraft import can_afford_summon_for_ui, execute_mount_summon
 from ui.utils.summon_result_entries import build_mount_summon_results
-from ui.utils.ui_settings import register_display_refresh
+from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
 
 
 def _mount_key_from_model(mount) -> str:
@@ -50,6 +50,7 @@ class MountSummonTestBridge(QObject):
         self._sync_status()
         self._refresh_prediction()
         register_display_refresh(self._on_ui_settings_changed)
+        register_economy_refresh(self._on_ui_settings_changed)
 
     def _on_ui_settings_changed(self) -> None:
         self.stateChanged.emit()

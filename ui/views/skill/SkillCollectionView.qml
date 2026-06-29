@@ -43,7 +43,7 @@ Item {
 
 		z: 10
 		visible: root.detailsOpen && root.selectedSkillModel !== null
-		anchors.centerIn: parent
+		anchors.fill: parent
 		skillModel: root.selectedSkillModel
 		skillController: root.skillController
 		ascensionLevel: skillGrid.ascensionLevel

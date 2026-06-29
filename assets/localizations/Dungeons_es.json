@@ -71,7 +71,7 @@
     },
     {
       "m_Id": 20628877046640640,
-      "m_Localized": "Barrido",
+      "m_Localized": "Auto-completar nivel",
       "m_Metadata": {
         "m_Items": []
       }
@@ -121,6 +121,13 @@
     {
       "m_Id": 25636250063986688,
       "m_Localized": "¡Tus llaves de mazmorra diarias han sido repuestas!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 128946326828212224,
+      "m_Localized": "Auto-completar el anterior nivel",
       "m_Metadata": {
         "m_Items": []
       }

@@ -102,7 +102,7 @@ Item {
 
 		z: 10
 		visible: root.petDetailsOpen && root.selectedPetModel !== null
-		anchors.centerIn: parent
+		anchors.fill: parent
 		petModel: root.selectedPetModel
 		petController: root.petController
 		ascensionLevel: petGrid.ascensionLevel
@@ -118,7 +118,7 @@ Item {
 
 		z: 11
 		visible: root.eggDetailsOpen && root.selectedEggModel !== null
-		anchors.centerIn: parent
+		anchors.fill: parent
 		eggModel: root.selectedEggModel
 		eggController: root.eggController
 		ascensionLevel: petGrid.ascensionLevel

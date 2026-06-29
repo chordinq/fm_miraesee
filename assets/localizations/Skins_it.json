@@ -246,7 +246,7 @@
     },
     {
       "m_Id": 29350092774301702,
-      "m_Localized": "Testa del Nonno",
+      "m_Localized": "Capelli da nonno",
       "m_Metadata": {
         "m_Items": []
       }
@@ -667,6 +667,202 @@
     {
       "m_Id": 54955948945432576,
       "m_Localized": "Cappello Fungo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106623004672,
+      "m_Localized": "Set di Anubi",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639488,
+      "m_Localized": "Set Pugile",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639489,
+      "m_Localized": "Set dell'ombra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639490,
+      "m_Localized": "Set Uomo Cubo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639491,
+      "m_Localized": "Set Uomo di Lava",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639492,
+      "m_Localized": "Set Chef",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639493,
+      "m_Localized": "Maschera da sciacallo",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639494,
+      "m_Localized": "Armatura di Anubis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639495,
+      "m_Localized": "Scettro di Anubis",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639496,
+      "m_Localized": "Caschetto da boxe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639497,
+      "m_Localized": "Pantaloncini da boxe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639498,
+      "m_Localized": "Guantoni da boxe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639499,
+      "m_Localized": "Elmo dell'ombra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639500,
+      "m_Localized": "Armatura dell'ombra",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639501,
+      "m_Localized": "Mietitore di anime",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639502,
+      "m_Localized": "Testa di blocco",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639503,
+      "m_Localized": "Corazza a pixel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639504,
+      "m_Localized": "Lama voxel",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639505,
+      "m_Localized": "Corona di magma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639506,
+      "m_Localized": "Pelle fusa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639507,
+      "m_Localized": "Pugni di magma",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639508,
+      "m_Localized": "Cappello da chef",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639509,
+      "m_Localized": "Grembiule da chef",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639510,
+      "m_Localized": "Mannaia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639511,
+      "m_Localized": "Passamontagna",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639512,
+      "m_Localized": "Faccina sorridente",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639513,
+      "m_Localized": "Cresta mohawk",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639514,
+      "m_Localized": "Maschera da zombie",
       "m_Metadata": {
         "m_Items": []
       }

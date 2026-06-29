@@ -246,7 +246,7 @@
     },
     {
       "m_Id": 29350092774301702,
-      "m_Localized": "Opa Kopf",
+      "m_Localized": "Opa-Haar",
       "m_Metadata": {
         "m_Items": []
       }
@@ -667,6 +667,202 @@
     {
       "m_Id": 54955948945432576,
       "m_Localized": "Pilzkappe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106623004672,
+      "m_Localized": "Anubis-Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639488,
+      "m_Localized": "Boxer-Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639489,
+      "m_Localized": "Schatten-Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639490,
+      "m_Localized": "Würfelmann-Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639491,
+      "m_Localized": "Lavamann-Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639492,
+      "m_Localized": "Koch-Set",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639493,
+      "m_Localized": "Schakalmaske",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639494,
+      "m_Localized": "Anubis-Rüstung",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639495,
+      "m_Localized": "Anubis-Zepter",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639496,
+      "m_Localized": "Box-Kopfschutz",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639497,
+      "m_Localized": "Boxshorts",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639498,
+      "m_Localized": "Boxhandschuhe",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639499,
+      "m_Localized": "Schattenhelm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639500,
+      "m_Localized": "Schattenrüstung",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639501,
+      "m_Localized": "Seelenernter",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639502,
+      "m_Localized": "Klotzkopf",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639503,
+      "m_Localized": "Pixelpanzerung",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639504,
+      "m_Localized": "Voxelklinge",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639505,
+      "m_Localized": "Magmakrone",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639506,
+      "m_Localized": "Geschmolzene Haut",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639507,
+      "m_Localized": "Magmafäuste",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639508,
+      "m_Localized": "Kochmütze",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639509,
+      "m_Localized": "Kochschürze",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639510,
+      "m_Localized": "Hackbeil",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639511,
+      "m_Localized": "Sturmhaube",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639512,
+      "m_Localized": "Smiley-Gesicht",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639513,
+      "m_Localized": "Irokesenschnitt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 72367106744639514,
+      "m_Localized": "Zombie-Maske",
       "m_Metadata": {
         "m_Items": []
       }

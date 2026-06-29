@@ -6,8 +6,13 @@ Item {
 
 	property string treeType: "forge"
 	property real progress: 0
+	property bool researchActive: false
+	property bool researchComplete: false
+	property string researchRemainingText: ""
 
 	signal clicked()
+
+	readonly property string completeLocId: "27937469076533248"
 
 	property real scaleW: 12
 	property real scaleH: 10
@@ -132,15 +137,40 @@ Item {
 			mipmap: true
 		}
 
-		AppText {
+		Row {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: parent.bottom
 			anchors.bottomMargin: bodyArea.height * 0.05
-			text: root.progressText
-			pixelSize: bodyArea.height * root.progressFontScale
-			letterSpacing: 0
-			fillColor: Theme.white
-			outlineWeight: 8
+			spacing: 0
+
+			AppText {
+				text: root.progressText
+				pixelSize: bodyArea.height * root.progressFontScale
+				letterSpacing: 0
+				fillColor: Theme.white
+				outlineWeight: 8
+			}
+
+			AppText {
+				visible: root.researchComplete
+				locId: root.completeLocId
+				locTable: "General"
+				prefix: " ("
+				suffix: ")"
+				pixelSize: bodyArea.height * root.progressFontScale
+				letterSpacing: 0
+				fillColor: Theme.green
+				outlineWeight: 8
+			}
+
+			AppText {
+				visible: root.researchActive && !root.researchComplete
+				text: " (" + root.researchRemainingText + ")"
+				pixelSize: bodyArea.height * root.progressFontScale
+				letterSpacing: 0
+				fillColor: Theme.green
+				outlineWeight: 8
+			}
 		}
 	}
 

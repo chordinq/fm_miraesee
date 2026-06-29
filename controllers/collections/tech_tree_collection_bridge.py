@@ -58,6 +58,7 @@ class TechTreeNodeBridge(QObject):
         skip_gem_cost: int,
         skip_gem_cost_text: str,
         can_afford_skip: bool,
+        ui_language: str = "en",
         parent: QObject | None = None,
     ) -> None:
         super().__init__(parent)
@@ -92,6 +93,7 @@ class TechTreeNodeBridge(QObject):
         self._skip_gem_cost = skip_gem_cost
         self._skip_gem_cost_text = skip_gem_cost_text
         self._can_afford_skip = can_afford_skip
+        self._ui_language = ui_language
         self._timer_bar = TimerBarBridge(parent=self)
         self._bind_timer()
 
@@ -128,6 +130,7 @@ class TechTreeNodeBridge(QObject):
         skip_gem_cost: int,
         skip_gem_cost_text: str,
         can_afford_skip: bool,
+        ui_language: str = "en",
     ) -> None:
         self._player = player
         self._node_type = node_type
@@ -160,6 +163,7 @@ class TechTreeNodeBridge(QObject):
         self._skip_gem_cost = skip_gem_cost
         self._skip_gem_cost_text = skip_gem_cost_text
         self._can_afford_skip = can_afford_skip
+        self._ui_language = ui_language
         self._bind_timer()
         self.changed.emit()
 
@@ -170,10 +174,10 @@ class TechTreeNodeBridge(QObject):
             self._timer_bar.clear()
             return
         timer = node_model.node_upgrade_timer_model
-        if timer.end_time <= timer.start_time:
+        if timer.start_time <= 0:
             self._timer_bar.clear()
             return
-        self._timer_bar.bind(timer, self._player)
+        self._timer_bar.bind(timer, self._player, language=self._ui_language)
 
     @Property(int, notify=changed)
     def nodeType(self) -> int:
@@ -313,6 +317,9 @@ class TechTreeCollectionBridge(QObject):
         super().__init__(parent)
         self._player = player
         self._tree_type = tree_type
+        self._ui_language = "en"
+        self._category_timer_bar = TimerBarBridge(parent=self)
+        self._category_timer_bar.displayChanged.connect(self.changed.emit)
         self._refresh()
 
     def reload(self, player: PlayerModel) -> None:
@@ -363,18 +370,26 @@ class TechTreeCollectionBridge(QObject):
         return (index + 0.5) / count
 
     @staticmethod
-    def _timer_active(player: PlayerModel, node_model: TechTreeNodeModel | None) -> bool:
+    def _timer_is_running(player: PlayerModel, node_model: TechTreeNodeModel | None) -> bool:
         if node_model is None:
             return False
         timer = node_model.node_upgrade_timer_model
-        return timer.end_time > timer.start_time and not timer.has_ended(player)
+        return timer.start_time > 0 and not timer.has_ended(player)
+
+    @staticmethod
+    def _timer_is_claimable(player: PlayerModel, node_model: TechTreeNodeModel | None) -> bool:
+        if node_model is None:
+            return False
+        timer = node_model.node_upgrade_timer_model
+        return timer.start_time > 0 and timer.has_ended(player)
+
+    @staticmethod
+    def _timer_active(player: PlayerModel, node_model: TechTreeNodeModel | None) -> bool:
+        return TechTreeCollectionBridge._timer_is_running(player, node_model)
 
     @staticmethod
     def _timer_complete(player: PlayerModel, node_model: TechTreeNodeModel | None) -> bool:
-        if node_model is None:
-            return False
-        timer = node_model.node_upgrade_timer_model
-        return timer.end_time > timer.start_time and timer.has_ended(player)
+        return TechTreeCollectionBridge._timer_is_claimable(player, node_model)
 
     def _other_research_in_progress(
         self,
@@ -387,7 +402,7 @@ class TechTreeCollectionBridge(QObject):
                 if active_tree_type == tree_type and active_node_id == node_id:
                     continue
                 timer = node_model.node_upgrade_timer_model
-                if timer.end_time > timer.start_time and not timer.has_ended(self._player):
+                if timer.start_time > 0 and not timer.has_ended(self._player):
                     return True
         return False
 
@@ -441,7 +456,10 @@ class TechTreeCollectionBridge(QObject):
             if upgrade_info is not None:
                 upgrade_cost, duration_seconds = upgrade_info
                 upgrade_cost_text = format_ui_integer(upgrade_cost)
-                upgrade_duration_text = format_upgrade_duration(duration_seconds)
+                upgrade_duration_text = format_upgrade_duration(
+                    duration_seconds,
+                    self._ui_language,
+                )
 
         if node_model is not None and (is_upgrading or is_upgrade_complete):
             skip_gem_cost = node_model.node_upgrade_timer_model.calculate_gem_skip_cost(
@@ -493,7 +511,7 @@ class TechTreeCollectionBridge(QObject):
         if node_model is None:
             return False
         timer = node_model.node_upgrade_timer_model
-        if timer.end_time <= timer.start_time or not timer.has_ended(self._player):
+        if timer.start_time <= 0 or not timer.has_ended(self._player):
             return False
 
         techtree = self._player.player_techtree_model
@@ -519,8 +537,26 @@ class TechTreeCollectionBridge(QObject):
             self.statsChanged.emit()
         return claimed_any
 
+    def _find_category_research_node(self) -> TechTreeNodeModel | None:
+        techtree = self._player.player_techtree_model
+        for node_model in techtree.tech_trees.get(self._tree_type, {}).values():
+            timer = node_model.node_upgrade_timer_model
+            if timer.start_time > 0:
+                return node_model
+        return None
+
+    def _sync_category_timer(self) -> None:
+        node_model = self._find_category_research_node()
+        if node_model is None:
+            self._category_timer_bar.clear()
+            return
+        self._category_timer_bar.bind(
+            node_model.node_upgrade_timer_model,
+            self._player,
+            language=self._ui_language,
+        )
+
     def _refresh(self) -> None:
-        self._claim_all_finished_nodes()
         position_library = self._player.game_config.tech_tree_position_library
         tree_data = position_library.get(self._tree_type)
         techtree = self._player.player_techtree_model
@@ -606,6 +642,7 @@ class TechTreeCollectionBridge(QObject):
                             desc_loc_id=desc_loc_id,
                             desc_loc_table=desc_loc_table,
                             desc_format_args=desc_format_args,
+                            ui_language=self._ui_language,
                             **detail_fields,
                         )
                     else:
@@ -629,6 +666,7 @@ class TechTreeCollectionBridge(QObject):
                             desc_loc_id=desc_loc_id,
                             desc_loc_table=desc_loc_table,
                             desc_format_args=desc_format_args,
+                            ui_language=self._ui_language,
                             **detail_fields,
                             parent=self,
                         )
@@ -657,6 +695,7 @@ class TechTreeCollectionBridge(QObject):
         self._node_count = len(nodes)
         self._progress = techtree.get_tech_tree_progress(self._player, self._tree_type)
         self._layer_rows = layer_rows
+        self._sync_category_timer()
 
     def _ensure_node(self, node_id: int) -> TechTreeNodeModel:
         techtree = self._player.player_techtree_model
@@ -696,6 +735,10 @@ class TechTreeCollectionBridge(QObject):
             return
 
         node_model = self._ensure_node(node_id)
+        timer = node_model.node_upgrade_timer_model
+        if timer.start_time > 0:
+            return
+
         tier = int(node_info.get("Tier", 0))
         internal_level = max(0, node_model.level)
         try:
@@ -731,6 +774,7 @@ class TechTreeCollectionBridge(QObject):
             duration=float(duration),
         )
         self.refresh()
+        self.statsChanged.emit()
 
     @Slot(int)
     def performGemSkip(self, node_id: int) -> None:
@@ -738,7 +782,7 @@ class TechTreeCollectionBridge(QObject):
         if node_model is None:
             return
         timer = node_model.node_upgrade_timer_model
-        if timer.end_time <= timer.start_time or timer.has_ended(self._player):
+        if timer.start_time <= 0 or timer.has_ended(self._player):
             return
 
         gem_cost = timer.calculate_gem_skip_cost(self._player, GemSkipTarget.TechTree)
@@ -752,6 +796,7 @@ class TechTreeCollectionBridge(QObject):
 
         timer.skip_to_end(self._player)
         self.refresh()
+        self.statsChanged.emit()
 
     @Slot(int)
     def performUpgradeClaim(self, node_id: int) -> None:
@@ -760,6 +805,21 @@ class TechTreeCollectionBridge(QObject):
             self.statsChanged.emit()
         self.refresh()
 
+    @Slot()
+    def tick(self) -> None:
+        self._category_timer_bar.refresh()
+
+    @Slot(str)
+    def setUiLanguage(self, language: str) -> None:
+        if language == self._ui_language:
+            return
+        self._ui_language = language
+        self._category_timer_bar.set_ui_language(language)
+        for bridge in getattr(self, "_nodes", []):
+            bridge._ui_language = language
+            bridge._timer_bar.set_ui_language(language)
+        self.changed.emit()
+
     @Property(int, notify=changed)
     def treeType(self) -> int:
         return int(self._tree_type.value)
@@ -767,6 +827,21 @@ class TechTreeCollectionBridge(QObject):
     @Property(float, notify=changed)
     def progress(self) -> float:
         return self._progress
+
+    @Property(bool, notify=changed)
+    def categoryResearchActive(self) -> bool:
+        return (
+            self._category_timer_bar.isActive
+            and not self._category_timer_bar.isComplete
+        )
+
+    @Property(bool, notify=changed)
+    def categoryResearchComplete(self) -> bool:
+        return self._category_timer_bar.isComplete
+
+    @Property(str, notify=changed)
+    def categoryResearchRemainingText(self) -> str:
+        return self._category_timer_bar.remainingText
 
     @Property(int, notify=changed)
     def maxLayer(self) -> int:

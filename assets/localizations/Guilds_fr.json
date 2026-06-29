@@ -277,22 +277,8 @@
       }
     },
     {
-      "m_Id": 2991700380213248,
-      "m_Localized": "Promouvoir/rétrograder jusqu'à Commandant. Faire des annonces. Approuver les demandes. Modifier les paramètres de join. Supprimer des joueurs.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
-      "m_Id": 2991983734808576,
-      "m_Localized": "Promouvoir/rétrograder jusqu'à Capitaine. Faire des annonces. Approuver les demandes. Modifier les paramètres de join. Supprimer des joueurs.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
       "m_Id": 2992061497204736,
-      "m_Localized": "Promouvoir/rétrograder jusqu'à R1. Faire des annonces. Approuver les demandes.",
+      "m_Localized": "Promouvoir/rétrograder jusqu'à R1. Faire des annonces. Écrire dans Chefs de clan. Approuver les demandes.",
       "m_Metadata": {
         "m_Items": []
       }
@@ -418,14 +404,14 @@
     },
     {
       "m_Id": 4548011723055104,
-      "m_Localized": "Quitter la guilde",
+      "m_Localized": "Quitter le clan",
       "m_Metadata": {
         "m_Items": []
       }
     },
     {
       "m_Id": 4548662943277056,
-      "m_Localized": "Vous devez transférer la direction de la guilde avant de pouvoir partir !",
+      "m_Localized": "Vous devez transférer la direction du clan avant de pouvoir le quitter!",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1109,6 +1095,20 @@
     {
       "m_Id": 124445730247008256,
       "m_Localized": "{0} a été {1} à {2} par {3} !",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340544,
+      "m_Localized": "Promouvoir/rétrograder jusqu'à Commandant. Faire des annonces. Écrire dans Chefs de clan. Approuver les demandes. Modifier les paramètres de join. Supprimer des joueurs.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340545,
+      "m_Localized": "Promouvoir/rétrograder jusqu'à Capitaine. Faire des annonces. Écrire dans Chefs de clan. Approuver les demandes. Modifier les paramètres de join. Supprimer des joueurs.",
       "m_Metadata": {
         "m_Items": []
       }

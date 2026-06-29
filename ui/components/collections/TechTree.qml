@@ -108,6 +108,7 @@ Item {
 
                     width: treeColumn.width
                     height: root.iconSize + (hasNextLayer ? root.verticalGap : 0)
+                    clip: false
 
                     Rectangle {
                         visible: layerRow.nodeCount > 1 && (layerRow.prevCount === 1 || layerRow.nextCount === 1)

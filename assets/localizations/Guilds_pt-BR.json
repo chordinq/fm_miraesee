@@ -277,22 +277,8 @@
       }
     },
     {
-      "m_Id": 2991700380213248,
-      "m_Localized": "Promover/rebaixar até Comandante. Fazer anúncios. Aprovar pedidos. Alterar configurações de entrada. Remover jogadores.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
-      "m_Id": 2991983734808576,
-      "m_Localized": "Promover/rebaixar até Capitão. Fazer anúncios. Aprovar pedidos. Alterar configurações de entrada. Remover jogadores.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
       "m_Id": 2992061497204736,
-      "m_Localized": "Promover/rebaixar até R1. Fazer anúncios. Aprovar pedidos.",
+      "m_Localized": "Promover/rebaixar até R1. Fazer anúncios. Escrever em Líderes do clã. Aprovar pedidos.",
       "m_Metadata": {
         "m_Items": []
       }
@@ -418,14 +404,14 @@
     },
     {
       "m_Id": 4548011723055104,
-      "m_Localized": "Sair da guilda",
+      "m_Localized": "Sair do clã",
       "m_Metadata": {
         "m_Items": []
       }
     },
     {
       "m_Id": 4548662943277056,
-      "m_Localized": "Você precisa transferir a liderança da guilda antes de sair!",
+      "m_Localized": "Você precisa transferir a liderança do clã antes de sair!",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1109,6 +1095,20 @@
     {
       "m_Id": 124445730247008256,
       "m_Localized": "{0} foi {1} para {2} por {3}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340544,
+      "m_Localized": "Promover/rebaixar até Comandante. Fazer anúncios. Escrever em Líderes do clã. Aprovar pedidos. Alterar configurações de entrada. Remover jogadores.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340545,
+      "m_Localized": "Promover/rebaixar até Capitão. Fazer anúncios. Escrever em Líderes do clã. Aprovar pedidos. Alterar configurações de entrada. Remover jogadores.",
       "m_Metadata": {
         "m_Items": []
       }

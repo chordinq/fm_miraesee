@@ -50,7 +50,7 @@ Item {
 
 		z: 10
 		visible: root.mountDetailsOpen && root.selectedMountModel !== null
-		anchors.centerIn: parent
+		anchors.fill: parent
 		mountModel: root.selectedMountModel
 		mountController: root.mountController
 		ascensionLevel: mountGrid.ascensionLevel

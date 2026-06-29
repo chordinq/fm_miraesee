@@ -33,6 +33,13 @@
       "m_Metadata": {
         "m_Items": []
       }
+    },
+    {
+      "m_Id": 1000000000000003,
+      "m_Localized": "Full Screen",
+      "m_Metadata": {
+        "m_Items": []
+      }
     }
   ],
   "references": {

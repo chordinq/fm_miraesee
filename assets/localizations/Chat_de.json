@@ -313,6 +313,48 @@
       "m_Metadata": {
         "m_Items": []
       }
+    },
+    {
+      "m_Id": 99762288574062592,
+      "m_Localized": "Du wurdest dauerhaft stummgeschaltet.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762400402595840,
+      "m_Localized": "Du wurdest wegen der folgenden unangemessenen Nachricht(en) stummgeschaltet:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762593743233024,
+      "m_Localized": "Du wurdest dauerhaft wegen der folgenden unangemessenen Nachricht(en) stummgeschaltet:",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104516326213541888,
+      "m_Localized": "Clan-Führung",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104791134469873664,
+      "m_Localized": "(Führung)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 109459179712798720,
+      "m_Localized": "Jeder in deinem Clan kann diesen Chat lesen, aber nur Anführer, Kommandant und Hauptmann können darin schreiben.",
+      "m_Metadata": {
+        "m_Items": []
+      }
     }
   ],
   "references": {

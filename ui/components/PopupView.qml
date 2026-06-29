@@ -10,6 +10,10 @@ Item {
 	property real closeButtonSizeRatio: 0.15
 	property real contentInsetWOverride: -1
 	property real contentInsetHOverride: -1
+	property bool blockBackdropClicks: true
+	property bool dimBackdrop: false
+	property color backdropColor: "#A8000000"
+	property bool closeOnBackdropClick: true
 
 	signal closed()
 
@@ -19,46 +23,88 @@ Item {
 	readonly property real cornerRatioH: 1 / heightScale
 	readonly property real heightWidthRatio: heightScale / widthScale
 
-	width: parent ? parent.width * parentWidthRatio : 0
-	height: width * heightWidthRatio
+	readonly property real panelWidth: parent ? parent.width * parentWidthRatio : 0
+	readonly property real panelHeight: panelWidth * heightWidthRatio
 
 	readonly property real contentInsetW: contentInsetWOverride >= 0
 		? contentInsetWOverride
-		: width / widthScale
+		: panelWidth / widthScale
 	readonly property real contentInsetH: contentInsetHOverride >= 0
 		? contentInsetHOverride
-		: height / heightScale
-	readonly property real closeSize: width * closeButtonSizeRatio
+		: panelHeight / heightScale
+	readonly property real closeSize: panelWidth * closeButtonSizeRatio
 
-	RectRoundedFilledOutline {
-		id: panel
-
+	Rectangle {
 		anchors.fill: parent
-		widthScale: root.widthScale
-		heightScale: root.heightScale
+		visible: root.dimBackdrop
+		color: root.backdropColor
+	}
+
+	MouseArea {
+		anchors.fill: parent
+		enabled: root.blockBackdropClicks
+		z: 0
+		onClicked: (mouse) => {
+			if (!root.closeOnBackdropClick)
+				return
+			var panelPos = panel.mapFromItem(root, mouse.x, mouse.y)
+			if (panelPos.x >= 0 && panelPos.x <= panel.width
+					&& panelPos.y >= 0 && panelPos.y <= panel.height)
+				return
+			var closePos = closeButton.mapFromItem(root, mouse.x, mouse.y)
+			if (closePos.x >= 0 && closePos.x <= closeButton.width
+					&& closePos.y >= 0 && closePos.y <= closeButton.height)
+				return
+			root.closed()
+		}
 	}
 
 	Item {
-		id: contentHost
+		id: panel
 
-		anchors.left: panel.left
-		anchors.right: panel.right
-		anchors.top: panel.top
-		anchors.bottom: panel.bottom
-		anchors.leftMargin: root.contentInsetW
-		anchors.rightMargin: root.contentInsetW
-		anchors.topMargin: root.contentInsetH
-		anchors.bottomMargin: root.contentInsetH
-	}
+		z: 1
+		width: root.panelWidth
+		height: root.panelHeight
+		anchors.centerIn: parent
 
-	XButton {
-		id: closeButton
+		MouseArea {
+			anchors.fill: parent
+			z: 0
+		}
 
-		width: root.closeSize
-		height: root.closeSize
-		anchors.horizontalCenter: panel.horizontalCenter
-		anchors.top: panel.bottom
-		anchors.topMargin: -height * 0.5
-		onClicked: root.closed()
+		RectRoundedFilledOutline {
+			id: panelFrame
+
+			z: 1
+			anchors.fill: parent
+			widthScale: root.widthScale
+			heightScale: root.heightScale
+		}
+
+		Item {
+			id: contentHost
+
+			z: 1
+			anchors.left: panelFrame.left
+			anchors.right: panelFrame.right
+			anchors.top: panelFrame.top
+			anchors.bottom: panelFrame.bottom
+			anchors.leftMargin: root.contentInsetW
+			anchors.rightMargin: root.contentInsetW
+			anchors.topMargin: root.contentInsetH
+			anchors.bottomMargin: root.contentInsetH
+		}
+
+		XButton {
+			id: closeButton
+
+			z: 2
+			width: root.closeSize
+			height: root.closeSize
+			anchors.horizontalCenter: panelFrame.horizontalCenter
+			anchors.top: panelFrame.bottom
+			anchors.topMargin: -height * 0.5
+			onClicked: root.closed()
+		}
 	}
 }

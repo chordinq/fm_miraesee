@@ -24,6 +24,7 @@ EggIcon 1.0 components/icons/EggIcon.qml
 ItemIcon 1.0 components/icons/ItemIcon.qml
 TechTreeIcon 1.0 components/icons/TechTreeIcon.qml
 EquippedVisual 1.0 components/EquippedVisual.qml
+AscensionStarView 1.0 components/AscensionStarView.qml
 EquipSlot 1.0 components/EquipSlot.qml
 EggHatchSlotView 1.0 components/EggHatchSlotView.qml
 SkillProgress 1.0 components/SkillProgress.qml

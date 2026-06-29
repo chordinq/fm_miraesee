@@ -1080,7 +1080,7 @@
     },
     {
       "m_Id": 62984451326468098,
-      "m_Localized": "y",
+      "m_Localized": "{0} y {1}",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1396,6 +1396,13 @@
     {
       "m_Id": 128326236642467840,
       "m_Localized": "Lista global (actualizada cada hora)\n\nSolo los jugadores que actualmente están \n#1 en su servidor aparecen aquí",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 131638735529828352,
+      "m_Localized": "Únete a nuestra comunidad de Discord",
       "m_Metadata": {
         "m_Items": []
       }

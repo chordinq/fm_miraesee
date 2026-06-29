@@ -362,14 +362,14 @@
     },
     {
       "m_Id": 4548011723055104,
-      "m_Localized": "Gilde verlassen",
+      "m_Localized": "Clan verlassen",
       "m_Metadata": {
         "m_Items": []
       }
     },
     {
       "m_Id": 4548662943277056,
-      "m_Localized": "Du musst die Gildenleitung abtreten, bevor du die Gilde verlassen kannst!",
+      "m_Localized": "Du musst die Clanführung übertragen, bevor du den Clan verlassen kannst!",
       "m_Metadata": {
         "m_Items": []
       }
@@ -403,22 +403,8 @@
       }
     },
     {
-      "m_Id": 2991700380213248,
-      "m_Localized": "Befördere/degradiere bis zum Kommandanten. Ankündigungen machen. Anfragen genehmigen. Beitrittseinstellungen ändern. Spieler entfernen.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
-      "m_Id": 2991983734808576,
-      "m_Localized": "Befördere/degradiere bis zum Hauptmann. Ankündigungen machen. Anfragen genehmigen. Beitrittseinstellungen ändern. Spieler entfernen.",
-      "m_Metadata": {
-        "m_Items": []
-      }
-    },
-    {
       "m_Id": 2992061497204736,
-      "m_Localized": "Befördere/degradiere bis zu R1. Ankündigungen machen. Anfragen genehmigen.",
+      "m_Localized": "Befördere/degradiere bis zu R1. Ankündigungen machen. In Clan-Führung schreiben. Anfragen genehmigen.",
       "m_Metadata": {
         "m_Items": []
       }
@@ -1109,6 +1095,20 @@
     {
       "m_Id": 124445730247008256,
       "m_Localized": "{0} wurde von {3} zu {2} {1}!",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340544,
+      "m_Localized": "Befördere/degradiere bis zum Kommandanten. Ankündigungen machen. In Clan-Führung schreiben. Anfragen genehmigen. Beitrittseinstellungen ändern. Spieler entfernen.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 134135568831340545,
+      "m_Localized": "Befördere/degradiere bis zum Hauptmann. Ankündigungen machen. In Clan-Führung schreiben. Anfragen genehmigen. Beitrittseinstellungen ändern. Spieler entfernen.",
       "m_Metadata": {
         "m_Items": []
       }

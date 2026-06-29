@@ -47,7 +47,9 @@ Rectangle {
                         required property int index
 
                         anchors.top: parent.top
-                        eggModel: root.eggModels[index]
+                        eggModel: (root.eggModels && index < root.eggModels.length)
+                            ? (root.eggModels[index] || null)
+                            : null
                         ascensionLevel: root.ascensionLevel
                         width: root.slotWidth
                         onClicked: {

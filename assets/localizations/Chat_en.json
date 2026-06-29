@@ -313,6 +313,48 @@
       "m_Metadata": {
         "m_Items": []
       }
+    },
+    {
+      "m_Id": 99762288574062592,
+      "m_Localized": "You have been permanently muted.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762400402595840,
+      "m_Localized": "You have been muted for the following inappropriate message(s):",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762593743233024,
+      "m_Localized": "You have been permanently muted for the following inappropriate message(s):",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104516326213541888,
+      "m_Localized": "Clan Leads",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104791134469873664,
+      "m_Localized": "(Leads)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 109459179712798720,
+      "m_Localized": "Everyone in your clan can read this chat, but only the Leader, Commander and Captain can write in it.",
+      "m_Metadata": {
+        "m_Items": []
+      }
     }
   ],
   "references": {

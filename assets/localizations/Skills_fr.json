@@ -169,7 +169,7 @@
     },
     {
       "m_Id": 1200103288832,
-      "m_Localized": "Appelez une ruée de taureaux, chacun infligeant {0} dégâts",
+      "m_Localized": "Appelez une ruée, chacun infligeant {0} dégâts",
       "m_Metadata": {
         "m_Items": []
       }

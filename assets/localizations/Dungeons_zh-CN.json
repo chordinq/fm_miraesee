@@ -1,0 +1,140 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Dungeons_zh-CN",
+  "m_LocaleId": {
+    "m_Code": "zh-CN"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -1566388065941213110
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 7559233536,
+      "m_Localized": "在鬼镇地下城中前进，解锁更高的技能掉落率！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 113821925376,
+      "m_Localized": "锤子小偷",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 274077892608,
+      "m_Localized": "鬼镇",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 419066593280,
+      "m_Localized": "入侵",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 463001927680,
+      "m_Localized": "僵尸狂奔",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20628242469416960,
+      "m_Localized": "{0} 颗蛋",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20628242498777088,
+      "m_Localized": "提升你的 {0} 力量并再试一次！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20628877046640640,
+      "m_Localized": "扫荡",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20629289455775744,
+      "m_Localized": "地下城钥匙每天于 {0} 补充。钥匙仅在完成地下城时消耗",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20629569807249408,
+      "m_Localized": "离开不会消耗钥匙",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 20636048635392000,
+      "m_Localized": "奖励：",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 22043275081801728,
+      "m_Localized": "掉落 2 颗蛋",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 22043521560076288,
+      "m_Localized": "在入侵地下城中前进，解锁更高的蛋掉落率！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 22043664615202816,
+      "m_Localized": "蛋掉落几率",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 25636250063986688,
+      "m_Localized": "你的每日地下城钥匙已补充！",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 128946326828212224,
+      "m_Localized": "扫荡上一关",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

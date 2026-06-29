@@ -313,6 +313,48 @@
       "m_Metadata": {
         "m_Items": []
       }
+    },
+    {
+      "m_Id": 99762288574062592,
+      "m_Localized": "Vous avez été définitivement réduit au silence.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762400402595840,
+      "m_Localized": "Vous avez été réduit au silence pour le(s) message(s) inapproprié(s) suivant(s) :",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762593743233024,
+      "m_Localized": "Vous avez été définitivement réduit au silence pour le(s) message(s) inapproprié(s) suivant(s) :",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104516326213541888,
+      "m_Localized": "Chefs de clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104791134469873664,
+      "m_Localized": "(Chefs)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 109459179712798720,
+      "m_Localized": "Tout le monde dans ton clan peut lire ce chat, mais seuls le Chef, le Commandant et le Capitaine peuvent y écrire.",
+      "m_Metadata": {
+        "m_Items": []
+      }
     }
   ],
   "references": {

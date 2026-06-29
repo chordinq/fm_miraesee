@@ -18,7 +18,7 @@ from ui.utils.guild_war_helper import (
 from controllers.collections.skill_collection_bridge import SkillCollectionBridge
 from controllers.support.summon_overdraft import can_afford_summon_for_ui, execute_skill_summon
 from ui.utils.summon_result_entries import build_skill_summon_results
-from ui.utils.ui_settings import register_display_refresh
+from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
 
 
 def _skill_key(combat_skill) -> str:
@@ -55,6 +55,7 @@ class SkillSummonTestBridge(QObject):
         self._sync_status()
         self._refresh_prediction()
         register_display_refresh(self._on_ui_settings_changed)
+        register_economy_refresh(self._on_ui_settings_changed)
 
     def _on_ui_settings_changed(self) -> None:
         self.stateChanged.emit()

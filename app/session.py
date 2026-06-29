@@ -16,7 +16,7 @@ from controllers.summon.pet_egg_test_bridge import PetEggTestBridge
 from controllers.summon.pet_summon_test_bridge import PetSummonTestBridge
 from controllers.summon.skill_summon_test_bridge import SkillSummonTestBridge
 from controllers.collections.tech_tree_collection_bridge import TechTreeCollectionBridge
-from ui.utils.ui_settings import register_display_refresh
+from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
 from utils.dump.parser import parse_dump_text
 from utils.dump.to_player_model import dump_snapshot_to_player_model
 
@@ -95,11 +95,24 @@ class GameTestSessionBridge(QObject):
             self._tech_tree_skills_pet_tech,
         ):
             tech_bridge.statsChanged.connect(self._on_tech_tree_stats_changed)
+        self._tech_poll_was_researching = False
+        self._tech_poll_claimable_key: tuple[tuple[int, int], ...] = ()
         self._tech_poll_timer = QTimer(self)
         self._tech_poll_timer.setInterval(1000)
         self._tech_poll_timer.timeout.connect(self._poll_tech_trees)
         self._tech_poll_timer.start()
         register_display_refresh(self._refresh_stat_displays)
+        register_economy_refresh(self._on_economy_settings_changed)
+
+    def _on_economy_settings_changed(self) -> None:
+        self._skill_test.stateChanged.emit()
+        self._mount_summon_test.stateChanged.emit()
+        self._pet_summon_test.stateChanged.emit()
+        self._pet_egg_test.stateChanged.emit()
+        self._tech_tree_forge.refresh()
+        self._tech_tree_power.refresh()
+        self._tech_tree_skills_pet_tech.refresh()
+        self.stateChanged.emit()
 
     def _on_tech_tree_stats_changed(self) -> None:
         self._skill_test.stateChanged.emit()
@@ -113,15 +126,50 @@ class GameTestSessionBridge(QObject):
     def _poll_tech_trees(self) -> None:
         player = self._logic.player
         techtree = player.player_techtree_model
-        if techtree.is_any_node_research_in_progress(player):
-            pass
-        else:
-            has_claimable, _ = techtree.try_get_claimable_nodes(player)
-            if not has_claimable:
-                return
-        self._tech_tree_forge.refresh()
-        self._tech_tree_power.refresh()
-        self._tech_tree_skills_pet_tech.refresh()
+        researching = techtree.is_any_node_research_in_progress(player)
+
+        if researching:
+            self._tech_poll_was_researching = True
+            for bridge in (
+                self._tech_tree_forge,
+                self._tech_tree_power,
+                self._tech_tree_skills_pet_tech,
+            ):
+                bridge.tick()
+            return
+
+        has_claimable, claimable = techtree.try_get_claimable_nodes(player)
+        claimable_key = tuple(sorted(claimable)) if has_claimable else ()
+
+        need_refresh = False
+        if self._tech_poll_was_researching:
+            need_refresh = True
+            self._tech_poll_was_researching = False
+        elif claimable_key != self._tech_poll_claimable_key:
+            need_refresh = True
+
+        self._tech_poll_claimable_key = claimable_key
+
+        if not need_refresh:
+            return
+
+        bridge_by_type = {
+            TechTreeType.Forge: self._tech_tree_forge,
+            TechTreeType.Power: self._tech_tree_power,
+            TechTreeType.SkillsPetTech: self._tech_tree_skills_pet_tech,
+        }
+
+        if not has_claimable:
+            for bridge in bridge_by_type.values():
+                bridge.refresh()
+            return
+
+        refreshed: set[TechTreeCollectionBridge] = set()
+        for tree_type, _node_id in claimable:
+            bridge = bridge_by_type.get(tree_type)
+            if bridge is not None and bridge not in refreshed:
+                bridge.refresh()
+                refreshed.add(bridge)
 
     def _refresh_stat_displays(self) -> None:
         self._pet_collection.refresh()
@@ -202,6 +250,8 @@ class GameTestSessionBridge(QObject):
         self._tech_tree_forge.reload(player)
         self._tech_tree_power.reload(player)
         self._tech_tree_skills_pet_tech.reload(player)
+        self._tech_poll_was_researching = False
+        self._tech_poll_claimable_key = ()
 
         return (
             f"loaded dump "

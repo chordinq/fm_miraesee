@@ -1,0 +1,448 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "Stats_pl",
+  "m_LocaleId": {
+    "m_Code": "pl"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -8718801674694835696
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 988710824505344,
+      "m_Localized": "Dystansowy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988735260520448,
+      "m_Localized": "Wręcz",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 988835206590464,
+      "m_Localized": "Obrażenia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989213239209984,
+      "m_Localized": "Zdrowie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989601996664832,
+      "m_Localized": "Szansa na cios krytyczny",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989623647662080,
+      "m_Localized": "Obrażenia krytyczne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989649430048768,
+      "m_Localized": "Prędkość ataku",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989678303637504,
+      "m_Localized": "Maks. poziom",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989714643087360,
+      "m_Localized": "xp",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989736638017536,
+      "m_Localized": "Koszt",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989762269409280,
+      "m_Localized": "Prędkość zegara",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989780216836096,
+      "m_Localized": "Cena sprzedaży",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989810910752768,
+      "m_Localized": "Maks. liczba",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989834340134912,
+      "m_Localized": "Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989849557069824,
+      "m_Localized": "Szansa",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989867693240320,
+      "m_Localized": "Szansa na blok",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989885338677248,
+      "m_Localized": "Regeneracja zdrowia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989920193343488,
+      "m_Localized": "Wysysanie życia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989947519234048,
+      "m_Localized": "Szansa na podwójne",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 989965953200128,
+      "m_Localized": "Prędkość ruchu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990649838661632,
+      "m_Localized": "Wyposażenie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990668201324544,
+      "m_Localized": "Broń",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990690527604736,
+      "m_Localized": "Umiejętność",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990701055307776,
+      "m_Localized": "Pasywna umiejętność",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 990866679984128,
+      "m_Localized": "Wierzchowce",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083840310996992,
+      "m_Localized": "Drzewo technologii",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083902730629120,
+      "m_Localized": "Czas nagrody offline",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1083950377922560,
+      "m_Localized": "Nagroda offline",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084108339605504,
+      "m_Localized": "Jajko",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084121421639680,
+      "m_Localized": "Waluta",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084153545814016,
+      "m_Localized": "Nagroda waluty offline",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1084261779828736,
+      "m_Localized": "Lochy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1085979657695232,
+      "m_Localized": "Szansa na darmowe wykucie wyposażenia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086156044955648,
+      "m_Localized": "Liczba młotów użytych jednocześnie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086608887181312,
+      "m_Localized": "Ulepsz",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086663727706112,
+      "m_Localized": "Przyzwij",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086680802717696,
+      "m_Localized": "Czas odnowienia",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086689396846592,
+      "m_Localized": "Bazowy",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1086835153104896,
+      "m_Localized": "podczas ulepszania",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087433751588864,
+      "m_Localized": "Wyklucie",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1087456035926016,
+      "m_Localized": "Maks.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1089653901553664,
+      "m_Localized": "{0} Loch wypada więcej {1}",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090103212175360,
+      "m_Localized": "Lochy wypadają {{0}} więcej Waluty",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090219507642368,
+      "m_Localized": "Loch",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090359232491520,
+      "m_Localized": "Badania technologii",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1090396830232576,
+      "m_Localized": "Ulepszenie węzła technologii",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1762375497347072,
+      "m_Localized": "Zwierzak",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763141620527104,
+      "m_Localized": "Hełm",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763160431980544,
+      "m_Localized": "Zbroja",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763216392384512,
+      "m_Localized": "Rękawice",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763337381277696,
+      "m_Localized": "Naszyjnik",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763350417174528,
+      "m_Localized": "Pierścień",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763362966532096,
+      "m_Localized": "Buty",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1763387549347840,
+      "m_Localized": "Pas",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2109395617640448,
+      "m_Localized": "Umiejętności",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 2110564712771584,
+      "m_Localized": "Zwierzaki",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23865403343101952,
+      "m_Localized": "Wymóg awansu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 85115613318471680,
+      "m_Localized": "Szansa na przywołanie dodatkowego jaja",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 23905947930845185,
+      "m_Localized": "Szansa na przywołanie dodatkowego wierzchowca",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 73184492695576576,
+      "m_Localized": "Jajka",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

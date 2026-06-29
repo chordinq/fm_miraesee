@@ -6,12 +6,12 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-DEFAULT_DUMP = (
-    Path(__file__).resolve().parents[3]
-    / "version"
-    / "2.4.0"
-    / "Il2CppDumper-net6-win-v6.7.46"
-    / "dump.cs"
+DEFAULT_DUMP = Path(__file__).resolve().parents[2] / "dump.cs"
+
+_META_MEMBER = re.compile(
+    r"\[MetaMember\((\d+),[^\]]*\)\]"
+    r"(?:\s*\[[^\]]+\])*"
+    r"\s*public ([\w.?<>,\[\]]+) (\w+)"
 )
 
 
@@ -44,7 +44,7 @@ def _parse_enums(text: str) -> dict[str, ClassSchema]:
     enums: dict[str, ClassSchema] = {}
     current: str | None = None
     for line in text.splitlines():
-        m = re.match(r"public enum (\w+)", line)
+        m = re.match(r"(?:\[[^\]]+\]\s*)*public enum (\w+)", line)
         if m:
             current = m.group(1)
             enums[current] = ClassSchema(name=current, is_enum=True)
@@ -101,10 +101,7 @@ def _parse_classes(text: str) -> dict[str, ClassSchema]:
         km = re.search(r"IHasGameConfigKey<(\w+)>", line + bases)
         if km:
             schema.key_type = km.group(1)
-        for mm in re.finditer(
-            r"\[MetaMember\((\d+),[^\]]*\)\]\s*public ([\w.?<>,\[\]]+) (\w+)",
-            block,
-        ):
+        for mm in _META_MEMBER.finditer(block):
             tag = int(mm.group(1))
             schema.members[tag] = MemberSchema(tag, mm.group(2).strip(), mm.group(3))
         classes[name] = schema
@@ -138,7 +135,8 @@ def _parse_entries(text: str) -> dict[str, EntrySchema]:
 
 class SchemaRegistry:
     def __init__(self, dump_path: Path | None = None) -> None:
-        path = dump_path or DEFAULT_DUMP
+        path = (dump_path or DEFAULT_DUMP).resolve()
+        self.dump_path = path
         text = path.read_text(encoding="utf-8", errors="ignore")
         self.enums = _parse_enums(text)
         self.classes = _parse_classes(text)
@@ -185,6 +183,7 @@ _registry: SchemaRegistry | None = None
 
 def get_registry(dump_path: Path | None = None) -> SchemaRegistry:
     global _registry
-    if _registry is None or dump_path is not None:
-        _registry = SchemaRegistry(dump_path)
+    path = (dump_path or DEFAULT_DUMP).resolve()
+    if _registry is None or _registry.dump_path != path:
+        _registry = SchemaRegistry(path)
     return _registry

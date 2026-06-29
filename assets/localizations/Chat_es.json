@@ -313,6 +313,48 @@
       "m_Metadata": {
         "m_Items": []
       }
+    },
+    {
+      "m_Id": 99762288574062592,
+      "m_Localized": "Has sido silenciado permanentemente.",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762400402595840,
+      "m_Localized": "Has sido silenciado por el/los siguiente(s) mensaje(s) inapropiado(s):",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 99762593743233024,
+      "m_Localized": "Has sido silenciado permanentemente por el/los siguiente(s) mensaje(s) inapropiado(s):",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104516326213541888,
+      "m_Localized": "Líderes del clan",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 104791134469873664,
+      "m_Localized": "(Líderes)",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 109459179712798720,
+      "m_Localized": "Todos en tu clan pueden leer este chat, pero solo el Líder, el Comandante y el Capitán pueden escribir en él.",
+      "m_Metadata": {
+        "m_Items": []
+      }
     }
   ],
   "references": {

@@ -8,14 +8,9 @@ from typing import Any
 from .derived_types import resolve_type_name
 from .dump_schema import ClassSchema, SchemaRegistry, get_registry
 from .game_types import decode_item_id
+from .stat_node_compat import normalize_stat_nodes
 
-DEFAULT_DUMP = (
-    Path(__file__).resolve().parents[3]
-    / "version"
-    / "2.4.0"
-    / "Il2CppDumper-net6-win-v6.7.46"
-    / "dump.cs"
-)
+DEFAULT_DUMP = Path(__file__).resolve().parents[2] / "dump.cs"
 
 PRIMITIVE_TYPES = frozenset(
     {
@@ -41,7 +36,7 @@ def _resolve_abstract(raw: dict[int, Any], base: str, registry: SchemaRegistry) 
     disc = raw.pop("$type", None)
     type_name = base
     if isinstance(disc, int):
-        type_name = resolve_type_name(base, disc, DEFAULT_DUMP)
+        type_name = resolve_type_name(base, disc, registry.dump_path)
     cls = registry.get_class(type_name)
     if cls and cls.members:
         named = fields_to_json(raw, cls, registry)
@@ -230,7 +225,7 @@ def decode_mpc(blob: bytes, entry_name: str, registry: SchemaRegistry | None = N
         cls = registry.get_class(entry.class_name)
         if not cls:
             raise ValueError(f"missing class schema {entry.class_name}")
-        return fields_to_json(fields, cls, registry)
+        return normalize_stat_nodes(fields_to_json(fields, cls, registry), registry)
 
     from .meta_reader import parse_object_table
 
@@ -244,4 +239,4 @@ def decode_mpc(blob: bytes, entry_name: str, registry: SchemaRegistry | None = N
         row_json = fields_to_json(fields, cls, registry)
         key = library_key(row_json, entry.key_type or "int", registry)
         out[key] = row_json
-    return out
+    return normalize_stat_nodes(out, registry)

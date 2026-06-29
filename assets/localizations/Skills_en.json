@@ -173,7 +173,7 @@
     },
     {
       "m_Id": 1200103288832,
-      "m_Localized": "Call on a Bull stampede, each dealing {0} Damage",
+      "m_Localized": "Call on a stampede, each dealing {0} Damage",
       "m_Metadata": {
         "m_Items": []
       }

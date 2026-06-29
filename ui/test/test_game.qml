@@ -36,55 +36,30 @@ ApplicationWindow {
         activeTabIndex = index
     }
 
+    function syncUiLanguage() {
+        gamePetEggTest.setUiLanguage(Theme.language)
+        gamePetCollection.setUiLanguage(Theme.language)
+        gameTechTreeForge.setUiLanguage(Theme.language)
+        gameTechTreePower.setUiLanguage(Theme.language)
+        gameTechTreeSkillsPetTech.setUiLanguage(Theme.language)
+    }
+
     Component.onCompleted: {
         Theme.language = uiLanguage
-        gamePetEggTest.setUiLanguage(Theme.language)
-        tabPreloadStartTimer.start()
-    }
-
-    Timer {
-        id: tabPreloadStartTimer
-        interval: 100
-        repeat: false
-        onTriggered: tabPreloadTimer.start()
-    }
-
-    Timer {
-        id: tabPreloadTimer
-        interval: 150
-        repeat: true
-        property int nextIndex: 1
-        onTriggered: {
-            if (nextIndex >= 5) {
-                stop()
-                return
-            }
-            window.markTabLoaded(nextIndex)
-            nextIndex++
-        }
+        syncUiLanguage()
     }
 
     Connections {
         target: Theme
         function onLanguageChanged() {
-            gamePetEggTest.setUiLanguage(Theme.language)
-        }
-    }
-
-    Rectangle {
-        anchors.fill: parent
-        color: "#80000000"
-        visible: window.settingsOpen
-        z: 100
-
-        MouseArea {
-            anchors.fill: parent
+            syncUiLanguage()
         }
     }
 
     SettingsView {
         visible: window.settingsOpen
-        anchors.centerIn: parent
+        anchors.fill: parent
+        dimBackdrop: true
         z: 101
         onClosed: {
             window.settingsOpen = false
@@ -95,7 +70,7 @@ ApplicationWindow {
 
     LanguageSettingsView {
         visible: window.settingsOpen && window.languageOpen
-        anchors.centerIn: parent
+        anchors.fill: parent
         z: 102
         onClosed: window.languageOpen = false
     }
@@ -253,7 +228,7 @@ ApplicationWindow {
 
         TechMainView {
             anchors.fill: parent
-            gameSession: gameSession
+            sessionBridge: gameSession
         }
     }
 

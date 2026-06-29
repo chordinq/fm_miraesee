@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 from PySide6.QtCore import Property, QObject, Signal, Slot
 
 from ui.utils.timer_display import format_timer_duration
+from ui.utils.ui_settings import register_display_refresh
 
 if TYPE_CHECKING:
     from core.game_logic.player.player_model import PlayerModel
@@ -21,6 +22,10 @@ class TimerBarBridge(QObject):
         self._timer: TimerModel | None = None
         self._player: PlayerModel | None = None
         self._ui_language = "en"
+        register_display_refresh(self._on_display_refresh)
+
+    def _on_display_refresh(self) -> None:
+        self.displayChanged.emit()
 
     def bind(
         self,
@@ -51,23 +56,27 @@ class TimerBarBridge(QObject):
         player = self._player
         if timer is None or player is None:
             return False
-        return timer.end_time > timer.start_time
+        return timer.start_time > 0
 
     @Property(bool, notify=displayChanged)
     def isComplete(self) -> bool:
-        if not self.isActive:
+        timer = self._timer
+        player = self._player
+        if timer is None or player is None:
             return False
-        assert self._timer is not None and self._player is not None
-        return self._timer.has_ended(self._player)
+        if timer.start_time <= 0:
+            return False
+        return timer.has_ended(player)
 
     @Property(float, notify=displayChanged)
     def progressFraction(self) -> float:
-        if not self.isActive:
+        timer = self._timer
+        player = self._player
+        if timer is None or player is None or timer.start_time <= 0:
             return 0.0
-        assert self._timer is not None and self._player is not None
-        if self._timer.has_ended(self._player):
+        if self.isComplete:
             return 1.0
-        return float(self._timer.get_progress(self._player))
+        return float(timer.get_progress(player))
 
     @Property(str, notify=displayChanged)
     def remainingText(self) -> str:
@@ -79,7 +88,7 @@ class TimerBarBridge(QObject):
 
     @Property(int, notify=displayChanged)
     def remainingSeconds(self) -> int:
-        if not self.isActive:
+        if not self.isActive or self.isComplete:
             return 0
         assert self._timer is not None and self._player is not None
         return self._timer.calculate_remaining_seconds(self._player)
