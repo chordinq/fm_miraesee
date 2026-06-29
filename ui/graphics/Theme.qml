@@ -55,6 +55,8 @@ QtObject {
 		case "ko":
 			return fontKR.status === FontLoader.Ready ? fontKR.name : ""
 		case "ja":
+		case "zh-CN":
+		case "zh-TW":
 			return fontJP.status === FontLoader.Ready ? fontJP.name : ""
 		case "ru":
 			return fontRU.status === FontLoader.Ready ? fontRU.name : ""

@@ -1,998 +1,998 @@
 {
-    "TechTree": {
-        "0": {
-            "Key": "TechTree",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "id": 280318681088
-                }
-            ],
-            "Idx": 0
-        }
-    },
-    "TechTreeType": {
-        "0": {
-            "Key": "TechTreeForge",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "id": 280343846912
-                }
-            ],
-            "Idx": 0
-        },
-        "1": {
-            "Key": "TechTreePower",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "id": 280343846913
-                }
-            ],
-            "Idx": 1
-        },
-        "2": {
-            "Key": "TechTreeSkillsPetTech",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "id": 280343846914
-                }
-            ],
-            "Idx": 2
-        },
-        "3": {
-            "Key": "TechTreeClan",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "id": 55555339821057
-                }
-            ],
-            "Idx": 3
-        }
-    },
-    "TechTreeNodeType": {
-        "0": {
-            "Key": "WeaponBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555327238144
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821100
-                }
-            ],
-            "Idx": 0,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 4
-            }
-        },
-        "1": {
-            "Key": "HelmetBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555335626752
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821101
-                }
-            ],
-            "Idx": 1,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 5
-            }
-        },
-        "2": {
-            "Key": "BodyBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821056
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821102
-                }
-            ],
-            "Idx": 2,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 6
-            }
-        },
-        "3": {
-            "Key": "ShoeBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821057
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821103
-                }
-            ],
-            "Idx": 3,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 7
-            }
-        },
-        "4": {
-            "Key": "GloveBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821058
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821104
-                }
-            ],
-            "Idx": 4,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 10
-            }
-        },
-        "5": {
-            "Key": "BeltBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821059
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821105
-                }
-            ],
-            "Idx": 5,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 11
-            }
-        },
-        "6": {
-            "Key": "NecklaceBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821060
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821106
-                }
-            ],
-            "Idx": 6,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 12
-            }
-        },
-        "7": {
-            "Key": "RingBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821061
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821107
-                }
-            ],
-            "Idx": 7,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 13
-            }
-        },
-        "8": {
-            "Key": "WeaponLevelUp",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821062
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821108
-                }
-            ],
-            "Idx": 8,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 14
-            }
-        },
-        "9": {
-            "Key": "HelmetLevelUp",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821063
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821109
-                }
-            ],
-            "Idx": 9,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 15
-            }
-        },
-        "10": {
-            "Key": "BodyLevelUp",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821064
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821110
-                }
-            ],
-            "Idx": 10,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 16
-            }
-        },
-        "11": {
-            "Key": "ShoeLevelUp",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821065
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821111
-                }
-            ],
-            "Idx": 11,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 17
-            }
-        },
-        "12": {
-            "Key": "GloveLevelUp",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821066
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821112
-                }
-            ],
-            "Idx": 12,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 18
-            }
-        },
-        "13": {
-            "Key": "BeltLevelUp",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821067
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821113
-                }
-            ],
-            "Idx": 13,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 19
-            }
-        },
-        "14": {
-            "Key": "NecklaceLevelUp",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821068
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821114
-                }
-            ],
-            "Idx": 14,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 20
-            }
-        },
-        "15": {
-            "Key": "RingLevelUp",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821069
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821115
-                }
-            ],
-            "Idx": 15,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 21
-            }
-        },
-        "16": {
-            "Key": "MountDamage",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 58664321523712
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821116
-                }
-            ],
-            "Idx": 16,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 22
-            }
-        },
-        "17": {
-            "Key": "MountHealth",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 58664325718016
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821117
-                }
-            ],
-            "Idx": 17,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 23
-            }
-        },
-        "18": {
-            "Key": "ExtraMountChance",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 58664325718017
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821118
-                }
-            ],
-            "Idx": 18,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 24
-            }
-        },
-        "19": {
-            "Key": "MountSummonCost",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 58664325718018
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 58664325718019
-                }
-            ],
-            "Idx": 19,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 25
-            }
-        },
-        "20": {
-            "Key": "ForgeTimerSpeed",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821073
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821119
-                }
-            ],
-            "Idx": 20,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 26
-            }
-        },
-        "21": {
-            "Key": "ForgeUpgradeCost",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821074
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821120
-                }
-            ],
-            "Idx": 21,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 27
-            }
-        },
-        "22": {
-            "Key": "EquipmentSellPrice",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821075
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821121
-                }
-            ],
-            "Idx": 22,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 3
-            }
-        },
-        "23": {
-            "Key": "AutoForge",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821076
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821122
-                }
-            ],
-            "Idx": 23,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 28
-            }
-        },
-        "24": {
-            "Key": "HammerOfflineReward",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821077
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821123
-                }
-            ],
-            "Idx": 24,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 29
-            }
-        },
-        "25": {
-            "Key": "CoinOfflineReward",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821078
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821124
-                }
-            ],
-            "Idx": 25,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 30
-            }
-        },
-        "26": {
-            "Key": "MaxOfflineReward",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821079
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821125
-                }
-            ],
-            "Idx": 26,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 31
-            }
-        },
-        "27": {
-            "Key": "FreeForgeChance",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821080
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821126
-                }
-            ],
-            "Idx": 27,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 32
-            }
-        },
-        "28": {
-            "Key": "HammerThiefHammerReward",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821081
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821127
-                }
-            ],
-            "Idx": 28,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 33
-            }
-        },
-        "29": {
-            "Key": "HammerThiefCoinReward",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821082
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821128
-                }
-            ],
-            "Idx": 29,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 34
-            }
-        },
-        "30": {
-            "Key": "SkillDamage",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821083
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821129
-                }
-            ],
-            "Idx": 30,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 35
-            }
-        },
-        "31": {
-            "Key": "SkillPassiveDamage",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821084
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821130
-                }
-            ],
-            "Idx": 31,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 36
-            }
-        },
-        "32": {
-            "Key": "SkillPassiveHealth",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821085
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821131
-                }
-            ],
-            "Idx": 32,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 37
-            }
-        },
-        "33": {
-            "Key": "GhostTownSkillBonus",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821086
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821132
-                }
-            ],
-            "Idx": 33,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 38
-            }
-        },
-        "34": {
-            "Key": "SkillSummonCost",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821087
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821133
-                }
-            ],
-            "Idx": 34,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 39
-            }
-        },
-        "35": {
-            "Key": "PetBonusDamage",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821088
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821134
-                }
-            ],
-            "Idx": 35,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 40
-            }
-        },
-        "36": {
-            "Key": "PetBonusHealth",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821089
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821135
-                }
-            ],
-            "Idx": 36,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 41
-            }
-        },
-        "37": {
-            "Key": "ExtraEggChance",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821090
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821136
-                }
-            ],
-            "Idx": 37,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 42
-            }
-        },
-        "38": {
-            "Key": "CommonEggTimer",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821091
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821137
-                }
-            ],
-            "Idx": 38,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 43
-            }
-        },
-        "39": {
-            "Key": "RareEggTimer",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821092
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821138
-                }
-            ],
-            "Idx": 39,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 44
-            }
-        },
-        "40": {
-            "Key": "EpicEggTimer",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821093
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821139
-                }
-            ],
-            "Idx": 40,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 45
-            }
-        },
-        "41": {
-            "Key": "LegendaryEggTimer",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821094
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821140
-                }
-            ],
-            "Idx": 41,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 46
-            }
-        },
-        "42": {
-            "Key": "UltimateEggTimer",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821095
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821141
-                }
-            ],
-            "Idx": 42,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 47
-            }
-        },
-        "43": {
-            "Key": "MythicEggTimer",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821096
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821142
-                }
-            ],
-            "Idx": 43,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 48
-            }
-        },
-        "44": {
-            "Key": "ZombieRushTechPotions",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821097
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821143
-                }
-            ],
-            "Idx": 44,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 49
-            }
-        },
-        "45": {
-            "Key": "TechNodeUpgradeCost",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821098
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821144
-                }
-            ],
-            "Idx": 45,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 50
-            }
-        },
-        "46": {
-            "Key": "TechResearchTimer",
-            "Localization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821099
-                }
-            ],
-            "DescLocalization": [
-                {
-                    "File": "TechTree",
-                    "Id": 55555339821145
-                }
-            ],
-            "Idx": 46,
-            "Sprite": {
-                "File": "TechTreeIcons",
-                "Idx": 9
-            }
-        }
-    }
+	"TechTree": {
+		"0": {
+			"Key": "TechTree",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 280318681088
+				}
+			],
+			"Idx": 0
+		}
+	},
+	"TechTreeType": {
+		"0": {
+			"Key": "TechTreeForge",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 280343846912
+				}
+			],
+			"Idx": 0
+		},
+		"1": {
+			"Key": "TechTreePower",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 280343846913
+				}
+			],
+			"Idx": 1
+		},
+		"2": {
+			"Key": "TechTreeSkillsPetTech",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 280343846914
+				}
+			],
+			"Idx": 2
+		},
+		"3": {
+			"Key": "TechTreeClan",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 103966219382546432
+				}
+			],
+			"Idx": 3
+		}
+	},
+	"TechTreeNodeType": {
+		"0": {
+			"Key": "WeaponBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555327238144
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821100
+				}
+			],
+			"Idx": 0,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 4
+			}
+		},
+		"1": {
+			"Key": "HelmetBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555335626752
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821101
+				}
+			],
+			"Idx": 1,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 5
+			}
+		},
+		"2": {
+			"Key": "BodyBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821056
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821102
+				}
+			],
+			"Idx": 2,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 6
+			}
+		},
+		"3": {
+			"Key": "ShoeBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821057
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821103
+				}
+			],
+			"Idx": 3,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 7
+			}
+		},
+		"4": {
+			"Key": "GloveBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821058
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821104
+				}
+			],
+			"Idx": 4,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 10
+			}
+		},
+		"5": {
+			"Key": "BeltBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821059
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821105
+				}
+			],
+			"Idx": 5,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 11
+			}
+		},
+		"6": {
+			"Key": "NecklaceBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821060
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821106
+				}
+			],
+			"Idx": 6,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 12
+			}
+		},
+		"7": {
+			"Key": "RingBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821061
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821107
+				}
+			],
+			"Idx": 7,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 13
+			}
+		},
+		"8": {
+			"Key": "WeaponLevelUp",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821062
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821108
+				}
+			],
+			"Idx": 8,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 14
+			}
+		},
+		"9": {
+			"Key": "HelmetLevelUp",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821063
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821109
+				}
+			],
+			"Idx": 9,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 15
+			}
+		},
+		"10": {
+			"Key": "BodyLevelUp",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821064
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821110
+				}
+			],
+			"Idx": 10,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 16
+			}
+		},
+		"11": {
+			"Key": "ShoeLevelUp",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821065
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821111
+				}
+			],
+			"Idx": 11,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 17
+			}
+		},
+		"12": {
+			"Key": "GloveLevelUp",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821066
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821112
+				}
+			],
+			"Idx": 12,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 18
+			}
+		},
+		"13": {
+			"Key": "BeltLevelUp",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821067
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821113
+				}
+			],
+			"Idx": 13,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 19
+			}
+		},
+		"14": {
+			"Key": "NecklaceLevelUp",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821068
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821114
+				}
+			],
+			"Idx": 14,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 20
+			}
+		},
+		"15": {
+			"Key": "RingLevelUp",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821069
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821115
+				}
+			],
+			"Idx": 15,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 21
+			}
+		},
+		"16": {
+			"Key": "MountDamage",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 58664321523712
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821116
+				}
+			],
+			"Idx": 16,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 22
+			}
+		},
+		"17": {
+			"Key": "MountHealth",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 58664325718016
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821117
+				}
+			],
+			"Idx": 17,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 23
+			}
+		},
+		"18": {
+			"Key": "ExtraMountChance",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 58664325718017
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821118
+				}
+			],
+			"Idx": 18,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 24
+			}
+		},
+		"19": {
+			"Key": "MountSummonCost",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 58664325718018
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 58664325718019
+				}
+			],
+			"Idx": 19,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 25
+			}
+		},
+		"20": {
+			"Key": "ForgeTimerSpeed",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821073
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821119
+				}
+			],
+			"Idx": 20,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 26
+			}
+		},
+		"21": {
+			"Key": "ForgeUpgradeCost",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821074
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821120
+				}
+			],
+			"Idx": 21,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 27
+			}
+		},
+		"22": {
+			"Key": "EquipmentSellPrice",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821075
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821121
+				}
+			],
+			"Idx": 22,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 3
+			}
+		},
+		"23": {
+			"Key": "AutoForge",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821076
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821122
+				}
+			],
+			"Idx": 23,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 28
+			}
+		},
+		"24": {
+			"Key": "HammerOfflineReward",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821077
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821123
+				}
+			],
+			"Idx": 24,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 29
+			}
+		},
+		"25": {
+			"Key": "CoinOfflineReward",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821078
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821124
+				}
+			],
+			"Idx": 25,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 30
+			}
+		},
+		"26": {
+			"Key": "MaxOfflineReward",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821079
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821125
+				}
+			],
+			"Idx": 26,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 31
+			}
+		},
+		"27": {
+			"Key": "FreeForgeChance",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821080
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821126
+				}
+			],
+			"Idx": 27,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 32
+			}
+		},
+		"28": {
+			"Key": "HammerThiefHammerReward",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821081
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821127
+				}
+			],
+			"Idx": 28,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 33
+			}
+		},
+		"29": {
+			"Key": "HammerThiefCoinReward",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821082
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821128
+				}
+			],
+			"Idx": 29,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 34
+			}
+		},
+		"30": {
+			"Key": "SkillDamage",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821083
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821129
+				}
+			],
+			"Idx": 30,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 35
+			}
+		},
+		"31": {
+			"Key": "SkillPassiveDamage",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821084
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821130
+				}
+			],
+			"Idx": 31,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 36
+			}
+		},
+		"32": {
+			"Key": "SkillPassiveHealth",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821085
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821131
+				}
+			],
+			"Idx": 32,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 37
+			}
+		},
+		"33": {
+			"Key": "GhostTownSkillBonus",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821086
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821132
+				}
+			],
+			"Idx": 33,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 38
+			}
+		},
+		"34": {
+			"Key": "SkillSummonCost",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821087
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821133
+				}
+			],
+			"Idx": 34,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 39
+			}
+		},
+		"35": {
+			"Key": "PetBonusDamage",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821088
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821134
+				}
+			],
+			"Idx": 35,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 40
+			}
+		},
+		"36": {
+			"Key": "PetBonusHealth",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821089
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821135
+				}
+			],
+			"Idx": 36,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 41
+			}
+		},
+		"37": {
+			"Key": "ExtraEggChance",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821090
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821136
+				}
+			],
+			"Idx": 37,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 42
+			}
+		},
+		"38": {
+			"Key": "CommonEggTimer",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821091
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821137
+				}
+			],
+			"Idx": 38,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 43
+			}
+		},
+		"39": {
+			"Key": "RareEggTimer",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821092
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821138
+				}
+			],
+			"Idx": 39,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 44
+			}
+		},
+		"40": {
+			"Key": "EpicEggTimer",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821093
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821139
+				}
+			],
+			"Idx": 40,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 45
+			}
+		},
+		"41": {
+			"Key": "LegendaryEggTimer",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821094
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821140
+				}
+			],
+			"Idx": 41,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 46
+			}
+		},
+		"42": {
+			"Key": "UltimateEggTimer",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821095
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821141
+				}
+			],
+			"Idx": 42,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 47
+			}
+		},
+		"43": {
+			"Key": "MythicEggTimer",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821096
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821142
+				}
+			],
+			"Idx": 43,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 48
+			}
+		},
+		"44": {
+			"Key": "ZombieRushTechPotions",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821097
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821143
+				}
+			],
+			"Idx": 44,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 49
+			}
+		},
+		"45": {
+			"Key": "TechNodeUpgradeCost",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821098
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821144
+				}
+			],
+			"Idx": 45,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 50
+			}
+		},
+		"46": {
+			"Key": "TechResearchTimer",
+			"Localization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821099
+				}
+			],
+			"DescLocalization": [
+				{
+					"File": "TechTree",
+					"Id": 55555339821145
+				}
+			],
+			"Idx": 46,
+			"Sprite": {
+				"File": "TechTreeIcons",
+				"Idx": 9
+			}
+		}
+	}
 }

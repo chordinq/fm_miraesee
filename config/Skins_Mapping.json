@@ -1,0 +1,938 @@
+{
+	"SantaSet_Helmet_0": {
+		"Key": "Santa_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301696
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 0,
+		"BaseSetId": "SantaSet"
+	},
+	"SantaSet_Armour_0": {
+		"Key": "Santa_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301697
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 0,
+		"BaseSetId": "SantaSet"
+	},
+	"SkiSet_Helmet_1": {
+		"Key": "Ski_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301700
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 1,
+		"BaseSetId": "SkiSet"
+	},
+	"SkiSet_Armour_1": {
+		"Key": "Ski_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301701
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 1,
+		"BaseSetId": "SkiSet"
+	},
+	"SnowmanSet_Helmet_2": {
+		"Key": "Snowman_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301698
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 2,
+		"BaseSetId": "SnowmanSet"
+	},
+	"SnowmanSet_Armour_2": {
+		"Key": "Snowman_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301699
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 2,
+		"BaseSetId": "SnowmanSet"
+	},
+	"LeprechaunSet_Weapon_3": {
+		"Key": "Leprechaun_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540706615297
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 3,
+		"BaseSetId": "LeprechaunSet"
+	},
+	"LeprechaunSet_Helmet_3": {
+		"Key": "Leprechaun_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540702420992
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 3,
+		"BaseSetId": "LeprechaunSet"
+	},
+	"LeprechaunSet_Armour_3": {
+		"Key": "Leprechaun_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540706615296
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 3,
+		"BaseSetId": "LeprechaunSet"
+	},
+	"FlowerSet_Weapon_4": {
+		"Key": "Flower_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540706615300
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 4,
+		"BaseSetId": "FlowerSet"
+	},
+	"FlowerSet_Helmet_4": {
+		"Key": "Flower_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540706615298
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 4,
+		"BaseSetId": "FlowerSet"
+	},
+	"FlowerSet_Armour_4": {
+		"Key": "Flower_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540706615299
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 4,
+		"BaseSetId": "FlowerSet"
+	},
+	"DruidSet_Weapon_5": {
+		"Key": "Druid_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540706615303
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 5,
+		"BaseSetId": "DruidSet"
+	},
+	"DruidSet_Helmet_5": {
+		"Key": "Druid_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540706615301
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 5,
+		"BaseSetId": "DruidSet"
+	},
+	"DruidSet_Armour_5": {
+		"Key": "Druid_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 41867540706615302
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 5,
+		"BaseSetId": "DruidSet"
+	},
+	"BunnySet_Weapon_6": {
+		"Key": "Bunny_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29354964949131265
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 6,
+		"BaseSetId": "BunnySet"
+	},
+	"BunnySet_Helmet_6": {
+		"Key": "Bunny_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29354964940742656
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 6,
+		"BaseSetId": "BunnySet"
+	},
+	"BunnySet_Armour_6": {
+		"Key": "Bunny_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29354964949131264
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 6,
+		"BaseSetId": "BunnySet"
+	},
+	"ClownSet_Weapon_7": {
+		"Key": "Clown_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301709
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 7,
+		"BaseSetId": "ClownSet"
+	},
+	"ClownSet_Helmet_7": {
+		"Key": "Clown_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301707
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 7,
+		"BaseSetId": "ClownSet"
+	},
+	"ClownSet_Armour_7": {
+		"Key": "Clown_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301708
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 7,
+		"BaseSetId": "ClownSet"
+	},
+	"MillionaireSet_Weapon_8": {
+		"Key": "Millionaire_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301712
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 8,
+		"BaseSetId": "MillionaireSet"
+	},
+	"MillionaireSet_Helmet_8": {
+		"Key": "Millionaire_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301710
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 8,
+		"BaseSetId": "MillionaireSet"
+	},
+	"MillionaireSet_Armour_8": {
+		"Key": "Millionaire_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092774301711
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 8,
+		"BaseSetId": "MillionaireSet"
+	},
+	"FishbowlSet_Weapon_9": {
+		"Key": "Fishbowl_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804350803969
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 9,
+		"BaseSetId": "FishbowlSet"
+	},
+	"FishbowlSet_Helmet_9": {
+		"Key": "Fishbowl_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804325638144
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 9,
+		"BaseSetId": "FishbowlSet"
+	},
+	"FishbowlSet_Armour_9": {
+		"Key": "Fishbowl_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804350803968
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 9,
+		"BaseSetId": "FishbowlSet"
+	},
+	"EagleSet_Weapon_10": {
+		"Key": "Eagle_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804350803972
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 10,
+		"BaseSetId": "EagleSet"
+	},
+	"EagleSet_Helmet_10": {
+		"Key": "Eagle_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804350803970
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 10,
+		"BaseSetId": "EagleSet"
+	},
+	"EagleSet_Armour_10": {
+		"Key": "Eagle_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804350803971
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 10,
+		"BaseSetId": "EagleSet"
+	},
+	"SkaterSet_Weapon_11": {
+		"Key": "Skater_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804354998272
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 11,
+		"BaseSetId": "SkaterSet"
+	},
+	"SkaterSet_Helmet_11": {
+		"Key": "Skater_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804350803973
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 11,
+		"BaseSetId": "SkaterSet"
+	},
+	"SkaterSet_Armour_11": {
+		"Key": "Skater_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804350803974
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 11,
+		"BaseSetId": "SkaterSet"
+	},
+	"CatSet_Weapon_12": {
+		"Key": "Cat_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804354998275
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 12,
+		"BaseSetId": "CatSet"
+	},
+	"CatSet_Helmet_12": {
+		"Key": "Cat_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804354998273
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 12,
+		"BaseSetId": "CatSet"
+	},
+	"CatSet_Armour_12": {
+		"Key": "Cat_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804354998274
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 12,
+		"BaseSetId": "CatSet"
+	},
+	"SharkSet_Weapon_13": {
+		"Key": "Shark_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54878036082810881
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 13,
+		"BaseSetId": "SharkSet"
+	},
+	"SharkSet_Helmet_13": {
+		"Key": "Shark_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54878036070227968
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 13,
+		"BaseSetId": "SharkSet"
+	},
+	"SharkSet_Armour_13": {
+		"Key": "Shark_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54878036082810880
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 13,
+		"BaseSetId": "SharkSet"
+	},
+	"MushroomSet_Weapon_14": {
+		"Key": "Mushroom_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804354998281
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 14,
+		"BaseSetId": "MushroomSet"
+	},
+	"MushroomSet_Helmet_14": {
+		"Key": "Mushroom_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804354998279
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 14,
+		"BaseSetId": "MushroomSet"
+	},
+	"MushroomSet_Armour_14": {
+		"Key": "Mushroom_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 54570804354998280
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 14,
+		"BaseSetId": "MushroomSet"
+	},
+	"AnubisSet_Weapon_15": {
+		"Key": "Anubis_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639495
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 15,
+		"BaseSetId": "AnubisSet"
+	},
+	"AnubisSet_Helmet_15": {
+		"Key": "Anubis_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639493
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 15,
+		"BaseSetId": "AnubisSet"
+	},
+	"AnubisSet_Armour_15": {
+		"Key": "Anubis_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639494
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 15,
+		"BaseSetId": "AnubisSet"
+	},
+	"BoxerSet_Weapon_16": {
+		"Key": "Boxer_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639498
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 16,
+		"BaseSetId": "BoxerSet"
+	},
+	"BoxerSet_Helmet_16": {
+		"Key": "Boxer_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639496
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 16,
+		"BaseSetId": "BoxerSet"
+	},
+	"BoxerSet_Armour_16": {
+		"Key": "Boxer_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639497
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 16,
+		"BaseSetId": "BoxerSet"
+	},
+	"DarkPlanetWarriorSet_Weapon_17": {
+		"Key": "DarkPlanetWarrior_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639501
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 17,
+		"BaseSetId": "DarkPlanetWarriorSet"
+	},
+	"DarkPlanetWarriorSet_Helmet_17": {
+		"Key": "DarkPlanetWarrior_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639499
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 17,
+		"BaseSetId": "DarkPlanetWarriorSet"
+	},
+	"DarkPlanetWarriorSet_Armour_17": {
+		"Key": "DarkPlanetWarrior_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639500
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 17,
+		"BaseSetId": "DarkPlanetWarriorSet"
+	},
+	"CubeguySet_Weapon_18": {
+		"Key": "Cubeguy_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639504
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 18,
+		"BaseSetId": "CubeguySet"
+	},
+	"CubeguySet_Helmet_18": {
+		"Key": "Cubeguy_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639502
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 18,
+		"BaseSetId": "CubeguySet"
+	},
+	"CubeguySet_Armour_18": {
+		"Key": "Cubeguy_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639503
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 18,
+		"BaseSetId": "CubeguySet"
+	},
+	"LavamanSet_Weapon_19": {
+		"Key": "Lavaman_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639507
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 19,
+		"BaseSetId": "LavamanSet"
+	},
+	"LavamanSet_Helmet_19": {
+		"Key": "Lavaman_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639505
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 19,
+		"BaseSetId": "LavamanSet"
+	},
+	"LavamanSet_Armour_19": {
+		"Key": "Lavaman_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639506
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 19,
+		"BaseSetId": "LavamanSet"
+	},
+	"ChefSet_Weapon_20": {
+		"Key": "Chef_Weapon",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639510
+			}
+		],
+		"SkinType": "Weapon",
+		"Idx": 20,
+		"BaseSetId": "ChefSet"
+	},
+	"ChefSet_Helmet_20": {
+		"Key": "Chef_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639508
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 20,
+		"BaseSetId": "ChefSet"
+	},
+	"ChefSet_Armour_20": {
+		"Key": "Chef_Armour",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 72367106744639509
+			}
+		],
+		"SkinType": "Armour",
+		"Idx": 20,
+		"BaseSetId": "ChefSet"
+	},
+	"Helmet_100": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 100,
+		"BaseSetId": ""
+	},
+	"Helmet_101": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 101,
+		"BaseSetId": ""
+	},
+	"Helmet_102": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 102,
+		"BaseSetId": ""
+	},
+	"Helmet_103": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 103,
+		"BaseSetId": ""
+	},
+	"Helmet_104": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 104,
+		"BaseSetId": ""
+	},
+	"Helmet_105": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 105,
+		"BaseSetId": ""
+	},
+	"Helmet_106": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 106,
+		"BaseSetId": ""
+	},
+	"Helmet_107": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 107,
+		"BaseSetId": ""
+	},
+	"Helmet_108": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 108,
+		"BaseSetId": ""
+	},
+	"Helmet_109": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 109,
+		"BaseSetId": ""
+	},
+	"Helmet_110": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 110,
+		"BaseSetId": ""
+	},
+	"Helmet_111": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 111,
+		"BaseSetId": ""
+	},
+	"Helmet_112": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 112,
+		"BaseSetId": ""
+	},
+	"Helmet_113": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 113,
+		"BaseSetId": ""
+	},
+	"Helmet_114": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 114,
+		"BaseSetId": ""
+	},
+	"Helmet_115": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 115,
+		"BaseSetId": ""
+	},
+	"Helmet_116": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 116,
+		"BaseSetId": ""
+	},
+	"Helmet_117": {
+		"Key": "Rudolf_Helmet",
+		"Localization": [
+			{
+				"File": "Skins",
+				"Id": 29350092757524480
+			}
+		],
+		"SkinType": "Helmet",
+		"Idx": 117,
+		"BaseSetId": ""
+	}
+}

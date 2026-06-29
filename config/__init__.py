@@ -34,6 +34,7 @@ PETS_MAPPING = load_json(CONFIG_DIR / "Pets_Mapping.json")
 SKILLS_MAPPING = load_json(CONFIG_DIR / "Skills_Mapping.json")
 STATS_MAPPING = load_json(CONFIG_DIR / "Stats_Mapping.json")
 TECHTREE_MAPPING = load_json(CONFIG_DIR / "TechTree_Mapping.json")
+SKINS_MAPPING = load_json(CONFIG_DIR / "Skins_Mapping.json")
 SPRITE_SHEETS = load_json(CONFIG_DIR / "SpriteSheets.json")
 
 
