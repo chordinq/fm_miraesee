@@ -19,7 +19,7 @@ def main() -> None:
     load_start = time.perf_counter()
     ok = load_qml(engine, "test.qml")
     load_ms = (time.perf_counter() - load_start) * 1000
-    print(f"QML loaded in {load_ms:.0f}ms (SettingToggleButton preview)")
+    print(f"QML loaded in {load_ms:.0f}ms (LockButton preview)")
 
     if not ok:
         sys.exit(-1)

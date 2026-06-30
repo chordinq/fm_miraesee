@@ -222,6 +222,21 @@ class MountSummonTestBridge(QObject):
         self._sync_status()
         self.stateChanged.emit()
 
+    @Slot(str)
+    def performMountToggleLock(self, mount_guid: str) -> None:
+        mount = _find_mount_by_guid(self._logic, mount_guid)
+        if mount is None:
+            self._last_action_text = "lock toggle failed: mount not found"
+            self.stateChanged.emit()
+            return
+        mount.is_locked = not mount.is_locked
+        name = _mount_key_from_model(mount)
+        state = "locked" if mount.is_locked else "unlocked"
+        self._last_action_text = f"{state} {name}"
+        self._refresh_collection()
+        self._sync_status()
+        self.stateChanged.emit()
+
     def _simulate_summon(self) -> list[dict[str, object]]:
         player = copy.deepcopy(self._logic.player)
         logic = GameLogic(player)

@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, Mapping
 
 from ...miraesee_extension import miraesee_extension
 from ..enums import SecondaryStatType
-from ..f64_math import f64_from_raw, f64_lerp_raw_from_t_raw, f64_to_raw
+from core.f64_math import f64_from_raw, f64_lerp_raw_from_t_raw, f64_to_raw
 
 if TYPE_CHECKING:
 	from ..shared_game_config import SharedGameConfig

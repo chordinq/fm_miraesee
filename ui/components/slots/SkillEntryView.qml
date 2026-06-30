@@ -12,6 +12,7 @@ Item {
 	readonly property int index: skillModel?.index ?? -1
 	readonly property int rarity: skillModel?.rarity ?? 0
 	readonly property bool showProgress: (skillModel?.maxShardCount ?? 0) > 0
+	readonly property bool showMaxed: root.index >= 0 && !root.showProgress
 
 	readonly property real equippedOpacityFraction: 5 / 16
 	readonly property real equippedVisualWidthRatio: 1.4
@@ -40,13 +41,6 @@ Item {
 		opacity: (root.skillModel && root.skillModel.isEquipped) ? root.equippedOpacityFraction : 1
 	}
 
-	EquippedVisual {
-		anchors.centerIn: icon
-		visible: root.skillModel?.isEquipped ?? false
-		scaleHorizontal: 3
-		width: iconSize * root.equippedVisualWidthRatio
-	}
-
 	AscensionStarView {
 		visible: root.ascensionLevel >= 1
 		ascensionLevel: root.ascensionLevel
@@ -65,6 +59,13 @@ Item {
 		pixelSize: iconSize * root.levelPixelSizeRatio
 	}
 
+	EquippedVisual {
+		anchors.centerIn: icon
+		visible: root.skillModel?.isEquipped ?? false
+		scaleHorizontal: 3
+		width: iconSize * root.equippedVisualWidthRatio
+	}
+
 	SkillProgress {
 		id: skillProgress
 
@@ -72,7 +73,8 @@ Item {
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: icon.height * root.progressOffsetRatio
 		width: iconSize * root.progressWidthRatio
-		visible: showProgress
+		visible: root.showProgress || root.showMaxed
+		showMaxedLabel: root.showMaxed
 		shardCount: root.skillModel?.shardCount ?? 0
 		maxShardCount: root.skillModel?.maxShardCount ?? 0
 	}

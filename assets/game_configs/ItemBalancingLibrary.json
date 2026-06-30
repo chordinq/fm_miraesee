@@ -12,6 +12,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -23,6 +30,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -45,6 +59,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -65,6 +86,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -87,6 +115,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -107,6 +142,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -129,6 +171,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -149,6 +198,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -171,6 +227,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -191,6 +254,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -213,6 +283,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -233,6 +310,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -255,6 +339,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -275,6 +366,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -297,6 +395,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -317,6 +422,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -339,6 +451,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -359,6 +478,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -381,6 +507,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -401,6 +534,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -423,6 +563,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -443,6 +590,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -465,6 +619,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -485,6 +646,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -507,6 +675,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -527,6 +702,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -549,6 +731,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -569,6 +758,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -591,6 +787,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -611,6 +814,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -633,6 +843,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -653,6 +870,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -675,6 +899,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -695,6 +926,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -717,6 +955,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -737,6 +982,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -759,6 +1011,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -779,6 +1038,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -801,6 +1067,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -812,6 +1085,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -834,6 +1114,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -845,6 +1132,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -867,6 +1161,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -887,6 +1188,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -909,6 +1217,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -929,6 +1244,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -951,6 +1273,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -971,6 +1300,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -993,6 +1329,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1013,6 +1356,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1035,6 +1385,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1055,6 +1412,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1077,6 +1441,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1097,6 +1468,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1119,6 +1497,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1139,6 +1524,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1161,6 +1553,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1181,6 +1580,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1203,6 +1609,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1223,6 +1636,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1245,6 +1665,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1265,6 +1692,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1287,6 +1721,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1307,6 +1748,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1329,6 +1777,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1349,6 +1804,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1371,6 +1833,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1391,6 +1860,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1413,6 +1889,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1433,6 +1916,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1455,6 +1945,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1475,6 +1972,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1497,6 +2001,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1517,6 +2028,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1539,6 +2057,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1559,6 +2084,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1581,6 +2113,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1601,6 +2140,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1623,6 +2169,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1643,6 +2196,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1665,6 +2225,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1685,6 +2252,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1707,6 +2281,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1727,6 +2308,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1749,6 +2337,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1769,6 +2364,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1791,6 +2393,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1811,6 +2420,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1833,6 +2449,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1853,6 +2476,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1875,6 +2505,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1895,6 +2532,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1917,6 +2561,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1938,6 +2589,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1949,6 +2607,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -1971,6 +2636,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -1991,6 +2663,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2013,6 +2692,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2033,6 +2719,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2055,6 +2748,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2075,6 +2775,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2097,6 +2804,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2117,6 +2831,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2139,6 +2860,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2159,6 +2887,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2181,6 +2916,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2201,6 +2943,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2223,6 +2972,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2243,6 +2999,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2265,6 +3028,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2285,6 +3055,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2307,6 +3084,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2327,6 +3111,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2349,6 +3140,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2369,6 +3167,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2391,6 +3196,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2411,6 +3223,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2433,6 +3252,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2453,6 +3279,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2475,6 +3308,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2495,6 +3335,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2517,6 +3364,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2537,6 +3391,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2559,6 +3420,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2579,6 +3447,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2601,6 +3476,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2621,6 +3503,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2643,6 +3532,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2663,6 +3559,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2685,6 +3588,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2705,6 +3615,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2727,6 +3644,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2747,6 +3671,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2769,6 +3700,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2789,6 +3727,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2811,6 +3756,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2831,6 +3783,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2853,6 +3812,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2873,6 +3839,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2895,6 +3868,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2916,6 +3896,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2927,6 +3914,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2949,6 +3943,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -2969,6 +3970,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -2991,6 +3999,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3011,6 +4026,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3033,6 +4055,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3053,6 +4082,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3075,6 +4111,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3095,6 +4138,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3117,6 +4167,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3137,6 +4194,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3159,6 +4223,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3179,6 +4250,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3201,6 +4279,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3221,6 +4306,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3243,6 +4335,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3263,6 +4362,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3285,6 +4391,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3305,6 +4418,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3327,6 +4447,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3348,6 +4475,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3359,6 +4493,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3381,6 +4522,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3401,6 +4549,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3423,6 +4578,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3443,6 +4605,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3465,6 +4634,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3485,6 +4661,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3507,6 +4690,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3527,6 +4717,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3549,6 +4746,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3569,6 +4773,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3591,6 +4802,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3611,6 +4829,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3633,6 +4858,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3653,6 +4885,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3675,6 +4914,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3695,6 +4941,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3717,6 +4970,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3737,6 +4997,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3759,6 +5026,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3779,6 +5053,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3801,6 +5082,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3821,6 +5109,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3843,6 +5138,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3863,6 +5165,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3885,6 +5194,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3905,6 +5221,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3927,6 +5250,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3938,6 +5268,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -3960,6 +5297,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -3980,6 +5324,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4002,6 +5353,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4022,6 +5380,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4044,6 +5409,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4064,6 +5436,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4086,6 +5465,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4106,6 +5492,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4128,6 +5521,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4148,6 +5548,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4170,6 +5577,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4190,6 +5604,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4212,6 +5633,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4232,6 +5660,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4254,6 +5689,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4274,6 +5716,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4296,6 +5745,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4316,6 +5772,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4338,6 +5801,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4358,6 +5828,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4380,6 +5857,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4400,6 +5884,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4422,6 +5913,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4442,6 +5940,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4464,6 +5969,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4484,6 +5996,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4506,6 +6025,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4526,6 +6052,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4548,6 +6081,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4568,6 +6108,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4590,6 +6137,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4610,6 +6164,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4632,6 +6193,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4652,6 +6220,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4674,6 +6249,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4694,6 +6276,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4716,6 +6305,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4736,6 +6332,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4758,6 +6361,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4778,6 +6388,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4800,6 +6417,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4820,6 +6444,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4842,6 +6473,13 @@
             "StatType": "Damage",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4862,6 +6500,13 @@
           "UniqueStat": {
             "StatType": "Damage",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4884,6 +6529,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4904,6 +6556,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"
@@ -4926,6 +6585,13 @@
             "StatType": "Health",
             "StatNature": "Additive"
           },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
+          },
           "StatTarget": {
             "$type": "PlayerStatTarget"
           }
@@ -4946,6 +6612,13 @@
           "UniqueStat": {
             "StatType": "Health",
             "StatNature": "Additive"
+          },
+          "LegacyTarget": null,
+          "Layer": "None",
+          "Condition": "None",
+          "Target": {
+            "Kind": "Player",
+            "Qualifiers": []
           },
           "StatTarget": {
             "$type": "PlayerStatTarget"

@@ -95,30 +95,18 @@ PopupView {
 		anchors.rightMargin: parent.width * 0.05
 		spacing: parent.height * 0.01
 
-		Row {
-			spacing: 0
-
-			AppText {
-				prefix: "["
-				locTable: root.targetPetModel ? root.targetPetModel.rarityLocTable : "General"
-				locId: root.targetPetModel ? root.targetPetModel.rarityLocId : ""
-				suffix: "]"
-				fillColor: root.targetPetModel
-					? Theme.rarityColors[root.targetPetModel.rarity]
-					: Theme.darkText
-				pixelSize: root.panelWidth * root.titleFontScale
-				outlineWeight: 8
-			}
-
-			AppText {
-				locTable: root.targetPetModel ? root.targetPetModel.nameLocTable : "Pets"
-				locId: root.targetPetModel ? root.targetPetModel.nameLocId : ""
-				fillColor: root.targetPetModel
-					? Theme.rarityColors[root.targetPetModel.rarity]
-					: Theme.darkText
-				pixelSize: root.panelWidth * root.titleFontScale
-				outlineWeight: 8
-			}
+		AppText {
+			prefix: "["
+			locTable: root.targetPetModel ? root.targetPetModel.rarityLocTable : "General"
+			locId: root.targetPetModel ? root.targetPetModel.rarityLocId : ""
+			suffix: "] "
+			appendLocTable: root.targetPetModel ? root.targetPetModel.nameLocTable : "Pets"
+			appendLocId: root.targetPetModel ? root.targetPetModel.nameLocId : ""
+			fillColor: root.targetPetModel
+				? Theme.rarityColors[root.targetPetModel.rarity]
+				: Theme.darkText
+			pixelSize: root.panelWidth * root.titleFontScale
+			outlineWeight: 8
 		}
 
 		AppText {

@@ -22,6 +22,14 @@ def load_shared_keys() -> dict[str, dict[str, int]]:
     return tables
 
 
+def _desc_lookup_key(entry_key: str, file_name: str, shared: dict[str, dict[str, int]]) -> str | None:
+    table = shared.get(file_name, {})
+    for candidate in (f"{entry_key}Desc", f"{entry_key}Description"):
+        if candidate in table:
+            return candidate
+    return None
+
+
 def normalize_mapping_loc_blocks(obj: object, shared: dict[str, dict[str, int]]) -> bool:
     changed = False
     if isinstance(obj, dict):
@@ -38,12 +46,19 @@ def normalize_mapping_loc_blocks(obj: object, shared: dict[str, dict[str, int]])
                     changed = True
                 file_name = loc.get("File", "")
                 entry_key = obj.get("Key")
-                if entry_key and file_name in shared and entry_key in shared[file_name]:
-                    new_id = shared[file_name][entry_key]
-                    if loc.get("Id") != new_id:
-                        loc["Id"] = new_id
-                        changed = True
-        for value in obj.values():
+                if not entry_key or file_name not in shared:
+                    continue
+                if block_name == "DescLocalization":
+                    lookup_key = _desc_lookup_key(entry_key, file_name, shared)
+                else:
+                    lookup_key = entry_key if entry_key in shared[file_name] else None
+                if lookup_key is None:
+                    continue
+                new_id = shared[file_name][lookup_key]
+                if loc.get("Id") != new_id:
+                    loc["Id"] = new_id
+                    changed = True
+0        for value in obj.values():
             if normalize_mapping_loc_blocks(value, shared):
                 changed = True
     elif isinstance(obj, list):

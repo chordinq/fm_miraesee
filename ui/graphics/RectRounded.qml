@@ -10,7 +10,7 @@ Item {
 
     property color fillColor: Theme.white
     property real fillOpacity: 1.0
-
+    
     readonly property real baseSize: 256
 
     implicitWidth: baseSize * scaleW

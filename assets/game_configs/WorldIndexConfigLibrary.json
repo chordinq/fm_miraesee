@@ -3,18 +3,18 @@
     "Index": 0,
     "MinTimeZone": "-0.12:00:00.0000000",
     "MaxTimeZone": "-0.03:00:00.0000000",
-    "WorldIndex": 43
+    "WorldIndex": 46
   },
   "1": {
     "Index": 1,
     "MinTimeZone": "-0.03:00:00.0000000",
     "MaxTimeZone": "0.03:00:00.0000000",
-    "WorldIndex": 44
+    "WorldIndex": 47
   },
   "2": {
     "Index": 2,
     "MinTimeZone": "0.03:00:00.0000000",
     "MaxTimeZone": "0.14:00:00.0000000",
-    "WorldIndex": 45
+    "WorldIndex": 48
   }
 }

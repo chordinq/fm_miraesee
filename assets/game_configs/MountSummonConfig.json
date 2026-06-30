@@ -911,5 +911,6 @@
     15,
     50
   ],
-  "BulkSummonUnlockThreshold": 20
+  "BulkSummonUnlockThreshold": 20,
+  "AutoSelectUnlockThreshold": 40
 }

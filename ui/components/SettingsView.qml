@@ -18,6 +18,7 @@ PopupView {
 	readonly property string gameNumberFormattingLocId: "1000000000000001"
 	readonly property string allowNegativeCurrencyLocId: "1000000000000002"
 	readonly property real titleFontScale: 0.09
+	readonly property real titleHeaderHeight: root.panelWidth * (root.titleFontScale * 1.55 + 0.04)
 	readonly property real rowFontScale: 0.44
 	readonly property real rowHeightRatio: 0.11
 	readonly property real toggleHeightRatio: 0.72
@@ -31,25 +32,24 @@ PopupView {
 		{ locId: languagesLocId, locTable: "General", navigable: true }
 	]
 
-	AppText {
-		id: settingsTitle
-
-		anchors.horizontalCenter: parent.horizontalCenter
-		anchors.top: parent.top
-		locId: root.settingsTitleLocId
-		locTable: "General"
-		pixelSize: root.panelWidth * root.titleFontScale
-		fillColor: Theme.white
-		outlineColor: Theme.black
-		outlineWeight: 8
-	}
-
 	Item {
-		id: titleSpacer
+		id: titleHeader
 
-		anchors.top: settingsTitle.bottom
-		width: parent.width
-		height: root.panelWidth * 0.04
+		anchors.left: parent.left
+		anchors.right: parent.right
+		anchors.top: parent.top
+		height: root.titleHeaderHeight
+
+		AppText {
+			anchors.horizontalCenter: parent.horizontalCenter
+			anchors.verticalCenter: parent.verticalCenter
+			locId: root.settingsTitleLocId
+			locTable: "General"
+			pixelSize: root.panelWidth * root.titleFontScale
+			fillColor: Theme.white
+			outlineColor: Theme.black
+			outlineWeight: 8
+		}
 	}
 
 	Flickable {
@@ -57,7 +57,7 @@ PopupView {
 
 		anchors.left: parent.left
 		anchors.right: parent.right
-		anchors.top: titleSpacer.bottom
+		anchors.top: titleHeader.bottom
 		anchors.bottom: parent.bottom
 		clip: true
 		contentWidth: width

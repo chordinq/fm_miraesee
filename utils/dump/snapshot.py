@@ -41,6 +41,7 @@ class PetEntryDump:
 	is_equipped: bool
 	equip_slot: int
 	stats_blob: str
+	is_locked: bool = False
 
 
 @dataclass
@@ -69,6 +70,7 @@ class MountEntryDump:
 	experience: int
 	is_equipped: bool
 	stats_blob: str
+	is_locked: bool = False
 
 
 @dataclass

@@ -10,6 +10,7 @@ from pathlib import Path
 
 from .dump_schema import get_registry
 from .json_convert import decode_mpc
+from .paths import GAME_CONFIGS_DIR
 
 
 def main() -> None:
@@ -24,7 +25,7 @@ def main() -> None:
         "-o",
         "--output",
         type=Path,
-        default=Path(__file__).resolve().parents[2] / "assets" / "parsed_game_configs",
+        default=GAME_CONFIGS_DIR,
     )
     parser.add_argument("--dump", type=Path, help="path to dump.cs")
     args = parser.parse_args()

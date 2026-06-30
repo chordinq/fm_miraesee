@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
 	from .enums import CurrencyType
 
-_SUFFIXES = ("K", "M", "B", "T", "Q")
+_SUFFIXES = ("k", "m", "b", "t", "q")
 
 _LEVEL_ABBREV_LOC_ID = "25799296414314496"
 

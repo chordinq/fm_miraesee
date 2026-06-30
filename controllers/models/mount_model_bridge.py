@@ -33,6 +33,12 @@ class MountModelBridge(QObject):
         self._name_loc_id, self._name_loc_table = name_loc_from_entry(entry)
         self._rarity_loc_id, self._rarity_loc_table = rarity_loc_from_rarity(self._rarity)
         self._stat_lines = build_mount_stat_lines(self._player, mount)
+        self._base_stat_lines = [
+            line for line in self._stat_lines if not line["secondary"]
+        ]
+        self._sub_stat_lines = [
+            line for line in self._stat_lines if line["secondary"]
+        ]
 
     def refresh(self) -> None:
         self._rebuild()
@@ -57,6 +63,10 @@ class MountModelBridge(QObject):
     @Property(bool, notify=changed)
     def isEquipped(self) -> bool:
         return self._mount.is_equipped
+
+    @Property(bool, notify=changed)
+    def isLocked(self) -> bool:
+        return self._mount.is_locked
 
     @Property(bool, notify=changed)
     def canEquip(self) -> bool:
@@ -85,3 +95,11 @@ class MountModelBridge(QObject):
     @Property("QVariantList", notify=changed)
     def statLines(self) -> list[dict[str, object]]:
         return self._stat_lines
+
+    @Property("QVariantList", notify=changed)
+    def baseStatLines(self) -> list[dict[str, object]]:
+        return self._base_stat_lines
+
+    @Property("QVariantList", notify=changed)
+    def subStatLines(self) -> list[dict[str, object]]:
+        return self._sub_stat_lines

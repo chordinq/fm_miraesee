@@ -86,6 +86,7 @@ Item {
 		AppText {
 			anchors.centerIn: parent
 			width: headerClip.width * 0.92
+			wordWrap: true
 			horizontalAlignment: Text.AlignHCenter
 			locId: root.typeConfig.locId
 			locTable: "TechTree"

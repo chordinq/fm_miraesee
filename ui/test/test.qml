@@ -8,16 +8,15 @@ ApplicationWindow {
 	width: initWinWidth
 	height: initWinHeight
 	visible: true
-	title: "SettingToggleButton test"
+	title: "LockButton test"
 	color: Theme.darkBlue
 
-	property bool toggleA: true
-	property bool toggleB: false
-	property bool toggleC: true
+	property bool lockA: false
+	property bool lockB: true
 
 	readonly property real outerMargin: Math.max(16, width * 0.05)
-	readonly property real sectionSpacing: Math.max(20, height * 0.04)
-	readonly property real toggleBaseHeight: Math.min(width * 0.14, 56)
+	readonly property real sectionSpacing: Math.max(24, height * 0.04)
+	readonly property real buttonSize: Math.min(width * 0.28, height * 0.22, 128)
 
 	Component.onCompleted: {
 		Theme.language = uiLanguage
@@ -29,58 +28,43 @@ ApplicationWindow {
 
 		AppText {
 			anchors.horizontalCenter: parent.horizontalCenter
-			text: "SettingToggleButton"
+			text: "LockButton"
 			pixelSize: Math.max(20, width * 0.05)
 			fillColor: Theme.white
 			outlineColor: Theme.black
 			outlineWeight: 8
 		}
 
-		SettingToggleButton {
-			id: toggleA
+		LockButton {
+			id: lockA
 
 			anchors.horizontalCenter: parent.horizontalCenter
-			height: toggleBaseHeight
-			width: height * layoutAspectRatio
-			checked: window.toggleA
-			onToggled: function(enabled) {
-				window.toggleA = enabled
-				console.log("toggleA", enabled)
+			width: buttonSize
+			height: buttonSize
+			isLocked: window.lockA
+			onClicked: {
+				window.lockA = !window.lockA
+				console.log("lockA", window.lockA)
 			}
 		}
 
-		SettingToggleButton {
-			id: toggleB
+		LockButton {
+			id: lockB
 
 			anchors.horizontalCenter: parent.horizontalCenter
-			height: toggleBaseHeight
-			width: height * layoutAspectRatio
-			checked: window.toggleB
-			onToggled: function(enabled) {
-				window.toggleB = enabled
-				console.log("toggleB", enabled)
-			}
-		}
-
-		SettingToggleButton {
-			id: toggleC
-
-			anchors.horizontalCenter: parent.horizontalCenter
-			height: toggleBaseHeight * 0.75
-			width: height * layoutAspectRatio
-			checked: window.toggleC
-			onToggled: function(enabled) {
-				window.toggleC = enabled
-				console.log("toggleC", enabled)
+			width: buttonSize
+			height: buttonSize
+			isLocked: window.lockB
+			onClicked: {
+				window.lockB = !window.lockB
+				console.log("lockB", window.lockB)
 			}
 		}
 
 		AppText {
 			anchors.horizontalCenter: parent.horizontalCenter
-			text: "ratio " + toggleA.trackScaleW + ":" + toggleA.trackScaleH
-				+ "  A:" + (window.toggleA ? "ON" : "OFF")
-				+ "  B:" + (window.toggleB ? "ON" : "OFF")
-				+ "  C:" + (window.toggleC ? "ON" : "OFF")
+			text: "A: " + (window.lockA ? "Locked" : "Unlocked")
+				+ "  B: " + (window.lockB ? "Locked" : "Unlocked")
 			pixelSize: Math.max(14, width * 0.035)
 			fillColor: Theme.white
 			outlineWeight: 0

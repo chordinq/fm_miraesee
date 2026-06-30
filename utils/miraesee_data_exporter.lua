@@ -430,7 +430,8 @@ function extract_pets_eggs_collection(player_ptr)
                 local exp = read_dword(model + 0x2C)
                 local is_eq = read_dword(model + 0x30) % 256
                 local slot = read_dword(model + 0x34) % 256
-                local prog = string.format("%08X%08X%02X%02X", lvl, exp, is_eq, slot)
+                local is_locked = read_dword(model + 0x40) % 256
+                local prog = string.format("%08X%08X%02X%02X%02X", lvl, exp, is_eq, slot, is_locked)
                 table.insert(out, header .. prog .. extract_stats_20char(read_qword(model + 0x38)))
             end
         end
@@ -470,7 +471,8 @@ function extract_mounts_collection(player_ptr)
                 local lvl = read_dword(model + 0x28)
                 local exp = read_dword(model + 0x2C)
                 local is_eq = read_dword(model + 0x30) % 256
-                local prog = string.format("%08X%08X%02X00", lvl, exp, is_eq)
+                local is_locked = read_dword(model + 0x40) % 256
+                local prog = string.format("%08X%08X%02X00%02X", lvl, exp, is_eq, is_locked)
                 table.insert(out, header .. prog .. extract_stats_20char(read_qword(model + 0x38)))
             end
         end

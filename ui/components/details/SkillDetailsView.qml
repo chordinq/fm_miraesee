@@ -4,54 +4,91 @@ import ui 1.0
 DetailsView {
 	id: root
 
+	heightScale: 45.5
+
 	property var skillModel: null
 	property var skillController: null
 	property int ascensionLevel: 0
 
-	readonly property real iconSizeRatio: 0.13
-	readonly property real iconSize: panelWidth * iconSizeRatio
-	readonly property real iconScale: iconSize / 256
+	readonly property int iconLogicalSize: 256
+	readonly property real iconSizeRatio: 0.138
+	readonly property real iconSize: layoutUnit * iconSizeRatio
+	readonly property real iconScale: iconSize / iconLogicalSize
 	readonly property real iconLeftMarginRatio: 0.04
-	readonly property real iconTopMarginRatio: 0.06
-	readonly property real textLeftMarginRatio: 0.13
-	readonly property real textTopMarginRatio: 0.03
-	readonly property real textRightMarginRatio: 0.05
+	readonly property real iconTopMarginRatio: 0.054
 	readonly property real iconEquippedOpacity: 5 / 16
+	readonly property real equippedVisualWidthRatio: 1.4
+	readonly property real levelOffsetRatio:
+		root.ascensionLevel > 0 ? 0.25 : 0.03
+	readonly property real levelPixelSizeRatio: 0.32
+	readonly property real progressOffsetRatio: 0.34
+	readonly property real progressWidthRatio: 1.3
+	readonly property real ascensionStarSizeRatio: 0.25
+	readonly property real ascensionStarOffsetRatio: 0
+	readonly property real iconProgressHeightRatio:
+		progressWidthRatio * (17 / 16) / (72 / 16)
+	readonly property real iconLogicalHeightRatio:
+		1 + progressOffsetRatio + iconProgressHeightRatio * 0.5
+	readonly property bool showProgress:
+		(root.skillModel?.maxShardCount ?? 0) > 0
+	readonly property bool showMaxed:
+		(root.skillModel?.index ?? -1) >= 0 && !root.showProgress
 
-	readonly property real titleFontScale: 0.043
-	readonly property real bodyFontScale: 0.043
-	readonly property real titleSegmentSpacingRatio: 0.012
-	readonly property real lineSpacingRatio: 0.012
-
+	readonly property real titleLeftMarginRatio: 0.27
+	readonly property real titleTopMarginRatio: 0.026
+	readonly property real titleRightMarginRatio: 0.046
+	readonly property real titleFontScale: 0.0449
 	readonly property color titleColor: skillModel
 		? Theme.rarityColors[skillModel.rarity]
 		: Theme.darkText
+	
+	readonly property real descLeftMarginRatio: 0.27
+	readonly property real descTopMarginRatio: 0.1
+	readonly property real descRightMarginRatio: 0.046
+	readonly property real bodyFontScale: 0.045
 
 	readonly property string upgradeLocId: "25788540620828672"
 	readonly property string equipLocId: "27933087392002048"
 	readonly property string removeLocId: "27927471772594176"
+	readonly property string passiveLocId: "3898839411974144"
+
+	readonly property real passiveWidthRatio: 0.805
+	readonly property real passiveWidth: layoutUnit * passiveWidthRatio
+	readonly property real passiveLabelLeftMarginRatio: 0.13
+	readonly property real passiveLabelBottomMarginRatio: 0.1
+	readonly property real passivePillBottomMarginRatio: 0.057
+	readonly property real passiveFontScale: 0.045
+	readonly property real passivePillScaleW: 21
+	readonly property real passivePillScaleH: 1.2
+	readonly property real passivePillHeight:
+		passiveWidth * passivePillScaleH / passivePillScaleW
+	readonly property bool showPassiveUi:
+		(root.skillModel?.passiveStatSegments?.length ?? 0) > 0
 
 	Item {
 		anchors.fill: parent
 
 		Item {
+			id: iconSlot
+
 			width: root.iconSize
-			height: root.iconSize
+			height: root.iconSize * root.iconLogicalHeightRatio
 			anchors.left: parent.left
 			anchors.top: parent.top
-			anchors.leftMargin: root.panelWidth * root.iconLeftMarginRatio
-			anchors.topMargin: root.panelWidth * root.iconTopMarginRatio
+			anchors.leftMargin: root.layoutUnit * root.iconLeftMarginRatio
+			anchors.topMargin: root.layoutUnit * root.iconTopMarginRatio
 
 			Item {
-				readonly property int logicalSize: 256
-
-				width: logicalSize
-				height: logicalSize
+				width: root.iconLogicalSize
+				height: root.iconLogicalSize * root.iconLogicalHeightRatio
 				scale: root.iconScale
 				transformOrigin: Item.TopLeft
 
 				SkillIcon {
-					anchors.fill: parent
+					id: skillIcon
+
+					width: root.iconLogicalSize
+					height: root.iconLogicalSize
 					index: root.skillModel ? root.skillModel.index : -1
 					rarity: root.skillModel ? root.skillModel.rarity : 0
 					ascensionLevel: root.ascensionLevel
@@ -59,56 +96,169 @@ DetailsView {
 						? root.iconEquippedOpacity
 						: 1
 				}
+
+				AscensionStarView {
+					visible: root.ascensionLevel >= 1
+					ascensionLevel: root.ascensionLevel
+					starSize: root.iconLogicalSize * root.ascensionStarSizeRatio
+					anchors.horizontalCenter: skillIcon.horizontalCenter
+					anchors.verticalCenter: skillIcon.bottom
+					anchors.verticalCenterOffset:
+						skillIcon.height * root.ascensionStarOffsetRatio
+				}
+
+				LevelText {
+					anchors.horizontalCenter: skillIcon.horizontalCenter
+					anchors.verticalCenter: skillIcon.bottom
+					anchors.verticalCenterOffset:
+						-skillIcon.height * root.levelOffsetRatio
+					level: (root.skillModel?.level ?? -1) + 1
+					visible: skillIcon.index >= 0
+					pixelSize: root.iconLogicalSize * root.levelPixelSizeRatio
+				}
+
+				EquippedVisual {
+					anchors.centerIn: skillIcon
+					visible: root.skillModel?.isEquipped ?? false
+					scaleHorizontal: 3
+					width: root.iconLogicalSize * root.equippedVisualWidthRatio
+				}
+
+				SkillProgress {
+					anchors.horizontalCenter: skillIcon.horizontalCenter
+					anchors.verticalCenter: skillIcon.bottom
+					anchors.verticalCenterOffset:
+						skillIcon.height * root.progressOffsetRatio
+					width: root.iconLogicalSize * root.progressWidthRatio
+					visible: root.showProgress || root.showMaxed
+					showMaxedLabel: root.showMaxed
+					shardCount: root.skillModel?.shardCount ?? 0
+					maxShardCount: root.skillModel?.maxShardCount ?? 0
+				}
 			}
 		}
 
-		Column {
+		Item {
+			id: titleSlot
+
 			anchors.left: parent.left
-			anchors.leftMargin: root.iconSize + root.panelWidth * root.textLeftMarginRatio
+			anchors.leftMargin: root.layoutUnit * root.titleLeftMarginRatio
 			anchors.top: parent.top
-			anchors.topMargin: root.panelWidth * root.textTopMarginRatio
+			anchors.topMargin: root.layoutUnit * root.titleTopMarginRatio
 			anchors.right: parent.right
-			anchors.rightMargin: root.panelWidth * root.textRightMarginRatio
-			spacing: root.panelWidth * root.lineSpacingRatio
-
-			Row {
-				spacing: root.panelWidth * root.titleSegmentSpacingRatio
-
-				AppText {
-					prefix: "["
-					locTable: root.skillModel ? root.skillModel.rarityLocTable : "General"
-					locId: root.skillModel ? root.skillModel.rarityLocId : ""
-					suffix: "]"
-					fillColor: root.titleColor
-					pixelSize: root.panelWidth * root.titleFontScale
-					outlineWeight: 8
-				}
-
-				AppText {
-					locTable: "Skills"
-					locId: root.skillModel ? root.skillModel.nameLocId : ""
-					fillColor: root.titleColor
-					pixelSize: root.panelWidth * root.titleFontScale
-					outlineWeight: 8
-				}
-			}
+			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
+			height: titleText.height
 
 			AppText {
+				id: titleText
+
+				prefix: "["
+				locTable: root.skillModel ? root.skillModel.rarityLocTable : "General"
+				locId: root.skillModel ? root.skillModel.rarityLocId : ""
+				suffix: "] "
+				appendLocTable: "Skills"
+				appendLocId: root.skillModel ? root.skillModel.nameLocId : ""
+				fillColor: root.titleColor
+				pixelSize: root.layoutUnit * root.titleFontScale
+				outlineWeight: 8
+			}
+		}
+
+		Item {
+			id: descSlot
+
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.descLeftMarginRatio
+			anchors.top: parent.top
+			anchors.topMargin: root.layoutUnit * root.descTopMarginRatio
+			anchors.right: parent.right
+			anchors.rightMargin: root.layoutUnit * root.descRightMarginRatio
+			height: descText.height
+
+			AppText {
+				id: descText
+
 				width: parent.width
-				wrapMode: Text.WordWrap
-				locTable: "Skills"
+				wordWrap: true
+				locTable: root.skillModel ? root.skillModel.descLocTable : "Skills"
 				locId: root.skillModel ? root.skillModel.descLocId : ""
 				formatArgs: root.skillModel ? root.skillModel.descFormatArgs : []
 				fillColor: Theme.black
-				pixelSize: root.panelWidth * root.bodyFontScale
+				pixelSize: root.layoutUnit * root.bodyFontScale
 				outlineWeight: 0
 			}
 		}
 
+		Item {
+			id: passiveLabelSlot
+
+			visible: root.showPassiveUi
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.passiveLabelLeftMarginRatio
+			anchors.bottom: actionRow.top
+			anchors.bottomMargin: root.layoutUnit * root.passiveLabelBottomMarginRatio
+			height: passiveLabelText.height
+
+			AppText {
+				id: passiveLabelText
+
+				locTable: "Skills"
+				locId: root.passiveLocId
+				fillColor: Theme.darkGreyText
+				pixelSize: root.layoutUnit * root.passiveFontScale
+				outlineWeight: 0
+			}
+		}
+
+		Item {
+			id: passivePillSlot
+
+			visible: root.showPassiveUi
+			width: root.passiveWidth
+			height: root.passivePillHeight
+			anchors.horizontalCenter: parent.horizontalCenter
+			anchors.bottom: actionRow.top
+			anchors.bottomMargin: root.layoutUnit * root.passivePillBottomMarginRatio
+
+			RectRounded {
+				anchors.fill: parent
+				scaleW: root.passivePillScaleW
+				scaleH: root.passivePillScaleH
+				fillColor: Theme.black
+				fillOpacity: 0.3
+			}
+
+			Row {
+				id: passiveStatsRow
+
+				anchors.centerIn: parent
+				spacing: 0
+
+				Repeater {
+					model: root.skillModel ? root.skillModel.passiveStatSegments : []
+
+					AppText {
+						required property var modelData
+
+						text: modelData.text !== undefined ? modelData.text : ""
+						locId: modelData.locId !== undefined ? modelData.locId : ""
+						locTable: modelData.locTable !== undefined
+							? modelData.locTable
+							: "General"
+						suffix: modelData.suffix !== undefined ? modelData.suffix : ""
+						fillColor: Theme.black
+						pixelSize: root.layoutUnit * root.passiveFontScale
+						outlineWeight: 0
+					}
+				}
+			}
+		}
+
 		Row {
+			id: actionRow
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: parent.bottom
-			anchors.bottomMargin: root.panelWidth * root.actionBottomMarginRatio
+			anchors.bottomMargin: root.layoutUnit * root.actionBottomMarginRatio
 			spacing: root.actionRowSpacing
 
 			RectRoundButton {

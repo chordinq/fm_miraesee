@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from core.game_logic.enums import CurrencyType
-from core.game_logic.fd6_math import format_fd6_raw
+from core.fd6_math import format_fd6_raw
 from core.game_logic.number_format import format, format_currency, format_long
 from ui.utils.ui_settings import game_number_formatting_enabled
 

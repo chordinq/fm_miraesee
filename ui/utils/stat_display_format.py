@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from core.game_logic.enums import SecondaryStatType, StatNature
-from core.game_logic.fd6_math import fd6_from_f64, fd6_truncate, format_fd6_raw
+from core.fd6_math import fd6_from_f64, fd6_truncate, format_fd6_raw
 from core.game_logic.number_format import format_stat
 from core.game_logic.shared_game_config import SharedGameConfig
 from core.game_logic.stats.stat_helper import StatHelper

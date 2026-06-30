@@ -179,6 +179,7 @@ def _apply_pets_and_eggs(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 		pet.experience = entry.experience
 		pet.is_equipped = entry.is_equipped
 		pet.equip_slot = _normalize_equip_slot(entry.is_equipped, entry.equip_slot)
+		pet.is_locked = entry.is_locked
 		collection.pets.append(pet)
 
 	for i, entry in enumerate(snapshot.eggs):
@@ -222,6 +223,7 @@ def _apply_mounts(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 		mount.level = entry.level
 		mount.experience = entry.experience
 		mount.is_equipped = entry.is_equipped
+		mount.is_locked = entry.is_locked
 		collection.player_mount_models.append(mount)
 
 

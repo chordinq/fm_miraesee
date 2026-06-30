@@ -33,6 +33,7 @@ class PlayerMountModel:
 		self.level = 0
 		self.experience = 0
 		self.is_equipped = False
+		self.is_locked = False
 
 	@staticmethod
 	def get_total_level_xp(

@@ -60,27 +60,37 @@ Item {
 			onClicked: root.clicked()
 		}
 
-		RowLayout {
+		Item {
+			id: titleHost
+			width: canvas.width * 0.88
+			height: titleRow.implicitHeight
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.verticalCenter: parent.verticalCenter
 			anchors.verticalCenterOffset: -canvas.height * 0.18
 
-			AppText {
-				locId: root.summonLocId
-				pixelSize: canvas.height * root.titleFontScale
-				fillColor: Theme.white
-				outlineColor: Theme.black
-				outlineWeight: 8
-				Layout.alignment: Qt.AlignBaseline
-			}
+			RowLayout {
+				id: titleRow
+				anchors.centerIn: parent
+				scale: Math.min(1, titleHost.width / Math.max(titleRow.implicitWidth, 1))
+				transformOrigin: Item.Center
 
-			AppText {
-				text: "x" + root.formattedSummonCount
-				pixelSize: canvas.height * root.titleFontScale
-				fillColor: Theme.white
-				outlineColor: Theme.black
-				outlineWeight: 8
-				Layout.alignment: Qt.AlignBaseline
+				AppText {
+					locId: root.summonLocId
+					pixelSize: canvas.height * root.titleFontScale
+					fillColor: Theme.white
+					outlineColor: Theme.black
+					outlineWeight: 8
+					Layout.alignment: Qt.AlignBaseline
+				}
+
+				AppText {
+					text: "x" + root.formattedSummonCount
+					pixelSize: canvas.height * root.titleFontScale
+					fillColor: Theme.white
+					outlineColor: Theme.black
+					outlineWeight: 8
+					Layout.alignment: Qt.AlignBaseline
+				}
 			}
 		}
 

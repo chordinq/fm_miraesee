@@ -12,24 +12,47 @@ DetailsView {
 
 	property bool comingSoonVisible: false
 
-	readonly property real iconSizeRatio: 0.162
-	readonly property real iconSize: panelWidth * iconSizeRatio
+	readonly property real iconSizeRatio: 0.16
+	readonly property real iconSize: layoutUnit * iconSizeRatio
 	readonly property real iconScale: iconSize / 256
 	readonly property real iconLeftMarginRatio: 0.04
 	readonly property real iconTopMarginRatio: 0.06
-	readonly property real textLeftMarginRatio: 0.13
-	readonly property real textTopMarginRatio: 0.03
-	readonly property real textRightMarginRatio: 0.05
-	readonly property real iconEquippedOpacity: 5 / 16
+	readonly property real iconEquippedOpacity: 0.5
+	readonly property real iconOpacity: !root.petModel
+		? 1
+		: (root.petModel.isEquipped || root.petModel.isLocked)
+			? root.iconEquippedOpacity
+			: 1
+	readonly property real equippedVisualWidthRatio: 1.2
+	readonly property real equippedScaleHorizontal: 2.5
 
-	readonly property real titleFontScale: 0.043
-	readonly property real statFontScale: 0.043
-	readonly property real titleSegmentSpacingRatio: 0.012
-	readonly property real lineSpacingRatio: 0.012
-
+	readonly property real titleLeftMarginRatio: 0.27
+	readonly property real titleTopMarginRatio: 0.05
+	readonly property real titleRightMarginRatio: 0.05
+	readonly property real lockButtonSizeRatio: 0.055
+	readonly property real lockButtonTopMarginRatio: 0.009
+	readonly property real lockButtonRightMarginRatio: 0.0075
+	readonly property real titleFontScale: 0.0449
 	readonly property color titleColor: petModel
 		? Theme.rarityColors[petModel.rarity]
 		: Theme.darkText
+
+	readonly property real baseStatsLeftMarginRatio: 0.275
+	readonly property real baseStatsTopMarginRatio: 0.115
+	readonly property real baseStatsRightMarginRatio: 0.05
+	readonly property real baseStatFontScale: 0.042
+	readonly property real baseStatRowSpacingRatio: -0.02
+	readonly property real baseStatLabelSpacingRatio: 0.012
+
+	readonly property real subStatsLeftMarginRatio: 0.275
+	readonly property real subStatsSectionSpacingRatio: 0
+	readonly property real subStatsRightMarginRatio: 0.05
+	readonly property real subStatFontScale: 0.042
+	readonly property real subStatRowSpacingRatio: -0.02
+	readonly property real subStatLabelSpacingRatio: 0.012
+
+	property real actionBottomMarginRatio: 0.2
+	property real comingSoonBottomMarginRatio: 0.02
 
 	readonly property string upgradeLocId: "25788540620828672"
 	readonly property string equipLocId: "27933087392002048"
@@ -63,12 +86,14 @@ DetailsView {
 		anchors.fill: parent
 
 		Item {
+			id: iconSlot
+
 			width: root.iconSize
 			height: root.iconSize
 			anchors.left: parent.left
 			anchors.top: parent.top
-			anchors.leftMargin: root.panelWidth * root.iconLeftMarginRatio
-			anchors.topMargin: root.panelWidth * root.iconTopMarginRatio
+			anchors.leftMargin: root.layoutUnit * root.iconLeftMarginRatio
+			anchors.topMargin: root.layoutUnit * root.iconTopMarginRatio
 
 			Item {
 				readonly property int logicalSize: 256
@@ -79,70 +104,159 @@ DetailsView {
 				transformOrigin: Item.TopLeft
 
 				PetIcon {
+					id: petIcon
+
 					anchors.fill: parent
 					index: root.petModel ? root.petModel.index : -1
 					rarity: root.petModel ? root.petModel.rarity : 0
 					ascensionLevel: root.ascensionLevel
-					opacity: root.petModel && root.petModel.isEquipped
-						? root.iconEquippedOpacity
-						: 1
+					opacity: root.iconOpacity
+				}
+
+				EquippedVisual {
+					anchors.centerIn: petIcon
+					visible: root.petModel?.isEquipped ?? false
+					scaleHorizontal: root.equippedScaleHorizontal
+					width: petIcon.width * root.equippedVisualWidthRatio
+				}
+
+				LockedVisual {
+					anchors.centerIn: petIcon
+					visible: root.petModel
+						&& !root.petModel.isEquipped
+						&& root.petModel.isLocked
+					scaleHorizontal: root.equippedScaleHorizontal
+					width: petIcon.width * root.equippedVisualWidthRatio
 				}
 			}
 		}
 
-		Column {
-			anchors.left: parent.left
-			anchors.leftMargin: root.iconSize + root.panelWidth * root.textLeftMarginRatio
+		LockButton {
+			visible: root.petModel !== null
 			anchors.top: parent.top
-			anchors.topMargin: root.panelWidth * root.textTopMarginRatio
 			anchors.right: parent.right
-			anchors.rightMargin: root.panelWidth * root.textRightMarginRatio
-			spacing: root.panelWidth * root.lineSpacingRatio
+			anchors.topMargin: root.layoutUnit * root.lockButtonTopMarginRatio
+			anchors.rightMargin: root.layoutUnit * root.lockButtonRightMarginRatio
+			width: root.layoutUnit * root.lockButtonSizeRatio
+			height: width
+			isLocked: root.petModel?.isLocked ?? false
+			enabled: root.petController !== null && root.petModel !== null
+			onClicked: {
+				if (root.petController && root.petModel)
+					root.petController.performPetToggleLock(root.petModel.guid)
+			}
+		}
 
-			Row {
-				spacing: root.panelWidth * root.titleSegmentSpacingRatio
+		Item {
+			id: titleSlot
 
-				AppText {
-					prefix: "["
-					locTable: root.petModel ? root.petModel.rarityLocTable : "General"
-					locId: root.petModel ? root.petModel.rarityLocId : ""
-					suffix: "]"
-					fillColor: root.titleColor
-					pixelSize: root.panelWidth * root.titleFontScale
-					outlineWeight: 8
-				}
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.titleLeftMarginRatio
+			anchors.top: parent.top
+			anchors.topMargin: root.layoutUnit * root.titleTopMarginRatio
+			anchors.right: parent.right
+			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
+			height: titleText.height
 
-				AppText {
-					locTable: root.petModel ? root.petModel.nameLocTable : "Pets"
-					locId: root.petModel ? root.petModel.nameLocId : ""
-					fillColor: root.titleColor
-					pixelSize: root.panelWidth * root.titleFontScale
-					outlineWeight: 8
+			AppText {
+				id: titleText
+
+				prefix: "["
+				locTable: root.petModel ? root.petModel.rarityLocTable : "General"
+				locId: root.petModel ? root.petModel.rarityLocId : ""
+				suffix: "] "
+				appendLocTable: root.petModel ? root.petModel.nameLocTable : "Pets"
+				appendLocId: root.petModel ? root.petModel.nameLocId : ""
+				fillColor: root.titleColor
+				pixelSize: root.layoutUnit * root.titleFontScale
+				outlineWeight: 8
+			}
+		}
+
+		Item {
+			id: baseStatsSlot
+
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.baseStatsLeftMarginRatio
+			anchors.top: parent.top
+			anchors.topMargin: root.layoutUnit * root.baseStatsTopMarginRatio
+			anchors.right: parent.right
+			anchors.rightMargin: root.layoutUnit * root.baseStatsRightMarginRatio
+			height: baseStatsColumn.height
+
+			Column {
+				id: baseStatsColumn
+
+				width: parent.width
+				spacing: root.layoutUnit * root.baseStatRowSpacingRatio
+
+				Repeater {
+					model: root.petModel ? root.petModel.baseStatLines : []
+
+					Row {
+						required property var modelData
+
+						spacing: root.layoutUnit * root.baseStatLabelSpacingRatio
+
+						AppText {
+							text: root.formatStatLine(modelData)
+							fillColor: root.statValueColor(modelData)
+							pixelSize: root.layoutUnit * root.baseStatFontScale
+							outlineWeight: 0
+						}
+
+						StatLocLabel {
+							locSegments: modelData.labelLocSegments
+							fillColor: Theme.black
+							pixelSize: root.layoutUnit * root.baseStatFontScale
+							outlineWeight: 0
+						}
+					}
 				}
 			}
+		}
 
-			Repeater {
-				model: root.petModel ? root.petModel.statLines : []
+		Item {
+			id: subStatsSlot
 
-				Row {
-					required property var modelData
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.subStatsLeftMarginRatio
+			anchors.top: baseStatsSlot.bottom
+			anchors.topMargin: root.layoutUnit * root.subStatsSectionSpacingRatio
+			anchors.right: parent.right
+			anchors.rightMargin: root.layoutUnit * root.subStatsRightMarginRatio
+			height: subStatsColumn.height
 
-					readonly property bool isSecondary: modelData.secondary
-					readonly property color lineColor: isSecondary ? Theme.darkGreyText : Theme.black
-					spacing: root.panelWidth * 0.012
+			Column {
+				id: subStatsColumn
 
-					AppText {
-						text: root.formatStatLine(modelData)
-						fillColor: root.statValueColor(modelData)
-						pixelSize: root.panelWidth * root.statFontScale
-						outlineWeight: 0
-					}
+				width: parent.width
+				spacing: root.layoutUnit * root.subStatRowSpacingRatio
 
-					StatLocLabel {
-						locSegments: modelData.labelLocSegments
-						fillColor: parent.lineColor
-						pixelSize: root.panelWidth * root.statFontScale
-						outlineWeight: 0
+				Repeater {
+					model: root.petModel ? root.petModel.subStatLines : []
+
+					Row {
+						required property var modelData
+
+						readonly property color lineColor: modelData.rollT !== undefined
+							? Theme.statRollColor(modelData.rollT)
+							: Theme.darkGreyText
+						spacing: root.layoutUnit * root.subStatLabelSpacingRatio
+
+						AppText {
+							text: root.formatStatLine(modelData)
+							fillColor: parent.lineColor
+							pixelSize: root.layoutUnit * root.subStatFontScale
+							outlineWeight: 0
+						}
+
+						StatLocLabel {
+							locSegments: modelData.labelLocSegments
+							fillColor: parent.lineColor
+							pixelSize: root.layoutUnit * root.subStatFontScale
+							outlineWeight: 0
+						}
 					}
 				}
 			}
@@ -151,13 +265,13 @@ DetailsView {
 		AppText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: actionRow.top
-			anchors.bottomMargin: root.panelWidth * root.statusBottomMarginRatio
+			anchors.bottomMargin: root.layoutUnit * root.comingSoonBottomMarginRatio
 			visible: root.comingSoonVisible
 			locTable: "General"
 			locId: root.comingSoonLocId
-			suffix: "!"
-			fillColor: Theme.red
-			pixelSize: root.panelWidth * root.titleFontScale
+			suffix: "."
+			fillColor: Theme.black
+			pixelSize: root.layoutUnit * root.titleFontScale
 			outlineWeight: 0
 		}
 
@@ -166,7 +280,7 @@ DetailsView {
 
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: parent.bottom
-			anchors.bottomMargin: root.panelWidth * root.actionBottomMarginRatio
+			anchors.bottomMargin: root.layoutFrameHeight * root.actionBottomMarginRatio
 			spacing: root.actionRowSpacing
 
 			RectRoundButton {

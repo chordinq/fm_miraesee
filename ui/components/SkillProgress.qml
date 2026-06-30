@@ -6,10 +6,16 @@ Item {
 
 	property real maxShardCount: 0
 	property real shardCount: 0
+	property bool showMaxedLabel: false
 
 	property real scaleW: 72 / 16
 	property real scaleH: 17 / 16
 	property real fontScale: 12 / 16
+
+	readonly property string maxedLocId: "25788256913911808"
+
+	readonly property bool showProgressBar: root.maxShardCount > 0
+	readonly property bool showMaxed: root.showMaxedLabel && !root.showProgressBar
 
 	readonly property real progressFraction: maxShardCount > 0
 		? Math.min(1, Math.max(0, shardCount / maxShardCount))
@@ -40,6 +46,7 @@ Item {
 		scaleH: root.scaleH
 		fillColor: Theme.darkBlue
 		fillOpacity: 14 / 16
+		visible: root.showProgressBar
 	}
 
 	Item {
@@ -48,6 +55,7 @@ Item {
 		anchors.bottom: parent.bottom
 		width: root.width * root.progressFraction
 		clip: true
+		visible: root.showProgressBar
 
 		RectRounded {
 			x: 0
@@ -67,16 +75,27 @@ Item {
 		scaleH: root.scaleH
 		outlineColor: Theme.black
 		outlineOpacity: 1.0
+		visible: root.showProgressBar
 	}
 
 	AppText {
 		anchors.centerIn: parent
 		text: root.formattedShardProgress
-		visible: root.maxShardCount > 0
+		visible: root.showProgressBar
 		fillColor: Theme.white
 		pixelSize: root.height * fontScale
 		anchors.verticalCenterOffset: (root.height - pixelSize) * 1 / 6
 		outlineColor: Theme.black
 		outlineWeight: 7
+	}
+
+	AppText {
+		anchors.centerIn: parent
+		locTable: "General"
+		locId: root.maxedLocId
+		visible: root.showMaxed
+		fillColor: Theme.black
+		pixelSize: root.height
+		outlineWeight: 0
 	}
 }

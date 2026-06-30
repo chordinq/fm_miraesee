@@ -1,5 +1,5 @@
 {
-  "[{'Amount': 60, 'Type': 'Gems', '$type': 'CurrencyReward'}]": {
+  "GemPack0": {
     "Rewards": [
       {
         "Amount": 60,
@@ -16,15 +16,15 @@
     "AppleId": "gem_pack_0",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'Amount': 220, 'Type': 'Gems', '$type': 'CurrencyReward'}]": {
+  "GemPack1": {
     "Rewards": [
       {
         "Amount": 220,
@@ -41,15 +41,15 @@
     "AppleId": "gem_pack_1",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'Amount': 800, 'Type': 'Gems', '$type': 'CurrencyReward'}]": {
+  "GemPack2": {
     "Rewards": [
       {
         "Amount": 800,
@@ -66,15 +66,15 @@
     "AppleId": "gem_pack_2",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'Amount': 3300, 'Type': 'Gems', '$type': 'CurrencyReward'}]": {
+  "GemPack3": {
     "Rewards": [
       {
         "Amount": 3300,
@@ -91,15 +91,15 @@
     "AppleId": "gem_pack_3",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'DealSizeId': 0, '$type': 'DailyDealRewardProxy'}]": {
+  "DailyDeal0": {
     "Rewards": [
       {
         "DealSizeId": 0,
@@ -115,15 +115,15 @@
     "AppleId": "daily_deal_0",
     "HasDynamicContent": true,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'DealSizeId': 1, '$type': 'DailyDealRewardProxy'}]": {
+  "DailyDeal1": {
     "Rewards": [
       {
         "DealSizeId": 1,
@@ -139,15 +139,15 @@
     "AppleId": "daily_deal_1",
     "HasDynamicContent": true,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'DealSizeId': 2, '$type': 'DailyDealRewardProxy'}]": {
+  "DailyDeal2": {
     "Rewards": [
       {
         "DealSizeId": 2,
@@ -163,15 +163,15 @@
     "AppleId": "daily_deal_2",
     "HasDynamicContent": true,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'DealSizeId': 3, '$type': 'DailyDealRewardProxy'}]": {
+  "DailyDeal3": {
     "Rewards": [
       {
         "DealSizeId": 3,
@@ -187,15 +187,15 @@
     "AppleId": "daily_deal_3",
     "HasDynamicContent": true,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'ItemId': {'Age': 3, 'Type': 'Weapon', 'Idx': 3}, 'ItemLevel': 0, 'SecondaryStatType': 'AttackSpeed', 'SecondaryStatValue': 0.10000000009313226, '$type': 'StarterPackageReward'}]": {
+  "StarterOffer0": {
     "Rewards": [
       {
         "ItemId": {
@@ -218,15 +218,15 @@
     "AppleId": "starter_offer_0",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'ItemId': {'Age': 3, 'Type': 'Armour', 'Idx': 1}, 'ItemLevel': 0, 'SecondaryStatType': 'BlockChance', 'SecondaryStatValue': 0.05000000004656613, '$type': 'StarterPackageReward'}]": {
+  "StarterOffer1": {
     "Rewards": [
       {
         "ItemId": {
@@ -249,15 +249,15 @@
     "AppleId": "starter_offer_1",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'ItemId': {'Age': 5, 'Type': 'Weapon', 'Idx': 4}, 'ItemLevel': 0, 'SecondaryStatType': 'RangedDamageMulti', 'SecondaryStatValue': 0.14999999990686774, '$type': 'StarterPackageReward'}]": {
+  "StarterOffer2": {
     "Rewards": [
       {
         "ItemId": {
@@ -280,15 +280,15 @@
     "AppleId": "starter_offer_2",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'PassId': 0, '$type': 'ProgressPassPurchaseReward'}]": {
+  "ProgressPass0": {
     "Rewards": [
       {
         "PassId": 0,
@@ -304,15 +304,15 @@
     "AppleId": "progress_pass_0",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'Amount': 42, 'Type': 'Token', '$type': 'CurrencyReward'}]": {
+  "TokenPack1": {
     "Rewards": [
       {
         "Amount": 42,
@@ -329,15 +329,15 @@
     "AppleId": "token_pack_1",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'Amount': 150, 'Type': 'Token', '$type': 'CurrencyReward'}]": {
+  "TokenPack2": {
     "Rewards": [
       {
         "Amount": 150,
@@ -354,15 +354,15 @@
     "AppleId": "token_pack_2",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   },
-  "[{'Amount': 630, 'Type': 'Token', '$type': 'CurrencyReward'}]": {
+  "TokenPack3": {
     "Rewards": [
       {
         "Amount": 630,
@@ -379,12 +379,12 @@
     "AppleId": "token_pack_3",
     "HasDynamicContent": false,
     "SteamId": null,
-    "StoreDescription": "",
+    "StoreDescription": null,
     "SteamPaymentInterval": {
-      "Frequency": 0,
-      "SteamPeriod": "Day"
+      "int": 0,
+      "SteamPeriod": 0
     },
     "SteamPricePoint": 0,
-    "StoreDescriptionTranslationId": ""
+    "StoreDescriptionTranslationId": null
   }
 }

@@ -24,6 +24,7 @@ EggIcon 1.0 components/icons/EggIcon.qml
 ItemIcon 1.0 components/icons/ItemIcon.qml
 TechTreeIcon 1.0 components/icons/TechTreeIcon.qml
 EquippedVisual 1.0 components/EquippedVisual.qml
+LockedVisual 1.0 components/LockedVisual.qml
 AscensionStarView 1.0 components/AscensionStarView.qml
 EquipSlot 1.0 components/EquipSlot.qml
 EggHatchSlotView 1.0 components/EggHatchSlotView.qml
@@ -49,6 +50,7 @@ BakedIconButton 1.0 components/buttons/BakedIconButton.qml
 UpgradeAllButton 1.0 components/buttons/UpgradeAllButton.qml
 CollectionTabButton 1.0 components/buttons/CollectionTabButton.qml
 SettingsButton 1.0 components/buttons/SettingsButton.qml
+LockButton 1.0 components/buttons/LockButton.qml
 ReturnButton 1.0 components/buttons/ReturnButton.qml
 CheckBoxGrey 1.0 components/CheckBox.grey.qml
 SettingToggleButton 1.0 components/buttons/SettingToggleButton.qml

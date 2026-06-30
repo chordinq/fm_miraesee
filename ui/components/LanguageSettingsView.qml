@@ -15,18 +15,7 @@ PopupView {
 	readonly property real checkSizeRatio: 0.75
 	readonly property real labelFontScale: 0.5
 
-	readonly property var languages: [
-		{ code: "en", label: "English" },
-		{ code: "de", label: "Deutsch" },
-		{ code: "ja", label: "日本語" },
-		{ code: "ko", label: "한국어" },
-		{ code: "fr", label: "français" },
-		{ code: "es", label: "español" },
-		{ code: "pt-BR", label: "português (Brasil)" },
-		{ code: "it", label: "italiano" },
-		{ code: "ru", label: "русский" },
-		{ code: "tr-TR", label: "Türkçe" }
-	]
+	readonly property var languages: LocManager.languages
 
 	AppText {
 		anchors.horizontalCenter: parent.horizontalCenter

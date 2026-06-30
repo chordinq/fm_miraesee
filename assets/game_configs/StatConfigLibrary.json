@@ -13,34 +13,6 @@
     },
     "DefaultValue": 1.0
   },
-  "{'StatType': 'TechTreeDamage', 'StatNature': 'Multiplier'}": {
-    "UniqueStat": {
-      "StatType": "TechTreeDamage",
-      "StatNature": "Multiplier"
-    },
-    "DefaultValue": 1.0
-  },
-  "{'StatType': 'TechTreeHealth', 'StatNature': 'Multiplier'}": {
-    "UniqueStat": {
-      "StatType": "TechTreeHealth",
-      "StatNature": "Multiplier"
-    },
-    "DefaultValue": 1.0
-  },
-  "{'StatType': 'AscensionDamage', 'StatNature': 'Multiplier'}": {
-    "UniqueStat": {
-      "StatType": "AscensionDamage",
-      "StatNature": "Multiplier"
-    },
-    "DefaultValue": 1.0
-  },
-  "{'StatType': 'AscensionHealth', 'StatNature': 'Multiplier'}": {
-    "UniqueStat": {
-      "StatType": "AscensionHealth",
-      "StatNature": "Multiplier"
-    },
-    "DefaultValue": 1.0
-  },
   "{'StatType': 'Experience', 'StatNature': 'Multiplier'}": {
     "UniqueStat": {
       "StatType": "Experience",

@@ -14,6 +14,8 @@ Item {
 	property bool dimBackdrop: false
 	property color backdropColor: "#A8000000"
 	property bool closeOnBackdropClick: true
+	property bool bakeLayout: false
+	property real layoutBaseWidth: 720
 
 	signal closed()
 
@@ -26,12 +28,17 @@ Item {
 	readonly property real panelWidth: parent ? parent.width * parentWidthRatio : 0
 	readonly property real panelHeight: panelWidth * heightWidthRatio
 
+	readonly property real layoutBaseHeight: layoutBaseWidth * heightWidthRatio
+
+	readonly property real layoutFrameWidth: root.bakeLayout ? layoutBaseWidth : panelWidth
+	readonly property real layoutFrameHeight: root.bakeLayout ? layoutBaseHeight : panelHeight
+
 	readonly property real contentInsetW: contentInsetWOverride >= 0
 		? contentInsetWOverride
-		: panelWidth / widthScale
+		: layoutFrameWidth / widthScale
 	readonly property real contentInsetH: contentInsetHOverride >= 0
 		? contentInsetHOverride
-		: panelHeight / heightScale
+		: layoutFrameHeight / heightScale
 	readonly property real closeSize: panelWidth * closeButtonSizeRatio
 
 	Rectangle {
@@ -72,27 +79,39 @@ Item {
 			z: 0
 		}
 
-		RectRoundedFilledOutline {
-			id: panelFrame
-
-			z: 1
-			anchors.fill: parent
-			widthScale: root.widthScale
-			heightScale: root.heightScale
-		}
-
 		Item {
-			id: contentHost
+			id: layoutCanvas
 
-			z: 1
-			anchors.left: panelFrame.left
-			anchors.right: panelFrame.right
-			anchors.top: panelFrame.top
-			anchors.bottom: panelFrame.bottom
-			anchors.leftMargin: root.contentInsetW
-			anchors.rightMargin: root.contentInsetW
-			anchors.topMargin: root.contentInsetH
-			anchors.bottomMargin: root.contentInsetH
+			width: root.layoutFrameWidth
+			height: root.layoutFrameHeight
+			transformOrigin: Item.TopLeft
+			transform: Scale {
+				xScale: root.bakeLayout ? panel.width / layoutCanvas.width : 1
+				yScale: root.bakeLayout ? panel.height / layoutCanvas.height : 1
+			}
+
+			RectRoundedFilledOutline {
+				id: panelFrame
+
+				z: 1
+				anchors.fill: parent
+				widthScale: root.widthScale
+				heightScale: root.heightScale
+			}
+
+			Item {
+				id: contentHost
+
+				z: 1
+				anchors.left: panelFrame.left
+				anchors.right: panelFrame.right
+				anchors.top: panelFrame.top
+				anchors.bottom: panelFrame.bottom
+				anchors.leftMargin: root.contentInsetW
+				anchors.rightMargin: root.contentInsetW
+				anchors.topMargin: root.contentInsetH
+				anchors.bottomMargin: root.contentInsetH
+			}
 		}
 
 		XButton {
@@ -101,8 +120,8 @@ Item {
 			z: 2
 			width: root.closeSize
 			height: root.closeSize
-			anchors.horizontalCenter: panelFrame.horizontalCenter
-			anchors.top: panelFrame.bottom
+			anchors.horizontalCenter: panel.horizontalCenter
+			anchors.top: panel.bottom
 			anchors.topMargin: -height * 0.5
 			onClicked: root.closed()
 		}

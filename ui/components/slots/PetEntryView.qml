@@ -11,7 +11,12 @@ Item {
 	readonly property int index: petModel?.index ?? -1
 	readonly property int rarity: petModel?.rarity ?? 0
 
-	readonly property real equippedOpacityFraction: 5 / 16
+	readonly property real equippedOpacityFraction: 8 / 16
+	readonly property real iconOpacity: !root.petModel
+		? 1
+		: (root.petModel.isEquipped || root.petModel.isLocked)
+			? root.equippedOpacityFraction
+			: 1
 	readonly property real equippedVisualWidthRatio: 1.2
 	readonly property real equippedScaleHorizontal: 2.5
 	readonly property real levelOffsetRatio:
@@ -29,12 +34,21 @@ Item {
 		index: root.index
 		rarity: root.rarity
 		ascensionLevel: root.ascensionLevel
-		opacity: (root.petModel && root.petModel.isEquipped) ? root.equippedOpacityFraction : 1
+		opacity: root.iconOpacity
 	}
 
 	EquippedVisual {
 		anchors.centerIn: icon
 		visible: root.petModel?.isEquipped ?? false
+		scaleHorizontal: root.equippedScaleHorizontal
+		width: iconSize * root.equippedVisualWidthRatio
+	}
+
+	LockedVisual {
+		anchors.centerIn: icon
+		visible: root.petModel
+			? !root.petModel.isEquipped && root.petModel.isLocked
+			: false
 		scaleHorizontal: root.equippedScaleHorizontal
 		width: iconSize * root.equippedVisualWidthRatio
 	}

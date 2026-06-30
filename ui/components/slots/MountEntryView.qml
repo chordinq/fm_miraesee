@@ -11,7 +11,12 @@ Item {
 	readonly property int index: mountModel?.index ?? -1
 	readonly property int rarity: mountModel?.rarity ?? 0
 
-	readonly property real equippedOpacityFraction: 5 / 16
+	readonly property real equippedOpacityFraction: 8 / 16
+	readonly property real iconOpacity: !root.mountModel
+		? 1
+		: (root.mountModel.isEquipped || root.mountModel.isLocked)
+			? root.equippedOpacityFraction
+			: 1
 	readonly property real equippedVisualWidthRatio: 1.2
 	readonly property real equippedScaleHorizontal: 2.5
 	readonly property real equippedFontScale: 21 / 32
@@ -27,16 +32,28 @@ Item {
 
 	MountIcon {
 		id: icon
+
 		anchors.fill: parent
 		index: root.index
 		rarity: root.rarity
 		ascensionLevel: root.ascensionLevel
-		opacity: (root.mountModel && root.mountModel.isEquipped) ? root.equippedOpacityFraction : 1
+		opacity: root.iconOpacity
 	}
 
 	EquippedVisual {
 		anchors.centerIn: icon
 		visible: root.mountModel?.isEquipped ?? false
+		scaleHorizontal: root.equippedScaleHorizontal
+		fontScale: root.equippedFontScale
+		width: iconSize * root.equippedVisualWidthRatio
+		scale: root.equippedScale
+	}
+
+	LockedVisual {
+		anchors.centerIn: icon
+		visible: root.mountModel
+			? !root.mountModel.isEquipped && root.mountModel.isLocked
+			: false
 		scaleHorizontal: root.equippedScaleHorizontal
 		fontScale: root.equippedFontScale
 		width: iconSize * root.equippedVisualWidthRatio
@@ -61,11 +78,11 @@ Item {
 		pixelSize: iconSize * root.levelPixelSizeRatio
 	}
 
+	signal clicked()
+
 	MouseArea {
 		anchors.fill: parent
 		enabled: root.index >= 0
 		onClicked: root.clicked()
 	}
-
-	signal clicked()
 }

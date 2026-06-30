@@ -263,6 +263,21 @@ class PetSummonTestBridge(QObject):
         self._sync_status()
         self.stateChanged.emit()
 
+    @Slot(str)
+    def performPetToggleLock(self, pet_guid: str) -> None:
+        pet = _find_pet_by_guid(self._logic, pet_guid)
+        if pet is None:
+            self._last_action_text = "lock toggle failed: pet not found"
+            self.stateChanged.emit()
+            return
+        pet.is_locked = not pet.is_locked
+        name = _pet_key_from_model(pet)
+        state = "locked" if pet.is_locked else "unlocked"
+        self._last_action_text = f"{state} {name}"
+        self._refresh_collection()
+        self._sync_status()
+        self.stateChanged.emit()
+
     @Slot(str, "QVariantList", "QVariantList")
     def performPetMerge(
         self,

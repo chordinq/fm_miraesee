@@ -15,6 +15,7 @@ from .schema import (
 	FORGE_META_LINE_LEN,
 	FORGE_META_TIMER_SUFFIX_LEN,
 	PET_MOUNT_LINE_V2_LEN,
+	PET_MOUNT_LINE_V2_LOCK_LEN,
 	SKIN_LINE_LEN,
 	TECH_TREE_TIMER_LINE_LEN,
 )
@@ -337,10 +338,19 @@ class DumpTextParser:
 			experience=int(prog[2:4], 16),
 			is_equipped=int(prog[4:6], 16) != 0,
 			equip_slot=int(prog[6:8], 16),
+			is_locked=False,
 			stats_blob=stats,
 		)
 
-	def _parse_pet_v2(self, rarity: int, pet_id: int, prog: str, stats: str) -> PetEntryDump:
+	def _parse_pet_v2(
+		self,
+		rarity: int,
+		pet_id: int,
+		prog: str,
+		stats: str,
+		*,
+		is_locked: bool = False,
+	) -> PetEntryDump:
 		return PetEntryDump(
 			rarity=rarity,
 			pet_id=pet_id,
@@ -348,6 +358,7 @@ class DumpTextParser:
 			experience=int(prog[8:16], 16),
 			is_equipped=int(prog[16:18], 16) != 0,
 			equip_slot=int(prog[18:20], 16),
+			is_locked=is_locked,
 			stats_blob=stats,
 		)
 
@@ -369,16 +380,26 @@ class DumpTextParser:
 			level=int(prog[0:2], 16),
 			experience=int(prog[2:4], 16),
 			is_equipped=int(prog[4:6], 16) != 0,
+			is_locked=False,
 			stats_blob=stats,
 		)
 
-	def _parse_mount_v2(self, rarity: int, mount_id: int, prog: str, stats: str) -> MountEntryDump:
+	def _parse_mount_v2(
+		self,
+		rarity: int,
+		mount_id: int,
+		prog: str,
+		stats: str,
+		*,
+		is_locked: bool = False,
+	) -> MountEntryDump:
 		return MountEntryDump(
 			rarity=rarity,
 			mount_id=mount_id,
 			level=int(prog[0:8], 16),
 			experience=int(prog[8:16], 16),
 			is_equipped=int(prog[16:18], 16) != 0,
+			is_locked=is_locked,
 			stats_blob=stats,
 		)
 
@@ -392,7 +413,20 @@ class DumpTextParser:
 			entry_id = int(header.group(3), 16)
 
 			if kind == "2":
-				if len(line) == PET_MOUNT_LINE_V2_LEN:
+				if len(line) >= PET_MOUNT_LINE_V2_LOCK_LEN:
+					prog = line[4:26]
+					stats = line[26:46]
+					is_locked = int(prog[20:22], 16) != 0
+					snapshot.pets.append(
+						self._parse_pet_v2(
+							rarity,
+							entry_id,
+							prog,
+							stats,
+							is_locked=is_locked,
+						)
+					)
+				elif len(line) == PET_MOUNT_LINE_V2_LEN:
 					prog = line[4:24]
 					stats = line[24:44]
 					snapshot.pets.append(self._parse_pet_v2(rarity, entry_id, prog, stats))
@@ -411,7 +445,20 @@ class DumpTextParser:
 				continue
 			rarity = int(header.group(2), 16)
 			mount_id = int(header.group(3), 16)
-			if len(line) == PET_MOUNT_LINE_V2_LEN:
+			if len(line) >= PET_MOUNT_LINE_V2_LOCK_LEN:
+				prog = line[4:26]
+				stats = line[26:46]
+				is_locked = int(prog[20:22], 16) != 0
+				snapshot.mounts.append(
+					self._parse_mount_v2(
+						rarity,
+						mount_id,
+						prog,
+						stats,
+						is_locked=is_locked,
+					)
+				)
+			elif len(line) == PET_MOUNT_LINE_V2_LEN:
 				prog = line[4:24]
 				stats = line[24:44]
 				snapshot.mounts.append(self._parse_mount_v2(rarity, mount_id, prog, stats))

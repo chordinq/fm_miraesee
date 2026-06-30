@@ -314,7 +314,7 @@ def format_secondary_stats(
 	game_config: SharedGameConfig,
 ) -> str:
 	"""IL: PlayerItemModelExtensions.FormatSecondaryStats(SecondaryStatType, FD6)"""
-	from ..fd6_math import fd6_from_f64
+	from core.fd6_math import fd6_from_f64
 	from ..stats.stats_format import format_stat_node, get_stat_name
 
 	row = game_config.secondary_stat_library.get(stat_type)

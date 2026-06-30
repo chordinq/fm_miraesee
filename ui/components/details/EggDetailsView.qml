@@ -4,31 +4,45 @@ import ui 1.0
 DetailsView {
 	id: root
 
+	heightScale: 46
+
 	property var eggModel: null
 	property var eggController: null
 	property int ascensionLevel: 0
 
-	heightScale: 50
-
 	property real progressWidthRatio: 0.87
-	property real progressStatusSpacingRatio: 0.008
+	property real progressStatusSpacingRatio: 0.03
+	property real slotsFullBottomMarginRatio: 0.04
+	property real bottomStackBottomMarginRatio: 0.02
 
-	readonly property real iconSizeRatio: 0.13
-	readonly property real iconSize: panelWidth * iconSizeRatio
+	readonly property real iconSizeRatio: 0.16
+	readonly property real iconSize: layoutUnit * iconSizeRatio
 	readonly property real iconScale: iconSize / 256
 	readonly property real iconLeftMarginRatio: 0.04
 	readonly property real iconTopMarginRatio: 0.06
-	readonly property real textLeftMarginRatio: 0.13
-	readonly property real textTopMarginRatio: 0.03
-	readonly property real textRightMarginRatio: 0.05
 
-	readonly property real titleFontScale: 0.043
-	readonly property real bodyFontScale: 0.032
-	readonly property real statFontScale: 0.043
-	readonly property real titleSegmentSpacingRatio: 0.012
-	readonly property real lineSpacingRatio: 0.008
+	readonly property real titleLeftMarginRatio: 0.27
+	readonly property real titleTopMarginRatio: 0.05
+	readonly property real titleRightMarginRatio: 0.05
+	readonly property real titleFontScale: 0.0449
 
-	readonly property real progressWidth: panelWidth * progressWidthRatio
+	readonly property real baseStatsLeftMarginRatio: 0.275
+	readonly property real baseStatsTopMarginRatio: 0.115
+	readonly property real baseStatsRightMarginRatio: 0.05
+	readonly property real baseStatFontScale: 0.042
+	readonly property real baseStatRowSpacingRatio: -0.02
+	readonly property real baseStatLabelSpacingRatio: 0.012
+
+	readonly property real subStatsLeftMarginRatio: 0.275
+	readonly property real subStatsSectionSpacingRatio: 0
+	readonly property real subStatsRightMarginRatio: 0.05
+	readonly property real subStatFontScale: 0.042
+	readonly property real subStatRowSpacingRatio: -0.02
+	readonly property real subStatLabelSpacingRatio: 0.012
+	readonly property real hatchDescTopMarginRatio: 0.012
+
+	readonly property real bodyFontScale: 0.042
+	readonly property real progressWidth: layoutUnit * progressWidthRatio
 
 	readonly property color titleColor: eggModel
 		? Theme.rarityColors[eggModel.rarity]
@@ -48,13 +62,34 @@ DetailsView {
 		&& eggController.hatchSlotsFull
 	readonly property bool showGemSkipButton: eggController
 		&& eggController.gemSkipVisible
-	readonly property bool showHatchButton: eggController
-		&& (eggController.canStartHatch
-			|| (eggController.canCompleteHatch && !root.showGemSkipButton))
 	readonly property bool hatchButtonEnabled: eggController
 		&& (eggController.canStartHatch || eggController.canCompleteHatch)
 	readonly property bool showPredictedPetIcon: eggController
 		&& eggController.predictedPetIndex >= 0
+
+	readonly property var baseStatLines: {
+		if (!eggController)
+			return []
+		var lines = eggController.statLines
+		var out = []
+		for (var i = 0; i < lines.length; ++i) {
+			if (!lines[i].secondary)
+				out.push(lines[i])
+		}
+		return out
+	}
+
+	readonly property var subStatLines: {
+		if (!eggController)
+			return []
+		var lines = eggController.statLines
+		var out = []
+		for (var i = 0; i < lines.length; ++i) {
+			if (lines[i].secondary)
+				out.push(lines[i])
+		}
+		return out
+	}
 
 	function formatStatLine(modelData) {
 		if (!modelData)
@@ -69,17 +104,28 @@ DetailsView {
 		return modelData.value !== undefined ? modelData.value : ""
 	}
 
+	function statValueColor(modelData) {
+		if (!modelData)
+			return Theme.black
+		if (!modelData.secondary)
+			return Theme.black
+		if (modelData.rollT !== undefined)
+			return Theme.statRollColor(modelData.rollT)
+		return Theme.darkGreyText
+	}
+
 	Item {
 		anchors.fill: parent
 
 		Item {
-			visible: root.showPredictedPetIcon
+			id: iconSlot
+
 			width: root.iconSize
 			height: root.iconSize
 			anchors.left: parent.left
 			anchors.top: parent.top
-			anchors.leftMargin: root.panelWidth * root.iconLeftMarginRatio
-			anchors.topMargin: root.panelWidth * root.iconTopMarginRatio
+			anchors.leftMargin: root.layoutUnit * root.iconLeftMarginRatio
+			anchors.topMargin: root.layoutUnit * root.iconTopMarginRatio
 
 			Item {
 				readonly property int logicalSize: 256
@@ -91,106 +137,184 @@ DetailsView {
 
 				PetIcon {
 					anchors.fill: parent
+					visible: root.showPredictedPetIcon
 					index: eggController ? eggController.predictedPetIndex : -1
 					rarity: eggController ? eggController.predictedPetRarity : 0
+					ascensionLevel: root.ascensionLevel
+				}
+
+				EggIcon {
+					anchors.fill: parent
+					visible: !root.showPredictedPetIcon
+					rarity: root.eggModel ? root.eggModel.rarity : -1
 					ascensionLevel: root.ascensionLevel
 				}
 			}
 		}
 
-		Column {
+		Item {
+			id: titleSlot
+
 			anchors.left: parent.left
-			anchors.leftMargin: root.showPredictedPetIcon
-				? root.iconSize + root.panelWidth * root.textLeftMarginRatio
-				: 0
+			anchors.leftMargin: root.layoutUnit * root.titleLeftMarginRatio
 			anchors.top: parent.top
-			anchors.topMargin: root.panelWidth * root.textTopMarginRatio
+			anchors.topMargin: root.layoutUnit * root.titleTopMarginRatio
 			anchors.right: parent.right
-			anchors.rightMargin: root.panelWidth * root.textRightMarginRatio
-			spacing: root.panelWidth * root.lineSpacingRatio
-
-			Row {
-				spacing: root.panelWidth * root.titleSegmentSpacingRatio
-
-				AppText {
-					prefix: "["
-					locTable: root.eggModel ? root.eggModel.rarityLocTable : "General"
-					locId: root.eggModel ? root.eggModel.rarityLocId : ""
-					suffix: "]"
-					fillColor: root.titleColor
-					pixelSize: root.panelWidth * root.titleFontScale
-					outlineWeight: 8
-				}
-
-				AppText {
-					locTable: "Stats"
-					locId: root.eggTitleLocId
-					fillColor: root.titleColor
-					pixelSize: root.panelWidth * root.titleFontScale
-					outlineWeight: 8
-				}
-			}
+			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
+			height: titleText.height
 
 			AppText {
-				width: parent.width
-				locTable: "Pets"
-				locId: root.hatchDescLocId
-				formatArgs: eggController ? eggController.hatchDescFormatArgs : []
-				fillColor: Theme.darkGreyText
-				pixelSize: root.panelWidth * root.bodyFontScale
-				outlineWeight: 0
-				wrapMode: Text.WordWrap
+				id: titleText
+
+				prefix: "["
+				locTable: root.eggModel ? root.eggModel.rarityLocTable : "General"
+				locId: root.eggModel ? root.eggModel.rarityLocId : ""
+				suffix: "] "
+				appendLocTable: "Stats"
+				appendLocId: root.eggTitleLocId
+				fillColor: root.titleColor
+				pixelSize: root.layoutUnit * root.titleFontScale
+				outlineWeight: 8
 			}
+		}
 
-			Repeater {
-				model: eggController ? eggController.statLines : []
+		Item {
+			id: baseStatsSlot
 
-				Row {
-					required property var modelData
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.baseStatsLeftMarginRatio
+			anchors.top: parent.top
+			anchors.topMargin: root.layoutUnit * root.baseStatsTopMarginRatio
+			anchors.right: parent.right
+			anchors.rightMargin: root.layoutUnit * root.baseStatsRightMarginRatio
+			height: baseStatsColumn.height
 
-					readonly property bool isSecondary: modelData.secondary
-					readonly property color lineColor: isSecondary ? Theme.darkGreyText : Theme.black
-					spacing: root.panelWidth * 0.012
+			Column {
+				id: baseStatsColumn
 
-					AppText {
-						text: root.formatStatLine(modelData)
-						fillColor: parent.lineColor
-						pixelSize: root.panelWidth * root.statFontScale
-						outlineWeight: 0
-					}
+				width: parent.width
+				spacing: root.layoutUnit * root.baseStatRowSpacingRatio
 
-					StatLocLabel {
-						locSegments: modelData.labelLocSegments
-						fillColor: parent.lineColor
-						pixelSize: root.panelWidth * root.statFontScale
-						outlineWeight: 0
+				Repeater {
+					model: root.baseStatLines
+
+					Row {
+						required property var modelData
+
+						spacing: root.layoutUnit * root.baseStatLabelSpacingRatio
+
+						AppText {
+							text: root.formatStatLine(modelData)
+							fillColor: root.statValueColor(modelData)
+							pixelSize: root.layoutUnit * root.baseStatFontScale
+							outlineWeight: 0
+						}
+
+						StatLocLabel {
+							locSegments: modelData.labelLocSegments
+							fillColor: Theme.black
+							pixelSize: root.layoutUnit * root.baseStatFontScale
+							outlineWeight: 0
+						}
 					}
 				}
 			}
 		}
 
+		Item {
+			id: subStatsSlot
+
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.subStatsLeftMarginRatio
+			anchors.top: baseStatsSlot.bottom
+			anchors.topMargin: root.layoutUnit * root.subStatsSectionSpacingRatio
+			anchors.right: parent.right
+			anchors.rightMargin: root.layoutUnit * root.subStatsRightMarginRatio
+			height: subStatsColumn.height
+
+			Column {
+				id: subStatsColumn
+
+				width: parent.width
+				spacing: root.layoutUnit * root.subStatRowSpacingRatio
+
+				Repeater {
+					model: root.subStatLines
+
+					Row {
+						required property var modelData
+
+						readonly property color lineColor: modelData.rollT !== undefined
+							? Theme.statRollColor(modelData.rollT)
+							: Theme.darkGreyText
+						spacing: root.layoutUnit * root.subStatLabelSpacingRatio
+
+						AppText {
+							text: root.formatStatLine(modelData)
+							fillColor: parent.lineColor
+							pixelSize: root.layoutUnit * root.subStatFontScale
+							outlineWeight: 0
+						}
+
+						StatLocLabel {
+							locSegments: modelData.labelLocSegments
+							fillColor: parent.lineColor
+							pixelSize: root.layoutUnit * root.subStatFontScale
+							outlineWeight: 0
+						}
+					}
+				}
+			}
+		}
+
+		Item {
+			id: hatchDescSlot
+
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.subStatsLeftMarginRatio
+			anchors.top: subStatsSlot.bottom
+			anchors.topMargin: root.layoutUnit * root.hatchDescTopMarginRatio
+			anchors.right: parent.right
+			anchors.rightMargin: root.layoutUnit * root.subStatsRightMarginRatio
+			height: hatchDescText.height
+
+			AppText {
+				id: hatchDescText
+
+				width: parent.width
+				locTable: "Pets"
+				locId: root.hatchDescLocId
+				formatArgs: eggController ? eggController.hatchDescFormatArgs : []
+				fillColor: Theme.black
+				pixelSize: root.layoutUnit * root.subStatFontScale
+				outlineWeight: 0
+				wordWrap: true
+			}
+		}
+
 		AppText {
 			anchors.horizontalCenter: parent.horizontalCenter
-			anchors.bottom: statusColumn.visible ? statusColumn.top : actionRow.top
-			anchors.bottomMargin: root.panelWidth * root.statusBottomMarginRatio
+			anchors.bottom: bottomStack.visible ? bottomStack.top : actionRow.top
+			anchors.bottomMargin: root.layoutUnit * root.slotsFullBottomMarginRatio
 			width: root.progressWidth
 			horizontalAlignment: Text.AlignHCenter
 			visible: root.hatchSlotsFull
 			locTable: "Pets"
 			locId: root.slotsFullLocId
 			fillColor: Theme.red
-			pixelSize: root.panelWidth * root.bodyFontScale
+			pixelSize: root.layoutUnit * root.bodyFontScale
 			outlineWeight: 0
+			wordWrap: true
 		}
 
 		Column {
-			id: statusColumn
+			id: bottomStack
 
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: actionRow.top
-			anchors.bottomMargin: root.panelWidth * root.statusBottomMarginRatio
+			anchors.bottomMargin: root.layoutUnit * root.bottomStackBottomMarginRatio
 			width: root.progressWidth
-			spacing: root.panelWidth * root.progressStatusSpacingRatio
+			spacing: root.layoutUnit * root.progressStatusSpacingRatio
 			visible: root.showHatchingUi
 
 			AppText {
@@ -199,8 +323,9 @@ DetailsView {
 				locTable: "Pets"
 				locId: root.hatchingLocId
 				fillColor: Theme.black
-				pixelSize: root.panelWidth * root.bodyFontScale
+				pixelSize: root.layoutUnit * root.bodyFontScale
 				outlineWeight: 0
+				wordWrap: true
 			}
 
 			ProgressBar {
@@ -216,7 +341,7 @@ DetailsView {
 
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: parent.bottom
-			anchors.bottomMargin: root.panelWidth * root.actionBottomMarginRatio
+			anchors.bottomMargin: root.layoutUnit * root.actionBottomMarginRatio
 			spacing: root.actionRowSpacing
 
 			RectRoundButton {
@@ -227,7 +352,7 @@ DetailsView {
 				labelPixelSize: root.actionButtonFontPixelSize
 				locId: root.hatchButtonLocId
 				locTable: "Stats"
-				visible: root.showHatchButton
+				visible: true
 				fillColor: root.hatchButtonEnabled ? Theme.blue : Theme.lightGrey
 				enabled: root.hatchButtonEnabled
 					&& root.eggController !== null

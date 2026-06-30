@@ -22,6 +22,7 @@ EQUIPMENT_LINE_LEN = 12 + EQUIPMENT_STATS_LEN
 COLLECTION_LINE_V1_LEN = 32
 EGG_LINE_V2_LEN = 64
 PET_MOUNT_LINE_V2_LEN = 44
+PET_MOUNT_LINE_V2_LOCK_LEN = 46
 FORGE_META_LINE_LEN = 32
 FORGE_META_TIMER_SUFFIX_LEN = 32
 
@@ -31,8 +32,8 @@ FORGE_META_TIMER_SUFFIX_LEN = 32
 # FORGE meta timer suffix: start_ms(16) + end_ms(16) appended to 32-char forge line
 # TECH_TREE_TIMERS line: tree_type(1) + node_id(2) + start_ms(16) + end_ms(16) = 35
 TECH_TREE_TIMER_LINE_LEN = 35
-#   prog v2 pet: level(8) + exp(8) + is_eq(2) + slot(2)
-#   prog v2 mount: level(8) + exp(8) + is_eq(2) + pad(2)
+#   prog v2 pet: level(8) + exp(8) + is_eq(2) + slot(2) [+ is_locked(2)]
+#   prog v2 mount: level(8) + exp(8) + is_eq(2) + pad(2) [+ is_locked(2) at prog[20:22]]
 
 EMPTY_EQUIP_SLOT = 0xFF
 

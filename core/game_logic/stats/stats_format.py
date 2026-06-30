@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from ..enums import SecondaryStatType, StatNature, StatType
-from ..fd6_math import fd6_from_f64
+from core.fd6_math import fd6_from_f64
 from ..number_format import format_multiplier, format_percentage, format_stat
 from .stat_helper import StatHelper
 from .stats import StatNode

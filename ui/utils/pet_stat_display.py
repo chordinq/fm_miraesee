@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from config import STATS_MAPPING
 from core.game_logic.enums import SecondaryStatType, StatType
-from core.game_logic.f64_math import f64_from_raw
+from core.f64_math import f64_from_raw
 from core.game_logic.player.player_item_stats import get_total_stats
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_pet_collection_model import PlayerPetModel

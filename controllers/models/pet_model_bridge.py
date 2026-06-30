@@ -37,6 +37,12 @@ class PetModelBridge(QObject):
         self._name_loc_id, self._name_loc_table = name_loc_from_entry(entry)
         self._rarity_loc_id, self._rarity_loc_table = rarity_loc_from_rarity(self._rarity)
         self._stat_lines = build_pet_stat_lines(player, pet)
+        self._base_stat_lines = [
+            line for line in self._stat_lines if not line["secondary"]
+        ]
+        self._sub_stat_lines = [
+            line for line in self._stat_lines if line["secondary"]
+        ]
         self._can_merge = self._compute_can_merge()
 
     def _compute_can_merge(self) -> bool:
@@ -78,6 +84,10 @@ class PetModelBridge(QObject):
         return self._pet.is_equipped
 
     @Property(bool, notify=changed)
+    def isLocked(self) -> bool:
+        return self._pet.is_locked
+
+    @Property(bool, notify=changed)
     def canEquip(self) -> bool:
         if self._pet.is_equipped:
             return True
@@ -110,3 +120,11 @@ class PetModelBridge(QObject):
     @Property("QVariantList", notify=changed)
     def statLines(self) -> list[dict[str, object]]:
         return self._stat_lines
+
+    @Property("QVariantList", notify=changed)
+    def baseStatLines(self) -> list[dict[str, object]]:
+        return self._base_stat_lines
+
+    @Property("QVariantList", notify=changed)
+    def subStatLines(self) -> list[dict[str, object]]:
+        return self._sub_stat_lines

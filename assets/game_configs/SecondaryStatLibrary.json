@@ -9,6 +9,13 @@
           "StatType": "CriticalChance",
           "StatNature": "Multiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
+        },
         "StatTarget": {
           "$type": "PlayerStatTarget"
         }
@@ -24,6 +31,13 @@
         "UniqueStat": {
           "StatType": "CriticalDamage",
           "StatNature": "Multiplier"
+        },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
         },
         "StatTarget": {
           "$type": "PlayerStatTarget"
@@ -41,6 +55,13 @@
           "StatType": "BlockChance",
           "StatNature": "Multiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
+        },
         "StatTarget": {
           "$type": "PlayerStatTarget"
         }
@@ -56,6 +77,13 @@
         "UniqueStat": {
           "StatType": "HealthRegen",
           "StatNature": "Multiplier"
+        },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
         },
         "StatTarget": {
           "$type": "PlayerStatTarget"
@@ -73,6 +101,13 @@
           "StatType": "LifeSteal",
           "StatNature": "Multiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
+        },
         "StatTarget": {
           "$type": "PlayerStatTarget"
         }
@@ -88,6 +123,13 @@
         "UniqueStat": {
           "StatType": "DoubleDamageChance",
           "StatNature": "Multiplier"
+        },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
         },
         "StatTarget": {
           "$type": "PlayerStatTarget"
@@ -105,6 +147,13 @@
           "StatType": "Damage",
           "StatNature": "Multiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
+        },
         "StatTarget": {
           "$type": "PlayerStatTarget"
         }
@@ -114,18 +163,14 @@
           "StatType": "Damage",
           "StatNature": "Multiplier"
         },
-        "StatTarget": {
-          "SkillType": null,
-          "$type": "ActiveSkillStatTarget"
-        }
-      },
-      {
-        "UniqueStat": {
-          "StatType": "Health",
-          "StatNature": "Multiplier"
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "ActiveSkill",
+          "Qualifiers": []
         },
         "StatTarget": {
-          "SkillType": null,
           "$type": "ActiveSkillStatTarget"
         }
       }
@@ -140,6 +185,13 @@
         "UniqueStat": {
           "StatType": "Damage",
           "StatNature": "Multiplier"
+        },
+        "LegacyTarget": null,
+        "Layer": "GeneralCompounding",
+        "Condition": "Melee",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
         },
         "StatTarget": {
           "$type": "PlayerMeleeOnlyStatTarget"
@@ -157,6 +209,13 @@
           "StatType": "Damage",
           "StatNature": "Multiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "GeneralCompounding",
+        "Condition": "Ranged",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
+        },
         "StatTarget": {
           "$type": "PlayerRangedOnlyStatTarget"
         }
@@ -172,6 +231,13 @@
         "UniqueStat": {
           "StatType": "AttackSpeed",
           "StatNature": "Multiplier"
+        },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
         },
         "StatTarget": {
           "$type": "PlayerStatTarget"
@@ -189,8 +255,14 @@
           "StatType": "Damage",
           "StatNature": "Multiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "GeneralCompounding",
+        "Condition": "None",
+        "Target": {
+          "Kind": "ActiveSkill",
+          "Qualifiers": []
+        },
         "StatTarget": {
-          "SkillType": null,
           "$type": "ActiveSkillStatTarget"
         }
       },
@@ -199,8 +271,14 @@
           "StatType": "Health",
           "StatNature": "Multiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "GeneralCompounding",
+        "Condition": "None",
+        "Target": {
+          "Kind": "ActiveSkill",
+          "Qualifiers": []
+        },
         "StatTarget": {
-          "SkillType": null,
           "$type": "ActiveSkillStatTarget"
         }
       }
@@ -216,8 +294,14 @@
           "StatType": "TimerSpeed",
           "StatNature": "OneMinusMultiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "ActiveSkill",
+          "Qualifiers": []
+        },
         "StatTarget": {
-          "SkillType": null,
           "$type": "ActiveSkillStatTarget"
         }
       }
@@ -233,8 +317,31 @@
           "StatType": "Health",
           "StatNature": "Multiplier"
         },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "Player",
+          "Qualifiers": []
+        },
         "StatTarget": {
           "$type": "PlayerStatTarget"
+        }
+      },
+      {
+        "UniqueStat": {
+          "StatType": "Health",
+          "StatNature": "Multiplier"
+        },
+        "LegacyTarget": null,
+        "Layer": "None",
+        "Condition": "None",
+        "Target": {
+          "Kind": "ActiveSkill",
+          "Qualifiers": []
+        },
+        "StatTarget": {
+          "$type": "ActiveSkillStatTarget"
         }
       }
     ]

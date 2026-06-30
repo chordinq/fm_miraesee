@@ -36,6 +36,7 @@ class PlayerPetModel:
 		self.experience = 0
 		self.is_equipped = False
 		self.equip_slot = _EMPTY_EGG_SLOT
+		self.is_locked = False
 
 	def get_resolved_damage(self, player: Any) -> float:
 		from ..stats.pet_stats import resolve_pet_primary_stats

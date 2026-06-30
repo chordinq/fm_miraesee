@@ -88,7 +88,7 @@ Item {
 
 			PetEntryView {
 				visible: parent.isPet
-				petModel: root.petModels[parent.index]
+				petModel: parent.isPet ? root.petModels[parent.index] : null
 				ascensionLevel: root.ascensionLevel
 				scale: root.entryScale
 				transformOrigin: Item.TopLeft

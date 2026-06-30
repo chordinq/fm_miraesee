@@ -7,21 +7,24 @@ DetailsView {
 	property var nodeModel: null
 	property var techTreeModel: null
 
-	readonly property real iconSizeRatio: 0.13
-	readonly property real iconSize: panelWidth * iconSizeRatio
+	readonly property real iconSizeRatio: 0.138
+	readonly property real iconSize: layoutUnit * iconSizeRatio
 	readonly property real iconScale: iconSize / 256
-	readonly property real iconLeftMarginRatio: 0.03
-	readonly property real iconTopMarginRatio: 0.03
-	readonly property real textLeftMarginRatio: 0.13
-	readonly property real textTopMarginRatio: 0.03
-	readonly property real textRightMarginRatio: 0.05
+	readonly property real iconLeftMarginRatio: 0.04
+	readonly property real iconTopMarginRatio: 0.054
 	readonly property real iconOverlayOffsetRatio: 0.17
 	readonly property real iconOverlayFontScale: 17 / 64
 
-	readonly property real titleFontScale: 0.043
-	readonly property real bodyFontScale: 0.043
+	readonly property real titleLeftMarginRatio: 0.27
+	readonly property real titleTopMarginRatio: 0.026
+	readonly property real titleRightMarginRatio: 0.05
+	readonly property real titleFontScale: 0.0449
 	readonly property real titleSegmentSpacingRatio: 0.012
-	readonly property real lineSpacingRatio: 0.012
+
+	readonly property real descLeftMarginRatio: 0.27
+	readonly property real descTopMarginRatio: 0.1
+	readonly property real descRightMarginRatio: 0.05
+	readonly property real bodyFontScale: 0.045
 
 	readonly property string otherResearchLocId: "17687817399296000"
 	readonly property string maxedLocId: "17688556561489920"
@@ -29,8 +32,9 @@ DetailsView {
 	readonly property string completeLocId: "27937469076533248"
 
 	readonly property real progressWidthRatio: 0.87
-	readonly property real progressWidth: panelWidth * progressWidthRatio
+	readonly property real progressWidth: layoutUnit * progressWidthRatio
 	readonly property real progressStatusSpacingRatio: 0.008
+	readonly property real statusBottomMarginRatio: 0.02
 
 	readonly property string iconProgressText: {
 		if (!root.nodeModel || root.nodeModel.levelMax <= 0)
@@ -101,12 +105,14 @@ DetailsView {
 		anchors.fill: parent
 
 		Item {
+			id: iconSlot
+
 			width: root.iconSize
 			height: root.iconSize
 			anchors.left: parent.left
 			anchors.top: parent.top
-			anchors.leftMargin: root.panelWidth * root.iconLeftMarginRatio
-			anchors.topMargin: root.panelWidth * root.iconTopMarginRatio
+			anchors.leftMargin: root.layoutUnit * root.iconLeftMarginRatio
+			anchors.topMargin: root.layoutUnit * root.iconTopMarginRatio
 
 			Item {
 				readonly property int logicalSize: 256
@@ -138,37 +144,55 @@ DetailsView {
 			}
 		}
 
-		Column {
+		Item {
+			id: titleSlot
+
 			anchors.left: parent.left
-			anchors.leftMargin: root.iconSize + root.panelWidth * root.textLeftMarginRatio
+			anchors.leftMargin: root.layoutUnit * root.titleLeftMarginRatio
 			anchors.top: parent.top
-			anchors.topMargin: root.panelWidth * root.textTopMarginRatio
+			anchors.topMargin: root.layoutUnit * root.titleTopMarginRatio
 			anchors.right: parent.right
-			anchors.rightMargin: root.panelWidth * root.textRightMarginRatio
-			spacing: root.panelWidth * root.lineSpacingRatio
+			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
+			height: titleRow.height
 
 			Row {
-				spacing: root.panelWidth * root.titleSegmentSpacingRatio
+				id: titleRow
+
+				spacing: root.layoutUnit * root.titleSegmentSpacingRatio
 
 				AppText {
 					locTable: root.nodeModel ? root.nodeModel.nameLocTable : "TechTree"
 					locId: root.nodeModel ? root.nodeModel.nameLocId : ""
 					fillColor: Theme.white
-					pixelSize: root.panelWidth * root.titleFontScale
+					pixelSize: root.layoutUnit * root.titleFontScale
 					outlineWeight: 8
 				}
 
 				AppText {
 					text: root.nodeModel ? root.nodeModel.tierRoman : ""
 					fillColor: Theme.white
-					pixelSize: root.panelWidth * root.titleFontScale
+					pixelSize: root.layoutUnit * root.titleFontScale
 					outlineWeight: 8
 				}
 			}
+		}
+
+		Item {
+			id: descSlot
+
+			anchors.left: parent.left
+			anchors.leftMargin: root.layoutUnit * root.descLeftMarginRatio
+			anchors.top: parent.top
+			anchors.topMargin: root.layoutUnit * root.descTopMarginRatio
+			anchors.right: parent.right
+			anchors.rightMargin: root.layoutUnit * root.descRightMarginRatio
+			height: descText.height
 
 			AppText {
+				id: descText
+
 				width: parent.width
-				wrapMode: Text.WordWrap
+				wordWrap: true
 				locTable: root.nodeModel ? root.nodeModel.descLocTable : "TechTree"
 				locId: root.nodeModel ? root.nodeModel.descLocId : ""
 				formatArgs: root.nodeModel ? root.nodeModel.descFormatArgs : []
@@ -179,7 +203,7 @@ DetailsView {
 					: ""
 				suffixFillColor: Theme.greenText
 				fillColor: Theme.black
-				pixelSize: root.panelWidth * root.bodyFontScale
+				pixelSize: root.layoutUnit * root.bodyFontScale
 				outlineWeight: 0
 			}
 		}
@@ -187,21 +211,21 @@ DetailsView {
 		AppText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: statusColumn.visible ? statusColumn.top : actionButton.top
-			anchors.bottomMargin: root.panelWidth * root.statusBottomMarginRatio
+			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
 			width: root.progressWidth
 			horizontalAlignment: Text.AlignHCenter
 			visible: root.nodeModel && root.nodeModel.maxLevel
 			locTable: "TechTree"
 			locId: root.maxedLocId
 			fillColor: Theme.black
-			pixelSize: root.panelWidth * root.bodyFontScale
+			pixelSize: root.layoutUnit * root.bodyFontScale
 			outlineWeight: 0
 		}
 
 		AppText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: statusColumn.visible ? statusColumn.top : actionButton.top
-			anchors.bottomMargin: root.panelWidth * root.statusBottomMarginRatio
+			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
 			width: root.progressWidth
 			horizontalAlignment: Text.AlignHCenter
 			visible: root.nodeModel
@@ -210,7 +234,7 @@ DetailsView {
 			locTable: "TechTree"
 			locId: root.otherResearchLocId
 			fillColor: Theme.red
-			pixelSize: root.panelWidth * root.bodyFontScale
+			pixelSize: root.layoutUnit * root.bodyFontScale
 			outlineWeight: 0
 		}
 
@@ -219,9 +243,9 @@ DetailsView {
 
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: actionButton.top
-			anchors.bottomMargin: root.panelWidth * root.statusBottomMarginRatio
+			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
 			width: root.progressWidth
-			spacing: root.panelWidth * root.progressStatusSpacingRatio
+			spacing: root.layoutUnit * root.progressStatusSpacingRatio
 			visible: root.showProgressUi
 
 			AppText {
@@ -231,7 +255,7 @@ DetailsView {
 				locTable: "TechTree"
 				locId: root.researchInProgressLocId
 				fillColor: Theme.black
-				pixelSize: root.panelWidth * root.bodyFontScale
+				pixelSize: root.layoutUnit * root.bodyFontScale
 				outlineWeight: 0
 			}
 
@@ -248,7 +272,7 @@ DetailsView {
 
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: parent.bottom
-			anchors.bottomMargin: root.panelWidth * root.actionBottomMarginRatio
+			anchors.bottomMargin: root.layoutUnit * root.actionBottomMarginRatio
 			width: root.actionButtonWidth
 			height: root.actionButtonHeight
 			scaleW: root.actionButtonScaleW

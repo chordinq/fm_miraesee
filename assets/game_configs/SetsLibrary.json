@@ -12,6 +12,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -23,6 +30,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -49,6 +63,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -60,6 +81,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -86,6 +114,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -97,6 +132,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -123,6 +165,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -134,6 +183,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -160,6 +216,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -171,6 +234,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -197,6 +267,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -208,6 +285,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -234,6 +318,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -245,6 +336,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -271,6 +369,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -282,6 +387,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -308,6 +420,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -319,6 +438,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -345,6 +471,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -356,6 +489,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -382,6 +522,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -393,6 +540,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -419,6 +573,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -430,6 +591,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -456,6 +624,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -467,6 +642,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -493,6 +675,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -504,6 +693,13 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
@@ -530,6 +726,13 @@
                   "StatType": "Damage",
                   "StatNature": "Multiplier"
                 },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"
                 }
@@ -541,6 +744,319 @@
                 "UniqueStat": {
                   "StatType": "Health",
                   "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            }
+          ]
+        },
+        "StatsLevelIncrement": 0.0
+      }
+    ]
+  },
+  "AnubisSet": {
+    "Id": "AnubisSet",
+    "BonusTiers": [
+      {
+        "RequiredPieces": 3,
+        "BonusStats": {
+          "Stats": [
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Damage",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            },
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Health",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            }
+          ]
+        },
+        "StatsLevelIncrement": 0.0
+      }
+    ]
+  },
+  "BoxerSet": {
+    "Id": "BoxerSet",
+    "BonusTiers": [
+      {
+        "RequiredPieces": 3,
+        "BonusStats": {
+          "Stats": [
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Damage",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            },
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Health",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            }
+          ]
+        },
+        "StatsLevelIncrement": 0.0
+      }
+    ]
+  },
+  "DarkPlanetWarriorSet": {
+    "Id": "DarkPlanetWarriorSet",
+    "BonusTiers": [
+      {
+        "RequiredPieces": 3,
+        "BonusStats": {
+          "Stats": [
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Damage",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            },
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Health",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            }
+          ]
+        },
+        "StatsLevelIncrement": 0.0
+      }
+    ]
+  },
+  "CubeguySet": {
+    "Id": "CubeguySet",
+    "BonusTiers": [
+      {
+        "RequiredPieces": 3,
+        "BonusStats": {
+          "Stats": [
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Damage",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            },
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Health",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            }
+          ]
+        },
+        "StatsLevelIncrement": 0.0
+      }
+    ]
+  },
+  "LavamanSet": {
+    "Id": "LavamanSet",
+    "BonusTiers": [
+      {
+        "RequiredPieces": 3,
+        "BonusStats": {
+          "Stats": [
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Damage",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            },
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Health",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            }
+          ]
+        },
+        "StatsLevelIncrement": 0.0
+      }
+    ]
+  },
+  "ChefSet": {
+    "Id": "ChefSet",
+    "BonusTiers": [
+      {
+        "RequiredPieces": 3,
+        "BonusStats": {
+          "Stats": [
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Damage",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
+                },
+                "StatTarget": {
+                  "$type": "PlayerSkinMultiplierStatTarget"
+                }
+              },
+              "Value": 0.10000000149011612
+            },
+            {
+              "StatNode": {
+                "UniqueStat": {
+                  "StatType": "Health",
+                  "StatNature": "Multiplier"
+                },
+                "LegacyTarget": null,
+                "Layer": "Skins",
+                "Condition": "None",
+                "Target": {
+                  "Kind": "Player",
+                  "Qualifiers": []
                 },
                 "StatTarget": {
                   "$type": "PlayerSkinMultiplierStatTarget"

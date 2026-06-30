@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import math
 
-from .f64_math import f64_to_raw
+from core.f64_math import f64_to_raw
 
 """Metaplay FD6 fixed-point helpers (6 decimal digits). IL: Metaplay.Core.Math.FD6."""
 

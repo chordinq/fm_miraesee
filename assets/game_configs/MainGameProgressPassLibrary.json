@@ -1279,12 +1279,12 @@
       }
     ]
   },
-  "{'MainBattleId': {'DifficultyIdx': 1, 'AgeIdx': 0, 'BattleIdx': 14}, '$type': 'MainBattleIdProgressKey'}": {
+  "{'MainBattleId': {'DifficultyIdx': 1, 'AgeIdx': 0, 'BattleIdx': 9}, '$type': 'MainBattleIdProgressKey'}": {
     "ProgressKey": {
       "MainBattleId": {
         "DifficultyIdx": 1,
         "AgeIdx": 0,
-        "BattleIdx": 14
+        "BattleIdx": 9
       },
       "$type": "MainBattleIdProgressKey"
     },
