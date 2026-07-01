@@ -4,10 +4,14 @@ from typing import TYPE_CHECKING, Mapping
 
 from ...miraesee_extension import miraesee_extension
 from ..enums import SecondaryStatType
-from core.f64_math import f64_from_raw, f64_lerp_raw_from_t_raw, f64_to_raw
+from core.metaplaymath.f64 import f64_from_raw, f64_lerp_raw, f64_to_raw
+from core.metaplaymath.config_values import (
+	secondary_stat_lower_f64_raw,
+	secondary_stat_upper_f64_raw,
+)
 
 if TYPE_CHECKING:
-	from ..shared_game_config import SharedGameConfig
+	from ..config.shared_game_config import SharedGameConfig
 
 
 class SecondaryStats:
@@ -44,9 +48,9 @@ class SecondaryStats:
 			return False, 0.0
 
 		t_raw = self.interpolated_stat_values[stat_type]
-		lower = float(row["LowerRange"])
-		upper = float(row["UpperRange"])
-		result_raw = f64_lerp_raw_from_t_raw(lower, upper, t_raw)
+		lower_raw = secondary_stat_lower_f64_raw(row)
+		upper_raw = secondary_stat_upper_f64_raw(row)
+		result_raw = f64_lerp_raw(lower_raw, upper_raw, t_raw)
 		return True, f64_from_raw(result_raw)
 
 	@property

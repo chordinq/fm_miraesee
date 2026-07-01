@@ -16,6 +16,7 @@ from controllers.summon.pet_egg_test_bridge import PetEggTestBridge
 from controllers.summon.pet_summon_test_bridge import PetSummonTestBridge
 from controllers.summon.skill_summon_test_bridge import SkillSummonTestBridge
 from controllers.collections.tech_tree_collection_bridge import TechTreeCollectionBridge
+from controllers.common.player_stats_bridge import PlayerStatsBridge
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
 from utils.dump.parser import parse_dump_text
 from utils.dump.to_player_model import dump_snapshot_to_player_model
@@ -43,6 +44,8 @@ class GameTestSessionBridge(QObject):
         player = _empty_player()
         self._logic = GameLogic(player)
         self._last_load_message = ""
+        self._bulk_reload_depth = 0
+        self._player_stats = PlayerStatsBridge(lambda: self._logic.player, parent=self)
 
         self._skill_test = SkillSummonTestBridge(self._logic, parent=self)
         self._equipment = EquipmentCollectionBridge(
@@ -103,6 +106,58 @@ class GameTestSessionBridge(QObject):
         self._tech_poll_timer.start()
         register_display_refresh(self._refresh_stat_displays)
         register_economy_refresh(self._on_economy_settings_changed)
+        for bridge in (
+            self._skill_test,
+            self._pet_summon_test,
+            self._mount_summon_test,
+            self._pet_egg_test,
+        ):
+            bridge.stateChanged.connect(self._on_action_state_changed)
+        self._skill_test.statsRefreshRequested.connect(self._refresh_player_stats)
+        self._pet_summon_test.statsRefreshRequested.connect(self._refresh_player_stats)
+        self._mount_summon_test.statsRefreshRequested.connect(self._refresh_player_stats)
+        self._refresh_player_stats()
+
+    def _in_bulk_reload(self) -> bool:
+        return self._bulk_reload_depth > 0
+
+    def _begin_bulk_reload(self) -> None:
+        self._bulk_reload_depth += 1
+
+    def _end_bulk_reload(self) -> None:
+        self._bulk_reload_depth -= 1
+        if self._bulk_reload_depth > 0:
+            return
+        self._refresh_player_stats()
+        self.stateChanged.emit()
+        QTimer.singleShot(0, self._finish_deferred_summon_refresh)
+
+    def _finish_deferred_summon_refresh(self) -> None:
+        player = self._logic.player
+        self._skill_test.finish_deferred_reload()
+        self._pet_summon_test.finish_deferred_reload()
+        self._mount_summon_test.finish_deferred_reload()
+        self._tech_tree_forge.reload(player)
+        self._tech_tree_power.reload(player)
+        self._tech_tree_skills_pet_tech.reload(player)
+        self.stateChanged.emit()
+
+    def _on_action_state_changed(self) -> None:
+        if self._in_bulk_reload():
+            return
+
+    def _refresh_player_stats(self) -> None:
+        self._player_stats.refresh()
+
+    def _refresh_collection_stat_displays(self) -> None:
+        self._pet_collection.refresh(resync_existing=True)
+        self._mount_collection.refresh(resync_existing=True)
+        self._skill_test.skillCollection.refresh()
+        self._tech_tree_forge.refresh()
+        self._tech_tree_power.refresh()
+        self._tech_tree_skills_pet_tech.refresh()
+        self._pet_egg_test.refreshDisplayFormat()
+        self.stateChanged.emit()
 
     def _on_economy_settings_changed(self) -> None:
         self._skill_test.stateChanged.emit()
@@ -115,12 +170,13 @@ class GameTestSessionBridge(QObject):
         self.stateChanged.emit()
 
     def _on_tech_tree_stats_changed(self) -> None:
+        self._refresh_player_stats()
         self._skill_test.stateChanged.emit()
         self._mount_summon_test.stateChanged.emit()
         self._pet_summon_test.stateChanged.emit()
         self._pet_egg_test.stateChanged.emit()
-        self._pet_collection.refresh()
-        self._mount_collection.refresh()
+        self._pet_collection.refresh(resync_existing=True)
+        self._mount_collection.refresh(resync_existing=True)
         self.stateChanged.emit()
 
     def _poll_tech_trees(self) -> None:
@@ -172,18 +228,16 @@ class GameTestSessionBridge(QObject):
                 refreshed.add(bridge)
 
     def _refresh_stat_displays(self) -> None:
-        self._pet_collection.refresh()
-        self._mount_collection.refresh()
-        self._skill_test.skillCollection.refresh()
-        self._tech_tree_forge.refresh()
-        self._tech_tree_power.refresh()
-        self._tech_tree_skills_pet_tech.refresh()
-        self._pet_egg_test.refreshDisplayFormat()
-        self.stateChanged.emit()
+        self._refresh_player_stats()
+        self._refresh_collection_stat_displays()
 
     @Property(str, notify=stateChanged)
     def lastLoadMessage(self) -> str:
         return self._last_load_message
+
+    @Property(QObject, constant=True)
+    def playerStats(self) -> PlayerStatsBridge:
+        return self._player_stats
 
     @Property(QObject, constant=True)
     def skillTest(self) -> SkillSummonTestBridge:
@@ -230,28 +284,29 @@ class GameTestSessionBridge(QObject):
         return self._logic.player.player_currency_model.get(CurrencyType.TechPotions)
 
     def apply_dump_text(self, text: str) -> str:
-        player = dump_snapshot_to_player_model(parse_dump_text(text))
-        _apply_main_battle_progress(player)
-        self._logic._player = player
+        self._begin_bulk_reload()
+        try:
+            player = dump_snapshot_to_player_model(parse_dump_text(text))
+            _apply_main_battle_progress(player)
+            self._logic._player = player
 
-        self._skill_test.reload_from_player(player)
-        self._equipment.reload(player.player_equipment_model)
-        self._pet_collection.reload(
-            player.player_pet_collection_model,
-            player,
-        )
-        self._pet_egg_test.reload_after_dump()
-        self._pet_summon_test.reload_after_dump()
-        self._mount_collection.reload(
-            player.player_mount_collection_model,
-            player,
-        )
-        self._mount_summon_test.reload_after_dump()
-        self._tech_tree_forge.reload(player)
-        self._tech_tree_power.reload(player)
-        self._tech_tree_skills_pet_tech.reload(player)
-        self._tech_poll_was_researching = False
-        self._tech_poll_claimable_key = ()
+            self._skill_test.reload_from_player(player, defer_heavy=True)
+            self._equipment.reload(player.player_equipment_model)
+            self._pet_collection.reload(
+                player.player_pet_collection_model,
+                player,
+            )
+            self._pet_egg_test.reload_after_dump()
+            self._pet_summon_test.reload_after_dump(defer_heavy=True)
+            self._mount_collection.reload(
+                player.player_mount_collection_model,
+                player,
+            )
+            self._mount_summon_test.reload_after_dump(defer_heavy=True)
+            self._tech_poll_was_researching = False
+            self._tech_poll_claimable_key = ()
+        finally:
+            self._end_bulk_reload()
 
         return (
             f"loaded dump "
@@ -267,6 +322,9 @@ class GameTestSessionBridge(QObject):
             self._last_load_message = "clipboard empty"
             self.stateChanged.emit()
             return
+        self._last_load_message = "loading dump..."
+        self.stateChanged.emit()
+        QGuiApplication.processEvents()
         try:
             self._last_load_message = self.apply_dump_text(text)
             print(self._last_load_message)

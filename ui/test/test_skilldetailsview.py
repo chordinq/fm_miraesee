@@ -7,7 +7,7 @@ from core.game_logic.enums import CombatSkill
 from core.game_logic.game_logic import GameLogic
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
-from core.game_logic.shared_game_config import get_shared_game_config
+from core.game_logic.config.shared_game_config import get_shared_game_config
 from controllers.summon.skill_summon_test_bridge import SkillSummonTestBridge
 
 

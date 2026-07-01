@@ -26,7 +26,7 @@ class PetEggHatchGemSkipAction(PlayerAction):
 		if egg is None:
 			return ActionResult.DoesNotExist
 
-		timer = egg.timer
+		timer = egg.hatch_timer_model
 		if timer is None:
 			return ActionResult.NotStarted
 

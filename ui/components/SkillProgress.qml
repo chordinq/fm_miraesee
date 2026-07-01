@@ -35,58 +35,21 @@ Item {
 
 	readonly property color progressFillColor: root.upgradable ? Theme.green : Theme.white
 
-
 	implicitWidth: 256
 	implicitHeight: implicitWidth * scaleH / scaleW
 	height: width * scaleH / scaleW
 
-	RectRounded {
+	ProgressBar {
 		anchors.fill: parent
+		visible: root.showProgressBar
 		scaleW: root.scaleW
 		scaleH: root.scaleH
-		fillColor: Theme.darkBlue
-		fillOpacity: 14 / 16
-		visible: root.showProgressBar
-	}
-
-	Item {
-		anchors.left: parent.left
-		anchors.top: parent.top
-		anchors.bottom: parent.bottom
-		width: root.width * root.progressFraction
-		clip: true
-		visible: root.showProgressBar
-
-		RectRounded {
-			x: 0
-			y: 0
-			width: root.width
-			height: root.height
-			scaleW: root.scaleW
-			scaleH: root.scaleH
-			fillColor: root.progressFillColor
-			fillOpacity: 1.0
-		}
-	}
-
-	RectRoundedOutline {
-		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
-		outlineColor: Theme.black
-		outlineOpacity: 1.0
-		visible: root.showProgressBar
-	}
-
-	AppText {
-		anchors.centerIn: parent
-		text: root.formattedShardProgress
-		visible: root.showProgressBar
-		fillColor: Theme.white
-		pixelSize: root.height * fontScale
-		anchors.verticalCenterOffset: (root.height - pixelSize) * 1 / 6
-		outlineColor: Theme.black
-		outlineWeight: 7
+		progressFraction: root.progressFraction
+		fillColor: root.progressFillColor
+		trackFillOpacity: 14 / 16
+		labelText: root.formattedShardProgress
+		labelFontScale: root.fontScale
+		labelVerticalCenterOffsetRatio: 1 / 6
 	}
 
 	AppText {

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from core_test.summon_simulator import (
+from utils.summon.overdraft import (
 	egg_summon_allow_overdraft,
 	mount_summon_allow_overdraft,
 	skill_summon_allow_overdraft,
@@ -11,7 +11,7 @@ from ui.utils.ui_settings import allow_negative_currency_enabled
 
 if TYPE_CHECKING:
 	from core.game_logic.game_logic import GameLogic
-	from core.game_logic.summon_config import SummonConfig
+	from core.game_logic.config.summon_config import SummonConfig
 
 
 def can_afford_summon_for_ui(

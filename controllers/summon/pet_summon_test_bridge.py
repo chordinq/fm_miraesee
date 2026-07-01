@@ -10,6 +10,7 @@ from core.game_logic.enums import CurrencyType, StatType
 from core.game_logic.game_logic import GameLogic
 from core.game_logic.stats.stat_helper import StatHelper
 from controllers.collections.pet_collection_bridge import PetCollectionBridge
+from controllers.summon.summon_upgrade_status import read_summon_upgrade_status
 from controllers.support.summon_overdraft import can_afford_summon_for_ui, execute_egg_summon
 from ui.utils.summon_result_entries import build_egg_summon_results
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
@@ -29,6 +30,7 @@ def _find_pet_by_guid(logic: GameLogic, pet_guid: str):
 
 class PetSummonTestBridge(QObject):
     stateChanged = Signal()
+    statsRefreshRequested = Signal()
 
     def __init__(
         self,
@@ -57,12 +59,17 @@ class PetSummonTestBridge(QObject):
     def _on_ui_settings_changed(self) -> None:
         self.stateChanged.emit()
 
-    def reload_after_dump(self) -> None:
+    def reload_after_dump(self, *, defer_heavy: bool = False) -> None:
         summon_config = self._logic.player.game_config.egg_summon_config
         self._summon_count = summon_config.get_base_summon_count()
         self._last_action_text = ""
         self._summon_results = []
         self._merge_target_guid = ""
+        if defer_heavy:
+            return
+        self.finish_deferred_reload()
+
+    def finish_deferred_reload(self) -> None:
         self._sync_status()
         self._refresh_prediction()
         self.stateChanged.emit()
@@ -127,10 +134,6 @@ class PetSummonTestBridge(QObject):
         return self._can_afford_count(self._summon_count)
 
     @Property("QVariantList", notify=stateChanged)
-    def summonAffordFlags(self) -> list[bool]:
-        return [self._can_afford_count(count) for count in self._summon_count_options()]
-
-    @Property("QVariantList", notify=stateChanged)
     def summonCountOptions(self) -> list[int]:
         return self._summon_count_options()
 
@@ -160,6 +163,33 @@ class PetSummonTestBridge(QObject):
             return 0
         return self._pet_collection.ascensionLevel
 
+    def _summon_upgrade_status(self) -> dict[str, int | float | bool]:
+        player = self._logic.player
+        return read_summon_upgrade_status(
+            player.player_pet_collection_model.summon_model,
+            self._summon_config(),
+        )
+
+    @Property(int, notify=stateChanged)
+    def summonLevel(self) -> int:
+        return int(self._summon_upgrade_status()["summonLevel"])
+
+    @Property(int, notify=stateChanged)
+    def summonProgressCount(self) -> int:
+        return int(self._summon_upgrade_status()["progressCount"])
+
+    @Property(int, notify=stateChanged)
+    def summonProgressRequired(self) -> int:
+        return int(self._summon_upgrade_status()["progressRequired"])
+
+    @Property(float, notify=stateChanged)
+    def summonProgressFraction(self) -> float:
+        return float(self._summon_upgrade_status()["progressFraction"])
+
+    @Property(bool, notify=stateChanged)
+    def summonProgressMaxed(self) -> bool:
+        return bool(self._summon_upgrade_status()["isMaxed"])
+
     @Slot(int)
     def setSummonCount(self, count: int) -> None:
         if count not in self._summon_count_options():
@@ -180,6 +210,10 @@ class PetSummonTestBridge(QObject):
     def _refresh_collection(self) -> None:
         if self._pet_collection is not None:
             self._pet_collection.refresh()
+
+    def _patch_egg_summon_collection(self, summoned) -> None:
+        if self._pet_collection is not None and summoned:
+            self._pet_collection.patch_after_egg_summon(summoned)
 
     def _resolve_equip_slot(self, pet_guid: str) -> int:
         player = self._logic.player
@@ -248,6 +282,7 @@ class PetSummonTestBridge(QObject):
             self._last_action_text = f"equipped {name} slot {slot + 1}"
         self._refresh_collection()
         self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     @Slot(str)
@@ -261,6 +296,7 @@ class PetSummonTestBridge(QObject):
             self._last_action_text = f"unequipped {name}"
         self._refresh_collection()
         self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     @Slot(str)
@@ -312,6 +348,7 @@ class PetSummonTestBridge(QObject):
         self._merge_target_guid = ""
         self._refresh_collection()
         self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     @Slot()
@@ -330,10 +367,10 @@ class PetSummonTestBridge(QObject):
                 egg = info.egg_model
                 detail = "NEW" if info.is_new else "duplicate"
                 parts.append(
-                    f"  [{egg.rarity.name}] seed {egg.seed:#018x}  {detail}"
+                    f"  [{egg.rarity.name}] seed {egg.random_seed:#018x}  {detail}"
                 )
             self._last_action_text = "\n".join(parts)
-        self._refresh_collection()
+            self._patch_egg_summon_collection(summoned)
         self._sync_status()
         self._refresh_prediction()
         self.stateChanged.emit()
@@ -362,7 +399,7 @@ class PetSummonTestBridge(QObject):
             egg = info.egg_model
             detail = "NEW" if info.is_new else "duplicate"
             lines.append(
-                f"{index:>2}. [{egg.rarity.name}]  seed {egg.seed:#018x}  {detail}"
+                f"{index:>2}. [{egg.rarity.name}]  seed {egg.random_seed:#018x}  {detail}"
             )
 
         shells_after = player.player_currency_model.get(CurrencyType.Eggshells)

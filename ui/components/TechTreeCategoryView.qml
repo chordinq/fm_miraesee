@@ -50,6 +50,7 @@ Item {
 		(Math.round(progress * 1000) / 10).toFixed(1) + "%"
 
 	readonly property real titlePixelSize: headerHeight * titleFontScale
+	readonly property real titleWidthRatio: 0.92
 
 	implicitWidth: 256
 	implicitHeight: implicitWidth * (scaleH / scaleW)
@@ -83,17 +84,26 @@ Item {
 			fillColor: Theme.checkBoxActiveGrey
 		}
 
-		AppText {
+		Item {
+			id: titleHost
+
 			anchors.centerIn: parent
-			width: headerClip.width * 0.92
-			wordWrap: true
-			horizontalAlignment: Text.AlignHCenter
-			locId: root.typeConfig.locId
-			locTable: "TechTree"
-			pixelSize: root.titlePixelSize
-			letterSpacing: 0
-			fillColor: Theme.white
-			outlineWeight: 8
+			width: headerClip.width * root.titleWidthRatio
+			height: titleText.implicitHeight
+
+			AppText {
+				id: titleText
+
+				anchors.centerIn: parent
+				locId: root.typeConfig.locId
+				locTable: "TechTree"
+				pixelSize: root.titlePixelSize
+				letterSpacing: 0
+				fillColor: Theme.white
+				outlineWeight: 8
+				scale: Math.min(1, titleHost.width / Math.max(implicitWidth, 1))
+				transformOrigin: Item.Center
+			}
 		}
 	}
 

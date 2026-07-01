@@ -1,10 +1,45 @@
 from __future__ import annotations
-from dataclasses import dataclass
-from typing import Any, Callable, Iterable, Optional, Sequence, TypeVar
-from ..enums import *
+from typing import Any, Callable, Iterable, Optional, TypeVar
+from ..enums import (
+	CombatSkill,
+	CurrencyType,
+	DungeonType,
+	ItemType,
+	Rarity,
+	SecondaryStatType,
+	StatCondition,
+	StatLayer,
+	StatNature,
+	StatQualifierType,
+	StatTargetKind,
+	StatType,
+	AttackType,
+)
 from ...random_pcg import RandomPCG
-from .stat_target import *
-from .stats import *
+from .stat_calc import LayerBucket, StatCalcContext
+from .stat_target import (
+	ActiveSkillStatTarget,
+	CurrencyBonusStatTarget,
+	DungeonStatTarget,
+	EggStatTarget,
+	EquipmentStatTarget,
+	ForgeStatTarget,
+	MountStatTarget,
+	OfflineCurrencyStatTarget,
+	OfflineTimerStatTarget,
+	PassiveSkillStatTarget,
+	PetStatTarget,
+	PlayerMeleeOnlyStatTarget,
+	PlayerRangedOnlyStatTarget,
+	PlayerSkinMultiplierStatTarget,
+	PlayerStatTarget,
+	StatQualifier,
+	StatTarget,
+	StatTargetBase,
+	TechTreeStatTarget,
+	WeaponStatTarget,
+)
+from .stats import StatContribution, StatContributions, StatNode, Stats, UniqueStat
 
 T = TypeVar("T")
 
@@ -15,18 +50,6 @@ def _optional_enum(enum_cls: type, raw: Any):
 	if isinstance(raw, str):
 		return enum_cls[raw]
 	return enum_cls(int(raw))
-
-
-@dataclass
-class _NatureAccumulators:
-	additive: float
-	multiplier: float
-	divisor: float
-	one_minus: float
-
-
-_DAMAGE_DEPENDENCY_TYPES = (StatType.AscensionDamage, StatType.TechTreeDamage)
-_HEALTH_DEPENDENCY_TYPES = (StatType.AscensionHealth, StatType.TechTreeHealth)
 
 
 class StatHelper:
@@ -83,31 +106,132 @@ class StatHelper:
 		raise ValueError(f"Unknown StatTarget $type: {type_name!r}")
 
 	@staticmethod
+	def parse_modern_stat_target(data: dict) -> StatTarget:
+		kind = data.get("Kind", data.get("kind"))
+		if isinstance(kind, str):
+			kind = StatTargetKind[kind]
+		else:
+			kind = StatTargetKind(int(kind))
+
+		raw_qualifiers = data.get("Qualifiers") or []
+		qualifiers: list[StatQualifier] = []
+		for row in raw_qualifiers:
+			qualifier_type = row.get("Type")
+			if isinstance(qualifier_type, str):
+				qualifier_type = StatQualifierType[qualifier_type]
+			else:
+				qualifier_type = StatQualifierType(int(qualifier_type))
+			qualifiers.append(StatQualifier(qualifier_type, int(row["Value"])))
+		return StatTarget(kind, tuple(qualifiers))
+
+	@staticmethod
+	def _parse_stat_layer(raw: object) -> StatLayer:
+		if raw is None or raw == "None":
+			return StatLayer.None_
+		if isinstance(raw, StatLayer):
+			return raw
+		if isinstance(raw, str):
+			return StatLayer["None_" if raw == "None" else raw]
+		return StatLayer(int(raw))
+
+	@staticmethod
+	def _parse_stat_condition(raw: object) -> StatCondition:
+		if raw is None or raw == "None":
+			return StatCondition.None_
+		if isinstance(raw, StatCondition):
+			return raw
+		if isinstance(raw, str):
+			return StatCondition["None_" if raw == "None" else raw]
+		return StatCondition(int(raw))
+
+	@staticmethod
 	def parse_stat_node(data: dict) -> StatNode:
 		block = data.get("StatNode", data)
-		return StatNode(
-			StatHelper.parse_unique_stat(block),
-			StatHelper.parse_stat_target(block["StatTarget"]),
-		)
+		unique_stat = StatHelper.parse_unique_stat(block)
+
+		if block.get("Target") is not None:
+			target = StatHelper.parse_modern_stat_target(block["Target"])
+			layer = StatHelper._parse_stat_layer(block.get("Layer"))
+			condition = StatHelper._parse_stat_condition(block.get("Condition"))
+			legacy = None
+			if block.get("LegacyTarget") is not None:
+				legacy = StatHelper.parse_stat_target(block["LegacyTarget"])
+			elif block.get("StatTarget") is not None:
+				legacy = StatHelper.parse_stat_target(block["StatTarget"])
+			return StatNode(unique_stat, target, layer, condition, legacy)
+
+		if block.get("StatTarget") is not None:
+			legacy = StatHelper.parse_stat_target(block["StatTarget"])
+			return StatNode(unique_stat, legacy)
+
+		raise ValueError("StatNode payload missing Target/StatTarget")
 
 	@staticmethod
 	def parse_stat_contribution_row(row: dict) -> StatContribution:
-		return StatContribution(
-			StatHelper.parse_stat_node(row["StatNode"]),
-			float(row.get("Value", 0.0)),
+		from core.metaplaymath.config_values import stat_contribution_value_fd6_raw
+
+		node = StatHelper.parse_stat_node(row["StatNode"])
+		raw = stat_contribution_value_fd6_raw(row)
+		return StatContribution(node, 0.0, raw=raw)
+
+	@staticmethod
+	def _coerce_target(target: StatTarget | StatTargetBase) -> StatTarget:
+		if isinstance(target, StatTarget):
+			return target
+		converted, _, _ = StatTarget.from_legacy(target)
+		return converted
+
+	@staticmethod
+	def _coerce_context(
+		context: StatCalcContext | bool | None,
+	) -> StatCalcContext:
+		if isinstance(context, StatCalcContext):
+			return context
+		if context is None:
+			return StatCalcContext(None)
+		return StatCalcContext(bool(context))
+
+	@staticmethod
+	def new_additive_stat_node(
+		stat_type: StatType,
+		target: StatTarget | StatTargetBase,
+		layer: StatLayer = StatLayer.None_,
+		condition: StatCondition = StatCondition.None_,
+	) -> StatNode:
+		return StatNode(
+			UniqueStat(stat_type, StatNature.Additive),
+			target,
+			layer,
+			condition,
 		)
 
 	@staticmethod
-	def new_additive_stat_node(stat_type: StatType, stat_target: StatTargetBase) -> StatNode:
-		return StatNode(UniqueStat(stat_type, StatNature.Additive), stat_target)
+	def new_multiplicative_node(
+		stat_type: StatType,
+		target: StatTarget | StatTargetBase,
+		layer: StatLayer = StatLayer.None_,
+		condition: StatCondition = StatCondition.None_,
+	) -> StatNode:
+		return StatNode(
+			UniqueStat(stat_type, StatNature.Multiplier),
+			target,
+			layer,
+			condition,
+		)
 
 	@staticmethod
-	def new_multiplicative_node(stat_type: StatType, stat_target: StatTargetBase) -> StatNode:
-		return StatNode(UniqueStat(stat_type, StatNature.Multiplier), stat_target)
-
-	@staticmethod
-	def new_divisor_node(stat_type: StatType, stat_target: StatTargetBase) -> StatNode:
-		return StatNode(UniqueStat(stat_type, StatNature.Divisor), stat_target)
+	def new_divisor_node(
+		stat_type: StatType,
+		target: StatTarget | StatTargetBase,
+		layer: StatLayer = StatLayer.None_,
+		condition: StatCondition = StatCondition.None_,
+	) -> StatNode:
+		return StatNode(
+			UniqueStat(stat_type, StatNature.Divisor),
+			target,
+			layer,
+			condition,
+		)
 
 	@staticmethod
 	def sum_f64(values: Iterable[float]) -> float:
@@ -148,20 +272,41 @@ class StatHelper:
 	def generate_stats_from_range(
 		game_config: Any,
 		random: RandomPCG,
-		stats_to_add: list[RandomValueStatContribution],
+		stats_to_add: list,
 	) -> StatContributions:
+		"""IL: StatHelper.GenerateStatsFromRange — NextF64InRange per row."""
 		result = StatContributions()
 		for spec in stats_to_add:
-			roll = random.next_f64()
-			value = spec.min_value + roll * (spec.max_value - spec.min_value)
+			value = random.next_f64_in_range(spec.min_value, spec.max_value)
 			result.stats.append(StatContribution(spec.stat_node, value))
 		return result
+
+	@staticmethod
+	def gather_contributions(
+		stats: Stats,
+		stat_type: StatType,
+		target: StatTarget,
+		context: StatCalcContext,
+		layers: dict[StatLayer, LayerBucket],
+	) -> None:
+		for node, value_raw in stats.all_stat_contributions.items():
+			if node.unique_stat.stat_type != stat_type:
+				continue
+			if not node.target.equals(target):
+				continue
+			if not context.is_condition_met(node.condition):
+				continue
+			bucket = layers.get(node.layer)
+			if bucket is None:
+				bucket = LayerBucket.create()
+			bucket.add(node.unique_stat.stat_nature, value_raw)
+			layers[node.layer] = bucket
 
 	@staticmethod
 	def calculate_value(
 		player: Any,
 		stat_type: StatType,
-		target_base: StatTargetBase,
+		target: StatTarget | StatTargetBase,
 		incoming_value: float | int,
 	) -> float:
 		game_config = StatHelper._player_game_config(player)
@@ -171,9 +316,9 @@ class StatHelper:
 			game_config,
 			stats,
 			stat_type,
-			target_base,
+			target,
 			float(incoming_value),
-			is_ranged,
+			StatCalcContext(is_ranged),
 		)
 
 	@staticmethod
@@ -181,210 +326,110 @@ class StatHelper:
 		game_config: Any,
 		stats_to_use: Stats,
 		stat_type: StatType,
-		target_base: StatTargetBase,
+		target: StatTarget | StatTargetBase,
 		incoming_value: float,
-		is_ranged: Optional[bool] = None,
+		context: StatCalcContext | bool | None = None,
 	) -> float:
-		acc = _NatureAccumulators(
-			additive=stats_to_use.get_stat_value_or_default(
-				game_config, stat_type, StatNature.Additive, target_base
-			),
-			multiplier=stats_to_use.get_stat_value_or_default(
-				game_config, stat_type, StatNature.Multiplier, target_base
-			),
-			divisor=stats_to_use.get_stat_value_or_default(
-				game_config, stat_type, StatNature.Divisor, target_base
-			),
-			one_minus=stats_to_use.get_stat_value_or_default(
-				game_config, stat_type, StatNature.OneMinusMultiplier, target_base
-			),
+		"""IL: StatHelper.CalculateValueFromStats — FD6 layer pipeline."""
+		from core.metaplaymath.fd6 import (
+			fd6_add_raw,
+			fd6_div_raw,
+			fd6_from_double,
+			fd6_from_int,
+			fd6_mul_raw,
+			fd6_sub_raw,
+			fd6_to_double,
 		)
 
-		if stat_type == StatType.Health:
-			for dep in _HEALTH_DEPENDENCY_TYPES:
-				StatHelper._accumulate_with_stat_deps(
-					game_config, stats_to_use, dep, target_base, acc
-				)
-		elif stat_type == StatType.Damage:
-			for dep in _DAMAGE_DEPENDENCY_TYPES:
-				StatHelper._accumulate_with_stat_deps(
-					game_config, stats_to_use, dep, target_base, acc
-				)
+		fd6_one = fd6_from_int(1)
+		resolved_target = StatHelper._coerce_target(target)
+		resolved_context = StatHelper._coerce_context(context)
+		layers: dict[StatLayer, LayerBucket] = {}
 
-		StatHelper._add_dependency_for_target(
-			game_config, stats_to_use, stat_type, target_base, acc, is_ranged
+		StatHelper.gather_contributions(
+			stats_to_use, stat_type, resolved_target, resolved_context, layers
+		)
+		for dependency in resolved_target.get_dependencies():
+			StatHelper.gather_contributions(
+				stats_to_use, stat_type, dependency, resolved_context, layers
+			)
+
+		general = layers.get(StatLayer.None_, LayerBucket.create())
+		default_multiplier = stats_to_use.get_stat_default_value_fd6_raw(
+			game_config, stat_type, StatNature.Multiplier
+		)
+		default_divisor = stats_to_use.get_stat_default_value_fd6_raw(
+			game_config, stat_type, StatNature.Divisor
 		)
 
-		result = float(incoming_value) + acc.additive
-		result *= acc.multiplier
-		result *= 1.0 - acc.one_minus
-		return result / acc.divisor
+		value_raw = fd6_add_raw(fd6_from_double(incoming_value), general.additive)
+		multiplier_raw = default_multiplier
+		if general.has_multiplier:
+			multiplier_raw = fd6_add_raw(multiplier_raw, general.multiplier)
+		value_raw = fd6_mul_raw(value_raw, multiplier_raw)
+		value_raw = fd6_mul_raw(
+			value_raw, fd6_sub_raw(fd6_one, general.one_minus_multiplier)
+		)
+		divisor_raw = default_divisor
+		if general.has_divisor:
+			divisor_raw = fd6_add_raw(divisor_raw, general.divisor)
+		if divisor_raw == 0:
+			raise ZeroDivisionError("Stat divisor resolved to zero")
+		value_raw = fd6_div_raw(value_raw, divisor_raw)
+
+		for layer, bucket in layers.items():
+			if layer == StatLayer.None_:
+				continue
+			value_raw = fd6_add_raw(value_raw, bucket.additive)
+			if bucket.has_multiplier:
+				value_raw = fd6_mul_raw(
+					value_raw, fd6_add_raw(fd6_one, bucket.multiplier)
+				)
+			value_raw = fd6_mul_raw(
+				value_raw, fd6_sub_raw(fd6_one, bucket.one_minus_multiplier)
+			)
+			if bucket.has_divisor:
+				value_raw = fd6_div_raw(
+					value_raw, fd6_add_raw(fd6_one, bucket.divisor)
+				)
+
+		return fd6_to_double(value_raw)
+
+	@staticmethod
+	def calculate_timer_duration_seconds(
+		player: Any,
+		stat_type: StatType,
+		target: StatTarget | StatTargetBase,
+		base_duration: float,
+	) -> int:
+		"""IL: StatHelper.CalculateValue + FD6.RoundToInt for TimerModel duration."""
+		return round(
+			StatHelper.calculate_value(player, stat_type, target, base_duration)
+		)
 
 	@staticmethod
 	def roll_stat(
 		player: Any,
 		stat_type: StatType,
-		target_base: StatTargetBase,
+		target: StatTarget | StatTargetBase,
 		random: RandomPCG,
 	) -> bool:
+		"""IL: StatHelper.RollStat — NextFixedD6() < GetStatValueOrDefault(...)."""
 		game_config = StatHelper._player_game_config(player)
 		stats = StatHelper._player_total_stats(player)
-		chance = stats.get_stat_value_or_default(
-			game_config, stat_type, StatNature.Multiplier, target_base
+		chance_raw = stats.get_stat_value_or_default_fd6_raw(
+			game_config, stat_type, StatNature.Multiplier, target
 		)
-		random_fd6 = int(random.next_f64() * 1_000_000)
-		chance_fd6 = int(chance * 1_000_000)
-		return random_fd6 < chance_fd6
+		return random.compare_fixed_d6_less_than(chance_raw)
 
 	@staticmethod
 	def roll_from_custom_stats(
 		player: Any,
 		stat_type: StatType,
-		target_base: StatTargetBase,
+		target: StatTarget | StatTargetBase,
 		random: RandomPCG,
 	) -> bool:
-		return StatHelper.roll_stat(player, stat_type, target_base, random)
-
-	@staticmethod
-	def _merge_try_get_into_accumulators(
-		stats: Stats,
-		game_config: Any,
-		stat_type: StatType,
-		target: StatTargetBase,
-		acc: _NatureAccumulators,
-	) -> None:
-		found, value = stats.try_get_stat_value(
-			game_config, stat_type, StatNature.Additive, target
-		)
-		if found:
-			acc.additive += value
-
-		found, value = stats.try_get_stat_value(
-			game_config, stat_type, StatNature.Multiplier, target
-		)
-		if found:
-			acc.multiplier *= value
-
-		found, value = stats.try_get_stat_value(
-			game_config, stat_type, StatNature.Divisor, target
-		)
-		if found:
-			acc.divisor *= value
-
-		found, value = stats.try_get_stat_value(
-			game_config, stat_type, StatNature.OneMinusMultiplier, target
-		)
-		if found:
-			acc.one_minus += value
-
-	@staticmethod
-	def _accumulate_with_stat_deps(
-		game_config: Any,
-		stats: Stats,
-		stat_type: StatType,
-		target: StatTargetBase,
-		acc: _NatureAccumulators,
-		_visiting: frozenset[StatType] | None = None,
-	) -> None:
-		if _visiting is None:
-			_visiting = frozenset()
-		if stat_type in _visiting:
-			return
-		next_visiting = _visiting | {stat_type}
-
-		StatHelper._merge_try_get_into_accumulators(stats, game_config, stat_type, target, acc)
-
-		if stat_type == StatType.Health:
-			for dep in _HEALTH_DEPENDENCY_TYPES:
-				StatHelper._accumulate_with_stat_deps(
-					game_config, stats, dep, target, acc, next_visiting
-				)
-		elif stat_type == StatType.Damage:
-			for dep in _DAMAGE_DEPENDENCY_TYPES:
-				StatHelper._accumulate_with_stat_deps(
-					game_config, stats, dep, target, acc, next_visiting
-				)
-
-	@staticmethod
-	def _add_dependency_for_target(
-		game_config: Any,
-		stats: Stats,
-		stat_type: StatType,
-		target: StatTargetBase,
-		acc: _NatureAccumulators,
-		is_ranged: Optional[bool],
-	) -> None:
-		def _accum(derived: StatTargetBase) -> None:
-			StatHelper._accumulate_with_stat_deps(game_config, stats, stat_type, derived, acc)
-
-		if isinstance(target, PlayerStatTarget):
-			if is_ranged is not None:
-				alt = PlayerRangedOnlyStatTarget() if is_ranged else PlayerMeleeOnlyStatTarget()
-				_accum(alt)
-			_accum(PlayerSkinMultiplierStatTarget())
-			return
-
-		if isinstance(target, WeaponStatTarget):
-			if target.attack_type is None:
-				if is_ranged is not None:
-					attack = AttackType.Ranged if is_ranged else AttackType.Melee
-					_accum(WeaponStatTarget(attack))
-			else:
-				_accum(WeaponStatTarget())
-			_accum(EquipmentStatTarget(ItemType.Weapon))
-			return
-
-		if isinstance(target, EquipmentStatTarget):
-			if target.item_type is None or target.item_type != ItemType.Weapon:
-				return
-			_accum(EquipmentStatTarget())
-			_accum(WeaponStatTarget())
-			if is_ranged is not None:
-				attack = AttackType.Ranged if is_ranged else AttackType.Melee
-				_accum(WeaponStatTarget(attack))
-			return
-
-		if isinstance(target, (PassiveSkillStatTarget, ActiveSkillStatTarget)):
-			if target.skill_type is None:
-				return
-			_accum(type(target)())
-			return
-
-		if isinstance(target, MountStatTarget):
-			if target.mount_rarity is None:
-				return
-			_accum(MountStatTarget())
-			return
-
-		if isinstance(target, PetStatTarget):
-			if target.pet_rarity is None:
-				return
-			_accum(PetStatTarget())
-			return
-
-		if isinstance(target, EggStatTarget):
-			if target.egg_rarity is None:
-				return
-			_accum(EggStatTarget())
-			return
-
-		if isinstance(target, OfflineCurrencyStatTarget):
-			if target.currency_type is None:
-				return
-			_accum(OfflineCurrencyStatTarget())
-			_accum(CurrencyBonusStatTarget(target.currency_type))
-			_accum(CurrencyBonusStatTarget())
-			return
-
-		if isinstance(target, CurrencyBonusStatTarget):
-			return
-
-		if isinstance(target, DungeonStatTarget):
-			if target.dungeon_type is not None:
-				_accum(DungeonStatTarget())
-			if target.currency_type is not None:
-				_accum(CurrencyBonusStatTarget(target.currency_type))
-			return
+		return StatHelper.roll_stat(player, stat_type, target, random)
 
 	@staticmethod
 	def _player_is_ranged_optional(player: Any) -> Optional[bool]:
@@ -393,6 +438,8 @@ class StatHelper:
 			return bool(explicit)
 
 		equipment = getattr(player, "equipment", None)
+		if equipment is None:
+			equipment = getattr(player, "player_equipment_model", None)
 		if equipment is None:
 			return None
 		weapon = getattr(equipment, "weapon", None)
@@ -417,7 +464,7 @@ class StatHelper:
 
 	@staticmethod
 	def _player_total_stats(player: Any) -> Stats:
-		from ..player.player_item_stats import get_total_stats
+		from ..player.player_model import get_total_stats
 		from ..player.player_model import PlayerModel
 
 		if isinstance(player, PlayerModel):

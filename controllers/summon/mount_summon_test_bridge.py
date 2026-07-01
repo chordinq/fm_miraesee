@@ -10,6 +10,7 @@ from core.game_logic.enums import CurrencyType, StatType
 from core.game_logic.game_logic import GameLogic
 from core.game_logic.stats.stat_helper import StatHelper
 from controllers.collections.mount_collection_bridge import MountCollectionBridge
+from controllers.summon.summon_upgrade_status import read_summon_upgrade_status
 from controllers.support.summon_overdraft import can_afford_summon_for_ui, execute_mount_summon
 from ui.utils.summon_result_entries import build_mount_summon_results
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
@@ -29,6 +30,7 @@ def _find_mount_by_guid(logic: GameLogic, mount_guid: str):
 
 class MountSummonTestBridge(QObject):
     stateChanged = Signal()
+    statsRefreshRequested = Signal()
 
     def __init__(
         self,
@@ -55,11 +57,16 @@ class MountSummonTestBridge(QObject):
     def _on_ui_settings_changed(self) -> None:
         self.stateChanged.emit()
 
-    def reload_after_dump(self) -> None:
+    def reload_after_dump(self, *, defer_heavy: bool = False) -> None:
         summon_config = self._logic.player.game_config.mount_summon_config
         self._summon_count = summon_config.get_base_summon_count()
         self._last_action_text = ""
         self._summon_results = []
+        if defer_heavy:
+            return
+        self.finish_deferred_reload()
+
+    def finish_deferred_reload(self) -> None:
         self._sync_status()
         self._refresh_prediction()
         self.stateChanged.emit()
@@ -109,6 +116,10 @@ class MountSummonTestBridge(QObject):
         if self._mount_collection is not None:
             self._mount_collection.refresh()
 
+    def _patch_mount_summon_collection(self, summoned) -> None:
+        if self._mount_collection is not None and summoned:
+            self._mount_collection.patch_after_mount_summon(summoned)
+
     @Property(int, notify=stateChanged)
     def summonCount(self) -> int:
         return self._summon_count
@@ -124,10 +135,6 @@ class MountSummonTestBridge(QObject):
     @Property(bool, notify=stateChanged)
     def canAffordSummon(self) -> bool:
         return self._can_afford_count(self._summon_count)
-
-    @Property("QVariantList", notify=stateChanged)
-    def summonAffordFlags(self) -> list[bool]:
-        return [self._can_afford_count(count) for count in self._summon_count_options()]
 
     @Property("QVariantList", notify=stateChanged)
     def summonCountOptions(self) -> list[int]:
@@ -154,6 +161,33 @@ class MountSummonTestBridge(QObject):
         if self._mount_collection is None:
             return 0
         return self._mount_collection.ascensionLevel
+
+    def _summon_upgrade_status(self) -> dict[str, int | float | bool]:
+        player = self._logic.player
+        return read_summon_upgrade_status(
+            player.player_mount_collection_model.summon_model,
+            self._summon_config(),
+        )
+
+    @Property(int, notify=stateChanged)
+    def summonLevel(self) -> int:
+        return int(self._summon_upgrade_status()["summonLevel"])
+
+    @Property(int, notify=stateChanged)
+    def summonProgressCount(self) -> int:
+        return int(self._summon_upgrade_status()["progressCount"])
+
+    @Property(int, notify=stateChanged)
+    def summonProgressRequired(self) -> int:
+        return int(self._summon_upgrade_status()["progressRequired"])
+
+    @Property(float, notify=stateChanged)
+    def summonProgressFraction(self) -> float:
+        return float(self._summon_upgrade_status()["progressFraction"])
+
+    @Property(bool, notify=stateChanged)
+    def summonProgressMaxed(self) -> bool:
+        return bool(self._summon_upgrade_status()["isMaxed"])
 
     @Slot(int)
     def setSummonCount(self, count: int) -> None:
@@ -191,7 +225,7 @@ class MountSummonTestBridge(QObject):
                     f"  {_mount_key_from_model(mount)}  {detail}"
                 )
             self._last_action_text = "\n".join(parts)
-        self._refresh_collection()
+            self._patch_mount_summon_collection(summoned)
         self._sync_status()
         self._refresh_prediction()
         self.stateChanged.emit()
@@ -207,6 +241,7 @@ class MountSummonTestBridge(QObject):
             self._last_action_text = f"equipped {name}"
         self._refresh_collection()
         self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     @Slot(str)
@@ -220,6 +255,7 @@ class MountSummonTestBridge(QObject):
             self._last_action_text = f"unequipped {name}"
         self._refresh_collection()
         self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     @Slot(str)

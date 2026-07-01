@@ -10,6 +10,8 @@ Item {
 	property var timerBridge: null
 	property real progressFraction: 0
 	property color fillColor: Theme.blue
+	property real trackFillOpacity: 1.0
+	property real labelVerticalCenterOffsetRatio: 0
 	property string labelText: ""
 	property string labelLocId: ""
 	property string labelLocTable: ""
@@ -38,6 +40,7 @@ Item {
 		scaleW: root.scaleW
 		scaleH: root.scaleH
 		fillColor: Theme.darkBlue
+		fillOpacity: root.trackFillOpacity
 	}
 
 	Item {
@@ -72,6 +75,9 @@ Item {
 		locTable: root.displayLabelLocTable
 		fillColor: Theme.white
 		pixelSize: parent.height * root.labelFontScale
+		anchors.verticalCenterOffset: root.labelVerticalCenterOffsetRatio > 0
+			? (parent.height - pixelSize) * root.labelVerticalCenterOffsetRatio
+			: 0
 		outlineColor: Theme.black
 		outlineWeight: 7
 	}

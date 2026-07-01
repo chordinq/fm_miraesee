@@ -360,20 +360,19 @@ DetailsView {
 				onClicked: {
 					if (!root.eggController || !root.eggModel)
 						return
-					root.eggController.performHatch(root.eggModel.guid)
+					var eggGuid = root.eggModel.guid
 					root.closed()
+					root.eggController.performHatch(eggGuid)
 				}
 			}
 
-			TechTreeDetailsButton {
+			GemSkipButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
 				scaleW: root.actionButtonScaleW
 				scaleH: root.actionButtonScaleH
 				visible: root.showGemSkipButton
-				mode: "skip"
-				bottomText: eggController ? eggController.skipGemCostText : ""
-				bottomIconSource: Qt.resolvedUrl("../../../assets/sprites/Currency/GemIcon.png")
+				costText: eggController ? eggController.skipGemCostText : ""
 				fillColor: eggController && eggController.canGemSkipHatch
 					? Theme.blue
 					: Theme.lightGrey

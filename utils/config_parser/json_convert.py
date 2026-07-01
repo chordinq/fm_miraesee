@@ -10,7 +10,7 @@ from .dump_schema import ClassSchema, SchemaRegistry, get_registry
 from .game_types import decode_item_id
 from .stat_node_compat import normalize_stat_nodes
 
-DEFAULT_DUMP = Path(__file__).resolve().parents[2] / "dump.cs"
+DEFAULT_DUMP = Path(__file__).resolve().parents[2] / "data" / "dump.cs"
 
 PRIMITIVE_TYPES = frozenset(
     {

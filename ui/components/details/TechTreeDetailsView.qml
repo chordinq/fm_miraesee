@@ -75,31 +75,32 @@ DetailsView {
 		root.nodeModel.timerBridge.refresh()
 	}
 
-	readonly property string actionMode: {
-		if (!root.nodeModel)
-			return ""
-		if (root.showClaimButton)
-			return "claim"
-		if (root.showSkipButton)
-			return "skip"
-		if (root.showUpgradeButton)
-			return "upgrade"
-		return ""
-	}
-
 	readonly property bool actionEnabled:
 		!root.techTreeModel || !root.nodeModel
 			? false
-			: root.actionMode === "claim"
+			: root.showClaimButton
 				? true
-				: root.actionMode === "skip"
+				: root.showSkipButton
 					? root.nodeModel.canAffordSkip
-					: root.actionMode === "upgrade"
+					: root.showUpgradeButton
 						? root.nodeModel.canStartUpgrade
 						: false
 
 	readonly property color actionFillColor:
 		root.actionEnabled ? Theme.blue : Theme.lightGrey
+
+	function performAction() {
+		if (!root.techTreeModel || !root.nodeModel)
+			return
+		if (root.showUpgradeButton)
+			root.techTreeModel.performUpgradeStart(root.nodeModel.nodeId)
+		else if (root.showSkipButton)
+			root.techTreeModel.performGemSkip(root.nodeModel.nodeId)
+		else if (root.showClaimButton) {
+			root.techTreeModel.performUpgradeClaim(root.nodeModel.nodeId)
+			root.closed()
+		}
+	}
 
 	Item {
 		anchors.fill: parent
@@ -210,7 +211,7 @@ DetailsView {
 
 		AppText {
 			anchors.horizontalCenter: parent.horizontalCenter
-			anchors.bottom: statusColumn.visible ? statusColumn.top : actionButton.top
+			anchors.bottom: statusColumn.visible ? statusColumn.top : actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
 			width: root.progressWidth
 			horizontalAlignment: Text.AlignHCenter
@@ -224,7 +225,7 @@ DetailsView {
 
 		AppText {
 			anchors.horizontalCenter: parent.horizontalCenter
-			anchors.bottom: statusColumn.visible ? statusColumn.top : actionButton.top
+			anchors.bottom: statusColumn.visible ? statusColumn.top : actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
 			width: root.progressWidth
 			horizontalAlignment: Text.AlignHCenter
@@ -242,7 +243,7 @@ DetailsView {
 			id: statusColumn
 
 			anchors.horizontalCenter: parent.horizontalCenter
-			anchors.bottom: actionButton.top
+			anchors.bottom: actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
 			width: root.progressWidth
 			spacing: root.layoutUnit * root.progressStatusSpacingRatio
@@ -267,48 +268,55 @@ DetailsView {
 			}
 		}
 
-		TechTreeDetailsButton {
-			id: actionButton
+		Item {
+			id: actionSlot
 
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: parent.bottom
 			anchors.bottomMargin: root.layoutUnit * root.actionBottomMarginRatio
 			width: root.actionButtonWidth
 			height: root.actionButtonHeight
-			scaleW: root.actionButtonScaleW
-			scaleH: root.actionButtonScaleH
-			visible: root.actionMode !== ""
-			mode: root.actionMode
-			topText: root.actionMode === "upgrade" && root.nodeModel
-				? root.nodeModel.upgradeDurationText
-				: ""
-			bottomText: root.nodeModel
-				? (root.actionMode === "skip"
-					? root.nodeModel.skipGemCostText
-					: root.actionMode === "upgrade"
-						? root.nodeModel.upgradeCostText
-						: "")
-				: ""
-			bottomIconSource: root.actionMode === "skip"
-				? Qt.resolvedUrl("../../../assets/sprites/Currency/GemIcon.png")
-				: Qt.resolvedUrl("../../../assets/sprites/Currency/techPotions.png")
-			claimLocId: root.completeLocId
-			claimLocTable: "General"
-			fillColor: root.actionFillColor
-			enabled: root.techTreeModel !== null
-				&& root.nodeModel !== null
-				&& root.actionEnabled
-			onClicked: {
-				if (!root.techTreeModel || !root.nodeModel)
-					return
-				if (root.actionMode === "upgrade")
-					root.techTreeModel.performUpgradeStart(root.nodeModel.nodeId)
-				else if (root.actionMode === "skip")
-					root.techTreeModel.performGemSkip(root.nodeModel.nodeId)
-				else if (root.actionMode === "claim") {
-					root.techTreeModel.performUpgradeClaim(root.nodeModel.nodeId)
-					root.closed()
-				}
+
+			TechTreeResearchButton {
+				anchors.fill: parent
+				scaleW: root.actionButtonScaleW
+				scaleH: root.actionButtonScaleH
+				visible: root.showUpgradeButton
+				titleText: root.nodeModel ? root.nodeModel.upgradeDurationText : ""
+				costText: root.nodeModel ? root.nodeModel.upgradeCostText : ""
+				fillColor: root.actionFillColor
+				enabled: root.techTreeModel !== null
+					&& root.nodeModel !== null
+					&& root.actionEnabled
+				onClicked: root.performAction()
+			}
+
+			GemSkipButton {
+				anchors.fill: parent
+				scaleW: root.actionButtonScaleW
+				scaleH: root.actionButtonScaleH
+				visible: root.showSkipButton
+				costText: root.nodeModel ? root.nodeModel.skipGemCostText : ""
+				fillColor: root.actionFillColor
+				enabled: root.techTreeModel !== null
+					&& root.nodeModel !== null
+					&& root.actionEnabled
+				onClicked: root.performAction()
+			}
+
+			RectRoundButton {
+				anchors.fill: parent
+				scaleW: root.actionButtonScaleW
+				scaleH: root.actionButtonScaleH
+				labelPixelSize: root.actionButtonFontPixelSize
+				visible: root.showClaimButton
+				locId: root.completeLocId
+				locTable: "General"
+				fillColor: root.actionFillColor
+				enabled: root.techTreeModel !== null
+					&& root.nodeModel !== null
+					&& root.actionEnabled
+				onClicked: root.performAction()
 			}
 		}
 	}

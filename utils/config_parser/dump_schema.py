@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-DEFAULT_DUMP = Path(__file__).resolve().parents[2] / "dump.cs"
+DEFAULT_DUMP = Path(__file__).resolve().parents[2] / "data" / "dump.cs"
 
 _META_MEMBER = re.compile(
     r"\[MetaMember\((\d+),[^\]]*\)\]"

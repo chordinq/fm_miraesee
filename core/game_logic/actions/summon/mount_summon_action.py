@@ -20,9 +20,8 @@ class SummonedMountsInfo:
 		self.is_new = is_new
 
 
-class MountSummonAction(PlayerAction):
-	action_code = ActionCodes.MountSummon
-	finalized_action_code = ActionCodes.MountSummonFinalized
+class MountSummonFinalizedAction(PlayerAction):
+	action_code = ActionCodes.MountSummonFinalized
 
 	def __init__(self, count: int = 1) -> None:
 		super().__init__()

@@ -5,7 +5,8 @@ from __future__ import annotations
 
 from .actions import (
 	ActionResult,
-	EggSummonAction,
+	AscendAction,
+	EggSummonFinalizedAction,
 	EquipItemAction,
 	ForgeAction,
 	ForgeGemSkipAction,
@@ -14,7 +15,7 @@ from .actions import (
 	ForgeUpgradeStartAction,
 	MetaActionResult,
 	MountEquipAction,
-	MountSummonAction,
+	MountSummonFinalizedAction,
 	MountUnEquipAction,
 	PetEggHatchClaimAction,
 	PetEggHatchFinalizedAction,
@@ -24,7 +25,7 @@ from .actions import (
 	PetMergeAction,
 	PetUnEquipAction,
 	SellItemAction,
-	SkillSummonAction,
+	SkillSummonFinalizedAction,
 	SummonedEggInfo,
 	SummonedMountsInfo,
 	SummonedSkillInfo,
@@ -33,6 +34,7 @@ from .actions import (
 	SkillEquipAction,
 	SkillUnEquipAction,
 )
+from .enums import AscendableType
 from .player.player_item_model import PlayerItemModel
 from .player.player_pet_collection_model import HatchedPetInfo
 from .player.player_model import PlayerModel
@@ -52,8 +54,8 @@ class GameLogic:
 		*,
 		commit: bool = True,
 	) -> tuple[MetaActionResult, list[SummonedSkillInfo]]:
-		"""IL: SkillSummonAction + SkillSummonFinalizedAction (merged)."""
-		action = SkillSummonAction(count)
+		"""IL: SkillSummonFinalizedAction."""
+		action = SkillSummonFinalizedAction(count)
 		result = action.execute(self._player, commit=commit)
 		return result, action.summoned
 
@@ -66,6 +68,16 @@ class GameLogic:
 		action = SkillsQuickUpgradeAction()
 		result = action.execute(self._player, commit=commit)
 		return result, action.upgraded_skills
+
+	def skills_quick_equip(
+		self,
+		*,
+		commit: bool = True,
+	) -> MetaActionResult:
+		"""IL: QuickEquipSkillActionUiView.QuickEquip."""
+		from .actions.skill.skills_quick_equip import quick_equip_skills
+
+		return quick_equip_skills(self._player, commit=commit)
 
 	def skill_equip(
 		self,
@@ -150,8 +162,8 @@ class GameLogic:
 		*,
 		commit: bool = True,
 	) -> tuple[MetaActionResult, list[SummonedEggInfo]]:
-		"""IL: EggSummonAction + EggSummonFinalizedAction (merged)."""
-		action = EggSummonAction(count)
+		"""IL: EggSummonFinalizedAction."""
+		action = EggSummonFinalizedAction(count)
 		result = action.execute(self._player, commit=commit)
 		return result, action.summoned
 
@@ -161,8 +173,8 @@ class GameLogic:
 		*,
 		commit: bool = True,
 	) -> tuple[MetaActionResult, list[SummonedMountsInfo]]:
-		"""IL: MountSummonAction + MountSummonFinalizedAction (merged)."""
-		action = MountSummonAction(count)
+		"""IL: MountSummonFinalizedAction."""
+		action = MountSummonFinalizedAction(count)
 		result = action.execute(self._player, commit=commit)
 		return result, action.summoned
 
@@ -199,14 +211,24 @@ class GameLogic:
 
 	def forge(
 		self,
-		hammer_count: int,
+		forge_count: int,
 		*,
 		commit: bool = True,
 	) -> tuple[MetaActionResult, list[PlayerItemModel]]:
 		"""IL: ForgeAction."""
-		action = ForgeAction(hammer_count)
+		action = ForgeAction(forge_count)
 		result = action.execute(self._player, commit=commit)
 		return result, action.forged
+
+	def ascend(
+		self,
+		ascendable_type: AscendableType,
+		*,
+		commit: bool = True,
+	) -> MetaActionResult:
+		"""IL: AscendAction."""
+		action = AscendAction(ascendable_type)
+		return action.execute(self._player, commit=commit)
 
 	def pet_egg_hatch_finalize(
 		self,
@@ -290,8 +312,8 @@ class GameLogic:
 			egg = _find_egg_by_guid(self._player.player_pet_collection_model.eggs, egg_guid)
 			if egg is None:
 				return ActionResult.DoesNotExist, None
-			if egg.timer is not None:
-				egg.timer.skip_to_end(self._player)
+			if egg.hatch_timer_model is not None:
+				egg.hatch_timer_model.skip_to_end(self._player)
 
 			claim_result = self.pet_egg_hatch_claim(egg_guid, commit=True)
 			if claim_result != ActionResult.Success:

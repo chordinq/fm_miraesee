@@ -7,7 +7,7 @@ from ..action_codes import ActionCodes
 from ..action_result import ActionResult, MetaActionResult
 from ..player_action import PlayerAction
 from ...player.player_skill_collection_model import PlayerSkillModel
-from ...shared_game_config import can_be_upgraded_skill
+from ...config.shared_game_config import can_be_upgraded_skill
 
 if TYPE_CHECKING:
 	from ...player.player_model import PlayerModel

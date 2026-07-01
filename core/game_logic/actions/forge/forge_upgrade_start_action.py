@@ -38,7 +38,7 @@ class ForgeUpgradeStartAction(PlayerAction):
 
 		base_duration = float(upgrade_row.get("Duration", 0))
 		target = ForgeStatTarget()
-		duration = StatHelper.calculate_value(
+		duration = StatHelper.calculate_timer_duration_seconds(
 			player,
 			StatType.TimerSpeed,
 			target,

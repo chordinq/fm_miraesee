@@ -3,7 +3,7 @@ import math
 from typing import TYPE_CHECKING, Any
 from ...enums import CurrencyType, ItemAge, ItemType, SecondaryStatType, StatType
 from ....random_pcg import RandomPCG
-from ...item_age_drop import roll_age
+from ...player.player_forge_model import roll_age
 from ...player.player_equipment_model import ItemId
 from ...player.player_forge_model import forge_ascension_level
 from ...player.player_item_model import PlayerItemModel
@@ -16,39 +16,32 @@ from ..player_action import PlayerAction
 
 if TYPE_CHECKING:
 	from ...player.player_model import PlayerModel
-	from ...shared_game_config import SharedGameConfig
-
-_TUTORIAL_SANDALS = ItemId(ItemAge(1), ItemType.Shoes, 0)
-_TUTORIAL_ITEMS_BY_FORGE_COUNT: dict[int, tuple[ItemId, int]] = {
-	0: (ItemId(ItemAge(5), ItemType.Weapon, 0), 2),
-	1: (ItemId(ItemAge(1), ItemType.Weapon, 0), 1),
-}
-
+	from ...config.shared_game_config import SharedGameConfig
 
 class ForgeAction(PlayerAction):
 	action_code = ActionCodes.Forge
 
-	def __init__(self, hammer_count: int) -> None:
+	def __init__(self, forge_count: int) -> None:
 		super().__init__()
-		self.hammer_count = hammer_count
+		self.forge_count = forge_count & 0xFFFFFFFFFFFFFFFF
 		self.forged: list[PlayerItemModel] = []
 
 	def execute(self, player: PlayerModel, commit: bool = True) -> MetaActionResult:
 		self.forged = []
-		if self.hammer_count < 1:
-			return ActionResult.DoesNotExist
+		if self.forge_count < 1:
+			return ActionResult.NotEnoughResources
 
 		forge = player.player_forge_model
 		game_config = player.game_config
 		forge_cost = game_config.forge_config.forge_cost
 
-		if self.hammer_count >= 2:
+		if self.forge_count >= 2:
 			max_auto = forge.get_possible_auto_forge_hammer_count(player)
-			if self.hammer_count > max_auto:
+			if self.forge_count > max_auto:
 				return ActionResult.NotEnoughResources
 
 		hammers = player.player_currency_model.get(CurrencyType.Hammers)
-		effective_hammers = min(self.hammer_count, hammers)
+		effective_hammers = min(self.forge_count, hammers)
 		if effective_hammers < 1:
 			return ActionResult.NotEnoughResources
 
@@ -66,7 +59,6 @@ class ForgeAction(PlayerAction):
 
 		freebie_target = ForgeStatTarget()
 		loop_count = effective_hammers
-		bonus_forges = 0
 		i = 0
 
 		while i < loop_count:
@@ -78,18 +70,16 @@ class ForgeAction(PlayerAction):
 			if item is None:
 				return ActionResult.DoesNotExist
 
-			if i < self.hammer_count:
-				if StatHelper.roll_stat(
-					player,
-					StatType.FreebieChance,
-					freebie_target,
-					rng,
-				):
-					bonus_forges += 1
-					if loop_count == self.hammer_count:
-						spend_ctx.free(forge_cost)
-					else:
-						loop_count = min(self.hammer_count, loop_count + 1)
+			if StatHelper.roll_stat(
+				player,
+				StatType.FreebieChance,
+				freebie_target,
+				rng,
+			):
+				if loop_count == self.forge_count:
+					spend_ctx.free(forge_cost)
+				else:
+					loop_count = min(self.forge_count, loop_count + 1)
 
 			forge.forge_seed = (forge.forge_seed + 1) & 0xFFFFFFFFFFFFFFFF
 			forge.forge_count += 1
@@ -131,7 +121,7 @@ def _get_possible_items(
 
 def _row_item_id(row: dict[str, Any]) -> ItemId:
 	if "ItemId" in row:
-		from ...shared_game_config import parse_item_id_from_row
+		from ...config.shared_game_config import parse_item_id_from_row
 
 		return parse_item_id_from_row(row)
 	raise ValueError("equipment row missing ItemId")
@@ -144,18 +134,21 @@ def _create_forge_item(
 	age: int,
 ) -> PlayerItemModel | None:
 	forge = player.player_forge_model
-	game_config = player.game_config
+	seed = forge.forge_seed
 
-	tutorial = _TUTORIAL_ITEMS_BY_FORGE_COUNT.get(forge.forge_count)
-	if tutorial is not None:
-		item_id, level = tutorial
-		return _create_specific_item(item_id, forge.forge_seed, level)
+	if forge.forge_count == 0:
+		item_id = ItemId(ItemAge.Primitive, ItemType.Weapon, 2)
+		return _create_specific_item(item_id, seed, 0)
+	if forge.forge_count == 1:
+		item_id = ItemId(ItemAge.Primitive, ItemType.Armour, 1)
+		return _create_specific_item(item_id, seed, 0)
 	if (
 		forge.highest_age_of_crafted_item == 0
 		and forge.forge_level > 0
 		and forge.ascension_model.current_level < 1
 	):
-		return _create_specific_item(_TUTORIAL_SANDALS, forge.forge_seed, 0)
+		item_id = ItemId(ItemAge.Medieval, ItemType.Shoes, 0)
+		return _create_specific_item(item_id, seed, 0)
 
 	return _create_random_item(player, possible, rng, age)
 

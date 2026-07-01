@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-	from ..summon_config import SummonConfig
+	from ..config.summon_config import SummonConfig
 
 _MASK64 = 0xFFFFFFFFFFFFFFFF
 
@@ -46,3 +46,11 @@ class SummonModel:
 	def try_unlock_bulk_summon(self, threshold: int) -> None:
 		if not self.can_bulk_summon and self.count >= threshold:
 			self.can_bulk_summon = True
+
+
+def is_summon_level_maxed(summon_model: SummonModel, summon_config: SummonConfig) -> bool:
+	"""IL: PlayerPropertyId*SummonLevelMaxed — level >= maxLevel - 1."""
+	max_level = len(summon_config.levels)
+	if max_level < 1:
+		return False
+	return summon_model.level >= max_level - 1

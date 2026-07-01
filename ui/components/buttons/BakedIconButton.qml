@@ -4,68 +4,84 @@ import ui 1.0
 Item {
 	id: root
 
-	property color fillColor: Theme.white
+	property bool enabled: true
+	property color fillColor: Theme.blue
 	property real widthHeightRatio: 1
 	property url iconSource
 	property real iconScale: 0.5
 	property real iconVerticalCenterOffsetRatio: 0
 	property real iconRotation: 0
+	property real pressScale: 0.9
+
+	readonly property color effectiveFillColor:
+		root.enabled ? root.fillColor : Theme.lightGrey
 
 	signal clicked()
 
 	readonly property real baseSize: 256
 	readonly property real bakedWidth: baseSize * widthHeightRatio
 	readonly property real bakedHeight: baseSize
-	readonly property real bakedW: 512 * widthHeightRatio
-	readonly property real bakedH: 512
-	readonly property real displayScale: bakedWidth > 0 && bakedHeight > 0
-		? Math.min(root.width / bakedWidth, root.height / bakedHeight)
-		: 1
 
 	implicitWidth: bakedWidth
 	implicitHeight: bakedHeight
 
-	layer.enabled: true
-	layer.smooth: true
-	layer.mipmap: true
-
 	Item {
-		id: canvas
+		id: pressVisual
 
-		width: root.bakedWidth
-		height: root.bakedHeight
-		anchors.centerIn: parent
-		scale: root.displayScale
+		anchors.fill: parent
 		transformOrigin: Item.Center
+		scale: root.enabled && mouseArea.pressed ? root.pressScale : 1
 
-		RectRoundButton {
-			anchors.fill: parent
-			scaleW: root.widthHeightRatio
-			scaleH: 1
-			fillColor: root.fillColor
-		}
-
-		Item {
-			id: iconHost
-
-			anchors.centerIn: parent
-			anchors.verticalCenterOffset: root.bakedHeight * root.iconVerticalCenterOffsetRatio
-			width: root.bakedHeight * root.iconScale
-			height: width
-
-			Image {
-				anchors.fill: parent
-				source: root.iconSource
-				fillMode: Image.PreserveAspectFit
-				rotation: root.iconRotation
-				smooth: true
-				mipmap: true
+		Behavior on scale {
+			NumberAnimation {
+				duration: 80
+				easing.type: Easing.OutCubic
 			}
 		}
 
-		MouseArea {
-			anchors.fill: parent
-			onClicked: root.clicked()
+		Item {
+			id: canvas
+
+			width: root.bakedWidth
+			height: root.bakedHeight
+			transformOrigin: Item.TopLeft
+			transform: Scale {
+				xScale: pressVisual.width / canvas.width
+				yScale: pressVisual.height / canvas.height
+			}
+
+			RectRoundButton {
+				anchors.fill: parent
+				scaleW: root.widthHeightRatio
+				scaleH: 1
+				fillColor: root.effectiveFillColor
+			}
+
+			Item {
+				id: iconHost
+
+				anchors.centerIn: parent
+				anchors.verticalCenterOffset: root.bakedHeight * root.iconVerticalCenterOffsetRatio
+				width: root.bakedHeight * root.iconScale
+				height: width
+
+				Image {
+					anchors.fill: parent
+					source: root.iconSource
+					fillMode: Image.PreserveAspectFit
+					rotation: root.iconRotation
+					smooth: true
+					mipmap: true
+				}
+			}
 		}
+	}
+
+	MouseArea {
+		id: mouseArea
+
+		anchors.fill: parent
+		enabled: root.enabled
+		onClicked: root.clicked()
 	}
 }

@@ -13,25 +13,7 @@ Item {
 	signal mountClicked(var mountModel)
 
 	readonly property int ascensionLevel: mountCollectionModel ? mountCollectionModel.ascensionLevel : 0
-	readonly property var mountModels: {
-		if (!mountCollectionModel || !mountCollectionModel.mounts)
-			return []
-		var all = mountCollectionModel.mounts
-		var indexed = []
-		for (var i = 0; i < all.length; i++)
-			indexed.push({ model: all[i], index: i })
-		indexed.sort(function(a, b) {
-			if (a.model.isEquipped !== b.model.isEquipped)
-				return a.model.isEquipped ? -1 : 1
-			if (a.model.rarity !== b.model.rarity)
-				return b.model.rarity - a.model.rarity
-			return a.index - b.index
-		})
-		var sorted = []
-		for (var j = 0; j < indexed.length; j++)
-			sorted.push(indexed[j].model)
-		return sorted
-	}
+	readonly property var mountModels: mountCollectionModel ? mountCollectionModel.displayMounts : []
 	readonly property int mountCount: mountModels.length
 	readonly property int iconLogicalSize: 256
 

@@ -1,14 +1,18 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 from ..enums import AscendableType, SecondaryStatType, StatType
-from ..item_age_drop import get_forge_drop_chances
+from ..config.shared_game_config import AUTO_FORGE_HAMMER_UNLOCK_SEGMENTS
+from ..unlock_extensions import is_unlocked
+from ..stats.stat_helper import StatHelper
 from ..stats.stat_target import ForgeStatTarget
-from ..unlock_extensions import AUTO_FORGE_HAMMER_UNLOCK_SEGMENTS, is_unlocked
+from ...random_pcg import RandomPCG
+from core.metaplaymath.config_values import config_f64_raw
+from core.metaplaymath.f64 import f64_add_raw, f64_from_raw, f64_less_than_raw
 from .ascension_model import AscensionModel
 from .player_item_model import PlayerItemModel
 
 if TYPE_CHECKING:
-	from ..shared_game_config import SharedGameConfig
+	from ..config.shared_game_config import SharedGameConfig
 	from .player_model import PlayerModel
 
 
@@ -73,7 +77,7 @@ class PlayerForgeModel:
 		return self.current_forge_tier_level >= int(tier_row.get("Tiers", 0))
 
 	def forge_levels_maxed(self, player: PlayerModel) -> bool:
-		from ..shared_game_config import max_forge_level
+		from ..config.shared_game_config import max_forge_level
 
 		return self.forge_level >= max_forge_level(player.game_config)
 
@@ -162,3 +166,64 @@ def _filter_contains_item(
 		if stat_type in passive_filter:
 			return True
 	return False
+
+
+def get_forge_tier_upgrade_cost(player: PlayerModel) -> int:
+	"""IL: ForgeExtensions.GetForgeTierUpgradeCost."""
+	forge = player.player_forge_model
+	if forge.forge_tiers_maxed(player):
+		return 0
+	if forge.forge_levels_maxed(player):
+		return 0
+
+	upgrade_row = player.game_config.forge_upgrade_library.get(forge.forge_level + 1)
+	if upgrade_row is None:
+		raise ValueError(
+			f"No ForgeUpgradeLibrary entry for level {forge.forge_level + 1}"
+		)
+
+	tiers = int(upgrade_row.get("Tiers", 0))
+	cost = int(upgrade_row.get("Cost", 0))
+	base_cost = cost // tiers if tiers != 0 else 0
+	value = StatHelper.calculate_value(
+		player,
+		StatType.Cost,
+		ForgeStatTarget(),
+		base_cost,
+	)
+	return round(value)
+
+
+_AGE_FIELD_NAMES = tuple(f"Age{i}" for i in range(10))
+
+
+def get_forge_drop_chances(drop_row: dict[str, Any]) -> list[float]:
+	"""Display path — F64 semantic doubles."""
+	return [f64_from_raw(raw) for raw in get_forge_drop_chances_f64_raw(drop_row)]
+
+
+def get_forge_drop_chances_f64_raw(drop_row: dict[str, Any]) -> list[int]:
+	"""IL: ItemAgeDropChanceInfo.GetForgeDropChances — Age0..Age9 as F64.Raw."""
+	return [config_f64_raw(drop_row[name]) for name in _AGE_FIELD_NAMES]
+
+
+def roll_age(player: PlayerModel, rng: RandomPCG) -> int:
+	"""IL: ForgeAction.RollAge — cumulative Age0..Age9 vs NextF64 (F64 compare)."""
+	forge = player.player_forge_model
+	game_config = player.game_config
+	forge_level = forge.forge_level
+	drop_row = game_config.item_age_drop_chances_library.get(forge_level)
+	if drop_row is None:
+		raise ValueError(f"No ItemAgeDropChanceInfo for forge level {forge_level}")
+
+	chances = get_forge_drop_chances_f64_raw(drop_row)
+	if not chances:
+		return 0
+
+	roll_raw = rng.next_f64_raw()
+	accumulated = 0
+	for index, chance_raw in enumerate(chances):
+		accumulated = f64_add_raw(accumulated, chance_raw)
+		if f64_less_than_raw(roll_raw, accumulated):
+			return index
+	return 0

@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 from core.game_logic.enums import SecondaryStatType, StatNature
-from core.fd6_math import fd6_from_f64, fd6_truncate, format_fd6_raw
-from core.game_logic.number_format import format_stat
-from core.game_logic.shared_game_config import SharedGameConfig
+from core.metaplaymath.fd6 import fd6_from_f64, fd6_truncate, format_fd6_raw
+from core.format.number_format import format_stat
+from core.game_logic.config.shared_game_config import SharedGameConfig
 from core.game_logic.stats.stat_helper import StatHelper
-from core.game_logic.stats.stats_format import (
+from core.format.stats_format import (
 	format_secondary_stat_display_value,
 	get_stat_operator,
 	should_show_operator,
@@ -75,7 +75,7 @@ def format_ui_secondary_stat(
 
 
 def format_ui_percentage(value: float, *, positive: bool = True) -> str:
-	from core.game_logic.number_format import format_percentage
+	from core.format.number_format import format_percentage
 
 	if not game_number_formatting_enabled():
 		text = f"{format_fd6_raw(fd6_from_f64(value) * 100.0)}%"

@@ -88,13 +88,23 @@ class PlayerPetModel:
 			raise ValueError(f"No pet upgrade config for rarity: {pet.pet_id.rarity!r}")
 		return calculate_level_and_xp(_level_info_entries(upgrade_config), total_xp)
 
+	def is_maxed(self, game_config) -> bool:
+		upgrade_config = game_config.pet_upgrade_library.get(self.pet_id.rarity)
+		if upgrade_config is None:
+			return False
+		level_info = upgrade_config.get("LevelInfo", [])
+		if not level_info:
+			return False
+		max_level = max(int(entry.get("Level", 0)) for entry in level_info)
+		return self.level >= max_level
+
 
 class PlayerEggModel:
-	def __init__(self, guid: str, rarity: Rarity, seed: int) -> None:
+	def __init__(self, guid: str, rarity: Rarity, random_seed: int) -> None:
 		self.guid = guid
 		self.rarity = rarity
-		self.seed = seed
-		self.timer: TimerModel | None = None
+		self.random_seed = random_seed
+		self.hatch_timer_model: TimerModel | None = None
 		self.is_equipped = False
 		self.equip_slot = _EMPTY_EGG_SLOT
 
@@ -157,10 +167,10 @@ class PlayerPetCollectionModel:
 		self.summon_model.reset()
 		self.ascension_model.ascend()
 
-	def create_egg_model(self, rarity: Rarity, seed: int) -> PlayerEggModel:
-		rng = RandomPCG.create_from_seed(seed)
-		egg = PlayerEggModel(rng.next_guid(), rarity, seed)
-		egg.timer = None
+	def create_egg_model(self, rarity: Rarity, random_seed: int) -> PlayerEggModel:
+		rng = RandomPCG.create_from_seed(random_seed)
+		egg = PlayerEggModel(rng.next_guid(), rarity, random_seed)
+		egg.hatch_timer_model = None
 		egg.is_equipped = False
 		egg.equip_slot = _EMPTY_EGG_SLOT
 		return egg
@@ -231,7 +241,7 @@ class PlayerPetCollectionModel:
 
 	@staticmethod
 	def _get_unlocked_pet_slot_count(player: Any) -> int:
-		from ..shared_game_config import get_unlocked_pet_slot_count
+		from ..config.shared_game_config import get_unlocked_pet_slot_count
 
 		return get_unlocked_pet_slot_count(player)
 

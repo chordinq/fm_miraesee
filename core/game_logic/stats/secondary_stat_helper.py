@@ -5,7 +5,7 @@ from ...random_pcg import RandomPCG
 from .secondary_stats import SecondaryStats
 
 if TYPE_CHECKING:
-	from ..shared_game_config import SharedGameConfig
+	from ..config.shared_game_config import SharedGameConfig
 
 
 class SecondaryStatHelper:
@@ -25,8 +25,14 @@ class SecondaryStatHelper:
 		row = game_config.secondary_stat_library.get(stat_type)
 		if row is None:
 			raise ValueError(f"Missing SecondaryStatLibrary entry: {stat_type!r}")
-		lower = float(row["LowerRange"])
-		upper = float(row["UpperRange"])
+		from core.metaplaymath.config_values import (
+			secondary_stat_lower_f64_raw,
+			secondary_stat_upper_f64_raw,
+		)
+		from core.metaplaymath.f64 import f64_from_raw
+
+		lower = f64_from_raw(secondary_stat_lower_f64_raw(row))
+		upper = f64_from_raw(secondary_stat_upper_f64_raw(row))
 		return SecondaryStatHelper.inverse_lerp(calculated_value, lower, upper)
 
 	@staticmethod

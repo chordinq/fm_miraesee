@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from config import STATS_MAPPING
-from core.f64_math import f64_from_raw
+from core.metaplaymath.f64 import f64_from_raw
 from core.game_logic.enums import SecondaryStatType, StatType
-from core.game_logic.player.player_item_stats import get_total_stats
+from core.game_logic.player.player_model import get_total_stats
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_mount_collection_model import PlayerMountModel
-from core.game_logic.shared_game_config import SharedGameConfig
+from core.game_logic.config.shared_game_config import SharedGameConfig
 
 _DAMAGE_LABEL_LOC_ID = "988835206590464"
 _HEALTH_LABEL_LOC_ID = "989213239209984"
@@ -48,7 +48,7 @@ def build_mount_stat_lines(
 	)
 
 	lines: list[dict[str, object]] = []
-	for stat_node, raw_value in resolved.all_stat_contributions.items():
+	for stat_node, raw_value in resolved.iter_stat_contributions_double():
 		label_segments = _primary_label_segments(stat_node.unique_stat.stat_type)
 		if label_segments is None:
 			continue

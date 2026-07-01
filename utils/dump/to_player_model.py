@@ -11,7 +11,7 @@ from core.game_logic.enums import (
 )
 from core.game_logic.player.player_equipment_model import ItemModel, PlayerEquipmentModel
 from core.game_logic.player.player_model import PlayerModel
-from core.game_logic.shared_game_config import get_shared_game_config
+from core.game_logic.config.shared_game_config import get_shared_game_config
 from core.game_logic.player.player_mount_collection_model import MountId, PlayerMountModel
 from core.game_logic.player.player_pet_collection_model import PetId, PlayerEggModel, PlayerPetModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
@@ -192,7 +192,7 @@ def _apply_pets_and_eggs(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 		egg.equip_slot = _normalize_equip_slot(entry.is_equipped, entry.equip_slot)
 		timer = _timer_from_epoch_ms(entry.timer_start_ms, entry.timer_end_ms)
 		if timer is not None:
-			egg.timer = timer
+			egg.hatch_timer_model = timer
 		collection.eggs.append(egg)
 
 

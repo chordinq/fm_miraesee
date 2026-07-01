@@ -2,68 +2,63 @@ import QtQuick
 import ui 1.0
 
 Item {
-    id: root
+	id: root
 
-    property string locId: ""
-    property string locTable: "General"
-    property color activeColor: Theme.lightGrey
-    property bool active: false
-    property real scaleW: 4
-    property real scaleH: 1
+	property string locId: ""
+	property string locTable: "General"
+	property color activeColor: Theme.lightGrey
+	property bool active: false
+	property real scaleW: 4
+	property real scaleH: 1
 
-    signal clicked()
+	signal clicked()
 
-    readonly property real baseSize: 128
-    readonly property real bakedWidth: baseSize * scaleW
-    readonly property real bakedHeight: baseSize * scaleH
-    readonly property real labelFontScale: 52 / 100
+	readonly property real baseSize: 128
+	readonly property real bakedWidth: baseSize * scaleW
+	readonly property real bakedHeight: baseSize * scaleH
+	readonly property real labelFontScale: 52 / 100
+	readonly property real labelWidthRatio: 0.86
 
-    readonly property real uniformScale: Math.min(
-        width / bakedWidth,
-        height / bakedHeight
-    )
+	implicitWidth: bakedWidth
+	implicitHeight: bakedHeight
 
-    implicitWidth: bakedWidth
-    implicitHeight: bakedHeight
+	Item {
+		id: canvas
 
-    Item {
-        id: displayHost
+		width: root.bakedWidth
+		height: root.bakedHeight
+		transformOrigin: Item.TopLeft
+		transform: Scale {
+			xScale: root.width / canvas.width
+			yScale: root.height / canvas.height
+		}
 
-        anchors.centerIn: parent
-        width: root.bakedWidth * root.uniformScale
-        height: root.bakedHeight * root.uniformScale
+		RectRoundButton {
+			anchors.fill: parent
+			scaleW: root.scaleW
+			scaleH: root.scaleH
+			fillColor: root.active ? root.activeColor : Theme.lightGrey
+		}
 
-        Item {
-            id: canvas
+		AppText {
+			id: tabLabel
 
-            width: root.bakedWidth
-            height: root.bakedHeight
-            transformOrigin: Item.TopLeft
-            transform: Scale {
-                xScale: displayHost.width / canvas.width
-                yScale: displayHost.height / canvas.height
-            }
+			anchors.centerIn: parent
+			locId: root.locId
+			locTable: root.locTable
+			pixelSize: canvas.height * root.labelFontScale
+			fillColor: Theme.white
+			outlineWeight: 6
+			scale: Math.min(
+				1,
+				canvas.width * root.labelWidthRatio / Math.max(implicitWidth, 1)
+			)
+			transformOrigin: Item.Center
+		}
 
-            RectRoundButton {
-                anchors.fill: parent
-                scaleW: root.scaleW
-                scaleH: root.scaleH
-                fillColor: root.active ? root.activeColor : Theme.lightGrey
-            }
-
-            AppText {
-                anchors.centerIn: parent
-                locId: root.locId
-                locTable: root.locTable
-                pixelSize: canvas.height * root.labelFontScale
-                fillColor: Theme.white
-                outlineWeight: 6
-            }
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: root.clicked()
-            }
-        }
-    }
+		MouseArea {
+			anchors.fill: parent
+			onClicked: root.clicked()
+		}
+	}
 }

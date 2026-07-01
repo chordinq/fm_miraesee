@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from ...pet_experience_helper import get_pet_total_xp
 from ..action_codes import ActionCodes
 from ..action_result import ActionResult, MetaActionResult
 from ..player_action import PlayerAction
@@ -62,7 +61,11 @@ class PetMergeAction(PlayerAction):
 				return ActionResult.DoesNotExist
 			source_eggs.append(egg)
 
-		merged_xp = sum(get_pet_total_xp(pet, player) for pet in source_pets)
+		for pet in source_pets:
+			if pet.is_locked:
+				return ActionResult.Locked
+
+		merged_xp = sum(pet.get_total_xp(player) for pet in source_pets)
 		merged_xp += sum(egg.get_xp(player) for egg in source_eggs)
 		total_xp = target.get_total_xp(player) + merged_xp
 		new_level, new_experience = PlayerPetModel.calculate_level_and_xp(

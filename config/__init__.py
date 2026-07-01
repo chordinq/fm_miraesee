@@ -3,14 +3,16 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+from utils.paths import assets_dir, project_root
+
+_PROJECT_ROOT = project_root()
 PROJECT_ROOT = _PROJECT_ROOT
 
 CONFIG_DIR = PROJECT_ROOT / "config"
 CORE_DIR = PROJECT_ROOT / "core"
 UI_DIR = PROJECT_ROOT / "ui"
 UTILS_DIR = PROJECT_ROOT / "utils"
-ASSETS_DIR = PROJECT_ROOT / "assets"
+ASSETS_DIR = assets_dir()
 
 GAME_CONFIGS_DIR = ASSETS_DIR / "game_configs"
 LOCALIZATIONS_DIR = ASSETS_DIR / "localizations"
@@ -107,3 +109,25 @@ MISSION_RALLY_TIME_LIBRARY = load_json(GAME_CONFIGS_DIR / "MissionRallyTimeLibra
 MISSION_ALL_MEMBER_REWARD_LIBRARY = load_json(GAME_CONFIGS_DIR / "MissionAllMemberRewardLibrary.json")
 MISSION_BASE_CONFIG = load_json(GAME_CONFIGS_DIR / "MissionBaseConfig.json")
 LEGACY_DUNGEONS_MIGRATION = load_json(GAME_CONFIGS_DIR / "LegacyDungeonsMigration.json")
+
+STRING_LITERALS_PATH = ASSETS_DIR / "string_literals.json"
+
+
+def load_string_literals() -> list[dict[str, str]]:
+	with open(STRING_LITERALS_PATH, "r", encoding="utf-8") as f:
+		return json.load(f)
+
+
+STRING_LITERALS = load_string_literals()
+
+
+def string_literal(index: int) -> str:
+	"""Resolve decompiled ``StringLiteral_N`` (1-based N) from Il2CppDumper table."""
+	if index < 1:
+		raise IndexError(f"StringLiteral index must be >= 1, got {index}")
+	array_index = index - 1
+	if array_index >= len(STRING_LITERALS):
+		raise IndexError(
+			f"StringLiteral_{index} out of range (table size {len(STRING_LITERALS)})"
+		)
+	return STRING_LITERALS[array_index]["value"]

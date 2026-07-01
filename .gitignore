@@ -2,7 +2,28 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info/
+.venv/
+venv/
 
 # Editor / IDE
 .vscode/
 .cursorrules
+
+# PyInstaller & release
+dist/
+release/
+build/MiraeseeApp/
+build/**/*.toc
+build/**/xref-*.html
+build/**/warn-*.txt
+
+# Decompiled IL reference (local only, not for repo)
+dump.cs
+old_dump.cs
+
+# Reversing artifacts (dump.cs, decompiled.c, sgc snapshots, …) — local only
+data/
+
+# Scratch / temp
+_tmp*.py

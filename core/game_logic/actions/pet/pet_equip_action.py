@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from ...shared_game_config import get_unlocked_pet_slot_count
+from ...config.shared_game_config import get_unlocked_pet_slot_count
 from ..action_codes import ActionCodes
 from ..action_result import ActionResult, MetaActionResult
 from ..player_action import PlayerAction

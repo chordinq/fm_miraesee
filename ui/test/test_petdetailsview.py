@@ -7,7 +7,7 @@ from core.game_logic.enums import Rarity
 from core.game_logic.game_logic import GameLogic
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_pet_collection_model import PetId, create_pet
-from core.game_logic.shared_game_config import get_shared_game_config
+from core.game_logic.config.shared_game_config import get_shared_game_config
 from core.random_pcg import RandomPCG
 from controllers.collections.pet_collection_bridge import PetCollectionBridge
 from controllers.summon.pet_summon_test_bridge import PetSummonTestBridge

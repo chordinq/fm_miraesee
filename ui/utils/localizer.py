@@ -6,8 +6,9 @@ from PySide6.QtCore import QObject, Property, Slot
 
 from config import GENERAL_MAPPING
 from core.game_logic.enums import AscensionLevel
+from utils.paths import assets_dir
 
-LOCALIZATIONS_DIR = Path(__file__).resolve().parents[2] / "assets" / "localizations"
+LOCALIZATIONS_DIR = assets_dir() / "localizations"
 _DEFAULT_LANGUAGE = "en"
 _LOCALE_FILE = re.compile(r"^.+\(([^)]+)\)\.json$")
 

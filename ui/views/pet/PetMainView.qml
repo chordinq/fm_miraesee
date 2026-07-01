@@ -15,22 +15,29 @@ Item {
 	readonly property real bottomMargin: Math.max(8, height * 0.04)
 	readonly property real topMargin: Math.max(8, width * 0.02)
 	readonly property real topBarHeight: Math.max(32, height * 0.08)
-	readonly property int summonOptionCount: petController
-		? petController.summonCountOptions.length
-		: 3
-	readonly property real targetSummonHeight: height * 0.12
-	readonly property real summonBarSpacing: targetSummonHeight * 0.06
-	readonly property real summonCountButtonSize: targetSummonHeight * 0.72
+	readonly property real targetSummonHeight: height * 0.1
+	readonly property real summonBarSpacing: targetSummonHeight * 0.2
 	readonly property real summonButtonWidth: Math.min(
 		targetSummonHeight * summonAspect,
-		(width - summonCountButtonSize * summonOptionCount - summonBarSpacing * (summonOptionCount + 1)) * 0.95
+		(width - summonBarSpacing * 3) * 0.5
 	)
 	readonly property real summonButtonHeight: summonButtonWidth / summonAspect
-	readonly property real countLabelScale: 0.34
+	readonly property real summonFooterPadding: Math.max(8, height * 0.015)
+	readonly property real summonFooterHeight:
+		root.summonButtonHeight + root.summonFooterPadding * 2
 
 	Rectangle {
 		anchors.fill: parent
 		color: Qt.darker(Theme.darkBlue, 1.5)
+	}
+
+	SummonFooterBackground {
+		id: summonFooter
+
+		anchors.left: parent.left
+		anchors.right: parent.right
+		anchors.bottom: parent.bottom
+		height: root.summonFooterHeight
 	}
 
 	MainViewHeader {
@@ -52,7 +59,7 @@ Item {
 
 	EggSummonResult {
 		anchors.top: topBar.bottom
-		anchors.bottom: bottomColumn.top
+		anchors.bottom: summonFooter.top
 		anchors.left: parent.left
 		anchors.leftMargin: root.topMargin
 		anchors.topMargin: root.topMargin
@@ -70,50 +77,15 @@ Item {
 		id: bottomColumn
 
 		anchors.horizontalCenter: parent.horizontalCenter
-		anchors.bottom: parent.bottom
-		anchors.bottomMargin: root.bottomMargin
+		anchors.verticalCenter: summonFooter.verticalCenter
 		spacing: root.summonBarSpacing
 
-		Repeater {
-			model: root.petController ? root.petController.summonCountOptions : [1, 15, 50]
-
-			delegate: Item {
-				required property int modelData
-				required property int index
-
-				readonly property bool selected:
-					root.petController && root.petController.summonCount === modelData
-				readonly property bool canAfford:
-					root.petController && root.petController.summonAffordFlags[index]
-
-				width: root.summonCountButtonSize
-				height: width
-
-				SmallRoundButton {
-					anchors.fill: parent
-					fillColor: parent.selected && parent.canAfford ? Theme.blue : Theme.lightGrey
-				}
-
-				AppText {
-					anchors.centerIn: parent
-					text: modelData
-					pixelSize: parent.width * root.countLabelScale
-					fillColor: Theme.white
-					outlineColor: Theme.black
-					outlineWeight: 8
-				}
-
-				MouseArea {
-					anchors.fill: parent
-					onClicked: {
-						if (root.petController)
-							root.petController.setSummonCount(modelData)
-					}
-				}
-			}
+		BulkSummonToggleView {
+			height: root.summonButtonHeight
+			summonController: root.petController
 		}
 
-		SummonButton {
+		EggSummonButton {
 			width: root.summonButtonWidth
 			height: root.summonButtonHeight
 			summonCount: root.petController ? root.petController.summonCount : 1
@@ -127,6 +99,11 @@ Item {
 				if (root.petController)
 					root.petController.performSummon()
 			}
+		}
+
+		SummonUpgradeStatusView {
+			height: root.summonButtonHeight
+			summonController: root.petController
 		}
 	}
 }

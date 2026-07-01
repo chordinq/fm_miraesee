@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from ...enums import CurrencyType
-from ...forge_extensions import get_forge_tier_upgrade_cost
+from ...player.player_forge_model import get_forge_tier_upgrade_cost
 from ...player.player_currency_model import can_afford
 from ..action_codes import ActionCodes
 from ..action_result import ActionResult, MetaActionResult

@@ -19,9 +19,8 @@ class SummonedSkillInfo:
 		self.is_new = is_new
 
 
-class SkillSummonAction(PlayerAction):
-	action_code = ActionCodes.SkillSummon
-	finalized_action_code = ActionCodes.SkillSummonFinalized
+class SkillSummonFinalizedAction(PlayerAction):
+	action_code = ActionCodes.SkillSummonFinalized
 
 	def __init__(self, count: int = 1) -> None:
 		super().__init__()
@@ -80,7 +79,7 @@ class SkillSummonAction(PlayerAction):
 			i += 1
 
 		if any(info.is_new for info in self.summoned):
-			player.player_power_model.update_power(player, publish_update=False)
+			player.player_power_model.update_power(player, publish_update=True)
 
 		return ActionResult.Success
 

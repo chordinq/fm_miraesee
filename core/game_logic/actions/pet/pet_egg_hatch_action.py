@@ -10,7 +10,7 @@ from ...player.player_pet_collection_model import (
 )
 from ...player.timer_model import TimerModel
 from ...stats.stat_helper import StatHelper
-from ...stats.stat_target import EggStatTarget
+from ...stats.stat_target import StatTarget
 from ..action_codes import ActionCodes
 from ..action_result import ActionResult, MetaActionResult
 from ..player_action import PlayerAction
@@ -40,11 +40,7 @@ class PetEggHatchStartAction(PlayerAction):
 		if egg is None:
 			return ActionResult.DoesNotExist
 
-		if (
-			egg.timer is not None
-			or egg.is_equipped
-			or egg.equip_slot >= 0
-		):
+		if egg.hatch_timer_model is not None or egg.is_equipped:
 			return ActionResult.AlreadyInProgress
 
 		if not collection.is_hatch_slot_available(self.slot_index):
@@ -58,16 +54,14 @@ class PetEggHatchStartAction(PlayerAction):
 			raise ValueError(f"No EggConfig for rarity: {egg.rarity!r}")
 
 		base_duration = float(egg_config.get("HatchTime", 0))
-		target = EggStatTarget(egg.rarity)
-		duration = round(
-			StatHelper.calculate_value(
-				player,
-				StatType.TimerSpeed,
-				target,
-				base_duration,
-			)
+		target = StatTarget.egg().with_rarity(egg.rarity)
+		duration = StatHelper.calculate_timer_duration_seconds(
+			player,
+			StatType.TimerSpeed,
+			target,
+			base_duration,
 		)
-		egg.timer = TimerModel(player, duration)
+		egg.hatch_timer_model = TimerModel(player, duration)
 		egg.equip_slot = self.slot_index
 		egg.is_equipped = True
 		return ActionResult.Success
@@ -87,6 +81,12 @@ class PetEggHatchFinalizedAction(PlayerAction):
 		if egg is None:
 			return ActionResult.DoesNotExist
 
+		if egg.hatch_timer_model is None or not egg.is_equipped:
+			return ActionResult.NotStarted
+
+		if not egg.hatch_timer_model.has_ended(player):
+			return ActionResult.NotReady
+
 		if not commit:
 			return ActionResult.Success
 
@@ -94,7 +94,7 @@ class PetEggHatchFinalizedAction(PlayerAction):
 		if not pet_ids:
 			return ActionResult.DoesNotExist
 
-		rng = RandomPCG.create_from_seed(egg.seed)
+		rng = RandomPCG.create_from_seed(egg.random_seed)
 		pet = create_pet_from_ids(player, pet_ids, rng, None)
 		is_new = not any(existing.pet_id == pet.pet_id for existing in collection.pets)
 		previous_slot = egg.equip_slot

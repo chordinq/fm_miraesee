@@ -13,6 +13,8 @@ RowLayout {
 	property color outlineColor: Theme.black
 
 	readonly property real lvLetterSpacing: pixelSize * 4 / 80
+	readonly property real numberLeftMargin:
+		pixelSize * Math.max(0, 8 - outlineWeight) / 100 * 2
 
 	spacing: 0
 
@@ -33,5 +35,6 @@ RowLayout {
 		outlineColor: root.outlineColor
 		outlineWeight: root.outlineWeight
 		Layout.alignment: Qt.AlignBaseline
+		Layout.leftMargin: root.numberLeftMargin
 	}
 }

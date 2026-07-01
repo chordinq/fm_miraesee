@@ -73,6 +73,16 @@ class PlayerMountModel:
 			raise ValueError(f"No mount upgrade config for rarity: {mount.mount_id.rarity!r}")
 		return calculate_level_and_xp(_level_info_entries(upgrade_config), total_xp)
 
+	def is_maxed(self, game_config) -> bool:
+		upgrade_config = game_config.mount_upgrade_library.get(self.mount_id.rarity)
+		if upgrade_config is None:
+			return False
+		level_info = upgrade_config.get("LevelInfo", [])
+		if not level_info:
+			return False
+		max_level = max(int(entry.get("Level", 0)) for entry in level_info)
+		return self.level >= max_level
+
 
 class PlayerMountCollectionModel:
 	def __init__(self) -> None:

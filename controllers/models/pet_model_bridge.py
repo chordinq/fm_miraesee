@@ -3,7 +3,7 @@ from PySide6.QtCore import QObject, Property, Signal
 from config import PETS_MAPPING
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_pet_collection_model import PlayerPetModel
-from core.game_logic.shared_game_config import get_unlocked_pet_slot_count
+from core.game_logic.config.shared_game_config import get_unlocked_pet_slot_count
 from ui.utils.localizer import name_loc_from_entry, rarity_loc_from_rarity
 from ui.utils.pet_stat_display import build_pet_stat_lines
 
@@ -25,7 +25,6 @@ class PetModelBridge(QObject):
 
     def _rebuild(self) -> None:
         pet = self._pet
-        player = self._player
 
         key = f"{pet.pet_id.rarity.value}_{pet.pet_id.id}"
         entry = PETS_MAPPING[key]
@@ -36,28 +35,26 @@ class PetModelBridge(QObject):
         self._pet_key = entry["Key"]
         self._name_loc_id, self._name_loc_table = name_loc_from_entry(entry)
         self._rarity_loc_id, self._rarity_loc_table = rarity_loc_from_rarity(self._rarity)
-        self._stat_lines = build_pet_stat_lines(player, pet)
-        self._base_stat_lines = [
-            line for line in self._stat_lines if not line["secondary"]
-        ]
-        self._sub_stat_lines = [
-            line for line in self._stat_lines if line["secondary"]
-        ]
-        self._can_merge = self._compute_can_merge()
+        self._stat_lines: list[dict[str, object]] | None = None
+        self._base_stat_lines: list[dict[str, object]] | None = None
+        self._sub_stat_lines: list[dict[str, object]] | None = None
 
-    def _compute_can_merge(self) -> bool:
-        collection = self._player.player_pet_collection_model
-        for pet in collection.pets:
-            if pet.guid != self._pet.guid and not pet.is_equipped:
-                return True
-        for egg in collection.eggs:
-            if not egg.is_equipped:
-                return True
-        return False
+    def _ensure_stat_lines(self) -> None:
+        if self._stat_lines is not None:
+            return
+        lines = build_pet_stat_lines(self._player, self._pet)
+        self._stat_lines = lines
+        self._base_stat_lines = [line for line in lines if not line["secondary"]]
+        self._sub_stat_lines = [line for line in lines if line["secondary"]]
+
+    def sync(self) -> None:
+        self._stat_lines = None
+        self._base_stat_lines = None
+        self._sub_stat_lines = None
+        self.changed.emit()
 
     def refresh(self) -> None:
-        self._rebuild()
-        self.changed.emit()
+        self.sync()
 
     @Property(str, notify=changed)
     def guid(self) -> str:
@@ -93,10 +90,6 @@ class PetModelBridge(QObject):
             return True
         return get_unlocked_pet_slot_count(self._player) > 0
 
-    @Property(bool, notify=changed)
-    def canMerge(self) -> bool:
-        return self._can_merge
-
     @Property(str, notify=changed)
     def petKey(self) -> str:
         return self._pet_key
@@ -119,12 +112,15 @@ class PetModelBridge(QObject):
 
     @Property("QVariantList", notify=changed)
     def statLines(self) -> list[dict[str, object]]:
-        return self._stat_lines
+        self._ensure_stat_lines()
+        return self._stat_lines or []
 
     @Property("QVariantList", notify=changed)
     def baseStatLines(self) -> list[dict[str, object]]:
-        return self._base_stat_lines
+        self._ensure_stat_lines()
+        return self._base_stat_lines or []
 
     @Property("QVariantList", notify=changed)
     def subStatLines(self) -> list[dict[str, object]]:
-        return self._sub_stat_lines
+        self._ensure_stat_lines()
+        return self._sub_stat_lines or []

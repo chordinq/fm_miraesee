@@ -1,16 +1,21 @@
 from __future__ import annotations
 
-import copy
-
-from PySide6.QtCore import Property, QObject, Signal, Slot
+from PySide6.QtCore import Property, QObject, QTimer, Signal, Slot
 
 from config import PETS_MAPPING
 from core.game_logic.actions import ActionResult
 from core.game_logic.enums import CurrencyType, GemSkipTarget
 from core.game_logic.game_logic import GameLogic
-from core.game_logic.player.player_currency_model import can_afford
+from controllers.support.currency_overdraft import (
+    can_afford_currency_for_ui,
+    spend_currency_for_ui,
+)
 from core.game_logic.player.player_pet_collection_model import PlayerEggModel
-from ui.utils.egg_hatch_preview import build_egg_hatch_preview, format_hatch_duration
+from ui.utils.egg_hatch_preview import (
+    build_egg_hatch_preview_meta,
+    build_egg_hatch_stat_lines,
+    predict_hatched_pet,
+)
 from ui.utils.number_display_format import format_ui_integer
 from controllers.collections.pet_collection_bridge import PetCollectionBridge
 from controllers.common.timer_bar_bridge import TimerBarBridge
@@ -41,9 +46,10 @@ class PetEggTestBridge(QObject):
         self._pet_collection = pet_collection
         self._selected_egg_guid = ""
         self._prediction_text = ""
+        self._prediction_text_stale = True
         self._predicted_pet_index = -1
         self._predicted_pet_rarity = -1
-        self._stat_lines: list[dict[str, object]] = []
+        self._stat_lines: list[dict[str, object]] | None = None
         self._hatch_desc_format_args: list[str] = []
         self._hatch_remaining_text = ""
         self._timer_bar_bridge = TimerBarBridge(self)
@@ -87,9 +93,10 @@ class PetEggTestBridge(QObject):
         self._prediction_text = ""
         self._predicted_pet_index = -1
         self._predicted_pet_rarity = -1
-        self._stat_lines = []
+        self._stat_lines = None
         self._hatch_desc_format_args = []
         self._hatch_remaining_text = ""
+        self._prediction_text_stale = True
         self._timer_bar_bridge.clear()
 
     def _sync_timer_bar_bridge(self) -> None:
@@ -97,15 +104,15 @@ class PetEggTestBridge(QObject):
         if (
             egg is not None
             and egg.is_equipped
-            and egg.timer is not None
-            and egg.timer.end_time > egg.timer.start_time
+            and egg.hatch_timer_model is not None
+            and egg.hatch_timer_model.end_time > egg.hatch_timer_model.start_time
         ):
             self._timer_bar_bridge.bind(
-                egg.timer,
+                egg.hatch_timer_model,
                 self._logic.player,
                 language=self._ui_language,
             )
-            if egg.timer.has_ended(self._logic.player):
+            if egg.hatch_timer_model.has_ended(self._logic.player):
                 self._hatch_remaining_text = ""
             else:
                 self._hatch_remaining_text = self._timer_bar_bridge.remainingText
@@ -113,32 +120,56 @@ class PetEggTestBridge(QObject):
             self._timer_bar_bridge.clear()
             self._hatch_remaining_text = ""
 
-    def _rebuild_egg_preview(self, egg_guid: str) -> None:
+    def _load_egg_preview_meta(self, egg_guid: str) -> None:
         source_egg = _find_egg_by_guid(self._collection().eggs, egg_guid)
         if source_egg is None:
             self._clear_egg_preview()
             return
 
-        preview = build_egg_hatch_preview(
+        preview = build_egg_hatch_preview_meta(
             self._logic.player,
             source_egg,
             language=self._ui_language,
         )
         self._predicted_pet_index = int(preview["predictedPetIndex"])
         self._predicted_pet_rarity = int(preview["predictedPetRarity"])
-        self._stat_lines = list(preview["statLines"])
         self._hatch_desc_format_args = list(preview["hatchDescFormatArgs"])
-        self._prediction_text = "\n".join(self._build_hatch_prediction_lines(egg_guid))
+        self._prediction_text_stale = True
         self._sync_timer_bar_bridge()
 
-    def _refresh_after_action(self, *, clear_selection: bool = False) -> None:
+    def _build_egg_stat_lines(self) -> None:
+        source_egg = self._selected_egg()
+        if source_egg is None:
+            self._stat_lines = []
+            return
+        self._stat_lines = build_egg_hatch_stat_lines(self._logic.player, source_egg)
+
+    def _rebuild_egg_preview(self, egg_guid: str) -> None:
+        self._load_egg_preview_meta(egg_guid)
+        self._build_egg_stat_lines()
+
+    def _refresh_after_action(
+        self,
+        *,
+        clear_selection: bool = False,
+        refresh_preview: bool = True,
+        egg_patch: str | None = None,
+    ) -> None:
+        egg_guid = self._selected_egg_guid
         if clear_selection:
             self._selected_egg_guid = ""
             self._clear_egg_preview()
-        elif self._selected_egg_guid:
-            self._rebuild_egg_preview(self._selected_egg_guid)
-        if self._pet_collection is not None:
-            self._pet_collection.refresh()
+        elif refresh_preview and self._selected_egg_guid:
+            self._load_egg_preview_meta(self._selected_egg_guid)
+        if self._pet_collection is not None and egg_guid:
+            if egg_patch == "complete":
+                self._pet_collection.patch_after_hatch(egg_guid)
+            elif egg_patch == "hatch_slot":
+                self._pet_collection.patch_egg_moved_to_hatch(egg_guid)
+            elif egg_patch == "timer":
+                self._pet_collection.patch_egg_timer(egg_guid)
+            elif egg_patch is None and not clear_selection:
+                self._pet_collection.refresh()
         self._status_text = self._build_status_text()
         self.stateChanged.emit()
 
@@ -153,6 +184,11 @@ class PetEggTestBridge(QObject):
 
     @Property(str, notify=stateChanged)
     def predictionText(self) -> str:
+        if self._prediction_text_stale and self._selected_egg_guid:
+            self._prediction_text = "\n".join(
+                self._build_hatch_prediction_lines(self._selected_egg_guid)
+            )
+            self._prediction_text_stale = False
         return self._prediction_text
 
     @Property(str, notify=stateChanged)
@@ -173,7 +209,7 @@ class PetEggTestBridge(QObject):
 
     @Property("QVariantList", notify=stateChanged)
     def statLines(self) -> list[dict[str, object]]:
-        return self._stat_lines
+        return self._stat_lines or []
 
     @Property("QVariantList", notify=stateChanged)
     def hatchDescFormatArgs(self) -> list[str]:
@@ -211,22 +247,22 @@ class PetEggTestBridge(QObject):
     @Property(bool, notify=stateChanged)
     def gemSkipVisible(self) -> bool:
         egg = self._selected_egg()
-        if egg is None or not egg.is_equipped or egg.timer is None:
+        if egg is None or not egg.is_equipped or egg.hatch_timer_model is None:
             return False
-        if egg.timer.end_time <= egg.timer.start_time:
+        if egg.hatch_timer_model.end_time <= egg.hatch_timer_model.start_time:
             return False
-        return not egg.timer.has_ended(self._logic.player)
+        return not egg.hatch_timer_model.has_ended(self._logic.player)
 
     @Property(str, notify=stateChanged)
     def skipGemCostText(self) -> str:
         egg = self._selected_egg()
-        if egg is None or egg.timer is None:
+        if egg is None or egg.hatch_timer_model is None:
             return ""
-        if egg.timer.end_time <= egg.timer.start_time:
+        if egg.hatch_timer_model.end_time <= egg.hatch_timer_model.start_time:
             return ""
-        if egg.timer.has_ended(self._logic.player):
+        if egg.hatch_timer_model.has_ended(self._logic.player):
             return ""
-        gem_cost = egg.timer.calculate_gem_skip_cost(
+        gem_cost = egg.hatch_timer_model.calculate_gem_skip_cost(
             self._logic.player,
             GemSkipTarget.PetEgg,
         )
@@ -235,14 +271,14 @@ class PetEggTestBridge(QObject):
     @Property(bool, notify=stateChanged)
     def selectedEggHatching(self) -> bool:
         egg = self._selected_egg()
-        if egg is None or egg.timer is None:
+        if egg is None or egg.hatch_timer_model is None:
             return False
-        return not egg.timer.has_ended(self._logic.player)
+        return not egg.hatch_timer_model.has_ended(self._logic.player)
 
     @Property(bool, notify=stateChanged)
     def canStartHatch(self) -> bool:
         egg = self._selected_egg()
-        if egg is None or egg.is_equipped or egg.timer is not None:
+        if egg is None or egg.is_equipped or egg.hatch_timer_model is not None:
             return False
         return self._first_available_hatch_slot() is not None
 
@@ -253,23 +289,26 @@ class PetEggTestBridge(QObject):
             return False
         if not egg.is_equipped:
             return self._first_available_hatch_slot() is not None
-        if egg.timer is None:
+        if egg.hatch_timer_model is None:
             return True
-        return egg.timer.has_ended(self._logic.player)
+        return egg.hatch_timer_model.has_ended(self._logic.player)
 
     @Property(bool, notify=stateChanged)
     def canGemSkipHatch(self) -> bool:
         egg = self._selected_egg()
-        if egg is None or egg.timer is None:
+        if egg is None or egg.hatch_timer_model is None:
             return False
-        if egg.timer.has_ended(self._logic.player):
+        if egg.hatch_timer_model.has_ended(self._logic.player):
             return False
-        gem_cost = egg.timer.calculate_gem_skip_cost(
+        gem_cost = egg.hatch_timer_model.calculate_gem_skip_cost(
             self._logic.player,
             GemSkipTarget.PetEgg,
         )
-        affordable, _ = can_afford(self._logic.player, CurrencyType.Gems, gem_cost)
-        return affordable
+        return can_afford_currency_for_ui(
+            self._logic.player,
+            CurrencyType.Gems,
+            gem_cost,
+        )
 
     @Property(bool, notify=stateChanged)
     def canHatchSelected(self) -> bool:
@@ -286,8 +325,18 @@ class PetEggTestBridge(QObject):
     @Slot(str)
     def selectEgg(self, egg_guid: str) -> None:
         self._selected_egg_guid = egg_guid
-        self._rebuild_egg_preview(egg_guid)
+        self._stat_lines = []
+        self._load_egg_preview_meta(egg_guid)
         self._status_text = self._build_status_text()
+        self.stateChanged.emit()
+        QTimer.singleShot(0, self._deferred_build_egg_stat_lines)
+
+    def _deferred_build_egg_stat_lines(self) -> None:
+        if not self._selected_egg_guid:
+            return
+        if _find_egg_by_guid(self._collection().eggs, self._selected_egg_guid) is None:
+            return
+        self._build_egg_stat_lines()
         self.stateChanged.emit()
 
     @Slot()
@@ -319,7 +368,7 @@ class PetEggTestBridge(QObject):
             self._last_action_text = f"start hatch failed: {result.name}"
         else:
             self._last_action_text = f"started hatch in slot {slot + 1}"
-        self._refresh_after_action()
+        self._refresh_after_action(refresh_preview=False, egg_patch="hatch_slot")
 
     @Slot(str)
     def performCompleteHatch(self, egg_guid: str) -> None:
@@ -337,11 +386,11 @@ class PetEggTestBridge(QObject):
                 self.stateChanged.emit()
                 return
             result, hatched = self._logic.pet_egg_hatch_complete(egg_guid, slot, commit=True)
-        elif egg.timer is not None and not egg.timer.has_ended(self._logic.player):
+        elif egg.hatch_timer_model is not None and not egg.hatch_timer_model.has_ended(self._logic.player):
             self._last_action_text = "hatch not ready"
             self.stateChanged.emit()
             return
-        elif egg.timer is not None:
+        elif egg.hatch_timer_model is not None:
             claim_result = self._logic.pet_egg_hatch_claim(egg_guid, commit=True)
             if claim_result != ActionResult.Success:
                 self._last_action_text = f"claim failed: {claim_result.name}"
@@ -359,17 +408,42 @@ class PetEggTestBridge(QObject):
                 f"hatched {_pet_key(hatched.pet_id)} "
                 f"(rarity {hatched.pet_id.rarity.value}, id {hatched.pet_id.id}, {detail})"
             )
-        self._refresh_after_action(clear_selection=True)
+        self._refresh_after_action(
+            clear_selection=True,
+            refresh_preview=False,
+            egg_patch="complete",
+        )
 
     @Slot(str)
     def performGemSkipHatch(self, egg_guid: str) -> None:
         self._selected_egg_guid = egg_guid
-        result = self._logic.pet_egg_hatch_gem_skip(egg_guid, commit=True)
-        if result != ActionResult.Success:
-            self._last_action_text = f"gem skip failed: {result.name}"
-        else:
-            self._last_action_text = "timer skipped"
-        self._refresh_after_action()
+        egg = self._selected_egg()
+        if egg is None or egg.hatch_timer_model is None:
+            self._last_action_text = "egg not found"
+            self.stateChanged.emit()
+            return
+        if egg.hatch_timer_model.has_ended(self._logic.player):
+            self._last_action_text = "hatch already complete"
+            self.stateChanged.emit()
+            return
+
+        gem_cost = egg.hatch_timer_model.calculate_gem_skip_cost(
+            self._logic.player,
+            GemSkipTarget.PetEgg,
+        )
+        if not spend_currency_for_ui(
+            self._logic.player,
+            CurrencyType.Gems,
+            gem_cost,
+            "PetEggHatchGemSkip",
+        ):
+            self._last_action_text = "gem skip failed: NotEnoughResources"
+            self.stateChanged.emit()
+            return
+
+        egg.hatch_timer_model.skip_to_end(self._logic.player)
+        self._last_action_text = "timer skipped"
+        self._refresh_after_action(egg_patch="timer")
 
     @Slot()
     def performSelectedHatch(self) -> None:
@@ -401,15 +475,9 @@ class PetEggTestBridge(QObject):
         if source_egg is None:
             return [f"egg not found: {egg_guid[:16]}"]
 
-        player = copy.deepcopy(self._logic.player)
-        logic = GameLogic(player)
-        egg = _find_egg_by_guid(player.player_pet_collection_model.eggs, egg_guid)
-        if egg is None:
-            return [f"egg not found: {egg_guid[:16]}"]
-
-        result, hatched = logic.pet_egg_hatch_finalize(egg_guid, commit=True)
-        if result != ActionResult.Success or hatched is None:
-            return [f"hatch preview unavailable: {result.name}"]
+        hatched = predict_hatched_pet(self._logic.player, source_egg)
+        if hatched is None:
+            return ["hatch preview unavailable"]
 
         location = "hatch slot" if source_egg.is_equipped else "inventory"
         slot_note = (
@@ -417,18 +485,21 @@ class PetEggTestBridge(QObject):
             if source_egg.is_equipped
             else "not in hatch slot"
         )
-        detail = "NEW" if hatched.is_new else "duplicate"
+        detail = "NEW" if not any(
+            existing.pet_id == hatched.pet_id
+            for existing in self._collection().pets
+        ) else "duplicate"
         lines = [
             "hatch preview (simulated, state unchanged)",
             "",
             f"egg  {location} ({slot_note})",
-            f"     rarity {source_egg.rarity.value}  seed {source_egg.seed:#018x}",
+            f"     rarity {source_egg.rarity.value}  seed {source_egg.random_seed:#018x}",
             "",
             f"pet  {_pet_key(hatched.pet_id)}",
             f"     rarity {hatched.pet_id.rarity.value}  id {hatched.pet_id.id}  {detail}",
         ]
-        if source_egg.timer is not None and not source_egg.timer.has_ended(self._logic.player):
-            remaining = source_egg.timer.calculate_remaining_seconds(self._logic.player)
+        if source_egg.hatch_timer_model is not None and not source_egg.hatch_timer_model.has_ended(self._logic.player):
+            remaining = source_egg.hatch_timer_model.calculate_remaining_seconds(self._logic.player)
             lines.extend(["", f"hatching… {remaining}s remaining"])
         elif self.canCompleteHatch and source_egg.is_equipped:
             lines.extend(["", "ready to hatch"])

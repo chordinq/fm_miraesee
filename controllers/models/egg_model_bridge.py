@@ -31,11 +31,11 @@ class EggModelBridge(QObject):
         egg = self._egg
         if (
             egg.is_equipped
-            and egg.timer is not None
-            and egg.timer.end_time > egg.timer.start_time
+            and egg.hatch_timer_model is not None
+            and egg.hatch_timer_model.end_time > egg.hatch_timer_model.start_time
         ):
             self._timer_bar.bind(
-                egg.timer,
+                egg.hatch_timer_model,
                 self._player,
                 language=self._ui_language,
             )
@@ -47,6 +47,13 @@ class EggModelBridge(QObject):
             return
         self._ui_language = language
         self._timer_bar.set_ui_language(language)
+
+    def sync(self) -> None:
+        self._sync_timer()
+        self.changed.emit()
+
+    def sync_quiet(self) -> None:
+        self._sync_timer()
 
     @Property(int, notify=changed)
     def rarity(self) -> int:
@@ -74,7 +81,7 @@ class EggModelBridge(QObject):
 
     @Property(str, notify=changed)
     def seedText(self) -> str:
-        return f"{self._egg.seed:#018x}"
+        return f"{self._egg.random_seed:#018x}"
 
     @Property(QObject, constant=True)
     def timerBridge(self) -> TimerBarBridge:

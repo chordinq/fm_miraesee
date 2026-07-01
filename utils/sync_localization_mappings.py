@@ -7,10 +7,12 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+from utils.paths import project_root
+
+ROOT = project_root()
 LOC = ROOT / "assets" / "localizations"
 CONFIG = ROOT / "config"
-SKINS_LIBRARY = ROOT / "core_test" / "_sgc_26_6_30" / "parsed" / "SkinsLibrary.json"
+SKINS_LIBRARY = ROOT / "data" / "sgc_parse_skins" / "SkinsLibrary.json"
 
 
 def load_shared_keys() -> dict[str, dict[str, int]]:

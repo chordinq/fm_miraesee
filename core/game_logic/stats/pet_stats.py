@@ -6,19 +6,21 @@ from ..enums import (
 	AscendableType,
 	PetBalancingType,
 	Rarity,
-	StatNature,
 	StatType,
 	TechTreeNodeType,
 	TechTreeType,
+	StatLayer,
+	StatTargetKind,
 )
 from ..player.player_pet_collection_model import PetId
+from .stat_helper import StatHelper
 from .stat_target import PetStatTarget
-from .stats import StatNode, Stats, UniqueStat
+from .stats import Stats
 
 if TYPE_CHECKING:
 	from ..player.player_model import PlayerModel
 	from ..player.player_pet_collection_model import PlayerPetModel
-	from ..shared_game_config import SharedGameConfig
+	from ..config.shared_game_config import SharedGameConfig
 
 
 @dataclass
@@ -29,7 +31,7 @@ class PetStatsGameConfig:
 	tech_tree_library: dict[TechTreeNodeType, dict]
 	tech_tree_position_library: dict[TechTreeType, dict]
 	ascension_configs_library: dict[AscendableType, dict]
-	stat_config_library: dict[tuple[StatType, StatNature], dict]
+	stat_config_library: dict[tuple, dict]
 	secondary_stat_library: dict
 	items: dict
 	weapons: dict
@@ -48,7 +50,7 @@ def load_pet_stats_config() -> PetStatsGameConfig:
 		return _pet_stats_config
 
 	import config as cfg
-	from ..shared_game_config import (
+	from ..config.shared_game_config import (
 		ItemBalancingConfig,
 		PetBaseConfig,
 		SkillBaseConfig,
@@ -86,11 +88,14 @@ def load_pet_stats_config() -> PetStatsGameConfig:
 
 
 def _extract_primary_from_level_info(level_info: dict) -> tuple[float, float]:
+	from core.metaplaymath.config_values import stat_contribution_value_fd6_raw
+	from core.metaplaymath.fd6 import fd6_to_double
+
 	damage = 0.0
 	health = 0.0
 	for row in level_info.get("PetStats", {}).get("Stats", []):
 		stat_type = row["StatNode"]["UniqueStat"]["StatType"]
-		value = float(row["Value"])
+		value = fd6_to_double(stat_contribution_value_fd6_raw(row))
 		if stat_type == "Damage":
 			damage = value
 		elif stat_type == "Health":
@@ -143,40 +148,24 @@ def get_pet_experience_required(
 	return 0
 
 
-def _filter_pet_tech_tree_stats(full_stats: Stats) -> Stats:
+def _filter_pet_modifier_stats(full_stats: Stats) -> Stats:
 	filtered = Stats()
 	for node, value in full_stats.all_stat_contributions.items():
-		if not isinstance(node.stat_target, PetStatTarget):
+		if node.target.kind != StatTargetKind.Pet:
 			continue
-		if node.unique_stat.stat_type not in (
-			StatType.TechTreeDamage,
-			StatType.TechTreeHealth,
-		):
+		if node.layer not in (StatLayer.TechTree, StatLayer.Ascensions):
 			continue
-		filtered.add_stat_contribution(node, value)
+		if node.unique_stat.stat_type not in (StatType.Damage, StatType.Health):
+			continue
+		filtered.add_stat_contribution_fd6_raw(node, value)
 	return filtered
 
 
 @miraesee_extension
 def build_pet_tech_tree_stats(player: PlayerModel) -> Stats:
-	return _filter_pet_tech_tree_stats(
+	return _filter_pet_modifier_stats(
 		player.player_techtree_model.get_total_stats(player)
 	)
-
-
-def _dependency_multiplier(
-	modifier_stats: Stats,
-	game_config: Any,
-	dep_stat_type: StatType,
-) -> float:
-	target = PetStatTarget()
-	default = float(
-		game_config.stat_config_library[(dep_stat_type, StatNature.Multiplier)][
-			"DefaultValue"
-		]
-	)
-	node = StatNode(UniqueStat(dep_stat_type, StatNature.Multiplier), target)
-	return default + modifier_stats.all_stat_contributions.get(node, 0.0)
 
 
 @miraesee_extension
@@ -206,14 +195,25 @@ def resolve_pet_primary_stats(
 	)
 	damage_mult, health_mult = get_pet_balancing_multipliers(game_config, pet.pet_id)
 	modifier_stats = build_pet_modifier_stats(player)
+	target = PetStatTarget(pet.pet_id.rarity)
 	incoming_damage = base_damage * damage_mult
 	incoming_health = base_health * health_mult
-	damage = incoming_damage * _dependency_multiplier(
-		modifier_stats, game_config, StatType.TechTreeDamage
-	) * _dependency_multiplier(modifier_stats, game_config, StatType.AscensionDamage)
-	health = incoming_health * _dependency_multiplier(
-		modifier_stats, game_config, StatType.TechTreeHealth
-	) * _dependency_multiplier(modifier_stats, game_config, StatType.AscensionHealth)
+	damage = StatHelper.calculate_value_from_stats(
+		game_config,
+		modifier_stats,
+		StatType.Damage,
+		target,
+		incoming_damage,
+		None,
+	)
+	health = StatHelper.calculate_value_from_stats(
+		game_config,
+		modifier_stats,
+		StatType.Health,
+		target,
+		incoming_health,
+		None,
+	)
 	return damage, health
 
 

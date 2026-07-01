@@ -39,11 +39,25 @@ def _tier_addition_value(lib_entry: dict, tier: int) -> float:
 
 
 def _stat_value_at_level(row: dict, level: int, tier_bonus: float) -> float:
-	return (
-		float(row.get("Value", 0.0))
-		+ float(row.get("ValueIncrease", 0.0)) * level
-		+ tier_bonus
+	from core.metaplaymath.config_values import (
+		stat_contribution_value_fd6_raw,
+		stat_contribution_value_increase_fd6_raw,
 	)
+	from core.metaplaymath.fd6 import (
+		fd6_add_raw,
+		fd6_from_double,
+		fd6_from_int,
+		fd6_mul_raw,
+		fd6_to_double,
+	)
+
+	raw = stat_contribution_value_fd6_raw(row)
+	inc_raw = stat_contribution_value_increase_fd6_raw(row)
+	if level > 0:
+		raw = fd6_add_raw(raw, fd6_mul_raw(inc_raw, fd6_from_int(level)))
+	if tier_bonus != 0.0:
+		raw = fd6_add_raw(raw, fd6_from_double(tier_bonus))
+	return fd6_to_double(raw)
 
 
 class PlayerTechTreeModel:

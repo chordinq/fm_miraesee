@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+from core.game_logic.player.player_techtree_model import _stat_value_at_level
 from config import TECH_TREE_LIBRARY
 from core.game_logic.enums import StatNature, TechTreeNodeType
 from core.game_logic.player.player_model import PlayerModel
-from core.game_logic.shared_game_config import SharedGameConfig
+from core.game_logic.config.shared_game_config import SharedGameConfig
 from core.game_logic.stats.stat_helper import StatHelper
 from core.game_logic.stats.stat_target import DungeonStatTarget
 from ui.utils.stat_display_format import (
@@ -21,14 +22,6 @@ def _tier_addition_value(lib_entry: dict, tier: int) -> float:
     if tier < 0 or tier >= len(tier_additions):
         return 0.0
     return float(tier_additions[tier])
-
-
-def _stat_value_at_level(row: dict, level: int, tier_bonus: float) -> float:
-    return (
-        float(row.get("Value", 0.0))
-        + float(row.get("ValueIncrease", 0.0)) * level
-        + tier_bonus
-    )
 
 
 def _format_tech_tree_stat_value(stat_node, value: float) -> str:

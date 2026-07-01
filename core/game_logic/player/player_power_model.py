@@ -30,7 +30,7 @@ class PlayerPowerModel:
 		self.has_update = False
 
 	def update_power(self, player: PlayerModel, publish_update: bool = True) -> None:
-		from .player_item_stats import calculate_total_stats
+		from .player_model import calculate_total_stats
 
 		self.has_update = True
 		self.stats = calculate_total_stats(player)
@@ -58,8 +58,9 @@ def calculate_power(
 			"item_balancing_config is required for PlayerPowerExtensions.CalculatePower"
 		)
 
-	player_damage = stats.player_damage(game_config, is_ranged)
-	player_health = stats.player_health(game_config)
+	power_stats = stats.without_secondary_stats(game_config)
+	player_damage = power_stats.player_damage(game_config, is_ranged)
+	player_health = power_stats.player_health(game_config)
 	damage_delta = player_damage - balancing.player_base_damage
 	health_delta = player_health - balancing.player_base_health
 	combined = balancing.player_power_damage_multiplier * damage_delta + health_delta

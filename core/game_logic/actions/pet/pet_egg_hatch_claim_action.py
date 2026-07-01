@@ -23,10 +23,10 @@ class PetEggHatchClaimAction(PlayerAction):
 		if egg is None:
 			return ActionResult.DoesNotExist
 
-		if egg.timer is None or not egg.is_equipped:
+		if egg.hatch_timer_model is None or not egg.is_equipped:
 			return ActionResult.NotStarted
 
-		if not egg.timer.has_ended(player):
+		if not egg.hatch_timer_model.has_ended(player):
 			return ActionResult.NotReady
 
 		if not commit:

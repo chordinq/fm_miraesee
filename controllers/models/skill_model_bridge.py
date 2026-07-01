@@ -3,7 +3,7 @@ from PySide6.QtCore import QObject, Property, Signal
 from config import SKILL_UPGRADE_LIBRARY, SKILLS_MAPPING
 from core.game_logic.actions import ActionResult
 from core.game_logic.player.player_model import PlayerModel
-from core.game_logic.shared_game_config import can_be_upgraded, get_unlocked_skill_slot_count
+from core.game_logic.config.shared_game_config import can_be_upgraded, get_unlocked_skill_slot_count
 from core.game_logic.player.player_skill_collection_model import (
     PlayerSkillModel,
     combat_skill_to_skill_id,
@@ -38,29 +38,33 @@ class SkillModelBridge(QObject):
         self._name_loc_id, self._name_loc_table = name_loc_from_entry(entry)
         self._desc_loc_id, self._desc_loc_table = desc_loc_from_entry(entry)
         self._rarity_loc_id, self._rarity_loc_table = rarity_loc_from_rarity(self._rarity)
-        self._desc_format_args: list[str] = format_skill_description_args(player, skill)
-        self._passive_stat_segments: list[dict[str, object]] = (
-            build_skill_passive_stat_segments(player, skill)
-        )
+        self._desc_format_args: list[str] | None = None
+        self._passive_stat_segments: list[dict[str, object]] | None = None
+        self._max_shard_count = self._read_max_shard_count()
 
-        next_level_key = str(skill.level + 1)
+    def _read_max_shard_count(self) -> int:
+        next_level_key = str(self._skill.level + 1)
         if next_level_key in SKILL_UPGRADE_LIBRARY:
-            self._max_shard_count: int = SKILL_UPGRADE_LIBRARY[next_level_key]["Shards"]
-        else:
-            self._max_shard_count = 0
+            return SKILL_UPGRADE_LIBRARY[next_level_key]["Shards"]
+        return 0
 
-    def refresh(self) -> None:
+    def _ensure_detail_fields(self) -> None:
+        if self._desc_format_args is not None and self._passive_stat_segments is not None:
+            return
         self._desc_format_args = format_skill_description_args(self._player, self._skill)
         self._passive_stat_segments = build_skill_passive_stat_segments(
             self._player,
             self._skill,
         )
-        next_level_key = str(self._skill.level + 1)
-        if next_level_key in SKILL_UPGRADE_LIBRARY:
-            self._max_shard_count = SKILL_UPGRADE_LIBRARY[next_level_key]["Shards"]
-        else:
-            self._max_shard_count = 0
+
+    def sync(self) -> None:
+        self._desc_format_args = None
+        self._passive_stat_segments = None
+        self._max_shard_count = self._read_max_shard_count()
         self.changed.emit()
+
+    def refresh(self) -> None:
+        self.sync()
 
     @Property(int, notify=changed)
     def index(self) -> int:
@@ -135,8 +139,10 @@ class SkillModelBridge(QObject):
 
     @Property("QVariantList", notify=changed)
     def descFormatArgs(self) -> list[str]:
-        return self._desc_format_args
+        self._ensure_detail_fields()
+        return self._desc_format_args or []
 
     @Property("QVariantList", notify=changed)
     def passiveStatSegments(self) -> list[dict[str, object]]:
-        return self._passive_stat_segments
+        self._ensure_detail_fields()
+        return self._passive_stat_segments or []

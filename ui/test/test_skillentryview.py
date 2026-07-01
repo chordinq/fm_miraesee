@@ -6,7 +6,7 @@ from config import SKILL_UPGRADE_LIBRARY, SKILLS_MAPPING
 from core.game_logic.enums import CombatSkill
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
-from core.game_logic.shared_game_config import get_shared_game_config
+from core.game_logic.config.shared_game_config import get_shared_game_config
 from controllers.models.skill_model_bridge import SkillModelBridge
 
 TEST_SKILL_KEY = "Shout"

@@ -281,6 +281,43 @@ class StatNature(IntEnum):
 	Divisor = 2
 	OneMinusMultiplier = 3
 
+class StatLayer(IntEnum):
+	None_ = 0
+	GeneralCompounding = 1
+	Skins = 2
+	Ascensions = 3
+	TechTree = 4
+
+class StatCondition(IntEnum):
+	None_ = 0
+	Melee = 1
+	Ranged = 2
+
+class StatTargetKind(IntEnum):
+	Player = 0
+	Equipment = 1
+	ActiveSkill = 2
+	PassiveSkill = 3
+	Mount = 4
+	Forge = 5
+	Egg = 6
+	Currency = 7
+	Pet = 8
+	TechTree = 9
+	Duration = 10
+
+class StatQualifierType(IntEnum):
+	ItemType = 0
+	AttackType = 1
+	Rarity = 2
+	Skill = 3
+	CurrencyType = 4
+	DungeonType = 5
+	Source = 6
+
+class Source(IntEnum):
+	Offline = 0
+
 class StatType(IntEnum):
 	Damage = 0
 	Health = 1
@@ -300,10 +337,6 @@ class StatType(IntEnum):
 	DoubleDamageChance = 16
 	AttackSpeed = 17
 	MoveSpeed = 18
-	TechTreeDamage = 19
-	TechTreeHealth = 20
-	AscensionDamage = 21
-	AscensionHealth = 22
 
 class TechTreeNodeType(IntEnum):
 	WeaponBonus = 0

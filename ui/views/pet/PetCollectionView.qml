@@ -71,29 +71,31 @@ Item {
 		root.selectedPetModel = null
 	}
 
+	function refreshSelectedEgg() {
+		if (root.selectedEggGuid === "" || !root.eggController)
+			return
+		root.eggController.refreshSelectedEgg()
+		if (root.selectedEggModel !== null)
+			return
+		root.eggDetailsOpen = false
+		root.selectedEggGuid = ""
+	}
+
 	Connections {
 		target: root.petCollectionModel
 		function onChanged() {
 			root.refreshSelectedPet()
-			if (root.selectedEggGuid === "")
-				return
-			var eggs = root.petCollectionModel.eggs
-			for (var i = 0; i < eggs.length; i++) {
-				if (eggs[i].guid === root.selectedEggGuid) {
-					root.selectedEggModel = eggs[i]
-					return
-				}
-			}
-			for (i = 0; i < root.petCollectionModel.hatchEggModels.length; i++) {
-				var hatchEgg = root.petCollectionModel.hatchEggModels[i]
-				if (hatchEgg && hatchEgg.guid === root.selectedEggGuid) {
-					root.selectedEggModel = hatchEgg
-					return
-				}
-			}
-			root.eggDetailsOpen = false
-			root.selectedEggGuid = ""
-			root.selectedEggModel = null
+			if (root.selectedEggGuid !== "" && root.eggController)
+				root.eggController.refreshSelectedEgg()
+		}
+		function onPetsChanged() {
+			root.refreshSelectedPet()
+		}
+		function onInventoryEggsChanged() {
+			root.refreshSelectedEgg()
+		}
+		function onHatchSlotsChanged() {
+			root.refreshSelectedEgg()
 		}
 	}
 

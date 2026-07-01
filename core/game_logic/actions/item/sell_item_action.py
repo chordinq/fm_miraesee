@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from ...enums import CurrencyType
-from ...sell_value_helper import get_sell_value
+from ...player.player_item_model import get_sell_value
 from ..action_codes import ActionCodes
 from ..action_result import ActionResult, MetaActionResult
 from ..player_action import PlayerAction

@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-DEFAULT_DUMP = Path(__file__).resolve().parents[2] / "dump.cs"
+DEFAULT_DUMP = Path(__file__).resolve().parents[2] / "data" / "dump.cs"
 _CACHE: dict[str, dict[tuple[str, int], str]] = {}
 
 

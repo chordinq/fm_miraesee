@@ -5,7 +5,7 @@ from __future__ import annotations
 import struct
 from typing import Any
 
-from .f64 import read_f32, read_f32vec2, read_f32vec3, read_f64, read_f64vec2, read_f64vec3, read_varint128
+from .wire_io import read_f32, read_f32vec2, read_f32vec3, read_f64, read_f64vec2, read_f64vec3, read_varint128
 from .wire_types import WireDataType, read_tag_id, read_varint, read_varlong, read_wire_type
 
 

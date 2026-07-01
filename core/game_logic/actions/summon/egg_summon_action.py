@@ -19,9 +19,8 @@ class SummonedEggInfo:
 		self.is_new = is_new
 
 
-class EggSummonAction(PlayerAction):
-	action_code = ActionCodes.EggSummon
-	finalized_action_code = ActionCodes.EggSummonFinalized
+class EggSummonFinalizedAction(PlayerAction):
+	action_code = ActionCodes.EggSummonFinalized
 
 	def __init__(self, count: int = 1) -> None:
 		super().__init__()

@@ -9,6 +9,7 @@ from core.game_logic.actions import ActionResult
 from core.game_logic.actions.skill.skill_upgrade_action import SkillUpgradeAction
 from core.game_logic.enums import CombatSkill, CurrencyType, StatType
 from core.game_logic.game_logic import GameLogic
+from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_skill_collection_model import combat_skill_to_skill_id
 from core.game_logic.stats.stat_helper import StatHelper
 from ui.utils.guild_war_helper import (
@@ -16,6 +17,7 @@ from ui.utils.guild_war_helper import (
     war_points_for_skill_upgrades,
 )
 from controllers.collections.skill_collection_bridge import SkillCollectionBridge
+from controllers.summon.summon_upgrade_status import read_summon_upgrade_status
 from controllers.support.summon_overdraft import can_afford_summon_for_ui, execute_skill_summon
 from ui.utils.summon_result_entries import build_skill_summon_results
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
@@ -28,6 +30,7 @@ def _skill_key(combat_skill) -> str:
 
 class SkillSummonTestBridge(QObject):
     stateChanged = Signal()
+    statsRefreshRequested = Signal()
 
     def __init__(self, logic: GameLogic, parent: QObject | None = None) -> None:
         super().__init__(parent)
@@ -60,7 +63,7 @@ class SkillSummonTestBridge(QObject):
     def _on_ui_settings_changed(self) -> None:
         self.stateChanged.emit()
 
-    def reload_from_player(self, player: PlayerModel) -> None:
+    def reload_from_player(self, player: PlayerModel, *, defer_heavy: bool = False) -> None:
         summon_config = player.game_config.skill_summon_config
         self._summon_count = summon_config.get_base_summon_count()
         self._total_war_points = 0
@@ -69,6 +72,11 @@ class SkillSummonTestBridge(QObject):
             player.player_skill_collection_model,
             player,
         )
+        if defer_heavy:
+            return
+        self.finish_deferred_reload()
+
+    def finish_deferred_reload(self) -> None:
         self._sync_status()
         self._refresh_prediction()
         self.stateChanged.emit()
@@ -156,10 +164,6 @@ class SkillSummonTestBridge(QObject):
         return self._can_quick_upgrade()
 
     @Property("QVariantList", notify=stateChanged)
-    def summonAffordFlags(self) -> list[bool]:
-        return [self._can_afford_count(count) for count in self._summon_count_options()]
-
-    @Property("QVariantList", notify=stateChanged)
     def summonCountOptions(self) -> list[int]:
         return self._summon_count_options()
 
@@ -187,6 +191,33 @@ class SkillSummonTestBridge(QObject):
     def ascensionLevel(self) -> int:
         return self._skill_collection.ascensionLevel
 
+    def _summon_upgrade_status(self) -> dict[str, int | float | bool]:
+        player = self._logic.player
+        return read_summon_upgrade_status(
+            player.player_skill_collection_model.summon_model,
+            player.game_config.skill_summon_config,
+        )
+
+    @Property(int, notify=stateChanged)
+    def summonLevel(self) -> int:
+        return int(self._summon_upgrade_status()["summonLevel"])
+
+    @Property(int, notify=stateChanged)
+    def summonProgressCount(self) -> int:
+        return int(self._summon_upgrade_status()["progressCount"])
+
+    @Property(int, notify=stateChanged)
+    def summonProgressRequired(self) -> int:
+        return int(self._summon_upgrade_status()["progressRequired"])
+
+    @Property(float, notify=stateChanged)
+    def summonProgressFraction(self) -> float:
+        return float(self._summon_upgrade_status()["progressFraction"])
+
+    @Property(bool, notify=stateChanged)
+    def summonProgressMaxed(self) -> bool:
+        return bool(self._summon_upgrade_status()["isMaxed"])
+
     @Slot(int)
     def setSummonCount(self, count: int) -> None:
         if count not in self._summon_count_options():
@@ -206,9 +237,11 @@ class SkillSummonTestBridge(QObject):
     def performSummon(self) -> None:
         count = self._summon_count
         result, summoned = execute_skill_summon(self._logic, count, commit=True)
+        had_new = False
         if result != ActionResult.Success:
             self._last_action_text = f"summon failed: {result.name}"
         else:
+            had_new = any(info.is_new for info in summoned)
             earned_war_points = war_points_for_skill_summon(self._guild_war_day, summoned)
             self._total_war_points += earned_war_points
             self._summon_results = build_skill_summon_results(
@@ -227,10 +260,12 @@ class SkillSummonTestBridge(QObject):
                         f"  {_skill_key(info.type)} shard+1 (total {skill.shard_count})"
                     )
             self._last_action_text = "\n".join(parts)
-        self._skill_collection.refresh()
+            self._skill_collection.patch_after_skill_summon(summoned)
         self._sync_status()
         self.predictSummon()
         self.stateChanged.emit()
+        if had_new:
+            self.statsRefreshRequested.emit()
 
     def _combat_skill_from_type(self, combat_skill_type: int) -> CombatSkill | None:
         try:
@@ -264,6 +299,7 @@ class SkillSummonTestBridge(QObject):
             self._last_action_text = f"upgraded {_skill_key(combat_skill)} to Lv{level}"
         self._skill_collection.refresh()
         self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     @Slot(int)
@@ -279,6 +315,7 @@ class SkillSummonTestBridge(QObject):
             self._last_action_text = f"equipped {_skill_key(combat_skill)} slot {slot_id + 1}"
         self._skill_collection.refresh()
         self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     @Slot(int)
@@ -293,6 +330,7 @@ class SkillSummonTestBridge(QObject):
             self._last_action_text = f"unequipped {_skill_key(combat_skill)}"
         self._skill_collection.refresh()
         self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     @Slot()
@@ -312,6 +350,19 @@ class SkillSummonTestBridge(QObject):
             )
         self._skill_collection.refresh()
         self._sync_status()
+        self.statsRefreshRequested.emit()
+        self.stateChanged.emit()
+
+    @Slot()
+    def performQuickEquip(self) -> None:
+        result = self._logic.skills_quick_equip(commit=True)
+        if result != ActionResult.Success:
+            self._last_action_text = f"quick equip failed: {result.name}"
+        else:
+            self._last_action_text = "quick equip ok"
+        self._skill_collection.refresh()
+        self._sync_status()
+        self.statsRefreshRequested.emit()
         self.stateChanged.emit()
 
     def _simulate_summon(self) -> tuple[list[str], int, list[dict[str, object]]]:

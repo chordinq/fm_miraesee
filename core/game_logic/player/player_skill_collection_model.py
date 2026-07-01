@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 from ...miraesee_extension import miraesee_extension
 from ..enums import AscendableType, CombatSkill, Rarity
-from ..shared_game_config import SharedGameConfig
+from ..config.shared_game_config import SharedGameConfig
 from ..stats.stat_helper import StatHelper
 from config import SKILL_UPGRADE_LIBRARY, SKILLS_MAPPING
 from .ascension_model import AscensionModel
@@ -11,7 +11,7 @@ from ..stats.skill_stats import SkillStats
 from .summon_model import SummonModel
 
 if TYPE_CHECKING:
-	from ..shared_game_config import SharedGameConfig
+	from ..config.shared_game_config import SharedGameConfig
 	from .player_model import PlayerModel
 
 MAX_SKILL_LEVEL = max(int(row["Level"]) for row in SKILL_UPGRADE_LIBRARY.values())
@@ -70,7 +70,7 @@ class PlayerSkillModel:
 		self._shard_count = value
 
 	def get_passive_stats(self, player_model: PlayerModel) -> SkillStats:
-		from .player_item_stats import get_total_stats
+		from .player_model import get_total_stats
 
 		result = SkillStats()
 		game_config = player_model.game_config
@@ -147,7 +147,7 @@ class PlayerSkillCollectionModel:
 		return result
 
 	def get_empty_slots(self, player: PlayerModel) -> list[int]:
-		from ..shared_game_config import get_unlocked_skill_slot_count
+		from ..config.shared_game_config import get_unlocked_skill_slot_count
 
 		unlocked_count = get_unlocked_skill_slot_count(player)
 		empty_slots: list[int] = []
@@ -161,20 +161,41 @@ class PlayerSkillCollectionModel:
 		self.summon_model.count = 0
 		self.ascension_model.ascend()
 
-	def has_all_skills(self, game_config: SharedGameConfig) -> bool:
-		return all(
-			combat_skill in self.player_skills
-			for combat_skill in game_config.skill_library
-		)
-
-	def are_all_my_skills_maxed(self, game_config: SharedGameConfig) -> bool:
-		return all(
-			skill.is_maxed(game_config) for skill in self.player_skills.values()
-		)
-
 	@staticmethod
 	def max_skill_level() -> int:
 		return MAX_SKILL_LEVEL
 
 	def try_get_skill(self, combat_skill: CombatSkill) -> PlayerSkillModel | None:
 		return self.player_skills.get(combat_skill)
+
+
+_DAMAGE_COUNT_TABLE_MASK = 0x20F
+
+_DAMAGE_COUNT_BY_INDEX: dict[int, int] = {
+	0: 3,
+	1: 5,
+	2: 8,
+	3: 5,
+	9: 5,
+}
+
+
+def get_skill_damage_count(combat_skill: CombatSkill) -> int:
+	"""IL: SkillBuilder.GetSkillDamageCount(CombatSkill)
+
+	Table indices use (int(combat_skill) - 2) when (0x20f >> index) & 1.
+	Values from IL DAT_01b223f0 (Ghidra rodata dump).
+	"""
+	skill_value = int(combat_skill)
+	index = skill_value - 2
+	if 0 <= index < 10 and (_DAMAGE_COUNT_TABLE_MASK >> index) & 1:
+		try:
+			return _DAMAGE_COUNT_BY_INDEX[index]
+		except KeyError as exc:
+			raise NotImplementedError(
+				f"SkillBuilder.GetSkillDamageCount table entry for index {index} "
+				f"(CombatSkill.{combat_skill.name})"
+			) from exc
+	if skill_value == 0x10:
+		return 3
+	return 1

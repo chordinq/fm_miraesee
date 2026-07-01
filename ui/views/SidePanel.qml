@@ -14,11 +14,11 @@ Item {
 	readonly property real edgeMargin: Math.max(4, root.width * 0.06)
 
 	readonly property var tabs: [
-		{ locId: "12856879411200", locTable: "Forge", color: Theme.darkGrey },
-		{ locId: "2109395617640448", locTable: "Stats", color: Theme.lightGreen },
-		{ locId: "2110564712771584", locTable: "Stats", color: Theme.lightBlue },
-		{ locId: "990866679984128", locTable: "Stats", color: Theme.orange },
-		{ locId: "280318681088", locTable: "TechTree", color: Theme.red }
+		{ locId: "12856879411200", locTable: "Forge", color: Theme.forgeColor },
+		{ locId: "2109395617640448", locTable: "Stats", color: Theme.skillColor },
+		{ locId: "2110564712771584", locTable: "Stats", color: Theme.petColor },
+		{ locId: "990866679984128", locTable: "Stats", color: Theme.mountColor },
+		{ locId: "280318681088", locTable: "TechTree", color: Theme.techColor }
 	]
 
 	Rectangle {
@@ -33,7 +33,7 @@ Item {
 		anchors.left: parent.left
 		anchors.right: parent.right
 		anchors.margins: root.edgeMargin
-		height: parent.height * 0.3
+		spacing: root.edgeMargin * 0.35
 
 		Repeater {
 			model: root.tabs
@@ -43,7 +43,7 @@ Item {
 				required property int index
 
 				width: sideTabColumn.width
-				height: sideTabColumn.height / root.tabs.length
+				height: width * scaleH / scaleW
 
 				locId: modelData.locId
 				locTable: modelData.locTable

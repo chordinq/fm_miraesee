@@ -11,10 +11,51 @@ Item {
 	property var selectedSkillModel: null
 	property int selectedCombatSkillType: -1
 
+	readonly property real bottomBarMargin: Math.max(8, height * 0.02)
+	readonly property real actionButtonScaleW: 2.56
+	readonly property real actionButtonScaleH: 1
+	readonly property real actionButtonWidthRatio: 0.3
+	readonly property real actionRowSpacingRatio: 0.15
+	readonly property real actionButtonWidth: width * actionButtonWidthRatio
+	readonly property real actionRowSpacing: actionButtonWidth * actionRowSpacingRatio
+	readonly property real actionButtonHeight:
+		actionButtonWidth * actionButtonScaleH / actionButtonScaleW
+
+	Row {
+		id: actionRow
+
+		anchors.horizontalCenter: parent.horizontalCenter
+		anchors.bottom: parent.bottom
+		anchors.bottomMargin: root.bottomBarMargin
+		spacing: root.actionRowSpacing
+
+		UpgradeAllButton {
+			width: root.actionButtonWidth
+			height: root.actionButtonHeight
+			onClicked: {
+				if (root.skillController)
+					root.skillController.performUpgradeAll()
+			}
+		}
+
+		QuickEquipButton {
+			width: root.actionButtonWidth
+			height: root.actionButtonHeight
+			onClicked: {
+				if (root.skillController)
+					root.skillController.performQuickEquip()
+			}
+		}
+	}
+
 	SkillGrid {
 		id: skillGrid
 
-		anchors.fill: parent
+		anchors.top: parent.top
+		anchors.left: parent.left
+		anchors.right: parent.right
+		anchors.bottom: actionRow.top
+		anchors.bottomMargin: root.bottomBarMargin
 		skillCollectionModel: root.skillCollectionModel
 		onSkillClicked: function(skillModel) {
 			root.selectedCombatSkillType = skillModel.combatSkillType

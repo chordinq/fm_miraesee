@@ -32,17 +32,26 @@ class MountModelBridge(QObject):
         self._mount_key = entry["Key"]
         self._name_loc_id, self._name_loc_table = name_loc_from_entry(entry)
         self._rarity_loc_id, self._rarity_loc_table = rarity_loc_from_rarity(self._rarity)
-        self._stat_lines = build_mount_stat_lines(self._player, mount)
-        self._base_stat_lines = [
-            line for line in self._stat_lines if not line["secondary"]
-        ]
-        self._sub_stat_lines = [
-            line for line in self._stat_lines if line["secondary"]
-        ]
+        self._stat_lines: list[dict[str, object]] | None = None
+        self._base_stat_lines: list[dict[str, object]] | None = None
+        self._sub_stat_lines: list[dict[str, object]] | None = None
+
+    def _ensure_stat_lines(self) -> None:
+        if self._stat_lines is not None:
+            return
+        lines = build_mount_stat_lines(self._player, self._mount)
+        self._stat_lines = lines
+        self._base_stat_lines = [line for line in lines if not line["secondary"]]
+        self._sub_stat_lines = [line for line in lines if line["secondary"]]
+
+    def sync(self) -> None:
+        self._stat_lines = None
+        self._base_stat_lines = None
+        self._sub_stat_lines = None
+        self.changed.emit()
 
     def refresh(self) -> None:
-        self._rebuild()
-        self.changed.emit()
+        self.sync()
 
     @Property(str, notify=changed)
     def guid(self) -> str:
@@ -94,12 +103,15 @@ class MountModelBridge(QObject):
 
     @Property("QVariantList", notify=changed)
     def statLines(self) -> list[dict[str, object]]:
-        return self._stat_lines
+        self._ensure_stat_lines()
+        return self._stat_lines or []
 
     @Property("QVariantList", notify=changed)
     def baseStatLines(self) -> list[dict[str, object]]:
-        return self._base_stat_lines
+        self._ensure_stat_lines()
+        return self._base_stat_lines or []
 
     @Property("QVariantList", notify=changed)
     def subStatLines(self) -> list[dict[str, object]]:
-        return self._sub_stat_lines
+        self._ensure_stat_lines()
+        return self._sub_stat_lines or []

@@ -6,7 +6,7 @@ from ..action_codes import ActionCodes
 from ..action_result import ActionResult, MetaActionResult
 from ..player_action import PlayerAction
 from ...player.player_skill_collection_model import PlayerSkillModel
-from ...shared_game_config import can_be_upgraded
+from ...config.shared_game_config import can_be_upgraded
 from .skill_upgrade_action import _OFFLINE_CLIENT_LISTENER, apply_skill_upgrade
 
 if TYPE_CHECKING:

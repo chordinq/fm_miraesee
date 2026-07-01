@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from core.game_logic.enums import StatNature, StatType
-from core.game_logic.player.player_item_stats import get_total_stats
+from core.game_logic.player.player_model import get_total_stats
 from core.game_logic.player.player_model import PlayerModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
-from core.game_logic.shared_game_config import SharedGameConfig
-from core.game_logic.skill_builder import get_skill_damage_count
-from core.game_logic.skill_description import (
+from core.game_logic.config.shared_game_config import SharedGameConfig
+from core.game_logic.player.player_skill_collection_model import get_skill_damage_count
+from core.format.skill_description import (
     _has_damage_level,
     _has_health_level,
     _sum_active_damage_health,
@@ -81,7 +81,7 @@ def _passive_label_segments(stat_type: StatType) -> list[dict[str, str]] | None:
 def _sum_passive_damage_health(resolved) -> tuple[float, float]:
     damage = 0.0
     health = 0.0
-    for node, value in resolved.all_stat_contributions.items():
+    for node, value in resolved.iter_stat_contributions_double():
         if node.unique_stat.stat_nature != StatNature.Additive:
             continue
         if node.unique_stat.stat_type == StatType.Damage:
