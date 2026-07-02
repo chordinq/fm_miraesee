@@ -13,7 +13,7 @@ Item {
 		spacing: 24
 
 		TMPText {
-			tmpText: TmpTextBridge.format_level_plus_one_text(41, Theme.language, 1)
+			tmpText: TmpTextBridge.format_level_plus_one_text(41, UiLocale.selectedCode, 1)
 			pixelSize: 32
 			outlineWeight: 8
 			Layout.alignment: Qt.AlignHCenter

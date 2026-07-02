@@ -1,12 +1,13 @@
 import QtQuick
 import QtQuick.Layouts
 import ui 1.0
+import TMPText 1.0
 
 RectRoundButton {
 	id: root
 
-	scaleW: 4
-	scaleH: 2
+	scaleW: SummonButtonMetrics.scaleW
+	scaleH: SummonButtonMetrics.scaleH
 	fillColor: Theme.blue
 	handleInput: true
 
@@ -19,40 +20,57 @@ RectRoundButton {
 	property string costText: ""
 	property url currencyIconSource
 
-	readonly property real titleFontScale: 10 / 32
-	readonly property real costFontScale: 11 / 32
+	property real titleFontScale: 11 / 32
+	property real costFontScale: 11 / 32
 	readonly property real titleWidthRatio: 0.88
-	readonly property real rowIconScale: 25 / 64
-	readonly property bool showTitleIcon: root.titleIconSource != ""
+	readonly property real rowIconScale: 0.35
+	property real titleRowVerticalCenterOffsetRatio: -0.18
+	property real costRowVerticalCenterOffsetRatio: 0.15
+	readonly property real canvasHeight: root.bakedHeight
+	readonly property bool showTitleIcon:
+		root.titleIconSpriteIndex >= 0 || root.titleIconSource != ""
+	readonly property bool showCurrencyIcon: root.currencyIconSource != ""
 	readonly property bool showTitleRow:
 		root.showTitleIcon
 		|| root.titleLocId !== ""
 		|| root.titleText !== ""
 		|| root.titleSuffix !== ""
 	readonly property bool showCostRow:
-		root.currencyIconSource != "" || root.costText !== ""
+		root.showCurrencyIcon || root.costText !== ""
+
+	readonly property string resolvedTitleLocText: {
+		UiLocale.selectedCode
+		if (root.titleLocId === "")
+			return ""
+		return TmpTextBridge.localized_text_table(
+			root.titleLocId,
+			UiLocale.selectedCode,
+			root.titleLocTable
+		)
+	}
 
 	Item {
 		id: titleHost
 
+		parent: root.contentHost
 		visible: root.showTitleRow
 		width: parent.width * root.titleWidthRatio
 		height: titleRow.implicitHeight
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.verticalCenter: parent.verticalCenter
-		anchors.verticalCenterOffset: -parent.height * 0.18
+		anchors.verticalCenterOffset: parent.height * root.titleRowVerticalCenterOffsetRatio
 
 		RowLayout {
 			id: titleRow
 
 			anchors.centerIn: parent
-			spacing: titleHost.parent.height * 0.04
+			spacing: root.canvasHeight * 0.04
 			scale: Math.min(1, titleHost.width / Math.max(titleRow.implicitWidth, 1))
 			transformOrigin: Item.Center
 
 			Item {
 				visible: root.showTitleIcon
-				width: titleHost.parent.height * root.rowIconScale
+				width: root.showTitleIcon ? root.canvasHeight * root.rowIconScale : 0
 				height: width
 				Layout.alignment: Qt.AlignVCenter
 
@@ -69,34 +87,34 @@ RectRoundButton {
 					source: root.titleIconSource
 					fillMode: Image.PreserveAspectFit
 					smooth: true
+					mipmap: true
 				}
 			}
 
-			AppText {
+			TMPText {
 				visible: root.titleLocId !== ""
-				locId: root.titleLocId
-				locTable: root.titleLocTable
-				pixelSize: titleHost.parent.height * root.titleFontScale
+				tmpText: root.resolvedTitleLocText
+				pixelSize: root.canvasHeight * root.titleFontScale
 				fillColor: Theme.white
 				outlineColor: Theme.black
 				outlineWeight: 8
 				Layout.alignment: Qt.AlignVCenter
 			}
 
-			AppText {
+			TMPText {
 				visible: root.titleText !== ""
-				text: root.titleText
-				pixelSize: titleHost.parent.height * root.titleFontScale
+				tmpText: root.titleText
+				pixelSize: root.canvasHeight * root.titleFontScale
 				fillColor: Theme.white
 				outlineColor: Theme.black
 				outlineWeight: 8
 				Layout.alignment: Qt.AlignVCenter
 			}
 
-			AppText {
+			TMPText {
 				visible: root.titleSuffix !== ""
-				text: root.titleSuffix
-				pixelSize: titleHost.parent.height * root.titleFontScale
+				tmpText: root.titleSuffix
+				pixelSize: root.canvasHeight * root.titleFontScale
 				fillColor: Theme.white
 				outlineColor: Theme.black
 				outlineWeight: 8
@@ -106,15 +124,16 @@ RectRoundButton {
 	}
 
 	RowLayout {
+		parent: root.contentHost
 		visible: root.showCostRow
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.verticalCenter: parent.verticalCenter
-		anchors.verticalCenterOffset: parent.height * 0.14
-		spacing: parent.height * 0.04
+		anchors.verticalCenterOffset: parent.height * root.costRowVerticalCenterOffsetRatio
+		spacing: 0
 
 		Item {
-			visible: root.currencyIconSource != ""
-			width: parent.parent.height * root.rowIconScale
+			visible: root.showCurrencyIcon
+			width: root.showCurrencyIcon ? root.canvasHeight * root.rowIconScale : 0
 			height: width
 			Layout.alignment: Qt.AlignVCenter
 
@@ -123,13 +142,14 @@ RectRoundButton {
 				source: root.currencyIconSource
 				fillMode: Image.PreserveAspectFit
 				smooth: true
+				mipmap: true
 			}
 		}
 
-		AppText {
+		TMPText {
 			visible: root.costText !== ""
-			text: root.costText
-			pixelSize: parent.parent.height * root.costFontScale
+			tmpText: root.costText
+			pixelSize: root.canvasHeight * root.costFontScale
 			fillColor: Theme.white
 			outlineColor: Theme.black
 			outlineWeight: 8

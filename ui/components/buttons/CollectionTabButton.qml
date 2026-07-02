@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
@@ -19,6 +20,17 @@ Item {
 	readonly property real labelFontScale: 52 / 100
 	readonly property real labelWidthRatio: 0.86
 
+	readonly property string resolvedLabel: {
+		UiLocale.selectedCode
+		if (root.locId === "")
+			return ""
+		return TmpTextBridge.localized_text_table(
+			root.locId,
+			UiLocale.selectedCode,
+			root.locTable
+		)
+	}
+
 	implicitWidth: bakedWidth
 	implicitHeight: bakedHeight
 
@@ -34,18 +46,17 @@ Item {
 		}
 
 		RectRoundButton {
-			anchors.fill: parent
+			height: parent.height
 			scaleW: root.scaleW
 			scaleH: root.scaleH
 			fillColor: root.active ? root.activeColor : Theme.lightGrey
 		}
 
-		AppText {
+		TMPText {
 			id: tabLabel
 
 			anchors.centerIn: parent
-			locId: root.locId
-			locTable: root.locTable
+			tmpText: root.resolvedLabel
 			pixelSize: canvas.height * root.labelFontScale
 			fillColor: Theme.white
 			outlineWeight: 6

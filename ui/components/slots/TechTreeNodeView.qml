@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
@@ -39,15 +40,30 @@ Item {
 		return root.nodeModel.timerBridge.remainingText
 	}
 
+	readonly property int uiLevel: nodeModel ? nodeModel.level : 0
+	readonly property bool showMaxProgress:
+		root.levelMax > 0
+		&& root.uiLevel === root.levelMax
+		&& nodeModel
+		&& !nodeModel.isUpgrading
+		&& !nodeModel.isUpgradeComplete
+
 	readonly property string progressText: {
-		if (levelMax <= 0)
+		NumberDisplay.revision
+		UiSettings.preciseNumberEnabled
+		if (root.levelMax <= 0)
 			return ""
-		if (maxLevel)
-			return "Max"
-		if (iconLevel === -2 || iconLevel === -1)
-			return "0/" + levelMax
-		var displayLevel = nodeModel ? nodeModel.level : 0
-		return displayLevel + "/" + levelMax
+		if (root.showMaxProgress)
+			return NumberDisplay.maxProgressLabel()
+		return NumberDisplay.formatProgressPair(root.uiLevel, root.levelMax)
+	}
+
+	readonly property string timerStatusText: {
+		UiLocale.selectedCode
+		void root._timerTick
+		if (root.showRemainingTime)
+			return root.timerRemainingText
+		return TmpTextBridge.localized_text(root.completeLocId, UiLocale.selectedCode)
 	}
 
 	implicitWidth: iconSize
@@ -60,12 +76,12 @@ Item {
 		fillColor: root.fillColor
 	}
 
-	AppText {
+	TMPText {
 		id: progressLabel
 		anchors.horizontalCenter: icon.horizontalCenter
 		anchors.verticalCenter: icon.bottom
 		anchors.verticalCenterOffset: icon.height * root.progressOffsetRatio
-		text: root.progressText
+		tmpText: root.progressText
 		visible: root.nodeType >= 0
 		pixelSize: iconSize * root.progressPixelSizeRatio
 		fillColor: Theme.white
@@ -97,11 +113,9 @@ Item {
 			outlineColor: Theme.black
 		}
 
-		AppText {
+		TMPText {
 			anchors.centerIn: parent
-			text: root.showRemainingTime ? root.timerRemainingText : ""
-			locId: root.showRemainingTime ? "" : root.completeLocId
-			locTable: "General"
+			tmpText: root.timerStatusText
 			pixelSize: iconSize * root.timerBarFontScale
 			fillColor: Theme.green
 			outlineWeight: 7

@@ -1,8 +1,8 @@
 import QtQuick
-import QtQuick.Layouts
 import ui 1.0
+import TMPText 1.0
 
-RowLayout {
+Item {
 	id: root
 
 	property int level: 0
@@ -12,29 +12,21 @@ RowLayout {
 	property int outlineWeight: 8
 	property color outlineColor: Theme.black
 
-	readonly property real lvLetterSpacing: pixelSize * 4 / 80
-	readonly property real numberLeftMargin:
-		pixelSize * Math.max(0, 8 - outlineWeight) / 100 * 2
-
-	spacing: 0
-
-	AppText {
-		locId: "25799296414314496"
-		pixelSize: root.pixelSize
-		letterSpacing: root.lvLetterSpacing
-		fillColor: root.fillColor
-		outlineColor: root.outlineColor
-		outlineWeight: root.outlineWeight
-		Layout.alignment: Qt.AlignBaseline
+	readonly property string levelLabel: {
+		UiLocale.selectedCode
+		return TmpTextBridge.format_level_text(root.level, UiLocale.selectedCode, 1)
 	}
 
-	AppText {
-		text: root.level
+	implicitWidth: levelText.implicitWidth
+	implicitHeight: levelText.implicitHeight
+
+	TMPText {
+		id: levelText
+
+		tmpText: root.levelLabel
 		pixelSize: root.pixelSize
 		fillColor: root.fillColor
 		outlineColor: root.outlineColor
 		outlineWeight: root.outlineWeight
-		Layout.alignment: Qt.AlignBaseline
-		Layout.leftMargin: root.numberLeftMargin
 	}
 }

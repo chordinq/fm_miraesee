@@ -5,7 +5,11 @@ Item {
 	id: root
 
 	property string tmpText: ""
+	property string suffixText: ""
+	property color suffixFillColor: "transparent"
 	property string iconSource: ""
+	property string iconSpriteSource: ""
+	property int iconSpriteIndex: -1
 	property real bodyPixelSize: 24
 	property color fillColor: Theme.white
 	property real fillOpacity: 1.0
@@ -20,30 +24,33 @@ Item {
 
 	property int _fontEpoch: 0
 
-	readonly property bool _hasIcon: root.iconSource.length > 0
-	readonly property url _iconUrl: root._hasIcon ? Qt.resolvedUrl(root.iconSource) : ""
+	readonly property bool _hasSpriteIcon:
+		root.iconSpriteIndex >= 0 && root.iconSpriteSource.length > 0
+	readonly property bool _hasImageIcon:
+		!root._hasSpriteIcon && root.iconSource.length > 0
+	readonly property bool _hasIcon: root._hasSpriteIcon || root._hasImageIcon
+	readonly property url _iconUrl:
+		root._hasImageIcon ? Qt.resolvedUrl(root.iconSource) : ""
+	readonly property url _spriteSheetUrl:
+		root._hasSpriteIcon ? Qt.resolvedUrl(root.iconSpriteSource) : ""
 	readonly property int wrapMode: root.wordWrap ? Text.WordWrap : Text.NoWrap
 	readonly property int _outlineSamples: 16
 	readonly property real _fontPx: Math.max(1, root.bodyPixelSize)
 	readonly property real _outlinePad: root._fontPx * (root.outlineWeight / 100.0)
 	readonly property real _lineHeight: root._fontPx * (1.0 + root.lineSpacing)
-	readonly property bool _wraps: root.wordWrap && textRoot.width > 0
+	readonly property bool _wraps: root.wordWrap && root.width > 0
 	readonly property real _contentWidth: root._wraps
-		? textRoot.width - root._outlinePad * 2
+		? Math.max(
+			0,
+			root.width
+				- (root._hasIcon ? root.iconPixelSize + root.iconTextSpacing : 0)
+				- root._outlinePad * 2)
 		: 0
 
-	readonly property string _plainText: root.tmpText
+	readonly property string _plainText: root.tmpText + root.suffixText
 
-	readonly property var _textRuns: {
-		if (root._plainText === "")
-			return []
-		var runs = []
-		var pattern = /[\x00-\x7F]+|[^\x00-\x7F]+/g
-		var match
-		while ((match = pattern.exec(root._plainText)) !== null)
-			runs.push({ text: match[0], latin: /^[\x00-\x7F]+$/.test(match[0]) })
-		return runs
-	}
+	readonly property bool _useSuffixColor:
+		root.suffixText !== "" && root.suffixFillColor.a > 0
 
 	readonly property bool _hasMixedScripts:
 		root._plainText.length > 0
@@ -61,6 +68,7 @@ Item {
 	baselineOffset: textRoot.y + stack.y + fillText.baselineOffset
 
 	property alias pixelSize: root.bodyPixelSize
+	property alias text: root.tmpText
 
 	function _escapeRichText(value) {
 		return value
@@ -99,24 +107,38 @@ Item {
 		return family === Theme.latinFontFamily ? "normal" : "bold"
 	}
 
+	function _buildScriptRunsHtml(text, colorValue, withFillColor) {
+		if (text === "")
+			return ""
+		var html = ""
+		var pattern = /[\x00-\x7F]+|[^\x00-\x7F]+/g
+		var match
+		while ((match = pattern.exec(text)) !== null) {
+			var runText = match[0]
+			var latin = /^[\x00-\x7F]+$/.test(runText)
+			var family = latin ? Theme.latinFontFamily : root._familyForPlainText(runText)
+			var weight = latin ? "normal" : root._weightForFamily(family)
+			html += root._span(
+				runText,
+				family,
+				weight,
+				withFillColor ? colorValue : undefined)
+		}
+		return html
+	}
+
 	function _buildHtml(withFillColor) {
 		void root._fontEpoch
 		if (root._plainText === "")
 			return ""
 
+		if (root._useSuffixColor) {
+			return root._buildScriptRunsHtml(root.tmpText, root.fillColor, withFillColor)
+				+ root._buildScriptRunsHtml(root.suffixText, root.suffixFillColor, withFillColor)
+		}
+
 		if (root._hasMixedScripts) {
-			var mixed = ""
-			for (var i = 0; i < root._textRuns.length; i++) {
-				var run = root._textRuns[i]
-				var runFamily = run.latin ? Theme.latinFontFamily : Theme.fontFamilyForText(run.text)
-				var runWeight = run.latin ? "normal" : "bold"
-				mixed += root._span(
-					run.text,
-					runFamily,
-					runWeight,
-					withFillColor ? root.fillColor : undefined)
-			}
-			return mixed
+			return root._buildScriptRunsHtml(root._plainText, root.fillColor, withFillColor)
 		}
 
 		var singleFamily = root._familyForPlainText(root._plainText)
@@ -132,14 +154,25 @@ Item {
 
 		spacing: root._hasIcon ? root.iconTextSpacing : 0
 
-		Image {
+		Item {
 			visible: root._hasIcon
-			width: root.iconPixelSize
-			height: root.iconPixelSize
-			source: root._iconUrl
-			fillMode: Image.PreserveAspectFit
-			smooth: true
-			anchors.verticalCenter: parent.verticalCenter
+			width: root._hasIcon ? root.iconPixelSize : 0
+			height: root._hasIcon ? root.iconPixelSize : 0
+
+			SpriteSheet {
+				anchors.fill: parent
+				visible: root._hasSpriteIcon
+				source: root._spriteSheetUrl
+				spriteIndex: root.iconSpriteIndex
+			}
+
+			Image {
+				anchors.fill: parent
+				visible: root._hasImageIcon
+				source: root._iconUrl
+				fillMode: Image.PreserveAspectFit
+				smooth: true
+			}
 		}
 
 		Item {
@@ -149,11 +182,10 @@ Item {
 				? root.width - (root._hasIcon ? root.iconPixelSize + root.iconTextSpacing : 0)
 				: fillText.implicitWidth + root._outlinePad * 2
 			implicitHeight: fillText.implicitHeight + root._outlinePad * 2
-			width: implicitWidth
-			height: implicitHeight
 
 			layer.enabled: root.outlineWeight > 0
 			layer.smooth: true
+			layer.mipmap: true
 
 			Item {
 				id: stack

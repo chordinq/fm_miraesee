@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
@@ -32,6 +33,17 @@ Item {
 	readonly property string displayLabelLocTable: timerComplete
 		? root.completeLocTable
 		: root.labelLocTable
+
+	readonly property string resolvedLabelText: {
+		UiLocale.selectedCode
+		if (root.displayLabelLocId !== "")
+			return TmpTextBridge.localized_text_table(
+				root.displayLabelLocId,
+				UiLocale.selectedCode,
+				root.displayLabelLocTable
+			)
+		return root.displayLabelText
+	}
 
 	height: width * scaleH / scaleW
 
@@ -68,11 +80,9 @@ Item {
 		outlineColor: Theme.black
 	}
 
-	AppText {
+	TMPText {
 		anchors.centerIn: parent
-		text: root.displayLabelText
-		locId: root.displayLabelLocId
-		locTable: root.displayLabelLocTable
+		tmpText: root.resolvedLabelText
 		fillColor: Theme.white
 		pixelSize: parent.height * root.labelFontScale
 		anchors.verticalCenterOffset: root.labelVerticalCenterOffsetRatio > 0

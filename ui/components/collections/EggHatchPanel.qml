@@ -7,6 +7,7 @@ Rectangle {
     property var petCollectionModel: null
 
     signal eggClicked(var eggModel)
+    signal emptySlotClicked()
 
     readonly property int ascensionLevel: petCollectionModel ? petCollectionModel.ascensionLevel : 0
     readonly property int slotCount: petCollectionModel ? petCollectionModel.hatchSlotCount : 0
@@ -55,6 +56,8 @@ Rectangle {
                         onClicked: {
                             if (eggModel)
                                 root.eggClicked(eggModel)
+                            else
+                                root.emptySlotClicked()
                         }
                     }
                 }

@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Effects
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
@@ -12,7 +13,8 @@ Item {
 
 	property string locId: ""
 	property string locTable: "General"
-	property bool enabled: true
+	property string labelText: ""
+	property bool buttonEnabled: true
 	property bool handleInput: root.interactive
 	property real pressScale: 0.9
 	property bool pressScaleEnabled: root.handleInput
@@ -23,14 +25,29 @@ Item {
 	signal clicked()
 
 	readonly property real baseSize: 256
+	readonly property real buttonAspect: scaleW / scaleH
+	readonly property real layoutHeight: height > 0 ? height : implicitHeight
 	readonly property real bakedWidth: baseSize * scaleW
 	readonly property real bakedHeight: baseSize * scaleH
 	readonly property real bakedW: 512 * scaleW
 	readonly property real bakedH: 512 * scaleH
-	readonly property bool interactive: locId !== ""
+	readonly property bool interactive: locId !== "" || labelText !== ""
+
+	readonly property string resolvedLabel: {
+		UiLocale.selectedCode
+		if (root.labelText !== "")
+			return root.labelText
+		if (root.locId === "")
+			return ""
+		return TmpTextBridge.localized_text_table(
+			root.locId,
+			UiLocale.selectedCode,
+			root.locTable
+		)
+	}
 
 	readonly property color effectiveFillColor:
-		root.handleInput && !root.enabled
+		root.handleInput && !root.buttonEnabled
 			? Theme.lightGrey
 			: root.fillColor
 
@@ -40,8 +57,10 @@ Item {
 
 	implicitWidth: bakedWidth
 	implicitHeight: bakedHeight
+	width: layoutHeight * buttonAspect
 
 	default property alias content: overlay.data
+	property alias contentHost: overlay
 
 	layer.enabled: true
 	layer.smooth: true
@@ -52,7 +71,7 @@ Item {
 
 		anchors.fill: parent
 		transformOrigin: Item.Center
-		scale: root.pressScaleEnabled && root.enabled && mouseArea.pressed
+		scale: root.pressScaleEnabled && root.buttonEnabled && mouseArea.pressed
 			? root.pressScale
 			: 1
 
@@ -121,14 +140,13 @@ Item {
 				anchors.centerIn: parent
 				visible: root.interactive
 				width: canvas.width * root.labelWidthRatio
-				height: labelText.implicitHeight
+				height: labelTextItem.implicitHeight
 
-				AppText {
-					id: labelText
+				TMPText {
+					id: labelTextItem
 
 					anchors.centerIn: parent
-					locId: root.locId
-					locTable: root.locTable
+					tmpText: root.resolvedLabel
 					pixelSize: root._labelCanvasPixelSize
 					fillColor: Theme.white
 					outlineColor: Theme.black
@@ -151,7 +169,7 @@ Item {
 
 		anchors.fill: parent
 		visible: root.handleInput
-		enabled: root.enabled
+		enabled: root.buttonEnabled
 		onClicked: root.clicked()
 	}
 }

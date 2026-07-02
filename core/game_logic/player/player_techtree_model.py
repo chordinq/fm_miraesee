@@ -1,11 +1,15 @@
 from __future__ import annotations
+
 from typing import TYPE_CHECKING
-from ..enums import TechTreeNodeType, TechTreeType
+
+from ..enums import StatType, TechTreeNodeType, TechTreeType
 from ..stats import Stats
 from ..stats.stat_helper import StatHelper
+from ..stats.stat_target import StatTarget
 from .timer_model import TimerModel
 
 if TYPE_CHECKING:
+	from ..config.shared_game_config import SharedGameConfig
 	from .player_model import PlayerModel
 
 _MAX_NODE_LEVEL = 4
@@ -19,6 +23,59 @@ class TechTreeNodeModel:
 			end_time=0,
 			duration=0,
 		)
+
+
+def lookup_upgrade_level_info(
+	game_config: SharedGameConfig,
+	tier: int,
+	level_index: int,
+) -> tuple[int, int] | None:
+	lib_entry = game_config.tech_tree_upgrade_library.get(tier)
+	if lib_entry is None:
+		return None
+	for row in lib_entry.get("Levels") or []:
+		if int(row.get("Level", -1)) == level_index:
+			return int(row.get("Cost", 0)), int(float(row.get("Duration", 0.0)))
+	return None
+
+
+def upgrade_level_index(node_model: TechTreeNodeModel | None) -> int:
+	if node_model is None:
+		return 0
+	return node_model.level + 1
+
+
+def resolve_upgrade_level_info(
+	player: PlayerModel,
+	tier: int,
+	level_index: int,
+) -> tuple[int, int] | None:
+	raw = lookup_upgrade_level_info(player.game_config, tier, level_index)
+	if raw is None:
+		return None
+	base_cost, base_duration = raw
+	target = StatTarget.tech_tree()
+	cost = round(
+		StatHelper.calculate_value(player, StatType.Cost, target, base_cost)
+	)
+	duration = StatHelper.calculate_timer_duration_seconds(
+		player,
+		StatType.TimerSpeed,
+		target,
+		float(base_duration),
+	)
+	return cost, duration
+
+
+def find_position_node(
+	game_config: SharedGameConfig,
+	tree_type: TechTreeType,
+	node_id: int,
+) -> dict | None:
+	tree_data = game_config.tech_tree_position_library.get(tree_type)
+	if tree_data is None:
+		return None
+	return _find_position_node(tree_data, node_id)
 
 
 def _find_position_node(tree_data: dict, node_id: int) -> dict | None:
@@ -168,11 +225,11 @@ class PlayerTechTreeModel:
 					return True
 		return False
 
-	def get_tech_tree_progress(
+	def get_tech_tree_progress_parts(
 		self,
 		player: PlayerModel,
 		tree_type: TechTreeType,
-	) -> float:
+	) -> tuple[int, int]:
 		game_config = player.game_config
 		tree_data = game_config.tech_tree_position_library.get(tree_type)
 		if tree_data is None:
@@ -191,8 +248,18 @@ class PlayerTechTreeModel:
 			max_level_sum += int(lib_entry.get("MaxLevel", 0))
 
 		if max_level_sum < 1:
-			return 0.0
+			return 0, 0
 
 		player_nodes = self.tech_trees.get(tree_type, {})
 		level_sum = sum(node.level + 1 for node in player_nodes.values())
+		return level_sum, max_level_sum
+
+	def get_tech_tree_progress(
+		self,
+		player: PlayerModel,
+		tree_type: TechTreeType,
+	) -> float:
+		level_sum, max_level_sum = self.get_tech_tree_progress_parts(player, tree_type)
+		if max_level_sum < 1:
+			return 0.0
 		return float(level_sum) / float(max_level_sum)

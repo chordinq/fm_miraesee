@@ -1,8 +1,8 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
-DetailsView {
-	id: root
+DetailsView {	id: root
 
 	heightScale: 39
 
@@ -59,17 +59,17 @@ DetailsView {
 	readonly property string removeLocId: "27927471772594176"
 	readonly property string comingSoonLocId: "29372916365455360"
 
+	readonly property string comingSoonText: TmpTextBridge.localized_text(
+		root.comingSoonLocId,
+		UiLocale.selectedCode
+	) + "."
+
 	function formatStatLine(modelData) {
 		if (!modelData)
 			return ""
-		NumberDisplay.revision
-		UiSettings.gameNumberFormattingEnabled
-		if (modelData.rawValue !== undefined) {
-			if (modelData.secondary && modelData.secondaryStatType >= 0)
-				return NumberDisplay.formatSecondaryStat(modelData.secondaryStatType, modelData.rawValue)
-			return NumberDisplay.formatStat(modelData.rawValue, false)
-		}
-		return modelData.value !== undefined ? modelData.value : ""
+		if (modelData.text !== undefined)
+			return modelData.text
+		return ""
 	}
 
 	function statValueColor(modelData) {
@@ -158,20 +158,14 @@ DetailsView {
 			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
 			height: titleText.height
 
-			AppText {
+			TMPText {
 				id: titleText
 
-				prefix: "["
-				locTable: root.petModel ? root.petModel.rarityLocTable : "General"
-				locId: root.petModel ? root.petModel.rarityLocId : ""
-				suffix: "] "
-				appendLocTable: root.petModel ? root.petModel.nameLocTable : "Pets"
-				appendLocId: root.petModel ? root.petModel.nameLocId : ""
+				tmpText: root.petModel ? root.petModel.titleText : ""
 				fillColor: root.titleColor
 				pixelSize: root.layoutUnit * root.titleFontScale
 				outlineWeight: 8
-			}
-		}
+			}		}
 
 		Item {
 			id: baseStatsSlot
@@ -196,22 +190,12 @@ DetailsView {
 					Row {
 						required property var modelData
 
-						spacing: root.layoutUnit * root.baseStatLabelSpacingRatio
-
-						AppText {
-							text: root.formatStatLine(modelData)
+						TMPText {
+							tmpText: root.formatStatLine(modelData)
 							fillColor: root.statValueColor(modelData)
 							pixelSize: root.layoutUnit * root.baseStatFontScale
 							outlineWeight: 0
-						}
-
-						StatLocLabel {
-							locSegments: modelData.labelLocSegments
-							fillColor: Theme.black
-							pixelSize: root.layoutUnit * root.baseStatFontScale
-							outlineWeight: 0
-						}
-					}
+						}					}
 				}
 			}
 		}
@@ -242,39 +226,27 @@ DetailsView {
 						readonly property color lineColor: modelData.rollT !== undefined
 							? Theme.statRollColor(modelData.rollT)
 							: Theme.darkGreyText
-						spacing: root.layoutUnit * root.subStatLabelSpacingRatio
 
-						AppText {
-							text: root.formatStatLine(modelData)
+						TMPText {
+							tmpText: root.formatStatLine(modelData)
 							fillColor: parent.lineColor
 							pixelSize: root.layoutUnit * root.subStatFontScale
 							outlineWeight: 0
-						}
-
-						StatLocLabel {
-							locSegments: modelData.labelLocSegments
-							fillColor: parent.lineColor
-							pixelSize: root.layoutUnit * root.subStatFontScale
-							outlineWeight: 0
-						}
-					}
+						}					}
 				}
 			}
 		}
 
-		AppText {
+		TMPText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: actionRow.top
 			anchors.bottomMargin: root.layoutUnit * root.comingSoonBottomMarginRatio
 			visible: root.comingSoonVisible
-			locTable: "General"
-			locId: root.comingSoonLocId
-			suffix: "."
+			tmpText: root.comingSoonText
 			fillColor: Theme.black
 			pixelSize: root.layoutUnit * root.titleFontScale
 			outlineWeight: 0
 		}
-
 		Row {
 			id: actionRow
 
@@ -292,7 +264,7 @@ DetailsView {
 				locTable: "General"
 				locId: root.upgradeLocId
 				fillColor: Theme.blue
-				enabled: root.petController !== null && root.petModel !== null
+				buttonEnabled: root.petController !== null && root.petModel !== null
 				onClicked: root.comingSoonVisible = true
 			}
 
@@ -307,7 +279,7 @@ DetailsView {
 				fillColor: root.petModel && root.petModel.canEquip
 					? Theme.blue
 					: Theme.lightGrey
-				enabled: root.petController !== null
+				buttonEnabled: root.petController !== null
 					&& root.petModel !== null
 					&& root.petModel.canEquip
 				onClicked: {
@@ -325,7 +297,7 @@ DetailsView {
 				visible: root.petModel && root.petModel.isEquipped
 				locId: root.removeLocId
 				fillColor: Theme.lightRed
-				enabled: root.petController !== null && root.petModel !== null
+				buttonEnabled: root.petController !== null && root.petModel !== null
 				onClicked: {
 					if (root.petController && root.petModel)
 						root.petController.performPetUnequip(root.petModel.guid)

@@ -56,6 +56,120 @@ Item {
         return Theme.white
     }
 
+    function layerIndexForLayer(layerNum) {
+        if (!root.layerRows)
+            return -1
+        for (var i = 0; i < root.layerRows.length; i++) {
+            if (root.layerRows[i].layer === layerNum)
+                return i
+        }
+        return -1
+    }
+
+    function layerCenterY(layerIndex) {
+        if (layerIndex < 0)
+            return 0
+        var y = root.verticalGap
+        for (var i = 0; i < layerIndex; i++) {
+            var hasNext = i < root.layerRows.length - 1
+            y += root.iconSize + (hasNext ? root.verticalGap : 0)
+        }
+        return y + root.visualCenterY
+    }
+
+    function findAutoScrollTarget() {
+        if (!root.techTreeModel || !root.techTreeModel.nodes)
+            return null
+        var nodes = root.techTreeModel.nodes
+        var claimable = null
+        var upgrading = null
+        var canStartBottom = null
+        var canStartLayer = -1
+        var brownBottom = null
+        var brownLayer = -1
+        for (var i = 0; i < nodes.length; i++) {
+            var node = nodes[i]
+            if (node.isUpgradeComplete) {
+                if (claimable === null || node.layer < claimable.layer)
+                    claimable = node
+            }
+            if (node.isUpgrading && !node.isUpgradeComplete) {
+                if (upgrading === null || node.layer < upgrading.layer)
+                    upgrading = node
+            }
+            if (node.canStartUpgrade && !node.maxLevel) {
+                if (node.layer > canStartLayer) {
+                    canStartLayer = node.layer
+                    canStartBottom = node
+                }
+            }
+            if (node.requirementsMet
+                && !node.maxLevel
+                && !node.isUpgrading
+                && !node.isUpgradeComplete) {
+                if (node.layer > brownLayer) {
+                    brownLayer = node.layer
+                    brownBottom = node
+                }
+            }
+        }
+        if (claimable !== null)
+            return claimable
+        if (upgrading !== null)
+            return upgrading
+        if (canStartBottom !== null)
+            return canStartBottom
+        return brownBottom
+    }
+
+    function scrollToNode(nodeModel) {
+        if (!nodeModel || !root.visible)
+            return
+        var layerIndex = root.layerIndexForLayer(nodeModel.layer)
+        if (layerIndex < 0)
+            return
+        var nodeCenterY = root.layerCenterY(layerIndex)
+        var targetY = nodeCenterY - flickable.height / 2
+        var maxY = Math.max(0, flickable.contentHeight - flickable.height)
+        targetY = Math.max(0, Math.min(targetY, maxY))
+        if (Math.abs(flickable.contentY - targetY) < 1)
+            return
+        scrollAnimation.from = flickable.contentY
+        scrollAnimation.to = targetY
+        scrollAnimation.start()
+    }
+
+    function scrollToAutoTarget() {
+        var target = root.findAutoScrollTarget()
+        if (target !== null)
+            root.scrollToNode(target)
+    }
+
+    NumberAnimation {
+        id: scrollAnimation
+
+        target: flickable
+        property: "contentY"
+        duration: 480
+        easing.type: Easing.InOutQuad
+    }
+
+    Timer {
+        id: autoScrollLayoutTimer
+        interval: 0
+        repeat: false
+        onTriggered: root.scrollToAutoTarget()
+    }
+
+    function scheduleAutoScroll() {
+        autoScrollLayoutTimer.restart()
+    }
+
+    function resetScroll() {
+        scrollAnimation.stop()
+        flickable.contentY = 0
+    }
+
     Rectangle {
         anchors.fill: parent
         color: Theme.white

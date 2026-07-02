@@ -17,6 +17,8 @@ from controllers.summon.pet_summon_test_bridge import PetSummonTestBridge
 from controllers.summon.skill_summon_test_bridge import SkillSummonTestBridge
 from controllers.collections.tech_tree_collection_bridge import TechTreeCollectionBridge
 from controllers.common.player_stats_bridge import PlayerStatsBridge
+from controllers.common.ui_locale_bridge import register_locale_refresh
+from core.format.localizer_base import clear_localization_cache
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
 from utils.dump.parser import parse_dump_text
 from utils.dump.to_player_model import dump_snapshot_to_player_model
@@ -78,17 +80,17 @@ class GameTestSessionBridge(QObject):
             parent=self,
         )
         self._tech_tree_forge = TechTreeCollectionBridge(
-            player,
+            self._logic,
             tree_type=TechTreeType.Forge,
             parent=self,
         )
         self._tech_tree_power = TechTreeCollectionBridge(
-            player,
+            self._logic,
             tree_type=TechTreeType.Power,
             parent=self,
         )
         self._tech_tree_skills_pet_tech = TechTreeCollectionBridge(
-            player,
+            self._logic,
             tree_type=TechTreeType.SkillsPetTech,
             parent=self,
         )
@@ -98,6 +100,7 @@ class GameTestSessionBridge(QObject):
             self._tech_tree_skills_pet_tech,
         ):
             tech_bridge.statsChanged.connect(self._on_tech_tree_stats_changed)
+            tech_bridge.economyChanged.connect(self._on_tech_tree_economy_changed)
         self._tech_poll_was_researching = False
         self._tech_poll_claimable_key: tuple[tuple[int, int], ...] = ()
         self._tech_poll_timer = QTimer(self)
@@ -106,6 +109,7 @@ class GameTestSessionBridge(QObject):
         self._tech_poll_timer.start()
         register_display_refresh(self._refresh_stat_displays)
         register_economy_refresh(self._on_economy_settings_changed)
+        register_locale_refresh(self._on_locale_changed)
         for bridge in (
             self._skill_test,
             self._pet_summon_test,
@@ -137,9 +141,9 @@ class GameTestSessionBridge(QObject):
         self._skill_test.finish_deferred_reload()
         self._pet_summon_test.finish_deferred_reload()
         self._mount_summon_test.finish_deferred_reload()
-        self._tech_tree_forge.reload(player)
-        self._tech_tree_power.reload(player)
-        self._tech_tree_skills_pet_tech.reload(player)
+        self._tech_tree_forge.reload(self._logic)
+        self._tech_tree_power.reload(self._logic)
+        self._tech_tree_skills_pet_tech.reload(self._logic)
         self.stateChanged.emit()
 
     def _on_action_state_changed(self) -> None:
@@ -150,12 +154,12 @@ class GameTestSessionBridge(QObject):
         self._player_stats.refresh()
 
     def _refresh_collection_stat_displays(self) -> None:
-        self._pet_collection.refresh(resync_existing=True)
-        self._mount_collection.refresh(resync_existing=True)
-        self._skill_test.skillCollection.refresh()
-        self._tech_tree_forge.refresh()
-        self._tech_tree_power.refresh()
-        self._tech_tree_skills_pet_tech.refresh()
+        self._pet_collection.refresh_stat_texts()
+        self._mount_collection.refresh_stat_texts()
+        self._skill_test.skillCollection.refresh_stat_texts()
+        self._tech_tree_forge.patch_upgrade_affordability()
+        self._tech_tree_power.patch_upgrade_affordability()
+        self._tech_tree_skills_pet_tech.patch_upgrade_affordability()
         self._pet_egg_test.refreshDisplayFormat()
         self.stateChanged.emit()
 
@@ -164,20 +168,27 @@ class GameTestSessionBridge(QObject):
         self._mount_summon_test.stateChanged.emit()
         self._pet_summon_test.stateChanged.emit()
         self._pet_egg_test.stateChanged.emit()
-        self._tech_tree_forge.refresh()
-        self._tech_tree_power.refresh()
-        self._tech_tree_skills_pet_tech.refresh()
+        self._tech_tree_forge.patch_upgrade_affordability()
+        self._tech_tree_power.patch_upgrade_affordability()
+        self._tech_tree_skills_pet_tech.patch_upgrade_affordability()
+        self.stateChanged.emit()
+
+    def _on_tech_tree_economy_changed(self) -> None:
+        self._tech_tree_forge.patch_upgrade_affordability()
+        self._tech_tree_power.patch_upgrade_affordability()
+        self._tech_tree_skills_pet_tech.patch_upgrade_affordability()
         self.stateChanged.emit()
 
     def _on_tech_tree_stats_changed(self) -> None:
         self._refresh_player_stats()
-        self._skill_test.stateChanged.emit()
-        self._mount_summon_test.stateChanged.emit()
-        self._pet_summon_test.stateChanged.emit()
-        self._pet_egg_test.stateChanged.emit()
-        self._pet_collection.refresh(resync_existing=True)
-        self._mount_collection.refresh(resync_existing=True)
-        self.stateChanged.emit()
+        self._pet_collection.refresh_stat_texts()
+        self._mount_collection.refresh_stat_texts()
+        self._skill_test.skillCollection.refresh_stat_texts()
+        self._pet_summon_test.predictSummon()
+        self._mount_summon_test.predictSummon()
+        self._tech_tree_forge.patch_upgrade_affordability()
+        self._tech_tree_power.patch_upgrade_affordability()
+        self._tech_tree_skills_pet_tech.patch_upgrade_affordability()
 
     def _poll_tech_trees(self) -> None:
         player = self._logic.player
@@ -217,19 +228,22 @@ class GameTestSessionBridge(QObject):
 
         if not has_claimable:
             for bridge in bridge_by_type.values():
-                bridge.refresh()
+                bridge.patch_when_research_settles()
             return
 
         refreshed: set[TechTreeCollectionBridge] = set()
         for tree_type, _node_id in claimable:
             bridge = bridge_by_type.get(tree_type)
             if bridge is not None and bridge not in refreshed:
-                bridge.refresh()
+                bridge.patch_when_research_settles()
                 refreshed.add(bridge)
 
     def _refresh_stat_displays(self) -> None:
         self._refresh_player_stats()
         self._refresh_collection_stat_displays()
+
+    def _on_locale_changed(self, _code: str) -> None:
+        clear_localization_cache()
 
     @Property(str, notify=stateChanged)
     def lastLoadMessage(self) -> str:
@@ -283,6 +297,10 @@ class GameTestSessionBridge(QObject):
     def techPotionCount(self) -> int:
         return self._logic.player.player_currency_model.get(CurrencyType.TechPotions)
 
+    @Property(int, notify=stateChanged)
+    def gemCount(self) -> int:
+        return self._logic.player.player_currency_model.get(CurrencyType.Gems)
+
     def apply_dump_text(self, text: str) -> str:
         self._begin_bulk_reload()
         try:
@@ -303,6 +321,9 @@ class GameTestSessionBridge(QObject):
                 player,
             )
             self._mount_summon_test.reload_after_dump(defer_heavy=True)
+            self._tech_tree_forge.reload(self._logic)
+            self._tech_tree_power.reload(self._logic)
+            self._tech_tree_skills_pet_tech.reload(self._logic)
             self._tech_poll_was_researching = False
             self._tech_poll_claimable_key = ()
         finally:
@@ -316,7 +337,10 @@ class GameTestSessionBridge(QObject):
         )
 
     @Slot()
-    def loadDumpFromClipboard(self) -> None:
+    def loadDumpFromClipboardSync(self) -> None:
+        self._loadDumpFromClipboardImpl()
+
+    def _loadDumpFromClipboardImpl(self) -> None:
         text = QGuiApplication.clipboard().text().strip()
         if not text:
             self._last_load_message = "clipboard empty"
@@ -324,7 +348,6 @@ class GameTestSessionBridge(QObject):
             return
         self._last_load_message = "loading dump..."
         self.stateChanged.emit()
-        QGuiApplication.processEvents()
         try:
             self._last_load_message = self.apply_dump_text(text)
             print(self._last_load_message)

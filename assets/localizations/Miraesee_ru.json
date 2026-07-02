@@ -22,7 +22,7 @@
   "m_TableData": [
     {
       "m_Id": 1000000000000001,
-      "m_Localized": "Игровой формат чисел",
+      "m_Localized": "Точное число",
       "m_Metadata": {
         "m_Items": []
       }
@@ -37,6 +37,48 @@
     {
       "m_Id": 1000000000000003,
       "m_Localized": "Полноэкранный режим",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000004,
+      "m_Localized": "Оптимизация бонусов",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000005,
+      "m_Localized": "Количество призывов",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000006,
+      "m_Localized": "Бонус",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000007,
+      "m_Localized": "Итого",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000008,
+      "m_Localized": "Результат",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000009,
+      "m_Localized": "Оптимизировать",
       "m_Metadata": {
         "m_Items": []
       }

@@ -1,10 +1,16 @@
-from __future__ import annotations
-
 from PySide6.QtCore import QObject, Property, Signal, Slot
 
 from core.game_logic.enums import SecondaryStatType
-from ui.utils.number_display_format import format_ui_integer
-from ui.utils.stat_display_format import format_ui_secondary_stat, format_ui_stat
+from controllers.common.ui_format import (
+	format_ui_integer,
+	format_ui_max_progress_label,
+	format_ui_maxed_progress_label,
+	format_ui_percentage_fraction,
+	format_ui_percentage_rational,
+	format_ui_progress_pair,
+	format_ui_secondary_stat,
+	format_ui_stat,
+)
 from ui.utils.ui_settings import register_display_refresh
 
 
@@ -27,6 +33,22 @@ class NumberDisplayBridge(QObject):
     @Slot(float, result=str)
     def formatInteger(self, value: float) -> str:
         return format_ui_integer(value)
+
+    @Slot(float, float, result=str)
+    def formatProgressPair(self, current: float, total: float) -> str:
+        return format_ui_progress_pair(current, total)
+
+    @Slot(result=str)
+    def maxProgressLabel(self) -> str:
+        return format_ui_max_progress_label()
+
+    @Slot(float, result=str)
+    def formatPercentageFraction(self, fraction: float) -> str:
+        return format_ui_percentage_fraction(fraction)
+
+    @Slot(int, int, result=str)
+    def formatPercentageRational(self, level_sum: int, max_sum: int) -> str:
+        return format_ui_percentage_rational(level_sum, max_sum)
 
     @Slot(float, bool, result=str)
     def formatStat(self, value: float, as_multiplier: bool) -> str:

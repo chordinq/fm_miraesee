@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
@@ -36,6 +37,30 @@ Item {
 
 	implicitWidth: 256
 	implicitHeight: 256 * totalHeightRatio
+
+	readonly property string emptyLocId: "153364393985"
+	readonly property string readyLocId: "153364393986"
+
+	property int _timerTick: 0
+
+	readonly property string slotLabelText: {
+		UiLocale.selectedCode
+		void root._timerTick
+		if (!root.hasEgg)
+			return TmpTextBridge.localized_text_table(
+				root.emptyLocId,
+				UiLocale.selectedCode,
+				"Pets"
+			)
+		if (root.hatchCountdownActive && root.timerBridge)
+			return root.timerBridge.remainingText
+		var readyText = TmpTextBridge.localized_text_table(
+			root.readyLocId,
+			UiLocale.selectedCode,
+			"Pets"
+		)
+		return root.hatchReady ? readyText + "!" : readyText
+	}
 
 	readonly property string emptyOutlineSource: Qt.resolvedUrl("../../assets/sprites/Egg/EggEmpty_Outline.png")
 	readonly property string emptyFilledSource: Qt.resolvedUrl("../../assets/sprites/Egg/EggEmpty_Filled.png")
@@ -129,25 +154,22 @@ Item {
 		}
 	}
 
-	AppText {
+	TMPText {
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.verticalCenter: parent.verticalCenter
 		anchors.verticalCenterOffset: parent.width * (root.labelCenterOffsetRatio - root.centerCorrectionRatio)
-		locId: {
-			if (!root.hasEgg)
-				return "153364393985"
-			if (root.hatchCountdownActive)
-				return ""
-			return "153364393986"
-		}
-		locTable: "Pets"
-		text: root.hatchCountdownActive && root.timerBridge
-			? root.timerBridge.remainingText
-			: ""
-		suffix: root.hatchReady ? "!" : ""
+		tmpText: root.slotLabelText
 		pixelSize: parent.width * root.labelPixelSizeRatio
 		outlineWeight: 6
 		fillColor: root.hatchReady ? Theme.green : Theme.white
+	}
+
+	Connections {
+		target: root.timerBridge
+		enabled: root.timerBridge !== null
+		function onDisplayChanged() {
+			root._timerTick++
+		}
 	}
 
 	Timer {
@@ -155,6 +177,7 @@ Item {
 		running: root.visible && root.hatchCountdownActive
 		repeat: true
 		onTriggered: {
+			root._timerTick++
 			if (root.timerBridge)
 				root.timerBridge.refresh()
 		}
@@ -162,7 +185,6 @@ Item {
 
 	MouseArea {
 		anchors.fill: parent
-		enabled: root.hasEgg
 		onClicked: root.clicked()
 	}
 }

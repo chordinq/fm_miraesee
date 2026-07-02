@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING
 
-from PySide6.QtCore import QObject, Property, Signal
+from PySide6.QtCore import QObject, Property, Signal, Slot
 
 from core.game_logic.enums import AscensionLevel
 
@@ -98,8 +98,22 @@ class MountCollectionBridge(QObject):
         self._sync_mount_bridges()
         self.changed.emit()
 
+    def refresh_stat_texts(self) -> None:
+        for bridge in self._mount_bridge_by_guid.values():
+            bridge.invalidate_stat_cache()
+
+    @Slot(str)
+    def setUiLanguage(self, language: str) -> None:
+        self.refresh_localized_texts()
+
+    def refresh_localized_texts(self) -> None:
+        for bridge in self._mount_bridge_by_guid.values():
+            bridge.refresh_localized()
+
     def refresh(self, *, resync_existing: bool = False) -> None:
         self._sync_ascension()
+        if resync_existing:
+            self.refresh_stat_texts()
         self._sync_mount_bridges(resync_existing=resync_existing)
         self.changed.emit()
 
@@ -115,6 +129,22 @@ class MountCollectionBridge(QObject):
             self._mount_bridges,
             lambda bridge: bridge._rarity,
         )
+        self._rebuild_mount_display_list()
+        self.changed.emit()
+
+    def patch_mount_lock(self, mount_guid: str) -> None:
+        bridge = self._mount_bridge_by_guid.get(mount_guid)
+        if bridge is None:
+            return
+        bridge.changed.emit()
+
+    def patch_mount_equip_layout(self, *mount_guids: str) -> None:
+        for guid in mount_guids:
+            if not guid:
+                continue
+            bridge = self._mount_bridge_by_guid.get(guid)
+            if bridge is not None:
+                bridge.changed.emit()
         self._rebuild_mount_display_list()
         self.changed.emit()
 

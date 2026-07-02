@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
 
-from core.format.item_stat_format import (
+from core.format.format_item import (
 	format_secondary_stats,
 	format_secondary_stats_collection,
 )

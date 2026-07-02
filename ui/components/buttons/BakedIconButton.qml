@@ -4,7 +4,7 @@ import ui 1.0
 Item {
 	id: root
 
-	property bool enabled: true
+	property bool buttonEnabled: true
 	property color fillColor: Theme.blue
 	property real widthHeightRatio: 1
 	property url iconSource
@@ -14,7 +14,7 @@ Item {
 	property real pressScale: 0.9
 
 	readonly property color effectiveFillColor:
-		root.enabled ? root.fillColor : Theme.lightGrey
+		root.buttonEnabled ? root.fillColor : Theme.lightGrey
 
 	signal clicked()
 
@@ -30,7 +30,7 @@ Item {
 
 		anchors.fill: parent
 		transformOrigin: Item.Center
-		scale: root.enabled && mouseArea.pressed ? root.pressScale : 1
+		scale: root.buttonEnabled && mouseArea.pressed ? root.pressScale : 1
 
 		Behavior on scale {
 			NumberAnimation {
@@ -50,12 +50,12 @@ Item {
 				yScale: pressVisual.height / canvas.height
 			}
 
-			RectRoundButton {
-				anchors.fill: parent
-				scaleW: root.widthHeightRatio
-				scaleH: 1
-				fillColor: root.effectiveFillColor
-			}
+		RectRoundButton {
+			height: parent.height
+			scaleW: root.widthHeightRatio
+			scaleH: 1
+			fillColor: root.effectiveFillColor
+		}
 
 			Item {
 				id: iconHost
@@ -81,7 +81,7 @@ Item {
 		id: mouseArea
 
 		anchors.fill: parent
-		enabled: root.enabled
+		enabled: root.buttonEnabled
 		onClicked: root.clicked()
 	}
 }

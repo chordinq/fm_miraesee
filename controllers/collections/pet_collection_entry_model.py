@@ -47,6 +47,15 @@ class PetCollectionEntryModel(QAbstractListModel):
         self._entries = list(entries)
         self.endResetModel()
 
+    def entries(self) -> list[tuple[EntryKind, QObject]]:
+        return list(self._entries)
+
+    def first_egg_bridge(self) -> QObject | None:
+        for kind, bridge in self._entries:
+            if kind == "egg":
+                return bridge
+        return None
+
     def pet_section_end(self) -> int:
         for index, (kind, _) in enumerate(self._entries):
             if kind == "egg":
@@ -56,6 +65,12 @@ class PetCollectionEntryModel(QAbstractListModel):
     def find_egg_index(self, guid: str) -> int:
         for index, (kind, bridge) in enumerate(self._entries):
             if kind == "egg" and bridge.guid == guid:
+                return index
+        return -1
+
+    def find_row_by_guid(self, guid: str) -> int:
+        for index, (_, bridge) in enumerate(self._entries):
+            if getattr(bridge, "guid", None) == guid:
                 return index
         return -1
 

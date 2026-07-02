@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 PopupView {
 	id: root
@@ -15,14 +16,18 @@ PopupView {
 	readonly property real checkSizeRatio: 0.75
 	readonly property real labelFontScale: 0.5
 
-	readonly property var languages: LocManager.languages
+	readonly property var languages: UiLocale.languages
 
-	AppText {
+	readonly property string titleText: TmpTextBridge.localized_text(
+		root.titleLocId,
+		UiLocale.selectedCode
+	)
+
+	TMPText {
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.top: parent.top
 		anchors.topMargin: parent.height * 0
-		locId: root.titleLocId
-		locTable: "General"
+		tmpText: root.titleText
 		pixelSize: parent.width * root.titleFontScale
 		fillColor: Theme.white
 		outlineWeight: 8
@@ -57,7 +62,7 @@ PopupView {
 					width: languageColumn.width
 					height: languageColumn.width * root.rowHeightRatio
 
-					readonly property bool selected: Theme.language === modelData.code
+					readonly property bool selected: UiLocale.selectedCode === modelData.code
 
 					Row {
 						anchors.verticalCenter: parent.verticalCenter
@@ -67,11 +72,11 @@ PopupView {
 							width: parent.parent.height * root.checkSizeRatio
 							height: width
 							checked: selected
-							onClicked: Theme.language = modelData.code
+							onClicked: UiLocale.setSelectedLocale(modelData.code)
 						}
 
-						AppText {
-							text: modelData.label
+						TMPText {
+							tmpText: modelData.label
 							pixelSize: parent.parent.height * root.labelFontScale
 							fillColor: Theme.black
 							outlineWeight: 0

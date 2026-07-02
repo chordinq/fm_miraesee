@@ -22,7 +22,7 @@
   "m_TableData": [
     {
       "m_Id": 1000000000000001,
-      "m_Localized": "Format liczb w grze",
+      "m_Localized": "Dokładna liczba",
       "m_Metadata": {
         "m_Items": []
       }
@@ -37,6 +37,48 @@
     {
       "m_Id": 1000000000000003,
       "m_Localized": "Pełny ekran",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000004,
+      "m_Localized": "Optymalizacja bonusów",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000005,
+      "m_Localized": "Liczba przywołań",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000006,
+      "m_Localized": "Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000007,
+      "m_Localized": "Razem",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000008,
+      "m_Localized": "Wynik",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000009,
+      "m_Localized": "Optymalizuj",
       "m_Metadata": {
         "m_Items": []
       }

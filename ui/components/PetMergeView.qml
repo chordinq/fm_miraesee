@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 PopupView {
 	id: root
@@ -12,6 +13,7 @@ PopupView {
 
 	readonly property string mergeTitleLocId: "68706935435265"
 	readonly property string mergeConfirmLocId: "25783797269852160"
+	readonly property string selectedCountLocId: "68706935435264"
 	readonly property real slotSize: panelWidth * 0.11
 	readonly property real slotScale: slotSize / 256
 	readonly property real titleFontScale: 0.04
@@ -22,6 +24,36 @@ PopupView {
 	readonly property bool canConfirm: root.selectedCount > 0
 		&& root.petController !== null
 		&& root.targetPetModel !== null
+
+	readonly property string mergeTitleText: {
+		UiLocale.selectedCode
+		return TmpTextBridge.localized_text_table(
+			root.mergeTitleLocId,
+			UiLocale.selectedCode,
+			"Pets"
+		)
+	}
+
+	readonly property string selectedCountText: {
+		UiLocale.selectedCode
+		return TmpTextBridge.localized_text_with_args(
+			root.selectedCountLocId,
+			UiLocale.selectedCode,
+			"Pets",
+			[root.selectedCount]
+		)
+	}
+
+	readonly property string targetLevelText: {
+		UiLocale.selectedCode
+		if (!root.targetPetModel)
+			return ""
+		return TmpTextBridge.format_level_text(
+			root.targetPetModel.level,
+			UiLocale.selectedCode,
+			1
+		)
+	}
 
 	widthScale: 52
 	heightScale: 58
@@ -65,12 +97,11 @@ PopupView {
 		}
 	}
 
-	AppText {
+	TMPText {
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.top: parent.top
 		anchors.topMargin: parent.height * 0.05
-		locTable: "Pets"
-		locId: root.mergeTitleLocId
+		tmpText: root.mergeTitleText
 		fillColor: Theme.black
 		pixelSize: root.panelWidth * root.titleFontScale
 		outlineWeight: 0
@@ -95,13 +126,8 @@ PopupView {
 		anchors.rightMargin: parent.width * 0.05
 		spacing: parent.height * 0.01
 
-		AppText {
-			prefix: "["
-			locTable: root.targetPetModel ? root.targetPetModel.rarityLocTable : "General"
-			locId: root.targetPetModel ? root.targetPetModel.rarityLocId : ""
-			suffix: "] "
-			appendLocTable: root.targetPetModel ? root.targetPetModel.nameLocTable : "Pets"
-			appendLocId: root.targetPetModel ? root.targetPetModel.nameLocId : ""
+		TMPText {
+			tmpText: root.targetPetModel ? root.targetPetModel.titleText : ""
 			fillColor: root.targetPetModel
 				? Theme.rarityColors[root.targetPetModel.rarity]
 				: Theme.darkText
@@ -109,8 +135,8 @@ PopupView {
 			outlineWeight: 8
 		}
 
-		AppText {
-			text: root.targetPetModel ? "Lv." + root.targetPetModel.level : ""
+		TMPText {
+			tmpText: root.targetLevelText
 			fillColor: Theme.darkGreyText
 			pixelSize: root.panelWidth * root.rowFontScale
 			outlineWeight: 0
@@ -180,9 +206,9 @@ PopupView {
 							height: width
 						}
 
-						AppText {
+						TMPText {
 							anchors.verticalCenter: parent.verticalCenter
-							text: modelData.label
+							tmpText: modelData.label
 							fillColor: Theme.black
 							pixelSize: root.panelWidth * root.rowFontScale
 							outlineWeight: 0
@@ -198,13 +224,11 @@ PopupView {
 		}
 	}
 
-	AppText {
+	TMPText {
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.bottom: confirmButton.top
 		anchors.bottomMargin: parent.height * 0.015
-		locTable: "Pets"
-		locId: "68706935435264"
-		formatArgs: [root.selectedCount]
+		tmpText: root.selectedCountText
 		fillColor: Theme.darkGreyText
 		pixelSize: root.panelWidth * root.rowFontScale
 		outlineWeight: 0
@@ -221,7 +245,7 @@ PopupView {
 		locTable: "General"
 		locId: root.mergeConfirmLocId
 		fillColor: root.canConfirm ? Theme.blue : Theme.lightGrey
-		enabled: root.canConfirm
+		buttonEnabled: root.canConfirm
 		onClicked: {
 			if (!root.petController || !root.targetPetModel)
 				return

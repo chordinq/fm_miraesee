@@ -3,7 +3,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from . import localization, numbers
+from . import localizer_base as localization
+from . import numbers
 from config import string_literal
 
 if TYPE_CHECKING:
@@ -13,6 +14,12 @@ _LEVEL_ABBREV_LOC_KEY = string_literal(10404)
 _LEVEL_FULL_LOC_KEY = string_literal(10206)
 _LEVEL_FORMAT_PATTERN = string_literal(25578)
 _PERCENT_SUFFIX = string_literal(827)
+# IL StringLiteral_25629 — SkillProgressUiView, TechTreeNodeUiView, SummonUpgradeStatusUiView
+_PROGRESS_PAIR_FORMAT = string_literal(25629)
+# IL StringLiteral_10561 — TechTreeNodeUiView max-level pill
+_MAX_PROGRESS_LABEL = string_literal(10561)
+# IL StringLiteral_10635 — GetTranslation key "Maxed" (SummonUpgradeStatusUiView, SkillProgress)
+_MAXED_PROGRESS_LOC_KEY = string_literal(10635)
 
 
 def format_currency_value(amount: int | float) -> str:
@@ -87,3 +94,28 @@ def format_level_plus_one(
 ) -> str:
 	"""IL: NumberFormat.FormatLevelPlusOne(int level, bool abbreviatedTag)."""
 	return format_level(level + 1, abbreviated_tag=abbreviated_tag, language=language)
+
+
+def format_progress_pair(
+	current: int | float,
+	total: int | float,
+	*,
+	format_value=None,
+) -> str:
+	"""IL: String.Format(StringLiteral_25629, Numbers.Format(n), Numbers.Format(m))."""
+	fmt = format_value or (lambda value: numbers.format_long(int(value)))
+	return _PROGRESS_PAIR_FORMAT.format(fmt(current), fmt(total))
+
+
+def max_progress_label() -> str:
+	"""IL: StringLiteral_10561 shown on max-level tech tree node icon."""
+	return _MAX_PROGRESS_LABEL
+
+
+def maxed_progress_label(*, language: str | None = None) -> str:
+	"""IL: LocalizerBase.GetTranslation(StringLiteral_10635) → key ``Maxed``."""
+	return localization.get_translation(
+		_MAXED_PROGRESS_LOC_KEY,
+		table="General",
+		language=language,
+	)

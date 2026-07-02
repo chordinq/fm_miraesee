@@ -1,18 +1,19 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
 
 	property string treeType: "forge"
 	property real progress: 0
+	property int progressLevelSum: 0
+	property int progressMaxSum: 0
 	property bool researchActive: false
 	property bool researchComplete: false
 	property string researchRemainingText: ""
 
 	signal clicked()
-
-	readonly property string completeLocId: "27937469076533248"
 
 	property real scaleW: 12
 	property real scaleH: 10
@@ -46,8 +47,48 @@ Item {
 		}
 	}
 
-	readonly property string progressText:
-		(Math.round(progress * 1000) / 10).toFixed(1) + "%"
+	readonly property string progressText: {
+		NumberDisplay.revision
+		UiSettings.preciseNumberEnabled
+		if (root.progressMaxSum > 0)
+			return NumberDisplay.formatPercentageRational(
+				root.progressLevelSum,
+				root.progressMaxSum
+			)
+		return NumberDisplay.formatPercentageFraction(root.progress)
+	}
+
+	readonly property string titleLabel: {
+		UiLocale.selectedCode
+		return TmpTextBridge.localized_text_table(
+			root.typeConfig.locId,
+			UiLocale.selectedCode,
+			"TechTree"
+		)
+	}
+
+	readonly property string completeSuffix: {
+		UiLocale.selectedCode
+		if (!root.researchComplete)
+			return ""
+		return TmpTextBridge.tech_tree_complete_suffix(UiLocale.selectedCode)
+	}
+
+	readonly property string activeResearchSuffix: {
+		if (!root.researchActive || root.researchComplete)
+			return ""
+		return TmpTextBridge.tech_tree_active_research_suffix(
+			root.researchRemainingText
+		)
+	}
+
+	readonly property string progressSuffix: {
+		if (root.researchComplete)
+			return root.completeSuffix
+		if (root.researchActive)
+			return root.activeResearchSuffix
+		return ""
+	}
 
 	readonly property real titlePixelSize: headerHeight * titleFontScale
 	readonly property real titleWidthRatio: 0.92
@@ -91,12 +132,11 @@ Item {
 			width: headerClip.width * root.titleWidthRatio
 			height: titleText.implicitHeight
 
-			AppText {
+			TMPText {
 				id: titleText
 
 				anchors.centerIn: parent
-				locId: root.typeConfig.locId
-				locTable: "TechTree"
+				tmpText: root.titleLabel
 				pixelSize: root.titlePixelSize
 				letterSpacing: 0
 				fillColor: Theme.white
@@ -148,40 +188,17 @@ Item {
 			mipmap: true
 		}
 
-		Row {
+		TMPText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: parent.bottom
 			anchors.bottomMargin: bodyArea.height * 0.05
-			spacing: 0
-
-			AppText {
-				text: root.progressText
-				pixelSize: bodyArea.height * root.progressFontScale
-				letterSpacing: 0
-				fillColor: Theme.white
-				outlineWeight: 8
-			}
-
-			AppText {
-				visible: root.researchComplete
-				locId: root.completeLocId
-				locTable: "General"
-				prefix: " ("
-				suffix: ")"
-				pixelSize: bodyArea.height * root.progressFontScale
-				letterSpacing: 0
-				fillColor: Theme.green
-				outlineWeight: 8
-			}
-
-			AppText {
-				visible: root.researchActive && !root.researchComplete
-				text: " (" + root.researchRemainingText + ")"
-				pixelSize: bodyArea.height * root.progressFontScale
-				letterSpacing: 0
-				fillColor: Theme.green
-				outlineWeight: 8
-			}
+			tmpText: root.progressText
+			suffixText: root.progressSuffix
+			suffixFillColor: root.progressSuffix !== "" ? Theme.green : "transparent"
+			pixelSize: bodyArea.height * root.progressFontScale
+			letterSpacing: 0
+			fillColor: Theme.white
+			outlineWeight: 8
 		}
 	}
 

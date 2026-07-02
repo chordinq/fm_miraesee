@@ -88,22 +88,29 @@ def create_qml_engine() -> QQmlApplicationEngine:
 	ensure_internal_assets_link()
 	engine = QQmlApplicationEngine()
 	engine.addImportPath(str(SCRIPTS_ROOT))
+	engine.addImportPath(str(UI_DIR))
 	return engine
 
 
 def register_qml_services(engine: QQmlApplicationEngine) -> None:
+	from controllers.common.ui_loading_bridge import register_ui_loading
+	from controllers.common.ui_locale_bridge import register_ui_locale
 	from ui.utils.localizer import register_loc_manager
 	from ui.utils.ui_settings import register_ui_settings
 	from controllers.common.number_display_bridge import register_number_display
+	from ui.TMPText.tmp_text_bridge import TmpTextBridge
 	from ui.utils.egg_icon_helper import register_egg_icon_helper
 	from ui.utils.mount_icon_helper import register_mount_icon_helper
 	from ui.utils.pet_icon_helper import register_pet_icon_helper
 	from ui.utils.skill_icon_helper import register_skill_icon_helper
 	from ui.utils.tech_tree_icon_helper import register_tech_tree_icon_helper
 
+	register_ui_loading(engine)
+	register_ui_locale(engine)
 	register_loc_manager(engine)
 	register_ui_settings(engine)
 	register_number_display(engine)
+	engine.rootContext().setContextProperty("TmpTextBridge", TmpTextBridge(parent=engine))
 	register_pet_icon_helper(engine)
 	register_egg_icon_helper(engine)
 	register_skill_icon_helper(engine)
@@ -184,6 +191,9 @@ def set_window_context(
 		ctx.setContextProperty("mainWinY", y)
 	for key, value in extra.items():
 		ctx.setContextProperty(key, value)
+	from controllers.common.ui_locale_bridge import sync_ui_locale
+
+	sync_ui_locale(str(extra.get("uiLanguage", TEST_LANGUAGE)))
 
 
 def clear_qml_roots(engine: QQmlApplicationEngine, app: QGuiApplication) -> None:

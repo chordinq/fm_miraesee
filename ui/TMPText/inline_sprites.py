@@ -2,7 +2,8 @@
 from __future__ import annotations
 
 from config import SPRITES_DIR
-from core.format.number_format import format_currency_value, format_power
+from controllers.common.ui_format import format_ui_currency
+from core.format.number_format import format_power
 from core.game_logic.enums import CurrencyType
 
 # Resolved from ui/TMPText/TMPText.qml via Qt.resolvedUrl()
@@ -36,8 +37,7 @@ def currency_icon_source(currency_type: CurrencyType) -> str:
 
 
 def format_currency_value_text(amount: int | float, currency_type: CurrencyType) -> str:
-	_ = currency_type
-	return format_currency_value(amount)
+	return format_ui_currency(amount, currency_type)
 
 
 def format_currency_line(

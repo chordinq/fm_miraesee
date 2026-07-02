@@ -1,6 +1,7 @@
 pragma ComponentBehavior: Bound
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 PopupView {
 	id: root
@@ -15,7 +16,7 @@ PopupView {
 	readonly property string settingsTitleLocId: "1830906689011712"
 	readonly property string languagesLocId: "25466346099372032"
 	readonly property string fullScreenLocId: "1000000000000003"
-	readonly property string gameNumberFormattingLocId: "1000000000000001"
+	readonly property string preciseNumberLocId: "1000000000000001"
 	readonly property string allowNegativeCurrencyLocId: "1000000000000002"
 	readonly property real titleFontScale: 0.09
 	readonly property real titleHeaderHeight: root.panelWidth * (root.titleFontScale * 1.55 + 0.04)
@@ -25,9 +26,14 @@ PopupView {
 	readonly property int settingsRowCount: settingsRows.length
 	readonly property real settingsRowHeight: panelWidth * rowHeightRatio
 
+	readonly property string settingsTitleText: TmpTextBridge.localized_text(
+		root.settingsTitleLocId,
+		UiLocale.selectedCode
+	)
+
 	readonly property var settingsRows: [
 		{ locId: fullScreenLocId, locTable: "Miraesee", toggleSetting: "fullScreen" },
-		{ locId: gameNumberFormattingLocId, locTable: "Miraesee", toggleSetting: "gameNumberFormatting" },
+		{ locId: preciseNumberLocId, locTable: "Miraesee", toggleSetting: "preciseNumber" },
 		{ locId: allowNegativeCurrencyLocId, locTable: "Miraesee", toggleSetting: "allowNegativeCurrency" },
 		{ locId: languagesLocId, locTable: "General", navigable: true }
 	]
@@ -40,11 +46,10 @@ PopupView {
 		anchors.top: parent.top
 		height: root.titleHeaderHeight
 
-		AppText {
+		TMPText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.verticalCenter: parent.verticalCenter
-			locId: root.settingsTitleLocId
-			locTable: "General"
+			tmpText: root.settingsTitleText
 			pixelSize: root.panelWidth * root.titleFontScale
 			fillColor: Theme.white
 			outlineColor: Theme.black
@@ -87,23 +92,28 @@ PopupView {
 				readonly property bool toggleChecked:
 					toggleSetting === "fullScreen"
 						? UiSettings.fullScreenEnabled
-						: toggleSetting === "gameNumberFormatting"
-							? UiSettings.gameNumberFormattingEnabled
+						: toggleSetting === "preciseNumber"
+							? UiSettings.preciseNumberEnabled
 							: toggleSetting === "allowNegativeCurrency"
 								? UiSettings.allowNegativeCurrencyEnabled
 								: false
+
+				readonly property string rowLabelText: TmpTextBridge.localized_text_table(
+					modelData.locId,
+					UiLocale.selectedCode,
+					modelData.locTable
+				)
 
 				Rectangle {
 					anchors.fill: parent
 					color: stripeLight ? Theme.lightGrey : Theme.white
 				}
 
-				AppText {
+				TMPText {
 					anchors.left: parent.left
 					anchors.leftMargin: parent.width * 0.05
 					anchors.verticalCenter: parent.verticalCenter
-					locId: modelData.locId
-					locTable: modelData.locTable
+					tmpText: rowLabelText
 					pixelSize: parent.height * root.rowFontScale
 					fillColor: Theme.black
 					outlineWeight: 0
@@ -122,8 +132,8 @@ PopupView {
 							return
 						if (toggleSetting === "fullScreen")
 							UiSettings.setFullScreenEnabled(enabled)
-						else if (toggleSetting === "gameNumberFormatting")
-							UiSettings.setGameNumberFormattingEnabled(enabled)
+						else if (toggleSetting === "preciseNumber")
+							UiSettings.setPreciseNumberEnabled(enabled)
 						else if (toggleSetting === "allowNegativeCurrency")
 							UiSettings.setAllowNegativeCurrencyEnabled(enabled)
 					}

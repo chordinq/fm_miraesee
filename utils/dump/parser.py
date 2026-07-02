@@ -280,14 +280,18 @@ class DumpTextParser:
 				try:
 					t_type_val = int(chunk[0], 16)
 					local_id = int(chunk[1:3], 16)
-					level = int(chunk[3], 16)
+					level_nibble = int(chunk[3], 16)
 					if _TECHTREE_LOOKUP.get((t_type_val, local_id)) is None:
 						continue
+					if level_nibble == 0xF:
+						internal_level = -1
+					else:
+						internal_level = level_nibble
 					snapshot.techtree_nodes.append(
 						TechTreeNodeDump(
 							tree_type=t_type_val,
 							local_id=local_id,
-							ui_level=level + 1,
+							ui_level=internal_level + 1,
 						)
 					)
 				except ValueError:

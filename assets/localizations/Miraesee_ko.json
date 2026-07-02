@@ -22,7 +22,7 @@
   "m_TableData": [
     {
       "m_Id": 1000000000000001,
-      "m_Localized": "게임 숫자 표기",
+      "m_Localized": "정밀 숫자",
       "m_Metadata": {
         "m_Items": []
       }
@@ -37,6 +37,48 @@
     {
       "m_Id": 1000000000000003,
       "m_Localized": "전체 화면",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000004,
+      "m_Localized": "보너스 최적화",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000005,
+      "m_Localized": "소환 횟수",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000006,
+      "m_Localized": "보너스",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000007,
+      "m_Localized": "합계",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000008,
+      "m_Localized": "결과",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000009,
+      "m_Localized": "최적화",
       "m_Metadata": {
         "m_Items": []
       }

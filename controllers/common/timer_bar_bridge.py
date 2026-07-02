@@ -4,8 +4,8 @@ from typing import TYPE_CHECKING
 
 from PySide6.QtCore import Property, QObject, Signal, Slot
 
-from ui.utils.timer_display import format_timer_duration
-from ui.utils.ui_settings import register_display_refresh
+from core.format.format_time import format_timer_duration
+from ui.utils.ui_settings import game_number_formatting_enabled, register_display_refresh
 
 if TYPE_CHECKING:
     from core.game_logic.player.player_model import PlayerModel
@@ -84,7 +84,11 @@ class TimerBarBridge(QObject):
             return ""
         assert self._timer is not None and self._player is not None
         remaining = self._timer.calculate_remaining_seconds(self._player)
-        return format_timer_duration(remaining, self._ui_language)
+        return format_timer_duration(
+            remaining,
+            self._ui_language,
+            game_number_formatting_enabled=game_number_formatting_enabled(),
+        )
 
     @Property(int, notify=displayChanged)
     def remainingSeconds(self) -> int:

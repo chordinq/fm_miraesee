@@ -126,9 +126,10 @@ def _lookup_node_key(
 	nature: StatNature,
 	target: StatTarget | StatTargetBase,
 ) -> StatNode:
+	"""IL lookup key — preserve legacy StatTargetBase identity for config rows."""
 	return StatNode(
 		UniqueStat(stat_type, nature),
-		_coerce_lookup_target(target),
+		target,
 		StatLayer.None_,
 		StatCondition.None_,
 	)

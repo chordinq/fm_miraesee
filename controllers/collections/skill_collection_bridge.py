@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING
 
-from PySide6.QtCore import QObject, Property, Signal
+from PySide6.QtCore import QObject, Property, Signal, Slot
 
 from core.game_logic.enums import AscensionLevel
 
@@ -80,6 +80,14 @@ class SkillCollectionBridge(QObject):
         self._sync_ascension()
         self._sync_skill_bridges()
         self.changed.emit()
+
+    @Slot(str)
+    def setUiLanguage(self, language: str) -> None:
+        self.refresh_stat_texts()
+
+    def refresh_stat_texts(self) -> None:
+        for bridge in self._skill_bridge_by_type.values():
+            bridge.refresh_localized()
 
     def refresh(self) -> None:
         self._sync_ascension()

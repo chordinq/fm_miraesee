@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 DetailsView {
 	id: root
@@ -25,11 +26,28 @@ DetailsView {
 	readonly property real descTopMarginRatio: 0.1
 	readonly property real descRightMarginRatio: 0.05
 	readonly property real bodyFontScale: 0.045
+	readonly property real otherResearchFontScale: 0.02
 
 	readonly property string otherResearchLocId: "17687817399296000"
 	readonly property string maxedLocId: "17688556561489920"
 	readonly property string researchInProgressLocId: "17690949319647232"
 	readonly property string completeLocId: "27937469076533248"
+
+	readonly property string maxedStatusText: TmpTextBridge.localized_text_table(
+		root.maxedLocId,
+		UiLocale.selectedCode,
+		"TechTree"
+	)
+	readonly property string otherResearchStatusText: TmpTextBridge.localized_text_table(
+		root.otherResearchLocId,
+		UiLocale.selectedCode,
+		"TechTree"
+	)
+	readonly property string researchInProgressText: TmpTextBridge.localized_text_table(
+		root.researchInProgressLocId,
+		UiLocale.selectedCode,
+		"TechTree"
+	)
 
 	readonly property real progressWidthRatio: 0.87
 	readonly property real progressWidth: layoutUnit * progressWidthRatio
@@ -37,14 +55,22 @@ DetailsView {
 	readonly property real statusBottomMarginRatio: 0.02
 
 	readonly property string iconProgressText: {
+		NumberDisplay.revision
+		UiSettings.preciseNumberEnabled
 		if (!root.nodeModel || root.nodeModel.levelMax <= 0)
 			return ""
 		if (root.nodeModel.maxLevel)
-			return root.nodeModel.level + "/" + root.nodeModel.levelMax
+			return NumberDisplay.formatProgressPair(
+				root.nodeModel.level,
+				root.nodeModel.levelMax
+			)
 		var iconLevel = root.nodeModel.iconLevel
 		if (iconLevel === -2 || iconLevel === -1)
-			return "0/" + root.nodeModel.levelMax
-		return root.nodeModel.level + "/" + root.nodeModel.levelMax
+			return NumberDisplay.formatProgressPair(0, root.nodeModel.levelMax)
+		return NumberDisplay.formatProgressPair(
+			root.nodeModel.level,
+			root.nodeModel.levelMax
+		)
 	}
 
 	readonly property bool showClaimButton: root.nodeModel
@@ -97,8 +123,9 @@ DetailsView {
 		else if (root.showSkipButton)
 			root.techTreeModel.performGemSkip(root.nodeModel.nodeId)
 		else if (root.showClaimButton) {
-			root.techTreeModel.performUpgradeClaim(root.nodeModel.nodeId)
+			var nodeId = root.nodeModel.nodeId
 			root.closed()
+			root.techTreeModel.performUpgradeClaim(nodeId)
 		}
 	}
 
@@ -131,11 +158,11 @@ DetailsView {
 					fillColor: root.nodeFillColor(root.nodeModel)
 				}
 
-				AppText {
+				TMPText {
 					anchors.horizontalCenter: techTreeIcon.horizontalCenter
 					anchors.verticalCenter: techTreeIcon.bottom
 					anchors.verticalCenterOffset: techTreeIcon.height * root.iconOverlayOffsetRatio
-					text: root.iconProgressText
+					tmpText: root.iconProgressText
 					visible: root.iconProgressText !== ""
 						&& techTreeIcon.nodeType >= 0
 					pixelSize: techTreeIcon.height * root.iconOverlayFontScale
@@ -154,27 +181,16 @@ DetailsView {
 			anchors.topMargin: root.layoutUnit * root.titleTopMarginRatio
 			anchors.right: parent.right
 			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
-			height: titleRow.height
+			height: titleText.height
 
-			Row {
-				id: titleRow
+			TMPText {
+				id: titleText
 
-				spacing: root.layoutUnit * root.titleSegmentSpacingRatio
-
-				AppText {
-					locTable: root.nodeModel ? root.nodeModel.nameLocTable : "TechTree"
-					locId: root.nodeModel ? root.nodeModel.nameLocId : ""
-					fillColor: Theme.white
-					pixelSize: root.layoutUnit * root.titleFontScale
-					outlineWeight: 8
-				}
-
-				AppText {
-					text: root.nodeModel ? root.nodeModel.tierRoman : ""
-					fillColor: Theme.white
-					pixelSize: root.layoutUnit * root.titleFontScale
-					outlineWeight: 8
-				}
+				width: parent.width
+				tmpText: root.nodeModel ? root.nodeModel.nameText : ""
+				fillColor: Theme.white
+				pixelSize: root.layoutUnit * root.titleFontScale
+				outlineWeight: 8
 			}
 		}
 
@@ -187,43 +203,45 @@ DetailsView {
 			anchors.topMargin: root.layoutUnit * root.descTopMarginRatio
 			anchors.right: parent.right
 			anchors.rightMargin: root.layoutUnit * root.descRightMarginRatio
-			height: descText.height
+			height: descColumn.height
 
-			AppText {
-				id: descText
+			Column {
+				id: descColumn
 
 				width: parent.width
-				wordWrap: true
-				locTable: root.nodeModel ? root.nodeModel.descLocTable : "TechTree"
-				locId: root.nodeModel ? root.nodeModel.descLocId : ""
-				formatArgs: root.nodeModel ? root.nodeModel.descFormatArgs : []
-				suffix: root.nodeModel
-					&& !root.nodeModel.maxLevel
-					&& root.nodeModel.perLevelIncreaseText !== ""
-					? " " + root.nodeModel.perLevelIncreaseText
-					: ""
-				suffixFillColor: Theme.greenText
-				fillColor: Theme.black
-				pixelSize: root.layoutUnit * root.bodyFontScale
-				outlineWeight: 0
+				spacing: 0
+
+				Repeater {
+					model: root.nodeModel ? root.nodeModel.descLines : []
+
+					delegate: TMPText {
+						width: descColumn.width
+						wordWrap: true
+						tmpText: modelData.text
+						suffixText: modelData.deltaText !== undefined ? modelData.deltaText : ""
+						suffixFillColor: Theme.greenText
+						fillColor: Theme.black
+						pixelSize: root.layoutUnit * root.bodyFontScale
+						outlineWeight: 0
+					}
+				}
 			}
 		}
 
-		AppText {
+		TMPText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: statusColumn.visible ? statusColumn.top : actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
 			width: root.progressWidth
 			horizontalAlignment: Text.AlignHCenter
 			visible: root.nodeModel && root.nodeModel.maxLevel
-			locTable: "TechTree"
-			locId: root.maxedLocId
+			tmpText: root.maxedStatusText
 			fillColor: Theme.black
 			pixelSize: root.layoutUnit * root.bodyFontScale
 			outlineWeight: 0
 		}
 
-		AppText {
+		TMPText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: statusColumn.visible ? statusColumn.top : actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
@@ -232,10 +250,9 @@ DetailsView {
 			visible: root.nodeModel
 				&& !root.nodeModel.maxLevel
 				&& root.nodeModel.otherResearchInProgress
-			locTable: "TechTree"
-			locId: root.otherResearchLocId
+			tmpText: root.otherResearchStatusText
 			fillColor: Theme.red
-			pixelSize: root.layoutUnit * root.bodyFontScale
+			pixelSize: root.layoutUnit * root.otherResearchFontScale
 			outlineWeight: 0
 		}
 
@@ -249,12 +266,11 @@ DetailsView {
 			spacing: root.layoutUnit * root.progressStatusSpacingRatio
 			visible: root.showProgressUi
 
-			AppText {
+			TMPText {
 				width: parent.width
 				horizontalAlignment: Text.AlignHCenter
 				visible: root.nodeModel && root.nodeModel.isUpgrading
-				locTable: "TechTree"
-				locId: root.researchInProgressLocId
+				tmpText: root.researchInProgressText
 				fillColor: Theme.black
 				pixelSize: root.layoutUnit * root.bodyFontScale
 				outlineWeight: 0
@@ -285,7 +301,7 @@ DetailsView {
 				titleText: root.nodeModel ? root.nodeModel.upgradeDurationText : ""
 				costText: root.nodeModel ? root.nodeModel.upgradeCostText : ""
 				fillColor: root.actionFillColor
-				enabled: root.techTreeModel !== null
+				buttonEnabled: root.techTreeModel !== null
 					&& root.nodeModel !== null
 					&& root.actionEnabled
 				onClicked: root.performAction()
@@ -296,9 +312,9 @@ DetailsView {
 				scaleW: root.actionButtonScaleW
 				scaleH: root.actionButtonScaleH
 				visible: root.showSkipButton
-				costText: root.nodeModel ? root.nodeModel.skipGemCostText : ""
+				cost: root.nodeModel ? root.nodeModel.skipGemCost : 0
 				fillColor: root.actionFillColor
-				enabled: root.techTreeModel !== null
+				buttonEnabled: root.techTreeModel !== null
 					&& root.nodeModel !== null
 					&& root.actionEnabled
 				onClicked: root.performAction()
@@ -313,7 +329,7 @@ DetailsView {
 				locId: root.completeLocId
 				locTable: "General"
 				fillColor: root.actionFillColor
-				enabled: root.techTreeModel !== null
+				buttonEnabled: root.techTreeModel !== null
 					&& root.nodeModel !== null
 					&& root.actionEnabled
 				onClicked: root.performAction()

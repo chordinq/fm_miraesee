@@ -1,6 +1,5 @@
 module ui
 singleton Theme 1.0 graphics/Theme.qml
-AppText 1.0 graphics/AppText.qml
 LevelText 1.0 components/LevelText.qml
 RectRounded 1.0 graphics/RectRounded.qml
 RectRoundedOutline 1.0 graphics/RectRoundedOutline.qml
@@ -51,6 +50,7 @@ EggSummonButton 1.0 components/buttons/EggSummonButton.qml
 MountSummonButton 1.0 components/buttons/MountSummonButton.qml
 SummonCountButton 1.0 components/buttons/SummonCountButton.qml
 BulkSummonToggleView 1.0 components/BulkSummonToggleView.qml
+BonusOptimizerPanel 1.0 components/BonusOptimizerPanel.qml
 SummonFooterBackground 1.0 components/SummonFooterBackground.qml
 SummonUpgradeStatusView 1.0 components/SummonUpgradeStatusView.qml
 TechTreeResearchButton 1.0 components/buttons/TechTreeResearchButton.qml
@@ -70,6 +70,7 @@ LoadDumpButton 1.0 components/buttons/LoadDumpButton.qml
 XButton 1.0 components/buttons/XButton.qml
 StatLocLabel 1.0 components/StatLocLabel.qml
 PopupView 1.0 components/PopupView.qml
+LoadingOverlay 1.0 components/LoadingOverlay.qml
 DetailsView 1.0 components/details/DetailsPopupView.qml
 SkillDetailsView 1.0 components/details/SkillDetailsView.qml
 PetDetailsView 1.0 components/details/PetDetailsView.qml
@@ -80,7 +81,9 @@ EggDetailsView 1.0 components/details/EggDetailsView.qml
 SkillSummonResult 1.0 components/results/SkillSummonResult.qml
 EggSummonResult 1.0 components/results/EggSummonResult.qml
 MountSummonResult 1.0 components/results/MountSummonResult.qml
-MainViewHeader 1.0 components/MainViewHeader.qml
+singleton SummonButtonMetrics 1.0 components/SummonButtonMetrics.qml
+CurrencyView 1.0 components/CurrencyView.qml
+GemCurrencyView 1.0 components/GemCurrencyView.qml
 TopTabBar 1.0 TopTabBar.qml
 SidePanel 1.0 views/SidePanel.qml
 ForgeCollectionView 1.0 views/forge/ForgeCollectionView.qml

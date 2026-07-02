@@ -4,7 +4,6 @@ import QtQuick
 QtObject {
 	id:	sharedTheme
 
-	property string	language:	"en"
 	property real	uiScale:	1.0
 
 	signal fontsChanged()
@@ -51,7 +50,7 @@ QtObject {
 	}
 
 	readonly property string uiFontFamily: {
-		switch (language) {
+		switch (UiLocale.selectedCode) {
 		case "ko":
 			return fontKR.status === FontLoader.Ready ? fontKR.name : ""
 		case "ja":

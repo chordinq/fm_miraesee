@@ -36,11 +36,32 @@ Item {
 		}
 	}
 
+	function techTreeForType(treeType) {
+		switch (treeType) {
+		case "power":
+			return powerTechTree
+		case "skillsPetTech":
+			return skillsPetTechTree
+		default:
+			return forgeTechTree
+		}
+	}
+
 	function openTree(treeType) {
 		root.selectedTreeType = treeType
+		Qt.callLater(function() {
+			var tree = root.techTreeForType(treeType)
+			if (tree)
+				tree.scheduleAutoScroll()
+		})
 	}
 
 	function closeTree() {
+		if (root.selectedTreeType !== "") {
+			var tree = root.techTreeForType(root.selectedTreeType)
+			if (tree)
+				tree.resetScroll()
+		}
 		root.selectedTreeType = ""
 		root.detailsOpen = false
 		root.selectedNodeModel = null
@@ -66,6 +87,12 @@ Item {
 			progress: root.techTreeForgeModel
 				? root.techTreeForgeModel.progress
 				: 0
+			progressLevelSum: root.techTreeForgeModel
+				? root.techTreeForgeModel.progressLevelSum
+				: 0
+			progressMaxSum: root.techTreeForgeModel
+				? root.techTreeForgeModel.progressMaxSum
+				: 0
 			researchActive: root.techTreeForgeModel
 				? root.techTreeForgeModel.categoryResearchActive
 				: false
@@ -84,6 +111,12 @@ Item {
 			progress: root.techTreePowerModel
 				? root.techTreePowerModel.progress
 				: 0
+			progressLevelSum: root.techTreePowerModel
+				? root.techTreePowerModel.progressLevelSum
+				: 0
+			progressMaxSum: root.techTreePowerModel
+				? root.techTreePowerModel.progressMaxSum
+				: 0
 			researchActive: root.techTreePowerModel
 				? root.techTreePowerModel.categoryResearchActive
 				: false
@@ -101,6 +134,12 @@ Item {
 			treeType: "skillsPetTech"
 			progress: root.techTreeSkillsPetTechModel
 				? root.techTreeSkillsPetTechModel.progress
+				: 0
+			progressLevelSum: root.techTreeSkillsPetTechModel
+				? root.techTreeSkillsPetTechModel.progressLevelSum
+				: 0
+			progressMaxSum: root.techTreeSkillsPetTechModel
+				? root.techTreeSkillsPetTechModel.progressMaxSum
 				: 0
 			researchActive: root.techTreeSkillsPetTechModel
 				? root.techTreeSkillsPetTechModel.categoryResearchActive
@@ -121,8 +160,35 @@ Item {
 		visible: root.showingTree
 
 		TechTree {
+			id: forgeTechTree
+
 			anchors.fill: parent
-			techTreeModel: root.techTreeModelForType(root.selectedTreeType)
+			visible: root.selectedTreeType === "forge"
+			techTreeModel: root.techTreeForgeModel
+			onNodeClicked: function(nodeModel) {
+				root.selectedNodeModel = nodeModel
+				root.detailsOpen = true
+			}
+		}
+
+		TechTree {
+			id: powerTechTree
+
+			anchors.fill: parent
+			visible: root.selectedTreeType === "power"
+			techTreeModel: root.techTreePowerModel
+			onNodeClicked: function(nodeModel) {
+				root.selectedNodeModel = nodeModel
+				root.detailsOpen = true
+			}
+		}
+
+		TechTree {
+			id: skillsPetTechTree
+
+			anchors.fill: parent
+			visible: root.selectedTreeType === "skillsPetTech"
+			techTreeModel: root.techTreeSkillsPetTechModel
 			onNodeClicked: function(nodeModel) {
 				root.selectedNodeModel = nodeModel
 				root.detailsOpen = true

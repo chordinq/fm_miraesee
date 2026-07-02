@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
@@ -12,7 +13,10 @@ Item {
 	property real scaleH: 17 / 16
 	property real fontScale: 12 / 16
 
-	readonly property string maxedLocId: "25788256913911808"
+	readonly property string maxedLabel: {
+		UiLocale.selectedCode
+		return TmpTextBridge.maxed_progress_label(UiLocale.selectedCode)
+	}
 
 	readonly property bool showProgressBar: root.maxShardCount > 0
 	readonly property bool showMaxed: root.showMaxedLabel && !root.showProgressBar
@@ -25,9 +29,8 @@ Item {
 		if (root.maxShardCount <= 0)
 			return ""
 		NumberDisplay.revision
-		UiSettings.gameNumberFormattingEnabled
-		return NumberDisplay.formatInteger(root.shardCount) + "/"
-			+ NumberDisplay.formatInteger(root.maxShardCount)
+		UiSettings.preciseNumberEnabled
+		return NumberDisplay.formatProgressPair(root.shardCount, root.maxShardCount)
 	}
 
 	readonly property bool upgradable:
@@ -52,10 +55,9 @@ Item {
 		labelVerticalCenterOffsetRatio: 1 / 6
 	}
 
-	AppText {
+	TMPText {
 		anchors.centerIn: parent
-		locTable: "General"
-		locId: root.maxedLocId
+		tmpText: root.maxedLabel
 		visible: root.showMaxed
 		fillColor: Theme.black
 		pixelSize: root.height

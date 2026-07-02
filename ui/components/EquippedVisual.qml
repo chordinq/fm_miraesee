@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
@@ -9,6 +10,11 @@ Item {
 
 	property real scaleHorizontal: 2
 	property real fontScale: 11 / 16
+
+	readonly property string equippedLabel: {
+		UiLocale.selectedCode
+		return TmpTextBridge.localized_text("27927471772594177", UiLocale.selectedCode)
+	}
 
 	RectExtraRounded {
 		anchors.fill: parent
@@ -20,9 +26,9 @@ Item {
 		outlineOpacity: 1.0
 	}
 
-	AppText {
+	TMPText {
 		anchors.centerIn: parent
-		locId: "27927471772594177"
+		tmpText: root.equippedLabel
 		fillColor: Theme.white
 		pixelSize: root.height * fontScale
 		outlineColor: Theme.black

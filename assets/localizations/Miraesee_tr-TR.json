@@ -22,7 +22,7 @@
   "m_TableData": [
     {
       "m_Id": 1000000000000001,
-      "m_Localized": "Oyun sayı formatı",
+      "m_Localized": "Hassas sayı",
       "m_Metadata": {
         "m_Items": []
       }
@@ -37,6 +37,48 @@
     {
       "m_Id": 1000000000000003,
       "m_Localized": "Tam Ekran",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000004,
+      "m_Localized": "Bonus Optimizasyonu",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000005,
+      "m_Localized": "Çağırma Sayısı",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000006,
+      "m_Localized": "Bonus",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000007,
+      "m_Localized": "Toplam",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000008,
+      "m_Localized": "Sonuç",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000009,
+      "m_Localized": "Optimize Et",
       "m_Metadata": {
         "m_Items": []
       }

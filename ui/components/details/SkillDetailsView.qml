@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 DetailsView {
 	id: root
@@ -62,8 +63,14 @@ DetailsView {
 	readonly property real passivePillScaleH: 1.2
 	readonly property real passivePillHeight:
 		passiveWidth * passivePillScaleH / passivePillScaleW
+	readonly property string passiveLabelText: TmpTextBridge.localized_text_table(
+		root.passiveLocId,
+		UiLocale.selectedCode,
+		"Skills"
+	)
+
 	readonly property bool showPassiveUi:
-		(root.skillModel?.passiveStatSegments?.length ?? 0) > 0
+		(root.skillModel?.passiveStatText?.length ?? 0) > 0
 
 	Item {
 		anchors.fill: parent
@@ -149,15 +156,10 @@ DetailsView {
 			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
 			height: titleText.height
 
-			AppText {
+			TMPText {
 				id: titleText
 
-				prefix: "["
-				locTable: root.skillModel ? root.skillModel.rarityLocTable : "General"
-				locId: root.skillModel ? root.skillModel.rarityLocId : ""
-				suffix: "] "
-				appendLocTable: "Skills"
-				appendLocId: root.skillModel ? root.skillModel.nameLocId : ""
+				tmpText: root.skillModel ? root.skillModel.titleText : ""
 				fillColor: root.titleColor
 				pixelSize: root.layoutUnit * root.titleFontScale
 				outlineWeight: 8
@@ -175,14 +177,12 @@ DetailsView {
 			anchors.rightMargin: root.layoutUnit * root.descRightMarginRatio
 			height: descText.height
 
-			AppText {
+			TMPText {
 				id: descText
 
 				width: parent.width
 				wordWrap: true
-				locTable: root.skillModel ? root.skillModel.descLocTable : "Skills"
-				locId: root.skillModel ? root.skillModel.descLocId : ""
-				formatArgs: root.skillModel ? root.skillModel.descFormatArgs : []
+				tmpText: root.skillModel ? root.skillModel.descText : ""
 				fillColor: Theme.black
 				pixelSize: root.layoutUnit * root.bodyFontScale
 				outlineWeight: 0
@@ -197,13 +197,12 @@ DetailsView {
 			anchors.leftMargin: root.layoutUnit * root.passiveLabelLeftMarginRatio
 			anchors.bottom: actionRow.top
 			anchors.bottomMargin: root.layoutUnit * root.passiveLabelBottomMarginRatio
-			height: passiveLabelText.height
+			height: passiveLabel.height
 
-			AppText {
-				id: passiveLabelText
+			TMPText {
+				id: passiveLabel
 
-				locTable: "Skills"
-				locId: root.passiveLocId
+				tmpText: root.passiveLabelText
 				fillColor: Theme.darkGreyText
 				pixelSize: root.layoutUnit * root.passiveFontScale
 				outlineWeight: 0
@@ -228,29 +227,12 @@ DetailsView {
 				fillOpacity: 0.3
 			}
 
-			Row {
-				id: passiveStatsRow
-
+			TMPText {
 				anchors.centerIn: parent
-				spacing: 0
-
-				Repeater {
-					model: root.skillModel ? root.skillModel.passiveStatSegments : []
-
-					AppText {
-						required property var modelData
-
-						text: modelData.text !== undefined ? modelData.text : ""
-						locId: modelData.locId !== undefined ? modelData.locId : ""
-						locTable: modelData.locTable !== undefined
-							? modelData.locTable
-							: "General"
-						suffix: modelData.suffix !== undefined ? modelData.suffix : ""
-						fillColor: Theme.black
-						pixelSize: root.layoutUnit * root.passiveFontScale
-						outlineWeight: 0
-					}
-				}
+				tmpText: root.skillModel ? root.skillModel.passiveStatText : ""
+				fillColor: Theme.black
+				pixelSize: root.layoutUnit * root.passiveFontScale
+				outlineWeight: 0
 			}
 		}
 
@@ -271,7 +253,7 @@ DetailsView {
 				fillColor: root.skillModel && root.skillModel.canUpgrade
 					? Theme.blue
 					: Theme.lightGrey
-				enabled: root.skillController !== null
+				buttonEnabled: root.skillController !== null
 					&& root.skillModel !== null
 					&& root.skillModel.canUpgrade
 				onClicked: {
@@ -291,7 +273,7 @@ DetailsView {
 				fillColor: root.skillModel && root.skillModel.canEquip
 					? Theme.blue
 					: Theme.lightGrey
-				enabled: root.skillController !== null
+				buttonEnabled: root.skillController !== null
 					&& root.skillModel !== null
 					&& root.skillModel.canEquip
 				onClicked: {
@@ -309,7 +291,7 @@ DetailsView {
 				visible: root.skillModel && root.skillModel.isEquipped
 				locId: root.removeLocId
 				fillColor: Theme.lightRed
-				enabled: root.skillController !== null && root.skillModel !== null
+				buttonEnabled: root.skillController !== null && root.skillModel !== null
 				onClicked: {
 					if (root.skillController && root.skillModel)
 						root.skillController.performSkillUnequip(root.skillModel.combatSkillType)

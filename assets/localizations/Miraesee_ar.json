@@ -22,7 +22,7 @@
   "m_TableData": [
     {
       "m_Id": 1000000000000001,
-      "m_Localized": "تنسيق أرقام اللعبة",
+      "m_Localized": "رقم دقيق",
       "m_Metadata": {
         "m_Items": []
       }
@@ -37,6 +37,48 @@
     {
       "m_Id": 1000000000000003,
       "m_Localized": "ملء الشاشة",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000004,
+      "m_Localized": "محسّن المكافآت",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000005,
+      "m_Localized": "عدد الاستدعاءات",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000006,
+      "m_Localized": "مكافأة",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000007,
+      "m_Localized": "الإجمالي",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000008,
+      "m_Localized": "النتيجة",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    },
+    {
+      "m_Id": 1000000000000009,
+      "m_Localized": "تحسين",
       "m_Metadata": {
         "m_Items": []
       }

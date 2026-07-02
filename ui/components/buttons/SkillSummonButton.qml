@@ -4,7 +4,6 @@ import ui 1.0
 CurrencyButton {
 	id: root
 
-	titleLocId: "11670393447301120"
 	currencyIconSource: Qt.resolvedUrl("../../../assets/sprites/Currency/skillTicket.png")
 
 	property int summonCount: 1
@@ -13,15 +12,17 @@ CurrencyButton {
 
 	readonly property string formattedCost: {
 		NumberDisplay.revision
-		UiSettings.gameNumberFormattingEnabled
-		return NumberDisplay.formatInteger(root.cost)
-	}
-	readonly property string formattedSummonCount: {
-		NumberDisplay.revision
-		UiSettings.gameNumberFormattingEnabled
-		return NumberDisplay.formatInteger(root.summonCount)
+		UiSettings.preciseNumberEnabled
+		return TmpTextBridge.format_integer_text(root.cost)
 	}
 
-	titleSuffix: "x" + root.formattedSummonCount
+	readonly property string resolvedTitle: {
+		UiLocale.selectedCode
+		NumberDisplay.revision
+		UiSettings.preciseNumberEnabled
+		return TmpTextBridge.skill_summon_title(UiLocale.selectedCode, root.summonCount)
+	}
+
+	titleText: root.resolvedTitle
 	costText: root.formattedCost
 }

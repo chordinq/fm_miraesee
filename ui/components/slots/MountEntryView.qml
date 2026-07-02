@@ -12,9 +12,11 @@ Item {
 	readonly property int rarity: mountModel?.rarity ?? 0
 
 	readonly property real equippedOpacityFraction: 8 / 16
+	readonly property bool mountEquipped: root.mountModel?.isEquipped ?? false
+	readonly property bool mountLocked: root.mountModel?.isLocked ?? false
 	readonly property real iconOpacity: !root.mountModel
 		? 1
-		: (root.mountModel.isEquipped || root.mountModel.isLocked)
+		: (root.mountEquipped || root.mountLocked)
 			? root.equippedOpacityFraction
 			: 1
 	readonly property real equippedVisualWidthRatio: 1.2
@@ -42,7 +44,7 @@ Item {
 
 	EquippedVisual {
 		anchors.centerIn: icon
-		visible: root.mountModel?.isEquipped ?? false
+		visible: root.mountEquipped
 		scaleHorizontal: root.equippedScaleHorizontal
 		fontScale: root.equippedFontScale
 		width: iconSize * root.equippedVisualWidthRatio
@@ -51,9 +53,7 @@ Item {
 
 	LockedVisual {
 		anchors.centerIn: icon
-		visible: root.mountModel
-			? !root.mountModel.isEquipped && root.mountModel.isLocked
-			: false
+		visible: root.mountModel !== null && !root.mountEquipped && root.mountLocked
 		scaleHorizontal: root.equippedScaleHorizontal
 		fontScale: root.equippedFontScale
 		width: iconSize * root.equippedVisualWidthRatio

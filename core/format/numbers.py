@@ -25,8 +25,16 @@ SUFFIXES: tuple[str, ...] = tuple(
 	string_literal(index) for index in _SUFFIX_LITERAL_IDS
 )
 
-_INT_FORMAT = string_literal(687)
-_DOUBLE_FORMAT = string_literal(7728)
+_INT_FORMAT_PATTERN = string_literal(687)
+_US_GENERAL_FORMAT = string_literal(7728)
+_FORMAT_FIXED_PREFIX = string_literal(1866)
+
+
+class RoundingMode:
+	"""IL: MetaDuration.RoundingMode — Floor=0, Ceil=1."""
+
+	Floor = 0
+	Ceil = 1
 
 
 def round_down(value: float) -> int:
@@ -142,6 +150,8 @@ def format_multiplier_3_significant_digits(value: float) -> str:
 def _format_scaled_with_round(
 	value: float,
 	round_fn: Callable[[float], int],
+	*,
+	use_general_format: bool = False,
 ) -> str:
 	"""IL: Numbers.Format(double, round_fn, formatString) suffix branch."""
 	abs_value = abs(value)
@@ -162,8 +172,36 @@ def _format_scaled_with_round(
 	if suffix_index < 1 or suffix_index > len(SUFFIXES):
 		return f"{sign}{round_fn(abs_value)}"
 
-	text = _format_double_us(display)
+	text = _format_double_us(display) if not use_general_format else _format_general(display)
 	return f"{sign}{text}{SUFFIXES[suffix_index - 1]}"
+
+
+def _format_general(value: float) -> str:
+	if value == int(value) and abs(value) < 1e15:
+		return str(int(value))
+	return _format_double_us(value)
+
+
+def format_with_format_string(
+	value: float,
+	round_fn: Callable[[float], int],
+	format_string: str = _US_GENERAL_FORMAT,
+) -> str:
+	"""IL: Numbers.Format(double, Func<double,int> round, string format)."""
+	del format_string
+	abs_value = abs(value)
+	sign = "-" if value < 0 else ""
+	log_magnitude = _log10_magnitude(abs_value)
+	if math.isfinite(abs_value) and log_magnitude > 2:
+		return _format_scaled_with_round(value, round_fn, use_general_format=True)
+
+	if abs_value >= 10.0:
+		return f"{sign}{round_fn(abs_value)}"
+	if abs_value >= 1.0:
+		rounded = round_digits(abs_value, 3)
+		return f"{sign}{_format_double_us(rounded)}"
+	rounded = round_digits(abs_value, 3)
+	return f"{sign}{_format_double_us(rounded)}"
 
 
 def format(
@@ -214,15 +252,25 @@ def format_multiplier(value: float, digits: int = 2) -> str:
 def format_multiplier_fixed(
 	value: float,
 	digits: int = 2,
-	rounding_mode: object | None = None,
+	rounding_mode: int | None = None,
 ) -> str:
-	"""IL: Numbers.FormatMultiplierFixed(double value, int digits, RoundingMode?)"""
-	del rounding_mode
+	"""IL: Numbers.FormatMultiplierFixed(double value, int digits, RoundingMode?)."""
+	if rounding_mode is None:
+		rounded = round_digits(value, digits)
+	elif rounding_mode == RoundingMode.Ceil:
+		rounded = ceil_double(value, digits)
+	elif rounding_mode == RoundingMode.Floor:
+		rounded = floor_double(value, digits)
+	else:
+		rounded = round_digits(value, digits)
+
 	if digits <= 0:
-		rounded = round_digits(value, 0)
 		return str(int(rounded))
-	rounded = round_digits(value, digits)
-	text = f"{rounded:.{digits}f}".rstrip("0").rstrip(".")
+
+	pattern = _FORMAT_FIXED_PREFIX + ("0" * digits)
+	text = f"{rounded:.{digits}f}"
+	if pattern.endswith("0") and "." in text:
+		text = text.rstrip("0").rstrip(".")
 	return text if text else "0"
 
 

@@ -16,6 +16,9 @@ Item {
 	readonly property var mountModels: mountCollectionModel ? mountCollectionModel.displayMounts : []
 	readonly property int mountCount: mountModels.length
 	readonly property int iconLogicalSize: 256
+	readonly property int rowCount: mountCount > 0 ? Math.ceil(mountCount / columnsPerRow) : 0
+	readonly property real cellHeight: iconSize + vSpacing
+	readonly property real estimatedContentHeight: rowCount * cellHeight
 
 	readonly property real totalWidthUnits: columnsPerRow + (columnsPerRow + 1) * columnSpacingRatio
 	readonly property real exactIconSize: width > 0 ? (width / totalWidthUnits) : iconLogicalSize
@@ -27,6 +30,34 @@ Item {
 	readonly property real vSpacing: iconSize * rowSpacingRatio
 	readonly property real entryScale: iconSize / iconLogicalSize
 
+	function syncFullCacheBuffer() {
+		var target = root.estimatedContentHeight
+		if (mountGrid.contentHeight > 0)
+			target = Math.max(target, mountGrid.contentHeight)
+		if (target > 0)
+			mountGrid.cacheBuffer = target
+	}
+
+	function warmDelegateCache() {
+		syncFullCacheBuffer()
+		if (mountGrid.count <= 0 || mountGrid.contentHeight <= mountGrid.height)
+			return
+		var savedY = mountGrid.contentY
+		var maxY = Math.max(0, mountGrid.contentHeight - mountGrid.height)
+		if (maxY <= 0)
+			return
+		mountGrid.contentY = maxY
+		Qt.callLater(function() {
+			mountGrid.contentY = savedY
+		})
+	}
+
+	onMountCountChanged: {
+		syncFullCacheBuffer()
+		if (mountCount > 0)
+			Qt.callLater(root.warmDelegateCache)
+	}
+
 	GridView {
 		id: mountGrid
 
@@ -35,8 +66,12 @@ Item {
 		topMargin: root.vSpacing
 		model: root.mountCount
 		cellWidth: root.cellWidth
-		cellHeight: root.iconSize + root.vSpacing
+		cellHeight: root.cellHeight
 		clip: true
+		reuseItems: false
+		cacheBuffer: Math.max(root.cellHeight * 2, root.estimatedContentHeight)
+
+		onContentHeightChanged: root.syncFullCacheBuffer()
 
 		delegate: Item {
 			required property int index

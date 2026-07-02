@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from PySide6.QtCore import Property, QObject, QTimer, Signal, Slot
+from PySide6.QtCore import Property, QObject, Signal, Slot
 
 from config import PETS_MAPPING
 from core.game_logic.actions import ActionResult
@@ -16,7 +16,7 @@ from ui.utils.egg_hatch_preview import (
     build_egg_hatch_stat_lines,
     predict_hatched_pet,
 )
-from ui.utils.number_display_format import format_ui_integer
+from controllers.common.ui_format import format_ui_integer
 from controllers.collections.pet_collection_bridge import PetCollectionBridge
 from controllers.common.timer_bar_bridge import TimerBarBridge
 
@@ -51,6 +51,7 @@ class PetEggTestBridge(QObject):
         self._predicted_pet_rarity = -1
         self._stat_lines: list[dict[str, object]] | None = None
         self._hatch_desc_format_args: list[str] = []
+        self._hatch_desc_text = ""
         self._hatch_remaining_text = ""
         self._timer_bar_bridge = TimerBarBridge(self)
         self._timer_bar_bridge.displayChanged.connect(self.stateChanged.emit)
@@ -95,6 +96,7 @@ class PetEggTestBridge(QObject):
         self._predicted_pet_rarity = -1
         self._stat_lines = None
         self._hatch_desc_format_args = []
+        self._hatch_desc_text = ""
         self._hatch_remaining_text = ""
         self._prediction_text_stale = True
         self._timer_bar_bridge.clear()
@@ -134,6 +136,7 @@ class PetEggTestBridge(QObject):
         self._predicted_pet_index = int(preview["predictedPetIndex"])
         self._predicted_pet_rarity = int(preview["predictedPetRarity"])
         self._hatch_desc_format_args = list(preview["hatchDescFormatArgs"])
+        self._hatch_desc_text = str(preview.get("hatchDescText", ""))
         self._prediction_text_stale = True
         self._sync_timer_bar_bridge()
 
@@ -215,6 +218,10 @@ class PetEggTestBridge(QObject):
     def hatchDescFormatArgs(self) -> list[str]:
         return self._hatch_desc_format_args
 
+    @Property(str, notify=stateChanged)
+    def hatchDescText(self) -> str:
+        return self._hatch_desc_text
+
     @Property(QObject, constant=True)
     def selectedEggTimerBridge(self) -> TimerBarBridge:
         return self._timer_bar_bridge
@@ -253,19 +260,25 @@ class PetEggTestBridge(QObject):
             return False
         return not egg.hatch_timer_model.has_ended(self._logic.player)
 
-    @Property(str, notify=stateChanged)
-    def skipGemCostText(self) -> str:
+    @Property(int, notify=stateChanged)
+    def skipGemCost(self) -> int:
         egg = self._selected_egg()
         if egg is None or egg.hatch_timer_model is None:
-            return ""
+            return 0
         if egg.hatch_timer_model.end_time <= egg.hatch_timer_model.start_time:
-            return ""
+            return 0
         if egg.hatch_timer_model.has_ended(self._logic.player):
-            return ""
-        gem_cost = egg.hatch_timer_model.calculate_gem_skip_cost(
+            return 0
+        return egg.hatch_timer_model.calculate_gem_skip_cost(
             self._logic.player,
             GemSkipTarget.PetEgg,
         )
+
+    @Property(str, notify=stateChanged)
+    def skipGemCostText(self) -> str:
+        gem_cost = self.skipGemCost
+        if gem_cost <= 0:
+            return ""
         return format_ui_integer(gem_cost)
 
     @Property(bool, notify=stateChanged)
@@ -325,18 +338,9 @@ class PetEggTestBridge(QObject):
     @Slot(str)
     def selectEgg(self, egg_guid: str) -> None:
         self._selected_egg_guid = egg_guid
-        self._stat_lines = []
         self._load_egg_preview_meta(egg_guid)
-        self._status_text = self._build_status_text()
-        self.stateChanged.emit()
-        QTimer.singleShot(0, self._deferred_build_egg_stat_lines)
-
-    def _deferred_build_egg_stat_lines(self) -> None:
-        if not self._selected_egg_guid:
-            return
-        if _find_egg_by_guid(self._collection().eggs, self._selected_egg_guid) is None:
-            return
         self._build_egg_stat_lines()
+        self._status_text = self._build_status_text()
         self.stateChanged.emit()
 
     @Slot()

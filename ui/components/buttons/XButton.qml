@@ -1,10 +1,11 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
 
-	property bool enabled: true
+	property bool buttonEnabled: true
 	property real pressScale: 0.9
 
 	signal clicked()
@@ -20,7 +21,7 @@ Item {
 
 		anchors.fill: parent
 		transformOrigin: Item.Center
-		scale: root.enabled && mouseArea.pressed ? root.pressScale : 1
+		scale: root.buttonEnabled && mouseArea.pressed ? root.pressScale : 1
 
 		Behavior on scale {
 			NumberAnimation {
@@ -34,9 +35,9 @@ Item {
 			fillColor: root.enabled ? Theme.red : Theme.lightGrey
 		}
 
-		AppText {
+		TMPText {
 			anchors.centerIn: parent
-			text: "x"
+			tmpText: "x"
 			fillColor: Theme.white
 			outlineColor: Theme.black
 			outlineWeight: 8
@@ -48,7 +49,7 @@ Item {
 		id: mouseArea
 
 		anchors.fill: parent
-		enabled: root.enabled
+		enabled: root.buttonEnabled
 		onClicked: root.clicked()
 	}
 }

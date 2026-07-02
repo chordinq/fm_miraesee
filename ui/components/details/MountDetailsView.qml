@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 DetailsView {
 	id: root
@@ -59,17 +60,17 @@ DetailsView {
 	readonly property string removeLocId: "27927471772594176"
 	readonly property string comingSoonLocId: "29372916365455360"
 
+	readonly property string comingSoonText: TmpTextBridge.localized_text(
+		root.comingSoonLocId,
+		UiLocale.selectedCode
+	) + "."
+
 	function formatStatLine(modelData) {
 		if (!modelData)
 			return ""
-		NumberDisplay.revision
-		UiSettings.gameNumberFormattingEnabled
-		if (modelData.rawValue !== undefined) {
-			if (modelData.secondary && modelData.secondaryStatType >= 0)
-				return NumberDisplay.formatSecondaryStat(modelData.secondaryStatType, modelData.rawValue)
-			return NumberDisplay.formatStat(modelData.rawValue, false)
-		}
-		return modelData.value !== undefined ? modelData.value : ""
+		if (modelData.text !== undefined)
+			return modelData.text
+		return ""
 	}
 
 	function statValueColor(modelData) {
@@ -158,15 +159,10 @@ DetailsView {
 			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
 			height: titleText.height
 
-			AppText {
+			TMPText {
 				id: titleText
 
-				prefix: "["
-				locTable: root.mountModel ? root.mountModel.rarityLocTable : "General"
-				locId: root.mountModel ? root.mountModel.rarityLocId : ""
-				suffix: "] "
-				appendLocTable: root.mountModel ? root.mountModel.nameLocTable : "Mounts"
-				appendLocId: root.mountModel ? root.mountModel.nameLocId : ""
+				tmpText: root.mountModel ? root.mountModel.titleText : ""
 				fillColor: root.titleColor
 				pixelSize: root.layoutUnit * root.titleFontScale
 				outlineWeight: 8
@@ -196,18 +192,9 @@ DetailsView {
 					Row {
 						required property var modelData
 
-						spacing: root.layoutUnit * root.baseStatLabelSpacingRatio
-
-						AppText {
-							text: root.formatStatLine(modelData)
+						TMPText {
+							tmpText: root.formatStatLine(modelData)
 							fillColor: root.statValueColor(modelData)
-							pixelSize: root.layoutUnit * root.baseStatFontScale
-							outlineWeight: 0
-						}
-
-						StatLocLabel {
-							locSegments: modelData.labelLocSegments
-							fillColor: Theme.black
 							pixelSize: root.layoutUnit * root.baseStatFontScale
 							outlineWeight: 0
 						}
@@ -242,17 +229,9 @@ DetailsView {
 						readonly property color lineColor: modelData.rollT !== undefined
 							? Theme.statRollColor(modelData.rollT)
 							: Theme.darkGreyText
-						spacing: root.layoutUnit * root.subStatLabelSpacingRatio
 
-						AppText {
-							text: root.formatStatLine(modelData)
-							fillColor: parent.lineColor
-							pixelSize: root.layoutUnit * root.subStatFontScale
-							outlineWeight: 0
-						}
-
-						StatLocLabel {
-							locSegments: modelData.labelLocSegments
+						TMPText {
+							tmpText: root.formatStatLine(modelData)
 							fillColor: parent.lineColor
 							pixelSize: root.layoutUnit * root.subStatFontScale
 							outlineWeight: 0
@@ -262,14 +241,12 @@ DetailsView {
 			}
 		}
 
-		AppText {
+		TMPText {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: actionRow.top
 			anchors.bottomMargin: root.layoutUnit * root.comingSoonBottomMarginRatio
 			visible: root.comingSoonVisible
-			locTable: "General"
-			locId: root.comingSoonLocId
-			suffix: "."
+			tmpText: root.comingSoonText
 			fillColor: Theme.black
 			pixelSize: root.layoutUnit * root.titleFontScale
 			outlineWeight: 0
@@ -292,7 +269,7 @@ DetailsView {
 				locTable: "General"
 				locId: root.upgradeLocId
 				fillColor: Theme.blue
-				enabled: root.mountController !== null && root.mountModel !== null
+				buttonEnabled: root.mountController !== null && root.mountModel !== null
 				onClicked: root.comingSoonVisible = true
 			}
 
@@ -307,7 +284,7 @@ DetailsView {
 				fillColor: root.mountModel && root.mountModel.canEquip
 					? Theme.blue
 					: Theme.lightGrey
-				enabled: root.mountController !== null
+				buttonEnabled: root.mountController !== null
 					&& root.mountModel !== null
 					&& root.mountModel.canEquip
 				onClicked: {
@@ -325,7 +302,7 @@ DetailsView {
 				visible: root.mountModel && root.mountModel.isEquipped
 				locId: root.removeLocId
 				fillColor: Theme.lightRed
-				enabled: root.mountController !== null && root.mountModel !== null
+				buttonEnabled: root.mountController !== null && root.mountModel !== null
 				onClicked: {
 					if (root.mountController && root.mountModel)
 						root.mountController.performMountUnequip(root.mountModel.guid)

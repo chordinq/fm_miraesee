@@ -10,10 +10,14 @@ _economy_refresh_handlers: list[Callable[[], None]] = []
 _instance: UiSettingsBridge | None = None
 
 
-def game_number_formatting_enabled() -> bool:
+def precise_number_enabled() -> bool:
 	if _instance is None:
-		return True
-	return _instance._game_number_formatting
+		return False
+	return _instance._precise_number_enabled
+
+
+def game_number_formatting_enabled() -> bool:
+	return not precise_number_enabled()
 
 
 def allow_negative_currency_enabled() -> bool:
@@ -31,19 +35,19 @@ def register_economy_refresh(handler: Callable[[], None]) -> None:
 
 
 class UiSettingsBridge(QObject):
-	gameNumberFormattingChanged = Signal()
+	preciseNumberChanged = Signal()
 	allowNegativeCurrencyChanged = Signal()
 	fullScreenEnabledChanged = Signal()
 
 	def __init__(self, parent: QObject | None = None) -> None:
 		super().__init__(parent)
-		self._game_number_formatting = True
+		self._precise_number_enabled = False
 		self._allow_negative_currency = False
 		self._full_screen_enabled = False
 
-	@Property(bool, notify=gameNumberFormattingChanged)
-	def gameNumberFormattingEnabled(self) -> bool:
-		return self._game_number_formatting
+	@Property(bool, notify=preciseNumberChanged)
+	def preciseNumberEnabled(self) -> bool:
+		return self._precise_number_enabled
 
 	@Property(bool, notify=allowNegativeCurrencyChanged)
 	def allowNegativeCurrencyEnabled(self) -> bool:
@@ -54,11 +58,11 @@ class UiSettingsBridge(QObject):
 		return self._full_screen_enabled
 
 	@Slot(bool)
-	def setGameNumberFormattingEnabled(self, enabled: bool) -> None:
-		if self._game_number_formatting == enabled:
+	def setPreciseNumberEnabled(self, enabled: bool) -> None:
+		if self._precise_number_enabled == enabled:
 			return
-		self._game_number_formatting = enabled
-		self.gameNumberFormattingChanged.emit()
+		self._precise_number_enabled = enabled
+		self.preciseNumberChanged.emit()
 		self._notify_display_refresh_handlers()
 
 	@Slot(bool)
@@ -85,8 +89,14 @@ class UiSettingsBridge(QObject):
 				window.showNormal()
 
 	def _notify_display_refresh_handlers(self) -> None:
+		live_handlers: list[Callable[[], None]] = []
 		for handler in _display_refresh_handlers:
-			handler()
+			try:
+				handler()
+				live_handlers.append(handler)
+			except RuntimeError:
+				continue
+		_display_refresh_handlers[:] = live_handlers
 
 	def _notify_economy_refresh_handlers(self) -> None:
 		for handler in _economy_refresh_handlers:
@@ -95,6 +105,9 @@ class UiSettingsBridge(QObject):
 
 def register_ui_settings(engine) -> UiSettingsBridge:
 	global _instance
+	from core.game_logic.player.player_currency_model import register_negative_currency_policy
+
 	_instance = UiSettingsBridge(parent=engine)
+	register_negative_currency_policy(allow_negative_currency_enabled)
 	engine.rootContext().setContextProperty("UiSettings", _instance)
 	return _instance

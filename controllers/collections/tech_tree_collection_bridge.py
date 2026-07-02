@@ -2,23 +2,43 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from PySide6.QtCore import QObject, Property, Signal, Slot
+from PySide6.QtCore import QObject, Property, QTimer, Signal, Slot
 
 from config import TECHTREE_MAPPING, TECH_TREE_LIBRARY
+from core.format.format_techtree import (
+	build_tech_tree_node_description,
+	build_tech_tree_node_description_lines,
+	build_tech_tree_node_title,
+	tier_roman_numeral,
+)
+from core.format.format_time import format_timer_duration
+from core.game_logic.actions import ActionResult
 from core.game_logic.enums import CurrencyType, GemSkipTarget, TechTreeNodeType, TechTreeType
+from core.game_logic.game_logic import GameLogic
 from core.game_logic.player.player_model import PlayerModel
-from core.game_logic.player.player_techtree_model import TechTreeNodeModel
+from core.game_logic.player.player_techtree_model import (
+	TechTreeNodeModel,
+	resolve_upgrade_level_info,
+	upgrade_level_index,
+)
 from core.game_logic.player.timer_model import TimerModel
-from controllers.support.currency_overdraft import can_afford_currency_for_ui, spend_currency_for_ui
-from ui.utils.number_display_format import format_ui_integer
+from controllers.support.currency_overdraft import can_afford_currency_for_ui
+from controllers.common.ui_format import format_ui_integer
+from ui.utils.ui_settings import game_number_formatting_enabled
 from controllers.common.timer_bar_bridge import TimerBarBridge
-from ui.utils.localizer import desc_loc_from_entry, name_loc_from_entry
-from ui.utils.tech_tree_stat_display import (
-    build_tech_tree_desc_format_args,
-    build_tech_tree_per_level_increase,
-    format_upgrade_duration,
-    lookup_upgrade_level_info,
-    tier_roman_numeral,
+
+
+_ACTION_PATCH_KEYS = (
+    "upgrade_cost",
+    "upgrade_cost_text",
+    "upgrade_duration_text",
+    "is_upgrading",
+    "is_upgrade_complete",
+    "other_research_in_progress",
+    "can_start_upgrade",
+    "skip_gem_cost",
+    "skip_gem_cost_text",
+    "can_afford_skip",
 )
 
 
@@ -46,6 +66,9 @@ class TechTreeNodeBridge(QObject):
         desc_loc_id: str,
         desc_loc_table: str,
         desc_format_args: list[str],
+        name_text: str,
+        desc_text: str,
+        desc_lines: list[dict[str, str]],
         tier_roman: str,
         per_level_increase_text: str,
         upgrade_cost: int,
@@ -81,6 +104,9 @@ class TechTreeNodeBridge(QObject):
         self._desc_loc_id = desc_loc_id
         self._desc_loc_table = desc_loc_table
         self._desc_format_args = desc_format_args
+        self._name_text = name_text
+        self._desc_text = desc_text
+        self._desc_lines = desc_lines
         self._tier_roman = tier_roman
         self._per_level_increase_text = per_level_increase_text
         self._upgrade_cost = upgrade_cost
@@ -118,6 +144,9 @@ class TechTreeNodeBridge(QObject):
         desc_loc_id: str,
         desc_loc_table: str,
         desc_format_args: list[str],
+        name_text: str,
+        desc_text: str,
+        desc_lines: list[dict[str, str]],
         tier_roman: str,
         per_level_increase_text: str,
         upgrade_cost: int,
@@ -151,6 +180,9 @@ class TechTreeNodeBridge(QObject):
         self._desc_loc_id = desc_loc_id
         self._desc_loc_table = desc_loc_table
         self._desc_format_args = desc_format_args
+        self._name_text = name_text
+        self._desc_text = desc_text
+        self._desc_lines = desc_lines
         self._tier_roman = tier_roman
         self._per_level_increase_text = per_level_increase_text
         self._upgrade_cost = upgrade_cost
@@ -165,6 +197,87 @@ class TechTreeNodeBridge(QObject):
         self._can_afford_skip = can_afford_skip
         self._ui_language = ui_language
         self._bind_timer()
+        self.changed.emit()
+
+    def patch_action_state(
+        self,
+        player: PlayerModel,
+        *,
+        level: int | None = None,
+        icon_level: int | None = None,
+        max_level: bool | None = None,
+        requirements_met: bool | None = None,
+        desc_text: str | None = None,
+        desc_lines: list[dict[str, str]] | None = None,
+        upgrade_cost: int | None = None,
+        upgrade_cost_text: str | None = None,
+        upgrade_duration_text: str | None = None,
+        is_upgrading: bool | None = None,
+        is_upgrade_complete: bool | None = None,
+        other_research_in_progress: bool | None = None,
+        can_start_upgrade: bool | None = None,
+        skip_gem_cost: int | None = None,
+        skip_gem_cost_text: str | None = None,
+        can_afford_skip: bool | None = None,
+    ) -> None:
+        self._player = player
+        changed = False
+        rebind_timer = False
+
+        def _set(name: str, value: object) -> None:
+            nonlocal changed, rebind_timer
+            if value is None:
+                return
+            if getattr(self, name) != value:
+                setattr(self, name, value)
+                changed = True
+                if name in (
+                    "_is_upgrading",
+                    "_is_upgrade_complete",
+                    "_skip_gem_cost",
+                    "_skip_gem_cost_text",
+                    "_can_afford_skip",
+                ):
+                    rebind_timer = True
+
+        _set("_level", level)
+        _set("_icon_level", icon_level)
+        _set("_max_level", max_level)
+        _set("_requirements_met", requirements_met)
+        _set("_desc_text", desc_text)
+        _set("_desc_lines", desc_lines)
+        _set("_upgrade_cost", upgrade_cost)
+        _set("_upgrade_cost_text", upgrade_cost_text)
+        _set("_upgrade_duration_text", upgrade_duration_text)
+        _set("_is_upgrading", is_upgrading)
+        _set("_is_upgrade_complete", is_upgrade_complete)
+        _set("_other_research_in_progress", other_research_in_progress)
+        _set("_can_start_upgrade", can_start_upgrade)
+        _set("_skip_gem_cost", skip_gem_cost)
+        _set("_skip_gem_cost_text", skip_gem_cost_text)
+        _set("_can_afford_skip", can_afford_skip)
+
+        if not changed:
+            return
+        if rebind_timer:
+            self._bind_timer()
+        self.changed.emit()
+
+    def update_localized_texts(
+        self,
+        *,
+        name_text: str,
+        desc_text: str,
+        desc_lines: list[dict[str, str]],
+        upgrade_duration_text: str,
+        ui_language: str,
+    ) -> None:
+        self._name_text = name_text
+        self._desc_text = desc_text
+        self._desc_lines = desc_lines
+        self._upgrade_duration_text = upgrade_duration_text
+        self._ui_language = ui_language
+        self._timer_bar.set_ui_language(ui_language)
         self.changed.emit()
 
     def _bind_timer(self) -> None:
@@ -230,6 +343,18 @@ class TechTreeNodeBridge(QObject):
     @Property(int, notify=changed)
     def spriteIndex(self) -> int:
         return self._sprite_index
+
+    @Property(str, notify=changed)
+    def nameText(self) -> str:
+        return self._name_text
+
+    @Property(str, notify=changed)
+    def descText(self) -> str:
+        return self._desc_text
+
+    @Property("QVariantList", notify=changed)
+    def descLines(self) -> list[dict[str, str]]:
+        return self._desc_lines
 
     @Property(str, notify=changed)
     def nameLocId(self) -> str:
@@ -307,30 +432,251 @@ class TechTreeNodeBridge(QObject):
 class TechTreeCollectionBridge(QObject):
     changed = Signal()
     statsChanged = Signal()
+    economyChanged = Signal()
+    progressChanged = Signal()
+    categoryResearchChanged = Signal()
 
     def __init__(
         self,
-        player: PlayerModel,
+        logic: GameLogic,
         tree_type: TechTreeType = TechTreeType.SkillsPetTech,
         parent: QObject | None = None,
     ) -> None:
         super().__init__(parent)
-        self._player = player
+        self._logic = logic
+        self._player = logic.player
         self._tree_type = tree_type
         self._ui_language = "en"
         self._category_timer_bar = TimerBarBridge(parent=self)
-        self._category_timer_bar.displayChanged.connect(self.changed.emit)
-        self._refresh()
+        self._category_timer_bar.displayChanged.connect(self.categoryResearchChanged.emit)
+        self._rebuild()
 
-    def reload(self, player: PlayerModel) -> None:
-        self._player = player
-        self._refresh()
+    def reload(self, logic: GameLogic) -> None:
+        self._logic = logic
+        self._player = logic.player
+        self._rebuild()
         self.changed.emit()
+        self.progressChanged.emit()
+        self.categoryResearchChanged.emit()
 
     @Slot()
     def refresh(self) -> None:
-        self._refresh()
+        self._rebuild()
         self.changed.emit()
+        self.progressChanged.emit()
+        self.categoryResearchChanged.emit()
+
+    def sync_nodes(self) -> None:
+        if not getattr(self, "_nodes", None):
+            self.refresh()
+            return
+        for bridge in self._nodes:
+            self._sync_bridge(bridge)
+        self._emit_tree_progress()
+
+    def _emit_tree_progress(self) -> None:
+        techtree = self._player.player_techtree_model
+        self._progress_level_sum, self._progress_max_sum = (
+            techtree.get_tech_tree_progress_parts(self._player, self._tree_type)
+        )
+        self._progress = (
+            float(self._progress_level_sum) / float(self._progress_max_sum)
+            if self._progress_max_sum > 0
+            else 0.0
+        )
+        self._sync_category_timer()
+        self.progressChanged.emit()
+        self.categoryResearchChanged.emit()
+
+    def _patch_research_gates(self, bridge: TechTreeNodeBridge) -> None:
+        node_model = self._player.player_techtree_model.get_node(
+            self._tree_type,
+            bridge._node_id,
+        )
+        fields = self._build_node_fields(
+            bridge._node_id,
+            bridge._node_type,
+            bridge._tier,
+            node_model,
+            bridge._level,
+            bridge._level_max,
+            bridge._max_level,
+            bridge._requirements_met,
+        )
+        bridge.patch_action_state(
+            self._player,
+            **{key: fields[key] for key in _ACTION_PATCH_KEYS},
+        )
+
+    def _patch_node_state(
+        self,
+        bridge: TechTreeNodeBridge,
+        *,
+        refresh_desc: bool,
+        refresh_requirements: bool,
+    ) -> None:
+        try:
+            node_type = TechTreeNodeType(bridge._node_type)
+        except ValueError:
+            return
+
+        techtree = self._player.player_techtree_model
+        if refresh_requirements:
+            try:
+                requirements_met = techtree.node_requirements_met(
+                    self._player,
+                    self._tree_type,
+                    bridge._node_id,
+                )
+            except ValueError:
+                requirements_met = False
+        else:
+            requirements_met = bridge._requirements_met
+
+        node_model = techtree.get_node(self._tree_type, bridge._node_id)
+        icon_level = self._icon_level(node_model, requirements_met)
+        ui_level = self._display_ui_level(node_model)
+        is_max = self._is_max_display(node_model, bridge._level_max)
+        fields = self._build_node_fields(
+            bridge._node_id,
+            bridge._node_type,
+            bridge._tier,
+            node_model,
+            ui_level,
+            bridge._level_max,
+            is_max,
+            requirements_met,
+        )
+        patch_kwargs: dict[str, object] = {
+            "level": ui_level,
+            "icon_level": icon_level,
+            "max_level": is_max,
+            "requirements_met": requirements_met,
+            **{key: fields[key] for key in _ACTION_PATCH_KEYS},
+        }
+        if refresh_desc:
+            _, desc_text, desc_lines = self._node_display_texts(
+                node_type,
+                bridge._tier,
+                node_model,
+                bridge._level_max,
+                self._ui_language,
+            )
+            patch_kwargs["desc_text"] = desc_text
+            patch_kwargs["desc_lines"] = desc_lines
+        bridge.patch_action_state(self._player, **patch_kwargs)
+
+    def _patch_requirements_only(self, bridge: TechTreeNodeBridge) -> None:
+        techtree = self._player.player_techtree_model
+        try:
+            requirements_met = techtree.node_requirements_met(
+                self._player,
+                self._tree_type,
+                bridge._node_id,
+            )
+        except ValueError:
+            requirements_met = False
+
+        node_model = techtree.get_node(self._tree_type, bridge._node_id)
+        icon_level = self._icon_level(node_model, requirements_met)
+        fields = self._build_node_fields(
+            bridge._node_id,
+            bridge._node_type,
+            bridge._tier,
+            node_model,
+            bridge._level,
+            bridge._level_max,
+            bridge._max_level,
+            requirements_met,
+        )
+        if (
+            requirements_met == bridge._requirements_met
+            and icon_level == bridge._icon_level
+            and fields["can_start_upgrade"] == bridge._can_start_upgrade
+            and fields["other_research_in_progress"] == bridge._other_research_in_progress
+        ):
+            return
+        bridge.patch_action_state(
+            self._player,
+            icon_level=icon_level,
+            requirements_met=requirements_met,
+            **{key: fields[key] for key in _ACTION_PATCH_KEYS},
+        )
+
+    def _dependent_node_ids(self, node_id: int) -> list[int]:
+        dependents = getattr(self, "_dependents_by_node", {})
+        queue = list(dependents.get(node_id, []))
+        ordered: list[int] = []
+        seen: set[int] = set()
+        while queue:
+            current = queue.pop(0)
+            if current in seen:
+                continue
+            seen.add(current)
+            ordered.append(current)
+            queue.extend(dependents.get(current, []))
+        return ordered
+
+    def patch_after_research_start(self, node_id: int) -> None:
+        bridge = self.nodeById(node_id)
+        if bridge is not None:
+            self._patch_node_state(
+                bridge,
+                refresh_desc=False,
+                refresh_requirements=False,
+            )
+        for other in self._nodes:
+            if other._node_id != node_id:
+                self._patch_research_gates(other)
+        self._emit_tree_progress()
+
+    def patch_after_gem_skip(self, node_id: int) -> None:
+        bridge = self.nodeById(node_id)
+        if bridge is not None:
+            self._patch_node_state(
+                bridge,
+                refresh_desc=False,
+                refresh_requirements=False,
+            )
+        self._emit_tree_progress()
+
+    def patch_after_claim(self, node_id: int) -> None:
+        bridge = self.nodeById(node_id)
+        if bridge is not None:
+            self._patch_node_state(
+                bridge,
+                refresh_desc=True,
+                refresh_requirements=False,
+            )
+        for dependent_id in self._dependent_node_ids(node_id):
+            dependent = self.nodeById(dependent_id)
+            if dependent is not None:
+                self._patch_requirements_only(dependent)
+        self._emit_tree_progress()
+
+    def patch_when_research_settles(self) -> None:
+        techtree = self._player.player_techtree_model
+        for bridge in self._nodes:
+            node_model = techtree.get_node(self._tree_type, bridge._node_id)
+            timer = node_model.node_upgrade_timer_model if node_model is not None else None
+            if (
+                bridge._is_upgrading
+                or bridge._is_upgrade_complete
+                or (timer is not None and timer.start_time > 0)
+            ):
+                self._patch_node_state(
+                    bridge,
+                    refresh_desc=False,
+                    refresh_requirements=False,
+                )
+            elif bridge._other_research_in_progress:
+                self._patch_research_gates(bridge)
+        self._emit_tree_progress()
+
+    def patch_upgrade_affordability(self) -> None:
+        for bridge in self._nodes:
+            self._patch_research_gates(bridge)
+        self.progressChanged.emit()
 
     def _node_key(self, node_type: int) -> str:
         entry = TECHTREE_MAPPING.get("TechTreeNodeType", {}).get(str(node_type), {})
@@ -344,18 +690,39 @@ class TechTreeCollectionBridge(QObject):
         return int(sprite["Idx"])
 
     @staticmethod
-    def _name_loc(node_type: int) -> tuple[str, str]:
-        entry = TECHTREE_MAPPING.get("TechTreeNodeType", {}).get(str(node_type), {})
-        if not entry.get("Localization"):
-            return "", "TechTree"
-        return name_loc_from_entry(entry)
-
-    @staticmethod
-    def _desc_loc(node_type: int) -> tuple[str, str]:
-        entry = TECHTREE_MAPPING.get("TechTreeNodeType", {}).get(str(node_type), {})
-        if not entry.get("DescLocalization"):
-            return "", "TechTree"
-        return desc_loc_from_entry(entry)
+    def _node_display_texts(
+        node_type: TechTreeNodeType,
+        tier: int,
+        node_model: TechTreeNodeModel | None,
+        level_max: int,
+        language: str,
+    ) -> tuple[str, str, list[dict[str, str]]]:
+        lib_entry = TECH_TREE_LIBRARY.get(node_type.name)
+        internal_level = node_model.level if node_model is not None else -1
+        name_text = build_tech_tree_node_title(node_type, tier, language=language)
+        if lib_entry is None:
+            return name_text, "", []
+        desc_lines = build_tech_tree_node_description_lines(
+            lib_entry,
+            node_type=node_type,
+            internal_level=internal_level,
+            level_max=level_max,
+            tier=tier,
+            language=language,
+        )
+        desc_text = build_tech_tree_node_description(
+            lib_entry,
+            node_type=node_type,
+            internal_level=internal_level,
+            level_max=level_max,
+            tier=tier,
+            language=language,
+        )
+        line_models = [
+            {"text": line.text, "deltaText": line.delta_text}
+            for line in desc_lines
+        ]
+        return name_text, desc_text, line_models
 
     def _level_max(self, node_type: TechTreeNodeType) -> int:
         lib_entry = TECH_TREE_LIBRARY.get(node_type.name)
@@ -406,6 +773,18 @@ class TechTreeCollectionBridge(QObject):
                     return True
         return False
 
+    def _display_ui_level(self, node_model) -> int:
+        if node_model is None:
+            return 0
+        return max(0, int(node_model.level) + 1)
+
+    def _is_max_display(self, node_model, level_max: int) -> bool:
+        if level_max <= 0 or node_model is None:
+            return False
+        if self._timer_active(self._player, node_model):
+            return False
+        return self._display_ui_level(node_model) == level_max
+
     def _icon_level(
         self,
         node_model,
@@ -432,7 +811,6 @@ class TechTreeCollectionBridge(QObject):
         is_max: bool,
         requirements_met: bool,
     ) -> dict:
-        internal_level = max(0, ui_level - 1)
         is_upgrading = self._timer_active(self._player, node_model)
         is_upgrade_complete = self._timer_complete(self._player, node_model)
         other_research = self._other_research_in_progress(
@@ -448,17 +826,18 @@ class TechTreeCollectionBridge(QObject):
         can_afford_skip = False
 
         if not is_max:
-            upgrade_info = lookup_upgrade_level_info(
-                self._player.game_config,
+            upgrade_info = resolve_upgrade_level_info(
+                self._player,
                 tier,
-                internal_level,
+                upgrade_level_index(node_model),
             )
             if upgrade_info is not None:
                 upgrade_cost, duration_seconds = upgrade_info
                 upgrade_cost_text = format_ui_integer(upgrade_cost)
-                upgrade_duration_text = format_upgrade_duration(
+                upgrade_duration_text = format_timer_duration(
                     duration_seconds,
                     self._ui_language,
+                    game_number_formatting_enabled=game_number_formatting_enabled(),
                 )
 
         if node_model is not None and (is_upgrading or is_upgrade_complete):
@@ -490,10 +869,7 @@ class TechTreeCollectionBridge(QObject):
 
         return {
             "tier_roman": tier_roman_numeral(tier),
-            "per_level_increase_text": build_tech_tree_per_level_increase(
-                node_type_value,
-                tier,
-            ),
+            "per_level_increase_text": "",
             "upgrade_cost": upgrade_cost,
             "upgrade_cost_text": upgrade_cost_text,
             "upgrade_duration_text": upgrade_duration_text,
@@ -506,24 +882,96 @@ class TechTreeCollectionBridge(QObject):
             "can_afford_skip": can_afford_skip and is_upgrading,
         }
 
-    def _apply_node_upgrade_claim(self, node_id: int) -> bool:
-        node_model = self._player.player_techtree_model.get_node(self._tree_type, node_id)
-        if node_model is None:
-            return False
-        timer = node_model.node_upgrade_timer_model
-        if timer.start_time <= 0 or not timer.has_ended(self._player):
-            return False
-
+    def _collect_node_bridge_payload(
+        self,
+        *,
+        node_id: int,
+        node_type: TechTreeNodeType,
+        layer: int,
+        tier: int,
+        x_ratio: float,
+    ) -> dict:
         techtree = self._player.player_techtree_model
-        techtree.set_node_level(self._tree_type, node_id, node_model.level + 1)
-        claimed = techtree.get_node(self._tree_type, node_id)
-        if claimed is not None:
-            claimed.node_upgrade_timer_model = TimerModel(
-                start_time=0,
-                end_time=0,
-                duration=0,
+        level_max = self._level_max(node_type)
+
+        try:
+            requirements_met = techtree.node_requirements_met(
+                self._player,
+                self._tree_type,
+                node_id,
             )
-        return True
+        except ValueError:
+            requirements_met = False
+
+        node_model = techtree.get_node(self._tree_type, node_id)
+        icon_level = self._icon_level(node_model, requirements_met)
+        ui_level = self._display_ui_level(node_model)
+        is_max = self._is_max_display(node_model, level_max)
+        node_type_value = int(node_type.value)
+        name_text, desc_text, desc_lines = self._node_display_texts(
+            node_type,
+            tier,
+            node_model,
+            level_max,
+            self._ui_language,
+        )
+        detail_fields = self._build_node_fields(
+            node_id,
+            node_type_value,
+            tier,
+            node_model,
+            ui_level,
+            level_max,
+            is_max,
+            requirements_met,
+        )
+        return {
+            "node_type": node_type_value,
+            "tree_type": int(self._tree_type.value),
+            "node_id": node_id,
+            "layer": layer,
+            "tier": tier,
+            "x_ratio": x_ratio,
+            "level": ui_level,
+            "icon_level": icon_level,
+            "level_max": level_max,
+            "max_level": is_max,
+            "requirements_met": requirements_met,
+            "node_key": self._node_key(node_type_value),
+            "sprite_index": self._sprite_index(node_type_value),
+            "name_loc_id": "",
+            "name_loc_table": "TechTree",
+            "desc_loc_id": "",
+            "desc_loc_table": "TechTree",
+            "desc_format_args": [],
+            "name_text": name_text,
+            "desc_text": desc_text,
+            "desc_lines": desc_lines,
+            "ui_language": self._ui_language,
+            **detail_fields,
+        }
+
+    def _sync_bridge(self, bridge: TechTreeNodeBridge) -> None:
+        try:
+            node_type = TechTreeNodeType(bridge._node_type)
+        except ValueError:
+            return
+        payload = self._collect_node_bridge_payload(
+            node_id=bridge._node_id,
+            node_type=node_type,
+            layer=bridge._layer,
+            tier=bridge._tier,
+            x_ratio=bridge._x_ratio,
+        )
+        bridge.update_from(self._player, **payload)
+
+    def _apply_node_upgrade_claim(self, node_id: int) -> bool:
+        result = self._logic.tech_tree_node_upgrade_claim(
+            self._tree_type,
+            node_id,
+            commit=True,
+        )
+        return result == ActionResult.Success
 
     def _claim_all_finished_nodes(self) -> bool:
         techtree = self._player.player_techtree_model
@@ -533,8 +981,7 @@ class TechTreeCollectionBridge(QObject):
             if self._apply_node_upgrade_claim(node_id):
                 claimed_any = True
         if claimed_any:
-            self._player.player_power_model.update_power(self._player)
-            self.statsChanged.emit()
+            self._schedule_stats_changed()
         return claimed_any
 
     def _find_category_research_node(self) -> TechTreeNodeModel | None:
@@ -556,7 +1003,7 @@ class TechTreeCollectionBridge(QObject):
             language=self._ui_language,
         )
 
-    def _refresh(self) -> None:
+    def _rebuild(self) -> None:
         position_library = self._player.game_config.tech_tree_position_library
         tree_data = position_library.get(self._tree_type)
         techtree = self._player.player_techtree_model
@@ -587,88 +1034,21 @@ class TechTreeCollectionBridge(QObject):
                     node_id = int(node_info["Id"])
                     tier = int(node_info.get("Tier", 0))
                     x_ratio = self._layer_x_ratio(index, count)
-                    level_max = self._level_max(node_type)
-
-                    try:
-                        requirements_met = techtree.node_requirements_met(
-                            self._player,
-                            self._tree_type,
-                            node_id,
-                        )
-                    except ValueError:
-                        requirements_met = False
-
-                    node_model = techtree.get_node(self._tree_type, node_id)
-                    icon_level = self._icon_level(node_model, requirements_met)
-                    ui_level = node_model.level + 1 if node_model is not None else 0
-                    is_max = ui_level >= level_max if level_max > 0 else False
-                    node_type_value = int(node_type.value)
-                    name_loc_id, name_loc_table = self._name_loc(node_type_value)
-                    desc_loc_id, desc_loc_table = self._desc_loc(node_type_value)
-                    desc_format_args = build_tech_tree_desc_format_args(
-                        node_type_value,
-                        tier,
-                        ui_level,
-                    )
-                    detail_fields = self._build_node_fields(
-                        node_id,
-                        node_type_value,
-                        tier,
-                        node_model,
-                        ui_level,
-                        level_max,
-                        is_max,
-                        requirements_met,
+                    payload = self._collect_node_bridge_payload(
+                        node_id=node_id,
+                        node_type=node_type,
+                        layer=layer,
+                        tier=tier,
+                        x_ratio=x_ratio,
                     )
                     if node_id in existing_by_id:
                         bridge = existing_by_id[node_id]
-                        bridge.update_from(
-                            self._player,
-                            node_type=node_type_value,
-                            tree_type=int(self._tree_type.value),
-                            node_id=node_id,
-                            layer=layer,
-                            tier=tier,
-                            x_ratio=x_ratio,
-                            level=ui_level,
-                            icon_level=icon_level,
-                            level_max=level_max,
-                            max_level=is_max,
-                            requirements_met=requirements_met,
-                            node_key=self._node_key(node_type_value),
-                            sprite_index=self._sprite_index(node_type_value),
-                            name_loc_id=name_loc_id,
-                            name_loc_table=name_loc_table,
-                            desc_loc_id=desc_loc_id,
-                            desc_loc_table=desc_loc_table,
-                            desc_format_args=desc_format_args,
-                            ui_language=self._ui_language,
-                            **detail_fields,
-                        )
+                        bridge.update_from(self._player, **payload)
                     else:
                         bridge = TechTreeNodeBridge(
                             self._player,
-                            node_type=node_type_value,
-                            tree_type=int(self._tree_type.value),
-                            node_id=node_id,
-                            layer=layer,
-                            tier=tier,
-                            x_ratio=x_ratio,
-                            level=ui_level,
-                            icon_level=icon_level,
-                            level_max=level_max,
-                            max_level=is_max,
-                            requirements_met=requirements_met,
-                            node_key=self._node_key(node_type_value),
-                            sprite_index=self._sprite_index(node_type_value),
-                            name_loc_id=name_loc_id,
-                            name_loc_table=name_loc_table,
-                            desc_loc_id=desc_loc_id,
-                            desc_loc_table=desc_loc_table,
-                            desc_format_args=desc_format_args,
-                            ui_language=self._ui_language,
-                            **detail_fields,
                             parent=self,
+                            **payload,
                         )
 
                     nodes.append(bridge)
@@ -693,117 +1073,96 @@ class TechTreeCollectionBridge(QObject):
         self._connections = connections
         self._max_layer = max_layer
         self._node_count = len(nodes)
-        self._progress = techtree.get_tech_tree_progress(self._player, self._tree_type)
+        self._progress_level_sum, self._progress_max_sum = (
+            techtree.get_tech_tree_progress_parts(self._player, self._tree_type)
+        )
+        self._progress = (
+            float(self._progress_level_sum) / float(self._progress_max_sum)
+            if self._progress_max_sum > 0
+            else 0.0
+        )
         self._layer_rows = layer_rows
+        dependents: dict[int, list[int]] = defaultdict(list)
+        for connection in connections:
+            dependents[int(connection["fromId"])].append(int(connection["toId"]))
+        self._dependents_by_node = dict(dependents)
         self._sync_category_timer()
 
-    def _ensure_node(self, node_id: int) -> TechTreeNodeModel:
+    def _refresh_localized(self) -> None:
         techtree = self._player.player_techtree_model
-        node_model = techtree.get_node(self._tree_type, node_id)
-        if node_model is not None:
-            return node_model
-        techtree.set_node_level(self._tree_type, node_id, -1)
-        node_model = techtree.get_node(self._tree_type, node_id)
-        assert node_model is not None
-        return node_model
+        language = self._ui_language
+        for bridge in self._nodes:
+            try:
+                node_type = TechTreeNodeType(bridge._node_type)
+            except ValueError:
+                continue
+            node_model = techtree.get_node(self._tree_type, bridge._node_id)
+            name_text, desc_text, desc_lines = self._node_display_texts(
+                node_type,
+                bridge._tier,
+                node_model,
+                bridge._level_max,
+                language,
+            )
+            upgrade_duration_text = bridge._upgrade_duration_text
+            if not bridge._max_level:
+                upgrade_info = resolve_upgrade_level_info(
+                    self._player,
+                    bridge._tier,
+                    upgrade_level_index(node_model),
+                )
+                if upgrade_info is not None:
+                    _, duration_seconds = upgrade_info
+                    upgrade_duration_text = format_timer_duration(
+                        duration_seconds,
+                        language,
+                        game_number_formatting_enabled=game_number_formatting_enabled(),
+                    )
+            bridge.update_localized_texts(
+                name_text=name_text,
+                desc_text=desc_text,
+                desc_lines=desc_lines,
+                upgrade_duration_text=upgrade_duration_text,
+                ui_language=language,
+            )
+        self._category_timer_bar.set_ui_language(language)
 
     @Slot(int)
     def performUpgradeStart(self, node_id: int) -> None:
-        techtree = self._player.player_techtree_model
-        if techtree.is_any_node_research_in_progress(self._player):
-            return
-        if self._other_research_in_progress(self._tree_type, node_id):
-            return
-
-        position_library = self._player.game_config.tech_tree_position_library
-        tree_data = position_library.get(self._tree_type)
-        if tree_data is None:
-            return
-
-        node_info = None
-        for candidate in tree_data.get("Nodes", []):
-            if int(candidate["Id"]) == node_id:
-                node_info = candidate
-                break
-        if node_info is None:
-            return
-
-        try:
-            if not techtree.node_requirements_met(self._player, self._tree_type, node_id):
-                return
-        except ValueError:
-            return
-
-        node_model = self._ensure_node(node_id)
-        timer = node_model.node_upgrade_timer_model
-        if timer.start_time > 0:
-            return
-
-        tier = int(node_info.get("Tier", 0))
-        internal_level = max(0, node_model.level)
-        try:
-            node_type = TechTreeNodeType[node_info["Type"]]
-        except KeyError:
-            return
-        level_max = self._level_max(node_type)
-        if max(0, node_model.level + 1) >= level_max:
-            return
-
-        upgrade_info = lookup_upgrade_level_info(
-            self._player.game_config,
-            tier,
-            internal_level,
+        result = self._logic.tech_tree_node_upgrade_start(
+            self._tree_type,
+            node_id,
+            commit=True,
         )
-        if upgrade_info is None:
+        if result != ActionResult.Success:
             return
-        upgrade_cost, duration_seconds = upgrade_info
+        self.patch_after_research_start(node_id)
+        self._notify_economy_changed()
 
-        if not spend_currency_for_ui(
-            self._player,
-            CurrencyType.TechPotions,
-            upgrade_cost,
-            "TechTreeNodeUpgradeStart",
-        ):
-            return
+    def _schedule_stats_changed(self) -> None:
+        QTimer.singleShot(0, self.statsChanged.emit)
 
-        now = self._player.get_server_time()
-        duration = int(duration_seconds)
-        node_model.node_upgrade_timer_model = TimerModel(
-            start_time=now,
-            end_time=now + duration,
-            duration=float(duration),
-        )
-        self.refresh()
-        self.statsChanged.emit()
+    def _notify_economy_changed(self) -> None:
+        self.economyChanged.emit()
 
     @Slot(int)
     def performGemSkip(self, node_id: int) -> None:
-        node_model = self._player.player_techtree_model.get_node(self._tree_type, node_id)
-        if node_model is None:
+        result = self._logic.tech_tree_node_upgrade_gem_skip(
+            self._tree_type,
+            node_id,
+            commit=True,
+        )
+        if result != ActionResult.Success:
             return
-        timer = node_model.node_upgrade_timer_model
-        if timer.start_time <= 0 or timer.has_ended(self._player):
-            return
-
-        gem_cost = timer.calculate_gem_skip_cost(self._player, GemSkipTarget.TechTree)
-        if not spend_currency_for_ui(
-            self._player,
-            CurrencyType.Gems,
-            gem_cost,
-            "TechTreeNodeUpgradeGemSkip",
-        ):
-            return
-
-        timer.skip_to_end(self._player)
-        self.refresh()
-        self.statsChanged.emit()
+        self.patch_after_gem_skip(node_id)
+        self._notify_economy_changed()
 
     @Slot(int)
     def performUpgradeClaim(self, node_id: int) -> None:
-        if self._apply_node_upgrade_claim(node_id):
-            self._player.player_power_model.update_power(self._player)
-            self.statsChanged.emit()
-        self.refresh()
+        if not self._apply_node_upgrade_claim(node_id):
+            return
+        self.patch_after_claim(node_id)
+        self._schedule_stats_changed()
 
     @Slot()
     def tick(self) -> None:
@@ -814,32 +1173,36 @@ class TechTreeCollectionBridge(QObject):
         if language == self._ui_language:
             return
         self._ui_language = language
-        self._category_timer_bar.set_ui_language(language)
-        for bridge in getattr(self, "_nodes", []):
-            bridge._ui_language = language
-            bridge._timer_bar.set_ui_language(language)
-        self.changed.emit()
+        self._refresh_localized()
 
     @Property(int, notify=changed)
     def treeType(self) -> int:
         return int(self._tree_type.value)
 
-    @Property(float, notify=changed)
+    @Property(float, notify=progressChanged)
     def progress(self) -> float:
         return self._progress
 
-    @Property(bool, notify=changed)
+    @Property(int, notify=progressChanged)
+    def progressLevelSum(self) -> int:
+        return self._progress_level_sum
+
+    @Property(int, notify=progressChanged)
+    def progressMaxSum(self) -> int:
+        return self._progress_max_sum
+
+    @Property(bool, notify=categoryResearchChanged)
     def categoryResearchActive(self) -> bool:
         return (
             self._category_timer_bar.isActive
             and not self._category_timer_bar.isComplete
         )
 
-    @Property(bool, notify=changed)
+    @Property(bool, notify=categoryResearchChanged)
     def categoryResearchComplete(self) -> bool:
         return self._category_timer_bar.isComplete
 
-    @Property(str, notify=changed)
+    @Property(str, notify=categoryResearchChanged)
     def categoryResearchRemainingText(self) -> str:
         return self._category_timer_bar.remainingText
 

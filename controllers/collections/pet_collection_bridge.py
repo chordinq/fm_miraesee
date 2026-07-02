@@ -21,7 +21,8 @@ class PetCollectionBridge(QObject):
     petsChanged = Signal()
     inventoryEggsChanged = Signal()
     hatchSlotsChanged = Signal()
-    entriesChanged = Signal()
+    gridReloaded = Signal()
+    entryLayoutChanged = Signal()
 
     def __init__(
         self,
@@ -119,12 +120,97 @@ class PetCollectionBridge(QObject):
         self._rebuild_display_pets_only()
         self._rebuild_inventory_eggs_only()
 
+    def _build_rarity_grouped_entries(self) -> list[tuple[str, QObject]]:
+        entries: list[tuple[str, QObject]] = []
+        for bridge in self._display_pets:
+            if bridge.isEquipped:
+                entries.append(("pet", bridge))
+
+        unequipped_by_rarity: dict[int, list[PetModelBridge]] = {}
+        for bridge in self._display_pets:
+            if bridge.isEquipped:
+                continue
+            unequipped_by_rarity.setdefault(bridge.rarity, []).append(bridge)
+
+        eggs_by_rarity: dict[int, list[EggModelBridge]] = {}
+        for bridge in self._display_inventory_eggs:
+            eggs_by_rarity.setdefault(bridge.rarity, []).append(bridge)
+
+        all_rarities = sorted(
+            set(unequipped_by_rarity) | set(eggs_by_rarity),
+            reverse=True,
+        )
+        for rarity in all_rarities:
+            for bridge in unequipped_by_rarity.get(rarity, []):
+                entries.append(("pet", bridge))
+            for bridge in eggs_by_rarity.get(rarity, []):
+                entries.append(("egg", bridge))
+        return entries
+
+    def _first_inventory_egg_in_grid_order(self) -> EggModelBridge | None:
+        bridge = self._entry_model.first_egg_bridge()
+        if bridge is None:
+            return None
+        return bridge
+
     def _sync_entry_model_full(self) -> None:
         self._rebuild_pet_display_lists()
-        entries = [("pet", bridge) for bridge in self._display_pets]
-        entries += [("egg", bridge) for bridge in self._display_inventory_eggs]
-        self._entry_model.reset_entries(entries)
-        self.entriesChanged.emit()
+        self._entry_model.reset_entries(self._build_rarity_grouped_entries())
+        self.gridReloaded.emit()
+        self.entryLayoutChanged.emit()
+
+    def _equipped_pet_entry_count(self) -> int:
+        count = 0
+        for entry_kind, entry_bridge in self._entry_model.entries():
+            if entry_kind == "pet" and entry_bridge.isEquipped:
+                count += 1
+            else:
+                break
+        return count
+
+    def _find_equipped_pet_insert_index(self, bridge: PetModelBridge) -> int:
+        sort_key = self._pet_sort_key(bridge)
+        for index, (entry_kind, entry_bridge) in enumerate(self._entry_model.entries()):
+            if entry_kind != "pet" or not entry_bridge.isEquipped:
+                return index
+            if self._pet_sort_key(entry_bridge) > sort_key:
+                return index
+        return self._equipped_pet_entry_count()
+
+    def _find_inventory_insert_index(
+        self,
+        kind: str,
+        bridge: PetModelBridge | EggModelBridge,
+    ) -> int:
+        target_rarity = bridge.rarity
+        sort_key = (
+            self._pet_sort_key(bridge) if kind == "pet" else self._egg_sort_key(bridge)
+        )
+        inventory_start = self._equipped_pet_entry_count()
+        for index in range(inventory_start, self._entry_model.rowCount()):
+            entry_kind, entry_bridge = self._entry_model.entries()[index]
+            entry_rarity = entry_bridge.rarity
+            if entry_rarity > target_rarity:
+                continue
+            if entry_rarity < target_rarity:
+                return index
+            if kind == "pet":
+                if entry_kind == "egg":
+                    return index
+                if self._pet_sort_key(entry_bridge) > sort_key:
+                    return index
+            elif entry_kind == "egg" and self._egg_sort_key(entry_bridge) > sort_key:
+                return index
+        return self._entry_model.rowCount()
+
+    def _find_rarity_grouped_insert_index(
+        self,
+        kind: str,
+        bridge: PetModelBridge | EggModelBridge,
+    ) -> int:
+        if kind == "pet" and bridge.isEquipped:
+            return self._find_equipped_pet_insert_index(bridge)
+        return self._find_inventory_insert_index(kind, bridge)
 
     def _insert_display_pet(self, bridge: PetModelBridge) -> None:
         key = self._pet_sort_key(bridge)
@@ -203,6 +289,43 @@ class PetCollectionBridge(QObject):
             lambda egg: egg.rarity.value,
         )
 
+    def patch_pet_lock(self, pet_guid: str) -> None:
+        bridge = self._pet_bridge_by_guid.get(pet_guid)
+        if bridge is None:
+            return
+        bridge.changed.emit()
+
+    def patch_pet_equip_layout(self, pet_guid: str, displaced_guid: str | None = None) -> None:
+        affected_guids = [
+            guid
+            for guid in (pet_guid, displaced_guid)
+            if guid
+        ]
+        for guid in affected_guids:
+            bridge = self._pet_bridge_by_guid.get(guid)
+            if bridge is not None:
+                bridge.changed.emit()
+        self._rebuild_pet_display_lists()
+        for guid in affected_guids:
+            self._reposition_pet_entry(guid)
+        self.entryLayoutChanged.emit()
+
+    def _reposition_pet_entry(self, pet_guid: str) -> None:
+        bridge = self._pet_bridge_by_guid.get(pet_guid)
+        if bridge is None:
+            return
+        old_index = self._entry_model.find_row_by_guid(pet_guid)
+        new_index = self._find_rarity_grouped_insert_index("pet", bridge)
+        if old_index < 0:
+            self._entry_model.insert_entry(new_index, "pet", bridge)
+            return
+        if new_index == old_index:
+            return
+        self._entry_model.remove_row(old_index)
+        if new_index > old_index:
+            new_index -= 1
+        self._entry_model.insert_entry(new_index, "pet", bridge)
+
     def reload(
         self,
         collection: PlayerPetCollectionModel,
@@ -225,6 +348,10 @@ class PetCollectionBridge(QObject):
         self._sync_entry_model_full()
         self.hatchSlotsChanged.emit()
         self.changed.emit()
+
+    def refresh_stat_texts(self) -> None:
+        for bridge in self._pet_bridge_by_guid.values():
+            bridge.invalidate_stat_cache()
 
     def refresh_eggs(self, *, resync_existing: bool = False) -> None:
         self._sync_egg_bridges(resync_existing=resync_existing)
@@ -250,11 +377,13 @@ class PetCollectionBridge(QObject):
         if bridge is not None:
             bridge.sync_quiet()
         self._sync_hatch_slots()
-        if self._entry_model.remove_egg_by_guid(egg_guid):
+        removed = self._entry_model.remove_egg_by_guid(egg_guid)
+        if removed:
             self._remove_inventory_egg_display(egg_guid)
-            self.inventoryEggsChanged.emit()
-            self.entriesChanged.emit()
         self.hatchSlotsChanged.emit()
+        if removed:
+            self.inventoryEggsChanged.emit()
+            self.entryLayoutChanged.emit()
 
     def patch_egg_timer(self, egg_guid: str) -> None:
         bridge = self._egg_bridge_by_guid.get(egg_guid)
@@ -263,7 +392,7 @@ class PetCollectionBridge(QObject):
         self.hatchSlotsChanged.emit()
 
     def patch_after_egg_summon(self, summoned: list[SummonedEggInfo]) -> None:
-        inserted = False
+        new_bridges: list[EggModelBridge] = []
         for info in summoned:
             egg = info.egg_model
             if egg.guid in self._egg_bridge_by_guid:
@@ -276,17 +405,19 @@ class PetCollectionBridge(QObject):
             )
             self._egg_bridge_by_guid[egg.guid] = bridge
             self._egg_bridges.append(bridge)
-            self._entry_model.insert_sorted("egg", bridge, self._egg_sort_key)
             self._insert_display_inventory_egg(bridge)
-            inserted = True
-        if not inserted:
+            new_bridges.append(bridge)
+        if not new_bridges:
             return
         self._egg_rarity_counts = count_rarities(
             self._collection.get_eggs(),
             lambda egg: egg.rarity.value,
         )
+        for bridge in new_bridges:
+            insert_index = self._find_rarity_grouped_insert_index("egg", bridge)
+            self._entry_model.insert_entry(insert_index, "egg", bridge)
         self.inventoryEggsChanged.emit()
-        self.entriesChanged.emit()
+        self.entryLayoutChanged.emit()
 
     def patch_after_hatch(self, egg_guid: str) -> None:
         egg_bridge = self._egg_bridge_by_guid.pop(egg_guid, None)
@@ -314,16 +445,19 @@ class PetCollectionBridge(QObject):
             self._collection.get_eggs(),
             lambda egg: egg.rarity.value,
         )
-        for bridge in new_pets:
-            self._entry_model.insert_sorted("pet", bridge, self._pet_sort_key)
-            self._insert_display_pet(bridge)
         if self._entry_model.remove_egg_by_guid(egg_guid):
             self._remove_inventory_egg_display(egg_guid)
             self.inventoryEggsChanged.emit()
+        for bridge in new_pets:
+            self._insert_display_pet(bridge)
+            insert_index = self._find_rarity_grouped_insert_index("pet", bridge)
+            self._entry_model.insert_entry(insert_index, "pet", bridge)
         self._sync_hatch_slots()
         self.petsChanged.emit()
         self.hatchSlotsChanged.emit()
-        self.entriesChanged.emit()
+        if new_pets:
+            self.entryLayoutChanged.emit()
+        self.changed.emit()
 
     @Slot(str)
     def setUiLanguage(self, language: str) -> None:
@@ -385,9 +519,13 @@ class PetCollectionBridge(QObject):
     def eggCount(self) -> int:
         return len(self._egg_bridges)
 
-    @Property(int, notify=entriesChanged)
+    @Property(int, notify=entryLayoutChanged)
     def entryCount(self) -> int:
         return self._entry_model.rowCount()
+
+    @Property(QObject, notify=inventoryEggsChanged)
+    def firstInventoryEgg(self) -> EggModelBridge | None:
+        return self._first_inventory_egg_in_grid_order()
 
     @Property("QVariantList", notify=changed)
     def petRarityCounts(self) -> list[dict[str, int]]:

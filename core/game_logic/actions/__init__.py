@@ -34,6 +34,11 @@ from .summon import (
 	SummonedMountsInfo,
 	SummonedSkillInfo,
 )
+from .techtree import (
+	TechTreeNodeUpgradeClaimAction,
+	TechTreeNodeUpgradeGemSkipAction,
+	TechTreeNodeUpgradeStartAction,
+)
 
 __all__ = [
 	"ActionCodes",
@@ -67,4 +72,7 @@ __all__ = [
 	"SummonedEggInfo",
 	"SummonedMountsInfo",
 	"SummonedSkillInfo",
+	"TechTreeNodeUpgradeClaimAction",
+	"TechTreeNodeUpgradeGemSkipAction",
+	"TechTreeNodeUpgradeStartAction",
 ]

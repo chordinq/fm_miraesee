@@ -1,5 +1,6 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 DetailsView {
 	id: root
@@ -48,9 +49,7 @@ DetailsView {
 		? Theme.rarityColors[eggModel.rarity]
 		: Theme.darkText
 
-	readonly property string eggTitleLocId: "1084108339605504"
 	readonly property string hatchButtonLocId: "1087433751588864"
-	readonly property string hatchDescLocId: "153364393984"
 	readonly property string slotsFullLocId: "1252196544512"
 	readonly property string hatchingLocId: "1252196544513"
 	readonly property string completeLocId: "27937469076533248"
@@ -66,6 +65,19 @@ DetailsView {
 		&& (eggController.canStartHatch || eggController.canCompleteHatch)
 	readonly property bool showPredictedPetIcon: eggController
 		&& eggController.predictedPetIndex >= 0
+
+	readonly property string slotsFullText: TmpTextBridge.localized_text_table(
+		root.slotsFullLocId,
+		UiLocale.selectedCode,
+		"Pets"
+	)
+	readonly property string hatchingText: TmpTextBridge.localized_text_table(
+		root.hatchingLocId,
+		UiLocale.selectedCode,
+		"Pets"
+	)
+
+	readonly property bool statsReady: eggController && eggController.statLines.length > 0
 
 	readonly property var baseStatLines: {
 		if (!eggController)
@@ -94,14 +106,9 @@ DetailsView {
 	function formatStatLine(modelData) {
 		if (!modelData)
 			return ""
-		NumberDisplay.revision
-		UiSettings.gameNumberFormattingEnabled
-		if (modelData.rawValue !== undefined) {
-			if (modelData.secondary && modelData.secondaryStatType >= 0)
-				return NumberDisplay.formatSecondaryStat(modelData.secondaryStatType, modelData.rawValue)
-			return NumberDisplay.formatStat(modelData.rawValue, false)
-		}
-		return modelData.value !== undefined ? modelData.value : ""
+		if (modelData.text !== undefined)
+			return modelData.text
+		return ""
 	}
 
 	function statValueColor(modelData) {
@@ -163,15 +170,10 @@ DetailsView {
 			anchors.rightMargin: root.layoutUnit * root.titleRightMarginRatio
 			height: titleText.height
 
-			AppText {
+			TMPText {
 				id: titleText
 
-				prefix: "["
-				locTable: root.eggModel ? root.eggModel.rarityLocTable : "General"
-				locId: root.eggModel ? root.eggModel.rarityLocId : ""
-				suffix: "] "
-				appendLocTable: "Stats"
-				appendLocId: root.eggTitleLocId
+				tmpText: root.eggModel ? root.eggModel.titleText : ""
 				fillColor: root.titleColor
 				pixelSize: root.layoutUnit * root.titleFontScale
 				outlineWeight: 8
@@ -201,18 +203,9 @@ DetailsView {
 					Row {
 						required property var modelData
 
-						spacing: root.layoutUnit * root.baseStatLabelSpacingRatio
-
-						AppText {
-							text: root.formatStatLine(modelData)
+						TMPText {
+							tmpText: root.formatStatLine(modelData)
 							fillColor: root.statValueColor(modelData)
-							pixelSize: root.layoutUnit * root.baseStatFontScale
-							outlineWeight: 0
-						}
-
-						StatLocLabel {
-							locSegments: modelData.labelLocSegments
-							fillColor: Theme.black
 							pixelSize: root.layoutUnit * root.baseStatFontScale
 							outlineWeight: 0
 						}
@@ -247,17 +240,9 @@ DetailsView {
 						readonly property color lineColor: modelData.rollT !== undefined
 							? Theme.statRollColor(modelData.rollT)
 							: Theme.darkGreyText
-						spacing: root.layoutUnit * root.subStatLabelSpacingRatio
 
-						AppText {
-							text: root.formatStatLine(modelData)
-							fillColor: parent.lineColor
-							pixelSize: root.layoutUnit * root.subStatFontScale
-							outlineWeight: 0
-						}
-
-						StatLocLabel {
-							locSegments: modelData.labelLocSegments
+						TMPText {
+							tmpText: root.formatStatLine(modelData)
 							fillColor: parent.lineColor
 							pixelSize: root.layoutUnit * root.subStatFontScale
 							outlineWeight: 0
@@ -278,54 +263,51 @@ DetailsView {
 			anchors.rightMargin: root.layoutUnit * root.subStatsRightMarginRatio
 			height: hatchDescText.height
 
-			AppText {
+			TMPText {
 				id: hatchDescText
 
 				width: parent.width
-				locTable: "Pets"
-				locId: root.hatchDescLocId
-				formatArgs: eggController ? eggController.hatchDescFormatArgs : []
+				wordWrap: true
+				visible: root.statsReady
+				tmpText: eggController ? eggController.hatchDescText : ""
 				fillColor: Theme.black
 				pixelSize: root.layoutUnit * root.subStatFontScale
 				outlineWeight: 0
-				wordWrap: true
 			}
 		}
 
-		AppText {
+		TMPText {
 			anchors.horizontalCenter: parent.horizontalCenter
-			anchors.bottom: bottomStack.visible ? bottomStack.top : actionRow.top
+			anchors.bottom: bottomStack.visible ? bottomStack.top : actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.slotsFullBottomMarginRatio
 			width: root.progressWidth
 			horizontalAlignment: Text.AlignHCenter
 			visible: root.hatchSlotsFull
-			locTable: "Pets"
-			locId: root.slotsFullLocId
+			wordWrap: true
+			tmpText: root.slotsFullText
 			fillColor: Theme.red
 			pixelSize: root.layoutUnit * root.bodyFontScale
 			outlineWeight: 0
-			wordWrap: true
 		}
 
 		Column {
 			id: bottomStack
 
 			anchors.horizontalCenter: parent.horizontalCenter
-			anchors.bottom: actionRow.top
+			anchors.bottom: actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.bottomStackBottomMarginRatio
 			width: root.progressWidth
 			spacing: root.layoutUnit * root.progressStatusSpacingRatio
 			visible: root.showHatchingUi
 
-			AppText {
+			TMPText {
 				width: parent.width
 				horizontalAlignment: Text.AlignHCenter
-				locTable: "Pets"
-				locId: root.hatchingLocId
+				wordWrap: true
+				tmpText: root.hatchingText
 				fillColor: Theme.black
 				pixelSize: root.layoutUnit * root.bodyFontScale
 				outlineWeight: 0
-				wordWrap: true
 			}
 
 			ProgressBar {
@@ -336,25 +318,25 @@ DetailsView {
 			}
 		}
 
-		Row {
-			id: actionRow
+		Item {
+			id: actionSlot
 
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: parent.bottom
 			anchors.bottomMargin: root.layoutUnit * root.actionBottomMarginRatio
-			spacing: root.actionRowSpacing
+			width: root.actionButtonWidth
+			height: root.actionButtonHeight
 
 			RectRoundButton {
-				width: root.actionButtonWidth
-				height: root.actionButtonHeight
+				anchors.fill: parent
 				scaleW: root.actionButtonScaleW
 				scaleH: root.actionButtonScaleH
 				labelPixelSize: root.actionButtonFontPixelSize
 				locId: root.hatchButtonLocId
 				locTable: "Stats"
-				visible: true
+				visible: !root.showGemSkipButton
 				fillColor: root.hatchButtonEnabled ? Theme.blue : Theme.lightGrey
-				enabled: root.hatchButtonEnabled
+				buttonEnabled: root.hatchButtonEnabled
 					&& root.eggController !== null
 					&& root.eggModel !== null
 				onClicked: {
@@ -367,16 +349,15 @@ DetailsView {
 			}
 
 			GemSkipButton {
-				width: root.actionButtonWidth
-				height: root.actionButtonHeight
+				anchors.fill: parent
 				scaleW: root.actionButtonScaleW
 				scaleH: root.actionButtonScaleH
 				visible: root.showGemSkipButton
-				costText: eggController ? eggController.skipGemCostText : ""
+				cost: eggController ? eggController.skipGemCost : 0
 				fillColor: eggController && eggController.canGemSkipHatch
 					? Theme.blue
 					: Theme.lightGrey
-				enabled: eggController !== null
+				buttonEnabled: eggController !== null
 					&& eggModel !== null
 					&& eggController.canGemSkipHatch
 				onClicked: {

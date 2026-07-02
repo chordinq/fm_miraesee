@@ -1,12 +1,13 @@
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
 
 	property int summonCount: 1
 	property bool selected: false
-	property bool enabled: true
+	property bool buttonEnabled: true
 	property color fillColor: Theme.blue
 	property real scaleW: 2
 	property real scaleH: 1
@@ -17,8 +18,8 @@ Item {
 	readonly property real labelScale: 0.6
 	readonly property string formattedSummonCount: {
 		NumberDisplay.revision
-		UiSettings.gameNumberFormattingEnabled
-		return NumberDisplay.formatInteger(root.summonCount)
+		UiSettings.preciseNumberEnabled
+		return TmpTextBridge.bulk_summon_count_text(root.summonCount)
 	}
 
 	signal clicked()
@@ -44,9 +45,9 @@ Item {
 		z: 1
 	}
 
-	AppText {
+	TMPText {
 		anchors.centerIn: parent
-		text: "x" + root.formattedSummonCount
+		tmpText: root.formattedSummonCount
 		pixelSize: root.height * root.labelScale
 		fillColor: Theme.white
 		outlineColor: Theme.black
@@ -55,7 +56,7 @@ Item {
 
 	MouseArea {
 		anchors.fill: parent
-		enabled: root.enabled
+		enabled: root.buttonEnabled
 		onClicked: root.clicked()
 	}
 }

@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
 import ui 1.0
 import TMPText 1.0
 
@@ -10,183 +9,131 @@ ApplicationWindow {
 	width: initWinWidth
 	height: initWinHeight
 	visible: true
-	title: "TMPText / core.format preview"
-	color: "#1a1a2e"
+	title: "CurrencyView / SummonButton preview"
+	color: Theme.white
 
-	readonly property real margin: Math.max(20, width * 0.04)
-	readonly property real sectionGap: Math.max(28, height * 0.035)
-	readonly property real rowGap: Math.max(10, height * 0.014)
-	readonly property real labelSize: Math.max(14, width * 0.028)
-	readonly property real bodySize: Math.max(22, width * 0.042)
-	readonly property real iconSize: Math.round(bodySize * 1.15)
+	readonly property real margin: Math.max(24, width * 0.04)
+	readonly property real sectionGap: Math.max(20, height * 0.03)
+	readonly property real barHeight: Math.max(40, height * 0.08)
+	readonly property real columnSpacing: barHeight * 0.65
+	readonly property real leftInset: barHeight * 1.5 * 0.5
 
-	Component.onCompleted: {
-		Theme.language = uiLanguage
+	readonly property real summonAspect: SummonButtonMetrics.aspect
+	readonly property real targetSummonHeight: height * 0.1
+	readonly property real summonBarSpacing: targetSummonHeight * 0.2
+	readonly property real summonButtonWidth: Math.min(
+		targetSummonHeight * summonAspect,
+		(width - summonBarSpacing * 2) * 0.34
+	)
+	readonly property real summonButtonHeight: summonButtonWidth / summonAspect
+	readonly property real summonFooterPadding: Math.max(8, height * 0.015)
+	readonly property real summonFooterHeight:
+		summonButtonHeight + summonFooterPadding * 2
+
+	Column {
+		anchors.left: parent.left
+		anchors.top: parent.top
+		anchors.leftMargin: margin + leftInset
+		anchors.topMargin: margin
+		anchors.rightMargin: margin
+		width: parent.width - margin * 2
+		spacing: columnSpacing
+
+		TMPText {
+			tmpText: "CurrencyView"
+			pixelSize: Math.max(14, width * 0.02)
+			fillColor: Theme.darkGreyText
+			outlineWeight: 0
+		}
+
+		CurrencyView {
+			height: window.barHeight
+			iconSource: Qt.resolvedUrl("../../assets/sprites/Currency/Eggshells.png")
+			amount: 16100
+		}
+
+		CurrencyView {
+			height: window.barHeight
+			iconSource: Qt.resolvedUrl("../../assets/sprites/Currency/skillTicket.png")
+			amount: 4470
+		}
+
+		CurrencyView {
+			height: window.barHeight
+			iconSource: Qt.resolvedUrl("../../assets/sprites/Currency/techPotions.png")
+			amount: 26600
+		}
+
+		CurrencyView {
+			height: window.barHeight
+			iconSource: Qt.resolvedUrl("../../assets/sprites/Currency/GemIcon.png")
+			amount: 250
+		}
+
+		CurrencyView {
+			height: window.barHeight
+			iconSource: Qt.resolvedUrl("../../assets/sprites/Currency/clockWinders.png")
+			amount: 83
+		}
+
+		Item {
+			width: 1
+			height: window.sectionGap
+		}
+
+		TMPText {
+			tmpText: "SummonButton  scaleW "
+				+ SummonButtonMetrics.scaleW.toFixed(2)
+				+ "  scaleH "
+				+ SummonButtonMetrics.scaleH.toFixed(2)
+				+ "  aspect "
+				+ SummonButtonMetrics.aspect.toFixed(3)
+			pixelSize: Math.max(14, width * 0.02)
+			fillColor: Theme.darkGreyText
+			outlineWeight: 0
+		}
 	}
 
-	ScrollView {
-		anchors.fill: parent
-		anchors.margins: window.margin
-		clip: true
-		ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+	SummonFooterBackground {
+		id: summonFooter
 
-		ColumnLayout {
-			width: Math.max(1, window.width - window.margin * 2)
-			spacing: window.sectionGap
+		anchors.left: parent.left
+		anchors.right: parent.right
+		anchors.bottom: parent.bottom
+		height: window.summonFooterHeight
+		contentPadding: window.summonFooterPadding
+		currencyIcon: Qt.resolvedUrl("../../assets/sprites/Currency/skillTicket.png")
+		currencyAmount: 4470
+		gemAmount: 250
+	}
 
-			AppText {
-				Layout.fillWidth: true
-				text: "TMPText + core/format"
-				pixelSize: Math.max(20, window.width * 0.045)
-				fillColor: Theme.white
-				outlineWeight: 0
-				horizontalAlignment: Text.AlignHCenter
-			}
+	Row {
+		anchors.horizontalCenter: parent.horizontalCenter
+		anchors.verticalCenter: summonFooter.verticalCenter
+		spacing: window.summonBarSpacing
 
-			TMPText {
-				Layout.alignment: Qt.AlignHCenter
-				tmpText: "HELLO — plain text"
-				pixelSize: Math.max(28, window.bodySize * 1.1)
-				fillColor: "#ff6666"
-			}
+		SkillSummonButton {
+			height: window.summonButtonHeight
+			summonCount: 10
+			cost: 50
+			fillColor: Theme.blue
+			buttonEnabled: true
+		}
 
-			ColumnLayout {
-				Layout.fillWidth: true
-				spacing: window.rowGap
+		EggSummonButton {
+			height: window.summonButtonHeight
+			summonCount: 1
+			cost: 100
+			fillColor: Theme.blue
+			buttonEnabled: true
+		}
 
-				AppText {
-					text: "FormatLevelPlusOne (outlineWeight: 8)"
-					pixelSize: window.labelSize
-					fillColor: Theme.darkGreyText
-					outlineWeight: 0
-				}
-
-				TMPText {
-					Layout.alignment: Qt.AlignHCenter
-					tmpText: sampleLevelPlusOne
-					pixelSize: window.bodySize
-					outlineWeight: 8
-				}
-
-				TMPText {
-					Layout.alignment: Qt.AlignHCenter
-					tmpText: sampleLevelFull
-					pixelSize: window.bodySize * 0.85
-					fillColor: Theme.white
-				}
-			}
-
-			ColumnLayout {
-				Layout.fillWidth: true
-				spacing: window.rowGap
-
-				AppText {
-					text: "Numbers.Format / FormatLong"
-					pixelSize: window.labelSize
-					fillColor: Theme.darkGreyText
-					outlineWeight: 0
-				}
-
-				TMPText {
-					tmpText: sampleLongA
-					pixelSize: window.bodySize
-				}
-
-				TMPText {
-					tmpText: sampleLongB
-					pixelSize: window.bodySize
-				}
-
-				TMPText {
-					tmpText: sampleLongC
-					pixelSize: window.bodySize
-				}
-			}
-
-			ColumnLayout {
-				Layout.fillWidth: true
-				spacing: window.rowGap
-
-				AppText {
-					text: "FormatStat / FormatPercentage"
-					pixelSize: window.labelSize
-					fillColor: Theme.darkGreyText
-					outlineWeight: 0
-				}
-
-				TMPText {
-					tmpText: sampleStat
-					pixelSize: window.bodySize
-				}
-
-				TMPText {
-					tmpText: samplePct
-					pixelSize: window.bodySize
-				}
-			}
-
-			ColumnLayout {
-				Layout.fillWidth: true
-				spacing: window.rowGap
-
-				AppText {
-					text: "FormatCurrency + inline icon"
-					pixelSize: window.labelSize
-					fillColor: Theme.darkGreyText
-					outlineWeight: 0
-				}
-
-				Repeater {
-					model: currencySamples
-
-					delegate: Item {
-						Layout.fillWidth: true
-						implicitHeight: currencyRow.implicitHeight
-
-						RowLayout {
-							id: currencyRow
-
-							anchors.left: parent.left
-							width: parent.width
-							spacing: 12
-
-							AppText {
-								Layout.preferredWidth: window.width * 0.28
-								text: modelData.label
-								pixelSize: window.labelSize
-								fillColor: Theme.darkGreyText
-								outlineWeight: 0
-							}
-
-							TMPText {
-								tmpText: modelData.text
-								iconSource: modelData.iconSource
-								iconPixelSize: window.iconSize
-								pixelSize: window.bodySize
-							}
-						}
-					}
-				}
-			}
-
-			ColumnLayout {
-				Layout.fillWidth: true
-				spacing: window.rowGap
-
-				AppText {
-					text: "FormatPower"
-					pixelSize: window.labelSize
-					fillColor: Theme.darkGreyText
-					outlineWeight: 0
-				}
-
-				TMPText {
-					tmpText: samplePowerText
-					iconSource: samplePowerIcon
-					iconPixelSize: window.iconSize
-					pixelSize: window.bodySize
-				}
-			}
+		MountSummonButton {
+			height: window.summonButtonHeight
+			summonCount: 1
+			cost: 5
+			fillColor: Theme.lightGrey
+			buttonEnabled: false
 		}
 	}
 }

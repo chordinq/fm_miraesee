@@ -12,9 +12,11 @@ Item {
 	readonly property int rarity: petModel?.rarity ?? 0
 
 	readonly property real equippedOpacityFraction: 8 / 16
+	readonly property bool petEquipped: root.petModel?.isEquipped ?? false
+	readonly property bool petLocked: root.petModel?.isLocked ?? false
 	readonly property real iconOpacity: !root.petModel
 		? 1
-		: (root.petModel.isEquipped || root.petModel.isLocked)
+		: (root.petEquipped || root.petLocked)
 			? root.equippedOpacityFraction
 			: 1
 	readonly property real equippedVisualWidthRatio: 1.2
@@ -39,16 +41,14 @@ Item {
 
 	EquippedVisual {
 		anchors.centerIn: icon
-		visible: root.petModel?.isEquipped ?? false
+		visible: root.petEquipped
 		scaleHorizontal: root.equippedScaleHorizontal
 		width: iconSize * root.equippedVisualWidthRatio
 	}
 
 	LockedVisual {
 		anchors.centerIn: icon
-		visible: root.petModel
-			? !root.petModel.isEquipped && root.petModel.isLocked
-			: false
+		visible: root.petModel !== null && !root.petEquipped && root.petLocked
 		scaleHorizontal: root.equippedScaleHorizontal
 		width: iconSize * root.equippedVisualWidthRatio
 	}

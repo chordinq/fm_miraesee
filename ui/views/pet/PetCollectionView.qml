@@ -26,6 +26,13 @@ Item {
 		onEggClicked: function(eggModel) {
 			root.openEggDetails(eggModel)
 		}
+		onEmptySlotClicked: {
+			if (!root.petCollectionModel)
+				return
+			var eggModel = root.petCollectionModel.firstInventoryEgg
+			if (eggModel)
+				root.openEggDetails(eggModel)
+		}
 	}
 
 	PetSlotGrid {

@@ -33,8 +33,11 @@ from .actions import (
 	SkillsQuickUpgradeAction,
 	SkillEquipAction,
 	SkillUnEquipAction,
+	TechTreeNodeUpgradeClaimAction,
+	TechTreeNodeUpgradeGemSkipAction,
+	TechTreeNodeUpgradeStartAction,
 )
-from .enums import AscendableType
+from .enums import AscendableType, TechTreeType
 from .player.player_item_model import PlayerItemModel
 from .player.player_pet_collection_model import HatchedPetInfo
 from .player.player_model import PlayerModel
@@ -320,3 +323,36 @@ class GameLogic:
 				return claim_result, None
 
 		return self.pet_egg_hatch_finalize(egg_guid, commit=commit)
+
+	def tech_tree_node_upgrade_start(
+		self,
+		tree_type: TechTreeType,
+		node_id: int,
+		*,
+		commit: bool = True,
+	) -> MetaActionResult:
+		"""IL: TechTreeNodeUpgradeStartAction."""
+		action = TechTreeNodeUpgradeStartAction(tree_type, node_id)
+		return action.execute(self._player, commit=commit)
+
+	def tech_tree_node_upgrade_gem_skip(
+		self,
+		tree_type: TechTreeType,
+		node_id: int,
+		*,
+		commit: bool = True,
+	) -> MetaActionResult:
+		"""IL: TechTreeNodeUpgradeGemSkipAction."""
+		action = TechTreeNodeUpgradeGemSkipAction(tree_type, node_id)
+		return action.execute(self._player, commit=commit)
+
+	def tech_tree_node_upgrade_claim(
+		self,
+		tree_type: TechTreeType,
+		node_id: int,
+		*,
+		commit: bool = True,
+	) -> MetaActionResult:
+		"""IL: TechTreeNodeUpgradeClaimAction."""
+		action = TechTreeNodeUpgradeClaimAction(tree_type, node_id)
+		return action.execute(self._player, commit=commit)

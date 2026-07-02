@@ -8,12 +8,12 @@ Item {
 
 	property var mountController: null
 	property var mountCollectionModel: null
+	property var sessionBridge: null
 	property real summonResultWidthRatio: 1.0
 
-	readonly property real summonAspect: 4 / 2
+	readonly property real summonAspect: SummonButtonMetrics.aspect
 	readonly property real bottomMargin: Math.max(8, height * 0.04)
 	readonly property real topMargin: Math.max(8, width * 0.02)
-	readonly property real topBarHeight: Math.max(32, height * 0.08)
 	readonly property real targetSummonHeight: height * 0.1
 	readonly property real summonBarSpacing: targetSummonHeight * 0.2
 	readonly property real summonButtonWidth: Math.min(
@@ -37,27 +37,16 @@ Item {
 		anchors.right: parent.right
 		anchors.bottom: parent.bottom
 		height: root.summonFooterHeight
-	}
-
-	MainViewHeader {
-		id: topBar
-
-		anchors.left: parent.left
-		anchors.right: parent.right
-		anchors.top: parent.top
-		anchors.leftMargin: root.topMargin
-		anchors.rightMargin: root.topMargin
-		anchors.topMargin: root.topMargin
-		height: root.topBarHeight
-		primaryCurrencyIcon: root.mountController ? root.mountController.summonSpriteImage : ""
-		primaryCurrencyAmount: root.mountController ? root.mountController.clockWinderCount : 0
-		rarityCounts: root.mountCollectionModel ? root.mountCollectionModel.rarityCounts : []
-		rarityIconType: "mount"
-		ascensionLevel: root.mountController ? root.mountController.ascensionLevel : 0
+		contentPadding: root.summonFooterPadding
+		currencyIcon: root.mountController ? root.mountController.summonSpriteImage : ""
+		currencyAmount: root.mountController ? root.mountController.clockWinderCount : 0
+		gemAmount: root.sessionBridge ? root.sessionBridge.gemCount : 0
 	}
 
 	MountSummonResult {
-		anchors.top: topBar.bottom
+		id: mountSummonResult
+
+		anchors.top: parent.top
 		anchors.bottom: summonFooter.top
 		anchors.left: parent.left
 		anchors.leftMargin: root.topMargin
@@ -70,6 +59,21 @@ Item {
 			: parent.width * root.summonResultWidthRatio
 		results: root.mountController ? root.mountController.summonResults : []
 		ascensionLevel: root.mountController ? root.mountController.ascensionLevel : 0
+	}
+
+	BonusOptimizerPanel {
+		visible: root.summonResultWidthRatio < 1
+		anchors.top: parent.top
+		anchors.bottom: summonFooter.top
+		anchors.left: mountSummonResult.right
+		anchors.right: parent.right
+		anchors.margins: root.topMargin
+		summonController: root.mountController
+	}
+
+	LoadingOverlay {
+		active: root.mountController ? root.mountController.isOptimizing : false
+		iconSizeRatio: 0.06
 	}
 
 	Row {
@@ -85,7 +89,6 @@ Item {
 		}
 
 		MountSummonButton {
-			width: root.summonButtonWidth
 			height: root.summonButtonHeight
 			summonCount: root.mountController ? root.mountController.summonCount : 1
 			cost: root.mountController ? root.mountController.summonCost : 0
@@ -93,7 +96,7 @@ Item {
 			fillColor: root.mountController && root.mountController.canAffordSummon
 				? Theme.blue
 				: Theme.lightGrey
-			enabled: root.mountController && root.mountController.canAffordSummon
+			buttonEnabled: root.mountController && root.mountController.canAffordSummon
 			onClicked: {
 				if (root.mountController)
 					root.mountController.performSummon()

@@ -1,10 +1,28 @@
 # updated 2026-06-03
 from __future__ import annotations
+
+from collections.abc import Callable
 from typing import TYPE_CHECKING, Optional
+
 from dataclasses import dataclass
+
 from ..enums import CurrencyType
+
 if TYPE_CHECKING:
 	from .player_model import PlayerModel
+
+_negative_currency_policy: Callable[[], bool] | None = None
+
+
+def register_negative_currency_policy(policy: Callable[[], bool] | None) -> None:
+	global _negative_currency_policy
+	_negative_currency_policy = policy
+
+
+def negative_currency_allowed() -> bool:
+	if _negative_currency_policy is None:
+		return False
+	return _negative_currency_policy()
 
 
 @dataclass
@@ -31,15 +49,25 @@ class SpendContext:
 		self._spent_amount = max(0, self._spent_amount - amount)
 
 	def can_afford(self) -> bool:
+		if negative_currency_allowed():
+			return True
 		currency_model = self._player.player_currency_model
 		return currency_model.can_afford(self._currency_type, self._spent_amount)
 
 	def spend(self, sink_name: str) -> None:
+		_ = sink_name
 		currency_model = self._player.player_currency_model
 		if self._spent_amount < 1:
 			currency_model._current_transaction = None
 			return
-		currency_model.currencies[self._currency_type] -= self._spent_amount
+		if currency_model.can_afford(self._currency_type, self._spent_amount):
+			currency_model.currencies[self._currency_type] -= self._spent_amount
+		elif negative_currency_allowed():
+			currency_model.add_or_subtract(self._currency_type, -self._spent_amount)
+		else:
+			raise ValueError(
+				f"Cannot spend {self._spent_amount} {self._currency_type!r}"
+			)
 		currency_model._current_transaction = None
 
 
@@ -73,6 +101,8 @@ class PlayerCurrencyModel:
         self.currencies[currency_type] = amount
 
     def can_afford(self, currency_type: CurrencyType, amount: int) -> bool:
+        if negative_currency_allowed():
+            return True
         return self.currencies[currency_type] >= amount
     
     def can_afford_price(self, price: Price) -> bool:
@@ -101,7 +131,8 @@ def can_afford(
     if currency_model is None:
         raise ValueError("CurrencyPlayerModelExtensions.CanAfford requires PlayerCurrencyModel")
     if not currency_model.can_afford(currency_type, amount):
-        return False, None
+        if not negative_currency_allowed():
+            return False, None
     spend_context = currency_model.create_spend_context(
         player_model,
         currency_type,

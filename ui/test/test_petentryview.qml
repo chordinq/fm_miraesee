@@ -2,6 +2,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls
 import ui 1.0
+import TMPText 1.0
 
 ApplicationWindow {
 	id: window
@@ -19,16 +20,16 @@ ApplicationWindow {
 	readonly property real cellWidth: entrySize
 
 	Component.onCompleted: {
-		Theme.language = uiLanguage
+		UiLocale.setSelectedLocale(uiLanguage)
 	}
 
 	Column {
 		anchors.centerIn: parent
 		spacing: Math.max(24, height * 0.06)
 
-		AppText {
+		TMPText {
 			anchors.horizontalCenter: parent.horizontalCenter
-			text: testPetModel ? testPetModel.petKey + "  L" + (testPetModel.level + 1) : ""
+			tmpText: testPetModel ? testPetModel.petKey + "  L" + (testPetModel.level + 1) : ""
 			pixelSize: Math.max(18, width * 0.028)
 			fillColor: Theme.black
 			outlineWeight: 0

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import copy
 
-from PySide6.QtCore import Property, QObject, QUrl, Signal, Slot
+from PySide6.QtCore import Property, QObject, QTimer, QUrl, Signal, Slot
 
 from config import PETS_MAPPING, SPRITES_DIR
 from core.game_logic.actions import ActionResult
@@ -14,6 +14,7 @@ from controllers.summon.summon_upgrade_status import read_summon_upgrade_status
 from controllers.support.summon_overdraft import can_afford_summon_for_ui, execute_egg_summon
 from ui.utils.summon_result_entries import build_egg_summon_results
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
+from utils.summon.bonus_optimizer import optimize_egg_summon_bonus
 
 
 def _pet_key_from_model(pet) -> str:
@@ -51,6 +52,13 @@ class PetSummonTestBridge(QObject):
         self._summon_sprite_image = QUrl.fromLocalFile(
             str(SPRITES_DIR / "Currency" / "Eggshells.png")
         ).toString()
+        self._optimize_budget: int = 30
+        self._optimize_route: str = ""
+        self._optimize_route_segments: list[str] = []
+        self._optimize_bonus: int = 0
+        self._optimize_total: int = 0
+        self._optimize_ready: bool = False
+        self._is_optimizing: bool = False
         self._sync_status()
         self._refresh_prediction()
         register_display_refresh(self._on_ui_settings_changed)
@@ -65,6 +73,12 @@ class PetSummonTestBridge(QObject):
         self._last_action_text = ""
         self._summon_results = []
         self._merge_target_guid = ""
+        self._optimize_route = ""
+        self._optimize_route_segments = []
+        self._optimize_bonus = 0
+        self._optimize_total = 0
+        self._optimize_ready = False
+        self._is_optimizing = False
         if defer_heavy:
             return
         self.finish_deferred_reload()
@@ -273,6 +287,12 @@ class PetSummonTestBridge(QObject):
     @Slot(str)
     def performPetEquip(self, pet_guid: str) -> None:
         slot = self._resolve_equip_slot(pet_guid)
+        collection = self._logic.player.player_pet_collection_model
+        displaced_guid: str | None = None
+        for pet in collection.pets:
+            if pet.is_equipped and pet.equip_slot == slot and pet.guid != pet_guid:
+                displaced_guid = pet.guid
+                break
         result = self._logic.pet_equip(pet_guid, slot, commit=True)
         if result != ActionResult.Success:
             self._last_action_text = f"equip failed: {result.name}"
@@ -280,7 +300,8 @@ class PetSummonTestBridge(QObject):
             pet = _find_pet_by_guid(self._logic, pet_guid)
             name = _pet_key_from_model(pet) if pet is not None else pet_guid[:16]
             self._last_action_text = f"equipped {name} slot {slot + 1}"
-        self._refresh_collection()
+        if self._pet_collection is not None:
+            self._pet_collection.patch_pet_equip_layout(pet_guid, displaced_guid)
         self._sync_status()
         self.statsRefreshRequested.emit()
         self.stateChanged.emit()
@@ -294,7 +315,8 @@ class PetSummonTestBridge(QObject):
             pet = _find_pet_by_guid(self._logic, pet_guid)
             name = _pet_key_from_model(pet) if pet is not None else pet_guid[:16]
             self._last_action_text = f"unequipped {name}"
-        self._refresh_collection()
+        if self._pet_collection is not None:
+            self._pet_collection.patch_pet_equip_layout(pet_guid)
         self._sync_status()
         self.statsRefreshRequested.emit()
         self.stateChanged.emit()
@@ -310,7 +332,8 @@ class PetSummonTestBridge(QObject):
         name = _pet_key_from_model(pet)
         state = "locked" if pet.is_locked else "unlocked"
         self._last_action_text = f"{state} {name}"
-        self._refresh_collection()
+        if self._pet_collection is not None:
+            self._pet_collection.patch_pet_lock(pet_guid)
         self._sync_status()
         self.stateChanged.emit()
 
@@ -373,6 +396,60 @@ class PetSummonTestBridge(QObject):
             self._patch_egg_summon_collection(summoned)
         self._sync_status()
         self._refresh_prediction()
+        self.stateChanged.emit()
+
+    @Property(int, notify=stateChanged)
+    def optimizeBudget(self) -> int:
+        return self._optimize_budget
+
+    @Property(str, notify=stateChanged)
+    def optimizeRoute(self) -> str:
+        return self._optimize_route
+
+    @Property("QVariantList", notify=stateChanged)
+    def optimizeRouteSegments(self) -> list[str]:
+        return self._optimize_route_segments
+
+    @Property(int, notify=stateChanged)
+    def optimizeBonus(self) -> int:
+        return self._optimize_bonus
+
+    @Property(int, notify=stateChanged)
+    def optimizeTotal(self) -> int:
+        return self._optimize_total
+
+    @Property(bool, notify=stateChanged)
+    def optimizeReady(self) -> bool:
+        return self._optimize_ready
+
+    @Property(bool, notify=stateChanged)
+    def isOptimizing(self) -> bool:
+        return self._is_optimizing
+
+    @Slot(int)
+    def setOptimizeBudget(self, budget: int) -> None:
+        clamped = max(1, min(budget, 9999))
+        if clamped == self._optimize_budget:
+            return
+        self._optimize_budget = clamped
+        self._optimize_ready = False
+        self.stateChanged.emit()
+
+    @Slot()
+    def runOptimize(self) -> None:
+        self._is_optimizing = True
+        self._optimize_ready = False
+        self.stateChanged.emit()
+        QTimer.singleShot(0, self._do_optimize)
+
+    def _do_optimize(self) -> None:
+        result = optimize_egg_summon_bonus(self._logic, self._optimize_budget)
+        self._optimize_route = result.route_str
+        self._optimize_route_segments = list(result.route_segments)
+        self._optimize_bonus = result.best_bonus_count
+        self._optimize_total = result.best_total_pulls
+        self._optimize_ready = True
+        self._is_optimizing = False
         self.stateChanged.emit()
 
     def _simulate_summon(self) -> tuple[list[str], list[dict[str, object]]]:

@@ -9,12 +9,12 @@ Item {
 
 	property var petController: null
 	property var petCollectionModel: null
+	property var sessionBridge: null
 	property real summonResultWidthRatio: 1.0
 
-	readonly property real summonAspect: 4 / 2
+	readonly property real summonAspect: SummonButtonMetrics.aspect
 	readonly property real bottomMargin: Math.max(8, height * 0.04)
 	readonly property real topMargin: Math.max(8, width * 0.02)
-	readonly property real topBarHeight: Math.max(32, height * 0.08)
 	readonly property real targetSummonHeight: height * 0.1
 	readonly property real summonBarSpacing: targetSummonHeight * 0.2
 	readonly property real summonButtonWidth: Math.min(
@@ -38,27 +38,16 @@ Item {
 		anchors.right: parent.right
 		anchors.bottom: parent.bottom
 		height: root.summonFooterHeight
-	}
-
-	MainViewHeader {
-		id: topBar
-
-		anchors.left: parent.left
-		anchors.right: parent.right
-		anchors.top: parent.top
-		anchors.leftMargin: root.topMargin
-		anchors.rightMargin: root.topMargin
-		anchors.topMargin: root.topMargin
-		height: root.topBarHeight
-		primaryCurrencyIcon: root.petController ? root.petController.summonSpriteImage : ""
-		primaryCurrencyAmount: root.petController ? root.petController.eggshellCount : 0
-		rarityCounts: root.petCollectionModel ? root.petCollectionModel.eggRarityCounts : []
-		rarityIconType: "egg"
-		ascensionLevel: root.petController ? root.petController.ascensionLevel : 0
+		contentPadding: root.summonFooterPadding
+		currencyIcon: root.petController ? root.petController.summonSpriteImage : ""
+		currencyAmount: root.petController ? root.petController.eggshellCount : 0
+		gemAmount: root.sessionBridge ? root.sessionBridge.gemCount : 0
 	}
 
 	EggSummonResult {
-		anchors.top: topBar.bottom
+		id: petSummonResult
+
+		anchors.top: parent.top
 		anchors.bottom: summonFooter.top
 		anchors.left: parent.left
 		anchors.leftMargin: root.topMargin
@@ -71,6 +60,21 @@ Item {
 			: parent.width * root.summonResultWidthRatio
 		results: root.petController ? root.petController.summonResults : []
 		ascensionLevel: root.petController ? root.petController.ascensionLevel : 0
+	}
+
+	BonusOptimizerPanel {
+		visible: root.summonResultWidthRatio < 1
+		anchors.top: parent.top
+		anchors.bottom: summonFooter.top
+		anchors.left: petSummonResult.right
+		anchors.right: parent.right
+		anchors.margins: root.topMargin
+		summonController: root.petController
+	}
+
+	LoadingOverlay {
+		active: root.petController ? root.petController.isOptimizing : false
+		iconSizeRatio: 0.06
 	}
 
 	Row {
@@ -86,7 +90,6 @@ Item {
 		}
 
 		EggSummonButton {
-			width: root.summonButtonWidth
 			height: root.summonButtonHeight
 			summonCount: root.petController ? root.petController.summonCount : 1
 			cost: root.petController ? root.petController.summonCost : 0
@@ -94,7 +97,7 @@ Item {
 			fillColor: root.petController && root.petController.canAffordSummon
 				? Theme.blue
 				: Theme.lightGrey
-			enabled: root.petController && root.petController.canAffordSummon
+			buttonEnabled: root.petController && root.petController.canAffordSummon
 			onClicked: {
 				if (root.petController)
 					root.petController.performSummon()

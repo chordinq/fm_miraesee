@@ -22,7 +22,8 @@ ApplicationWindow {
     property int activeTabIndex: 0
     property bool settingsOpen: false
     property bool languageOpen: false
-    property int tabLoadMask: 1
+    readonly property int allTabMask: (1 << 5) - 1
+    property int tabLoadMask: allTabMask
 
     function tabIsLoaded(index) {
         return (tabLoadMask & (1 << index)) !== 0
@@ -34,26 +35,30 @@ ApplicationWindow {
     }
 
     function selectTab(index) {
+        if (index === activeTabIndex)
+            return
         markTabLoaded(index)
         activeTabIndex = index
     }
 
     function syncUiLanguage() {
-        gamePetEggTest.setUiLanguage(Theme.language)
-        gamePetCollection.setUiLanguage(Theme.language)
-        gameTechTreeForge.setUiLanguage(Theme.language)
-        gameTechTreePower.setUiLanguage(Theme.language)
-        gameTechTreeSkillsPetTech.setUiLanguage(Theme.language)
+        gamePetEggTest.setUiLanguage(UiLocale.selectedCode)
+        gamePetCollection.setUiLanguage(UiLocale.selectedCode)
+        gameMountCollection.setUiLanguage(UiLocale.selectedCode)
+        gameTest.skillCollection.setUiLanguage(UiLocale.selectedCode)
+        gameTechTreeForge.setUiLanguage(UiLocale.selectedCode)
+        gameTechTreePower.setUiLanguage(UiLocale.selectedCode)
+        gameTechTreeSkillsPetTech.setUiLanguage(UiLocale.selectedCode)
     }
 
     Component.onCompleted: {
-        Theme.language = uiLanguage
+        UiLocale.setSelectedLocale(uiLanguage)
         syncUiLanguage()
     }
 
     Connections {
-        target: Theme
-        function onLanguageChanged() {
+        target: UiLocale
+        function onSelectedLocaleChanged() {
             syncUiLanguage()
         }
     }
@@ -77,6 +82,12 @@ ApplicationWindow {
         onClosed: window.languageOpen = false
     }
 
+    LoadingOverlay {
+        parent: Overlay.overlay
+        anchors.fill: parent
+        active: UiLoading.active
+    }
+
     Row {
         anchors.fill: parent
         spacing: 0
@@ -87,7 +98,9 @@ ApplicationWindow {
             activeTabIndex: window.activeTabIndex
             onTabClicked: function(index) { window.selectTab(index) }
             onSettingsClicked: window.settingsOpen = true
-            onLoadDumpClicked: gameSession.loadDumpFromClipboard()
+            onLoadDumpClicked: UiLoading.defer(function() {
+                gameSession.loadDumpFromClipboardSync()
+            })
         }
 
         Item {
@@ -214,7 +227,8 @@ ApplicationWindow {
         SkillMainView {
             anchors.fill: parent
             skillController: gameTest
-            summonResultWidthRatio: 0.25
+            sessionBridge: gameSession
+            summonResultWidthRatio: 0.3
         }
     }
 
@@ -225,7 +239,8 @@ ApplicationWindow {
             anchors.fill: parent
             petController: gamePetSummonTest
             petCollectionModel: gamePetCollection
-            summonResultWidthRatio: 0.25
+            sessionBridge: gameSession
+            summonResultWidthRatio: 0.3
         }
     }
 
@@ -236,7 +251,8 @@ ApplicationWindow {
             anchors.fill: parent
             mountController: gameMountSummonTest
             mountCollectionModel: gameMountCollection
-            summonResultWidthRatio: 0.25
+            sessionBridge: gameSession
+            summonResultWidthRatio: 0.3
         }
     }
 

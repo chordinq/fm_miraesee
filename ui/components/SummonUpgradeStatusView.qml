@@ -1,13 +1,17 @@
 pragma ComponentBehavior: Bound
 import QtQuick
 import ui 1.0
+import TMPText 1.0
 
 Item {
 	id: root
 
 	property var summonController: null
 
-	readonly property string maxedLocId: "25788256913911808"
+	readonly property string maxedLabel: {
+		UiLocale.selectedCode
+		return TmpTextBridge.maxed_progress_label(UiLocale.selectedCode)
+	}
 
 	readonly property int summonLevel: root.summonController
 		? root.summonController.summonLevel
@@ -27,9 +31,11 @@ Item {
 	readonly property bool showProgress: !root.showMaxed
 	readonly property string progressLabel: {
 		NumberDisplay.revision
-		UiSettings.gameNumberFormattingEnabled
-		return NumberDisplay.formatInteger(root.progressCount) + "/"
-			+ NumberDisplay.formatInteger(root.progressRequired)
+		UiSettings.preciseNumberEnabled
+		return NumberDisplay.formatProgressPair(
+			root.progressCount,
+			root.progressRequired
+		)
 	}
 
 	readonly property int ascensionLevel: root.summonController
@@ -75,13 +81,12 @@ Item {
 			outlineWeight: 0
 		}
 
-		AppText {
+		TMPText {
 			id: maxedText
 
 			anchors.centerIn: parent
 			visible: root.showMaxed
-			locTable: "General"
-			locId: root.maxedLocId
+			tmpText: root.maxedLabel
 			pixelSize: root.levelPixelSize
 			fillColor: Theme.black
 			outlineWeight: 0

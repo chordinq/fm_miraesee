@@ -6,8 +6,17 @@ Item {
 
 	property var sessionBridge: null
 
-	readonly property real topMargin: Math.max(8, width * 0.02)
-	readonly property real topBarHeight: Math.max(32, height * 0.08)
+	readonly property real summonAspect: SummonButtonMetrics.aspect
+	readonly property real targetSummonHeight: height * 0.1
+	readonly property real summonBarSpacing: targetSummonHeight * 0.2
+	readonly property real summonButtonWidth: Math.min(
+		targetSummonHeight * summonAspect,
+		(width - summonBarSpacing * 3) * 0.5
+	)
+	readonly property real summonButtonHeight: summonButtonWidth / summonAspect
+	readonly property real summonFooterPadding: Math.max(8, height * 0.015)
+	readonly property real summonFooterHeight:
+		root.summonButtonHeight + root.summonFooterPadding * 2
 	readonly property url techPotionIcon: Qt.resolvedUrl("../../../assets/sprites/Currency/techPotions.png")
 
 	Rectangle {
@@ -15,16 +24,14 @@ Item {
 		color: Qt.darker(Theme.darkBlue, 1.5)
 	}
 
-	MainViewHeader {
+	SummonFooterBackground {
 		anchors.left: parent.left
 		anchors.right: parent.right
-		anchors.top: parent.top
-		anchors.leftMargin: root.topMargin
-		anchors.rightMargin: root.topMargin
-		anchors.topMargin: root.topMargin
-		height: root.topBarHeight
-		primaryCurrencyIcon: root.techPotionIcon
-		primaryCurrencyAmount: root.sessionBridge ? root.sessionBridge.techPotionCount : 0
-		rarityCounts: []
+		anchors.bottom: parent.bottom
+		height: root.summonFooterHeight
+		contentPadding: root.summonFooterPadding
+		currencyIcon: root.techPotionIcon
+		currencyAmount: root.sessionBridge ? root.sessionBridge.techPotionCount : 0
+		gemAmount: root.sessionBridge ? root.sessionBridge.gemCount : 0
 	}
 }

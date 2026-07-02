@@ -2,6 +2,7 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls
 import ui 1.0
+import TMPText 1.0
 
 ApplicationWindow {
 	id: window
@@ -18,7 +19,7 @@ ApplicationWindow {
 	readonly property real collectionWidthRatio: 5 / 16
 
 	Component.onCompleted: {
-		Theme.language = uiLanguage
+		UiLocale.setSelectedLocale(uiLanguage)
 	}
 
 	Row {
@@ -28,8 +29,8 @@ ApplicationWindow {
 		anchors.margins: Math.max(16, width * 0.02)
 		spacing: Math.max(12, width * 0.015)
 
-		AppText {
-			text: testSkillModel
+		TMPText {
+			tmpText: testSkillModel
 				? testSkillModel.skillKey + "  L" + (testSkillModel.level + 1)
 				: ""
 			pixelSize: Math.max(16, width * 0.022)
@@ -48,9 +49,9 @@ ApplicationWindow {
 				radius: height * 0.2
 				color: window.ascensionLevel === modelData ? Theme.blue : Theme.lightGrey
 
-				AppText {
+				TMPText {
 					anchors.centerIn: parent
-					text: "A" + parent.modelData
+					tmpText: "A" + parent.modelData
 					pixelSize: parent.height * 0.42
 					fillColor: Theme.white
 					outlineWeight: 0
@@ -74,10 +75,10 @@ ApplicationWindow {
 		anchors.bottomMargin: Math.max(16, height * 0.03)
 		color: Theme.commonGrey
 
-		AppText {
+		TMPText {
 			anchors.centerIn: parent
 			visible: !window.detailsOpen
-			text: "Closed — click to reopen"
+			tmpText: "Closed — click to reopen"
 			pixelSize: Math.max(14, parent.width * 0.04)
 			fillColor: Theme.darkGreyText
 			outlineWeight: 0
