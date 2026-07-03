@@ -37,14 +37,11 @@ __all__ = [
 	"register_qml_services",
 	"create_app_engine",
 	"default_window_size",
-	"loading_window_size",
 	"centered_window_origin",
 	"set_window_context",
-	"set_loading_context",
 	"load_qml",
 	"clear_qml_roots",
 	"sync_window_icons",
-	"show_loading_screen",
 	"close_boot_splash",
 	"APP_ICON_PATH",
 ]
@@ -157,23 +154,6 @@ def default_window_size(
 	return window_size(app, width_ratio, height_ratio)
 
 
-def loading_window_size(app: QGuiApplication) -> tuple[int, int]:
-	return window_size(app, 1 / 3, 1 / 3)
-
-
-def set_loading_context(
-	engine: QQmlApplicationEngine,
-	app: QGuiApplication,
-) -> None:
-	width, height = loading_window_size(app)
-	x, y = centered_window_origin(app, width, height)
-	ctx = engine.rootContext()
-	ctx.setContextProperty("loadingWinWidth", width)
-	ctx.setContextProperty("loadingWinHeight", height)
-	ctx.setContextProperty("loadingWinX", x)
-	ctx.setContextProperty("loadingWinY", y)
-
-
 def set_window_context(
 	engine: QQmlApplicationEngine,
 	width: int,
@@ -229,15 +209,3 @@ def close_boot_splash() -> None:
 		return
 	if pyi_splash.is_alive():
 		pyi_splash.close()
-
-
-def show_loading_screen(
-	app: QGuiApplication,
-	engine: QQmlApplicationEngine,
-) -> bool:
-	set_loading_context(engine, app)
-	if not load_qml(engine, "loading_screen.qml", app, replace=False):
-		return False
-	app.processEvents(QEventLoop.ProcessEventsFlag.AllEvents, 100)
-	close_boot_splash()
-	return True

@@ -1,5 +1,5 @@
 import QtQuick
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import ui 1.0
 
 Item {
@@ -20,6 +20,7 @@ Item {
 
 	Item {
 		id: bakeCanvas
+
 		width: root.bakedW
 		height: root.bakedH
 		transformOrigin: Item.TopLeft
@@ -32,10 +33,15 @@ Item {
 
 		Item {
 			id: patternSource
+
 			anchors.fill: parent
 			visible: false
+			layer.enabled: true
+			layer.live: true
+			layer.smooth: true
 
 			property real animOffset: 0.0
+
 			NumberAnimation on animOffset {
 				from: 0.0
 				to: root.stepDiameter
@@ -61,16 +67,20 @@ Item {
 
 		RectRounded {
 			id: maskShape
+
 			anchors.fill: parent
 			scaleW: root.scaleW
 			scaleH: root.scaleH
 			fillColor: Theme.white
 			visible: false
+			layer.enabled: true
+			layer.smooth: true
 		}
 
-		OpacityMask {
+		MultiEffect {
 			anchors.fill: parent
 			source: patternSource
+			maskEnabled: true
 			maskSource: maskShape
 		}
 	}

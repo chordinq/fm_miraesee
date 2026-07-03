@@ -1,5 +1,5 @@
 import QtQuick
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 import ui 1.0
 
 Item {
@@ -16,6 +16,7 @@ Item {
 
 	Item {
 		id: bakeCanvas
+
 		width: root.bakedW
 		height: root.bakedH
 		transformOrigin: Item.TopLeft
@@ -28,11 +29,16 @@ Item {
 
 		Item {
 			id: patternSource
+
 			anchors.fill: parent
 			visible: false
+			layer.enabled: true
+			layer.live: true
+			layer.smooth: true
 
 			Item {
 				id: starCanvas
+
 				width: parent.width * 2
 				height: parent.height * 2
 				anchors.centerIn: parent
@@ -42,8 +48,12 @@ Item {
 
 				Repeater {
 					model: starCanvas.rowCount
+
 					delegate: Item {
 						id: rowItem
+
+						required property int index
+
 						width: starCanvas.width
 						height: root.cellSize
 						y: index * root.cellSize
@@ -51,7 +61,10 @@ Item {
 
 						Repeater {
 							model: starCanvas.colCount
+
 							delegate: Image {
+								required property int index
+
 								x: index * root.cellSize + (rowItem.staggered ? root.cellSize * 0.5 : 0)
 								width: root.cellSize
 								height: root.cellSize
@@ -84,16 +97,20 @@ Item {
 
 		RectRounded {
 			id: maskShape
+
 			anchors.fill: parent
 			scaleW: root.scaleW
 			scaleH: root.scaleH
 			fillColor: Theme.white
 			visible: false
+			layer.enabled: true
+			layer.smooth: true
 		}
 
-		OpacityMask {
+		MultiEffect {
 			anchors.fill: parent
 			source: patternSource
+			maskEnabled: true
 			maskSource: maskShape
 		}
 	}

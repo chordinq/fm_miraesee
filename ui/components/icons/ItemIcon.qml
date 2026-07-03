@@ -22,6 +22,7 @@ Item {
 	implicitHeight: logicalSize
 
 	layer.enabled: true
+	layer.live: true
 	layer.smooth: true
 	layer.mipmap: true
 

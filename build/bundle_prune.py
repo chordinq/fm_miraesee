@@ -46,6 +46,7 @@ QT_BINARY_DROP = (
 )
 
 QT_QML_DROP = (
+	"/Qt5Compat/",
 	"/QtWebEngine/",
 	"/QtQuick3D/",
 	"/QtCharts/",

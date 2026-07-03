@@ -23,7 +23,7 @@ miraesee_data_exporter.lua
 README.txt
 ```
 
-실행 시 **PyInstaller 부트로더 스플래시**(`icon.png`) → **QML 로딩 창** → 메인 UI 순으로 표시됩니다. `assets/`와 `_internal/`은 exe 옆에 그대로 두세요.
+실행 시 **PyInstaller 부트로더 스플래시**(`LoadingScreen.png`) → 메인 UI 순으로 표시됩니다. `assets/`와 `_internal/`은 exe 옆에 그대로 두세요.
 
 ### 1. 게임에서 데이터 추출 (GameGuardian)
 

@@ -1,8 +1,10 @@
+"""PyInstaller runtime hook — fix DPI before Qt or splash handoff."""
+from __future__ import annotations
+
 import ctypes
 import os
 import sys
 
-os.environ.setdefault("PYTHONUTF8", "1")
 os.environ.setdefault("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 os.environ.setdefault("QT_ENABLE_HIGHDPI_SCALING", "1")
 os.environ.setdefault("QT_SCALE_FACTOR", "1")
@@ -15,13 +17,3 @@ if sys.platform == "win32":
 			ctypes.windll.user32.SetProcessDPIAware()
 		except Exception:
 			pass
-
-
-def main() -> None:
-	from app.run import main as run_app
-
-	run_app()
-
-
-if __name__ == "__main__":
-	main()

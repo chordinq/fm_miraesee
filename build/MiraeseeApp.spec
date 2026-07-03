@@ -11,7 +11,7 @@ project_dir = Path(SPECPATH).resolve().parent
 sys.path.insert(0, str(project_dir / "build"))
 from bundle_prune import collect_app_datas, prune_analysis
 
-splash_img = project_dir / "assets" / "icon.png"
+splash_img = project_dir / "assets" / "LoadingScreen.png"
 
 a = Analysis(
 	[str(project_dir / "main.py")],
@@ -26,11 +26,10 @@ a = Analysis(
 	],
 	hookspath=[],
 	hooksconfig={},
-	runtime_hooks=[],
+	runtime_hooks=[str(project_dir / "build" / "pyi_rth_dpi.py")],
 	excludes=[
 		"pytest",
 		"IPython",
-		"tkinter",
 		"matplotlib",
 		"numpy",
 		"pandas",
@@ -81,9 +80,15 @@ a = Analysis(
 		"PySide6.QtSpeech",
 		"PySide6.QtStateMachine",
 		"PySide6.QtShaderTools",
+		"PySide6.QtSql",
+		"PySide6.QtHelp",
+		"PySide6.QtDBus",
+		"PySide6.QtAxContainer",
+		"PySide6.QtPrintSupport",
+		"PySide6.QtUiTools",
 	],
 	noarchive=False,
-	optimize=1,
+	optimize=2,
 )
 
 prune_analysis(a)
@@ -93,7 +98,8 @@ splash = (
 		str(splash_img),
 		a.binaries,
 		a.datas,
-		max_img_size=(512, 512),
+		always_on_top=True,
+		max_img_size=(1280, 720),
 	)
 	if splash_img.is_file()
 	else None
@@ -108,6 +114,7 @@ exe = EXE(
 	[],
 	name="MiraeseeApp",
 	icon=str(project_dir / "assets" / "icon.ico"),
+	manifest=str(project_dir / "build" / "app.manifest"),
 	debug=False,
 	bootloader_ignore_signals=False,
 	strip=False,

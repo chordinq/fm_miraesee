@@ -10,7 +10,7 @@ from app.harness import (
 	load_qml,
 	register_qml_services,
 	set_window_context,
-	show_loading_screen,
+	close_boot_splash,
 )
 
 
@@ -25,8 +25,6 @@ def main() -> None:
 	engine.warnings.connect(handle_qml_warnings)
 
 	init_width, init_height = default_window_size(app)
-	if not show_loading_screen(app, engine):
-		sys.exit(-1)
 
 	register_qml_services(engine)
 
@@ -66,4 +64,6 @@ def main() -> None:
 
 	if not ok:
 		sys.exit(-1)
+
+	close_boot_splash()
 	sys.exit(app.exec())
