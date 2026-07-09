@@ -23,6 +23,7 @@ class PetCollectionBridge(QObject):
     hatchSlotsChanged = Signal()
     gridReloaded = Signal()
     entryLayoutChanged = Signal()
+    gridWarmupSuppressedChanged = Signal()
 
     def __init__(
         self,
@@ -34,6 +35,7 @@ class PetCollectionBridge(QObject):
         self._collection = collection
         self._player = player
         self._ui_language = "en"
+        self._grid_warmup_suppressed = False
         self._entry_model = PetCollectionEntryModel(self)
         self._pet_bridge_by_guid: dict[str, PetModelBridge] = {}
         self._egg_bridge_by_guid: dict[str, EggModelBridge] = {}
@@ -47,6 +49,16 @@ class PetCollectionBridge(QObject):
         self._sync_pet_bridges()
         self._sync_egg_bridges()
         self._sync_entry_model_full()
+
+    @Property(bool, notify=gridWarmupSuppressedChanged)
+    def gridWarmupSuppressed(self) -> bool:
+        return self._grid_warmup_suppressed
+
+    def set_grid_warmup_suppressed(self, suppressed: bool) -> None:
+        if self._grid_warmup_suppressed == suppressed:
+            return
+        self._grid_warmup_suppressed = suppressed
+        self.gridWarmupSuppressedChanged.emit()
 
     def _discard_bridge(self, bridge: QObject) -> None:
         bridge.setParent(None)
@@ -353,6 +365,10 @@ class PetCollectionBridge(QObject):
         for bridge in self._pet_bridge_by_guid.values():
             bridge.invalidate_stat_cache()
 
+    def refresh_localized_texts(self) -> None:
+        for bridge in self._pet_bridge_by_guid.values():
+            bridge.refresh_localized()
+
     def refresh_eggs(self, *, resync_existing: bool = False) -> None:
         self._sync_egg_bridges(resync_existing=resync_existing)
         self._sync_entry_model_full()
@@ -467,6 +483,7 @@ class PetCollectionBridge(QObject):
         if language == self._ui_language:
             return
         self._ui_language = language
+        self.refresh_localized_texts()
         for bridge in self._egg_bridge_by_guid.values():
             bridge.set_ui_language(language)
         self.changed.emit()

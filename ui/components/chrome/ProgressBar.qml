@@ -5,8 +5,8 @@ import TMPText 1.0
 Item {
 	id: root
 
-	property real scaleW: 22.5
-	property real scaleH: 2
+	property real aspectW: 22.5
+	property real aspectH: 2
 	property real labelFontScale: 0.55
 	property var timerBridge: null
 	property real progressFraction: 0
@@ -45,12 +45,14 @@ Item {
 		return root.displayLabelText
 	}
 
-	height: width * scaleH / scaleW
+	height: width * aspectH / aspectW
 
 	RectRounded {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * (root.aspectW))
+		cornerRatioH: 255 / (512 * (root.aspectH))
 		fillColor: Theme.darkBlue
 		fillOpacity: root.trackFillOpacity
 	}
@@ -67,16 +69,20 @@ Item {
 			y: 0
 			width: root.width
 			height: root.height
-			scaleW: root.scaleW
-			scaleH: root.scaleH
+			aspectW: root.aspectW
+			aspectH: root.aspectH
+			cornerRatioW: 255 / (512 * root.aspectW)
+			cornerRatioH: 255 / (512 * root.aspectH)
 			fillColor: root.fillColor
 		}
 	}
 
 	RectRoundedOutline {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * (root.aspectW))
+		cornerRatioH: 255 / (512 * (root.aspectH))
 		outlineColor: Theme.black
 	}
 

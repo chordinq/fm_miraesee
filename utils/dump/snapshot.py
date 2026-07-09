@@ -107,8 +107,10 @@ class TechTreeNodeDump:
 class SkinEntryDump:
 	"""One PlayerSkinModel entry from the SKIN_COLLECTION dump block.
 
-	Dump line format (35 chars):
-	    5 <item_type:1hex> <idx:02hex> <is_eq:1hex> <level:02hex> <exp:08hex> <stats_blob:20hex>
+	v1 line (35 chars):
+	    5 <item_type:1hex> <idx:02hex> <is_eq:1hex> <level:02hex> <exp:08hex> <stats:20hex>
+	v2 line (67 chars): v1 + <guid_lo:16hex> <guid_hi:16hex>
+	Meta line (35 chars): 5F <skins_random_seed:16hex> + pad(17 zeros)
 	"""
 
 	item_type: int
@@ -116,7 +118,9 @@ class SkinEntryDump:
 	is_equipped: bool
 	level: int
 	experience: int
-	stats_blob: str  # 20-char hex (StatContributions, up to 2 stat chunks)
+	stats_blob: str
+	guid_lo: int | None = None
+	guid_hi: int | None = None
 
 
 @dataclass
@@ -137,3 +141,5 @@ class DumpSnapshot:
 	round_robins: list[RoundRobinDump] = field(default_factory=list)
 	equipment_slots: list[EquipmentItemDump] = field(default_factory=list)
 	skins: list[SkinEntryDump] = field(default_factory=list)
+	skins_random_seed: int | None = None
+	equipped_skin_guids: dict[int, tuple[int, int]] = field(default_factory=dict)

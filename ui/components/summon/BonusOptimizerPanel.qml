@@ -6,7 +6,17 @@ import TMPText 1.0
 Item {
 	id: root
 
+	clip: true
+
 	property var summonController: null
+	property real cornerRatio: 255 / (512 * 50)
+	property real panelCornerRadius: -1
+
+	readonly property real cornerRadiusPx: panelCornerRadius >= 0
+		? panelCornerRadius
+		: Math.min(width, height) * cornerRatio
+	readonly property real panelCornerRatioW: width > 0 ? cornerRadiusPx / width : cornerRatio
+	readonly property real panelCornerRatioH: height > 0 ? cornerRadiusPx / height : cornerRatio
 
 	readonly property string locTable: "Miraesee"
 	readonly property string titleLocId: "1000000000000004"
@@ -28,11 +38,11 @@ Item {
 	readonly property real labelPx: Math.max(11, height * 0.024)
 	readonly property real valuePx: Math.max(14, height * 0.032)
 
-	readonly property real btnScaleW: 4.5
-	readonly property real btnScaleH: 1.0
+	readonly property real btnAspectW: 4.5
+	readonly property real btnAspectH: 1.0
 	readonly property real btnH: Math.min(
 		height * 0.085,
-		(width - 2 * padH) / btnScaleW
+		(width - 2 * padH) / btnAspectW
 	)
 
 	readonly property int routeColumns: 8
@@ -63,9 +73,9 @@ Item {
 
 	RectRounded {
 		anchors.fill: parent
+		cornerRatioW: root.panelCornerRatioW
+		cornerRatioH: root.panelCornerRatioH
 		fillColor: Theme.lightGrey
-		scaleW: 50
-		scaleH: 50
 	}
 
 	TMPText {
@@ -168,8 +178,9 @@ Item {
 		anchors.topMargin: root.secGap
 		anchors.horizontalCenter: parent.horizontalCenter
 		height: root.btnH
-		scaleW: root.btnScaleW
-		scaleH: root.btnScaleH
+		width: root.btnH * root.btnAspectW / root.btnAspectH
+		aspectW: root.btnAspectW
+		aspectH: root.btnAspectH
 		labelText: root.localizedLabel(root.optimizeLocId).toUpperCase()
 		labelScale: 0.3
 		fillColor: Theme.blue

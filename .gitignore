@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.egg-info/
+miraesee_scripts.egg-info/
 .venv/
 venv/
 
@@ -13,6 +14,8 @@ venv/
 # PyInstaller & release
 dist/
 release/
+releases/
+*.zip
 build/MiraeseeApp/
 build/**/*.toc
 build/**/xref-*.html
@@ -27,3 +30,9 @@ data/
 
 # Scratch / temp
 _tmp*.py
+*.lnk
+utils/temp.lua
+utils/_*.txt
+utils/il2cpp/*_out.*
+ui/testdump*.txt
+test/

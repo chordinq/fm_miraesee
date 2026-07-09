@@ -42,14 +42,14 @@ Item {
 	EquippedVisual {
 		anchors.centerIn: icon
 		visible: root.petEquipped
-		scaleHorizontal: root.equippedScaleHorizontal
+		aspectW: root.equippedScaleHorizontal
 		width: iconSize * root.equippedVisualWidthRatio
 	}
 
 	LockedVisual {
 		anchors.centerIn: icon
 		visible: root.petModel !== null && !root.petEquipped && root.petLocked
-		scaleHorizontal: root.equippedScaleHorizontal
+		aspectW: root.equippedScaleHorizontal
 		width: iconSize * root.equippedVisualWidthRatio
 	}
 

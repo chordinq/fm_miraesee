@@ -6,8 +6,8 @@ import TMPText 1.0
 Item {
 	id: root
 
-	property real scaleW: 2.0
-	property real scaleH: 0.72
+	property real aspectW: 2.0
+	property real aspectH: 0.72
 	property color fillColor: Theme.white
 	property real fillOpacity: 1.0
 
@@ -25,12 +25,11 @@ Item {
 	signal clicked()
 
 	readonly property real baseSize: 256
-	readonly property real buttonAspect: scaleW / scaleH
-	readonly property real layoutHeight: height > 0 ? height : implicitHeight
-	readonly property real bakedWidth: baseSize * scaleW
-	readonly property real bakedHeight: baseSize * scaleH
-	readonly property real bakedW: 512 * scaleW
-	readonly property real bakedH: 512 * scaleH
+	readonly property real buttonAspect: aspectW / aspectH
+	readonly property real bakedWidth: baseSize * aspectW
+	readonly property real bakedHeight: baseSize * aspectH
+	readonly property real bakedW: 512 * aspectW
+	readonly property real bakedH: 512 * aspectH
 	readonly property bool interactive: locId !== "" || labelText !== ""
 
 	readonly property string resolvedLabel: {
@@ -57,7 +56,6 @@ Item {
 
 	implicitWidth: bakedWidth
 	implicitHeight: bakedHeight
-	width: layoutHeight * buttonAspect
 
 	default property alias content: overlay.data
 	property alias contentHost: overlay

@@ -2,9 +2,10 @@ import QtQuick
 import ui 1.0
 import TMPText 1.0
 
-DetailsView {	id: root
+DetailsView {
+	id: root
 
-	heightScale: 39
+	panelUnitsH: 39
 
 	property var petModel: null
 	property var petController: null
@@ -116,7 +117,7 @@ DetailsView {	id: root
 				EquippedVisual {
 					anchors.centerIn: petIcon
 					visible: root.petModel?.isEquipped ?? false
-					scaleHorizontal: root.equippedScaleHorizontal
+					aspectW: root.equippedScaleHorizontal
 					width: petIcon.width * root.equippedVisualWidthRatio
 				}
 
@@ -125,7 +126,7 @@ DetailsView {	id: root
 					visible: root.petModel
 						&& !root.petModel.isEquipped
 						&& root.petModel.isLocked
-					scaleHorizontal: root.equippedScaleHorizontal
+					aspectW: root.equippedScaleHorizontal
 					width: petIcon.width * root.equippedVisualWidthRatio
 				}
 			}
@@ -258,8 +259,8 @@ DetailsView {	id: root
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				locTable: "General"
 				locId: root.upgradeLocId
@@ -271,8 +272,8 @@ DetailsView {	id: root
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				visible: root.petModel && !root.petModel.isEquipped
 				locId: root.equipLocId
@@ -291,8 +292,8 @@ DetailsView {	id: root
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				visible: root.petModel && root.petModel.isEquipped
 				locId: root.removeLocId

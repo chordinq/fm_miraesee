@@ -52,8 +52,9 @@ Item {
 
 		RectRoundButton {
 			height: parent.height
-			scaleW: root.widthHeightRatio
-			scaleH: 1
+			width: height * aspectW / aspectH
+			aspectW: root.widthHeightRatio
+			aspectH: 1
 			fillColor: root.effectiveFillColor
 		}
 

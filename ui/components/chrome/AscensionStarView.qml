@@ -18,7 +18,7 @@ Item {
 	visible: starCount > 0
 
 	readonly property string starSource:
-		Qt.resolvedUrl("../../assets/sprites/General/AscensionStar.png")
+		Qt.resolvedUrl("../../../assets/sprites/General/AscensionStar.png")
 
 	Row {
 		anchors.centerIn: parent

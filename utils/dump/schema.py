@@ -1,11 +1,41 @@
-"""Dump format contract shared by miraesee_data_exporter.lua and Python parser."""
+"""Dump format contract shared by utils/gg/miraesee_data_exporter.lua and Python parser."""
 
 from __future__ import annotations
 
-DUMP_VERSION = 3
+DUMP_VERSION = 4
+LINE_WIDTH = 32
 
-# [FORGE] meta line (32 hex chars, v3+):
-#   forge_level(2) + forge_count(8, uint32) + forge_seed(16, uint64)
+# Dump v4 — every `[BLOCK]` data line is exactly 32 hex chars (see utils/dump/wire.py).
+#
+# Multi-line records use continuation prefixes:
+#   8 = secondary stats (20-char blob, previous 2/4/5 record)
+#   9 = timer start ms (egg/forge/tech timer)
+#   A = timer end ms
+#   6 = skin guid lo / 7 = skin guid hi
+#   E = equipped skin guid header (item_type + following 6/7 lines)
+#
+# Collection primary prefixes: 1=skill 2=pet 3=egg 4=mount 5=skin 5F=skin meta
+#
+# v4 primary line layouts (32 hex chars, zero-padded):
+#   pet:  2 + rarity(1) + id(2) + level(8) + exp(8) + is_eq(2) + slot(2) + is_locked(2)
+#   egg:  3 + rarity(1) + is_eq(2) + slot(2) + seed(16)
+#   mount: 4 + rarity(1) + id(2) + level(8) + exp(8) + is_eq(2) + is_locked(2)
+#   is_eq / slot / is_locked use full byte (%02X) so EMPTY_EQUIP_SLOT 0xFF encodes correctly.
+CONT_STATS = "8"
+CONT_TIMER_START = "9"
+CONT_TIMER_END = "A"
+CONT_GUID_LO = "6"
+CONT_GUID_HI = "7"
+
+# v4 record primary prefixes inside collection blocks
+KIND_SKILL = "1"
+KIND_PET = "2"
+KIND_EGG = "3"
+KIND_MOUNT = "4"
+KIND_SKIN = "5"
+SKIN_META_PREFIX = "5F"
+
+# [FORGE] meta line (32 hex chars, v3+):#   forge_level(2) + forge_count(8, uint32) + forge_seed(16, uint64)
 #   + highest_age(2, IL +0x40) + reserved(3) + asc(1)
 # Summon meta lines (SKILL/MOUNT): level(2) + count(2) + seed(16) + pad(10) + asc(1)
 # PET meta v4: level(2) + count(2) + seed(16) + hatch_slots(2) + pad(8) + asc(1)
@@ -37,6 +67,10 @@ TECH_TREE_TIMER_LINE_LEN = 35
 
 EMPTY_EQUIP_SLOT = 0xFF
 
-# Skin collection line:
+# Skin collection v1 line:
 #   prefix(1) + item_type(1) + idx(2) + is_eq(1) + level(2) + exp(8) + stats(20) = 35 chars
 SKIN_LINE_LEN = 35
+# Skin collection v2 line: v1 + guid_lo(16) + guid_hi(16) = 67 chars
+SKIN_LINE_V2_LEN = 67
+# Skin collection meta line (35 chars): 5F + skins_random_seed(16) + pad(17)
+SKIN_META_LINE_LEN = 35

@@ -1,0 +1,136 @@
+{
+  "version": "2.6.0",
+  "sources": {
+    "dumper_dir": "c:\\Users\\chord\\Documents\\ForgeMaster\\Miraesee\\version\\2.6.0\\Il2CppDumper-net6-win-v6.7.46",
+    "metadata": {
+      "path": "c:\\Users\\chord\\Documents\\ForgeMaster\\Miraesee\\version\\2.6.0\\global-metadata.dat",
+      "size_bytes": 21863476,
+      "magic": "0xFAB11BAF",
+      "version": 31
+    }
+  },
+  "il2cpp_runtime": {
+    "Il2CppClass_1_size": 184,
+    "Il2CppClass": {
+      "static_fields": "0xB8",
+      "rgctx_data": "0xC0"
+    },
+    "MethodInfo": {
+      "methodPointer": "0x0",
+      "virtualMethodPointer": "0x8",
+      "invoker_method": "0x10",
+      "name": "0x18",
+      "klass": "0x20",
+      "return_type": "0x28",
+      "parameters": "0x30",
+      "rgctx_data": "0x38",
+      "genericMethod": "0x40",
+      "token": "0x48"
+    },
+    "Il2CppClass_computed": {
+      "static_fields": "0xB0",
+      "rgctx_data": "0xB8"
+    },
+    "MethodInfo_computed": {
+      "methodPointer": "0x0",
+      "virtualMethodPointer": "0x8",
+      "invoker_method": "0x10",
+      "name": "0x18",
+      "klass": null,
+      "return_type": null,
+      "parameters": "0x20",
+      "rgctx_data": "0x28"
+    },
+    "MetaplayClientBase_RGCTX": {
+      "closed_klass_0": "0x0",
+      "inner_klass_1": "0x8",
+      "get_State_method": "0x10",
+      "get_Connection_method": "0x18",
+      "t_player_model_klass": "0x20",
+      "get_PlayerModel_method": "0x28",
+      "set_State_method": "0x30"
+    },
+    "MetaplayClientBase_StaticFields": {
+      "State": "0x0"
+    }
+  },
+  "methods": {
+    "get_State": {
+      "code_rva": "0x52B7468",
+      "open_generic_inst": "MetaplayClientBase<object>"
+    },
+    "get_PlayerModel": {
+      "code_rva": "0x52B7890",
+      "open_generic_inst": "MetaplayClientBase<object>"
+    },
+    "closed_generic_MetaplayClientBase_PlayerModel": {
+      "get_Connection": {
+        "script_metadata_slot": "0x8BA4D10",
+        "ghidra_dat_guess": "0x8CA4D10"
+      },
+      "get_PlayerContext": {
+        "script_metadata_slot": "0x8BA4D40",
+        "ghidra_dat_guess": "0x8CA4D40"
+      },
+      "get_PlayerModel": {
+        "script_metadata_slot": "0x8BA4D48",
+        "ghidra_dat_guess": "0x8CA4D48"
+      }
+    },
+    "method_table_slots": {
+      "get_State": "0x763E80",
+      "get_PlayerModel": "0x763E50"
+    }
+  },
+  "type_info": {
+    "MetaplayClientState": "0x8B78288",
+    "PlayerModel": "0x8B79A48",
+    "DefaultPlayerClientContext": "0x8B72730",
+    "MetaplaySDK": "0x8B78300"
+  },
+  "forward_chain": {
+    "object_header": "0x10",
+    "state_to_player_context": "0x10",
+    "ctx_to_player_journal": "0x78",
+    "journal_to_timeline": "0x18",
+    "timeline_to_staged_model": "0x60"
+  },
+  "player_model": {
+    "GamePaused": "0x20C",
+    "PlayerForgeModel": "0x218",
+    "PlayerSkillCollectionModel": "0x240",
+    "type_def_index": "0x272F"
+  },
+  "state_entry_recipe": {
+    "description": "MetaplayClientBase<object>.get_State IL path",
+    "steps": [
+      "method_info = read(MethodInfo* at libil2cpp + method_table_slot)",
+      "klass = read(method_info + klass_offset)",
+      "if (klass.init_flags & 1) == 0: metadata init required (FUN_03db3610)",
+      "rgctx = read(klass + rgctx_data_offset)",
+      "inner = read(rgctx + inner_klass_1_offset)",
+      "static_fields = read(inner + static_fields_offset)",
+      "state = read(static_fields + State_offset)"
+    ],
+    "offsets": {
+      "Il2CppClass.rgctx_data": 192,
+      "Il2CppClass.static_fields": 184,
+      "RGCTX.inner_klass_1": 8,
+      "StaticFields.State": 0,
+      "MethodInfo.klass": 32
+    }
+  },
+  "verified_expectations": {
+    "forward_chain": {
+      "state_to_player_context": "0x10",
+      "ctx_to_player_journal": "0x78",
+      "journal_to_timeline": "0x18",
+      "timeline_to_staged_model": "0x60"
+    },
+    "Il2CppClass": {
+      "rgctx_data": "0xC0",
+      "static_fields": "0xB8"
+    },
+    "MethodInfo.klass": "0x20"
+  }
+}

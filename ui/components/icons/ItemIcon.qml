@@ -28,8 +28,9 @@ Item {
 
 	RectRounded {
 		anchors.fill: parent
-		scaleW: 4
-		scaleH: 4
+		aspectW: 4
+		aspectH: 4
+		cornerRatio: 255 / (512 * (4))
 		fillColor: Theme.itemAgeColors[root.itemAge]
 		fillOpacity: 1.0
 	}
@@ -54,16 +55,17 @@ Item {
 		}
 		onLoaded: {
 			if (item) {
-				item.scaleW = 4
-				item.scaleH = 4
+				item.maskAspectW = 4
+				item.maskAspectH = 4
 			}
 		}
 	}
 
 	RectRoundedOutline {
 		anchors.fill: parent
-		scaleW: 4
-		scaleH: 4
+		aspectW: 4
+		aspectH: 4
+		cornerRatio: 255 / (512 * (4))
 		outlineColor: Theme.black
 		outlineOpacity: 1.0
 	}

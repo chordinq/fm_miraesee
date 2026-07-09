@@ -39,6 +39,7 @@ def main() -> None:
 		app,
         gameSession=session,
         gamePlayerStats=session.playerStats,
+        gameProfile=session.profileMain,
         gameTest=session.skillTest,
 		gameEquipmentCollection=session.equipment,
 		gamePetCollection=session.petCollection,

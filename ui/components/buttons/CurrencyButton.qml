@@ -6,8 +6,8 @@ import TMPText 1.0
 RectRoundButton {
 	id: root
 
-	scaleW: SummonButtonMetrics.scaleW
-	scaleH: SummonButtonMetrics.scaleH
+	aspectW: SummonButtonMetrics.aspectW
+	aspectH: SummonButtonMetrics.aspectH
 	fillColor: Theme.blue
 	handleInput: true
 

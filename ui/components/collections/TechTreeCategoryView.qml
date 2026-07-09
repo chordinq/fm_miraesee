@@ -15,14 +15,14 @@ Item {
 
 	signal clicked()
 
-	property real scaleW: 12
-	property real scaleH: 10
+	property real aspectW: 12
+	property real aspectH: 10
 	property real headerHeightRatio: 0.195
 
-	readonly property real rectOutlineScaleW: scaleW * 2
-	readonly property real rectOutlineScaleH: scaleH * 2
+	readonly property real rectOutlineAspectW: aspectW * 2
+	readonly property real rectOutlineAspectH: aspectH * 2
 	readonly property real headerHeight: height * headerHeightRatio
-	readonly property real rectBorderWidth: width * 63 / (128 * scaleW)
+	readonly property real rectBorderWidth: width * 63 / (128 * aspectW)
 	readonly property real titleFontScale: 0.6
 	readonly property real progressFontScale: 0.145
 	readonly property real iconWidthRatio: 0.435
@@ -94,15 +94,17 @@ Item {
 	readonly property real titleWidthRatio: 0.92
 
 	implicitWidth: 256
-	implicitHeight: implicitWidth * (scaleH / scaleW)
-	height: width * (scaleH / scaleW)
+	implicitHeight: implicitWidth * (aspectH / aspectW)
+	height: width * (aspectH / aspectW)
 
 	clip: true
 
 	RectRounded {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * root.aspectW)
+		cornerRatioH: 255 / (512 * root.aspectH)
 		fillColor: Theme.white
 	}
 
@@ -120,8 +122,10 @@ Item {
 			anchors.right: parent.right
 			y: 0
 			height: root.height
-			scaleW: root.scaleW
-			scaleH: root.scaleH
+			aspectW: root.aspectW
+			aspectH: root.aspectH
+			cornerRatioW: 255 / (512 * root.aspectW)
+			cornerRatioH: 255 / (512 * root.aspectH)
 			fillColor: Theme.checkBoxActiveGrey
 		}
 
@@ -161,8 +165,10 @@ Item {
 			anchors.right: parent.right
 			y: dividerClip.height - root.height
 			height: root.height
-			scaleW: root.rectOutlineScaleW
-			scaleH: root.rectOutlineScaleH
+			aspectW: root.rectOutlineAspectW
+			aspectH: root.rectOutlineAspectH
+			cornerRatioW: 63 / (128 * root.rectOutlineAspectW)
+			cornerRatioH: 63 / (128 * root.rectOutlineAspectH)
 			outlineColor: Theme.black
 		}
 	}
@@ -182,7 +188,7 @@ Item {
 			width: bodyArea.width * root.iconWidthRatio
 			height: width
 			source: Qt.resolvedUrl(
-				"../../assets/sprites/TechTree/" + root.typeConfig.image)
+				"../../../assets/sprites/TechTree/" + root.typeConfig.image)
 			fillMode: Image.PreserveAspectFit
 			smooth: true
 			mipmap: true
@@ -204,8 +210,10 @@ Item {
 
 	RectRoundedOutline {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * root.aspectW)
+		cornerRatioH: 255 / (512 * root.aspectH)
 		outlineColor: Theme.black
 	}
 

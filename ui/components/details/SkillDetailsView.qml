@@ -5,7 +5,7 @@ import TMPText 1.0
 DetailsView {
 	id: root
 
-	heightScale: 45.5
+	panelUnitsH: 45.5
 
 	property var skillModel: null
 	property var skillController: null
@@ -59,10 +59,10 @@ DetailsView {
 	readonly property real passiveLabelBottomMarginRatio: 0.1
 	readonly property real passivePillBottomMarginRatio: 0.057
 	readonly property real passiveFontScale: 0.045
-	readonly property real passivePillScaleW: 21
-	readonly property real passivePillScaleH: 1.2
+	readonly property real passivePillAspectW: 21
+	readonly property real passivePillAspectH: 1.2
 	readonly property real passivePillHeight:
-		passiveWidth * passivePillScaleH / passivePillScaleW
+		passiveWidth * passivePillAspectH / passivePillAspectW
 	readonly property string passiveLabelText: TmpTextBridge.localized_text_table(
 		root.passiveLocId,
 		UiLocale.selectedCode,
@@ -127,7 +127,7 @@ DetailsView {
 				EquippedVisual {
 					anchors.centerIn: skillIcon
 					visible: root.skillModel?.isEquipped ?? false
-					scaleHorizontal: 3
+					aspectW: 3
 					width: root.iconLogicalSize * root.equippedVisualWidthRatio
 				}
 
@@ -221,8 +221,10 @@ DetailsView {
 
 			RectRounded {
 				anchors.fill: parent
-				scaleW: root.passivePillScaleW
-				scaleH: root.passivePillScaleH
+				aspectW: root.passivePillAspectW
+				aspectH: root.passivePillAspectH
+				cornerRatioW: 255 / (512 * root.passivePillAspectW)
+				cornerRatioH: 255 / (512 * root.passivePillAspectH)
 				fillColor: Theme.black
 				fillOpacity: 0.3
 			}
@@ -246,8 +248,8 @@ DetailsView {
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				locId: root.upgradeLocId
 				fillColor: root.skillModel && root.skillModel.canUpgrade
@@ -265,8 +267,8 @@ DetailsView {
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				visible: root.skillModel && !root.skillModel.isEquipped
 				locId: root.equipLocId
@@ -285,8 +287,8 @@ DetailsView {
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				visible: root.skillModel && root.skillModel.isEquipped
 				locId: root.removeLocId

@@ -14,6 +14,7 @@ Item {
 	readonly property real edgeMargin: Math.max(4, root.width * 0.06)
 
 	readonly property var tabs: [
+		{ locId: "25736002664067072", locTable: "General", color: Theme.lightBlue },
 		{ locId: "12856879411200", locTable: "Forge", color: Theme.forgeColor },
 		{ locId: "2109395617640448", locTable: "Stats", color: Theme.skillColor },
 		{ locId: "2110564712771584", locTable: "Stats", color: Theme.petColor },
@@ -43,10 +44,11 @@ Item {
 				required property int index
 
 				width: sideTabColumn.width
-				height: width * scaleH / scaleW
+				height: width * aspectH / aspectW
 
-				locId: modelData.locId
-				locTable: modelData.locTable
+				locId: modelData.locId !== undefined ? modelData.locId : ""
+				locTable: modelData.locTable !== undefined ? modelData.locTable : "General"
+				labelText: modelData.labelText !== undefined ? modelData.labelText : ""
 				activeColor: modelData.color
 				active: root.activeTabIndex === index
 				onClicked: root.tabClicked(index)

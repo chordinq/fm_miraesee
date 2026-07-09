@@ -19,7 +19,7 @@ from ui.utils.guild_war_helper import (
 from controllers.collections.skill_collection_bridge import SkillCollectionBridge
 from controllers.summon.summon_upgrade_status import read_summon_upgrade_status
 from controllers.support.summon_overdraft import can_afford_summon_for_ui, execute_skill_summon
-from ui.utils.summon_result_entries import build_skill_summon_results
+from ui.utils.summon_preview_entries import build_skill_summon_preview
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
 
 
@@ -46,7 +46,7 @@ class SkillSummonTestBridge(QObject):
         self._prediction_text = ""
         self._status_text = ""
         self._last_action_text = ""
-        self._summon_results: list[dict[str, object]] = []
+        self._summon_preview: list[dict[str, object]] = []
         self._total_war_points = 0
         self._guild_war_day = 0
         self._summon_sprite_image = QUrl.fromLocalFile(
@@ -84,7 +84,7 @@ class SkillSummonTestBridge(QObject):
     def _refresh_prediction(self) -> None:
         lines, _war_points, results = self._simulate_summon()
         self._prediction_text = "\n".join(lines)
-        self._summon_results = results
+        self._summon_preview = results
 
     def _resolve_summon_cost(self, count: int) -> int:
         player = self._logic.player
@@ -92,13 +92,11 @@ class SkillSummonTestBridge(QObject):
         base_amount = summon_config.single_summon_cost.amount * count
         target = summon_config.summonable_id.get_stat_target()
 
-        return round(
-            StatHelper.calculate_value(
-                player,
-                StatType.Cost,
-                target,
-                base_amount,
-            )
+        return StatHelper.calculate_value_round_to_int(
+            player,
+            StatType.Cost,
+            target,
+            base_amount,
         )
 
     def _summon_count_options(self) -> list[int]:
@@ -184,8 +182,8 @@ class SkillSummonTestBridge(QObject):
         return self._last_action_text
 
     @Property("QVariantList", notify=stateChanged)
-    def summonResults(self) -> list[dict[str, object]]:
-        return self._summon_results
+    def summonPreview(self) -> list[dict[str, object]]:
+        return self._summon_preview
 
     @Property(int, notify=stateChanged)
     def ascensionLevel(self) -> int:
@@ -244,7 +242,7 @@ class SkillSummonTestBridge(QObject):
             had_new = any(info.is_new for info in summoned)
             earned_war_points = war_points_for_skill_summon(self._guild_war_day, summoned)
             self._total_war_points += earned_war_points
-            self._summon_results = build_skill_summon_results(
+            self._summon_preview = build_skill_summon_preview(
                 summoned,
                 self._logic.player,
             )
@@ -380,7 +378,7 @@ class SkillSummonTestBridge(QObject):
             return [f"predict unavailable: {result.name}"], 0, []
 
         war_points = war_points_for_skill_summon(self._guild_war_day, summoned)
-        results = build_skill_summon_results(summoned, player)
+        results = build_skill_summon_preview(summoned, player)
 
         lines = [
             f"next x{self._summon_count} (simulated, state unchanged)",

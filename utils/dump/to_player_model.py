@@ -15,7 +15,14 @@ from core.game_logic.config.shared_game_config import get_shared_game_config
 from core.game_logic.player.player_mount_collection_model import MountId, PlayerMountModel
 from core.game_logic.player.player_pet_collection_model import PetId, PlayerEggModel, PlayerPetModel
 from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
-from core.game_logic.player.player_skin_collection_model import PlayerSkinModel, SkinId
+from core.game_logic.stats import StatContributions
+from core.game_logic.player.player_skin_collection_model import (
+	Guid,
+	build_stat_contributions_from_dump_blob,
+	deterministic_dump_guid,
+	PlayerSkinModel,
+	SkinId,
+)
 from core.game_logic.player.timer_model import TimerModel
 
 from .parser import _TECHTREE_LOOKUP
@@ -271,19 +278,37 @@ def parse_dump(text: str) -> PlayerModel:
 def _apply_skins(player: PlayerModel, snapshot: DumpSnapshot) -> None:
 	"""Populate PlayerSkinCollectionModel from parsed SkinEntryDump list."""
 	collection = player.player_skin_collection_model
+	collection.init(snapshot.skins_random_seed or 0)
+	slot_ordinals: dict[tuple[int, int], int] = {}
 	for entry in snapshot.skins:
 		try:
 			item_type = ItemType(entry.item_type)
 		except ValueError:
 			continue
 		skin_id = SkinId(item_type=item_type, idx=entry.idx)
+		ordinal_key = (entry.item_type, entry.idx)
+		ordinal = slot_ordinals.get(ordinal_key, 0)
+		slot_ordinals[ordinal_key] = ordinal + 1
+		guid = deterministic_dump_guid(item_type, entry.idx, ordinal)
+		stat_rows = build_stat_contributions_from_dump_blob(
+			skin_id,
+			entry.stats_blob,
+			player.game_config,
+		)
 		skin = PlayerSkinModel(
+			guid=guid,
 			skin_id=skin_id,
+			stat_contributions=StatContributions(stats=stat_rows),
 			level=entry.level,
 			experience=entry.experience,
-			stats_blob=entry.stats_blob,
-			is_equipped=entry.is_equipped,
 		)
 		if item_type not in collection.skins:
 			collection.skins[item_type] = []
 		collection.skins[item_type].append(skin)
+		if entry.is_equipped:
+			collection.equipped_skin_guids[item_type] = guid
+
+	for item_type in ItemType:
+		if item_type not in collection.equipped_skin_guids:
+			collection.equipped_skin_guids[item_type] = Guid.empty()
+		collection.skin_visibility.setdefault(item_type, True)

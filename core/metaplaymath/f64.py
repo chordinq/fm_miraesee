@@ -70,6 +70,42 @@ def f64_less_than_raw(a: int, b: int) -> bool:
 	return i64(a) < i64(b)
 
 
+def f64_greater_than_or_equal_raw(a: int, b: int) -> bool:
+	"""IL: F64.op_GreaterThanOrEqual."""
+	return i64(a) >= i64(b)
+
+
+def f64_div_raw(a: int, b: int) -> F64Raw:
+	"""IL: F64.op_Division(F64, F64) — (a << 32) / b in fixed-point space."""
+	a_signed = i64(a)
+	b_signed = i64(b)
+	if b_signed == 0:
+		return F64Raw(0)
+	return F64Raw(i64((a_signed << 32) // b_signed))
+
+
+def f64_ratio(a: int, b: int) -> F64Raw:
+	"""IL: F64.Ratio(a, b) — (a << 32) / b when b != 0, else 0."""
+	if b == 0:
+		return F64Raw(0)
+	return F64Raw(i64((int(a) << 32) // int(b)))
+
+
+def f64_ratio10(a: int) -> F64Raw:
+	"""IL: F64.Ratio10(a) — (a << 32) / 10."""
+	return f64_ratio(a, 10)
+
+
+def f64_ratio100(a: int) -> F64Raw:
+	"""IL: F64.Ratio100(a) — (a << 32) / 100."""
+	return f64_ratio(a, 100)
+
+
+def f64_ratio1000(a: int) -> F64Raw:
+	"""IL: F64.Ratio1000(a) — (a << 32) / 1000."""
+	return f64_ratio(a, 1000)
+
+
 def f64_lerp_raw(a: int, b: int, t: int) -> F64Raw:
 	"""IL: F64.Lerp(a, b, Clamp01(t)) with full 64-bit fixed-point multiply."""
 	a &= 0xFFFFFFFFFFFFFFFF
@@ -126,6 +162,22 @@ class F64:
 	@classmethod
 	def from_raw(cls, raw: int) -> F64:
 		return cls(i64(raw))
+
+	@classmethod
+	def ratio(cls, a: int, b: int) -> F64:
+		return cls(f64_ratio(a, b))
+
+	@classmethod
+	def ratio10(cls, a: int) -> F64:
+		return cls(f64_ratio10(a))
+
+	@classmethod
+	def ratio100(cls, a: int) -> F64:
+		return cls(f64_ratio100(a))
+
+	@classmethod
+	def ratio1000(cls, a: int) -> F64:
+		return cls(f64_ratio1000(a))
 
 	def to_double(self) -> float:
 		return f64_from_raw(self.raw)

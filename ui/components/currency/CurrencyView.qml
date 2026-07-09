@@ -7,8 +7,8 @@ import TMPText 1.0
 Item {
 	id: root
 
-	property real scaleW: 5
-	property real scaleH: 1.5
+	property real aspectW: 5
+	property real aspectH: 1.5
 	property url iconSource: ""
 	property int amount: 0
 	property real barFillOpacity: 0.5
@@ -19,19 +19,20 @@ Item {
 	property real iconVerticalOffset: 0
 
 	readonly property real baseSize: 256
-	readonly property real barAspect: scaleW / scaleH
-	readonly property real barHeight: height > 0 ? height : implicitHeight
+	readonly property real barAspect: aspectW / aspectH
+	readonly property real implicitBarHeight: baseSize * aspectH
+	readonly property real barHeight: height
 	readonly property real iconSize: barHeight * iconSizeRatio
 	readonly property real iconOverflow: Math.max(0, iconSize * 0.5 - iconHorizontalOffset)
 
-	implicitHeight: baseSize * scaleH
-	implicitWidth: implicitHeight * barAspect
-	width: barHeight * barAspect
+	implicitHeight: implicitBarHeight
+	implicitWidth: implicitBarHeight * barAspect
+	width: height > 0 ? height * barAspect : implicitWidth
 
 	Layout.preferredWidth: implicitWidth
 	Layout.preferredHeight: implicitHeight
 	Layout.fillWidth: false
-	Layout.maximumWidth: barHeight * barAspect
+	Layout.maximumWidth: height > 0 ? height * barAspect : implicitWidth
 
 	function formatAmount(value) {
 		NumberDisplay.revision
@@ -41,16 +42,20 @@ Item {
 
 	RectRounded {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * (root.aspectW))
+		cornerRatioH: 255 / (512 * (root.aspectH))
 		fillColor: Theme.black
 		fillOpacity: root.barFillOpacity
 	}
 
 	RectRoundedOutline {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * (root.aspectW))
+		cornerRatioH: 255 / (512 * (root.aspectH))
 		outlineColor: Theme.black
 		z: 1
 	}

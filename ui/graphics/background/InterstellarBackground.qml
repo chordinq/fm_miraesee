@@ -5,15 +5,15 @@ import ui 1.0
 Item {
     id: root
 
-    property real scaleW: 4.0
-    property real scaleH: 4.0
+    property real maskAspectW: 4.0
+    property real maskAspectH: 4.0
     property real tileScale: 4.0
     property real nativeTileSize: 256
     property real baseDuration: 7500
     property real patternOpacity: 21 / 32
 
-    readonly property real bakedW: 128 * scaleW
-    readonly property real bakedH: 128 * scaleH
+    readonly property real bakedW: 128 * maskAspectW
+    readonly property real bakedH: 128 * maskAspectH
     readonly property real scaledTileSize: nativeTileSize * tileScale
     readonly property string patternImage: Qt.resolvedUrl("../../../assets/sprites/UI/InterstellarBackground.png")
 
@@ -86,8 +86,10 @@ Item {
         RectRounded {
             id: maskShape
             anchors.fill: parent
-            scaleW: root.scaleW
-            scaleH: root.scaleH
+            aspectW: root.maskAspectW
+            aspectH: root.maskAspectH
+		cornerRatioW: 255 / (512 * (root.maskAspectW))
+		cornerRatioH: 255 / (512 * (root.maskAspectH))
             fillColor: Theme.white
             visible: false
             layer.enabled: true

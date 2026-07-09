@@ -24,10 +24,10 @@ Item {
 	readonly property real progressOffsetRatio: 0.17
 	readonly property real progressPixelSizeRatio: 17 / 64
 	readonly property real timerBarWidthRatio: 1.33
-	readonly property real timerBarScaleW: 5.5
-	readonly property real timerBarScaleH: 1
+	readonly property real timerBarAspectW: 5.5
+	readonly property real timerBarAspectH: 1
 	readonly property real timerBarHeightRatio:
-		timerBarWidthRatio * timerBarScaleH / timerBarScaleW
+		timerBarWidthRatio * timerBarAspectH / timerBarAspectW
 	readonly property real timerBarTopMarginRatio: -0.1
 	readonly property real timerBarFontScale: 0.2
 
@@ -100,16 +100,20 @@ Item {
 
 		RectRounded {
 			anchors.fill: parent
-			scaleW: root.timerBarScaleW
-			scaleH: root.timerBarScaleH
+			aspectW: root.timerBarAspectW
+			aspectH: root.timerBarAspectH
+		cornerRatioW: 255 / (512 * (root.timerBarAspectW))
+		cornerRatioH: 255 / (512 * (root.timerBarAspectH))
 			fillColor: Theme.black
 			fillOpacity: 0.5
 		}
 
 		RectRoundedOutline {
 			anchors.fill: parent
-			scaleW: root.timerBarScaleW
-			scaleH: root.timerBarScaleH
+			aspectW: root.timerBarAspectW
+			aspectH: root.timerBarAspectH
+		cornerRatioW: 255 / (512 * (root.timerBarAspectW))
+		cornerRatioH: 255 / (512 * (root.timerBarAspectH))
 			outlineColor: Theme.black
 		}
 

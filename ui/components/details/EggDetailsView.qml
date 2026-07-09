@@ -5,7 +5,7 @@ import TMPText 1.0
 DetailsView {
 	id: root
 
-	heightScale: 46
+	panelUnitsH: 46
 
 	property var eggModel: null
 	property var eggController: null
@@ -329,8 +329,8 @@ DetailsView {
 
 			RectRoundButton {
 				anchors.fill: parent
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				locId: root.hatchButtonLocId
 				locTable: "Stats"
@@ -350,8 +350,8 @@ DetailsView {
 
 			GemSkipButton {
 				anchors.fill: parent
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				visible: root.showGemSkipButton
 				cost: eggController ? eggController.skipGemCost : 0
 				fillColor: eggController && eggController.canGemSkipHatch

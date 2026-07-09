@@ -19,4 +19,4 @@ bundle = [
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["app*", "controllers*", "core*", "config*", "utils*", "ui*"]
-exclude = ["ui.test*", "scripts*"]
+exclude = ["test*"]

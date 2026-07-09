@@ -4,8 +4,8 @@ import ui 1.0
 Item {
 	id: root
 
-	property real widthScale: 50
-	property real heightScale: 50
+	property real panelUnitsW: 50
+	property real panelUnitsH: 50
 	property real parentWidthRatio: 0.9
 	property real closeButtonSizeRatio: 0.15
 	property real contentInsetWOverride: -1
@@ -21,9 +21,9 @@ Item {
 
 	default property alias content: contentHost.data
 
-	readonly property real cornerRatioW: 1 / widthScale
-	readonly property real cornerRatioH: 1 / heightScale
-	readonly property real heightWidthRatio: heightScale / widthScale
+	readonly property real cornerRatioW: 255 / (256 * panelUnitsW)
+	readonly property real cornerRatioH: 255 / (256 * panelUnitsH)
+	readonly property real heightWidthRatio: panelUnitsH / panelUnitsW
 
 	readonly property real panelWidth: parent ? parent.width * parentWidthRatio : 0
 	readonly property real panelHeight: panelWidth * heightWidthRatio
@@ -35,10 +35,10 @@ Item {
 
 	readonly property real contentInsetW: contentInsetWOverride >= 0
 		? contentInsetWOverride
-		: layoutFrameWidth / widthScale
+		: layoutFrameWidth / panelUnitsW
 	readonly property real contentInsetH: contentInsetHOverride >= 0
 		? contentInsetHOverride
-		: layoutFrameHeight / heightScale
+		: layoutFrameHeight / panelUnitsH
 	readonly property real closeSize: panelWidth * closeButtonSizeRatio
 
 	Rectangle {
@@ -95,8 +95,8 @@ Item {
 
 				z: 1
 				anchors.fill: parent
-				widthScale: root.widthScale
-				heightScale: root.heightScale
+				cornerRatioW: root.cornerRatioW
+				cornerRatioH: root.cornerRatioH
 			}
 
 			Item {

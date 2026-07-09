@@ -8,6 +8,11 @@ DetailsView {
 	property var nodeModel: null
 	property var techTreeModel: null
 
+	onNodeModelChanged: {
+		if (root.nodeModel && root.techTreeModel)
+			root.techTreeModel.ensureNodeDetails(root.nodeModel.nodeId)
+	}
+
 	readonly property real iconSizeRatio: 0.138
 	readonly property real iconSize: layoutUnit * iconSizeRatio
 	readonly property real iconScale: iconSize / 256
@@ -26,7 +31,7 @@ DetailsView {
 	readonly property real descTopMarginRatio: 0.1
 	readonly property real descRightMarginRatio: 0.05
 	readonly property real bodyFontScale: 0.045
-	readonly property real otherResearchFontScale: 0.02
+	readonly property real otherResearchFontScale: 0.03
 
 	readonly property string otherResearchLocId: "17687817399296000"
 	readonly property string maxedLocId: "17688556561489920"
@@ -64,8 +69,7 @@ DetailsView {
 				root.nodeModel.level,
 				root.nodeModel.levelMax
 			)
-		var iconLevel = root.nodeModel.iconLevel
-		if (iconLevel === -2 || iconLevel === -1)
+		if (root.nodeModel.iconLevel === -2)
 			return NumberDisplay.formatProgressPair(0, root.nodeModel.levelMax)
 		return NumberDisplay.formatProgressPair(
 			root.nodeModel.level,
@@ -122,11 +126,8 @@ DetailsView {
 			root.techTreeModel.performUpgradeStart(root.nodeModel.nodeId)
 		else if (root.showSkipButton)
 			root.techTreeModel.performGemSkip(root.nodeModel.nodeId)
-		else if (root.showClaimButton) {
-			var nodeId = root.nodeModel.nodeId
-			root.closed()
-			root.techTreeModel.performUpgradeClaim(nodeId)
-		}
+		else if (root.showClaimButton)
+			root.techTreeModel.performUpgradeClaim(root.nodeModel.nodeId)
 	}
 
 	Item {
@@ -232,8 +233,6 @@ DetailsView {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: statusColumn.visible ? statusColumn.top : actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
-			width: root.progressWidth
-			horizontalAlignment: Text.AlignHCenter
 			visible: root.nodeModel && root.nodeModel.maxLevel
 			tmpText: root.maxedStatusText
 			fillColor: Theme.black
@@ -245,8 +244,6 @@ DetailsView {
 			anchors.horizontalCenter: parent.horizontalCenter
 			anchors.bottom: statusColumn.visible ? statusColumn.top : actionSlot.top
 			anchors.bottomMargin: root.layoutUnit * root.statusBottomMarginRatio
-			width: root.progressWidth
-			horizontalAlignment: Text.AlignHCenter
 			visible: root.nodeModel
 				&& !root.nodeModel.maxLevel
 				&& root.nodeModel.otherResearchInProgress
@@ -266,14 +263,20 @@ DetailsView {
 			spacing: root.layoutUnit * root.progressStatusSpacingRatio
 			visible: root.showProgressUi
 
-			TMPText {
+			Item {
 				width: parent.width
-				horizontalAlignment: Text.AlignHCenter
+				height: researchStatusText.height
 				visible: root.nodeModel && root.nodeModel.isUpgrading
-				tmpText: root.researchInProgressText
-				fillColor: Theme.black
-				pixelSize: root.layoutUnit * root.bodyFontScale
-				outlineWeight: 0
+
+				TMPText {
+					id: researchStatusText
+
+					anchors.horizontalCenter: parent.horizontalCenter
+					tmpText: root.researchInProgressText
+					fillColor: Theme.black
+					pixelSize: root.layoutUnit * root.bodyFontScale
+					outlineWeight: 0
+				}
 			}
 
 			ProgressBar {
@@ -295,8 +298,8 @@ DetailsView {
 
 			TechTreeResearchButton {
 				anchors.fill: parent
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				visible: root.showUpgradeButton
 				titleText: root.nodeModel ? root.nodeModel.upgradeDurationText : ""
 				costText: root.nodeModel ? root.nodeModel.upgradeCostText : ""
@@ -309,8 +312,8 @@ DetailsView {
 
 			GemSkipButton {
 				anchors.fill: parent
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				visible: root.showSkipButton
 				cost: root.nodeModel ? root.nodeModel.skipGemCost : 0
 				fillColor: root.actionFillColor
@@ -322,8 +325,8 @@ DetailsView {
 
 			RectRoundButton {
 				anchors.fill: parent
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				visible: root.showClaimButton
 				locId: root.completeLocId

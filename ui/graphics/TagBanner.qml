@@ -4,17 +4,17 @@ import ui 1.0
 Item {
 	id: root
 
-	property real scaleW: 8
-	property real scaleH: 4
+	property real aspectW: 8
+	property real aspectH: 4
 
 	readonly property real baseSize: 256
 
-	implicitWidth: baseSize * scaleW
-	implicitHeight: baseSize * scaleH
+	implicitWidth: baseSize * aspectW
+	implicitHeight: baseSize * aspectH
 
 	readonly property real maxBakedExtent: 4096
-	readonly property real bakedW: Math.min(512 * scaleW, maxBakedExtent)
-	readonly property real bakedH: Math.min(512 * scaleH, maxBakedExtent)
+	readonly property real bakedW: Math.min(512 * aspectW, maxBakedExtent)
+	readonly property real bakedH: Math.min(512 * aspectH, maxBakedExtent)
 
 	layer.enabled: true
 	layer.smooth: true

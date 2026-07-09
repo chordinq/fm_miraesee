@@ -45,7 +45,7 @@ Item {
 	EquippedVisual {
 		anchors.centerIn: icon
 		visible: root.mountEquipped
-		scaleHorizontal: root.equippedScaleHorizontal
+		aspectW: root.equippedScaleHorizontal
 		fontScale: root.equippedFontScale
 		width: iconSize * root.equippedVisualWidthRatio
 		scale: root.equippedScale
@@ -54,7 +54,7 @@ Item {
 	LockedVisual {
 		anchors.centerIn: icon
 		visible: root.mountModel !== null && !root.mountEquipped && root.mountLocked
-		scaleHorizontal: root.equippedScaleHorizontal
+		aspectW: root.equippedScaleHorizontal
 		fontScale: root.equippedFontScale
 		width: iconSize * root.equippedVisualWidthRatio
 		scale: root.equippedScale

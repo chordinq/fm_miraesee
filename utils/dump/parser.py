@@ -17,8 +17,10 @@ from .schema import (
 	PET_MOUNT_LINE_V2_LEN,
 	PET_MOUNT_LINE_V2_LOCK_LEN,
 	SKIN_LINE_LEN,
+	SKIN_LINE_V2_LEN,
 	TECH_TREE_TIMER_LINE_LEN,
 )
+from .wire import parse_pet_meta_line, parse_skin_meta_seed, parse_summon_meta_line
 from .snapshot import (
 	DumpSnapshot,
 	EggEntryDump,
@@ -55,6 +57,11 @@ SKIN_LINE = re.compile(
 	r"^5([0-9A-Fa-f])([0-9A-Fa-f]{2})([0-9A-Fa-f])([0-9A-Fa-f]{2})([0-9A-Fa-f]{8})"
 	r"([0-9A-Fa-f]{20})$"
 )
+SKIN_LINE_V2 = re.compile(
+	r"^5([0-9A-Fa-f])([0-9A-Fa-f]{2})([0-9A-Fa-f])([0-9A-Fa-f]{2})([0-9A-Fa-f]{8})"
+	r"([0-9A-Fa-f]{20})([0-9A-Fa-f]{16})([0-9A-Fa-f]{16})$"
+)
+SKIN_META_LINE = re.compile(r"^5F([0-9A-Fa-f]{16})00000000000000000$")
 
 
 def _build_techtree_lookup() -> dict[tuple[int, int], tuple[TechTreeNodeType, int]]:
@@ -106,8 +113,24 @@ class DumpTextParser:
 		}
 
 	def parse(self, text: str) -> DumpSnapshot:
-		snapshot = DumpSnapshot()
-		for block_name, lines in self._split_blocks(text).items():
+		blocks = self._split_blocks(text)
+		version = DUMP_VERSION
+		if "DUMP_VERSION" in blocks and blocks["DUMP_VERSION"]:
+			try:
+				version = int(blocks["DUMP_VERSION"][0])
+			except ValueError:
+				version = DUMP_VERSION
+
+		snapshot = DumpSnapshot(version=version)
+		if version >= 4:
+			from .v4_parser import DumpV4Parser
+
+			v4 = DumpV4Parser()
+			for block_name, lines in blocks.items():
+				v4.parse_block(block_name, lines, snapshot)
+			return snapshot
+
+		for block_name, lines in blocks.items():
 			handler = self._handlers.get(block_name)
 			if handler:
 				handler(snapshot, lines)
@@ -150,14 +173,7 @@ class DumpTextParser:
 				snapshot.version = DUMP_VERSION
 
 	def _parse_meta_line(self, line: str) -> tuple[int, int, int, int] | None:
-		m = SUMMON_META.match(line)
-		if not m:
-			return None
-		byte1 = int(m.group(1), 16)
-		byte2 = int(m.group(2), 16)
-		seed = int(m.group(3), 16)
-		asc = int(line[-1], 16) if len(line) > 20 else 0
-		return byte1, byte2, seed, asc
+		return parse_summon_meta_line(line)
 
 	def _parse_timer_suffix(self, line: str, base_len: int) -> tuple[int, int]:
 		if len(line) < base_len + FORGE_META_TIMER_SUFFIX_LEN:
@@ -223,20 +239,7 @@ class DumpTextParser:
 			snapshot.skill_summon_meta = meta
 
 	def _parse_pet_meta_line(self, line: str) -> tuple[int, int, int, int, int] | None:
-		match = PET_META_V4.match(line)
-		if match:
-			return (
-				int(match.group(1), 16),
-				int(match.group(2), 16),
-				int(match.group(3), 16),
-				int(match.group(4), 16),
-				int(match.group(5), 16),
-			)
-		raw = self._parse_meta_line(line)
-		if raw is None:
-			return None
-		level, count, seed, asc = raw
-		return level, count, seed, 0, asc
+		return parse_pet_meta_line(line)
 
 	def _parse_pet_meta(self, snapshot: DumpSnapshot, lines: list[str]) -> None:
 		if not lines:
@@ -534,24 +537,42 @@ class DumpTextParser:
 			)
 
 	def _parse_skin_collection(self, snapshot: DumpSnapshot, lines: list[str]) -> None:
-		"""Parse [SKIN_COLLECTION] block.
-
-		Each skin line (35 chars):
-		    5 <item_type:1hex> <idx:02hex> <is_eq:1hex> <level:02hex> <exp:08hex> <stats:20hex>
-		"""
+		"""Parse [SKIN_COLLECTION] block (v1 35-char, v2 67-char + optional meta line)."""
 		for line in lines:
+			meta_seed = parse_skin_meta_seed(line)
+			if meta_seed is not None:
+				snapshot.skins_random_seed = meta_seed
+				continue
+
+			if len(line) == SKIN_LINE_V2_LEN:
+				m = SKIN_LINE_V2.match(line)
+				if m:
+					snapshot.skins.append(
+						self._skin_entry_from_match(m, guid_lo=int(m.group(7), 16), guid_hi=int(m.group(8), 16))
+					)
+				continue
+
 			if len(line) != SKIN_LINE_LEN:
 				continue
 			m = SKIN_LINE.match(line)
 			if not m:
 				continue
-			snapshot.skins.append(
-				SkinEntryDump(
-					item_type=int(m.group(1), 16),
-					idx=int(m.group(2), 16),
-					is_equipped=int(m.group(3), 16) != 0,
-					level=int(m.group(4), 16),
-					experience=int(m.group(5), 16),
-					stats_blob=m.group(6),
-				)
-			)
+			snapshot.skins.append(self._skin_entry_from_match(m))
+
+	@staticmethod
+	def _skin_entry_from_match(
+		m: re.Match[str],
+		*,
+		guid_lo: int | None = None,
+		guid_hi: int | None = None,
+	) -> SkinEntryDump:
+		return SkinEntryDump(
+			item_type=int(m.group(1), 16),
+			idx=int(m.group(2), 16),
+			is_equipped=int(m.group(3), 16) != 0,
+			level=int(m.group(4), 16),
+			experience=int(m.group(5), 16),
+			stats_blob=m.group(6),
+			guid_lo=guid_lo,
+			guid_hi=guid_hi,
+		)

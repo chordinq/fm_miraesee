@@ -8,7 +8,7 @@ Item {
 	implicitWidth: 256
 	implicitHeight: 256 / 3
 
-	property real scaleHorizontal: 2
+	property real aspectW: 2
 	property real fontScale: 11 / 16
 
 	readonly property string lockedLabel: {
@@ -18,8 +18,10 @@ Item {
 
 	RectExtraRounded {
 		anchors.fill: parent
-		scaleW: root.scaleHorizontal
-		scaleH: 1
+		aspectW: root.aspectW
+		aspectH: 1
+		cornerRatioW: 255 / (512 * root.aspectW)
+		cornerRatioH: 255 / 512
 		fillColor: Theme.black
 		fillOpacity: 9 / 16.0
 		outlineColor: Theme.black

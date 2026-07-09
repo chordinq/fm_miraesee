@@ -5,8 +5,11 @@ import ui 1.0
 Item {
 	id: root
 
-	property real scaleW: 1.0
-	property real scaleH: 1.0
+	property real aspectW: 1
+	property real aspectH: 1
+	property real cornerRatio: 255 / 512
+	property real cornerRatioW: cornerRatio
+	property real cornerRatioH: cornerRatio
 
 	property color fillColor: Theme.transparent
 	property real fillOpacity: 1.0
@@ -15,12 +18,18 @@ Item {
 	property real outlineOpacity: 1.0
 
 	readonly property real baseSize: 256
+	readonly property real sourceSize: 512
+	readonly property real sourceBorder: 255
 
-	implicitWidth: baseSize * scaleW
-	implicitHeight: baseSize * scaleH
+	readonly property real bakeUnitsW: sourceBorder / (sourceSize * cornerRatioW)
+	readonly property real bakeUnitsH: sourceBorder / (sourceSize * cornerRatioH)
+	readonly property real bakedW: sourceBorder / cornerRatioW
+	readonly property real bakedH: sourceBorder / cornerRatioH
+	readonly property real cornerPxW: width * cornerRatioW
+	readonly property real cornerPxH: height * cornerRatioH
 
-	readonly property real bakedW: 512 * scaleW
-	readonly property real bakedH: 512 * scaleH
+	implicitWidth: baseSize * aspectW
+	implicitHeight: baseSize * aspectH
 
 	layer.enabled: true
 	layer.smooth: true
@@ -47,10 +56,10 @@ Item {
 				id: fillBase
 				anchors.fill: parent
 				source: Qt.resolvedUrl("../../assets/sprites/UI/Rect_Extra_Rounded_Filled_Outline.png")
-				border.left: 255
-				border.top: 255
-				border.right: 255
-				border.bottom: 255
+				border.left: root.sourceBorder
+				border.top: root.sourceBorder
+				border.right: root.sourceBorder
+				border.bottom: root.sourceBorder
 				smooth: true
 				visible: false
 				layer.enabled: true
@@ -74,10 +83,10 @@ Item {
 				id: outlineBase
 				anchors.fill: parent
 				source: Qt.resolvedUrl("../../assets/sprites/UI/Rect_Extra_Rounded_Outline.png")
-				border.left: 255
-				border.top: 255
-				border.right: 255
-				border.bottom: 255
+				border.left: root.sourceBorder
+				border.top: root.sourceBorder
+				border.right: root.sourceBorder
+				border.bottom: root.sourceBorder
 				smooth: true
 				visible: false
 				layer.enabled: true

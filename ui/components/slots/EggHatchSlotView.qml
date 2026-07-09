@@ -62,12 +62,12 @@ Item {
 		return root.hatchReady ? readyText + "!" : readyText
 	}
 
-	readonly property string emptyOutlineSource: Qt.resolvedUrl("../../assets/sprites/Egg/EggEmpty_Outline.png")
-	readonly property string emptyFilledSource: Qt.resolvedUrl("../../assets/sprites/Egg/EggEmpty_Filled.png")
-	readonly property string bedSource: Qt.resolvedUrl("../../assets/sprites/HatchSlot/HatchBed.png")
-	readonly property string lampOnSource: Qt.resolvedUrl("../../assets/sprites/HatchSlot/HatchLamp.png")
-	readonly property string lampOffSource: Qt.resolvedUrl("../../assets/sprites/HatchSlot/HatchLamp_off.png")
-	readonly property string lampConeSource: Qt.resolvedUrl("../../assets/sprites/HatchSlot/HatchLampCone.png")
+	readonly property string emptyOutlineSource: Qt.resolvedUrl("../../../assets/sprites/Egg/EggEmpty_Outline.png")
+	readonly property string emptyFilledSource: Qt.resolvedUrl("../../../assets/sprites/Egg/EggEmpty_Filled.png")
+	readonly property string bedSource: Qt.resolvedUrl("../../../assets/sprites/HatchSlot/HatchBed.png")
+	readonly property string lampOnSource: Qt.resolvedUrl("../../../assets/sprites/HatchSlot/HatchLamp.png")
+	readonly property string lampOffSource: Qt.resolvedUrl("../../../assets/sprites/HatchSlot/HatchLamp_off.png")
+	readonly property string lampConeSource: Qt.resolvedUrl("../../../assets/sprites/HatchSlot/HatchLampCone.png")
 
 	Item {
 		id: bedImage

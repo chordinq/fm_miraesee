@@ -5,7 +5,7 @@ import TMPText 1.0
 DetailsView {
 	id: root
 
-	heightScale: 39
+	panelUnitsH: 39
 
 	property var mountModel: null
 	property var mountController: null
@@ -117,7 +117,7 @@ DetailsView {
 				EquippedVisual {
 					anchors.centerIn: mountIcon
 					visible: root.mountModel?.isEquipped ?? false
-					scaleHorizontal: root.equippedScaleHorizontal
+					aspectW: root.equippedScaleHorizontal
 					width: mountIcon.width * root.equippedVisualWidthRatio
 				}
 
@@ -126,7 +126,7 @@ DetailsView {
 					visible: root.mountModel
 						&& !root.mountModel.isEquipped
 						&& root.mountModel.isLocked
-					scaleHorizontal: root.equippedScaleHorizontal
+					aspectW: root.equippedScaleHorizontal
 					width: mountIcon.width * root.equippedVisualWidthRatio
 				}
 			}
@@ -263,8 +263,8 @@ DetailsView {
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				locTable: "General"
 				locId: root.upgradeLocId
@@ -276,8 +276,8 @@ DetailsView {
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				visible: root.mountModel && !root.mountModel.isEquipped
 				locId: root.equipLocId
@@ -296,8 +296,8 @@ DetailsView {
 			RectRoundButton {
 				width: root.actionButtonWidth
 				height: root.actionButtonHeight
-				scaleW: root.actionButtonScaleW
-				scaleH: root.actionButtonScaleH
+				aspectW: root.actionButtonAspectW
+				aspectH: root.actionButtonAspectH
 				labelPixelSize: root.actionButtonFontPixelSize
 				visible: root.mountModel && root.mountModel.isEquipped
 				locId: root.removeLocId

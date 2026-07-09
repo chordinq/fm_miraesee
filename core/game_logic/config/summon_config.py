@@ -73,13 +73,11 @@ class SummonConfig:
 
 		base_amount = self.single_summon_cost.amount * summon_count
 		target = self.summonable_id.get_stat_target()
-		resolved_amount = round(
-			StatHelper.calculate_value(
-				player_model,
-				StatType.Cost,
-				target,
-				base_amount,
-			)
+		resolved_amount = StatHelper.calculate_value_round_to_int(
+			player_model,
+			StatType.Cost,
+			target,
+			base_amount,
 		)
 		return can_afford(
 			player_model,
@@ -95,13 +93,11 @@ class SummonConfig:
 
 		base_amount = self.single_summon_cost.amount * self.get_base_summon_count()
 		target = self.summonable_id.get_stat_target()
-		resolved_amount = round(
-			StatHelper.calculate_value(
-				player_model,
-				StatType.Cost,
-				target,
-				base_amount,
-			)
+		resolved_amount = StatHelper.calculate_value_round_to_int(
+			player_model,
+			StatType.Cost,
+			target,
+			base_amount,
 		)
 		return Price(amount=resolved_amount, currency=self.single_summon_cost.currency)
 

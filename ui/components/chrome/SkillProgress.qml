@@ -9,8 +9,8 @@ Item {
 	property real shardCount: 0
 	property bool showMaxedLabel: false
 
-	property real scaleW: 72 / 16
-	property real scaleH: 17 / 16
+	property real aspectW: 72 / 16
+	property real aspectH: 17 / 16
 	property real fontScale: 12 / 16
 
 	readonly property string maxedLabel: {
@@ -39,14 +39,14 @@ Item {
 	readonly property color progressFillColor: root.upgradable ? Theme.green : Theme.white
 
 	implicitWidth: 256
-	implicitHeight: implicitWidth * scaleH / scaleW
-	height: width * scaleH / scaleW
+	implicitHeight: implicitWidth * aspectH / aspectW
+	height: width * aspectH / aspectW
 
 	ProgressBar {
 		anchors.fill: parent
 		visible: root.showProgressBar
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
 		progressFraction: root.progressFraction
 		fillColor: root.progressFillColor
 		trackFillOpacity: 14 / 16

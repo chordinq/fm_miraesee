@@ -322,6 +322,29 @@ class StatHelper:
 		)
 
 	@staticmethod
+	def calculate_value_round_to_int(
+		player: Any,
+		stat_type: StatType,
+		target: StatTarget | StatTargetBase,
+		incoming_value: float | int,
+	) -> int:
+		"""IL: StatHelper.CalculateValue + FD6.RoundToInt."""
+		game_config = StatHelper._player_game_config(player)
+		stats = StatHelper._player_total_stats(player)
+		is_ranged = StatHelper._player_is_ranged_optional(player)
+		raw = StatHelper.calculate_value_fd6_raw_from_stats(
+			game_config,
+			stats,
+			stat_type,
+			target,
+			float(incoming_value),
+			StatCalcContext(is_ranged),
+		)
+		from core.metaplaymath.fd6 import fd6_round_to_int
+
+		return fd6_round_to_int(raw)
+
+	@staticmethod
 	def calculate_value_from_stats(
 		game_config: Any,
 		stats_to_use: Stats,
@@ -331,6 +354,28 @@ class StatHelper:
 		context: StatCalcContext | bool | None = None,
 	) -> float:
 		"""IL: StatHelper.CalculateValueFromStats — FD6 layer pipeline."""
+		from core.metaplaymath.fd6 import fd6_to_double
+
+		raw = StatHelper.calculate_value_fd6_raw_from_stats(
+			game_config,
+			stats_to_use,
+			stat_type,
+			target,
+			incoming_value,
+			context,
+		)
+		return fd6_to_double(raw)
+
+	@staticmethod
+	def calculate_value_fd6_raw_from_stats(
+		game_config: Any,
+		stats_to_use: Stats,
+		stat_type: StatType,
+		target: StatTarget | StatTargetBase,
+		incoming_value: float,
+		context: StatCalcContext | bool | None = None,
+	) -> int:
+		"""IL: StatHelper.CalculateValueFromStats — returns FD6 raw Int128."""
 		from core.metaplaymath.fd6 import (
 			fd6_add_raw,
 			fd6_div_raw,
@@ -338,7 +383,6 @@ class StatHelper:
 			fd6_from_int,
 			fd6_mul_raw,
 			fd6_sub_raw,
-			fd6_to_double,
 		)
 
 		fd6_one = fd6_from_int(1)
@@ -393,7 +437,7 @@ class StatHelper:
 					value_raw, fd6_add_raw(fd6_one, bucket.divisor)
 				)
 
-		return fd6_to_double(value_raw)
+		return int(value_raw)
 
 	@staticmethod
 	def calculate_timer_duration_seconds(

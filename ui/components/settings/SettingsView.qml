@@ -9,9 +9,9 @@ PopupView {
 	signal languagesClicked()
 
 	parentWidthRatio: 0.34
-	widthScale: 50
-	heightScale: 50
-	contentInsetWOverride: panelWidth / (widthScale * 4 - 6)
+	panelUnitsW: 50
+	panelUnitsH: 50
+	contentInsetWOverride: panelWidth / (panelUnitsW * 4 - 6)
 
 	readonly property string settingsTitleLocId: "1830906689011712"
 	readonly property string languagesLocId: "25466346099372032"

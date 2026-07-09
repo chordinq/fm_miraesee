@@ -169,9 +169,7 @@ def _create_random_item(
 	if not possible:
 		return None
 
-	item_type = rng.choice(
-		(t for t in sorted(possible.keys(), key=lambda t: int(t)))
-	)
+	item_type = rng.choice(tuple(possible.keys()))
 	pool = possible[item_type]
 	if not pool:
 		return None

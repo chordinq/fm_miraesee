@@ -15,15 +15,17 @@ Item {
 
 	RectRounded {
 		anchors.fill: parent
-		scaleW: 1.5
-		scaleH: 1.5
+		aspectW: 1.5
+		aspectH: 1.5
+		cornerRatio: 255 / (512 * (1.5))
 		fillColor: Theme.checkBoxActiveGrey
 	}
 
 	RectRoundedOutline {
 		anchors.fill: parent
-		scaleW: 1.5
-		scaleH: 1.5
+		aspectW: 1.5
+		aspectH: 1.5
+		cornerRatio: 255 / (512 * (1.5))
 		outlineColor: Theme.black
 	}
 
@@ -31,7 +33,7 @@ Item {
 		anchors.centerIn: parent
 		width: parent.width * 0.62
 		height: width
-		source: Qt.resolvedUrl("../../assets/sprites/General/CheckIcon.png")
+		source: Qt.resolvedUrl("../../../assets/sprites/General/CheckIcon.png")
 		fillMode: Image.PreserveAspectFit
 		smooth: true
 		mipmap: true

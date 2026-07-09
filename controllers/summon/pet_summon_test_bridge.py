@@ -12,7 +12,8 @@ from core.game_logic.stats.stat_helper import StatHelper
 from controllers.collections.pet_collection_bridge import PetCollectionBridge
 from controllers.summon.summon_upgrade_status import read_summon_upgrade_status
 from controllers.support.summon_overdraft import can_afford_summon_for_ui, execute_egg_summon
-from ui.utils.summon_result_entries import build_egg_summon_results
+from ui.utils.summon_preview_entries import build_egg_summon_preview
+from ui.utils.summon_result_summary import build_summon_result_summary
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
 from utils.summon.bonus_optimizer import optimize_egg_summon_bonus
 
@@ -47,8 +48,12 @@ class PetSummonTestBridge(QObject):
         self._prediction_text = ""
         self._status_text = ""
         self._last_action_text = ""
-        self._summon_results: list[dict[str, object]] = []
+        self._summon_preview: list[dict[str, object]] = []
+        self._summon_result: dict[str, object] = build_summon_result_summary([], 0)
         self._merge_target_guid = ""
+        self._prediction_timer = QTimer(self)
+        self._prediction_timer.setSingleShot(True)
+        self._prediction_timer.timeout.connect(self._on_deferred_prediction_refresh)
         self._summon_sprite_image = QUrl.fromLocalFile(
             str(SPRITES_DIR / "Currency" / "Eggshells.png")
         ).toString()
@@ -71,7 +76,8 @@ class PetSummonTestBridge(QObject):
         summon_config = self._logic.player.game_config.egg_summon_config
         self._summon_count = summon_config.get_base_summon_count()
         self._last_action_text = ""
-        self._summon_results = []
+        self._summon_preview = []
+        self._summon_result = build_summon_result_summary([], 0)
         self._merge_target_guid = ""
         self._optimize_route = ""
         self._optimize_route_segments = []
@@ -96,13 +102,11 @@ class PetSummonTestBridge(QObject):
         summon_config = self._summon_config()
         base_amount = summon_config.single_summon_cost.amount * count
         target = summon_config.summonable_id.get_stat_target()
-        return round(
-            StatHelper.calculate_value(
-                player,
-                StatType.Cost,
-                target,
-                base_amount,
-            )
+        return StatHelper.calculate_value_round_to_int(
+            player,
+            StatType.Cost,
+            target,
+            base_amount,
         )
 
     def _summon_count_options(self) -> list[int]:
@@ -129,7 +133,28 @@ class PetSummonTestBridge(QObject):
     def _refresh_prediction(self) -> None:
         lines, results = self._simulate_summon()
         self._prediction_text = "\n".join(lines)
-        self._summon_results = results
+        self._summon_preview = results
+        self._summon_result = build_summon_result_summary(results, self._summon_count)
+
+    def _set_summon_preview(
+        self,
+        preview: list[dict[str, object]],
+        paid_count: int,
+    ) -> None:
+        self._summon_preview = preview
+        self._summon_result = build_summon_result_summary(preview, paid_count)
+
+    def _schedule_prediction_refresh(self) -> None:
+        self._prediction_timer.start(0)
+
+    def _on_deferred_prediction_refresh(self) -> None:
+        self._refresh_prediction()
+        self.stateChanged.emit()
+
+    def _finish_summon_collection_update(self, summoned) -> None:
+        self._patch_egg_summon_collection(summoned)
+        self.stateChanged.emit()
+        self._schedule_prediction_refresh()
 
     @Property(int, notify=stateChanged)
     def summonCount(self) -> int:
@@ -168,8 +193,12 @@ class PetSummonTestBridge(QObject):
         return self._last_action_text
 
     @Property("QVariantList", notify=stateChanged)
-    def summonResults(self) -> list[dict[str, object]]:
-        return self._summon_results
+    def summonPreview(self) -> list[dict[str, object]]:
+        return self._summon_preview
+
+    @Property("QVariantMap", notify=stateChanged)
+    def summonResult(self) -> dict[str, object]:
+        return self._summon_result
 
     @Property(int, notify=stateChanged)
     def ascensionLevel(self) -> int:
@@ -211,7 +240,7 @@ class PetSummonTestBridge(QObject):
         if count == self._summon_count:
             return
         self._summon_count = count
-        self._refresh_prediction()
+        self._schedule_prediction_refresh()
         self._sync_status()
         self.stateChanged.emit()
 
@@ -381,9 +410,12 @@ class PetSummonTestBridge(QObject):
         if result != ActionResult.Success:
             self._last_action_text = f"summon failed: {result.name}"
         else:
-            self._summon_results = build_egg_summon_results(
-                summoned,
-                self._logic.player,
+            self._set_summon_preview(
+                build_egg_summon_preview(
+                    summoned,
+                    self._logic.player,
+                ),
+                count,
             )
             parts = [f"summon x{count} ok"]
             for info in summoned:
@@ -393,10 +425,12 @@ class PetSummonTestBridge(QObject):
                     f"  [{egg.rarity.name}] seed {egg.random_seed:#018x}  {detail}"
                 )
             self._last_action_text = "\n".join(parts)
-            self._patch_egg_summon_collection(summoned)
         self._sync_status()
-        self._refresh_prediction()
         self.stateChanged.emit()
+        if result == ActionResult.Success:
+            QTimer.singleShot(0, lambda s=summoned: self._finish_summon_collection_update(s))
+        else:
+            self._schedule_prediction_refresh()
 
     @Property(int, notify=stateChanged)
     def optimizeBudget(self) -> int:
@@ -466,7 +500,7 @@ class PetSummonTestBridge(QObject):
         if result != ActionResult.Success:
             return [f"predict unavailable: {result.name}"], []
 
-        results = build_egg_summon_results(summoned, player)
+        results = build_egg_summon_preview(summoned, player)
 
         lines = [
             f"next x{self._summon_count} (simulated, state unchanged)",

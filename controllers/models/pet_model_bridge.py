@@ -3,7 +3,7 @@ from __future__ import annotations
 from PySide6.QtCore import QObject, Property, Signal
 
 from config import PETS_MAPPING
-from core.format.format_item import format_secondary_stats
+from controllers.common.ui_format import format_ui_secondary_stat_line
 from core.format.localizer_base import selected_language
 from core.format.stats_format import format_stat_node
 from core.game_logic.config.shared_game_config import SharedGameConfig, get_unlocked_pet_slot_count
@@ -47,10 +47,10 @@ def build_pet_stat_lines(
 			found, raw_value = pet.secondary_stats.try_get_stat_value(stat_type, game_config)
 			if not found:
 				continue
-			text = format_secondary_stats(
+			text = format_ui_secondary_stat_line(
 				stat_type,
 				raw_value,
-				game_config,
+				game_config=game_config,
 				language=lang,
 			)
 			if not text:

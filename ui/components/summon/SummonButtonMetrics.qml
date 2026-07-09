@@ -2,7 +2,7 @@ pragma Singleton
 import QtQuick
 
 QtObject {
-	property real scaleW: 3.65
-	property real scaleH: 1.75
-	readonly property real aspect: scaleW / scaleH
+	property real aspectW: 3.65
+	property real aspectH: 1.75
+	readonly property real aspect: aspectW / aspectH
 }

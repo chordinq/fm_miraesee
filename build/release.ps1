@@ -21,7 +21,7 @@ New-Item -ItemType Directory -Path $stagingDir -Force | Out-Null
 Copy-Item (Join-Path $distDir "MiraeseeApp.exe") $stagingDir
 Copy-Item (Join-Path $distDir "_internal") (Join-Path $stagingDir "_internal") -Recurse
 python -c "from pathlib import Path; from build.bundle_prune import copy_release_assets; copy_release_assets(Path('.').resolve(), Path(r'$stagingDir') / 'assets')"
-Copy-Item (Join-Path $Root "utils\miraesee_data_exporter.lua") $stagingDir
+Copy-Item (Join-Path $Root "utils\gg\miraesee_data_exporter.lua") $stagingDir
 
 $readme = @"
 Miraesee Tools v$version (Windows x64)

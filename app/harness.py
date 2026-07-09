@@ -12,7 +12,8 @@ from utils.paths import assets_dir, bundle_dir, install_dir
 
 SCRIPTS_ROOT = bundle_dir()
 UI_DIR = SCRIPTS_ROOT / "ui"
-UI_TEST_DIR = UI_DIR / "test"
+TEST_DIR = SCRIPTS_ROOT / "test"
+UI_TEST_DIR = TEST_DIR
 TEST_LANGUAGE = "en"
 
 
@@ -29,6 +30,7 @@ APP_ICON_PATH = _app_icon_path()
 __all__ = [
 	"SCRIPTS_ROOT",
 	"UI_DIR",
+	"TEST_DIR",
 	"UI_TEST_DIR",
 	"TEST_LANGUAGE",
 	"bootstrap",
@@ -40,6 +42,7 @@ __all__ = [
 	"centered_window_origin",
 	"set_window_context",
 	"load_qml",
+	"load_test_qml",
 	"clear_qml_roots",
 	"sync_window_icons",
 	"close_boot_splash",
@@ -196,6 +199,22 @@ def load_qml(
 	if replace and app is not None:
 		clear_qml_roots(engine, app)
 	engine.load(QUrl.fromLocalFile(str(UI_DIR / filename)))
+	loaded = bool(engine.rootObjects())
+	if loaded and app is not None:
+		sync_window_icons(engine, app)
+	return loaded
+
+
+def load_test_qml(
+	engine: QQmlApplicationEngine,
+	filename: str,
+	app: QGuiApplication | None = None,
+	*,
+	replace: bool = False,
+) -> bool:
+	if replace and app is not None:
+		clear_qml_roots(engine, app)
+	engine.load(QUrl.fromLocalFile(str(TEST_DIR / filename)))
 	loaded = bool(engine.rootObjects())
 	if loaded and app is not None:
 		sync_window_icons(engine, app)

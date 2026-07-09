@@ -5,13 +5,13 @@ import ui 1.0
 Item {
 	id: root
 
-	property real scaleW: 2
-	property real scaleH: 2
+	property real maskAspectW: 2
+	property real maskAspectH: 2
 	property real cellSize: 64
 	property real starOpacity: 1 / 2
 
-	readonly property real bakedW: cellSize * scaleW
-	readonly property real bakedH: cellSize * scaleH
+	readonly property real bakedW: cellSize * maskAspectW
+	readonly property real bakedH: cellSize * maskAspectH
 	readonly property string starSource: Qt.resolvedUrl("../../../assets/sprites/UI/DivineBackground.png")
 
 	Item {
@@ -99,8 +99,10 @@ Item {
 			id: maskShape
 
 			anchors.fill: parent
-			scaleW: root.scaleW
-			scaleH: root.scaleH
+			aspectW: root.maskAspectW
+			aspectH: root.maskAspectH
+		cornerRatioW: 255 / (512 * (root.maskAspectW))
+		cornerRatioH: 255 / (512 * (root.maskAspectH))
 			fillColor: Theme.white
 			visible: false
 			layer.enabled: true

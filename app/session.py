@@ -1,14 +1,17 @@
 from __future__ import annotations
 
-from types import SimpleNamespace
-
-from PySide6.QtCore import Property, QObject, QTimer, Signal, Slot
+from PySide6.QtCore import Property, QObject, QThread, QTimer, Signal, Slot
 from PySide6.QtGui import QGuiApplication
+
+from app.dump_load_worker import DumpLoadWorker, _apply_main_battle_progress
+from controllers.common.ui_loading_bridge import ui_loading
 
 from core.game_logic.enums import CurrencyType, TechTreeType
 from core.game_logic.game_logic import GameLogic
 from core.game_logic.player.player_model import PlayerModel
 from controllers.collections.equipment_collection_bridge import EquipmentCollectionBridge
+from controllers.forge.forge_attack_cycle_bridge import ForgeAttackCycleBridge
+from controllers.profile.profile_main_bridge import ProfileMainBridge
 from controllers.collections.mount_collection_bridge import MountCollectionBridge
 from controllers.summon.mount_summon_test_bridge import MountSummonTestBridge
 from controllers.collections.pet_collection_bridge import PetCollectionBridge
@@ -22,14 +25,6 @@ from core.format.localizer_base import clear_localization_cache
 from ui.utils.ui_settings import register_display_refresh, register_economy_refresh
 from utils.dump.parser import parse_dump_text
 from utils.dump.to_player_model import dump_snapshot_to_player_model
-
-
-def _apply_main_battle_progress(player: PlayerModel) -> None:
-    player.main_battle_progress = SimpleNamespace(
-        difficulty_idx=0,
-        age_idx=99,
-        battle_idx=0,
-    )
 
 
 def _empty_player() -> PlayerModel:
@@ -47,6 +42,12 @@ class GameTestSessionBridge(QObject):
         self._logic = GameLogic(player)
         self._last_load_message = ""
         self._bulk_reload_depth = 0
+        self._dump_load_in_progress = False
+        self._dump_thread: QThread | None = None
+        self._dump_worker: DumpLoadWorker | None = None
+        self._dump_apply_player: PlayerModel | None = None
+        self._dump_apply_step = 0
+        self._deferred_summon_step = 0
         self._player_stats = PlayerStatsBridge(lambda: self._logic.player, parent=self)
 
         self._skill_test = SkillSummonTestBridge(self._logic, parent=self)
@@ -54,6 +55,16 @@ class GameTestSessionBridge(QObject):
             player.player_equipment_model,
             parent=self,
         )
+        self._forge_attack_cycle = ForgeAttackCycleBridge(
+            lambda: self._logic.player,
+            parent=self,
+        )
+        self._profile_main = ProfileMainBridge(
+            lambda: self._logic.player,
+            parent=self,
+        )
+        self._equipment.changed.connect(self._forge_attack_cycle.refresh)
+        self._equipment.changed.connect(self._profile_main.refresh)
         self._pet_collection = PetCollectionBridge(
             player.player_pet_collection_model,
             player,
@@ -117,10 +128,16 @@ class GameTestSessionBridge(QObject):
             self._pet_egg_test,
         ):
             bridge.stateChanged.connect(self._on_action_state_changed)
-        self._skill_test.statsRefreshRequested.connect(self._refresh_player_stats)
-        self._pet_summon_test.statsRefreshRequested.connect(self._refresh_player_stats)
-        self._mount_summon_test.statsRefreshRequested.connect(self._refresh_player_stats)
+        self._skill_test.statsRefreshRequested.connect(self._on_stats_refresh_requested)
+        self._pet_summon_test.statsRefreshRequested.connect(self._on_stats_refresh_requested)
+        self._mount_summon_test.statsRefreshRequested.connect(self._on_stats_refresh_requested)
         self._refresh_player_stats()
+
+    def _on_stats_refresh_requested(self) -> None:
+        self._refresh_player_stats()
+        self._pet_collection.refresh_stat_texts()
+        self._mount_collection.refresh_stat_texts()
+        self._skill_test.skillCollection.refresh_stat_texts()
 
     def _in_bulk_reload(self) -> bool:
         return self._bulk_reload_depth > 0
@@ -137,14 +154,24 @@ class GameTestSessionBridge(QObject):
         QTimer.singleShot(0, self._finish_deferred_summon_refresh)
 
     def _finish_deferred_summon_refresh(self) -> None:
-        player = self._logic.player
-        self._skill_test.finish_deferred_reload()
-        self._pet_summon_test.finish_deferred_reload()
-        self._mount_summon_test.finish_deferred_reload()
-        self._tech_tree_forge.reload(self._logic)
-        self._tech_tree_power.reload(self._logic)
-        self._tech_tree_skills_pet_tech.reload(self._logic)
+        self._deferred_summon_step = 0
+        QTimer.singleShot(0, self._step_deferred_summon_refresh)
+
+    def _step_deferred_summon_refresh(self) -> None:
+        steps = (
+            self._skill_test.finish_deferred_reload,
+            self._pet_summon_test.finish_deferred_reload,
+            self._mount_summon_test.finish_deferred_reload,
+        )
+        if self._deferred_summon_step < len(steps):
+            steps[self._deferred_summon_step]()
+            self._deferred_summon_step += 1
+            QTimer.singleShot(0, self._step_deferred_summon_refresh)
+            return
+        self._pet_collection.set_grid_warmup_suppressed(False)
+        self._mount_collection.set_grid_warmup_suppressed(False)
         self.stateChanged.emit()
+        self._finish_dump_load_overlay()
 
     def _on_action_state_changed(self) -> None:
         if self._in_bulk_reload():
@@ -152,6 +179,8 @@ class GameTestSessionBridge(QObject):
 
     def _refresh_player_stats(self) -> None:
         self._player_stats.refresh()
+        self._forge_attack_cycle.refresh()
+        self._profile_main.refresh()
 
     def _refresh_collection_stat_displays(self) -> None:
         self._pet_collection.refresh_stat_texts()
@@ -262,6 +291,14 @@ class GameTestSessionBridge(QObject):
         return self._equipment
 
     @Property(QObject, constant=True)
+    def forgeAttackCycle(self) -> ForgeAttackCycleBridge:
+        return self._forge_attack_cycle
+
+    @Property(QObject, constant=True)
+    def profileMain(self) -> ProfileMainBridge:
+        return self._profile_main
+
+    @Property(QObject, constant=True)
     def petCollection(self) -> PetCollectionBridge:
         return self._pet_collection
 
@@ -301,46 +338,190 @@ class GameTestSessionBridge(QObject):
     def gemCount(self) -> int:
         return self._logic.player.player_currency_model.get(CurrencyType.Gems)
 
-    def apply_dump_text(self, text: str) -> str:
-        self._begin_bulk_reload()
-        try:
-            player = dump_snapshot_to_player_model(parse_dump_text(text))
-            _apply_main_battle_progress(player)
-            self._logic._player = player
-
-            self._skill_test.reload_from_player(player, defer_heavy=True)
-            self._equipment.reload(player.player_equipment_model)
-            self._pet_collection.reload(
-                player.player_pet_collection_model,
-                player,
-            )
-            self._pet_egg_test.reload_after_dump()
-            self._pet_summon_test.reload_after_dump(defer_heavy=True)
-            self._mount_collection.reload(
-                player.player_mount_collection_model,
-                player,
-            )
-            self._mount_summon_test.reload_after_dump(defer_heavy=True)
-            self._tech_tree_forge.reload(self._logic)
-            self._tech_tree_power.reload(self._logic)
-            self._tech_tree_skills_pet_tech.reload(self._logic)
-            self._tech_poll_was_researching = False
-            self._tech_poll_claimable_key = ()
-        finally:
-            self._end_bulk_reload()
-
+    def _dump_apply_steps(self):
         return (
+            self._dump_apply_swap_player,
+            self._dump_apply_skill_collection,
+            self._dump_apply_pet_collection,
+            self._dump_apply_mount_collection,
+            self._dump_apply_summon_bridges,
+            self._dump_apply_tech_tree_forge,
+            self._dump_apply_tech_tree_power,
+            self._dump_apply_tech_tree_skills,
+            self._dump_apply_finish,
+        )
+
+    def apply_dump_text(self, text: str) -> str:
+        player = dump_snapshot_to_player_model(parse_dump_text(text))
+        _apply_main_battle_progress(player)
+        player.player_power_model.update_power(player, publish_update=True)
+        return self._apply_parsed_player_sync(player)
+
+    def _apply_parsed_player_sync(self, player: PlayerModel) -> str:
+        self._dump_apply_player = player
+        for step in self._dump_apply_steps():
+            step()
+        return self._last_load_message
+
+    def _apply_parsed_player_async(self, player: PlayerModel) -> None:
+        self._dump_apply_player = player
+        self._dump_apply_step = 0
+        self._schedule_dump_apply_step()
+
+    def _schedule_dump_apply_step(self) -> None:
+        QTimer.singleShot(0, self._run_dump_apply_step)
+
+    def _run_dump_apply_step(self) -> None:
+        steps = self._dump_apply_steps()
+        if self._dump_apply_step >= len(steps):
+            return
+        try:
+            steps[self._dump_apply_step]()
+        except Exception as exc:
+            self._fail_dump_load(str(exc))
+            return
+        self._dump_apply_step += 1
+        if self._dump_apply_step < len(steps):
+            self._schedule_dump_apply_step()
+
+    def _dump_apply_swap_player(self) -> None:
+        player = self._dump_apply_player
+        if player is None:
+            raise RuntimeError("dump apply missing player")
+        self._begin_bulk_reload()
+        self._pet_collection.set_grid_warmup_suppressed(True)
+        self._mount_collection.set_grid_warmup_suppressed(True)
+        self._logic._player = player
+        self._equipment.reload(player.player_equipment_model)
+        self._pet_egg_test.reload_after_dump()
+        self._tech_poll_was_researching = False
+        self._tech_poll_claimable_key = ()
+
+    def _dump_apply_skill_collection(self) -> None:
+        player = self._dump_apply_player
+        if player is None:
+            return
+        self._skill_test.reload_from_player(player, defer_heavy=True)
+
+    def _dump_apply_pet_collection(self) -> None:
+        player = self._dump_apply_player
+        if player is None:
+            return
+        self._pet_collection.reload(
+            player.player_pet_collection_model,
+            player,
+        )
+
+    def _dump_apply_mount_collection(self) -> None:
+        player = self._dump_apply_player
+        if player is None:
+            return
+        self._mount_collection.reload(
+            player.player_mount_collection_model,
+            player,
+        )
+
+    def _dump_apply_summon_bridges(self) -> None:
+        self._pet_summon_test.reload_after_dump(defer_heavy=True)
+        self._mount_summon_test.reload_after_dump(defer_heavy=True)
+
+    def _dump_apply_tech_tree_forge(self) -> None:
+        self._tech_tree_forge.reload(self._logic)
+
+    def _dump_apply_tech_tree_power(self) -> None:
+        self._tech_tree_power.reload(self._logic)
+
+    def _dump_apply_tech_tree_skills(self) -> None:
+        self._tech_tree_skills_pet_tech.reload(self._logic)
+
+    def _dump_apply_finish(self) -> None:
+        player = self._dump_apply_player
+        if player is None:
+            return
+        self._last_load_message = (
             f"loaded dump "
             f"(skills={self._skill_test.skillCollection.skillCount}, "
             f"pets={self._pet_collection.petCount}, "
             f"mounts={self._mount_collection.mountCount})"
         )
+        print(self._last_load_message)
+        self._dump_apply_player = None
+        self._end_bulk_reload()
+
+    def _begin_dump_load_overlay(self) -> None:
+        loading = ui_loading()
+        if loading is not None:
+            loading.begin()
+
+    def _finish_dump_load_overlay(self) -> None:
+        if not self._dump_load_in_progress:
+            return
+        self._dump_load_in_progress = False
+        loading = ui_loading()
+        if loading is not None:
+            loading.end()
+
+    def _abort_bulk_reload(self) -> None:
+        if self._bulk_reload_depth <= 0:
+            return
+        self._bulk_reload_depth = 0
+        self._pet_collection.set_grid_warmup_suppressed(False)
+        self._mount_collection.set_grid_warmup_suppressed(False)
+
+    def _fail_dump_load(self, message: str) -> None:
+        self._abort_bulk_reload()
+        self._dump_apply_player = None
+        self._last_load_message = f"load failed: {message}"
+        print(self._last_load_message)
+        self.stateChanged.emit()
+        self._finish_dump_load_overlay()
+
+    @Slot()
+    def loadDumpFromClipboard(self) -> None:
+        if self._dump_load_in_progress:
+            return
+        text = QGuiApplication.clipboard().text().strip()
+        if not text:
+            self._last_load_message = "clipboard empty"
+            self.stateChanged.emit()
+            return
+
+        self._dump_load_in_progress = True
+        self._begin_dump_load_overlay()
+        self._last_load_message = "loading dump..."
+        self.stateChanged.emit()
+
+        self._dump_worker = DumpLoadWorker()
+        self._dump_thread = QThread(self)
+        self._dump_worker.moveToThread(self._dump_thread)
+        self._dump_thread.started.connect(
+            lambda dump_text=text: self._dump_worker.parse(dump_text)
+        )
+        self._dump_worker.finished.connect(self._on_dump_parsed)
+        self._dump_worker.finished.connect(self._dump_thread.quit)
+        self._dump_thread.finished.connect(self._cleanup_dump_thread)
+        self._dump_thread.start()
+
+    @Slot(object, str)
+    def _on_dump_parsed(self, player: PlayerModel | None, error: str) -> None:
+        if error or player is None:
+            self._fail_dump_load(error or "parse failed")
+            return
+        try:
+            self._apply_parsed_player_async(player)
+        except Exception as exc:
+            self._fail_dump_load(str(exc))
+            return
+        self.stateChanged.emit()
+
+    def _cleanup_dump_thread(self) -> None:
+        if self._dump_worker is not None:
+            self._dump_worker.deleteLater()
+            self._dump_worker = None
+        self._dump_thread = None
 
     @Slot()
     def loadDumpFromClipboardSync(self) -> None:
-        self._loadDumpFromClipboardImpl()
-
-    def _loadDumpFromClipboardImpl(self) -> None:
         text = QGuiApplication.clipboard().text().strip()
         if not text:
             self._last_load_message = "clipboard empty"

@@ -21,7 +21,9 @@ Key observations that keep this tractable without pruning:
 3. Pre-compute the freebie bool array and a prefix-sum table so each batch
    evaluation is O(1).
 
-4. The DP only stores one integer (best bonus count) per (rem, offset) cell.
+4. The DP stores ``(best bonus count, fewest batch presses)`` per (rem, offset) cell.
+   When bonus counts tie, prefer the path with fewer summon button presses (more
+   bulk batches such as 50 / 15 rather than repeated 1-pulls).
    A separate parent table enables O(budget) path reconstruction after the
    search ends — no list copying inside the main loop.
 
@@ -85,6 +87,19 @@ def _compress_path(path: list[int]) -> str:
 	return " → ".join(segments)
 
 
+def _is_better_bonus_path(
+	new_bonus: int,
+	new_batch_count: int,
+	prev_bonus: int,
+	prev_batch_count: int,
+) -> bool:
+	if new_bonus > prev_bonus:
+		return True
+	if new_bonus == prev_bonus and new_batch_count < prev_batch_count:
+		return True
+	return False
+
+
 def _optimize_bonus_core(
 	start_seed: int,
 	chance_raw: int,
@@ -121,16 +136,16 @@ def _optimize_bonus_core(
 			return prefix[precompute_len] - prefix[offset]
 		return prefix[end] - prefix[offset]
 
-	# DP: dp[rem][offset] = best bonus count achievable from this state
-	# Use plain dicts; -1 means unvisited.
-	dp: list[dict[int, int]] = [{} for _ in range(total_budget + 1)]
+	# DP: dp[rem][offset] = (best bonus count, fewest batches) from this state
+	# Use plain dicts; missing entries are unvisited.
+	dp: list[dict[int, tuple[int, int]]] = [{} for _ in range(total_budget + 1)]
 	# parent[(rem, offset)] = (prev_rem, prev_offset, batch_n)
 	parent: dict[tuple[int, int], tuple[int, int, int]] = {}
 
-	dp[total_budget][0] = 0
+	dp[total_budget][0] = (0, 0)
 
 	for rem in range(total_budget, 0, -1):
-		for offset, bonus_so_far in dp[rem].items():
+		for offset, (bonus_so_far, batches_so_far) in dp[rem].items():
 			for batch_n in possible_summon_counts:
 				if batch_n > rem:
 					continue
@@ -138,18 +153,31 @@ def _optimize_bonus_core(
 				new_offset = offset + batch_n + b
 				new_rem = rem - batch_n
 				new_bonus = bonus_so_far + b
+				new_batch_count = batches_so_far + 1
 
-				prev_best = dp[new_rem].get(new_offset, -1)
-				if new_bonus > prev_best:
-					dp[new_rem][new_offset] = new_bonus
+				prev_entry = dp[new_rem].get(new_offset)
+				if prev_entry is None:
+					should_update = True
+				else:
+					prev_bonus, prev_batch_count = prev_entry
+					should_update = _is_better_bonus_path(
+						new_bonus,
+						new_batch_count,
+						prev_bonus,
+						prev_batch_count,
+					)
+				if should_update:
+					dp[new_rem][new_offset] = (new_bonus, new_batch_count)
 					parent[(new_rem, new_offset)] = (rem, offset, batch_n)
 
 	# Find best terminal state at rem=0
 	best_bonus = -1
+	best_batch_count = 0
 	best_offset = 0
-	for offset, bonus in dp[0].items():
-		if bonus > best_bonus:
+	for offset, (bonus, batch_count) in dp[0].items():
+		if _is_better_bonus_path(bonus, batch_count, best_bonus, best_batch_count):
 			best_bonus = bonus
+			best_batch_count = batch_count
 			best_offset = offset
 
 	if best_bonus < 0:

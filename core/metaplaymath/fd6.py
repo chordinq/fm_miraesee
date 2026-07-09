@@ -52,6 +52,14 @@ def fd6_to_double(raw: int) -> float:
 	return int128.to_double(raw) / FD6_PRECISION
 
 
+def fd6_round_to_int(raw: int) -> int:
+	"""IL: FD6.RoundToInt — quotient + 1 when remainder * 2 > Precision - 1."""
+	quotient, remainder = divmod(int(raw), FD6_PRECISION)
+	if remainder * 2 > FD6_PRECISION - 1:
+		quotient += 1
+	return quotient
+
+
 def fd6_add_raw(a: int, b: int) -> FD6Raw:
 	"""IL: FD6.op_Addition."""
 	return FD6Raw(int128.add(a, b))
@@ -90,6 +98,11 @@ def fd6_div_raw(a: int, b: int) -> FD6Raw:
 def fd6_less_than_raw(a: int, b: int) -> bool:
 	"""IL: FD6.op_LessThan."""
 	return int128.less_than(a, b)
+
+
+def fd6_greater_than_or_equal_raw(a: int, b: int) -> bool:
+	"""IL: FD6.op_GreaterThanOrEqual."""
+	return not int128.less_than(a, b)
 
 
 def fd6_get_double(value: float) -> float:

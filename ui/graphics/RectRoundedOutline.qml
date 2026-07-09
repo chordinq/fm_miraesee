@@ -3,57 +3,66 @@ import QtQuick.Effects
 import ui 1.0
 
 Item {
-    id: root
+	id: root
 
-    property real scaleW: 1.0
-    property real scaleH: 1.0
+	property real aspectW: 1
+	property real aspectH: 1
+	property real cornerRatio: 255 / 512
+	property real cornerRatioW: cornerRatio
+	property real cornerRatioH: cornerRatio
 
-    property color outlineColor: Theme.black
-    property real outlineOpacity: 1.0
+	property color outlineColor: Theme.black
+	property real outlineOpacity: 1.0
 
-    readonly property real baseSize: 256
+	readonly property real baseSize: 256
+	readonly property real sourceSize: 512
+	readonly property real sourceBorder: 255
 
-    implicitWidth: baseSize * scaleW
-    implicitHeight: baseSize * scaleH
+	readonly property real bakeUnitsW: sourceBorder / (sourceSize * cornerRatioW)
+	readonly property real bakeUnitsH: sourceBorder / (sourceSize * cornerRatioH)
+	readonly property real bakedW: sourceBorder / cornerRatioW
+	readonly property real bakedH: sourceBorder / cornerRatioH
+	readonly property real cornerPxW: width * cornerRatioW
+	readonly property real cornerPxH: height * cornerRatioH
 
-    readonly property real bakedW: 512 * scaleW
-    readonly property real bakedH: 512 * scaleH
+	implicitWidth: baseSize * aspectW
+	implicitHeight: baseSize * aspectH
 
-    Item {
-        anchors.fill: parent
-        opacity: root.outlineOpacity
-        visible: root.outlineColor.a > 0 && root.outlineOpacity > 0
+	Item {
+		anchors.fill: parent
+		opacity: root.outlineOpacity
+		visible: root.outlineColor.a > 0 && root.outlineOpacity > 0
 
-        Item {
-            id: effectSource
-            anchors.fill: parent
-            visible: false
-            layer.enabled: true
-            layer.smooth: true
-            layer.mipmap: true
+		Item {
+			id: effectSource
+			anchors.fill: parent
+			visible: false
+			layer.enabled: true
+			layer.smooth: true
+			layer.mipmap: true
 
-            BorderImage {
-                width: root.bakedW
-                height: root.bakedH
-                transformOrigin: Item.TopLeft
-                transform: Scale {
-                    xScale: root.width / root.bakedW
-                    yScale: root.height / root.bakedH
-                }
-                source: Qt.resolvedUrl("../../assets/sprites/UI/Rect_Rounded_Outline.png")
-                border.left: 255
-                border.top: 255
-                border.right: 255
-                border.bottom: 255
-                smooth: true
-            }
-        }
+			BorderImage {
+				width: root.bakedW
+				height: root.bakedH
+				transformOrigin: Item.TopLeft
+				transform: Scale {
+					xScale: root.width / root.bakedW
+					yScale: root.height / root.bakedH
+				}
+				source: Qt.resolvedUrl("../../assets/sprites/UI/Rect_Rounded_Outline.png")
+				border.left: root.sourceBorder
+				border.top: root.sourceBorder
+				border.right: root.sourceBorder
+				border.bottom: root.sourceBorder
+				smooth: true
+			}
+		}
 
-        MultiEffect {
-            anchors.fill: effectSource
-            source: effectSource
-            colorization: 1.0
-            colorizationColor: root.outlineColor
-        }
-    }
+		MultiEffect {
+			anchors.fill: effectSource
+			source: effectSource
+			colorization: 1.0
+			colorizationColor: root.outlineColor
+		}
+	}
 }

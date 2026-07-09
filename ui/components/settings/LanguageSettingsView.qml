@@ -6,8 +6,8 @@ PopupView {
 	id: root
 
 	parentWidthRatio: 0.25
-	widthScale: 40
-	heightScale: 60
+	panelUnitsW: 40
+	panelUnitsH: 60
 	closeButtonSizeRatio: 0.2
 	readonly property string titleLocId: "30155911439511552"
 	readonly property real titleFontScale: 0.085

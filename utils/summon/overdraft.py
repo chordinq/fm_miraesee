@@ -50,13 +50,11 @@ def resolved_summon_cost(
 ) -> int:
 	base_amount = summon_config.single_summon_cost.amount * summon_count
 	target = summon_config.summonable_id.get_stat_target()
-	return round(
-		StatHelper.calculate_value(
-			player,
-			StatType.Cost,
-			target,
-			base_amount,
-		)
+	return StatHelper.calculate_value_round_to_int(
+		player,
+		StatType.Cost,
+		target,
+		base_amount,
 	)
 
 

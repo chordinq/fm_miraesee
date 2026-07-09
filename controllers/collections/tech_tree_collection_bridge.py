@@ -160,6 +160,8 @@ class TechTreeNodeBridge(QObject):
         skip_gem_cost_text: str,
         can_afford_skip: bool,
         ui_language: str = "en",
+        *,
+        notify: bool = True,
     ) -> None:
         self._player = player
         self._node_type = node_type
@@ -197,7 +199,8 @@ class TechTreeNodeBridge(QObject):
         self._can_afford_skip = can_afford_skip
         self._ui_language = ui_language
         self._bind_timer()
-        self.changed.emit()
+        if notify:
+            self.changed.emit()
 
     def patch_action_state(
         self,
@@ -449,6 +452,7 @@ class TechTreeCollectionBridge(QObject):
         self._ui_language = "en"
         self._category_timer_bar = TimerBarBridge(parent=self)
         self._category_timer_bar.displayChanged.connect(self.categoryResearchChanged.emit)
+        self._cached_active_research: tuple[TechTreeType, int] | None = None
         self._rebuild()
 
     def reload(self, logic: GameLogic) -> None:
@@ -674,9 +678,26 @@ class TechTreeCollectionBridge(QObject):
         self._emit_tree_progress()
 
     def patch_upgrade_affordability(self) -> None:
-        for bridge in self._nodes:
-            self._patch_research_gates(bridge)
+        self._cached_active_research = self._find_any_active_research()
+        try:
+            for bridge in self._nodes:
+                self._patch_research_gates(bridge)
+        finally:
+            self._cached_active_research = None
         self.progressChanged.emit()
+
+    @staticmethod
+    def _find_any_active_research_key(player: PlayerModel) -> tuple[TechTreeType, int] | None:
+        techtree = player.player_techtree_model
+        for active_tree_type, nodes in techtree.tech_trees.items():
+            for active_node_id, node_model in nodes.items():
+                timer = node_model.node_upgrade_timer_model
+                if timer.start_time > 0 and not timer.has_ended(player):
+                    return active_tree_type, active_node_id
+        return None
+
+    def _find_any_active_research(self) -> tuple[TechTreeType, int] | None:
+        return self._find_any_active_research_key(self._player)
 
     def _node_key(self, node_type: int) -> str:
         entry = TECHTREE_MAPPING.get("TechTreeNodeType", {}).get(str(node_type), {})
@@ -763,15 +784,15 @@ class TechTreeCollectionBridge(QObject):
         tree_type: TechTreeType,
         node_id: int,
     ) -> bool:
-        techtree = self._player.player_techtree_model
-        for active_tree_type, nodes in techtree.tech_trees.items():
-            for active_node_id, node_model in nodes.items():
-                if active_tree_type == tree_type and active_node_id == node_id:
-                    continue
-                timer = node_model.node_upgrade_timer_model
-                if timer.start_time > 0 and not timer.has_ended(self._player):
-                    return True
-        return False
+        active = self._cached_active_research
+        if active is None:
+            active = self._find_any_active_research()
+        if active is None:
+            return False
+        active_tree_type, active_node_id = active
+        if active_tree_type == tree_type and active_node_id == node_id:
+            return False
+        return True
 
     def _display_ui_level(self, node_model) -> int:
         if node_model is None:
@@ -890,6 +911,7 @@ class TechTreeCollectionBridge(QObject):
         layer: int,
         tier: int,
         x_ratio: float,
+        include_display_text: bool = False,
     ) -> dict:
         techtree = self._player.player_techtree_model
         level_max = self._level_max(node_type)
@@ -908,13 +930,18 @@ class TechTreeCollectionBridge(QObject):
         ui_level = self._display_ui_level(node_model)
         is_max = self._is_max_display(node_model, level_max)
         node_type_value = int(node_type.value)
-        name_text, desc_text, desc_lines = self._node_display_texts(
-            node_type,
-            tier,
-            node_model,
-            level_max,
-            self._ui_language,
-        )
+        if include_display_text:
+            name_text, desc_text, desc_lines = self._node_display_texts(
+                node_type,
+                tier,
+                node_model,
+                level_max,
+                self._ui_language,
+            )
+        else:
+            name_text = ""
+            desc_text = ""
+            desc_lines = []
         detail_fields = self._build_node_fields(
             node_id,
             node_type_value,
@@ -1014,60 +1041,64 @@ class TechTreeCollectionBridge(QObject):
         max_layer = 0
         layer_rows: list[dict] = []
 
-        if tree_data is not None:
-            layer_groups: dict[int, list[dict]] = defaultdict(list)
-            for node_info in tree_data.get("Nodes", []):
-                layer_groups[int(node_info["Layer"])].append(node_info)
+        self._cached_active_research = self._find_any_active_research()
+        try:
+            if tree_data is not None:
+                layer_groups: dict[int, list[dict]] = defaultdict(list)
+                for node_info in tree_data.get("Nodes", []):
+                    layer_groups[int(node_info["Layer"])].append(node_info)
 
-            if layer_groups:
-                max_layer = max(layer_groups)
+                if layer_groups:
+                    max_layer = max(layer_groups)
 
-            for layer in sorted(layer_groups):
-                layer_nodes = sorted(layer_groups[layer], key=lambda node: int(node["Id"]))
-                count = len(layer_nodes)
-                for index, node_info in enumerate(layer_nodes):
-                    try:
-                        node_type = TechTreeNodeType[node_info["Type"]]
-                    except KeyError:
-                        continue
+                for layer in sorted(layer_groups):
+                    layer_nodes = sorted(layer_groups[layer], key=lambda node: int(node["Id"]))
+                    count = len(layer_nodes)
+                    for index, node_info in enumerate(layer_nodes):
+                        try:
+                            node_type = TechTreeNodeType[node_info["Type"]]
+                        except KeyError:
+                            continue
 
-                    node_id = int(node_info["Id"])
-                    tier = int(node_info.get("Tier", 0))
-                    x_ratio = self._layer_x_ratio(index, count)
-                    payload = self._collect_node_bridge_payload(
-                        node_id=node_id,
-                        node_type=node_type,
-                        layer=layer,
-                        tier=tier,
-                        x_ratio=x_ratio,
-                    )
-                    if node_id in existing_by_id:
-                        bridge = existing_by_id[node_id]
-                        bridge.update_from(self._player, **payload)
-                    else:
-                        bridge = TechTreeNodeBridge(
-                            self._player,
-                            parent=self,
-                            **payload,
+                        node_id = int(node_info["Id"])
+                        tier = int(node_info.get("Tier", 0))
+                        x_ratio = self._layer_x_ratio(index, count)
+                        payload = self._collect_node_bridge_payload(
+                            node_id=node_id,
+                            node_type=node_type,
+                            layer=layer,
+                            tier=tier,
+                            x_ratio=x_ratio,
                         )
+                        if node_id in existing_by_id:
+                            bridge = existing_by_id[node_id]
+                            bridge.update_from(self._player, notify=False, **payload)
+                        else:
+                            bridge = TechTreeNodeBridge(
+                                self._player,
+                                parent=self,
+                                **payload,
+                            )
 
-                    nodes.append(bridge)
+                        nodes.append(bridge)
 
-                    for req_id in node_info.get("Requirements", []):
-                        connections.append(
-                            {
-                                "fromId": int(req_id),
-                                "toId": node_id,
-                            }
-                        )
+                        for req_id in node_info.get("Requirements", []):
+                            connections.append(
+                                {
+                                    "fromId": int(req_id),
+                                    "toId": node_id,
+                                }
+                            )
 
-            nodes_by_layer: dict[int, list[TechTreeNodeBridge]] = defaultdict(list)
-            for bridge in nodes:
-                nodes_by_layer[bridge._layer].append(bridge)
-            layer_rows = [
-                {"layer": layer, "nodes": nodes_by_layer[layer]}
-                for layer in sorted(nodes_by_layer)
-            ]
+                nodes_by_layer: dict[int, list[TechTreeNodeBridge]] = defaultdict(list)
+                for bridge in nodes:
+                    nodes_by_layer[bridge._layer].append(bridge)
+                layer_rows = [
+                    {"layer": layer, "nodes": nodes_by_layer[layer]}
+                    for layer in sorted(nodes_by_layer)
+                ]
+        finally:
+            self._cached_active_research = None
 
         self._nodes = nodes
         self._connections = connections
@@ -1232,3 +1263,31 @@ class TechTreeCollectionBridge(QObject):
             if bridge._node_id == node_id:
                 return bridge
         return None
+
+    @Slot(int)
+    def ensureNodeDetails(self, node_id: int) -> None:
+        bridge = self.nodeById(node_id)
+        if bridge is None or bridge._desc_lines:
+            return
+        try:
+            node_type = TechTreeNodeType(bridge._node_type)
+        except ValueError:
+            return
+        node_model = self._player.player_techtree_model.get_node(
+            self._tree_type,
+            bridge._node_id,
+        )
+        name_text, desc_text, desc_lines = self._node_display_texts(
+            node_type,
+            bridge._tier,
+            node_model,
+            bridge._level_max,
+            self._ui_language,
+        )
+        bridge.update_localized_texts(
+            name_text=name_text,
+            desc_text=desc_text,
+            desc_lines=desc_lines,
+            upgrade_duration_text=bridge._upgrade_duration_text,
+            ui_language=self._ui_language,
+        )

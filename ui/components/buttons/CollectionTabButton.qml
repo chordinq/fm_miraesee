@@ -7,21 +7,24 @@ Item {
 
 	property string locId: ""
 	property string locTable: "General"
+	property string labelText: ""
 	property color activeColor: Theme.lightGrey
 	property bool active: false
-	property real scaleW: 4
-	property real scaleH: 1
+	property real aspectW: 4
+	property real aspectH: 1
 
 	signal clicked()
 
 	readonly property real baseSize: 128
-	readonly property real bakedWidth: baseSize * scaleW
-	readonly property real bakedHeight: baseSize * scaleH
+	readonly property real bakedWidth: baseSize * aspectW
+	readonly property real bakedHeight: baseSize * aspectH
 	readonly property real labelFontScale: 52 / 100
 	readonly property real labelWidthRatio: 0.86
 
 	readonly property string resolvedLabel: {
 		UiLocale.selectedCode
+		if (root.labelText !== "")
+			return root.labelText
 		if (root.locId === "")
 			return ""
 		return TmpTextBridge.localized_text_table(
@@ -47,8 +50,9 @@ Item {
 
 		RectRoundButton {
 			height: parent.height
-			scaleW: root.scaleW
-			scaleH: root.scaleH
+			width: height * aspectW / aspectH
+			aspectW: root.aspectW
+			aspectH: root.aspectH
 			fillColor: root.active ? root.activeColor : Theme.lightGrey
 		}
 

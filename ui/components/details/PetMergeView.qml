@@ -55,8 +55,8 @@ PopupView {
 		)
 	}
 
-	widthScale: 52
-	heightScale: 58
+	panelUnitsW: 52
+	panelUnitsH: 58
 
 	onTargetPetModelChanged: root.resetSelection()
 	onVisibleChanged: {
@@ -179,8 +179,10 @@ PopupView {
 
 					RectRounded {
 						anchors.fill: parent
-						scaleW: 72 / 16
-						scaleH: 17 / 16
+						aspectW: 72 / 16
+						aspectH: 17 / 16
+						cornerRatioW: 255 / (512 * (72 / 16))
+						cornerRatioH: 255 / (512 * (17 / 16))
 						fillColor: parent.rowColor
 						fillOpacity: selected ? 1.0 : 0.35
 					}

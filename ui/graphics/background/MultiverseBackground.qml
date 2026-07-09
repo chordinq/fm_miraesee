@@ -5,15 +5,15 @@ import ui 1.0
 Item {
     id: root
 
-    property real scaleW: 2
-    property real scaleH: 2
+    property real maskAspectW: 2
+    property real maskAspectH: 2
     property real tileScale: 10
     property real nativeTileSize: 32
     property real baseDuration: 2500
     property real patternOpacity: 21 / 32
 
-    readonly property real bakedW: 128 * scaleW
-    readonly property real bakedH: 128 * scaleH
+    readonly property real bakedW: 128 * maskAspectW
+    readonly property real bakedH: 128 * maskAspectH
     readonly property real scaledTileSize: nativeTileSize * tileScale
     readonly property string patternImage: Qt.resolvedUrl("../../../assets/sprites/UI/MultiverseBackground.png")
 
@@ -77,8 +77,10 @@ Item {
         RectRounded {
             id: maskShape
             anchors.fill: parent
-            scaleW: root.scaleW
-            scaleH: root.scaleH
+            aspectW: root.maskAspectW
+            aspectH: root.maskAspectH
+		cornerRatioW: 255 / (512 * (root.maskAspectW))
+		cornerRatioH: 255 / (512 * (root.maskAspectH))
             fillColor: Theme.white
             visible: false
             layer.enabled: true

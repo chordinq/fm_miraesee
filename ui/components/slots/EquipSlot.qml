@@ -4,26 +4,30 @@ import ui 1.0
 Item {
 	id: root
 
-	property real scaleW: 20
-	property real scaleH: 4
+	property real aspectW: 20
+	property real aspectH: 4
 	property color fillColor: Theme.darkBlue
 
 	readonly property int baseSize: 256
 
-	implicitWidth: baseSize * scaleW
-	implicitHeight: baseSize * scaleH
+	implicitWidth: baseSize * aspectW
+	implicitHeight: baseSize * aspectH
 
 	RectRounded {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * (root.aspectW))
+		cornerRatioH: 255 / (512 * (root.aspectH))
 		fillColor: root.fillColor
 	}
 
 	RectRoundedOutline {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * (root.aspectW))
+		cornerRatioH: 255 / (512 * (root.aspectH))
 		outlineColor: Theme.black
 	}
 }

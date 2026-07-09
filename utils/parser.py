@@ -1,5 +1,5 @@
 ﻿"""
-Parse GameGuardian / miraesee_data_exporter.lua text dumps into PlayerModel.
+Parse GameGuardian / utils/gg/miraesee_data_exporter.lua text dumps into PlayerModel.
 
 Implementation lives in utils.dump; this module keeps the legacy import path.
 """

@@ -9,8 +9,8 @@ Item {
 	property bool selected: false
 	property bool buttonEnabled: true
 	property color fillColor: Theme.blue
-	property real scaleW: 2
-	property real scaleH: 1
+	property real aspectW: 2
+	property real aspectH: 1
 
 	readonly property color effectiveFillColor:
 		root.selected ? root.fillColor : Theme.lightGrey
@@ -26,21 +26,25 @@ Item {
 
 	readonly property real baseSize: 256
 
-	implicitWidth: baseSize * scaleW
-	implicitHeight: baseSize * scaleH
+	implicitWidth: baseSize * aspectW
+	implicitHeight: baseSize * aspectH
 
 	RectRounded {
 		anchors.fill: parent
 		anchors.margins: root.fillInset
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * (root.aspectW))
+		cornerRatioH: 255 / (512 * (root.aspectH))
 		fillColor: root.effectiveFillColor
 	}
 
 	RectRoundedOutline {
 		anchors.fill: parent
-		scaleW: root.scaleW
-		scaleH: root.scaleH
+		aspectW: root.aspectW
+		aspectH: root.aspectH
+		cornerRatioW: 255 / (512 * (root.aspectW))
+		cornerRatioH: 255 / (512 * (root.aspectH))
 		outlineColor: Theme.black
 		z: 1
 	}

@@ -35,8 +35,9 @@ Item {
 
 	RectRounded {
 		anchors.fill: parent
-		scaleW: 4
-		scaleH: 4
+		aspectW: 4
+		aspectH: 4
+		cornerRatio: 255 / (512 * (4))
 		fillColor: root.rarityFillColor
 		fillOpacity: 1.0
 	}
@@ -52,8 +53,9 @@ Item {
 
 	RectRoundedOutline {
 		anchors.fill: parent
-		scaleW: 4
-		scaleH: 4
+		aspectW: 4
+		aspectH: 4
+		cornerRatio: 255 / (512 * (4))
 		outlineColor: Theme.black
 		outlineOpacity: 1.0
 	}

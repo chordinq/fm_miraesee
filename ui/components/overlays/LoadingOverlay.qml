@@ -43,7 +43,7 @@ Item {
 			id: spinnerSource
 
 			anchors.fill: parent
-			source: Qt.resolvedUrl("../../assets/sprites/UI/LoadingIcon.png")
+			source: Qt.resolvedUrl("../../../assets/sprites/UI/LoadingIcon.png")
 			fillMode: Image.PreserveAspectFit
 			smooth: true
 			mipmap: true

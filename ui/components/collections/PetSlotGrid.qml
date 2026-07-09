@@ -42,6 +42,8 @@ Item {
 	}
 
 	function warmDelegateCache() {
+		if (root.petCollectionModel && root.petCollectionModel.gridWarmupSuppressed)
+			return
 		syncFullCacheBuffer()
 		if (petGrid.count <= 0 || petGrid.contentHeight <= petGrid.height)
 			return
@@ -131,6 +133,10 @@ Item {
 		function onEntryLayoutChanged() {
 			root.syncFullCacheBuffer()
 			Qt.callLater(root.restorePreservedScrollPosition)
+		}
+		function onGridWarmupSuppressedChanged() {
+			if (root.petCollectionModel && !root.petCollectionModel.gridWarmupSuppressed)
+				Qt.callLater(root.warmDelegateCache)
 		}
 		function onInventoryEggsChanged() {
 			root.preservedContentY = petGrid.contentY

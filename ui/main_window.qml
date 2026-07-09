@@ -22,22 +22,10 @@ ApplicationWindow {
     property int activeTabIndex: 0
     property bool settingsOpen: false
     property bool languageOpen: false
-    readonly property int allTabMask: (1 << 5) - 1
-    property int tabLoadMask: allTabMask
-
-    function tabIsLoaded(index) {
-        return (tabLoadMask & (1 << index)) !== 0
-    }
-
-    function markTabLoaded(index) {
-        if (!tabIsLoaded(index))
-            tabLoadMask = tabLoadMask | (1 << index)
-    }
 
     function selectTab(index) {
         if (index === activeTabIndex)
             return
-        markTabLoaded(index)
         activeTabIndex = index
     }
 
@@ -98,9 +86,7 @@ ApplicationWindow {
             activeTabIndex: window.activeTabIndex
             onTabClicked: function(index) { window.selectTab(index) }
             onSettingsClicked: window.settingsOpen = true
-            onLoadDumpClicked: UiLoading.defer(function() {
-                gameSession.loadDumpFromClipboardSync()
-            })
+            onLoadDumpClicked: gameSession.loadDumpFromClipboard()
         }
 
         Item {
@@ -112,44 +98,52 @@ ApplicationWindow {
             Rectangle {
                 anchors.fill: parent
                 color: Qt.darker(Theme.darkBlue, 1.5)
-                visible: window.activeTabIndex !== 1
+                visible: window.activeTabIndex !== 0
                     && window.activeTabIndex !== 2
                     && window.activeTabIndex !== 3
                     && window.activeTabIndex !== 4
+                    && window.activeTabIndex !== 5
             }
 
             Loader {
                 anchors.fill: parent
-                active: window.tabIsLoaded(0)
+                active: true
                 visible: window.activeTabIndex === 0
+                sourceComponent: profileMainComponent
+            }
+
+            Loader {
+                anchors.fill: parent
+                active: true
+                visible: window.activeTabIndex === 1
                 sourceComponent: forgeMainComponent
             }
 
             Loader {
                 anchors.fill: parent
-                active: window.tabIsLoaded(4)
-                visible: window.activeTabIndex === 4
+                active: true
+                visible: window.activeTabIndex === 5
                 sourceComponent: techMainComponent
             }
 
             Loader {
                 anchors.fill: parent
-                active: window.tabIsLoaded(1)
-                visible: window.activeTabIndex === 1
+                active: true
+                visible: window.activeTabIndex === 2
                 sourceComponent: skillMainComponent
             }
 
             Loader {
                 anchors.fill: parent
-                active: window.tabIsLoaded(2)
-                visible: window.activeTabIndex === 2
+                active: true
+                visible: window.activeTabIndex === 3
                 sourceComponent: petMainComponent
             }
 
             Loader {
                 anchors.fill: parent
-                active: window.tabIsLoaded(3)
-                visible: window.activeTabIndex === 3
+                active: true
+                visible: window.activeTabIndex === 4
                 sourceComponent: mountMainComponent
             }
         }
@@ -172,42 +166,50 @@ ApplicationWindow {
 
                 Loader {
                     anchors.fill: parent
-                    active: window.tabIsLoaded(0)
-                    visible: window.activeTabIndex === 0
-                    z: window.activeTabIndex === 0 ? 1 : 0
+                    active: true
+                    visible: window.activeTabIndex === 1
+                    z: window.activeTabIndex === 1 ? 1 : 0
                     sourceComponent: forgeCollectionComponent
                 }
 
                 Loader {
                     anchors.fill: parent
-                    active: window.tabIsLoaded(1)
-                    visible: window.activeTabIndex === 1
-                    z: window.activeTabIndex === 1 ? 1 : 0
+                    active: true
+                    visible: window.activeTabIndex === 2
+                    z: window.activeTabIndex === 2 ? 1 : 0
                     sourceComponent: skillCollectionComponent
                 }
 
                 Loader {
                     anchors.fill: parent
-                    active: window.tabIsLoaded(2)
-                    visible: window.activeTabIndex === 2
-                    z: window.activeTabIndex === 2 ? 1 : 0
+                    active: true
+                    visible: window.activeTabIndex === 3
+                    z: window.activeTabIndex === 3 ? 1 : 0
                     sourceComponent: petCollectionComponent
                 }
 
                 Loader {
                     anchors.fill: parent
-                    active: window.tabIsLoaded(3)
-                    visible: window.activeTabIndex === 3
-                    z: window.activeTabIndex === 3 ? 1 : 0
+                    active: true
+                    visible: window.activeTabIndex === 4
+                    z: window.activeTabIndex === 4 ? 1 : 0
                     sourceComponent: mountCollectionComponent
                 }
 
                 Loader {
                     anchors.fill: parent
-                    active: window.tabIsLoaded(4)
-                    visible: window.activeTabIndex === 4
-                    z: window.activeTabIndex === 4 ? 1 : 0
+                    active: true
+                    visible: window.activeTabIndex === 5
+                    z: window.activeTabIndex === 5 ? 1 : 0
                     sourceComponent: techCollectionComponent
+                }
+
+                Loader {
+                    anchors.fill: parent
+                    active: true
+                    visible: window.activeTabIndex === 0
+                    z: window.activeTabIndex === 0 ? 1 : 0
+                    sourceComponent: forgeCollectionComponent
                 }
             }
         }
@@ -222,13 +224,23 @@ ApplicationWindow {
     }
 
     Component {
+        id: profileMainComponent
+
+        ProfileMainView {
+            anchors.fill: parent
+            profileBridge: gameProfile
+            playerStatsBridge: gamePlayerStats
+        }
+    }
+
+    Component {
         id: skillMainComponent
 
         SkillMainView {
             anchors.fill: parent
             skillController: gameTest
             sessionBridge: gameSession
-            summonResultWidthRatio: 0.3
+            summonPreviewWidthRatio: 0.3
         }
     }
 
@@ -240,7 +252,7 @@ ApplicationWindow {
             petController: gamePetSummonTest
             petCollectionModel: gamePetCollection
             sessionBridge: gameSession
-            summonResultWidthRatio: 0.3
+            summonPreviewWidthRatio: 0.3
         }
     }
 
@@ -252,7 +264,7 @@ ApplicationWindow {
             mountController: gameMountSummonTest
             mountCollectionModel: gameMountCollection
             sessionBridge: gameSession
-            summonResultWidthRatio: 0.3
+            summonPreviewWidthRatio: 0.3
         }
     }
 

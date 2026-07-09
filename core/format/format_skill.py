@@ -1,10 +1,10 @@
 """IL: SkillsLocalizer + GameContextExtensions.FormatSkillDescription."""
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 from core.game_logic.enums import CombatSkill, Rarity, StatNature, StatType
-from core.game_logic.player.player_model import PlayerModel, get_total_stats
 from core.game_logic.player.player_skill_collection_model import (
-	PlayerSkillModel,
 	get_skill_damage_count,
 )
 from core.game_logic.config.shared_game_config import SharedGameConfig
@@ -12,6 +12,10 @@ from core.game_logic.config.shared_game_config import SharedGameConfig
 from .localizer import format_bracketed_entity_title
 from .localizer_base import get_translation
 from .number_format import format_stat
+
+if TYPE_CHECKING:
+	from core.game_logic.player.player_model import PlayerModel
+	from core.game_logic.player.player_skill_collection_model import PlayerSkillModel
 
 _SKILL_DESC_SUFFIX = "Desc"
 
@@ -88,6 +92,8 @@ def format_skill_description_args(
 	skill: PlayerSkillModel,
 ) -> list[str]:
 	"""IL: GameContextExtensions.FormatSkillDescription — argument list only."""
+	from core.game_logic.player.player_model import get_total_stats
+
 	game_config = player.game_config
 	combat_skill = skill.type
 	level = skill.level
@@ -171,6 +177,8 @@ def format_skill_passive_stat_text(
 	language: str | None = None,
 ) -> str:
 	"""IL: passive pill — value + localized base/stat labels."""
+	from core.game_logic.player.player_model import get_total_stats
+
 	resolved = SharedGameConfig.get_resolved_passive_skill_stats(
 		player.game_config,
 		skill.type,

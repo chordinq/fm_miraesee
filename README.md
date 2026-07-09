@@ -5,7 +5,7 @@
 | 구성 | 설명 |
 |------|------|
 | **MiraeseeApp** | Windows GUI (`MiraeseeApp.exe` 또는 `python main.py`) |
-| **miraesee_data_exporter.lua** | GameGuardian 스크립트 — 플레이어 dump를 클립보드로 복사 |
+| **miraesee_data_exporter.lua** | GameGuardian 스크립트 (`utils/gg/`) — 플레이어 dump를 클립보드로 복사 |
 
 Python 설치 없이 **release zip**만 받아도 앱을 실행할 수 있습니다. Lua exporter는 GameGuardian이 있는 **Android(에뮬/실기)** 쪽에서 실행합니다.
 
@@ -28,7 +28,7 @@ README.txt
 ### 1. 게임에서 데이터 추출 (GameGuardian)
 
 1. 게임과 **GameGuardian**을 같은 환경(에뮬레이터 또는 루팅 기기)에서 실행합니다.
-2. GameGuardian에서 **`miraesee_data_exporter.lua`** 를 스크립트로 실행합니다.
+2. GameGuardian에서 **`utils/gg/miraesee_data_exporter.lua`** 를 스크립트로 실행합니다.
 3. 안내에 따라 진행합니다. 성공하면 dump 텍스트가 **클립보드에 복사**됩니다.
    - 실패 시: 게임 재시작 후 다시 시도 (PlayerModel 주소 탐색 실패 등).
 4. PC로 dump를 옮기려면 클립보드를 PC에 붙여넣거나, GG/에뮬의 클립보드 공유 기능을 사용합니다.
@@ -50,6 +50,7 @@ README.txt
 
 | 탭 | 내용 |
 |----|------|
+| Profile | 전투 스탯·공격 주기 |
 | Forge | 장비 컬렉션 |
 | Skills (녹색) | 스킬 소환·업그레이드 시뮬 |
 | Pets (파랑) | 펫·알 소환·부화 시뮬 |
@@ -75,7 +76,7 @@ README.txt
 
 ## 개발자: 로컬 실행
 
-`scripts/` 디렉터리에서:
+저장소 루트에서:
 
 ```bash
 pip install -e .
@@ -85,8 +86,8 @@ python main.py
 컴포넌트 미리보기:
 
 ```bash
-python ui/test/test.py
-python ui/test/test_game.py
+python test/test.py
+python test/test_summonresultview.py
 ```
 
 의존성은 **PySide6**만 필요합니다 (`pyproject.toml`).
@@ -131,12 +132,14 @@ exe만 빌드:
 | 경로 | 역할 |
 |------|------|
 | `core/` | C# IL 포팅 게임 로직 (순수 시뮬) |
-| `config/` | JSON 매핑·설정 로더 |
+| `config/` | JSON 매핑·설정 로더 (`assets/game_configs/` 포함) |
 | `controllers/` | Python ↔ QML 브리지 |
 | `app/` | QML 엔진·세션 |
-| `ui/` | QML 위젯·프리뷰 (`ui/test/`) |
-| `utils/` | dump 파서, `miraesee_data_exporter.lua` |
+| `ui/` | QML 위젯 |
+| `test/` | UI 프리뷰·IL 검증 하네스 (로컬, gitignore) |
+| `utils/` | dump 파서, `gg/` Lua, `summon/`, `combat/`, `il2cpp/`, `config_parser/` |
 | `assets/` | 게임 JSON, 스프라이트, 로컬라이제이션 |
 | `build/` | PyInstaller spec·빌드 스크립트 (산출물 제외) |
+| `release/` | release zip 산출물 (gitignore; `releases/` 아님) |
 
-`dump.cs`, `old_dump.cs`는 로컬 IL 참고용이며 저장소에 올리지 않습니다.
+`dump.cs`, `old_dump.cs`, `data/` 는 로컬 IL 참고용이며 저장소에 올리지 않습니다.

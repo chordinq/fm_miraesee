@@ -5,13 +5,13 @@ Item {
 	id: root
 
 	property bool checked: false
-	property real trackScaleW: 2.1
-	property real trackScaleH: 1.4
+	property real trackAspectW: 2.1
+	property real trackAspectH: 1.4
 	property real knobSizeRatio: 1.33
 
 	signal toggled(bool checked)
 
-	readonly property real trackAspectRatio: trackScaleW / trackScaleH
+	readonly property real trackAspectRatio: trackAspectW / trackAspectH
 	readonly property real layoutAspectRatio: (trackAspectRatio + knobSizeRatio) / knobSizeRatio
 	readonly property real baseSize: 256
 	readonly property real trackWidth: baseSize * trackAspectRatio
@@ -52,15 +52,19 @@ Item {
 			RectRounded {
 				anchors.fill: parent
 				anchors.margins: parent.height * 0.05
-				scaleW: root.trackScaleW
-				scaleH: root.trackScaleH
+				aspectW: root.trackAspectW
+				aspectH: root.trackAspectH
+		cornerRatioW: 255 / (512 * (root.trackAspectW))
+		cornerRatioH: 255 / (512 * (root.trackAspectH))
 				fillColor: root.checked ? Theme.green : Theme.checkBoxActiveGrey
 			}
 
 			RectRoundedOutline {
 				anchors.fill: parent
-				scaleW: root.trackScaleW
-				scaleH: root.trackScaleH
+				aspectW: root.trackAspectW
+				aspectH: root.trackAspectH
+		cornerRatioW: 255 / (512 * (root.trackAspectW))
+		cornerRatioH: 255 / (512 * (root.trackAspectH))
 				outlineColor: Theme.black
 				z: 1
 			}

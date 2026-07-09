@@ -60,7 +60,7 @@ def normalize_mapping_loc_blocks(obj: object, shared: dict[str, dict[str, int]])
                 if loc.get("Id") != new_id:
                     loc["Id"] = new_id
                     changed = True
-0        for value in obj.values():
+        for value in obj.values():
             if normalize_mapping_loc_blocks(value, shared):
                 changed = True
     elif isinstance(obj, list):

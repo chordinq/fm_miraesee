@@ -36,32 +36,18 @@ Item {
 		}
 	}
 
-	function techTreeForType(treeType) {
-		switch (treeType) {
-		case "power":
-			return powerTechTree
-		case "skillsPetTech":
-			return skillsPetTechTree
-		default:
-			return forgeTechTree
-		}
+	function activeTechTree() {
+		return techTreeLoader.item
 	}
 
 	function openTree(treeType) {
 		root.selectedTreeType = treeType
-		Qt.callLater(function() {
-			var tree = root.techTreeForType(treeType)
-			if (tree)
-				tree.scheduleAutoScroll()
-		})
 	}
 
 	function closeTree() {
-		if (root.selectedTreeType !== "") {
-			var tree = root.techTreeForType(root.selectedTreeType)
-			if (tree)
-				tree.resetScroll()
-		}
+		var tree = root.activeTechTree()
+		if (tree)
+			tree.resetScroll()
 		root.selectedTreeType = ""
 		root.detailsOpen = false
 		root.selectedNodeModel = null
@@ -155,43 +141,31 @@ Item {
 		}
 	}
 
+	Component {
+		id: techTreeComponent
+
+		TechTree {
+			techTreeModel: root.techTreeModelForType(root.selectedTreeType)
+			onNodeClicked: function(nodeModel) {
+				root.selectedNodeModel = nodeModel
+				root.detailsOpen = true
+			}
+		}
+	}
+
 	Item {
 		anchors.fill: parent
 		visible: root.showingTree
 
-		TechTree {
-			id: forgeTechTree
+		Loader {
+			id: techTreeLoader
 
 			anchors.fill: parent
-			visible: root.selectedTreeType === "forge"
-			techTreeModel: root.techTreeForgeModel
-			onNodeClicked: function(nodeModel) {
-				root.selectedNodeModel = nodeModel
-				root.detailsOpen = true
-			}
-		}
-
-		TechTree {
-			id: powerTechTree
-
-			anchors.fill: parent
-			visible: root.selectedTreeType === "power"
-			techTreeModel: root.techTreePowerModel
-			onNodeClicked: function(nodeModel) {
-				root.selectedNodeModel = nodeModel
-				root.detailsOpen = true
-			}
-		}
-
-		TechTree {
-			id: skillsPetTechTree
-
-			anchors.fill: parent
-			visible: root.selectedTreeType === "skillsPetTech"
-			techTreeModel: root.techTreeSkillsPetTechModel
-			onNodeClicked: function(nodeModel) {
-				root.selectedNodeModel = nodeModel
-				root.detailsOpen = true
+			active: root.showingTree
+			sourceComponent: techTreeComponent
+			onLoaded: {
+				if (item)
+					item.scheduleAutoScroll()
 			}
 		}
 

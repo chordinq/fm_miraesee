@@ -45,11 +45,11 @@ Item {
 	readonly property real infoButtonSize: height * 0.3
 	readonly property real levelPixelSize: height * 0.17
 	readonly property real ascensionStarSize: height * 0.18
-	readonly property real progressScaleW: 72 / 16
-	readonly property real progressScaleH: 17 / 16
+	readonly property real progressAspectW: 72 / 16
+	readonly property real progressAspectH: 17 / 16
 	readonly property real progressFontScale: 12 / 16
 	readonly property real progressWidth: height * 0.9
-	readonly property real progressBarHeight: progressWidth * progressScaleH / progressScaleW
+	readonly property real progressBarHeight: progressWidth * progressAspectH / progressAspectW
 	readonly property real columnSpacing: height * 0.04
 	readonly property real infoVerticalCenterOffset: -(
 		root.levelPixelSize / 2 + root.columnSpacing / 2 + root.infoButtonSize / 2
@@ -106,8 +106,8 @@ Item {
 	ProgressBar {
 		visible: root.showProgress
 		width: root.progressWidth
-		scaleW: root.progressScaleW
-		scaleH: root.progressScaleH
+		aspectW: root.progressAspectW
+		aspectH: root.progressAspectH
 		progressFraction: root.progressFraction
 		fillColor: Theme.blue
 		trackFillOpacity: 14 / 16

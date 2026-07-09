@@ -12,14 +12,14 @@ Item {
 	property int selectedCombatSkillType: -1
 
 	readonly property real bottomBarMargin: Math.max(8, height * 0.02)
-	readonly property real actionButtonScaleW: 2.56
-	readonly property real actionButtonScaleH: 1
+	readonly property real actionButtonAspectW: 2.56
+	readonly property real actionButtonAspectH: 1
 	readonly property real actionButtonWidthRatio: 0.3
 	readonly property real actionRowSpacingRatio: 0.15
 	readonly property real actionButtonWidth: width * actionButtonWidthRatio
 	readonly property real actionRowSpacing: actionButtonWidth * actionRowSpacingRatio
 	readonly property real actionButtonHeight:
-		actionButtonWidth * actionButtonScaleH / actionButtonScaleW
+		actionButtonWidth * actionButtonAspectH / actionButtonAspectW
 
 	Row {
 		id: actionRow

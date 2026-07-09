@@ -1,7 +1,7 @@
 # Build MiraeseeApp (onedir)
 $ErrorActionPreference = "Stop"
 Set-Location (Split-Path $PSScriptRoot -Parent)
-python scripts/verify_app_imports.py
+python build/verify_app_imports.py
 pyinstaller build/MiraeseeApp.spec --noconfirm
 python -c "from pathlib import Path; from build.bundle_prune import copy_release_assets; copy_release_assets(Path('.').resolve(), Path('dist/MiraeseeApp/assets'))"
 $distDir = Join-Path (Get-Location) "dist\MiraeseeApp"

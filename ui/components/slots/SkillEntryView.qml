@@ -62,7 +62,7 @@ Item {
 	EquippedVisual {
 		anchors.centerIn: icon
 		visible: root.skillModel?.isEquipped ?? false
-		scaleHorizontal: 3
+		aspectW: 3
 		width: iconSize * root.equippedVisualWidthRatio
 	}
 
