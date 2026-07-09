@@ -207,7 +207,7 @@ Item {
                     readonly property int layerIndex: index
                     readonly property var nodesInLayer: modelData.nodes
                     readonly property int nodeCount: nodesInLayer.length
-                    
+
                     readonly property bool hasPrevLayer: layerIndex > 0
                     readonly property int prevCount: hasPrevLayer ? root.layerRows[layerIndex - 1].nodes.length : 0
 

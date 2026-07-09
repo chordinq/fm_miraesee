@@ -35,16 +35,14 @@ Item {
             visible: false
             layer.enabled: true
 
-            // 👉 1. 배경색
             Rectangle {
                 anchors.fill: parent
                 color: Theme.colorMultiverse
             }
 
-            // 👉 2. 하얀색 오버레이 패턴
             Item {
                 anchors.fill: parent
-                opacity: root.patternOpacity 
+                opacity: root.patternOpacity
                 clip: false
 
                 Item {
@@ -79,14 +77,13 @@ Item {
             anchors.fill: parent
             aspectW: root.maskAspectW
             aspectH: root.maskAspectH
-		cornerRatioW: 255 / (512 * (root.maskAspectW))
-		cornerRatioH: 255 / (512 * (root.maskAspectH))
+            cornerRatioW: 255 / (512 * (root.maskAspectW))
+            cornerRatioH: 255 / (512 * (root.maskAspectH))
             fillColor: Theme.white
             visible: false
             layer.enabled: true
         }
 
-        // 👉 3. 최종 합성 (투명도 없이 렌더링)
         MultiEffect {
             anchors.fill: parent
             source: contentHost

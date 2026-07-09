@@ -35,18 +35,14 @@ Item {
             visible: false
             layer.enabled: true
 
-            // 👉 1. 배경색: 투명도 없이 100% 본연의 색상으로 꽉 채웁니다.
             Rectangle {
                 anchors.fill: parent
                 color: Theme.colorInterstellar
             }
 
-            // 👉 2. 하얀색 오버레이 패턴: 투명도를 오직 여기에만 적용합니다!
             Item {
                 anchors.fill: parent
-                // (참고: 만약 별이 반투명하지 않고 100% 쨍한 순백색이길 원하시면 
-                // 아래 opacity 줄을 아예 삭제하시면 됩니다.)
-                opacity: root.patternOpacity 
+                opacity: root.patternOpacity
                 clip: false
 
                 Item {
@@ -88,14 +84,13 @@ Item {
             anchors.fill: parent
             aspectW: root.maskAspectW
             aspectH: root.maskAspectH
-		cornerRatioW: 255 / (512 * (root.maskAspectW))
-		cornerRatioH: 255 / (512 * (root.maskAspectH))
+            cornerRatioW: 255 / (512 * (root.maskAspectW))
+            cornerRatioH: 255 / (512 * (root.maskAspectH))
             fillColor: Theme.white
             visible: false
             layer.enabled: true
         }
 
-        // 👉 3. 최종 합성: 이제 MultiEffect에는 opacity를 주지 않아 100% 선명하게 렌더링됩니다.
         MultiEffect {
             anchors.fill: parent
             source: contentHost

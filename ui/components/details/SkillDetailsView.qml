@@ -42,7 +42,7 @@ DetailsView {
 	readonly property color titleColor: skillModel
 		? Theme.rarityColors[skillModel.rarity]
 		: Theme.darkText
-	
+
 	readonly property real descLeftMarginRatio: 0.27
 	readonly property real descTopMarginRatio: 0.1
 	readonly property real descRightMarginRatio: 0.046

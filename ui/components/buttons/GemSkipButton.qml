@@ -6,7 +6,7 @@ CurrencyButton {
 	titleFontScale: 0.35
 	costFontScale: 0.35
 	titleRowVerticalCenterOffsetRatio: -0.25
-	
+
 	currencyIconSource: Qt.resolvedUrl("../../../assets/sprites/Currency/GemIcon.png")
 
 	property int cost: 0
